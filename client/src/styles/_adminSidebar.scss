@@ -1,0 +1,18 @@
+.adminSidebar {
+	padding: 1rem 0;
+	margin-top: 2rem;
+	margin-right: 2rem;
+	width: 15%;
+	border-right: 1px solid $gray-300;
+
+	p {
+		color: $gray-300;
+	}
+
+	ul {
+		padding: 0 1rem;
+		li {
+			padding: 0.5rem 0;
+		}
+	}
+}
