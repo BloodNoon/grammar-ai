@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Studentswriting.com
 This is a repository for studentswriting.com implemented in React and Mongodb.
 
