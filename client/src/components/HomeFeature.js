@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
 	Icon,
 	SimpleGrid,
@@ -49,6 +50,7 @@ export default function HomeFeature() {
 								reading.
 							</Text>
 						</Box>
+					<Link to="/sentence-structure">
 						<Box
 							w="20rem"
 							px="2rem"
@@ -73,6 +75,7 @@ export default function HomeFeature() {
 								check it for you with just <strong>one click</strong>.
 							</Text>
 						</Box>
+					</Link>
 					</SimpleGrid>
 				</VStack>
 			</Center>
