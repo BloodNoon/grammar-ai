@@ -1,6 +1,6 @@
 import React from 'react';
 import SentenceStructure from '../utils/SentenceChecker/SentenceStructure'
-import SentenceStructure2 from '../utils/SentenceChecker/SentenceStructurev2'
+import SentenceStructurev2 from '../utils/SentenceChecker/SentenceStructurev2'
 import StructureChecker from '../utils/SentenceChecker/StructureChecker'
 
 
