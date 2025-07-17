@@ -1,10 +1,17 @@
 import React from 'react';
+import SentenceStructure from '../utils/SentenceChecker/SentenceStructure'
+import SentenceStructure2 from '../utils/SentenceChecker/SentenceStructurev2'
+import StructureChecker from '../utils/SentenceChecker/StructureChecker'
 
-function SentenceStructure() {
+
+function SentenceStructures() {
     return (
-        <div>
+        <><div>
             <h1>Sentence Structure Page</h1>
         </div>
+        <body>
+        <p1>Testing Sentence Structure so far, Need to make implentations to webpage.</p1>
+            </body></>
     )
 };
 
