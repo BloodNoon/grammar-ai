@@ -7,7 +7,7 @@ import StructureChecker from '../utils/SentenceChecker/StructureChecker'
 function SentenceStructures() {
     return (
         <><div>
-            <h1>Sentence Structure Page</h1>
+            <h1 style={{fontsize: "40px"}}>Sentence Structure Page</h1>
         </div>
         <body>
         <p1>Testing Sentence Structure so far, Need to make implentations to webpage.</p1>
@@ -15,4 +15,4 @@ function SentenceStructures() {
     )
 };
 
-export default SentenceStructure;
+export default SentenceStructures;
