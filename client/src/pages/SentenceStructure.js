@@ -4,55 +4,42 @@ import SentenceStructurev2 from '../utils/SentenceChecker/SentenceStructurev2'
 import StructureChecker from '../utils/SentenceChecker/StructureChecker'
 import {testCases} from '../utils/SentenceChecker/TestCases'
 
-function SentenceStructures({ type = "Simple" }) {
-  const filteredExamples = testCases.filter(
-    (example) => example.structure.toLowerCase() === type.toLowerCase()
-  );
+const SentenceStructures = () => {
+	const [exampleSentence, setExampleSentence] = useState('');
 
-  const getRandomExamples = () => {
-    const shuffled = [...filteredExamples].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, 3);
-  };
+	const generateRandomExample = () => {
+		if (testCases.length === 0) return;
 
-  const [examples, setExamples] = useState(getRandomExamples());
+		// Pick a random sentence from testCases
+		const randomIndex = Math.floor(Math.random() * testCases.length);
+		const selected = testCases[randomIndex].sentence;
+		setExampleSentence(selected);
+	};
 
-  const handleClick = () => {
-    setExamples(getRandomExamples());
-  };
+	return (
+		<div className="container">
+			<h2 style = {{fontSize: "72px"}}>Sentence Structure Practice</h2>
 
-  
-  function ExampleBox({ examples, onClick }) {
-    return (
-      <div
-        onClick={onClick}
-        style={{
-          cursor: "pointer",
-          border: "2px solid #333",
-          padding: "16px",
-          borderRadius: "8px",
-          backgroundColor: "#f5f5f5",
-          maxWidth: "600px",
-          marginTop: "20px",
-          transition: "background-color 0.3s",
-        }}
-        onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#e0e0e0")}
-        onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#f5f5f5")}
-      >
-        <h3>Click to see new examples:</h3>
-        <ul>
-          {examples.map((ex, index) => (
-            <li key={index}>{ex.sentence}</li>
-          ))}
-        </ul>
-      </div>
-    );
-  }
-
-  return (
-    <div>
-      <h1 style={{ fontSize: "48px" }}>{type} Sentence Structure</h1>
-      <ExampleBox examples={examples} onClick={handleClick} />
-    </div>
-  );
-}
+			{/* Example Box */}
+			<div
+				className="example-box"
+				onClick={generateRandomExample}
+				style={{
+					cursor: 'pointer',
+					padding: '1rem',
+					backgroundColor: '#f0f0f0',
+					border: '1px solid #ccc',
+					borderRadius: '8px',
+					marginBottom: '1rem',
+					userSelect: 'none',
+				}}
+			>
+				<b>Click here to see an example:</b>
+				<div style={{ marginTop: '0.5rem', fontStyle: 'italic' }}>
+					{exampleSentence || 'Click to generate an example sentence.'}
+				</div>
+			</div>
+		</div>
+	);
+};
 export default SentenceStructures;
