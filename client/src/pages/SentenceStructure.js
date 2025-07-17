@@ -7,11 +7,10 @@ import StructureChecker from '../utils/SentenceChecker/StructureChecker'
 function SentenceStructures() {
     return (
         <><div>
-            <h1 style={{fontsize: "40px"}}>Sentence Structure Page</h1>
+            <h1 style={{fontSize: "72px"}}>Sentence Structure Page</h1>
+            <p>Testing Sentence Structure so far, Need to make implentations to webpage.</p>
         </div>
-        <body>
-        <p1>Testing Sentence Structure so far, Need to make implentations to webpage.</p1>
-            </body></>
+        </>
     )
 };
 
