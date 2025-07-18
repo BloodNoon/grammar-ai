@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
-import SentenceStructure from './pages/SentenceStructure';
+import SentenceStructure from './pages/SentenceStructureWebsite';
 import PromptList from './pages/PromptList';
 import PromptOverview from './pages/PromptOverview';
 import PrivateRoute from './components/PrivateRoute';
