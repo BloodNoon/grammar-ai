@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
-import SentenceStructure from './pages/SentenceStructureWebsite';
+import SentenceStructures from './pages/SentenceStructure';
 import PromptList from './pages/PromptList';
 import PromptOverview from './pages/PromptOverview';
 import PrivateRoute from './components/PrivateRoute';
@@ -23,7 +23,7 @@ function App() {
 						<Route path="/" component={Home} exact />
 						<Route path="/signup" component={Signup} />
 						<Route path="/login" component={Login} />
-						<Route path="/sentence-structure" component={SentenceStructure} />
+						<Route path="/sentence-structure" component={SentenceStructures} />
 						<PrivateRoute path="/dashboard" component={Dashboard} />
 						<Route path="/prompts" component={PromptList} />
 						<Route path="/overview/:id" component={PromptOverview} />			
