@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { hasFullStructCheck, getFullStructCheck, getTags } from '../utils/SentenceChecker/StructureChecker';
 import { testCases } from '../utils/SentenceChecker/TestCases';
-import SentenceAnalysisHelper from '../utils/SentenceChecker/sentence-analysis-helper';
+
 
 function getWordType(word) {
   const subjects = ['i', 'he', 'she', 'it', 'you', 'we', 'they'];
@@ -40,7 +40,74 @@ const DragDropSentenceChecker = () => {
   const [sessionHistory, setSessionHistory] = useState([]);
   const [showProgress, setShowProgress] = useState(true);
   
+  // Practice sentences for the top section Mini Lesson
+  const [sentenceFeedback, setSentenceFeedback] = useState({});
+  
   const TARGET_CORRECT = 10;
+
+  // Define subjects and objects for practice sentences
+  const practiceData = {
+    1: { subject: 'boy', object: 'ball' },
+    2: { subject: 'Sarah', object: 'book' },
+    3: { subject: 'teacher', object: 'student' },
+    4: { subject: 'cat', object: 'mouse' },
+    5: { subject: 'They', object: 'house' },
+    6: { subject: 'chef', object: 'meal' },
+    7: { subject: 'wind', object: 'window' },
+    8: { subject: 'sister', object: 'picture' },
+    9: { subject: 'doctor', object: 'patient' },
+    10: { subject: 'team', object: 'game' }
+  };
+
+  const handleWordClick = (sentenceNum, word) => {
+    const data = practiceData[sentenceNum];
+    let feedbackText = '';
+    let color = '';
+
+    if (word === data.subject) {
+      feedbackText = 'Correct - Subject!';
+      color = 'blue';
+    } else if (word === data.object) {
+      feedbackText = 'Correct - Object!';
+      color = 'orange';
+    } else {
+      feedbackText = 'Incorrect';
+      color = 'red';
+    }
+
+    setSentenceFeedback(prev => ({
+      ...prev,
+      [sentenceNum]: { text: feedbackText, color: color }
+    }));
+  };
+
+  const renderPracticeSentence = (num, sentence) => {
+    const words = sentence.split(' ');
+    return (
+      <li key={num}>
+        {words.map((word, index) => (
+          <span key={index}>
+            <span
+              onClick={() => handleWordClick(num, word.replace(/[.,!?]/, ''))}
+              style={{
+                cursor: 'pointer',
+                textDecoration: 'underline',
+                marginRight: '4px'
+              }}
+            >
+              {word}
+            </span>
+            {index < words.length - 1 ? ' ' : ''}
+          </span>
+        ))}
+        {sentenceFeedback[num] && (
+          <div style={{ color: sentenceFeedback[num].color, marginTop: '5px', fontWeight: 'bold' }}>
+            {sentenceFeedback[num].text}
+          </div>
+        )}
+      </li>
+    );
+  };
 
   const structureExamples = [
     { 
@@ -336,6 +403,61 @@ const DragDropSentenceChecker = () => {
   return (
     <div>
       <h1>Sentence Builder</h1>
+
+      {/* Mini Lesson Section */}
+      <div style={{ border: '2px solid black', padding: '20px', marginBottom: '20px' }}>
+        <h2>Mini Lesson: Nouns, Subjects, and Objects</h2>
+        
+        <h3>What is a Noun?</h3>
+        <p>A <strong>noun</strong> is a word that names a <strong>person, place, thing, or idea</strong>.</p>
+        <p>Examples:</p>
+        <ol>
+          <li>Person: <strong>teacher</strong>, <strong>Maria</strong></li>
+          <li>Place: <strong>school</strong>, <strong>New York</strong></li>
+          <li>Thing: <strong>book</strong>, <strong>phone</strong></li>
+          <li>Idea: <strong>freedom</strong>, <strong>happiness</strong></li>
+        </ol>
+
+        <h3>What is a Subject?</h3>
+        <p>The <strong>subject</strong> is the <strong>doer</strong> of the action in a sentence. It answers the question:</p>
+        <p><strong>Who or what is doing the action?</strong></p>
+        
+        <h4>Why is there a subject?</h4>
+        <p>We need a subject so we know <strong>who or what</strong> the sentence is about.</p>
+        <p>Example: <strong>The dog</strong> chased the cat.</p>
+        <p>"The dog" is the <strong>subject</strong> because it is doing the chasing.</p>
+
+        <h3>What is an Object?</h3>
+        <p>The <strong>object</strong> receives the action of the verb. It answers the question:</p>
+        <p><strong>Who or what is being acted upon?</strong></p>
+        
+        <h4>Why is there an object?</h4>
+        <p>We need an object to complete the meaning of the action in many sentences.</p>
+        <p>Example: The dog chased <strong>the cat</strong>.</p>
+        <p>"The cat" is the <strong>object</strong> because it is receiving the action (being chased).</p>
+
+        <h3>Practice – Identify the Subject and Object</h3>
+        <p><strong>Instructions:</strong> For each sentence, identify:</p>
+        <ol>
+          <li>The <strong>subject</strong> (who or what is doing the action)</li>
+          <li>The <strong>object</strong> (who or what is receiving the action)</li>
+        </ol>
+
+        <p><strong>Click on words to check if they are subjects or objects:</strong></p>
+        
+        <ol>
+          {renderPracticeSentence(1, "The boy kicked the ball.")}
+          {renderPracticeSentence(2, "Sarah reads a book.")}
+          {renderPracticeSentence(3, "The teacher praised the student.")}
+          {renderPracticeSentence(4, "A cat caught a mouse.")}
+          {renderPracticeSentence(5, "They built a house.")}
+          {renderPracticeSentence(6, "The chef cooked a meal.")}
+          {renderPracticeSentence(7, "The wind broke the window.")}
+          {renderPracticeSentence(8, "My sister painted a picture.")}
+          {renderPracticeSentence(9, "The doctor examined the patient.")}
+          {renderPracticeSentence(10, "The team won the game.")}
+        </ol>
+      </div>
 
       {/* Progress Tracker */}
       <div>
