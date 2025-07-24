@@ -40,7 +40,7 @@ const DragDropSentenceChecker = () => {
   const [sessionHistory, setSessionHistory] = useState([]);
   const [showProgress, setShowProgress] = useState(true);
   
-  // Practice sentences for the top section Mini Lesson
+  // Practice sentence feedback states
   const [sentenceFeedback, setSentenceFeedback] = useState({});
   
   const TARGET_CORRECT = 10;
@@ -84,24 +84,46 @@ const DragDropSentenceChecker = () => {
   const renderPracticeSentence = (num, sentence) => {
     const words = sentence.split(' ');
     return (
-      <li key={num}>
+      <li key={num} style={{ marginBottom: '15px', lineHeight: '2' }}>
         {words.map((word, index) => (
           <span key={index}>
-            <span
+            <button
               onClick={() => handleWordClick(num, word.replace(/[.,!?]/, ''))}
               style={{
+                backgroundColor: '#f0f0f0',
+                border: '2px solid #ccc',
+                padding: '4px 8px',
+                margin: '2px',
                 cursor: 'pointer',
-                textDecoration: 'underline',
-                marginRight: '4px'
+                borderRadius: '4px',
+                fontSize: '14px'
+              }}
+              onMouseOver={(e) => {
+                e.target.style.backgroundColor = '#e0e0e0';
+                e.target.style.borderColor = '#999';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.backgroundColor = '#f0f0f0';
+                e.target.style.borderColor = '#ccc';
               }}
             >
               {word}
-            </span>
+            </button>
             {index < words.length - 1 ? ' ' : ''}
           </span>
         ))}
         {sentenceFeedback[num] && (
-          <div style={{ color: sentenceFeedback[num].color, marginTop: '5px', fontWeight: 'bold' }}>
+          <div style={{ 
+            color: sentenceFeedback[num].color, 
+            marginTop: '8px', 
+            fontWeight: 'bold',
+            fontSize: '16px',
+            padding: '5px',
+            border: `2px solid ${sentenceFeedback[num].color}`,
+            borderRadius: '4px',
+            backgroundColor: sentenceFeedback[num].color === 'blue' ? '#e3f2fd' : 
+                            sentenceFeedback[num].color === 'orange' ? '#fff3e0' : '#ffebee'
+          }}>
             {sentenceFeedback[num].text}
           </div>
         )}
@@ -436,7 +458,7 @@ const DragDropSentenceChecker = () => {
         <p>Example: The dog chased <strong>the cat</strong>.</p>
         <p>"The cat" is the <strong>object</strong> because it is receiving the action (being chased).</p>
 
-        <h3>Practice – Identify the Subject and Object</h3>
+        <h3>Practice - Identify the Subject and Object</h3>
         <p><strong>Instructions:</strong> For each sentence, identify:</p>
         <ol>
           <li>The <strong>subject</strong> (who or what is doing the action)</li>
@@ -462,7 +484,25 @@ const DragDropSentenceChecker = () => {
       {/* Progress Tracker */}
       <div>
         <h3>{isCompleted ? 'Challenge Completed!' : 'Progress Tracker'}</h3>
-        <button onClick={() => setShowProgress(!showProgress)}>
+        <button 
+          onClick={() => setShowProgress(!showProgress)}
+          style={{
+            backgroundColor: '#f0f0f0',
+            border: '2px solid #ccc',
+            padding: '6px 12px',
+            cursor: 'pointer',
+            borderRadius: '4px',
+            fontSize: '12px'
+          }}
+          onMouseOver={(e) => {
+            e.target.style.backgroundColor = '#e0e0e0';
+            e.target.style.borderColor = '#999';
+          }}
+          onMouseOut={(e) => {
+            e.target.style.backgroundColor = '#f0f0f0';
+            e.target.style.borderColor = '#ccc';
+          }}
+        >
           {showProgress ? 'Hide Details' : 'Show Details'}
         </button>
 
@@ -488,7 +528,27 @@ const DragDropSentenceChecker = () => {
           </div>
         )}
 
-        <button onClick={resetProgress}>Reset Progress</button>
+        <button 
+          onClick={resetProgress}
+          style={{
+            backgroundColor: '#f44336',
+            color: 'white',
+            border: '2px solid #d32f2f',
+            padding: '8px 16px',
+            cursor: 'pointer',
+            borderRadius: '4px',
+            fontSize: '14px',
+            fontWeight: 'bold'
+          }}
+          onMouseOver={(e) => {
+            e.target.style.backgroundColor = '#d32f2f';
+          }}
+          onMouseOut={(e) => {
+            e.target.style.backgroundColor = '#f44336';
+          }}
+        >
+          Reset Progress
+        </button>
       </div>
 
       {/* Completion Message */}
@@ -497,7 +557,27 @@ const DragDropSentenceChecker = () => {
           <h2>CONGRATULATIONS!</h2>
           <p>You've successfully completed 10 correct sentences!</p>
           <p>Final Stats: {correctCount} correct out of {totalAttempts} attempts ({Math.round((correctCount / totalAttempts) * 100)}% accuracy)</p>
-          <button onClick={resetProgress}>Start New Challenge</button>
+          <button 
+            onClick={resetProgress}
+            style={{
+              backgroundColor: '#4CAF50',
+              color: 'white',
+              border: '2px solid #45a049',
+              padding: '12px 24px',
+              cursor: 'pointer',
+              borderRadius: '4px',
+              fontSize: '16px',
+              fontWeight: 'bold'
+            }}
+            onMouseOver={(e) => {
+              e.target.style.backgroundColor = '#45a049';
+            }}
+            onMouseOut={(e) => {
+              e.target.style.backgroundColor = '#4CAF50';
+            }}
+          >
+            Start New Challenge
+          </button>
         </div>
       )}
 
@@ -508,9 +588,31 @@ const DragDropSentenceChecker = () => {
           <button
             key={level}
             onClick={() => setCurrentLevel(level)}
-            disabled={currentLevel === level}
+            style={{
+              backgroundColor: currentLevel === level ? '#4CAF50' : '#f0f0f0',
+              color: currentLevel === level ? 'white' : 'black',
+              border: '2px solid #ccc',
+              padding: '8px 16px',
+              margin: '4px',
+              cursor: 'pointer',
+              borderRadius: '4px',
+              fontSize: '14px',
+              fontWeight: currentLevel === level ? 'bold' : 'normal'
+            }}
+            onMouseOver={(e) => {
+              if (currentLevel !== level) {
+                e.target.style.backgroundColor = '#e0e0e0';
+                e.target.style.borderColor = '#999';
+              }
+            }}
+            onMouseOut={(e) => {
+              if (currentLevel !== level) {
+                e.target.style.backgroundColor = '#f0f0f0';
+                e.target.style.borderColor = '#ccc';
+              }
+            }}
           >
-            {level}
+            {level.charAt(0).toUpperCase() + level.slice(1)}
           </button>
         ))}
       </div>
@@ -520,22 +622,68 @@ const DragDropSentenceChecker = () => {
         <h3>Choose a Structure to Practice (Optional)</h3>
         
         {structureExamples.filter(s => s.level === currentLevel || currentLevel === 'advanced').map((structure, index) => (
-          <div key={index}>
+          <div key={index} style={{ border: '1px solid #ccc', padding: '10px', margin: '5px 0' }}>
             <div>
               <strong>{structure.description}</strong>
             </div>
             <div>Pattern: {structure.pattern}</div>
             <div>Example: "{structure.example}"</div>
-            <button onClick={() => selectStructure(structure)}>
+            <button 
+              onClick={() => selectStructure(structure)}
+              style={{
+                backgroundColor: selectedStructure === structure.pattern ? '#2196F3' : '#f0f0f0',
+                color: selectedStructure === structure.pattern ? 'white' : 'black',
+                border: '2px solid #ccc',
+                padding: '6px 12px',
+                margin: '5px 0',
+                cursor: 'pointer',
+                borderRadius: '4px',
+                fontSize: '12px',
+                fontWeight: selectedStructure === structure.pattern ? 'bold' : 'normal'
+              }}
+              onMouseOver={(e) => {
+                if (selectedStructure !== structure.pattern) {
+                  e.target.style.backgroundColor = '#e0e0e0';
+                  e.target.style.borderColor = '#999';
+                }
+              }}
+              onMouseOut={(e) => {
+                if (selectedStructure !== structure.pattern) {
+                  e.target.style.backgroundColor = '#f0f0f0';
+                  e.target.style.borderColor = '#ccc';
+                }
+              }}
+            >
               {selectedStructure === structure.pattern ? 'Selected' : 'Practice This'}
             </button>
           </div>
         ))}
 
         {selectedStructure && (
-          <div>
+          <div style={{ border: '2px solid #2196F3', padding: '10px', margin: '10px 0' }}>
             <strong>Target Structure:</strong> {selectedStructure}
-            <button onClick={() => setSelectedStructure('')}>Clear Target</button>
+            <button 
+              onClick={() => setSelectedStructure('')}
+              style={{
+                backgroundColor: '#f44336',
+                color: 'white',
+                border: '2px solid #d32f2f',
+                padding: '4px 8px',
+                marginLeft: '10px',
+                cursor: 'pointer',
+                borderRadius: '4px',
+                fontSize: '12px',
+                fontWeight: 'bold'
+              }}
+              onMouseOver={(e) => {
+                e.target.style.backgroundColor = '#d32f2f';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.backgroundColor = '#f44336';
+              }}
+            >
+              Clear Target
+            </button>
           </div>
         )}
       </div>
@@ -552,21 +700,33 @@ const DragDropSentenceChecker = () => {
           }}
         >
           {availableWords.map((word) => (
-            <span
+            <button
               key={word.id}
               draggable
               onDragStart={(e) => handleDragStart(e, word)}
               style={{
-                border: '1px solid gray',
-                padding: '5px',
-                margin: '2px',
-                display: 'inline-block',
-                cursor: 'grab'
+                backgroundColor: '#f0f0f0',
+                border: '2px solid #ccc',
+                padding: '8px 12px',
+                margin: '4px',
+                cursor: 'grab',
+                borderRadius: '4px',
+                fontSize: '14px',
+                fontWeight: 'bold'
+              }}
+              onMouseOver={(e) => {
+                e.target.style.backgroundColor = '#e0e0e0';
+                e.target.style.borderColor = '#999';
+                e.target.style.cursor = 'grab';
+              }}
+              onMouseOut={(e) => {
+                e.target.style.backgroundColor = '#f0f0f0';
+                e.target.style.borderColor = '#ccc';
               }}
               title={`${word.text} (${word.type})`}
             >
               {word.text}
-            </span>
+            </button>
           ))}
         </div>
       </div>
@@ -589,17 +749,45 @@ const DragDropSentenceChecker = () => {
           ) : (
             sentenceArea.map((word, index) => (
               <span key={`sentence-${word.id}-${index}`}>
-                <span
+                <button
                   style={{
-                    border: '1px solid gray',
-                    padding: '5px',
-                    margin: '2px',
-                    display: 'inline-block'
+                    backgroundColor: '#e8f5e8',
+                    border: '2px solid #4CAF50',
+                    padding: '8px 12px',
+                    margin: '4px',
+                    borderRadius: '4px',
+                    fontSize: '14px',
+                    fontWeight: 'bold',
+                    position: 'relative'
                   }}
                 >
                   {word.text}
-                  <button onClick={() => removeFromSentence(index)}>×</button>
-                </span>
+                  <button
+                    onClick={() => removeFromSentence(index)}
+                    style={{
+                      position: 'absolute',
+                      top: '-8px',
+                      right: '-8px',
+                      backgroundColor: '#f44336',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '50%',
+                      width: '20px',
+                      height: '20px',
+                      fontSize: '12px',
+                      cursor: 'pointer',
+                      fontWeight: 'bold'
+                    }}
+                    onMouseOver={(e) => {
+                      e.target.style.backgroundColor = '#d32f2f';
+                    }}
+                    onMouseOut={(e) => {
+                      e.target.style.backgroundColor = '#f44336';
+                    }}
+                  >
+                    ×
+                  </button>
+                </button>
                 {index < sentenceArea.length - 1 && <span> </span>}
               </span>
             ))
@@ -619,6 +807,27 @@ const DragDropSentenceChecker = () => {
         <button
           onClick={checkSentence}
           disabled={sentenceArea.length === 0 || isCompleted}
+          style={{
+            backgroundColor: (sentenceArea.length === 0 || isCompleted) ? '#ccc' : '#4CAF50',
+            color: 'white',
+            border: '2px solid #45a049',
+            padding: '12px 24px',
+            margin: '8px',
+            cursor: (sentenceArea.length === 0 || isCompleted) ? 'not-allowed' : 'pointer',
+            borderRadius: '4px',
+            fontSize: '16px',
+            fontWeight: 'bold'
+          }}
+          onMouseOver={(e) => {
+            if (!(sentenceArea.length === 0 || isCompleted)) {
+              e.target.style.backgroundColor = '#45a049';
+            }
+          }}
+          onMouseOut={(e) => {
+            if (!(sentenceArea.length === 0 || isCompleted)) {
+              e.target.style.backgroundColor = '#4CAF50';
+            }
+          }}
         >
           Check Sentence
         </button>
@@ -626,6 +835,27 @@ const DragDropSentenceChecker = () => {
         <button
           onClick={resetSentenceOnly}
           disabled={isCompleted}
+          style={{
+            backgroundColor: isCompleted ? '#ccc' : '#ff9800',
+            color: 'white',
+            border: '2px solid #f57c00',
+            padding: '12px 24px',
+            margin: '8px',
+            cursor: isCompleted ? 'not-allowed' : 'pointer',
+            borderRadius: '4px',
+            fontSize: '16px',
+            fontWeight: 'bold'
+          }}
+          onMouseOver={(e) => {
+            if (!isCompleted) {
+              e.target.style.backgroundColor = '#f57c00';
+            }
+          }}
+          onMouseOut={(e) => {
+            if (!isCompleted) {
+              e.target.style.backgroundColor = '#ff9800';
+            }
+          }}
         >
           Reset Sentence
         </button>
@@ -633,6 +863,27 @@ const DragDropSentenceChecker = () => {
         <button
           onClick={generateWordSetFromTestCases}
           disabled={isCompleted}
+          style={{
+            backgroundColor: isCompleted ? '#ccc' : '#9C27B0',
+            color: 'white',
+            border: '2px solid #7B1FA2',
+            padding: '12px 24px',
+            margin: '8px',
+            cursor: isCompleted ? 'not-allowed' : 'pointer',
+            borderRadius: '4px',
+            fontSize: '16px',
+            fontWeight: 'bold'
+          }}
+          onMouseOver={(e) => {
+            if (!isCompleted) {
+              e.target.style.backgroundColor = '#7B1FA2';
+            }
+          }}
+          onMouseOut={(e) => {
+            if (!isCompleted) {
+              e.target.style.backgroundColor = '#9C27B0';
+            }
+          }}
         >
           New Words
         </button>
