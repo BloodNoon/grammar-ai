@@ -63,6 +63,8 @@ const SentenceStructures = () => {
 	const [quizFeedback, setQuizFeedback] = useState(null);
 	const [progress, setProgress] = useState(0); // Track progress out of 10
 
+	const [quizStarted, setQuizStarted] = useState(false); // NEW: controls start/reset logic
+
 	const startQuiz = () => {
 		const randomIndex = Math.floor(Math.random() * testCases.length);
 		const selected = testCases[randomIndex];
@@ -70,6 +72,15 @@ const SentenceStructures = () => {
 		setQuizSentence(selected.sentence);
 		setUserInputs(Array(words.length).fill(''));
 		setQuizFeedback(null);
+		setQuizStarted(true); // NEW: disable start button
+	};
+
+	const resetQuiz = () => {
+		setQuizSentence('');
+		setUserInputs([]);
+		setQuizFeedback(null);
+		setProgress(0);
+		setQuizStarted(false); // NEW: enable start button
 	};
 
 	const handleInputChange = (index, value) => {
@@ -91,14 +102,12 @@ const SentenceStructures = () => {
 
 		setQuizFeedback(correctness);
 
-		// If all correct and not yet at 10, increase progress
 		if (correctness.every((val) => val === 'correct') && progress < 10) {
-			setProgress(prev => prev + 1);
+			setProgress((prev) => prev + 1);
 		}
 	};
 
 	const handleNext = () => {
-		// Only allow if all are correct
 		if (quizFeedback && quizFeedback.every((val) => val === 'correct')) {
 			startQuiz();
 		}
@@ -146,12 +155,40 @@ const SentenceStructures = () => {
 			>
 				<h3 style={{ marginBottom: '1rem' }}>Click Quiz</h3>
 
-				{/* Progress Display */}
 				<p><b>Progress:</b> {progress}/10</p>
 
-				<button onClick={startQuiz} style={{ marginBottom: '1rem' }}>
-					Start Quiz
-				</button>
+				{/* Start and Reset Buttons */}
+				<div style={{ marginBottom: '1rem' }}>
+					<button
+						onClick={startQuiz}
+						disabled={quizStarted} // NEW: disable after starting
+						style={{
+							marginRight: '10px',
+							backgroundColor: quizStarted ? '#ccc' : '#4caf50',
+							color: 'white',
+							padding: '8px 16px',
+							border: 'none',
+							borderRadius: '4px',
+							cursor: quizStarted ? 'not-allowed' : 'pointer',
+						}}
+					>
+						Start Quiz
+					</button>
+
+					<button
+						onClick={resetQuiz}
+						style={{
+							backgroundColor: '#f44336',
+							color: 'white',
+							padding: '8px 16px',
+							border: 'none',
+							borderRadius: '4px',
+							cursor: 'pointer',
+						}}
+					>
+						Reset Quiz
+					</button>
+				</div>
 
 				{quizSentence && (
 					<div style={{ marginBottom: '1rem' }}>
