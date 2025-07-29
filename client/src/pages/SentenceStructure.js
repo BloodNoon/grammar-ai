@@ -61,18 +61,21 @@ const SentenceStructures = () => {
 	const [quizSentence, setQuizSentence] = useState('');
 	const [userInputs, setUserInputs] = useState([]);
 	const [quizFeedback, setQuizFeedback] = useState(null);
-	const [progress, setProgress] = useState(0); // Track progress out of 10
-
-	const [quizStarted, setQuizStarted] = useState(false); // NEW: controls start/reset logic
+	const [progress, setProgress] = useState(0);
+	const [quizStarted, setQuizStarted] = useState(false);
+	const [quizEnded, setQuizEnded] = useState(false); // NEW
 
 	const startQuiz = () => {
+		if (progress >= 10) return; // prevent starting if already finished
+
 		const randomIndex = Math.floor(Math.random() * testCases.length);
 		const selected = testCases[randomIndex];
 		const words = selected.sentence.split(' ');
+
 		setQuizSentence(selected.sentence);
 		setUserInputs(Array(words.length).fill(''));
 		setQuizFeedback(null);
-		setQuizStarted(true); // NEW: disable start button
+		setQuizStarted(true);
 	};
 
 	const resetQuiz = () => {
@@ -80,7 +83,8 @@ const SentenceStructures = () => {
 		setUserInputs([]);
 		setQuizFeedback(null);
 		setProgress(0);
-		setQuizStarted(false); // NEW: enable start button
+		setQuizStarted(false);
+		setQuizEnded(false); // Reset end state too
 	};
 
 	const handleInputChange = (index, value) => {
@@ -102,13 +106,19 @@ const SentenceStructures = () => {
 
 		setQuizFeedback(correctness);
 
-		if (correctness.every((val) => val === 'correct') && progress < 10) {
-			setProgress((prev) => prev + 1);
+		if (correctness.every((val) => val === 'correct')) {
+			if (progress < 9) {
+				setProgress((prev) => prev + 1);
+			} else {
+				// If reaching 10
+				setProgress(10);
+				setQuizEnded(true); // NEW
+			}
 		}
 	};
 
 	const handleNext = () => {
-		if (quizFeedback && quizFeedback.every((val) => val === 'correct')) {
+		if (quizFeedback && quizFeedback.every((val) => val === 'correct') && progress < 10) {
 			startQuiz();
 		}
 	};
@@ -161,15 +171,15 @@ const SentenceStructures = () => {
 				<div style={{ marginBottom: '1rem' }}>
 					<button
 						onClick={startQuiz}
-						disabled={quizStarted} // NEW: disable after starting
+						disabled={quizStarted || quizEnded}
 						style={{
 							marginRight: '10px',
-							backgroundColor: quizStarted ? '#ccc' : '#4caf50',
+							backgroundColor: quizStarted || quizEnded ? '#ccc' : '#4caf50',
 							color: 'white',
 							padding: '8px 16px',
 							border: 'none',
 							borderRadius: '4px',
-							cursor: quizStarted ? 'not-allowed' : 'pointer',
+							cursor: quizStarted || quizEnded ? 'not-allowed' : 'pointer',
 						}}
 					>
 						Start Quiz
@@ -190,7 +200,14 @@ const SentenceStructures = () => {
 					</button>
 				</div>
 
-				{quizSentence && (
+				{/* Congratulations message */}
+				{quizEnded && (
+					<p style={{ fontWeight: 'bold', fontSize: '1.25rem', color: 'green' }}>
+						Congratulations! You completed the quiz.
+					</p>
+				)}
+
+				{quizSentence && !quizEnded && (
 					<div style={{ marginBottom: '1rem' }}>
 						<p><b>Sentence:</b> {quizSentence}</p>
 						<div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
@@ -220,17 +237,18 @@ const SentenceStructures = () => {
 							))}
 						</div>
 
-						{/* Check Answers */}
 						<button onClick={checkAnswers} style={{ marginTop: '1rem', marginRight: '1rem' }}>
 							Check Answers
 						</button>
 
-						{/* Next Button - Only if all correct */}
-						{quizFeedback && quizFeedback.every((val) => val === 'correct') && (
-							<button onClick={handleNext} style={{ marginTop: '1rem' }}>
-								Next
-							</button>
-						)}
+						{/* Hide "Next" if finished */}
+						{quizFeedback &&
+							quizFeedback.every((val) => val === 'correct') &&
+							progress < 10 && (
+								<button onClick={handleNext} style={{ marginTop: '1rem' }}>
+									Next
+								</button>
+							)}
 
 						{/* Feedback Section */}
 						{quizFeedback && (
