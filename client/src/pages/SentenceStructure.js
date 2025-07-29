@@ -1,9 +1,23 @@
+// SentenceStructure.js - Main component that orchestrates all sentence building functionality
 import React, { useState, useEffect } from 'react';
 import { hasFullStructCheck, getFullStructCheck, getTags } from '../utils/SentenceChecker/StructureChecker';
 import { testCases } from '../utils/SentenceChecker/TestCases';
 
+// Import all component sections
+import MiniLesson from './SentenceStructuresComponents/mini-lesson-component';
+import ProgressTracker from './SentenceStructuresComponents/progress-tracker-component';
+import CompletionCelebration from './SentenceStructuresComponents/completion-celebration-component';
+import LevelSelection from './SentenceStructuresComponents/level-selection-component';
+import StructureSelection from './SentenceStructuresComponents/structure-selection-component';
+import WordBank from './SentenceStructuresComponents/word-bank-component';
+import SentenceBuilder from './SentenceStructuresComponents/sentence-builder-component';
+import ActionButtons from './SentenceStructuresComponents/action-buttons-component';
+import FeedbackDisplay from './SentenceStructuresComponents/feedback-display-component';
+import GrammarLegend from './SentenceStructuresComponents/grammar-legend-component';
 
+// Helper function to determine word type based on predefined categories
 function getWordType(word) {
+  // Define word categories for grammatical classification
   const subjects = ['i', 'he', 'she', 'it', 'you', 'we', 'they'];
   const objects = ['me', 'him', 'her', 'it', 'your', 'us', 'them'];
   const determiners = ['the', 'a', 'an', 'this', 'that', 'these', 'those'];
@@ -11,126 +25,47 @@ function getWordType(word) {
   const nouns = ['dog', 'cat', 'house', 'car', 'book', 'tree', 'ball', 'bird', 'fish', 'apple'];
   const verbs = ['run', 'jump', 'eat', 'sleep', 'play', 'sing', 'dance', 'walk', 'fly', 'swim'];
   
+  // Clean the word by removing punctuation and converting to lowercase
   const lowerWord = word.toLowerCase().replace(/[.,!?]/, '');
   
+  // Check which category the word belongs to and return the type
   if (subjects.includes(lowerWord)) return 'Subject';
   if (objects.includes(lowerWord)) return 'Object';
   if (determiners.includes(lowerWord)) return 'Determiner';
   if (adjectives.includes(lowerWord)) return 'Adjective';
   if (nouns.includes(lowerWord)) return 'Noun';
   if (verbs.includes(lowerWord)) return 'Verb';
-  return 'Unknown';
+  return 'Unknown'; // Return 'Unknown' if word doesn't match any category
 }
 
-const DragDropSentenceChecker = () => {
-  const [availableWords, setAvailableWords] = useState([]);
-  const [sentenceArea, setSentenceArea] = useState([]);
-  const [selectedStructure, setSelectedStructure] = useState('');
-  const [feedback, setFeedback] = useState('');
-  const [isValid, setIsValid] = useState(null);
-  const [draggedWord, setDraggedWord] = useState(null);
-  const [showHints, setShowHints] = useState(false);
-  const [currentLevel, setCurrentLevel] = useState('beginner');
+const SentenceStructure = () => {
+  // ===== STATE MANAGEMENT =====
+  
+  // Core sentence building states
+  const [availableWords, setAvailableWords] = useState([]); // Words available for dragging
+  const [sentenceArea, setSentenceArea] = useState([]); // Words currently in the sentence
+  const [selectedStructure, setSelectedStructure] = useState(''); // Currently selected target structure
+  const [feedback, setFeedback] = useState(''); // Feedback message for user
+  const [isValid, setIsValid] = useState(null); // Whether current sentence is valid
+  const [draggedWord, setDraggedWord] = useState(null); // Word currently being dragged
+  const [currentLevel, setCurrentLevel] = useState('beginner'); // Current difficulty level
   
   // Progress tracking states
-  const [correctCount, setCorrectCount] = useState(0);
-  const [totalAttempts, setTotalAttempts] = useState(0);
-  const [streak, setStreak] = useState(0);
-  const [isCompleted, setIsCompleted] = useState(false);
-  const [sessionHistory, setSessionHistory] = useState([]);
-  const [showProgress, setShowProgress] = useState(true);
+  const [correctCount, setCorrectCount] = useState(0); // Number of correct sentences
+  const [totalAttempts, setTotalAttempts] = useState(0); // Total number of attempts
+  const [streak, setStreak] = useState(0); // Current streak of correct answers
+  const [isCompleted, setIsCompleted] = useState(false); // Whether user completed 10 correct sentences
+  const [sessionHistory, setSessionHistory] = useState([]); // History of recent attempts
+  const [showProgress, setShowProgress] = useState(true); // Whether to show progress details
   
-  // Practice sentence feedback states
-  const [sentenceFeedback, setSentenceFeedback] = useState({});
+  // Mini lesson interaction states
+  const [sentenceFeedback, setSentenceFeedback] = useState({}); // Feedback for practice sentences
   
-  const TARGET_CORRECT = 10;
+  // Constants
+  const TARGET_CORRECT = 10; // Number of correct sentences needed to complete
 
-  // Define subjects and objects for practice sentences
-  const practiceData = {
-    1: { subject: 'boy', object: 'ball' },
-    2: { subject: 'Sarah', object: 'book' },
-    3: { subject: 'teacher', object: 'student' },
-    4: { subject: 'cat', object: 'mouse' },
-    5: { subject: 'They', object: 'house' },
-    6: { subject: 'chef', object: 'meal' },
-    7: { subject: 'wind', object: 'window' },
-    8: { subject: 'sister', object: 'picture' },
-    9: { subject: 'doctor', object: 'patient' },
-    10: { subject: 'team', object: 'game' }
-  };
-
-  const handleWordClick = (sentenceNum, word) => {
-    const data = practiceData[sentenceNum];
-    let feedbackText = '';
-    let color = '';
-
-    if (word === data.subject) {
-      feedbackText = 'Correct - Subject!';
-      color = 'blue';
-    } else if (word === data.object) {
-      feedbackText = 'Correct - Object!';
-      color = 'orange';
-    } else {
-      feedbackText = 'Incorrect';
-      color = 'red';
-    }
-
-    setSentenceFeedback(prev => ({
-      ...prev,
-      [sentenceNum]: { text: feedbackText, color: color }
-    }));
-  };
-
-  const renderPracticeSentence = (num, sentence) => {
-    const words = sentence.split(' ');
-    return (
-      <li key={num} style={{ marginBottom: '15px', lineHeight: '2' }}>
-        {words.map((word, index) => (
-          <span key={index}>
-            <button
-              onClick={() => handleWordClick(num, word.replace(/[.,!?]/, ''))}
-              style={{
-                backgroundColor: '#f0f0f0',
-                border: '2px solid #ccc',
-                padding: '4px 8px',
-                margin: '2px',
-                cursor: 'pointer',
-                borderRadius: '4px',
-                fontSize: '14px'
-              }}
-              onMouseOver={(e) => {
-                e.target.style.backgroundColor = '#e0e0e0';
-                e.target.style.borderColor = '#999';
-              }}
-              onMouseOut={(e) => {
-                e.target.style.backgroundColor = '#f0f0f0';
-                e.target.style.borderColor = '#ccc';
-              }}
-            >
-              {word}
-            </button>
-            {index < words.length - 1 ? ' ' : ''}
-          </span>
-        ))}
-        {sentenceFeedback[num] && (
-          <div style={{ 
-            color: sentenceFeedback[num].color, 
-            marginTop: '8px', 
-            fontWeight: 'bold',
-            fontSize: '16px',
-            padding: '5px',
-            border: `2px solid ${sentenceFeedback[num].color}`,
-            borderRadius: '4px',
-            backgroundColor: sentenceFeedback[num].color === 'blue' ? '#e3f2fd' : 
-                            sentenceFeedback[num].color === 'orange' ? '#fff3e0' : '#ffebee'
-          }}>
-            {sentenceFeedback[num].text}
-          </div>
-        )}
-      </li>
-    );
-  };
-
+  // ===== SENTENCE STRUCTURE EXAMPLES =====
+  // Define different sentence patterns for practice
   const structureExamples = [
     { 
       pattern: '#Subject #Verb', 
@@ -164,6 +99,8 @@ const DragDropSentenceChecker = () => {
     }
   ];
 
+  // ===== WORD BANK DEFINITIONS =====
+  // Organized collection of words by grammatical type
   const wordBank = {
     Subject: ['I', 'He', 'She', 'It', 'You', 'We', 'They'],
     Object: ['me', 'him', 'her', 'it', 'you', 'us', 'them'],
@@ -174,20 +111,25 @@ const DragDropSentenceChecker = () => {
     Conjunction: ['and', 'or']
   };
 
+  // ===== EFFECTS =====
+  // Generate new word set when level or structure changes
   useEffect(() => {
     generateWordSetFromTestCases();
   }, [currentLevel, selectedStructure]);
 
+  // ===== WORD GENERATION FUNCTIONS =====
+  
+  // Generate word set combining test cases and word bank based on current settings
   const generateWordSetFromTestCases = () => {
     let words = [];
     
-    // Extract words from test cases for more realistic word sets
+    // Extract realistic words from test cases for more authentic vocabulary
     const wordsFromTestCases = testCases.flatMap(tc => 
       tc.sentence.split(' ').map(word => word.replace(/[.,!?]/, ''))
     );
     
     if (selectedStructure) {
-      // Generate words specifically for the selected structure
+      // If a specific structure is selected, generate words that fit that pattern
       const structure = selectedStructure;
       if (structure.includes('#Subject')) {
         words.push(...wordBank.Subject.slice(0, 3));
@@ -211,7 +153,7 @@ const DragDropSentenceChecker = () => {
         words.push(...wordBank.Conjunction);
       }
     } else {
-      // Generate a general mix based on level
+      // Generate words based on difficulty level if no specific structure selected
       const counts = {
         beginner: { Subject: 3, Determiner: 2, Noun: 3, Verb: 3 },
         intermediate: { Subject: 3, Determiner: 3, Adjective: 3, Noun: 4, Verb: 4, Conjunction: 2 },
@@ -230,9 +172,10 @@ const DragDropSentenceChecker = () => {
     const testCaseWords = wordsFromTestCases.slice(0, 5);
     words.push(...testCaseWords);
     
-    // Mix with existing word bank and shuffle
+    // Combine and shuffle words, removing duplicates
     const combinedWords = [...new Set([...words, ...Object.values(wordBank).flat().slice(0, 10)])];
     
+    // Create word objects with unique IDs and type classification
     setAvailableWords(shuffleArray(combinedWords).map((word, index) => ({
       id: `word-${index}`,
       text: word,
@@ -240,6 +183,7 @@ const DragDropSentenceChecker = () => {
     })));
   };
 
+  // Utility function to shuffle an array randomly
   const shuffleArray = (array) => {
     const newArray = [...array];
     for (let i = newArray.length - 1; i > 0; i--) {
@@ -249,61 +193,77 @@ const DragDropSentenceChecker = () => {
     return newArray;
   };
 
+  // ===== DRAG AND DROP HANDLERS =====
+  
+  // Handle when user starts dragging a word
   const handleDragStart = (e, word) => {
-    setDraggedWord(word);
-    e.dataTransfer.setData('text/plain', JSON.stringify(word));
+    setDraggedWord(word); // Store the word being dragged
+    e.dataTransfer.setData('text/plain', JSON.stringify(word)); // Set drag data
   };
 
+  // Allow dropping by preventing default behavior
   const handleDragOver = (e) => {
     e.preventDefault();
   };
 
+  // Handle when user drops a word into the sentence area
   const handleDrop = (e, targetIndex = null) => {
     e.preventDefault();
     
-    if (!draggedWord) return;
+    if (!draggedWord) return; // Exit if no word is being dragged
 
     const newSentenceArea = [...sentenceArea];
     
+    // Insert word at specific position or add to end
     if (targetIndex !== null) {
       newSentenceArea.splice(targetIndex, 0, draggedWord);
     } else {
       newSentenceArea.push(draggedWord);
     }
     
+    // Update sentence and remove word from available words
     setSentenceArea(newSentenceArea);
     setAvailableWords(prev => prev.filter(w => w.id !== draggedWord.id));
-    setDraggedWord(null);
+    setDraggedWord(null); // Clear dragged word
   };
 
+  // Remove a word from the sentence and return it to available words
   const removeFromSentence = (wordIndex) => {
     const word = sentenceArea[wordIndex];
     const newSentenceArea = sentenceArea.filter((_, index) => index !== wordIndex);
     setSentenceArea(newSentenceArea);
-    setAvailableWords(prev => [...prev, word]);
+    setAvailableWords(prev => [...prev, word]); // Add word back to available words
   };
 
+  // ===== SENTENCE CHECKING LOGIC =====
+  
+  // Main function to check if constructed sentence is valid
   const checkSentence = () => {
+    // Validate that user has built a sentence
     if (sentenceArea.length === 0) {
       setFeedback('Please build a sentence first!');
       setIsValid(false);
       return;
     }
 
+    // Convert sentence area to string for analysis
     const sentence = sentenceArea.map(w => w.text).join(' ');
     
     try {
+      // Use backend functions to analyze sentence structure
       const matchedStructure = getFullStructCheck(sentence);
       const isStructureValid = selectedStructure ? 
         hasFullStructCheck(sentence, selectedStructure) : 
         hasFullStructCheck(sentence);
 
+      // Update attempt tracking
       const newTotalAttempts = totalAttempts + 1;
       setTotalAttempts(newTotalAttempts);
       
       let feedbackText = '';
       
       if (selectedStructure) {
+        // Handle feedback when practicing a specific structure
         if (isStructureValid) {
           const newCorrectCount = correctCount + 1;
           const newStreak = streak + 1;
@@ -311,6 +271,7 @@ const DragDropSentenceChecker = () => {
           setCorrectCount(newCorrectCount);
           setStreak(newStreak);
           
+          // Record successful attempt
           setSessionHistory(prev => [...prev, {
             sentence,
             structure: selectedStructure,
@@ -318,6 +279,7 @@ const DragDropSentenceChecker = () => {
             timestamp: new Date().toLocaleTimeString()
           }]);
           
+          // Check if user has completed the challenge
           if (newCorrectCount >= TARGET_CORRECT) {
             setIsCompleted(true);
             feedbackText = `CONGRATULATIONS! You've successfully completed 10 correct sentences!\nFinal sentence: "${sentence}" matches the target structure: "${selectedStructure}"`;
@@ -325,8 +287,10 @@ const DragDropSentenceChecker = () => {
             feedbackText = `Excellent! Your sentence "${sentence}" matches the target structure: "${selectedStructure}"\nProgress: ${newCorrectCount}/${TARGET_CORRECT} correct (${TARGET_CORRECT - newCorrectCount} more to go!)`;
           }
         } else {
-          setStreak(0);
+          // Handle incorrect structure attempt
+          setStreak(0); // Reset streak on incorrect answer
           
+          // Record failed attempt
           setSessionHistory(prev => [...prev, {
             sentence,
             structure: selectedStructure,
@@ -341,6 +305,7 @@ const DragDropSentenceChecker = () => {
           feedbackText += `\nTry again! Progress: ${correctCount}/${TARGET_CORRECT} correct`;
         }
       } else {
+        // Handle feedback when practicing freely (no specific structure)
         if (isStructureValid) {
           const newCorrectCount = correctCount + 1;
           const newStreak = streak + 1;
@@ -348,6 +313,7 @@ const DragDropSentenceChecker = () => {
           setCorrectCount(newCorrectCount);
           setStreak(newStreak);
           
+          // Record successful attempt
           setSessionHistory(prev => [...prev, {
             sentence,
             structure: matchedStructure,
@@ -355,6 +321,7 @@ const DragDropSentenceChecker = () => {
             timestamp: new Date().toLocaleTimeString()
           }]);
           
+          // Check completion
           if (newCorrectCount >= TARGET_CORRECT) {
             setIsCompleted(true);
             feedbackText = `CONGRATULATIONS! You've successfully completed 10 correct sentences!\nFinal sentence: "${sentence}" follows a valid structure: "${matchedStructure}"`;
@@ -362,8 +329,10 @@ const DragDropSentenceChecker = () => {
             feedbackText = `Great! Your sentence "${sentence}" follows a valid structure: "${matchedStructure}"\nProgress: ${newCorrectCount}/${TARGET_CORRECT} correct (${TARGET_CORRECT - newCorrectCount} more to go!)`;
           }
         } else {
+          // Handle invalid sentence structure
           setStreak(0);
           
+          // Record failed attempt
           setSessionHistory(prev => [...prev, {
             sentence,
             structure: 'Invalid',
@@ -375,9 +344,11 @@ const DragDropSentenceChecker = () => {
         }
       }
 
+      // Update UI with feedback
       setFeedback(feedbackText);
       setIsValid(isStructureValid);
       
+      // Auto-reset after successful attempt (but not when challenge is completed)
       if (isStructureValid && !isCompleted && correctCount + 1 < TARGET_CORRECT) {
         setTimeout(() => {
           resetSentenceOnly();
@@ -385,12 +356,16 @@ const DragDropSentenceChecker = () => {
       }
       
     } catch (error) {
+      // Handle any errors in sentence checking
       setTotalAttempts(totalAttempts + 1);
       setFeedback('Error checking sentence. Please try again.');
       setIsValid(false);
     }
   };
 
+  // ===== RESET FUNCTIONS =====
+  
+  // Reset sentence area and return words to available pool
   const resetSentence = () => {
     const allWords = [...availableWords, ...sentenceArea];
     setAvailableWords(allWords);
@@ -399,15 +374,17 @@ const DragDropSentenceChecker = () => {
     setIsValid(null);
   };
 
+  // Reset only the sentence (keep progress) and generate new words
   const resetSentenceOnly = () => {
     const allWords = [...availableWords, ...sentenceArea];
     setAvailableWords(allWords);
     setSentenceArea([]);
     setFeedback('');
     setIsValid(null);
-    generateWordSetFromTestCases();
+    generateWordSetFromTestCases(); // Generate fresh word set
   };
 
+  // Reset all progress and start over
   const resetProgress = () => {
     setCorrectCount(0);
     setTotalAttempts(0);
@@ -417,492 +394,131 @@ const DragDropSentenceChecker = () => {
     resetSentence();
   };
 
+  // ===== STRUCTURE SELECTION =====
+  
+  // Select a specific sentence structure to practice
   const selectStructure = (structure) => {
     setSelectedStructure(structure.pattern);
-    resetSentence();
+    resetSentence(); // Clear current sentence when changing structure
   };
 
+  // ===== MINI LESSON INTERACTION =====
+  
+  // Define correct answers for practice sentences in mini lesson
+  const practiceData = {
+    1: { subject: 'boy', object: 'ball' },
+    2: { subject: 'Sarah', object: 'book' },
+    3: { subject: 'teacher', object: 'student' },
+    4: { subject: 'cat', object: 'mouse' },
+    5: { subject: 'They', object: 'house' },
+    6: { subject: 'chef', object: 'meal' },
+    7: { subject: 'wind', object: 'window' },
+    8: { subject: 'sister', object: 'picture' },
+    9: { subject: 'doctor', object: 'patient' },
+    10: { subject: 'team', object: 'game' }
+  };
+
+  // Handle clicks on words in practice sentences
+  const handleWordClick = (sentenceNum, word) => {
+    const data = practiceData[sentenceNum];
+    let feedbackText = '';
+    let color = '';
+
+    // Determine if clicked word is subject, object, or incorrect
+    if (word === data.subject) {
+      feedbackText = 'Correct - Subject!';
+      color = 'blue';
+    } else if (word === data.object) {
+      feedbackText = 'Correct - Object!';
+      color = 'orange';
+    } else {
+      feedbackText = 'Incorrect';
+      color = 'red';
+    }
+
+    // Update feedback for this specific sentence
+    setSentenceFeedback(prev => ({
+      ...prev,
+      [sentenceNum]: { text: feedbackText, color: color }
+    }));
+  };
+
+  // ===== RENDER =====
   return (
-    <div>
+    <div style={{ 
+      maxWidth: '800px',        // Limit content width for readability
+      margin: '0 auto',         // Center the container horizontally
+      padding: '20px',          // Add padding around content
+      textAlign: 'center'       // Center-align text by default
+    }}>
       <h1>Sentence Builder</h1>
 
-      {/* Mini Lesson Section */}
-      <div style={{ border: '2px solid black', padding: '20px', marginBottom: '20px' }}>
-        <h2>Mini Lesson: Nouns, Subjects, and Objects</h2>
-        
-        <h3>What is a Noun?</h3>
-        <p>A <strong>noun</strong> is a word that names a <strong>person, place, thing, or idea</strong>.</p>
-        <p>Examples:</p>
-        <ol>
-          <li>Person: <strong>teacher</strong>, <strong>Maria</strong></li>
-          <li>Place: <strong>school</strong>, <strong>New York</strong></li>
-          <li>Thing: <strong>book</strong>, <strong>phone</strong></li>
-          <li>Idea: <strong>freedom</strong>, <strong>happiness</strong></li>
-        </ol>
-
-        <h3>What is a Subject?</h3>
-        <p>The <strong>subject</strong> is the <strong>doer</strong> of the action in a sentence. It answers the question:</p>
-        <p><strong>Who or what is doing the action?</strong></p>
-        
-        <h4>Why is there a subject?</h4>
-        <p>We need a subject so we know <strong>who or what</strong> the sentence is about.</p>
-        <p>Example: <strong>The dog</strong> chased the cat.</p>
-        <p>"The dog" is the <strong>subject</strong> because it is doing the chasing.</p>
-
-        <h3>What is an Object?</h3>
-        <p>The <strong>object</strong> receives the action of the verb. It answers the question:</p>
-        <p><strong>Who or what is being acted upon?</strong></p>
-        
-        <h4>Why is there an object?</h4>
-        <p>We need an object to complete the meaning of the action in many sentences.</p>
-        <p>Example: The dog chased <strong>the cat</strong>.</p>
-        <p>"The cat" is the <strong>object</strong> because it is receiving the action (being chased).</p>
-
-        <h3>Practice - Identify the Subject and Object</h3>
-        <p><strong>Instructions:</strong> For each sentence, identify:</p>
-        <ol>
-          <li>The <strong>subject</strong> (who or what is doing the action)</li>
-          <li>The <strong>object</strong> (who or what is receiving the action)</li>
-        </ol>
-
-        <p><strong>Click on words to check if they are subjects or objects:</strong></p>
-        
-        <ol>
-          {renderPracticeSentence(1, "The boy kicked the ball.")}
-          {renderPracticeSentence(2, "Sarah reads a book.")}
-          {renderPracticeSentence(3, "The teacher praised the student.")}
-          {renderPracticeSentence(4, "A cat caught a mouse.")}
-          {renderPracticeSentence(5, "They built a house.")}
-          {renderPracticeSentence(6, "The chef cooked a meal.")}
-          {renderPracticeSentence(7, "The wind broke the window.")}
-          {renderPracticeSentence(8, "My sister painted a picture.")}
-          {renderPracticeSentence(9, "The doctor examined the patient.")}
-          {renderPracticeSentence(10, "The team won the game.")}
-        </ol>
-      </div>
-
-      {/* Progress Tracker */}
-      <div>
-        <h3>{isCompleted ? 'Challenge Completed!' : 'Progress Tracker'}</h3>
-        <button 
-          onClick={() => setShowProgress(!showProgress)}
-          style={{
-            backgroundColor: '#f0f0f0',
-            border: '2px solid #ccc',
-            padding: '6px 12px',
-            cursor: 'pointer',
-            borderRadius: '4px',
-            fontSize: '12px'
-          }}
-          onMouseOver={(e) => {
-            e.target.style.backgroundColor = '#e0e0e0';
-            e.target.style.borderColor = '#999';
-          }}
-          onMouseOut={(e) => {
-            e.target.style.backgroundColor = '#f0f0f0';
-            e.target.style.borderColor = '#ccc';
-          }}
-        >
-          {showProgress ? 'Hide Details' : 'Show Details'}
-        </button>
-
-        <div>
-          Progress: {correctCount}/{TARGET_CORRECT} ({Math.round((correctCount / TARGET_CORRECT) * 100)}%)
-        </div>
-
-        <div>
-          <div>Correct: {correctCount}</div>
-          <div>Incorrect: {totalAttempts - correctCount}</div>
-          <div>Current Streak: {streak}</div>
-          <div>Accuracy: {totalAttempts > 0 ? Math.round((correctCount / totalAttempts) * 100) : 0}%</div>
-        </div>
-
-        {showProgress && sessionHistory.length > 0 && (
-          <div>
-            <h4>Recent Attempts:</h4>
-            {sessionHistory.slice(-5).reverse().map((entry, index) => (
-              <div key={index}>
-                "{entry.sentence}" → {entry.structure} - {entry.timestamp} - {entry.correct ? 'Correct' : 'Incorrect'}
-              </div>
-            ))}
-          </div>
-        )}
-
-        <button 
-          onClick={resetProgress}
-          style={{
-            backgroundColor: '#f44336',
-            color: 'white',
-            border: '2px solid #d32f2f',
-            padding: '8px 16px',
-            cursor: 'pointer',
-            borderRadius: '4px',
-            fontSize: '14px',
-            fontWeight: 'bold'
-          }}
-          onMouseOver={(e) => {
-            e.target.style.backgroundColor = '#d32f2f';
-          }}
-          onMouseOut={(e) => {
-            e.target.style.backgroundColor = '#f44336';
-          }}
-        >
-          Reset Progress
-        </button>
-      </div>
-
-      {/* Completion Message */}
-      {isCompleted && (
-        <div>
-          <h2>CONGRATULATIONS!</h2>
-          <p>You've successfully completed 10 correct sentences!</p>
-          <p>Final Stats: {correctCount} correct out of {totalAttempts} attempts ({Math.round((correctCount / totalAttempts) * 100)}% accuracy)</p>
-          <button 
-            onClick={resetProgress}
-            style={{
-              backgroundColor: '#4CAF50',
-              color: 'white',
-              border: '2px solid #45a049',
-              padding: '12px 24px',
-              cursor: 'pointer',
-              borderRadius: '4px',
-              fontSize: '16px',
-              fontWeight: 'bold'
-            }}
-            onMouseOver={(e) => {
-              e.target.style.backgroundColor = '#45a049';
-            }}
-            onMouseOut={(e) => {
-              e.target.style.backgroundColor = '#4CAF50';
-            }}
-          >
-            Start New Challenge
-          </button>
-        </div>
-      )}
-
-      {/* Level Selection */}
-      <div>
-        <h3>Choose Difficulty Level:</h3>
-        {['beginner', 'intermediate', 'advanced'].map(level => (
-          <button
-            key={level}
-            onClick={() => setCurrentLevel(level)}
-            style={{
-              backgroundColor: currentLevel === level ? '#4CAF50' : '#f0f0f0',
-              color: currentLevel === level ? 'white' : 'black',
-              border: '2px solid #ccc',
-              padding: '8px 16px',
-              margin: '4px',
-              cursor: 'pointer',
-              borderRadius: '4px',
-              fontSize: '14px',
-              fontWeight: currentLevel === level ? 'bold' : 'normal'
-            }}
-            onMouseOver={(e) => {
-              if (currentLevel !== level) {
-                e.target.style.backgroundColor = '#e0e0e0';
-                e.target.style.borderColor = '#999';
-              }
-            }}
-            onMouseOut={(e) => {
-              if (currentLevel !== level) {
-                e.target.style.backgroundColor = '#f0f0f0';
-                e.target.style.borderColor = '#ccc';
-              }
-            }}
-          >
-            {level.charAt(0).toUpperCase() + level.slice(1)}
-          </button>
-        ))}
-      </div>
-
-      {/* Structure Selection */}
-      <div>
-        <h3>Choose a Structure to Practice (Optional)</h3>
-        
-        {structureExamples.filter(s => s.level === currentLevel || currentLevel === 'advanced').map((structure, index) => (
-          <div key={index} style={{ border: '1px solid #ccc', padding: '10px', margin: '5px 0' }}>
-            <div>
-              <strong>{structure.description}</strong>
-            </div>
-            <div>Pattern: {structure.pattern}</div>
-            <div>Example: "{structure.example}"</div>
-            <button 
-              onClick={() => selectStructure(structure)}
-              style={{
-                backgroundColor: selectedStructure === structure.pattern ? '#2196F3' : '#f0f0f0',
-                color: selectedStructure === structure.pattern ? 'white' : 'black',
-                border: '2px solid #ccc',
-                padding: '6px 12px',
-                margin: '5px 0',
-                cursor: 'pointer',
-                borderRadius: '4px',
-                fontSize: '12px',
-                fontWeight: selectedStructure === structure.pattern ? 'bold' : 'normal'
-              }}
-              onMouseOver={(e) => {
-                if (selectedStructure !== structure.pattern) {
-                  e.target.style.backgroundColor = '#e0e0e0';
-                  e.target.style.borderColor = '#999';
-                }
-              }}
-              onMouseOut={(e) => {
-                if (selectedStructure !== structure.pattern) {
-                  e.target.style.backgroundColor = '#f0f0f0';
-                  e.target.style.borderColor = '#ccc';
-                }
-              }}
-            >
-              {selectedStructure === structure.pattern ? 'Selected' : 'Practice This'}
-            </button>
-          </div>
-        ))}
-
-        {selectedStructure && (
-          <div style={{ border: '2px solid #2196F3', padding: '10px', margin: '10px 0' }}>
-            <strong>Target Structure:</strong> {selectedStructure}
-            <button 
-              onClick={() => setSelectedStructure('')}
-              style={{
-                backgroundColor: '#f44336',
-                color: 'white',
-                border: '2px solid #d32f2f',
-                padding: '4px 8px',
-                marginLeft: '10px',
-                cursor: 'pointer',
-                borderRadius: '4px',
-                fontSize: '12px',
-                fontWeight: 'bold'
-              }}
-              onMouseOver={(e) => {
-                e.target.style.backgroundColor = '#d32f2f';
-              }}
-              onMouseOut={(e) => {
-                e.target.style.backgroundColor = '#f44336';
-              }}
-            >
-              Clear Target
-            </button>
-          </div>
-        )}
-      </div>
-
-      {/* Word Bank */}
-      <div>
-        <h3>Word Bank - Drag words to build your sentence</h3>
-        
-        <div 
-          style={{ 
-            border: '1px solid black', 
-            padding: '10px',
-            minHeight: '100px'
-          }}
-        >
-          {availableWords.map((word) => (
-            <button
-              key={word.id}
-              draggable
-              onDragStart={(e) => handleDragStart(e, word)}
-              style={{
-                backgroundColor: '#f0f0f0',
-                border: '2px solid #ccc',
-                padding: '8px 12px',
-                margin: '4px',
-                cursor: 'grab',
-                borderRadius: '4px',
-                fontSize: '14px',
-                fontWeight: 'bold'
-              }}
-              onMouseOver={(e) => {
-                e.target.style.backgroundColor = '#e0e0e0';
-                e.target.style.borderColor = '#999';
-                e.target.style.cursor = 'grab';
-              }}
-              onMouseOut={(e) => {
-                e.target.style.backgroundColor = '#f0f0f0';
-                e.target.style.borderColor = '#ccc';
-              }}
-              title={`${word.text} (${word.type})`}
-            >
-              {word.text}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Sentence Building Area */}
-      <div>
-        <h3>Build Your Sentence Here</h3>
-        
-        <div 
-          onDragOver={handleDragOver}
-          onDrop={(e) => handleDrop(e)}
-          style={{
-            border: '2px dashed black',
-            padding: '20px',
-            minHeight: '80px'
-          }}
-        >
-          {sentenceArea.length === 0 ? (
-            <div>Drop words here to build your sentence...</div>
-          ) : (
-            sentenceArea.map((word, index) => (
-              <span key={`sentence-${word.id}-${index}`}>
-                <button
-                  style={{
-                    backgroundColor: '#e8f5e8',
-                    border: '2px solid #4CAF50',
-                    padding: '8px 12px',
-                    margin: '4px',
-                    borderRadius: '4px',
-                    fontSize: '14px',
-                    fontWeight: 'bold',
-                    position: 'relative'
-                  }}
-                >
-                  {word.text}
-                  <button
-                    onClick={() => removeFromSentence(index)}
-                    style={{
-                      position: 'absolute',
-                      top: '-8px',
-                      right: '-8px',
-                      backgroundColor: '#f44336',
-                      color: 'white',
-                      border: 'none',
-                      borderRadius: '50%',
-                      width: '20px',
-                      height: '20px',
-                      fontSize: '12px',
-                      cursor: 'pointer',
-                      fontWeight: 'bold'
-                    }}
-                    onMouseOver={(e) => {
-                      e.target.style.backgroundColor = '#d32f2f';
-                    }}
-                    onMouseOut={(e) => {
-                      e.target.style.backgroundColor = '#f44336';
-                    }}
-                  >
-                    ×
-                  </button>
-                </button>
-                {index < sentenceArea.length - 1 && <span> </span>}
-              </span>
-            ))
-          )}
-        </div>
-
-        {/* Sentence Preview */}
-        {sentenceArea.length > 0 && (
-          <div>
-            <strong>Your sentence:</strong> "{sentenceArea.map(w => w.text).join(' ')}"
-          </div>
-        )}
-      </div>
-
-      {/* Action Buttons */}
-      <div>
-        <button
-          onClick={checkSentence}
-          disabled={sentenceArea.length === 0 || isCompleted}
-          style={{
-            backgroundColor: (sentenceArea.length === 0 || isCompleted) ? '#ccc' : '#4CAF50',
-            color: 'white',
-            border: '2px solid #45a049',
-            padding: '12px 24px',
-            margin: '8px',
-            cursor: (sentenceArea.length === 0 || isCompleted) ? 'not-allowed' : 'pointer',
-            borderRadius: '4px',
-            fontSize: '16px',
-            fontWeight: 'bold'
-          }}
-          onMouseOver={(e) => {
-            if (!(sentenceArea.length === 0 || isCompleted)) {
-              e.target.style.backgroundColor = '#45a049';
-            }
-          }}
-          onMouseOut={(e) => {
-            if (!(sentenceArea.length === 0 || isCompleted)) {
-              e.target.style.backgroundColor = '#4CAF50';
-            }
-          }}
-        >
-          Check Sentence
-        </button>
-        
-        <button
-          onClick={resetSentenceOnly}
-          disabled={isCompleted}
-          style={{
-            backgroundColor: isCompleted ? '#ccc' : '#ff9800',
-            color: 'white',
-            border: '2px solid #f57c00',
-            padding: '12px 24px',
-            margin: '8px',
-            cursor: isCompleted ? 'not-allowed' : 'pointer',
-            borderRadius: '4px',
-            fontSize: '16px',
-            fontWeight: 'bold'
-          }}
-          onMouseOver={(e) => {
-            if (!isCompleted) {
-              e.target.style.backgroundColor = '#f57c00';
-            }
-          }}
-          onMouseOut={(e) => {
-            if (!isCompleted) {
-              e.target.style.backgroundColor = '#ff9800';
-            }
-          }}
-        >
-          Reset Sentence
-        </button>
-
-        <button
-          onClick={generateWordSetFromTestCases}
-          disabled={isCompleted}
-          style={{
-            backgroundColor: isCompleted ? '#ccc' : '#9C27B0',
-            color: 'white',
-            border: '2px solid #7B1FA2',
-            padding: '12px 24px',
-            margin: '8px',
-            cursor: isCompleted ? 'not-allowed' : 'pointer',
-            borderRadius: '4px',
-            fontSize: '16px',
-            fontWeight: 'bold'
-          }}
-          onMouseOver={(e) => {
-            if (!isCompleted) {
-              e.target.style.backgroundColor = '#7B1FA2';
-            }
-          }}
-          onMouseOut={(e) => {
-            if (!isCompleted) {
-              e.target.style.backgroundColor = '#9C27B0';
-            }
-          }}
-        >
-          New Words
-        </button>
-      </div>
-
-      {/* Feedback */}
-      {feedback && (
-        <div style={{ border: '1px solid black', padding: '10px' }}>
-          {feedback}
-        </div>
-      )}
-
-      {/* Grammar Legend */}
-      <div>
-        <h4>Grammar Tag Types:</h4>
-        <div>Subject, Object, Determiner, Noun, Verb, Adjective, Preposition</div>
-      </div>
+      {/* Render all component sections with necessary props */}
+      <MiniLesson 
+        practiceData={practiceData}
+        sentenceFeedback={sentenceFeedback}
+        handleWordClick={handleWordClick}
+      />
+      
+      <ProgressTracker 
+        correctCount={correctCount}
+        totalAttempts={totalAttempts}
+        streak={streak}
+        isCompleted={isCompleted}
+        sessionHistory={sessionHistory}
+        showProgress={showProgress}
+        setShowProgress={setShowProgress}
+        resetProgress={resetProgress}
+        TARGET_CORRECT={TARGET_CORRECT}
+      />
+      
+      <CompletionCelebration 
+        isCompleted={isCompleted}
+        correctCount={correctCount}
+        totalAttempts={totalAttempts}
+        resetProgress={resetProgress}
+      />
+      
+      <LevelSelection 
+        currentLevel={currentLevel}
+        setCurrentLevel={setCurrentLevel}
+      />
+      
+      <StructureSelection 
+        structureExamples={structureExamples}
+        currentLevel={currentLevel}
+        selectedStructure={selectedStructure}
+        selectStructure={selectStructure}
+        setSelectedStructure={setSelectedStructure}
+      />
+      
+      <WordBank 
+        availableWords={availableWords}
+        handleDragStart={handleDragStart}
+      />
+      
+      <SentenceBuilder 
+        sentenceArea={sentenceArea}
+        removeFromSentence={removeFromSentence}
+        handleDragOver={handleDragOver}
+        handleDrop={handleDrop}
+      />
+      
+      <ActionButtons 
+        checkSentence={checkSentence}
+        resetSentenceOnly={resetSentenceOnly}
+        generateWordSetFromTestCases={generateWordSetFromTestCases}
+        sentenceArea={sentenceArea}
+        isCompleted={isCompleted}
+      />
+      
+      <FeedbackDisplay 
+        feedback={feedback}
+      />
+      
+      <GrammarLegend />
     </div>
   );
 };
 
-export default DragDropSentenceChecker;
+export default SentenceStructure;
