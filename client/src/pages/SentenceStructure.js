@@ -4,6 +4,7 @@ import SentenceStructurev2 from '../utils/SentenceChecker/SentenceStructurev2';
 import StructureChecker from '../utils/SentenceChecker/StructureChecker';
 import nlp from 'compromise';
 import { testCases } from '../utils/SentenceChecker/TestCases';
+import SubjectQuiz from '../utils/SentenceChecker/SubjectQuiz';
 
 function tagWordsWithCompromise(sentence) {
 	const doc = nlp(sentence);
@@ -63,10 +64,10 @@ const SentenceStructures = () => {
 	const [quizFeedback, setQuizFeedback] = useState(null);
 	const [progress, setProgress] = useState(0);
 	const [quizStarted, setQuizStarted] = useState(false);
-	const [quizEnded, setQuizEnded] = useState(false); // NEW
+	const [quizEnded, setQuizEnded] = useState(false);
 
 	const startQuiz = () => {
-		if (progress >= 10) return; // prevent starting if already finished
+		if (progress >= 10) return;
 
 		const randomIndex = Math.floor(Math.random() * testCases.length);
 		const selected = testCases[randomIndex];
@@ -84,7 +85,7 @@ const SentenceStructures = () => {
 		setQuizFeedback(null);
 		setProgress(0);
 		setQuizStarted(false);
-		setQuizEnded(false); // Reset end state too
+		setQuizEnded(false);
 	};
 
 	const handleInputChange = (index, value) => {
@@ -110,9 +111,8 @@ const SentenceStructures = () => {
 			if (progress < 9) {
 				setProgress((prev) => prev + 1);
 			} else {
-				// If reaching 10
 				setProgress(10);
-				setQuizEnded(true); // NEW
+				setQuizEnded(true);
 			}
 		}
 	};
@@ -164,10 +164,8 @@ const SentenceStructures = () => {
 				}}
 			>
 				<h3 style={{ marginBottom: '1rem' }}>Click Quiz</h3>
-
 				<p><b>Progress:</b> {progress}/10</p>
 
-				{/* Start and Reset Buttons */}
 				<div style={{ marginBottom: '1rem' }}>
 					<button
 						onClick={startQuiz}
@@ -200,7 +198,6 @@ const SentenceStructures = () => {
 					</button>
 				</div>
 
-				{/* Congratulations message */}
 				{quizEnded && (
 					<p style={{ fontWeight: 'bold', fontSize: '1.25rem', color: 'green' }}>
 						Congratulations! You completed the quiz.
@@ -212,7 +209,14 @@ const SentenceStructures = () => {
 						<p><b>Sentence:</b> {quizSentence}</p>
 						<div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
 							{quizSentence.split(' ').map((word, index) => (
-								<div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+								<div
+									key={index}
+									style={{
+										display: 'flex',
+										flexDirection: 'column',
+										alignItems: 'center',
+									}}
+								>
 									<span>{word}</span>
 									<input
 										type="text"
@@ -241,7 +245,6 @@ const SentenceStructures = () => {
 							Check Answers
 						</button>
 
-						{/* Hide "Next" if finished */}
 						{quizFeedback &&
 							quizFeedback.every((val) => val === 'correct') &&
 							progress < 10 && (
@@ -250,7 +253,6 @@ const SentenceStructures = () => {
 								</button>
 							)}
 
-						{/* Feedback Section */}
 						{quizFeedback && (
 							<div style={{ marginTop: '1rem' }}>
 								<p><b>Feedback:</b></p>
@@ -270,6 +272,55 @@ const SentenceStructures = () => {
 						)}
 					</div>
 				)}
+			</div>
+
+			{/* ****************************** Lesson 1 *****************************************/}
+			<div
+				className="lesson-container"
+				style={{
+					marginTop: '4rem',
+					padding: '2rem',
+					backgroundColor: '#fdfdfd',
+					border: '2px solid #eee',
+					borderRadius: '10px',
+				}}
+			>
+				<h2 style={{ marginBottom: '1rem' }}>Lesson 1: Subjects and Objects</h2>
+
+				<div
+					style={{
+						backgroundColor: '#f9f9f9',
+						padding: '1.5rem',
+						border: '1px solid #ccc',
+						borderRadius: '8px',
+						marginBottom: '2rem',
+					}}
+				>
+					<p style={{ fontSize: '1.1rem' }}>
+						The <strong>subject</strong> of a sentence is the noun that performs the action,
+						while the <strong>object</strong> is the noun that receives the action.
+						<br /><br />
+						For example:
+						<br />
+						<span style={{ fontStyle: 'italic', marginLeft: '1rem' }}>
+							The chef prepared dinner.
+						</span>
+						<br />
+						In this sentence, "<strong>chef</strong>" is the subject and "<strong>dinner</strong>" is the object.
+					</p>
+				</div>
+
+				{/* Lesson 1 Game */}
+				<div
+					style={{
+						padding: '1rem',
+						backgroundColor: '#fffbe6',
+						border: '1px dashed #999',
+						borderRadius: '8px',
+					}}
+				>
+					<SubjectQuiz />
+				</div>
 			</div>
 		</div>
 	);
