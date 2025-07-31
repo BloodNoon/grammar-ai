@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import SentenceStructure from '../utils/SentenceChecker/SentenceStructure';
-import SentenceStructurev2 from '../utils/SentenceChecker/SentenceStructurev2';
-import StructureChecker from '../utils/SentenceChecker/StructureChecker';
 import nlp from 'compromise';
 import { testCases } from '../utils/SentenceChecker/TestCases';
 import SubjectQuiz from '../utils/SentenceChecker/SubjectQuiz';
@@ -309,8 +306,23 @@ const SentenceStructures = () => {
 						In this sentence, "<strong>chef</strong>" is the subject and "<strong>dinner</strong>" is the object.
 					</p>
 				</div>
-
-				{/* Lesson 1 Game */}
+				{/* Lesson 1 Video */}
+				<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+					<video
+						controls
+						style={{
+							width: '50%',
+							maxWidth: '200px',
+							height: 'auto',
+							borderRadius: '8px',
+							boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+						}}
+					>
+						<source src="/lesson1.mp4" type="video/mp4" />
+						Your browser does not support the video tag.
+					</video>
+					</div>
+				{/* Lesson 1 Quiz */}
 				<div
 					style={{
 						padding: '1rem',
