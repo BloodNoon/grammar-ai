@@ -11,7 +11,7 @@ import VerbLevelSelection from './VerbTenseComponents/VerbLevelSelection';
 import VerbStructureSelection from './VerbTenseComponents/VerbStructureSelection';
 import VerbWordBank from './VerbTenseComponents/VerbWordBank';
 import VerbSentenceBuilder from './VerbTenseComponents/VerbSentenceBuilder';
-import VerbActionButtons from './VerbTenseComponents/VerbActionButtons';
+import VerbActionButtons from './VerbTenseComponents/VerbActionButton';
 import VerbFeedbackDisplay from './VerbTenseComponents/VerbFeedbackDisplay';
 import VerbTypingQuiz from './VerbTenseComponents/VerbTypingQuiz';
 import VerbGrammarLegend from './VerbTenseComponents/VerbGrammarLegend';
