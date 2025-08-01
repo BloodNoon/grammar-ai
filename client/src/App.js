@@ -8,6 +8,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import SentenceStructures from './pages/SentenceStructure';
+import VerbTenseStructure from './pages/VerbTenseStructure';
 import PromptList from './pages/PromptList';
 import PromptOverview from './pages/PromptOverview';
 import PrivateRoute from './components/PrivateRoute';
@@ -24,6 +25,7 @@ function App() {
 						<Route path="/signup" component={Signup} />
 						<Route path="/login" component={Login} />
 						<Route path="/sentence-structure" component={SentenceStructures} />
+						<Route path="/verb-tense-structure" component={VerbTenseStructure} />
 						<PrivateRoute path="/dashboard" component={Dashboard} />
 						<Route path="/prompts" component={PromptList} />
 						<Route path="/overview/:id" component={PromptOverview} />			

@@ -451,7 +451,7 @@ const SentenceStructure = () => {
       padding: '20px',          // Add padding around content
       textAlign: 'center'       // Center-align text by default
     }}>
-      <h1>Sentence Builder</h1>
+      <h1>Lesson 1</h1>
 
       {/* Render all component sections with necessary props */}
       <MiniLesson 
