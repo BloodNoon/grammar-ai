@@ -155,4 +155,166 @@ export const testCases = [
 	"sentence" : 'The llama and I kicked the thin human and the fat cow.',
 	"structure": '#Determiner #Noun (and|or) #Subject #Verb #Determiner #Adjective #Noun (and|or) #Determiner #Adjective #Noun',
 	},
+	/****************************** THIRD BATCH *****************************************/
+	{
+		sentence: 'The little girl hugged the kind dog.',
+		structure: '#Determiner #Adjective #Noun #Verb #Determiner #Adjective #Noun',
+	},
+	{
+		sentence: 'He kicked the red ball.',
+		structure: '#Subject #Verb #Determiner #Adjective #Noun',
+	},
+	{
+		sentence: 'She and I opened the gate and the door.',
+		structure: '#Subject (and|or) #Subject #Verb #Determiner #Noun (and|or) #Determiner #Noun',
+	},
+	{
+		sentence: 'The fat cat and the small mouse ran.',
+		structure: '#Determiner #Adjective #Noun (and|or) #Determiner #Adjective #Noun #Verb',
+	},
+	{
+		sentence: 'They climbed the tall ladder.',
+		structure: '#Subject #Verb #Determiner #Adjective #Noun',
+	},
+	{
+		sentence: 'I and the big bear ate honey and berries.',
+		structure: '#Subject (and|or) #Determiner #Adjective #Noun #Verb #Noun (and|or) #Noun',
+	},
+	{
+		sentence: 'The young man and she played soccer.',
+		structure: '#Determiner #Adjective #Noun (and|or) #Subject #Verb #Noun',
+	},
+	{
+		sentence: 'We sang with the children and the teacher.',
+		structure: '#Subject #Verb #Preposition #Determiner #Noun (and|or) #Determiner #Noun',
+	},
+	{
+		sentence: 'The cold wind blew through the trees.',
+		structure: '#Determiner #Adjective #Noun #Verb #Preposition #Determiner #Noun',
+	},
+	{
+		sentence: 'The girl and I helped the baby.',
+		structure: '#Determiner #Noun (and|or) #Subject #Verb #Determiner #Noun',
+	},
+	{
+		sentence: 'The tired horse walked beside the fence.',
+		structure: '#Determiner #Adjective #Noun #Verb #Preposition #Determiner #Noun',
+	},
+	{
+		sentence: 'You and I watched the sun and the moon.',
+		structure: '#Subject (and|or) #Subject #Verb #Determiner #Noun (and|or) #Determiner #Noun',
+	},
+	{
+		sentence: 'The child saw the elephant and the giraffe.',
+		structure: '#Determiner #Noun #Verb #Determiner #Noun (and|or) #Determiner #Noun',
+	},
+	{
+		sentence: 'He and the boy built a house.',
+		structure: '#Subject (and|or) #Determiner #Noun #Verb #Determiner #Noun',
+	},
+	{
+		sentence: 'The bird flew above the lake and the trees.',
+		structure: '#Determiner #Noun #Verb #Preposition #Determiner #Noun (and|or) #Determiner #Noun',
+	},
+	{
+		sentence: 'A student and I answered the questions.',
+		structure: '#Determiner #Noun (and|or) #Subject #Verb #Determiner #Noun',
+	},
+	{
+		sentence: 'The brave knight rode the horse and the dragon.',
+		structure: '#Determiner #Adjective #Noun #Verb #Determiner #Noun (and|or) #Determiner #Noun',
+	},
+	{
+		sentence: 'She and the boy danced near the fire.',
+		structure: '#Subject (and|or) #Determiner #Noun #Verb #Preposition #Determiner #Noun',
+	},
+	{
+		sentence: 'The boy and I carried the big box and the bag.',
+		structure: '#Determiner #Noun (and|or) #Subject #Verb #Determiner #Adjective #Noun (and|or) #Determiner #Noun',
+	},
+	{
+		sentence: 'We walked through the tunnel and the cave.',
+		structure: '#Subject #Verb #Preposition #Determiner #Noun (and|or) #Determiner #Noun',
+	},
+		/****************************** 	FOURTH BATCH *****************************************/	
+		{
+			sentence: 'The tall boy helped the small girl.',
+			structure: '#Determiner #Adjective #Subject #Verb #Determiner #Adjective #Object',
+		},
+		{
+			sentence: 'I threw the yellow ball.',
+			structure: '#Subject #Verb #Determiner #Adjective #Object',
+		},
+		{
+			sentence: 'The baker gave the child a cookie.',
+			structure: '#Determiner #Subject #Verb #Determiner #Object #Determiner #Noun',
+		},
+		{
+			sentence: 'The pilot and the copilot flew the plane.',
+			structure: '#Determiner #Subject (and|or) #Determiner #Subject #Verb #Determiner #Object',
+		},
+		{
+			sentence: 'She handed the teacher the paper.',
+			structure: '#Subject #Verb #Determiner #Object #Determiner #Noun',
+		},
+		{
+			sentence: 'The cat chased the noisy mouse.',
+			structure: '#Determiner #Subject #Verb #Determiner #Adjective #Object',
+		},
+		{
+			sentence: 'They built a house and a barn.',
+			structure: '#Subject #Verb #Determiner #Object (and|or) #Determiner #Object',
+		},
+		{
+			sentence: 'The knight and I saved the village.',
+			structure: '#Determiner #Subject (and|or) #Subject #Verb #Determiner #Object',
+		},
+		{
+			sentence: 'I saw the snake and the lizard.',
+			structure: '#Subject #Verb #Determiner #Object (and|or) #Determiner #Object',
+		},
+		{
+			sentence: 'The doctor examined the boy and the girl.',
+			structure: '#Determiner #Subject #Verb #Determiner #Object (and|or) #Determiner #Object',
+		},
+		{
+			sentence: 'The angry man blamed the quiet woman.',
+			structure: '#Determiner #Adjective #Subject #Verb #Determiner #Adjective #Object',
+		},
+		{
+			sentence: 'The team passed the ball and scored.',
+			structure: '#Determiner #Subject #Verb #Determiner #Object (and|or) #Verb',
+		},
+		{
+			sentence: 'She and the firefighter rescued the baby.',
+			structure: '#Subject (and|or) #Determiner #Subject #Verb #Determiner #Object',
+		},
+		{
+			sentence: 'The horse kicked the fence and the bucket.',
+			structure: '#Determiner #Subject #Verb #Determiner #Object (and|or) #Determiner #Object',
+		},
+		{
+			sentence: 'We met the astronaut and the engineer.',
+			structure: '#Subject #Verb #Determiner #Object (and|or) #Determiner #Object',
+		},
+		{
+			sentence: 'The tiger and the lion chased the deer.',
+			structure: '#Determiner #Subject (and|or) #Determiner #Subject #Verb #Determiner #Object',
+		},
+		{
+			sentence: 'The player gave the coach the trophy.',
+			structure: '#Determiner #Subject #Verb #Determiner #Object #Determiner #Noun',
+		},
+		{
+			sentence: 'You and the boy saw the parade and the floats.',
+			structure: '#Subject (and|or) #Determiner #Subject #Verb #Determiner #Object (and|or) #Determiner #Object',
+		},
+		{
+			sentence: 'The scientist observed the comet and the asteroid.',
+			structure: '#Determiner #Subject #Verb #Determiner #Object (and|or) #Determiner #Object',
+		},
+		{
+			sentence: 'The swimmer and I reached the boat and the dock.',
+			structure: '#Determiner #Subject (and|or) #Subject #Verb #Determiner #Object (and|or) #Determiner #Object',
+		},		
 ];
