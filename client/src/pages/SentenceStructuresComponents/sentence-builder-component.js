@@ -1,4 +1,3 @@
-// SentenceBuilder.js - Component that provides the drop zone for building sentences
 import React from 'react';
 
 const SentenceBuilder = ({ 

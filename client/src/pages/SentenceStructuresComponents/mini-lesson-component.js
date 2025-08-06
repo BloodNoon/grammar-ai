@@ -1,4 +1,3 @@
-// MiniLesson.js - Component that displays educational content about nouns, subjects, and objects
 import React from 'react';
 
 const MiniLesson = ({ practiceData, sentenceFeedback, handleWordClick }) => {

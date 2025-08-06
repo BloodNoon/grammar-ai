@@ -1,4 +1,3 @@
-// LevelSelection.js - Component for selecting difficulty level (beginner, intermediate, advanced)
 import React from 'react';
 
 const LevelSelection = ({ currentLevel, setCurrentLevel }) => {

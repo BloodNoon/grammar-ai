@@ -1,4 +1,3 @@
-// VerbWordBank.js - Component displaying draggable words for sentence building
 // This component shows available words that users can drag into the sentence building area
 import React from 'react';
 
@@ -60,7 +59,7 @@ const VerbWordBank = ({
         color: '#333',                  // Dark gray color
         textAlign: 'center'             // Center the title
       }}>
-        📚 Word Bank - Drag words to build sentences
+         Word Bank - Drag words to build sentences
       </h3>
 
       {/* Instructions for users */}
@@ -205,8 +204,8 @@ const VerbWordBank = ({
             { type: 'Subject', label: 'Subject' },
             { type: 'Object', label: 'Object' },
             { type: 'Auxiliary', label: 'Auxiliary' },
-            { type: 'PresentVerb', label: 'Present' },
-            { type: 'PastVerb', label: 'Past' },
+            { type: 'PresentVerb', label: 'PresentVerb' },
+            { type: 'PastVerb', label: 'PastVerb' },
             { type: 'Continuous', label: 'Continuous' },
             { type: 'Perfect', label: 'Perfect' },
             { type: 'Noun', label: 'Noun' }

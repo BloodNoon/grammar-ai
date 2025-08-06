@@ -1,4 +1,3 @@
-// StructureSelection.js - Component for choosing specific sentence structures to practice
 import React from 'react';
 
 const StructureSelection = ({ 

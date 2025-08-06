@@ -264,7 +264,7 @@ const VerbSentenceBuilder = ({
         textAlign: 'center',            // Center help text
         fontStyle: 'italic'             // Italic styling
       }}>
-        💡 Tip: You can also drag words between positions in your sentence
+         Tip: You can also drag words between positions in your sentence
       </div>
 
       {/* Add CSS for hover effect on remove indicator */}

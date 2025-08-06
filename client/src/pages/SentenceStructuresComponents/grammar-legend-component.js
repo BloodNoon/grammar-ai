@@ -1,4 +1,3 @@
-// GrammarLegend.js - Component that displays a reference guide for grammatical terms
 import React from 'react';
 
 const GrammarLegend = () => {

@@ -1,4 +1,3 @@
-// WordBank.js - Component that displays draggable words for sentence construction
 import React from 'react';
 
 const WordBank = ({ availableWords, handleDragStart }) => {

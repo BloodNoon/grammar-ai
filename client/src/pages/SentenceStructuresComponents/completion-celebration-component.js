@@ -1,4 +1,3 @@
-// CompletionCelebration.js - Component that displays celebration message when user completes the challenge
 import React from 'react';
 
 const CompletionCelebration = ({ 

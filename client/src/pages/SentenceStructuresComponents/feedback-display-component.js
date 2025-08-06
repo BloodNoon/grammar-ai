@@ -1,4 +1,3 @@
-// FeedbackDisplay.js - Component that displays feedback messages to the user
 import React from 'react';
 
 const FeedbackDisplay = ({ feedback }) => {

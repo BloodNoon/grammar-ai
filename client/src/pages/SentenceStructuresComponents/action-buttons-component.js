@@ -1,4 +1,4 @@
-// ActionButtons.js - Component containing the main action buttons for sentence checking and management
+
 import React from 'react';
 
 const ActionButtons = ({ 

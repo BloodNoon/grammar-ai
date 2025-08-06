@@ -1,4 +1,3 @@
-// ProgressTracker.js - Component that displays and manages user progress through the sentence building challenge
 import React from 'react';
 
 const ProgressTracker = ({ 
