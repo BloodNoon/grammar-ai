@@ -256,7 +256,7 @@ const VerbTenseStructure = () => {
     } catch (error) {
       console.log('Backend failed, using simple validation');
       
-      // SIMPLIFIED: just check for Subject + Verb (much cleaner now!)
+      //  just check for Subject + Verb 
       const hasSubject = sentenceArea.some(w => ['Subject', 'Noun'].includes(w.type));
       const hasVerb = sentenceArea.some(w => w.type === 'Verb');
       
