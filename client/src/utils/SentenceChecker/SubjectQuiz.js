@@ -3,20 +3,26 @@ import nlp from 'compromise';
 import { testCases } from './TestCases';
 import './SubjectQuiz.css';
 
-const getChoices = (sentence) => {
-	const words = sentence.split(' ').map(w => w.replace(/[^a-zA-Z']/g, '')); // remove punctuation
+const getChoices = (sentence, type) => {
+	const words = sentence.split(' ').map(w => w.replace(/[^a-zA-Z']/g, ''));
 	const doc = nlp(sentence);
-	const subjects = doc.nouns().toSingular().out('array');
+	const nouns = doc.nouns().toSingular().out('array');
 
-	const correct = subjects[0]; // only take the first subject found
+	if (nouns.length < 1) return null;
+
+	let correct;
+	if (type === 'subject') {
+		correct = nouns[0]; // naive assumption
+	} else if (type === 'object') {
+		if (nouns.length < 2) return null;
+		correct = nouns[1]; // naive object guess
+	}
+
 	if (!correct || !words.includes(correct)) return null;
 
-	// Remove the correct word from the list of words to pick distractors
 	const remaining = words.filter(w => w !== correct);
 	const shuffled = [...remaining].sort(() => 0.5 - Math.random());
 	const distractors = shuffled.slice(0, 3);
-
-	// Shuffle correct + distractors
 	const allChoices = [...distractors, correct].sort(() => 0.5 - Math.random());
 
 	return { choices: allChoices, correct };
@@ -25,10 +31,10 @@ const getChoices = (sentence) => {
 const getMessage = (score) => {
 	if (score <= 3) return 'You need more practice. Try again please.';
 	if (score <= 7) return 'Very good but I know you can do better.';
-	return 'Amazing! You know your subjects. Try again for more practice.';
+	return 'Amazing! You know your grammar. Try again for more practice.';
 };
 
-const SubjectQuiz = () => {
+const SubjectObjectQuiz = () => {
 	const [question, setQuestion] = useState(null);
 	const [selected, setSelected] = useState('');
 	const [result, setResult] = useState('');
@@ -38,16 +44,19 @@ const SubjectQuiz = () => {
 	const [quizOver, setQuizOver] = useState(false);
 
 	const loadNewQuestion = () => {
-		let sentenceObj, data;
+		let sentenceObj, data, type;
+
 		do {
 			sentenceObj = testCases[Math.floor(Math.random() * testCases.length)];
-			data = getChoices(sentenceObj.sentence);
+			type = Math.random() < 0.5 ? 'subject' : 'object'; // randomly pick question type
+			data = getChoices(sentenceObj.sentence, type);
 		} while (!data);
 
 		setQuestion({
 			sentence: sentenceObj.sentence,
 			choices: data.choices,
-			correct: data.correct
+			correct: data.correct,
+			type,
 		});
 		setSelected('');
 		setResult('');
@@ -97,9 +106,10 @@ const SubjectQuiz = () => {
 
 	return (
 		<div className="quiz-box">
-			<h2>Which word is the subject?</h2>
+			<h2>Which word is the <span className="quiz-type">{question.type}</span>?</h2>
 			<p className="quiz-sentence">"{question.sentence}"</p>
 			<p className="quiz-score">Score: {score}/10</p>
+
 			<div className="choices">
 				{question.choices.map((word, i) => (
 					<button
@@ -144,4 +154,4 @@ const SubjectQuiz = () => {
 	);
 };
 
-export default SubjectQuiz;
+export default SubjectObjectQuiz;
