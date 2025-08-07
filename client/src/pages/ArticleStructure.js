@@ -1,4 +1,4 @@
-// This component manages all state and coordinates between child components for Articles learning
+//Main webpage of the Article Structure
 import React, { useState, useEffect } from 'react';
 import { hasFullStructCheck, getFullStructCheck, getTags } from '../utils/SentenceChecker/StructureChecker';
 import { testCases } from '../utils/SentenceChecker/TestCases';
