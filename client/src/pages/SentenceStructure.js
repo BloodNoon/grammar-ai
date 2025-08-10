@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import nlp from 'compromise';
 import { testCases } from '../utils/SentenceChecker/TestCases';
 import SubjectQuiz from '../utils/SentenceChecker/SubjectQuiz';
+import PrepositionSorter from '../utils/SentenceChecker/PrepositionSorter';
 
 function tagWordsWithCompromise(sentence) {
 	const doc = nlp(sentence);
@@ -543,10 +544,9 @@ const SentenceStructures = () => {
 						</div>
 						</div>
 						</div>
+						<PrepositionSorter />
 					</div>
 					)}
-
-
 
 				</div>
 
