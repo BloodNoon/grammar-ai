@@ -6,28 +6,47 @@ import './SubjectQuiz.css';
 const getChoices = (sentence, type) => {
 	const words = sentence.split(' ').map(w => w.replace(/[^a-zA-Z']/g, ''));
 	const doc = nlp(sentence);
-	const nouns = doc.nouns().toSingular().out('array');
-
-	if (nouns.length < 1) return null;
-
+  
+	// Get nouns and verbs from the sentence
+	const nounList = doc.nouns().toSingular().out('array');
+	const verbList = doc.verbs().out('array');
+  
+	if (nounList.length < 1 || verbList.length < 1) return null;
+  
+	const firstVerb = verbList[0];
+	const firstVerbIndex = words.findIndex(
+	  w => w.toLowerCase() === firstVerb.toLowerCase()
+	);
+  
 	let correct;
 	if (type === 'subject') {
-		correct = nouns[0]; // naive assumption
+	  // Look for noun before the first verb
+	  for (let i = 0; i < firstVerbIndex; i++) {
+		if (nounList.includes(words[i].toLowerCase())) {
+		  correct = words[i];
+		  break;
+		}
+	  }
 	} else if (type === 'object') {
-		if (nouns.length < 2) return null;
-		correct = nouns[1]; // naive object guess
+	  // Look for noun after the first verb
+	  for (let i = firstVerbIndex + 1; i < words.length; i++) {
+		if (nounList.includes(words[i].toLowerCase())) {
+		  correct = words[i];
+		  break;
+		}
+	  }
 	}
-
-	if (!correct || !words.includes(correct)) return null;
-
-	const remaining = words.filter(w => w !== correct);
+  
+	if (!correct) return null;
+  
+	const remaining = words.filter(w => w.toLowerCase() !== correct.toLowerCase());
 	const shuffled = [...remaining].sort(() => 0.5 - Math.random());
 	const distractors = shuffled.slice(0, 3);
 	const allChoices = [...distractors, correct].sort(() => 0.5 - Math.random());
-
+  
 	return { choices: allChoices, correct };
-};
-
+  };
+  
 const getMessage = (score) => {
 	if (score <= 3) return 'You need more practice. Try again please.';
 	if (score <= 7) return 'Very good but I know you can do better.';

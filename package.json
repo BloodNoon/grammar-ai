@@ -17,6 +17,7 @@
 		"nodemon": "^2.0.6"
 	},
 	"dependencies": {
+		"an-array-of-english-words": "^2.0.0",
 		"bcrypt": "^5.0.1",
 		"compromise": "^14.14.4",
 		"concurrently": "^5.3.0",
