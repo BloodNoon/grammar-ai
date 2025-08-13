@@ -17,28 +17,41 @@ import VerbTypingQuiz from './VerbTenseComponents/VerbTypingQuiz';
 import VerbGrammarLegend from './VerbTenseComponents/VerbGrammarLegend';
 
 // ===== HELPER FUNCTIONS SECTION =====
-// FIXED: Use the exact same word classification as SentenceStructure.js
+// FIXED: Use word classification that matches backend patterns
 function getWordType(word) {
-  // Define word categories for grammatical classification (SAME AS SentenceStructure.js)
+  // Define word categories for grammatical classification (MATCHES BACKEND)
   const subjects = ['i', 'he', 'she', 'it', 'you', 'we', 'they'];
   const objects = ['me', 'him', 'her', 'it', 'your', 'us', 'them'];
-  const determiners = ['the', 'a', 'an', 'this', 'that', 'these', 'those'];
-  const adjectives = ['big', 'small', 'red', 'blue', 'happy', 'sad', 'quick', 'slow', 'beautiful', 'ugly'];
-  const nouns = ['dog', 'cat', 'house', 'car', 'book', 'tree', 'ball', 'bird', 'fish', 'apple', 'cats', 'dogs', 'children', 'dinner', 'work', 'ice', 'music', 'food'];
+  const determiners = ['the', 'a', 'an', 'this', 'that', 'these', 'those', 'my', 'your', 'his', 'her', 'our', 'their'];
+  const adjectives = ['big', 'small', 'red', 'blue', 'happy', 'sad', 'quick', 'slow', 'beautiful', 'ugly', 'fast', 'tall', 'short', 'new', 'old', 'green', 'yellow', 'black', 'white', 'hot', 'cold', 'bright', 'dark', 'loud', 'quiet', 'soft', 'hard'];
+  const nouns = ['dog', 'cat', 'house', 'car', 'book', 'tree', 'ball', 'bird', 'fish', 'apple', 'cats', 'dogs', 'children', 'dinner', 'work', 'ice', 'music', 'food', 'door', 'window', 'box', 'phone', 'computer', 'garden', 'flower', 'table', 'chair', 'pen', 'paper', 'water', 'movie', 'game', 'pizza', 'cake', 'cookies', 'shoes', 'clothes', 'money', 'time'];
+  const adverbs = ['quickly', 'slowly', 'carefully', 'loudly', 'quietly', 'happily', 'sadly', 'well', 'badly', 'fast', 'hard', 'early', 'late', 'now', 'today', 'yesterday', 'tomorrow'];
   
-  // ALL VERB TYPES - they ALL return "Verb" (SAME AS SentenceStructure.js)
+  // EXPANDED VERB TYPES - they ALL return "Verb"
   const verbs = [
     // Present tense verbs
     'run', 'jump', 'eat', 'sleep', 'play', 'sing', 'dance', 'walk', 'fly', 'swim',
     'runs', 'jumps', 'eats', 'sleeps', 'plays', 'sings', 'dances', 'walks', 'flies', 'swims',
+    'pet', 'pets', 'open', 'opens', 'close', 'closes', 'watch', 'watches', 'read', 'reads', 'write', 'writes',
+    'drive', 'drives', 'cook', 'cooks', 'clean', 'cleans', 'study', 'studies', 'work', 'works', 'wake', 'wakes',
+    'talk', 'talks', 'listen', 'listens', 'build', 'builds', 'draw', 'draws', 'paint', 'paints', 'fix', 'fixes',
+    'break', 'breaks', 'make', 'makes',
     // Past tense verbs
     'ran', 'jumped', 'ate', 'slept', 'played', 'sang', 'danced', 'walked', 'flew', 'swam',
+    'petted', 'opened', 'closed', 'watched', 'read', 'wrote', 'bought', 'sold', 'found', 'lost',
+    'drove', 'cooked', 'cleaned', 'studied', 'worked', 'woke', 'talked', 'listened', 'built', 'drew',
+    'painted', 'fixed', 'broke', 'made', 'taught', 'learned', 'helped',
     // Continuous verbs
     'running', 'jumping', 'eating', 'sleeping', 'playing', 'singing', 'dancing', 'walking', 'flying', 'swimming',
+    'petting', 'opening', 'closing', 'watching', 'reading', 'writing', 'buying', 'selling', 'finding', 'losing',
+    'driving', 'cooking', 'cleaning', 'studying', 'working', 'waking', 'talking', 'listening', 'building', 'drawing',
+    'painting', 'fixing', 'breaking', 'making', 'teaching', 'learning', 'helping',
     // Auxiliary verbs
-    'is', 'are', 'was', 'were', 'will', 'have', 'has', 'had', 'can', 'could', 'would', 'should', 'do', 'does', 'did',
+    'is', 'are', 'was', 'were', 'will', 'have', 'has', 'had', 'can', 'could', 'would', 'should', 'do', 'does', 'did', 'am',
     // Perfect verbs
     'eaten', 'slept', 'played', 'sung', 'danced', 'walked', 'flown', 'swum', 'gone', 'come', 'seen', 'made', 'taken',
+    'written', 'bought', 'sold', 'found', 'lost', 'finished', 'driven', 'cooked', 'cleaned', 'studied', 'worked',
+    'woken', 'talked', 'listened', 'built', 'drawn', 'painted', 'fixed', 'broken', 'taught', 'learned', 'helped',
     // Additional verb forms
     'chase', 'chases', 'chased', 'chasing', 'catch', 'catches', 'caught', 'catching', 
     'cook', 'cooks', 'cooked', 'cooking', 'love', 'loves', 'loved', 'loving'
@@ -47,12 +60,14 @@ function getWordType(word) {
   // Clean the word by removing punctuation and converting to lowercase
   const lowerWord = word.toLowerCase().replace(/[.,!?]/, '');
   
-  // Check which category the word belongs to and return the type (SAME ORDER AS SentenceStructure.js)
-  if (subjects.includes(lowerWord)) return 'Subject';
+  // Check which category the word belongs to and return the type
+  // Return 'Pronoun' for subject pronouns to match backend patterns
+  if (subjects.includes(lowerWord)) return 'Pronoun'; // Changed from 'Subject' to 'Pronoun'
   if (objects.includes(lowerWord)) return 'Object';
   if (determiners.includes(lowerWord)) return 'Determiner';
   if (adjectives.includes(lowerWord)) return 'Adjective';
   if (nouns.includes(lowerWord)) return 'Noun';
+  if (adverbs.includes(lowerWord)) return 'Adverb';
   if (verbs.includes(lowerWord)) return 'Verb';  // ALL VERBS RETURN "Verb"
   return 'Unknown';
 }
@@ -61,11 +76,34 @@ function getWordType(word) {
 function getVerbSubtype(word) {
   const lowerWord = word.toLowerCase().replace(/[.,!?]/, '');
   
-  const auxiliaryVerbs = ['is', 'are', 'was', 'were', 'will', 'have', 'has', 'had', 'could', 'would', 'should', 'can', 'do', 'does', 'did'];
-  const presentVerbs = ['walks', 'walk', 'runs', 'run', 'eats', 'eat', 'chase', 'chases', 'catch', 'catches', 'cook', 'cooks', 'sing', 'sings', 'play', 'plays'];
-  const pastVerbs = ['walked', 'ran', 'ate', 'chased', 'caught', 'cooked', 'sang', 'played', 'went', 'came', 'saw', 'made'];
-  const continuousVerbs = ['walking', 'running', 'eating', 'chasing', 'catching', 'cooking', 'singing', 'playing'];
-  const perfectVerbs = ['eaten', 'caught', 'sung', 'gone', 'come', 'seen', 'made', 'taken', 'finished'];
+  const auxiliaryVerbs = ['is', 'are', 'was', 'were', 'will', 'have', 'has', 'had', 'could', 'would', 'should', 'can', 'do', 'does', 'did', 'am'];
+  const presentVerbs = [
+    'walks', 'walk', 'runs', 'run', 'eats', 'eat', 'chase', 'chases', 'catch', 'catches', 'cook', 'cooks', 
+    'sing', 'sings', 'play', 'plays', 'pet', 'pets', 'open', 'opens', 'close', 'closes', 'watch', 'watches', 
+    'read', 'reads', 'write', 'writes', 'drive', 'drives', 'fly', 'flies', 'swim', 'swims', 'dance', 'dances',
+    'clean', 'cleans', 'study', 'studies', 'work', 'works', 'sleep', 'sleeps', 'wake', 'wakes', 'talk', 'talks',
+    'listen', 'listens', 'build', 'builds', 'draw', 'draws', 'paint', 'paints', 'fix', 'fixes', 'break', 'breaks',
+    'make', 'makes', 'jump', 'jumps'
+  ];
+  const pastVerbs = [
+    'walked', 'ran', 'ate', 'chased', 'caught', 'cooked', 'sang', 'played', 'went', 'came', 'saw', 'made', 
+    'petted', 'opened', 'closed', 'watched', 'read', 'wrote', 'bought', 'sold', 'found', 'lost', 'drove',
+    'flew', 'swam', 'danced', 'cleaned', 'studied', 'worked', 'slept', 'woke', 'talked', 'listened', 'built',
+    'drew', 'painted', 'fixed', 'broke', 'taught', 'learned', 'helped', 'jumped'
+  ];
+  const continuousVerbs = [
+    'walking', 'running', 'eating', 'chasing', 'catching', 'cooking', 'singing', 'playing', 'petting', 
+    'opening', 'closing', 'watching', 'reading', 'writing', 'buying', 'selling', 'finding', 'losing',
+    'driving', 'flying', 'swimming', 'dancing', 'cleaning', 'studying', 'working', 'sleeping', 'waking',
+    'talking', 'listening', 'building', 'drawing', 'painting', 'fixing', 'breaking', 'teaching', 'learning',
+    'helping', 'jumping'
+  ];
+  const perfectVerbs = [
+    'eaten', 'caught', 'sung', 'gone', 'come', 'seen', 'made', 'taken', 'finished', 'petted', 'opened', 
+    'closed', 'watched', 'read', 'written', 'bought', 'sold', 'found', 'lost', 'driven', 'flown', 'swum',
+    'danced', 'cooked', 'cleaned', 'studied', 'worked', 'slept', 'woken', 'talked', 'listened', 'built',
+    'drawn', 'painted', 'fixed', 'broken', 'taught', 'learned', 'helped', 'jumped'
+  ];
   
   if (auxiliaryVerbs.includes(lowerWord)) return 'Auxiliary';
   if (presentVerbs.includes(lowerWord)) return 'Present';
@@ -76,9 +114,93 @@ function getVerbSubtype(word) {
   return 'Verb';
 }
 
+// helper function to check if a sentence contains proper verb tense combinations
+function analyzeVerbTenses(sentenceWords) {
+  const verbAnalysis = {
+    hasAuxiliary: false,
+    hasMainVerb: false,
+    auxiliaryType: null,
+    mainVerbType: null,
+    isValidCombination: false,
+    feedback: ''
+  };
+
+  const auxiliaries = sentenceWords.filter(word => getVerbSubtype(word.text) === 'Auxiliary');
+  const mainVerbs = sentenceWords.filter(word => {
+    const subtype = getVerbSubtype(word.text);
+    return ['Present', 'Past', 'Continuous', 'Perfect'].includes(subtype);
+  });
+
+  verbAnalysis.hasAuxiliary = auxiliaries.length > 0;
+  verbAnalysis.hasMainVerb = mainVerbs.length > 0;
+
+  if (auxiliaries.length > 0) {
+    verbAnalysis.auxiliaryType = getVerbSubtype(auxiliaries[0].text);
+  }
+  if (mainVerbs.length > 0) {
+    verbAnalysis.mainVerbType = getVerbSubtype(mainVerbs[0].text);
+  }
+
+  // validation logic
+  if (verbAnalysis.hasAuxiliary && verbAnalysis.hasMainVerb) {
+    const aux = auxiliaries[0].text.toLowerCase();
+    const mainVerbSubtype = verbAnalysis.mainVerbType;
+
+    // Valid combinations with better logic
+    const validCombinations = {
+      'am': ['Continuous', 'Present'], // "am running", "am happy"
+      'is': ['Continuous', 'Perfect', 'Present'], // "is walking", "is eaten", "is good"
+      'are': ['Continuous', 'Perfect', 'Present'], // "are running", "are made", "are nice"
+      'was': ['Continuous', 'Perfect', 'Present'], // "was walking", "was eaten", "was happy"
+      'were': ['Continuous', 'Perfect', 'Present'], // "were running", "were made", "were good"
+      'will': ['Present'], // "will walk" (not continuous form)
+      'have': ['Perfect', 'Present'], // "have eaten", "have time"
+      'has': ['Perfect', 'Present'], // "has eaten", "has money"
+      'had': ['Perfect', 'Present'], // "had eaten", "had fun"
+      'can': ['Present'], // "can walk"
+      'could': ['Present'], // "could walk"
+      'would': ['Present'], // "would walk"
+      'should': ['Present'], // "should walk"
+      'do': ['Present'], // "do walk"
+      'does': ['Present'], // "does walk"
+      'did': ['Present'] // "did walk"
+    };
+
+    if (validCombinations[aux] && validCombinations[aux].includes(mainVerbSubtype)) {
+      verbAnalysis.isValidCombination = true;
+      verbAnalysis.feedback = `✅ Excellent verb tense combination: "${aux} ${mainVerbs[0].text}"`;
+    } else {
+      verbAnalysis.isValidCombination = false;
+      verbAnalysis.feedback = `❌ Invalid verb combination: "${aux}" should not be used with "${mainVerbSubtype.toLowerCase()}" verbs like "${mainVerbs[0].text}". Try: ${validCombinations[aux] ? validCombinations[aux].join(' or ') : 'a different auxiliary'} verbs.`;
+    }
+  } else if (verbAnalysis.hasMainVerb && !verbAnalysis.hasAuxiliary) {
+    // Simple tenses without auxiliaries - check for problematic cases
+    const mainVerb = mainVerbs[0];
+    const pronounSubjects = sentenceWords.filter(word => word.type === 'Pronoun'); // Changed from 'Subject' to 'Pronoun'
+    
+    if (pronounSubjects.length > 0 && verbAnalysis.mainVerbType === 'Continuous') {
+      const pronoun = pronounSubjects[0].text.toLowerCase();
+      // "I running" is wrong, should be "I am running" or "I run"
+      verbAnalysis.isValidCombination = false;
+      verbAnalysis.feedback = `❌ "${pronoun} ${mainVerb.text}" is incorrect. Use "${pronoun} am/is/are ${mainVerb.text}" for continuous tense, or use a simple present/past verb instead.`;
+    } else {
+      verbAnalysis.isValidCombination = true;
+      verbAnalysis.feedback = `✅ Good simple ${verbAnalysis.mainVerbType.toLowerCase()} tense usage!`;
+    }
+  } else if (verbAnalysis.hasAuxiliary && !verbAnalysis.hasMainVerb) {
+    verbAnalysis.isValidCombination = false;
+    verbAnalysis.feedback = `❌ You have an auxiliary verb "${auxiliaries[0].text}" but no main verb. Add a main verb to complete the tense.`;
+  } else {
+    verbAnalysis.isValidCombination = false;
+    verbAnalysis.feedback = `❌ Your sentence needs a verb to be complete.`;
+  }
+
+  return verbAnalysis;
+}
+
 const VerbTenseStructure = () => {
   
-  // ===== STATE MANAGEMENT ===== (SAME AS SentenceStructure.js)
+  // ===== STATE MANAGEMENT ===== 
   const [availableWords, setAvailableWords] = useState([]);
   const [sentenceArea, setSentenceArea] = useState([]);
   const [selectedStructure, setSelectedStructure] = useState('');
@@ -107,56 +229,82 @@ const VerbTenseStructure = () => {
   const TARGET_CORRECT = 10;
   const QUIZ_TARGET_CORRECT = 10;
 
-  // ===== DATA STRUCTURES ===== (COMPATIBLE WITH BACKEND)
+  // ===== GREATLY EXPANDED VERB WORD BANK =====
   const verbWordBank = {
-    Subject: ['I', 'He', 'She', 'It', 'You', 'We', 'They'],
+    Subject: ['I', 'He', 'She', 'It', 'You', 'We', 'They'], // Keep for internal reference
+    Pronoun: ['I', 'He', 'She', 'It', 'You', 'We', 'They'], // Add Pronoun category for backend compatibility
     Object: ['me', 'him', 'her', 'it', 'you', 'us', 'them'],
-    Determiner: ['The', 'A', 'An', 'This', 'That'],
-    Adjective: ['big', 'small', 'red', 'blue', 'happy', 'beautiful'],
-    Noun: ['dog', 'cat', 'house', 'car', 'book', 'tree', 'ball', 'bird', 'fish', 'apple', 'cats', 'dogs', 'children'],
+    Determiner: ['The', 'A', 'An', 'This', 'That', 'My', 'Your', 'His', 'Her', 'Our', 'Their'],
+    Adjective: ['big', 'small', 'red', 'blue', 'happy', 'beautiful', 'fast', 'slow', 'tall', 'short', 'new', 'old', 'green', 'yellow', 'black', 'white', 'hot', 'cold', 'bright', 'dark', 'loud', 'quiet', 'soft', 'hard'],
+    Noun: ['dog', 'cat', 'house', 'car', 'book', 'tree', 'ball', 'bird', 'fish', 'apple', 'cats', 'dogs', 'children', 'door', 'window', 'box', 'phone', 'computer', 'garden', 'flower', 'table', 'chair', 'pen', 'paper', 'water', 'food', 'music', 'movie', 'game', 'pizza', 'cake', 'cookies', 'shoes', 'clothes', 'money', 'time'],
     Conjunction: ['and', 'or'],
+    Adverb: ['quickly', 'slowly', 'carefully', 'loudly', 'quietly', 'happily', 'sadly', 'well', 'badly', 'fast', 'hard', 'early', 'late', 'now', 'today', 'yesterday', 'tomorrow'],
     
-    // ALL VERBS - they will all be classified as "Verb" type for backend compatibility
-    Verb: [
-      // Present verbs
-      'run', 'runs', 'jump', 'jumps', 'eat', 'eats', 'sleep', 'sleeps', 'play', 'plays', 'sing', 'sings', 'walk', 'walks',
-      // Past verbs  
-      'ran', 'jumped', 'ate', 'slept', 'played', 'sang', 'walked',
-      // Continuous verbs
-      'running', 'jumping', 'eating', 'sleeping', 'playing', 'singing', 'walking',
-      // Auxiliary verbs
-      'is', 'are', 'was', 'were', 'will', 'have', 'has', 'had', 'can', 'could', 'would', 'should', 'do', 'does', 'did',
-      // Perfect verbs
-      'eaten', 'slept', 'played', 'sung', 'walked', 'gone', 'come', 'seen', 'made',
-      // Additional verbs for variety
-      'chase', 'chases', 'chased', 'catch', 'catches', 'caught', 'cook', 'cooks', 'cooked', 'love', 'loves', 'loved'
+    // GREATLY EXPANDED VERB TYPES for better learning
+    Auxiliary: ['is', 'are', 'was', 'were', 'will', 'have', 'has', 'had', 'can', 'could', 'would', 'should', 'do', 'does', 'did', 'am'],
+    Present: [
+      'run', 'runs', 'jump', 'jumps', 'eat', 'eats', 'walk', 'walks', 'play', 'plays', 'sing', 'sings', 
+      'pet', 'pets', 'open', 'opens', 'close', 'closes', 'watch', 'watches', 'read', 'reads', 'write', 'writes',
+      'drive', 'drives', 'fly', 'flies', 'swim', 'swims', 'dance', 'dances', 'cook', 'cooks', 'clean', 'cleans',
+      'study', 'studies', 'work', 'works', 'sleep', 'sleeps', 'wake', 'wakes', 'talk', 'talks', 'listen', 'listens',
+      'build', 'builds', 'draw', 'draws', 'paint', 'paints', 'fix', 'fixes', 'break', 'breaks', 'make', 'makes'
+    ],
+    Past: [
+      'ran', 'jumped', 'ate', 'walked', 'played', 'sang', 'went', 'came', 'saw', 'made', 
+      'petted', 'opened', 'closed', 'watched', 'read', 'wrote', 'bought', 'sold', 'found', 'lost',
+      'drove', 'flew', 'swam', 'danced', 'cooked', 'cleaned', 'studied', 'worked', 'slept', 'woke',
+      'talked', 'listened', 'built', 'drew', 'painted', 'fixed', 'broke', 'taught', 'learned', 'helped'
+    ],
+    Continuous: [
+      'running', 'jumping', 'eating', 'walking', 'playing', 'singing', 'going', 'coming', 'seeing', 'making', 
+      'petting', 'opening', 'closing', 'watching', 'reading', 'writing', 'buying', 'selling', 'finding', 'losing',
+      'driving', 'flying', 'swimming', 'dancing', 'cooking', 'cleaning', 'studying', 'working', 'sleeping', 'waking',
+      'talking', 'listening', 'building', 'drawing', 'painting', 'fixing', 'breaking', 'teaching', 'learning', 'helping'
+    ],
+    Perfect: [
+      'run', 'jumped', 'eaten', 'walked', 'played', 'sung', 'gone', 'come', 'seen', 'made', 'taken', 'finished', 
+      'petted', 'opened', 'closed', 'watched', 'read', 'written', 'bought', 'sold', 'found', 'lost',
+      'driven', 'flown', 'swum', 'danced', 'cooked', 'cleaned', 'studied', 'worked', 'slept', 'woken',
+      'talked', 'listened', 'built', 'drawn', 'painted', 'fixed', 'broken', 'taught', 'learned', 'helped'
     ]
   };
 
-  // Structure examples that match backend patterns
+  // Updated structure examples with better descriptions matching the patterns
   const verbStructureExamples = [
     { 
-      pattern: '#Subject #Verb', 
-      example: 'I run.', 
-      description: 'Simple subject-verb',
+      pattern: '#Pronoun #Verb', 
+      example: 'She runs.', 
+      description: '#Pronoun #Verb',
       level: 'beginner'
     },
     { 
       pattern: '#Determiner #Noun #Verb', 
       example: 'The dog runs.', 
-      description: 'Article-noun-verb',
+      description: '#Determiner #Noun #Verb',
       level: 'beginner'
     },
     { 
-      pattern: '#Subject #Verb #Object', 
-      example: 'I see him.', 
-      description: 'Subject-verb-object',
+      pattern: '#Pronoun #Verb #Determiner #Noun', 
+      example: 'I see the cat.', 
+      description: '#Pronoun #Verb #Determiner #Noun',
+      level: 'intermediate'
+    },
+    { 
+      pattern: '#Pronoun #Verb (#Adjective|#Noun|#Adverb)', 
+      example: 'He was running.', 
+      description: '#Pronoun #Verb (#Adjective|#Noun|#Adverb)',
       level: 'intermediate'
     },
     { 
       pattern: '#Determiner #Adjective #Noun #Verb', 
       example: 'The big dog runs.', 
-      description: 'Article-adjective-noun-verb',
+      description: '#Determiner #Adjective #Noun #Verb',
+      level: 'advanced'
+    },
+    { 
+      pattern: '#Pronoun #Verb #Determiner #Adjective #Noun', 
+      example: 'I have eaten the red apple.', 
+      description: '#Pronoun #Verb #Determiner #Adjective #Noun',
       level: 'advanced'
     }
   ];
@@ -167,7 +315,7 @@ const VerbTenseStructure = () => {
     generateNewQuizQuestion();
   }, [currentLevel, selectedStructure]);
 
-  // ===== UTILITY FUNCTIONS ===== (SAME AS SentenceStructure.js)
+  // ===== UTILITY FUNCTIONS ===== 
   const shuffleArray = (array) => {
     const newArray = [...array];
     for (let i = newArray.length - 1; i > 0; i--) {
@@ -177,7 +325,7 @@ const VerbTenseStructure = () => {
     return newArray;
   };
 
-  // ===== WORD GENERATION ===== (SIMILAR TO SentenceStructure.js)
+  // ===== UPDATED WORD GENERATION =====
   const generateVerbWordSetFromTestCases = () => {
     let words = [];
     
@@ -189,8 +337,8 @@ const VerbTenseStructure = () => {
     if (selectedStructure) {
       // Generate words for selected structure
       const structure = selectedStructure;
-      if (structure.includes('#Subject')) {
-        words.push(...verbWordBank.Subject.slice(0, 3));
+      if (structure.includes('#Subject') || structure.includes('#Pronoun')) {
+        words.push(...verbWordBank.Pronoun.slice(0, 3)); // Use Pronoun array for both
       }
       if (structure.includes('#Object')) {
         words.push(...verbWordBank.Object.slice(0, 3));
@@ -204,18 +352,33 @@ const VerbTenseStructure = () => {
       if (structure.includes('#Noun')) {
         words.push(...verbWordBank.Noun.slice(0, 4));
       }
-      if (structure.includes('#Verb')) {
-        words.push(...verbWordBank.Verb.slice(0, 6));
+      if (structure.includes('#Verb') || structure.includes('#Auxiliary')) {
+        // Include all verb types when structure asks for verbs
+        words.push(...verbWordBank.Auxiliary.slice(0, 3));
+        words.push(...verbWordBank.Present.slice(0, 3));
+        words.push(...verbWordBank.Past.slice(0, 2));
+        words.push(...verbWordBank.Continuous.slice(0, 2));
+        words.push(...verbWordBank.Perfect.slice(0, 2));
       }
       if (structure.includes('(and|or)')) {
         words.push(...verbWordBank.Conjunction);
       }
     } else {
-      // Generate words based on difficulty level
+      // Generate words based on difficulty level with separated verb types
       const counts = {
-        beginner: { Subject: 3, Determiner: 2, Noun: 3, Verb: 5 },
-        intermediate: { Subject: 3, Determiner: 3, Adjective: 3, Noun: 4, Verb: 6, Conjunction: 2 },
-        advanced: { Subject: 3, Object: 3, Determiner: 3, Adjective: 4, Noun: 4, Verb: 8, Conjunction: 2 }
+        beginner: { 
+          Pronoun: 4, Determiner: 4, Noun: 6, // Use Pronoun instead of Subject
+          // Include verb types that beginners need
+          Auxiliary: 3, Present: 5, Past: 3
+        },
+        intermediate: { 
+          Pronoun: 4, Determiner: 5, Adjective: 6, Noun: 8, // Use Pronoun instead of Subject
+          Auxiliary: 5, Present: 6, Past: 5, Continuous: 4, Conjunction: 2, Adverb: 3
+        },
+        advanced: { 
+          Pronoun: 4, Object: 4, Determiner: 6, Adjective: 8, Noun: 10, // Use Pronoun instead of Subject
+          Auxiliary: 6, Present: 8, Past: 6, Continuous: 6, Perfect: 5, Conjunction: 2, Adverb: 5
+        }
       };
       
       const levelCounts = counts[currentLevel];
@@ -231,17 +394,17 @@ const VerbTenseStructure = () => {
     words.push(...testCaseWords);
     
     // Combine and shuffle words, removing duplicates
-    const combinedWords = [...new Set([...words, ...Object.values(verbWordBank).flat().slice(0, 10)])];
+    const combinedWords = [...new Set([...words])];
     
     setAvailableWords(shuffleArray(combinedWords).map((word, index) => ({
       id: `verb-word-${index}`,
       text: word,
-      type: getWordType(word),  // Use backend-compatible word type
-      subtype: getVerbSubtype(word) // Add subtype for display
+      type: getWordType(word),  // Use backend-compatible word type (returns "Subject" for pronouns)
+      subtype: getVerbSubtype(word) // Add subtype for display colors
     })));
   };
 
-  // ===== DRAG AND DROP HANDLERS ===== (SAME AS SentenceStructure.js)
+  // ===== DRAG AND DROP HANDLERS ===== 
   const handleDragStart = (e, word) => {
     setDraggedWord(word);
     e.dataTransfer.setData('text/plain', JSON.stringify(word));
@@ -265,6 +428,7 @@ const VerbTenseStructure = () => {
     }
     
     setSentenceArea(newSentenceArea);
+    setSentenceArea(newSentenceArea);
     setAvailableWords(prev => prev.filter(w => w.id !== draggedWord.id));
     setDraggedWord(null);
   };
@@ -276,7 +440,7 @@ const VerbTenseStructure = () => {
     setAvailableWords(prev => [...prev, word]);
   };
 
-  // ===== SENTENCE CHECKING ===== (SAME LOGIC AS SentenceStructure.js)
+  // ===== ENHANCED SENTENCE CHECKING WITH VERB ANALYSIS =====
   const checkSentence = () => {
     if (sentenceArea.length === 0) {
       setFeedback('Please build a sentence first!');
@@ -290,7 +454,10 @@ const VerbTenseStructure = () => {
     console.log('Word types:', sentenceArea.map(w => `${w.text}(${w.type})`));
     
     try {
-      // Use backend functions to analyze sentence structure (SAME AS SentenceStructure.js)
+      // Analyze verb tenses first
+      const verbAnalysis = analyzeVerbTenses(sentenceArea);
+      
+      // Use backend functions to analyze sentence structure
       const matchedStructure = getFullStructCheck(sentence);
       const isStructureValid = selectedStructure ? 
         hasFullStructCheck(sentence, selectedStructure) : 
@@ -301,9 +468,13 @@ const VerbTenseStructure = () => {
       
       let feedbackText = '';
       
+      // Check both structure validity and verb tense validity
+      const isVerbTenseValid = verbAnalysis.isValidCombination;
+      const overallValid = isStructureValid && isVerbTenseValid;
+      
       if (selectedStructure) {
         // Handle feedback when practicing a specific structure
-        if (isStructureValid) {
+        if (overallValid) {
           const newCorrectCount = correctCount + 1;
           const newStreak = streak + 1;
           
@@ -319,9 +490,9 @@ const VerbTenseStructure = () => {
           
           if (newCorrectCount >= TARGET_CORRECT) {
             setIsCompleted(true);
-            feedbackText = `🎉 CONGRATULATIONS! You've successfully completed ${TARGET_CORRECT} correct sentences!\nFinal sentence: "${sentence}" matches the target structure: "${selectedStructure}"`;
+            feedbackText = `🎉 CONGRATULATIONS! You've successfully completed ${TARGET_CORRECT} correct sentences!\nFinal sentence: "${sentence}" matches the target structure: "${selectedStructure}"\n${verbAnalysis.feedback}`;
           } else {
-            feedbackText = `✅ Excellent! Your sentence "${sentence}" matches the target structure: "${selectedStructure}"\nProgress: ${newCorrectCount}/${TARGET_CORRECT} correct (${TARGET_CORRECT - newCorrectCount} more to go!)`;
+            feedbackText = `✅ Excellent! Your sentence "${sentence}" matches the target structure: "${selectedStructure}"\n${verbAnalysis.feedback}\nProgress: ${newCorrectCount}/${TARGET_CORRECT} correct (${TARGET_CORRECT - newCorrectCount} more to go!)`;
           }
         } else {
           setStreak(0);
@@ -333,15 +504,25 @@ const VerbTenseStructure = () => {
             timestamp: new Date().toLocaleTimeString()
           }]);
           
-          feedbackText = `❌ Your sentence "${sentence}" doesn't match the target structure "${selectedStructure}".`;
-          if (matchedStructure) {
-            feedbackText += ` It follows: "${matchedStructure}" instead.`;
+          feedbackText = `❌ Your sentence "${sentence}" has issues:\n`;
+          
+          if (!isStructureValid) {
+            feedbackText += `• Structure: doesn't match target "${selectedStructure}".`;
+            if (matchedStructure) {
+              feedbackText += ` It follows: "${matchedStructure}" instead.`;
+            }
+            feedbackText += '\n';
           }
-          feedbackText += `\nTry again! Progress: ${correctCount}/${TARGET_CORRECT} correct`;
+          
+          if (!isVerbTenseValid) {
+            feedbackText += `• Verb Tense: ${verbAnalysis.feedback}\n`;
+          }
+          
+          feedbackText += `Try again! Progress: ${correctCount}/${TARGET_CORRECT} correct`;
         }
       } else {
         // Handle feedback when practicing freely
-        if (isStructureValid) {
+        if (overallValid) {
           const newCorrectCount = correctCount + 1;
           const newStreak = streak + 1;
           
@@ -357,9 +538,9 @@ const VerbTenseStructure = () => {
           
           if (newCorrectCount >= TARGET_CORRECT) {
             setIsCompleted(true);
-            feedbackText = `🎉 CONGRATULATIONS! You've successfully completed ${TARGET_CORRECT} correct sentences!\nFinal sentence: "${sentence}" follows a valid structure: "${matchedStructure}"`;
+            feedbackText = `🎉 CONGRATULATIONS! You've successfully completed ${TARGET_CORRECT} correct sentences!\nFinal sentence: "${sentence}" follows a valid structure: "${matchedStructure}"\n${verbAnalysis.feedback}`;
           } else {
-            feedbackText = `✅ Great! Your sentence "${sentence}" follows a valid structure: "${matchedStructure}"\nProgress: ${newCorrectCount}/${TARGET_CORRECT} correct (${TARGET_CORRECT - newCorrectCount} more to go!)`;
+            feedbackText = `✅ Great! Your sentence "${sentence}" follows a valid structure: "${matchedStructure}"\n${verbAnalysis.feedback}\nProgress: ${newCorrectCount}/${TARGET_CORRECT} correct (${TARGET_CORRECT - newCorrectCount} more to go!)`;
           }
         } else {
           setStreak(0);
@@ -371,18 +552,28 @@ const VerbTenseStructure = () => {
             timestamp: new Date().toLocaleTimeString()
           }]);
           
-          feedbackText = `❌ Your sentence "${sentence}" needs some adjustments to follow proper grammar structure.\nTry again! Progress: ${correctCount}/${TARGET_CORRECT} correct`;
+          feedbackText = `❌ Your sentence "${sentence}" needs improvements:\n`;
+          
+          if (!isStructureValid) {
+            feedbackText += `• Structure: needs to follow proper grammar patterns.\n`;
+          }
+          
+          if (!isVerbTenseValid) {
+            feedbackText += `• Verb Tense: ${verbAnalysis.feedback}\n`;
+          }
+          
+          feedbackText += `Try again! Progress: ${correctCount}/${TARGET_CORRECT} correct`;
         }
       }
 
       setFeedback(feedbackText);
-      setIsValid(isStructureValid);
+      setIsValid(overallValid);
       
       // Auto-reset after successful attempt
-      if (isStructureValid && !isCompleted && correctCount + 1 < TARGET_CORRECT) {
+      if (overallValid && !isCompleted && correctCount + 1 < TARGET_CORRECT) {
         setTimeout(() => {
           resetSentenceOnly();
-        }, 2000);
+        }, 3000); // Give more time to read verb feedback
       }
       
     } catch (error) {

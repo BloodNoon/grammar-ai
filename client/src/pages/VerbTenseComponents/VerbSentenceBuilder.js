@@ -9,39 +9,57 @@ const VerbSentenceBuilder = ({
 }) => {
 
   // Color mapping for different grammatical word types (same as WordBank)
-  const getWordTypeColor = (type) => {
+  const getWordTypeColor = (word) => {
+    // First check if it's a verb and get the subtype for specific coloring
+    if (word.type === 'Verb' && word.subtype) {
+      const verbColorMap = {
+        'Auxiliary': '#F44336',    // Red for auxiliary verbs
+        'Present': '#4CAF50',      // Green for present verbs
+        'Past': '#2196F3',         // Blue for past verbs
+        'Continuous': '#FF9800',   // Orange for continuous verbs
+        'Perfect': '#9C27B0',      // Purple for perfect verbs
+        'Verb': '#607D8B'          // Blue-gray for general verbs
+      };
+      return verbColorMap[word.subtype] || '#607D8B';
+    }
+    
     const colorMap = {
-      'Subject': '#4CAF50',      // Green for subjects
+      'Subject': '#4CAF50',      // Green for subjects (displayed as Pronoun)
       'Object': '#2196F3',       // Blue for objects
       'Determiner': '#9C27B0',   // Purple for determiners
       'Adjective': '#FF9800',    // Orange for adjectives
       'Noun': '#607D8B',         // Blue-gray for nouns
-      'Auxiliary': '#F44336',    // Red for auxiliary verbs
-      'PresentVerb': '#8BC34A',  // Light green for present verbs
-      'PastVerb': '#4CAF50',     // Green for past verbs
-      'Continuous': '#00BCD4',   // Cyan for continuous verbs
-      'Perfect': '#009688',      // Teal for perfect verbs
+      'Verb': '#8BC34A',         // Light green for general verbs
       'Unknown': '#757575'       // Gray for unknown word types
     };
-    return colorMap[type] || '#757575';
+    return colorMap[word.type] || '#757575';
   };
 
   // Get lighter background color for word cards in sentence
-  const getWordTypeBackgroundColor = (type) => {
+  const getWordTypeBackgroundColor = (word) => {
+    // First check if it's a verb and get the subtype for specific background coloring
+    if (word.type === 'Verb' && word.subtype) {
+      const verbBackgroundMap = {
+        'Auxiliary': '#ffebee',    // Light red for auxiliary verbs
+        'Present': '#e8f5e8',      // Light green for present verbs
+        'Past': '#e3f2fd',         // Light blue for past verbs
+        'Continuous': '#fff3e0',   // Light orange for continuous verbs
+        'Perfect': '#f3e5f5',      // Light purple for perfect verbs
+        'Verb': '#eceff1'          // Light blue-gray for general verbs
+      };
+      return verbBackgroundMap[word.subtype] || '#eceff1';
+    }
+    
     const backgroundMap = {
-      'Subject': '#e8f5e8',      // Light green
+      'Subject': '#e8f5e8',      // Light green (displayed as Pronoun)
       'Object': '#e3f2fd',       // Light blue
       'Determiner': '#f3e5f5',   // Light purple
       'Adjective': '#fff3e0',    // Light orange
       'Noun': '#eceff1',         // Light blue-gray
-      'Auxiliary': '#ffebee',    // Light red
-      'PresentVerb': '#f1f8e9',  // Very light green
-      'PastVerb': '#e8f5e8',     // Light green
-      'Continuous': '#e0f2f1',   // Light cyan
-      'Perfect': '#e0f2f1',      // Light teal
+      'Verb': '#f1f8e9',         // Very light green for general verbs
       'Unknown': '#f5f5f5'       // Light gray
     };
-    return backgroundMap[type] || '#f5f5f5';
+    return backgroundMap[word.type] || '#f5f5f5';
   };
 
   return (
@@ -126,9 +144,9 @@ const VerbSentenceBuilder = ({
                 <div
                   onClick={() => removeFromSentence(index)} // Remove word when clicked
                   style={{
-                    backgroundColor: getWordTypeBackgroundColor(word.type),
-                    border: `2px solid ${getWordTypeColor(word.type)}`,
-                    color: getWordTypeColor(word.type),
+                    backgroundColor: getWordTypeBackgroundColor(word),
+                    border: `2px solid ${getWordTypeColor(word)}`,
+                    color: getWordTypeColor(word),
                     padding: '10px 12px',   // Internal spacing for sentence words
                     borderRadius: '6px',    // Rounded corners
                     cursor: 'pointer',      // Show clickable cursor
@@ -161,7 +179,7 @@ const VerbSentenceBuilder = ({
                     {word.text}
                   </div>
                   
-                  {/* Word type label */}
+                  {/* Word type label - show "Pronoun" for Subject type, verb subtype if available */}
                   <div style={{ 
                     fontSize: '10px',
                     opacity: '0.7',
@@ -169,7 +187,9 @@ const VerbSentenceBuilder = ({
                     letterSpacing: '0.5px',
                     marginTop: '2px'
                   }}>
-                    {word.type}
+                    {word.type === 'Subject' ? 'PRONOUN' : 
+                     word.type === 'Verb' && word.subtype ? word.subtype : 
+                     word.type}
                   </div>
 
                   {/* Remove indicator on hover */}
@@ -189,7 +209,7 @@ const VerbSentenceBuilder = ({
                     fontWeight: 'bold'
                   }}
                   className="remove-indicator">
-                    ×
+                    x
                   </div>
                 </div>
 

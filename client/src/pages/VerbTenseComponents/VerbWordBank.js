@@ -6,40 +6,60 @@ const VerbWordBank = ({
   handleDragStart   // Function called when user starts dragging a word
 }) => {
 
-  // Color mapping for different grammatical word types
-  const getWordTypeColor = (type) => {
+  // Updated color mapping for different grammatical word types including verb subtypes
+  const getWordTypeColor = (word) => {
+    // First check if it's a verb and get the subtype for specific coloring
+    if (word.type === 'Verb' && word.subtype) {
+      const verbColorMap = {
+        'Auxiliary': '#F44336',    // Red for auxiliary verbs
+        'Present': '#4CAF50',      // Green for present verbs
+        'Past': '#2196F3',         // Blue for past verbs
+        'Continuous': '#FF9800',   // Orange for continuous verbs
+        'Perfect': '#9C27B0',      // Purple for perfect verbs
+        'Verb': '#607D8B'          // Blue-gray for general verbs
+      };
+      return verbColorMap[word.subtype] || '#607D8B';
+    }
+    
+    // Updated color mapping to show "Pronoun" instead of "Subject"
     const colorMap = {
-      'Subject': '#4CAF50',      // Green for subjects
+      'Subject': '#4CAF50',      // Green for subjects (but will display as "Pronoun")
       'Object': '#2196F3',       // Blue for objects
       'Determiner': '#9C27B0',   // Purple for determiners
       'Adjective': '#FF9800',    // Orange for adjectives
       'Noun': '#607D8B',         // Blue-gray for nouns
-      'Auxiliary': '#F44336',    // Red for auxiliary verbs
-      'PresentVerb': '#8BC34A',  // Light green for present verbs
-      'PastVerb': '#4CAF50',     // Green for past verbs
-      'Continuous': '#00BCD4',   // Cyan for continuous verbs
-      'Perfect': '#009688',      // Teal for perfect verbs
+      'Verb': '#8BC34A',         // Light green for general verbs
       'Unknown': '#757575'       // Gray for unknown word types
     };
-    return colorMap[type] || '#757575';
+    return colorMap[word.type] || '#757575';
   };
 
   // Get lighter background color for word cards
-  const getWordTypeBackgroundColor = (type) => {
+  const getWordTypeBackgroundColor = (word) => {
+    // First check if it's a verb and get the subtype for specific background coloring
+    if (word.type === 'Verb' && word.subtype) {
+      const verbBackgroundMap = {
+        'Auxiliary': '#ffebee',    // Light red for auxiliary verbs
+        'Present': '#e8f5e8',      // Light green for present verbs
+        'Past': '#e3f2fd',         // Light blue for past verbs
+        'Continuous': '#fff3e0',   // Light orange for continuous verbs
+        'Perfect': '#f3e5f5',      // Light purple for perfect verbs
+        'Verb': '#eceff1'          // Light blue-gray for general verbs
+      };
+      return verbBackgroundMap[word.subtype] || '#eceff1';
+    }
+    
+    // Updated background mapping to show "Pronoun" instead of "Subject"
     const backgroundMap = {
-      'Subject': '#e8f5e8',      // Light green
+      'Subject': '#e8f5e8',      // Light green (but will display as "Pronoun")
       'Object': '#e3f2fd',       // Light blue
       'Determiner': '#f3e5f5',   // Light purple
       'Adjective': '#fff3e0',    // Light orange
       'Noun': '#eceff1',         // Light blue-gray
-      'Auxiliary': '#ffebee',    // Light red
-      'PresentVerb': '#f1f8e9',  // Very light green
-      'PastVerb': '#e8f5e8',     // Light green
-      'Continuous': '#e0f2f1',   // Light cyan
-      'Perfect': '#e0f2f1',      // Light teal
+      'Verb': '#f1f8e9',         // Very light green for general verbs
       'Unknown': '#f5f5f5'       // Light gray
     };
-    return backgroundMap[type] || '#f5f5f5';
+    return backgroundMap[word.type] || '#f5f5f5';
   };
 
   return (
@@ -106,16 +126,16 @@ const VerbWordBank = ({
                 handleDragStart(e, word);
               }} // Handle drag start
               style={{
-                backgroundColor: getWordTypeBackgroundColor(word.type),
-                border: `2px solid ${getWordTypeColor(word.type)}`,
-                color: getWordTypeColor(word.type),
+                backgroundColor: getWordTypeBackgroundColor(word),
+                border: `2px solid ${getWordTypeColor(word)}`,
+                color: getWordTypeColor(word),
                 padding: '12px 8px',     // Internal spacing for word cards
                 textAlign: 'center',     // Center text within cards
                 cursor: 'grab',          // Show grab cursor to indicate draggable
                 borderRadius: '6px',     // Rounded corners
                 fontSize: '14px',        // Standard readable text size
                 fontWeight: 'bold',      // Bold text for better visibility
-                minHeight: '60px',       // Minimum height for consistent card sizes
+                minHeight: '70px',       // Slightly increased height for verb subtype labels
                 display: 'flex',         // Flex layout for centering
                 flexDirection: 'column', // Stack content vertically
                 justifyContent: 'center', // Center content vertically
@@ -133,11 +153,6 @@ const VerbWordBank = ({
                 e.target.style.transform = 'translateY(0)'; // Return to original position
                 e.target.style.boxShadow = 'none'; // Remove shadow
               }}
-              // Change cursor during drag
-              //onDragStart={(e) => {
-               // e.target.style.cursor = 'grabbing'; // Show grabbing cursor during drag
-               // handleDragStart(e, word);
-              //}}
               onDragEnd={(e) => {
                 e.target.style.cursor = 'grab'; // Return to grab cursor after drag
               }}
@@ -150,14 +165,16 @@ const VerbWordBank = ({
                 {word.text}
               </div>
               
-              {/* Display the grammatical type label */}
+              {/* Display the grammatical type label - show "Pronoun" for Subject type, verb subtype if available */}
               <div style={{ 
                 fontSize: '10px',        // Small font for type label
                 opacity: '0.8',          // Slightly transparent for subtle appearance
                 textTransform: 'uppercase', // Uppercase for type labels
                 letterSpacing: '0.5px'   // Letter spacing for readability
               }}>
-                {word.type}
+                {word.type === 'Subject' ? 'PRONOUN' : 
+                 word.type === 'Verb' && word.subtype ? word.subtype : 
+                 word.type}
               </div>
             </div>
           ))}
@@ -175,7 +192,7 @@ const VerbWordBank = ({
         {availableWords.length} words available for dragging
       </div>
 
-      {/* Legend showing word type colors */}
+      {/* Updated legend showing word type colors including verb subtypes */}
       <div style={{
         marginTop: '20px',              // Space above legend
         padding: '15px',                // Internal spacing
@@ -192,24 +209,26 @@ const VerbWordBank = ({
           Word Type Color Guide:
         </h4>
         
-        {/* Grid display of color legend */}
+        {/* Updated legend showing word type colors including "Pronoun" instead of "Subject" */}
         <div style={{
           display: 'grid',              // Grid layout for legend
           gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))', // Responsive grid
           gap: '8px',                   // Space between legend items
           fontSize: '11px'              // Small font for legend
         }}>
-          {/* Create legend items for common word types */}
+          {/* Create legend items for common word types with "Pronoun" instead of "Subject" */}
           {[
-            { type: 'Subject', label: 'Subject' },
-            { type: 'Object', label: 'Object' },
-            { type: 'Auxiliary', label: 'Auxiliary' },
-            { type: 'PresentVerb', label: 'PresentVerb' },
-            { type: 'PastVerb', label: 'PastVerb' },
-            { type: 'Continuous', label: 'Continuous' },
-            { type: 'Perfect', label: 'Perfect' },
-            { type: 'Noun', label: 'Noun' }
-          ].map(({ type, label }) => (
+            { type: 'Pronoun', label: 'Pronoun', color: '#4CAF50' },
+            { type: 'Object', label: 'Object', color: '#2196F3' },
+            { type: 'Determiner', label: 'Determiner', color: '#9C27B0' },
+            { type: 'Adjective', label: 'Adjective', color: '#FF9800' },
+            { type: 'Noun', label: 'Noun', color: '#607D8B' },
+            { type: 'Auxiliary', label: 'Auxiliary', color: '#F44336' },
+            { type: 'Present', label: 'Present', color: '#4CAF50' },
+            { type: 'Past', label: 'Past', color: '#2196F3' },
+            { type: 'Continuous', label: 'Continuous', color: '#FF9800' },
+            { type: 'Perfect', label: 'Perfect', color: '#9C27B0' }
+          ].map(({ type, label, color }) => (
             <div key={type} style={{
               display: 'flex',          // Horizontal layout
               alignItems: 'center',     // Vertical alignment
@@ -219,7 +238,7 @@ const VerbWordBank = ({
               <div style={{
                 width: '12px',          // Small dot size
                 height: '12px',         // Square dot
-                backgroundColor: getWordTypeColor(type),
+                backgroundColor: color,
                 borderRadius: '50%',    // Make it circular
                 flexShrink: 0           // Prevent shrinking
               }}></div>
