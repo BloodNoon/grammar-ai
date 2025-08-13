@@ -325,7 +325,7 @@ const VerbTenseStructure = () => {
     return newArray;
   };
 
-  // ===== UPDATED WORD GENERATION =====
+  // ===== WORD GENERATION =====
   const generateVerbWordSetFromTestCases = () => {
     let words = [];
     
@@ -584,7 +584,7 @@ const VerbTenseStructure = () => {
     }
   };
 
-  // ===== RESET FUNCTIONS ===== (SAME AS SentenceStructure.js)
+  // ===== RESET FUNCTIONS =====
   const resetSentence = () => {
     const allWords = [...availableWords, ...sentenceArea];
     setAvailableWords(allWords);
