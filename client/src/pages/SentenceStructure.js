@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom'; // For the naviagtion
 import nlp from 'compromise';
 import { testCases } from '../utils/SentenceChecker/TestCases';
 import SubjectQuiz from '../utils/SentenceChecker/SubjectQuiz';
@@ -41,6 +42,9 @@ function tagWordsWithCompromise(sentence) {
 }
 
 const SentenceStructures = () => {
+	// ADD THIS: Use React Router's useHistory hook
+	const history = useHistory();
+
 	const [lessonPage, setLessonPage] = useState(1);
 	const [example, setExample] = useState({ sentence: '', readable: '' });
 	const [activePrepTab, setActivePrepTab] = useState('prep1');
@@ -118,9 +122,13 @@ const SentenceStructures = () => {
 		}
 	};
 
+	// MODIFIED: Updated handleNext to use React Router navigation
 	const handleNext = () => {
 		if (lessonPage < 4) {
 			setLessonPage(lessonPage + 1);
+		} else if (lessonPage === 4) {
+			// Navigate to VerbTenseStructure using React Router
+			history.push('/verb-tense-structure');
 		}
 	};
 
@@ -280,7 +288,7 @@ const SentenceStructures = () => {
 												<ul>
 													{quizFeedback.map((result, i) => (
 														<li key={i}>
-															Word: <b>{quizSentence.split(' ')[i]}</b> —{' '}
+															Word: <b>{quizSentence.split(' ')[i]}</b> â€"{' '}
 															{result === 'correct' ? (
 																<span style={{ color: 'green' }}>Correct</span>
 															) : (
@@ -435,6 +443,24 @@ const SentenceStructures = () => {
             A <strong>preposition</strong> is a word that indicates the relationship between a noun or
             pronoun and other words in a sentence.
           </p>
+
+          {/* Completion message for lesson 4 */}
+          <div style={{ 
+            marginTop: '2rem', 
+            padding: '1.5rem',
+            backgroundColor: '#e8f5e8',
+            borderRadius: '10px',
+            border: '2px solid #28a745'
+          }}>
+            <h3 style={{ color: '#28a745', marginBottom: '1rem' }}>🎉 Congratulations!</h3>
+            <p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
+              You've completed all 4 lessons of Sentence Structure! 
+              You've learned about subjects, objects, adjectives, adverbs, and prepositions.
+            </p>
+            <p style={{ fontSize: '1rem', marginTop: '1rem', fontWeight: 'bold', color: '#28a745' }}>
+              Ready to take your skills to the next level with Verb Tenses and Auxiliary Verbs?
+            </p>
+          </div>
 
           {/* Types of Prepositions Section */}
           <div
@@ -635,20 +661,21 @@ const SentenceStructures = () => {
 						Previous
 					</button>
 
-					{/* Next Button */}
+					{/* Next Button with React Router navigation */}
 					<button
 						onClick={handleNext}
 						style={{
-							backgroundColor: lessonPage === 4 ? '#ccc' : '#007bff',
+							backgroundColor: lessonPage === 4 ? '#28a745' : '#007bff', // Green when ready to advance
 							color: 'white',
 							padding: '10px 20px',
 							border: 'none',
 							borderRadius: '5px',
-							cursor: lessonPage === 4 ? 'not-allowed' : 'pointer',
+							cursor: 'pointer',
+							fontSize: lessonPage === 4 ? '16px' : '14px',
+							fontWeight: lessonPage === 4 ? 'bold' : 'normal'
 						}}
-						disabled={lessonPage === 4}
 					>
-						Next
+						{lessonPage === 4 ? 'Continue to Verb Tense Structure →' : 'Next'}
 					</button>
 				</div>
 			</div>
