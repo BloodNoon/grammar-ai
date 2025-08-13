@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom'; // For the naviagtion
+import { useHistory } from 'react-router-dom'; // ADD THIS IMPORT
 import nlp from 'compromise';
 import { testCases } from '../utils/SentenceChecker/TestCases';
 import SubjectQuiz from '../utils/SentenceChecker/SubjectQuiz';
@@ -122,13 +122,10 @@ const SentenceStructures = () => {
 		}
 	};
 
-	// MODIFIED: Updated handleNext to use React Router navigation
+	// MODIFIED: Updated handleNext for normal lesson navigation
 	const handleNext = () => {
 		if (lessonPage < 4) {
 			setLessonPage(lessonPage + 1);
-		} else if (lessonPage === 4) {
-			// Navigate to VerbTenseStructure using React Router
-			history.push('/verb-tense-structure');
 		}
 	};
 
@@ -371,15 +368,135 @@ const SentenceStructures = () => {
 
 					{lessonPage === 2 && (
 						<div>
-							<h2>Lesson 2</h2>
-							<p>(Coming soon...)</p>
+							<h2>Lesson 2: Verb Tense Structure</h2>
+							<div style={{ 
+								padding: '1rem', 
+								backgroundColor: '#e8f5e8', 
+								borderRadius: '10px', 
+								marginBottom: '2rem',
+								border: '2px solid #28a745'
+							}}>
+								<h3 style={{ color: '#28a745', marginBottom: '1rem' }}>🚀 Advanced Grammar Time!</h3>
+								<p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
+									Now let's dive into verb tenses and auxiliary verbs! This will help you understand 
+									how to use helping verbs like "is", "are", "have", "will" with main verbs.
+								</p>
+							</div>
+							
+							{/* Button to navigate to VerbTenseStructure */}
+							<div style={{ textAlign: 'center', margin: '2rem 0' }}>
+								<button
+									onClick={() => history.push('/verb-tense-structure')}
+									style={{
+										backgroundColor: '#28a745',
+										color: 'white',
+										padding: '15px 30px',
+										border: 'none',
+										borderRadius: '8px',
+										fontSize: '18px',
+										fontWeight: 'bold',
+										cursor: 'pointer',
+										boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+										transition: 'all 0.3s ease'
+									}}
+									onMouseOver={(e) => e.target.style.backgroundColor = '#218838'}
+									onMouseOut={(e) => e.target.style.backgroundColor = '#28a745'}
+								>
+									🎯 Start Verb Tense Practice →
+								</button>
+							</div>
+
+							{/* Preview content */}
+							<div style={{ 
+								padding: '1.5rem', 
+								backgroundColor: '#f0f8ff', 
+								borderRadius: '10px',
+								marginTop: '2rem'
+							}}>
+								<h3>What you'll learn in Verb Tense Structure:</h3>
+								<ul style={{ textAlign: 'left', fontSize: '1.1rem', lineHeight: '1.8' }}>
+									<li><strong>Auxiliary Verbs:</strong> Master "is", "are", "was", "were", "have", "will"</li>
+									<li><strong>Present Tense:</strong> "She runs" vs "She is running"</li>
+									<li><strong>Past Tense:</strong> "He walked" vs "He was walking"</li>
+									<li><strong>Perfect Tense:</strong> "They have eaten" vs "They had eaten"</li>
+									<li><strong>Future Tense:</strong> "I will go" vs "I am going to go"</li>
+								</ul>
+							</div>
 						</div>
 					)}
 
 					{lessonPage === 3 && (
 						<div>
-							<h2>Lesson 3</h2>
-							<p>(Coming soon...)</p>
+							<h2>Lesson 3: Article Structure</h2>
+							<div style={{ 
+								padding: '1rem', 
+								backgroundColor: '#e8f5e8', 
+								borderRadius: '10px', 
+								marginBottom: '2rem',
+								border: '2px solid #28a745'
+							}}>
+								<h3 style={{ color: '#28a745', marginBottom: '1rem' }}>📚 Master Articles!</h3>
+								<p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
+									Time to learn about definite and indefinite articles! This lesson will teach you 
+									when to use "a", "an", and "the" correctly in your sentences.
+								</p>
+							</div>
+							
+							{/* Button to navigate to ArticleStructure */}
+							<div style={{ textAlign: 'center', margin: '2rem 0' }}>
+								<button
+									onClick={() => history.push('/article-structure')}
+									style={{
+										backgroundColor: '#17a2b8',
+										color: 'white',
+										padding: '15px 30px',
+										border: 'none',
+										borderRadius: '8px',
+										fontSize: '18px',
+										fontWeight: 'bold',
+										cursor: 'pointer',
+										boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+										transition: 'all 0.3s ease'
+									}}
+									onMouseOver={(e) => e.target.style.backgroundColor = '#138496'}
+									onMouseOut={(e) => e.target.style.backgroundColor = '#17a2b8'}
+								>
+									📝 Start Article Practice →
+								</button>
+							</div>
+
+							{/* Preview content */}
+							<div style={{ 
+								padding: '1.5rem', 
+								backgroundColor: '#f0f8ff', 
+								borderRadius: '10px',
+								marginTop: '2rem'
+							}}>
+								<h3>What you'll learn in Article Structure:</h3>
+								<ul style={{ textAlign: 'left', fontSize: '1.1rem', lineHeight: '1.8' }}>
+									<li><strong>Indefinite Articles:</strong> When to use "a" vs "an"</li>
+									<li><strong>Definite Articles:</strong> When to use "the"</li>
+									<li><strong>Vowel Sounds:</strong> "an umbrella" vs "a university"</li>
+									<li><strong>Specific vs General:</strong> "the dog" vs "a dog"</li>
+									<li><strong>Article Placement:</strong> "a big red car" vs "the small house"</li>
+								</ul>
+								
+								<div style={{ 
+									marginTop: '1.5rem', 
+									padding: '1rem', 
+									backgroundColor: '#fff3cd', 
+									borderRadius: '8px',
+									border: '1px solid #ffeaa7'
+								}}>
+									<h4 style={{ color: '#856404', marginBottom: '0.5rem' }}>Quick Examples:</h4>
+									<p style={{ fontSize: '1rem', margin: '0.5rem 0', color: '#856404' }}>
+										✓ "<strong>An</strong> apple" (vowel sound)<br/>
+										✓ "<strong>A</strong> university" (consonant sound)<br/>
+										✓ "<strong>The</strong> cat we saw yesterday" (specific)<br/>
+										✓ "<strong>A</strong> cat" (any cat)
+									</p>
+								</div>
+							</div>
 						</div>
 					)}
 
@@ -661,21 +778,20 @@ const SentenceStructures = () => {
 						Previous
 					</button>
 
-					{/* Next Button with React Router navigation */}
+					{/* Next Button with normal lesson navigation */}
 					<button
 						onClick={handleNext}
 						style={{
-							backgroundColor: lessonPage === 4 ? '#28a745' : '#007bff', // Green when ready to advance
+							backgroundColor: lessonPage === 4 ? '#ccc' : '#007bff',
 							color: 'white',
 							padding: '10px 20px',
 							border: 'none',
 							borderRadius: '5px',
-							cursor: 'pointer',
-							fontSize: lessonPage === 4 ? '16px' : '14px',
-							fontWeight: lessonPage === 4 ? 'bold' : 'normal'
+							cursor: lessonPage === 4 ? 'not-allowed' : 'pointer',
 						}}
+						disabled={lessonPage === 4}
 					>
-						{lessonPage === 4 ? 'Continue to Verb Tense Structure →' : 'Next'}
+						{lessonPage === 4 ? 'Completed!' : 'Next'}
 					</button>
 				</div>
 			</div>
