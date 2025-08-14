@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom'; // ADD THIS IMPORT
+import { useHistory } from 'react-router-dom';
 import nlp from 'compromise';
 import { testCases } from '../utils/SentenceChecker/TestCases';
 import SubjectQuiz from '../utils/SentenceChecker/SubjectQuiz';
 import PrepositionSorter from '../utils/SentenceChecker/PrepositionSorter';
 import PrepositionStructureGame from '../utils/SentenceChecker/PrepositionStructureGame';
+// ADD THESE IMPORTS
+import VerbTenseStructure from './VerbTenseStructure';
+import ArticleStructure from './ArticleStructure';
 
 function tagWordsWithCompromise(sentence) {
 	const doc = nlp(sentence);
@@ -383,44 +386,15 @@ const SentenceStructures = () => {
 								</p>
 							</div>
 							
-							{/* Button to navigate to VerbTenseStructure */}
-							<div style={{ textAlign: 'center', margin: '2rem 0' }}>
-								<button
-									onClick={() => history.push('/verb-tense-structure')}
-									style={{
-										backgroundColor: '#28a745',
-										color: 'white',
-										padding: '15px 30px',
-										border: 'none',
-										borderRadius: '8px',
-										fontSize: '18px',
-										fontWeight: 'bold',
-										cursor: 'pointer',
-										boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-										transition: 'all 0.3s ease'
-									}}
-									onMouseOver={(e) => e.target.style.backgroundColor = '#218838'}
-									onMouseOut={(e) => e.target.style.backgroundColor = '#28a745'}
-								>
-									🎯 Start Verb Tense Practice →
-								</button>
-							</div>
-
-							{/* Preview content */}
+							{/* EMBED THE ENTIRE VerbTenseStructure COMPONENT */}
 							<div style={{ 
-								padding: '1.5rem', 
-								backgroundColor: '#f0f8ff', 
+								marginTop: '2rem',
+								padding: '2rem',
+								backgroundColor: '#f8f9fa',
 								borderRadius: '10px',
-								marginTop: '2rem'
+								border: '1px solid #dee2e6'
 							}}>
-								<h3>What you'll learn in Verb Tense Structure:</h3>
-								<ul style={{ textAlign: 'left', fontSize: '1.1rem', lineHeight: '1.8' }}>
-									<li><strong>Auxiliary Verbs:</strong> Master "is", "are", "was", "were", "have", "will"</li>
-									<li><strong>Present Tense:</strong> "She runs" vs "She is running"</li>
-									<li><strong>Past Tense:</strong> "He walked" vs "He was walking"</li>
-									<li><strong>Perfect Tense:</strong> "They have eaten" vs "They had eaten"</li>
-									<li><strong>Future Tense:</strong> "I will go" vs "I am going to go"</li>
-								</ul>
+								<VerbTenseStructure />
 							</div>
 						</div>
 					)}
@@ -442,60 +416,15 @@ const SentenceStructures = () => {
 								</p>
 							</div>
 							
-							{/* Button to navigate to ArticleStructure */}
-							<div style={{ textAlign: 'center', margin: '2rem 0' }}>
-								<button
-									onClick={() => history.push('/article-structure')}
-									style={{
-										backgroundColor: '#17a2b8',
-										color: 'white',
-										padding: '15px 30px',
-										border: 'none',
-										borderRadius: '8px',
-										fontSize: '18px',
-										fontWeight: 'bold',
-										cursor: 'pointer',
-										boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-										transition: 'all 0.3s ease'
-									}}
-									onMouseOver={(e) => e.target.style.backgroundColor = '#138496'}
-									onMouseOut={(e) => e.target.style.backgroundColor = '#17a2b8'}
-								>
-									📝 Start Article Practice →
-								</button>
-							</div>
-
-							{/* Preview content */}
+							{/* EMBED THE ENTIRE ArticleStructure COMPONENT */}
 							<div style={{ 
-								padding: '1.5rem', 
-								backgroundColor: '#f0f8ff', 
+								marginTop: '2rem',
+								padding: '2rem',
+								backgroundColor: '#f8f9fa',
 								borderRadius: '10px',
-								marginTop: '2rem'
+								border: '1px solid #dee2e6'
 							}}>
-								<h3>What you'll learn in Article Structure:</h3>
-								<ul style={{ textAlign: 'left', fontSize: '1.1rem', lineHeight: '1.8' }}>
-									<li><strong>Indefinite Articles:</strong> When to use "a" vs "an"</li>
-									<li><strong>Definite Articles:</strong> When to use "the"</li>
-									<li><strong>Vowel Sounds:</strong> "an umbrella" vs "a university"</li>
-									<li><strong>Specific vs General:</strong> "the dog" vs "a dog"</li>
-									<li><strong>Article Placement:</strong> "a big red car" vs "the small house"</li>
-								</ul>
-								
-								<div style={{ 
-									marginTop: '1.5rem', 
-									padding: '1rem', 
-									backgroundColor: '#fff3cd', 
-									borderRadius: '8px',
-									border: '1px solid #ffeaa7'
-								}}>
-									<h4 style={{ color: '#856404', marginBottom: '0.5rem' }}>Quick Examples:</h4>
-									<p style={{ fontSize: '1rem', margin: '0.5rem 0', color: '#856404' }}>
-										✓ "<strong>An</strong> apple" (vowel sound)<br/>
-										✓ "<strong>A</strong> university" (consonant sound)<br/>
-										✓ "<strong>The</strong> cat we saw yesterday" (specific)<br/>
-										✓ "<strong>A</strong> cat" (any cat)
-									</p>
-								</div>
+								<ArticleStructure />
 							</div>
 						</div>
 					)}
