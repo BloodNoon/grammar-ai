@@ -5,7 +5,6 @@ import { testCases } from '../utils/SentenceChecker/TestCases';
 import SubjectQuiz from '../utils/SentenceChecker/SubjectQuiz';
 import PrepositionSorter from '../utils/SentenceChecker/PrepositionSorter';
 import PrepositionStructureGame from '../utils/SentenceChecker/PrepositionStructureGame';
-// ADD THESE IMPORTS
 import VerbTenseStructure from './VerbTenseStructure';
 import ArticleStructure from './ArticleStructure';
 
