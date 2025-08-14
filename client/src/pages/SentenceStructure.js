@@ -7,6 +7,8 @@ import PrepositionSorter from '../utils/SentenceChecker/PrepositionSorter';
 import PrepositionStructureGame from '../utils/SentenceChecker/PrepositionStructureGame';
 import VerbTenseStructure from './VerbTenseStructure';
 import ArticleStructure from './ArticleStructure';
+import PrepositionQuiz from '../utils/SentenceChecker/PrepositionQuiz';
+
 
 function tagWordsWithCompromise(sentence) {
 	const doc = nlp(sentence);
@@ -665,6 +667,7 @@ const SentenceStructures = () => {
 
           <PrepositionSorter />
           <PrepositionStructureGame />
+		  <PrepositionQuiz />
         </>
       )}
 
