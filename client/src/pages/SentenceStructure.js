@@ -3,12 +3,18 @@ import { useHistory } from 'react-router-dom';
 import nlp from 'compromise';
 import { testCases } from '../utils/SentenceChecker/TestCases';
 import SubjectQuiz from '../utils/SentenceChecker/SubjectQuiz';
-import PrepositionSorter from '../utils/SentenceChecker/PrepositionSorter';
-import PrepositionStructureGame from '../utils/SentenceChecker/PrepositionStructureGame';
 import VerbTenseStructure from './VerbTenseStructure';
 import ArticleStructure from './ArticleStructure';
+// PREP1 COMPONENTS
+import PrepositionSorter from '../utils/SentenceChecker/PrepositionSorter';
+import PrepositionStructureGame from '../utils/SentenceChecker/PrepositionStructureGame';
 import PrepositionQuiz from '../utils/SentenceChecker/PrepositionQuiz';
-
+// PREP2 COMPONENTS
+import PrepositionPhraseLesson from '../utils/SentenceChecker/PrepositionPhraseLesson';
+import PrepositionPhraseFillBlanks from '../utils/SentenceChecker/PrepositionPhraseFillBlanks';
+import PrepositionPhraseWordBlocks from '../utils/SentenceChecker/PrepositionPhraseWordBlocks';
+import PrepositionPhraseTesting from '../utils/SentenceChecker/PrepositionPhraseTesting';
+import PrepositionPhraseSorting from '../utils/SentenceChecker/PrepositionPhraseSorting';
 
 function tagWordsWithCompromise(sentence) {
 	const doc = nlp(sentence);
@@ -501,11 +507,11 @@ const SentenceStructures = () => {
           }}>
             <h3 style={{ color: '#28a745', marginBottom: '1rem' }}>🎉 Congratulations!</h3>
             <p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
-              You've completed all 4 lessons of Sentence Structure! 
+              You've completed all 5 lessons of Sentence Structure! 
               You've learned about subjects, objects, adjectives, adverbs, and prepositions.
             </p>
             <p style={{ fontSize: '1rem', marginTop: '1rem', fontWeight: 'bold', color: '#28a745' }}>
-              Ready to take your skills to the next level with Verb Tenses and Auxiliary Verbs?
+             -- Remove if disired --
             </p>
           </div>
 
@@ -672,10 +678,29 @@ const SentenceStructures = () => {
       )}
 
       {activePrepTab === 'prep2' && (
-        <div>
-          <h2>Prep 2</h2>
-          <p>Coming soon...</p>
-        </div>
+        <>
+          <h1 style={{ fontSize: '48px', fontWeight: 'bold', marginBottom: '1rem' }}>
+            Prepositional Phrases
+          </h1>
+
+          <p
+            style={{
+              fontSize: '1.25rem',
+              maxWidth: '700px',
+              margin: '0 auto',
+              lineHeight: '1.6',
+            }}
+          >
+            A <strong>prepositional phrase</strong> is a group of words that begins with a preposition and ends with a noun or pronoun. It adds detail about time, place, or manner.
+          </p>
+
+          {/* Use the separated components */}
+          <PrepositionPhraseLesson />
+          <PrepositionPhraseFillBlanks />
+          <PrepositionPhraseWordBlocks />
+          <PrepositionPhraseTesting />
+          <PrepositionPhraseSorting />
+        </>
       )}
 
       {activePrepTab === 'prep3' && (
