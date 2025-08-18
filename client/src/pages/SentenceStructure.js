@@ -15,6 +15,8 @@ import PrepositionPhraseFillBlanks from '../utils/SentenceChecker/PrepositionPhr
 import PrepositionPhraseWordBlocks from '../utils/SentenceChecker/PrepositionPhraseWordBlocks';
 import PrepositionPhraseTesting from '../utils/SentenceChecker/PrepositionPhraseTesting';
 import PrepositionPhraseSorting from '../utils/SentenceChecker/PrepositionPhraseSorting';
+// PREP3 COMPONENTS
+import SentenceScramble from '../utils/SentenceChecker/SentenceScramble';
 
 function tagWordsWithCompromise(sentence) {
 	const doc = nlp(sentence);
@@ -436,282 +438,359 @@ const SentenceStructures = () => {
 						</div>
 					)}
 
-{lessonPage === 4 && (
-  <div
-    style={{
-      textAlign: 'center',
-      padding: '2rem',
-      backgroundColor: '#fdfdfd',
-      border: '2px solid #eee',
-      borderRadius: '10px',
-    }}
-  >
-    {/* Tabs */}
-    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
-      {['prep1', 'prep2', 'prep3'].map((tabKey, index) => (
-        <button
-          key={tabKey}
-          onClick={() => setActivePrepTab(tabKey)}
-          style={{
-            padding: '10px 20px',
-            margin: '0 5px',
-            border: '1px solid #ccc',
-            borderBottom: activePrepTab === tabKey ? 'none' : '1px solid #ccc',
-            backgroundColor: activePrepTab === tabKey ? '#fff' : '#eee',
-            fontWeight: activePrepTab === tabKey ? 'bold' : 'normal',
-            cursor: 'pointer',
-            borderTopLeftRadius: '8px',
-            borderTopRightRadius: '8px',
-          }}
-        >
-          {`Prep ${index + 1}`}
-        </button>
-      ))}
-    </div>
+					{lessonPage === 4 && (
+					<div
+						style={{
+						textAlign: 'center',
+						padding: '2rem',
+						backgroundColor: '#fdfdfd',
+						border: '2px solid #eee',
+						borderRadius: '10px',
+						}}
+					>
+						{/* Tabs */}
+						<div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
+						{['prep1', 'prep2', 'prep3'].map((tabKey, index) => (
+							<button
+							key={tabKey}
+							onClick={() => setActivePrepTab(tabKey)}
+							style={{
+								padding: '10px 20px',
+								margin: '0 5px',
+								border: '1px solid #ccc',
+								borderBottom: activePrepTab === tabKey ? 'none' : '1px solid #ccc',
+								backgroundColor: activePrepTab === tabKey ? '#fff' : '#eee',
+								fontWeight: activePrepTab === tabKey ? 'bold' : 'normal',
+								cursor: 'pointer',
+								borderTopLeftRadius: '8px',
+								borderTopRightRadius: '8px',
+							}}
+							>
+							{`Prep ${index + 1}`}
+							</button>
+						))}
+						</div>
 
-    {/* Tab Content */}
-    <div
-      style={{
-        padding: '2rem',
-        border: '1px solid #ccc',
-        borderTop: 'none',
-        borderRadius: '0 0 10px 10px',
-        backgroundColor: '#fff',
-      }}
-    >
-      {activePrepTab === 'prep1' && (
-        <>
-          <h1 style={{ fontSize: '48px', fontWeight: 'bold', marginBottom: '1rem' }}>
-            Prepositions
-          </h1>
+						{/* Tab Content */}
+						<div
+						style={{
+							padding: '2rem',
+							border: '1px solid #ccc',
+							borderTop: 'none',
+							borderRadius: '0 0 10px 10px',
+							backgroundColor: '#fff',
+						}}
+						>
+						{activePrepTab === 'prep1' && (
+							<>
+							<h1 style={{ fontSize: '48px', fontWeight: 'bold', marginBottom: '1rem' }}>
+								Prepositions
+							</h1>
 
-          <p
-            style={{
-              fontSize: '1.25rem',
-              maxWidth: '700px',
-              margin: '0 auto',
-              lineHeight: '1.6',
-            }}
-          >
-            A <strong>preposition</strong> is a word that indicates the relationship between a noun or
-            pronoun and other words in a sentence.
-          </p>
+							<p
+								style={{
+								fontSize: '1.25rem',
+								maxWidth: '700px',
+								margin: '0 auto',
+								lineHeight: '1.6',
+								}}
+							>
+								A <strong>preposition</strong> is a word that indicates the relationship between a noun or
+								pronoun and other words in a sentence.
+							</p>
 
-          {/* Completion message for lesson 4 */}
-          <div style={{ 
-            marginTop: '2rem', 
-            padding: '1.5rem',
-            backgroundColor: '#e8f5e8',
-            borderRadius: '10px',
-            border: '2px solid #28a745'
-          }}>
-            <h3 style={{ color: '#28a745', marginBottom: '1rem' }}>🎉 Congratulations!</h3>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
-              You've completed all 5 lessons of Sentence Structure! 
-              You've learned about subjects, objects, adjectives, adverbs, and prepositions.
-            </p>
-            <p style={{ fontSize: '1rem', marginTop: '1rem', fontWeight: 'bold', color: '#28a745' }}>
-             -- Remove if disired --
-            </p>
-          </div>
+							{/* Completion message for lesson 4 */}
+							<div style={{ 
+								marginTop: '2rem', 
+								padding: '1.5rem',
+								backgroundColor: '#e8f5e8',
+								borderRadius: '10px',
+								border: '2px solid #28a745'
+							}}>
+								<h3 style={{ color: '#28a745', marginBottom: '1rem' }}>🎉 Congratulations!</h3>
+								<p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
+								You've completed all 5 lessons of Sentence Structure! 
+								You've learned about subjects, objects, adjectives, adverbs, and prepositions.
+								</p>
+								<p style={{ fontSize: '1rem', marginTop: '1rem', fontWeight: 'bold', color: '#28a745' }}>
+								-- Remove if disired --
+								</p>
+							</div>
 
-          {/* Types of Prepositions Section */}
-          <div
-            style={{
-              marginTop: '2rem',
-              padding: '1.5rem',
-              backgroundColor: '#f0f8ff',
-              borderRadius: '10px',
-              maxWidth: '800px',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              boxShadow: '0 4px 10px rgba(0, 0, 0, 0.05)',
-            }}
-          >
-            <h2
-              style={{
-                fontSize: '28px',
-                fontWeight: 'bold',
-                marginBottom: '1rem',
-                color: '#333',
-              }}
-            >
-              Types of Prepositions:
-            </h2>
+							{/* Types of Prepositions Section */}
+							<div
+								style={{
+								marginTop: '2rem',
+								padding: '1.5rem',
+								backgroundColor: '#f0f8ff',
+								borderRadius: '10px',
+								maxWidth: '800px',
+								marginLeft: 'auto',
+								marginRight: 'auto',
+								boxShadow: '0 4px 10px rgba(0, 0, 0, 0.05)',
+								}}
+							>
+								<h2
+								style={{
+									fontSize: '28px',
+									fontWeight: 'bold',
+									marginBottom: '1rem',
+									color: '#333',
+								}}
+								>
+								Types of Prepositions:
+								</h2>
 
-            <ul
-              style={{
-                listStyle: 'none',
-                padding: 0,
-                fontSize: '18px',
-                lineHeight: '2',
-                color: '#333',
-              }}
-            >
-              <li>
-                <span style={{ fontWeight: 'bold', color: '#007acc' }}>Time:</span> before, during, after
-              </li>
-              <li>
-                <span style={{ fontWeight: 'bold', color: '#e67e22' }}>Place:</span> in, on, under
-              </li>
-              <li>
-                <span style={{ fontWeight: 'bold', color: '#27ae60' }}>Direction:</span> to, through, around
-              </li>
-              <li>
-                <span style={{ fontWeight: 'bold', color: '#9b59b6' }}>Situation:</span> with, for, about
-              </li>
-              <li>
-                <span style={{ fontWeight: 'bold', color: '#c0392b' }}>Comparison:</span> like, as, than
-              </li>
-            </ul>
-          </div>
+								<ul
+								style={{
+									listStyle: 'none',
+									padding: 0,
+									fontSize: '18px',
+									lineHeight: '2',
+									color: '#333',
+								}}
+								>
+								<li>
+									<span style={{ fontWeight: 'bold', color: '#007acc' }}>Time:</span> before, during, after
+								</li>
+								<li>
+									<span style={{ fontWeight: 'bold', color: '#e67e22' }}>Place:</span> in, on, under
+								</li>
+								<li>
+									<span style={{ fontWeight: 'bold', color: '#27ae60' }}>Direction:</span> to, through, around
+								</li>
+								<li>
+									<span style={{ fontWeight: 'bold', color: '#9b59b6' }}>Situation:</span> with, for, about
+								</li>
+								<li>
+									<span style={{ fontWeight: 'bold', color: '#c0392b' }}>Comparison:</span> like, as, than
+								</li>
+								</ul>
+							</div>
 
-          {/* Sentence Structure Formulas Section */}
-          <div
-            style={{
-              marginTop: '2.5rem',
-              maxWidth: '800px',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              textAlign: 'left',
-            }}
-          >
-            <div
-              style={{
-                marginTop: '2rem',
-                padding: '1.5rem',
-                backgroundColor: '#f0f8ff',
-                borderRadius: '10px',
-                maxWidth: '800px',
-                marginLeft: 'auto',
-                marginRight: 'auto',
-                boxShadow: '0 4px 10px rgba(0, 0, 0, 0.05)',
-              }}
-            >
-              <h2
-                style={{
-                  fontSize: '28px',
-                  fontWeight: 'bold',
-                  marginBottom: '1.5rem',
-                  color: '#333',
-                  textAlign: 'center',
-                }}
-              >
-                Sentence Structure Formulas for Prepositions:
-              </h2>
+							{/* Sentence Structure Formulas Section */}
+							<div
+								style={{
+								marginTop: '2.5rem',
+								maxWidth: '800px',
+								marginLeft: 'auto',
+								marginRight: 'auto',
+								textAlign: 'left',
+								}}
+							>
+								<div
+								style={{
+									marginTop: '2rem',
+									padding: '1.5rem',
+									backgroundColor: '#f0f8ff',
+									borderRadius: '10px',
+									maxWidth: '800px',
+									marginLeft: 'auto',
+									marginRight: 'auto',
+									boxShadow: '0 4px 10px rgba(0, 0, 0, 0.05)',
+								}}
+								>
+								<h2
+									style={{
+									fontSize: '28px',
+									fontWeight: 'bold',
+									marginBottom: '1.5rem',
+									color: '#333',
+									textAlign: 'center',
+									}}
+								>
+									Sentence Structure Formulas for Prepositions:
+								</h2>
 
-              {/* Formula Boxes */}
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '1.5rem',
-                }}
-              >
-                <div
-                  style={{
-                    backgroundColor: '#e3f2fd',
-                    padding: '1rem',
-                    borderRadius: '12px',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-                  }}
-                >
-                  <strong style={{ color: '#1565c0' }}>Formula:</strong> Pronoun + verb + preposition + article + noun <br />
-                  <em>Example: She walked <span style={{ color: '#007acc' }}>to</span> the store.</em>
-                </div>
+								{/* Formula Boxes */}
+								<div
+									style={{
+									display: 'flex',
+									flexDirection: 'column',
+									gap: '1.5rem',
+									}}
+								>
+									<div
+									style={{
+										backgroundColor: '#e3f2fd',
+										padding: '1rem',
+										borderRadius: '12px',
+										boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+									}}
+									>
+									<strong style={{ color: '#1565c0' }}>Formula:</strong> Pronoun + verb + preposition + article + noun <br />
+									<em>Example: She walked <span style={{ color: '#007acc' }}>to</span> the store.</em>
+									</div>
 
-                <div
-                  style={{
-                    backgroundColor: '#fff3e0',
-                    padding: '1rem',
-                    borderRadius: '12px',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-                  }}
-                >
-                  <strong style={{ color: '#ef6c00' }}>Formula:</strong> Article + noun + verb + preposition + article + noun <br />
-                  <em>Example: The dog ran <span style={{ color: '#e67e22' }}>through</span> the yard.</em>
-                </div>
+									<div
+									style={{
+										backgroundColor: '#fff3e0',
+										padding: '1rem',
+										borderRadius: '12px',
+										boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+									}}
+									>
+									<strong style={{ color: '#ef6c00' }}>Formula:</strong> Article + noun + verb + preposition + article + noun <br />
+									<em>Example: The dog ran <span style={{ color: '#e67e22' }}>through</span> the yard.</em>
+									</div>
 
-                <div
-                  style={{
-                    backgroundColor: '#e8f5e9',
-                    padding: '1rem',
-                    borderRadius: '12px',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-                  }}
-                >
-                  <strong style={{ color: '#2e7d32' }}>Formula:</strong> Noun + verb + article + noun + preposition + noun <br />
-                  <em>Example: Mark gave the book <span style={{ color: '#27ae60' }}>to</span> Sarah.</em>
-                </div>
+									<div
+									style={{
+										backgroundColor: '#e8f5e9',
+										padding: '1rem',
+										borderRadius: '12px',
+										boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+									}}
+									>
+									<strong style={{ color: '#2e7d32' }}>Formula:</strong> Noun + verb + article + noun + preposition + noun <br />
+									<em>Example: Mark gave the book <span style={{ color: '#27ae60' }}>to</span> Sarah.</em>
+									</div>
 
-                <div
-                  style={{
-                    backgroundColor: '#f3e5f5',
-                    padding: '1rem',
-                    borderRadius: '12px',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-                  }}
-                >
-                  <strong style={{ color: '#8e24aa' }}>Formula:</strong> Noun + verb + preposition + gerund + noun <br />
-                  <em>Example: They talked <span style={{ color: '#9b59b6' }}>about</span> eating lunch.</em>
-                </div>
+									<div
+									style={{
+										backgroundColor: '#f3e5f5',
+										padding: '1rem',
+										borderRadius: '12px',
+										boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+									}}
+									>
+									<strong style={{ color: '#8e24aa' }}>Formula:</strong> Noun + verb + preposition + gerund + noun <br />
+									<em>Example: They talked <span style={{ color: '#9b59b6' }}>about</span> eating lunch.</em>
+									</div>
 
-                <div
-                  style={{
-                    backgroundColor: '#ffebee',
-                    padding: '1rem',
-                    borderRadius: '12px',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-                  }}
-                >
-                  <strong style={{ color: '#c62828' }}>Formula:</strong> Preposition + article + noun + comma + noun + verb + article + noun <br />
-                  <em>Example: <span style={{ color: '#c0392b' }}>After</span> the movie, Jack ate the pizza.</em>
-                </div>
-              </div>
-            </div>
-          </div>
+									<div
+									style={{
+										backgroundColor: '#ffebee',
+										padding: '1rem',
+										borderRadius: '12px',
+										boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+									}}
+									>
+									<strong style={{ color: '#c62828' }}>Formula:</strong> Preposition + article + noun + comma + noun + verb + article + noun <br />
+									<em>Example: <span style={{ color: '#c0392b' }}>After</span> the movie, Jack ate the pizza.</em>
+									</div>
+								</div>
+								</div>
+							</div>
 
-          <PrepositionSorter />
-          <PrepositionStructureGame />
-		  <PrepositionQuiz />
-        </>
-      )}
+							<PrepositionSorter />
+							<PrepositionStructureGame />
+							<PrepositionQuiz />
+							</>
+						)}
 
-      {activePrepTab === 'prep2' && (
-        <>
-          <h1 style={{ fontSize: '48px', fontWeight: 'bold', marginBottom: '1rem' }}>
-            Prepositional Phrases
-          </h1>
+						{activePrepTab === 'prep2' && (
+							<>
+							<h1 style={{ fontSize: '48px', fontWeight: 'bold', marginBottom: '1rem' }}>
+								Prepositional Phrases
+							</h1>
 
-          <p
-            style={{
-              fontSize: '1.25rem',
-              maxWidth: '700px',
-              margin: '0 auto',
-              lineHeight: '1.6',
-            }}
-          >
-            A <strong>prepositional phrase</strong> is a group of words that begins with a preposition and ends with a noun or pronoun. It adds detail about time, place, or manner.
-          </p>
+							<p
+								style={{
+								fontSize: '1.25rem',
+								maxWidth: '700px',
+								margin: '0 auto',
+								lineHeight: '1.6',
+								}}
+							>
+								A <strong>prepositional phrase</strong> is a group of words that begins with a preposition and ends with a noun or pronoun. It adds detail about time, place, or manner.
+							</p>
 
-          {/* Use the separated components */}
-          <PrepositionPhraseLesson />
-          <PrepositionPhraseFillBlanks />
-          <PrepositionPhraseWordBlocks />
-          <PrepositionPhraseTesting />
-          <PrepositionPhraseSorting />
-        </>
-      )}
+							{/* Use the separated components */}
+							<PrepositionPhraseLesson />
+							<PrepositionPhraseFillBlanks />
+							<PrepositionPhraseWordBlocks />
+							<PrepositionPhraseTesting />
+							<PrepositionPhraseSorting />
+							</>
+						)}
 
-      {activePrepTab === 'prep3' && (
-        <div>
-          <h2>Prep 3</h2>
-          <p>Coming soon...</p>
-        </div>
-      )}
-    </div>
-  </div>
-)}
+						{activePrepTab === 'prep3' && (
+						<>
+							<h1 style={{ fontSize: '48px', fontWeight: 'bold', marginBottom: '1rem' }}>
+							Compound Prepositions
+							</h1>
+
+							<p
+							style={{
+								fontSize: '1.25rem',
+								maxWidth: '700px',
+								margin: '0 auto',
+								lineHeight: '1.6',
+							}}
+							>
+							A <strong>compound preposition</strong> is a phrase that works like a single 
+							preposition, connecting a noun or pronoun to another word in the sentence.
+							</p>
+
+							{/* Different Compound Prepositions Section */}
+							<div
+							style={{
+								marginTop: '2rem',
+								padding: '1.5rem',
+								backgroundColor: '#f0f8ff',
+								borderRadius: '10px',
+								maxWidth: '900px',
+								marginLeft: 'auto',
+								marginRight: 'auto',
+								boxShadow: '0 4px 10px rgba(0, 0, 0, 0.05)',
+							}}
+							>
+							<h2
+								style={{
+								fontSize: '28px',
+								fontWeight: 'bold',
+								marginBottom: '1.5rem',
+								color: '#333',
+								textAlign: 'center',
+								}}
+							>
+								Different Compound Prepositions
+							</h2>
+
+							<div
+								style={{
+								display: 'grid',
+								gridTemplateColumns: 'repeat(4, 1fr)',
+								gap: '1rem',
+								}}
+							>
+								{[
+								"According to", "As of", "As well as", "Aside from",
+								"Because of", "In addition to", "Ahead of", "Due to",
+								"Along with", "Out of", "Next to", "Instead of",
+								"Prior to", "In respect to", "In spite of", "In place of"
+								].map((prep, idx) => (
+								<div
+									key={idx}
+									style={{
+									border: '2px dotted #007acc',
+									borderRadius: '8px',
+									padding: '1rem',
+									textAlign: 'center',
+									fontSize: '16px',
+									fontWeight: '500',
+									backgroundColor: idx % 2 === 0 ? '#ffffff' : '#e6f2fa',
+									color: '#333',
+									boxShadow: '0 2px 5px rgba(0,0,0,0.05)',
+									minHeight: '70px',
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center',
+									}}
+								>
+									{prep}
+								</div>
+								))}
+							</div>
+							</div>
+							<SentenceScramble />
+						</>
+						)}
+
+						</div>
+					</div>
+					)}
 
 
 				</div>
