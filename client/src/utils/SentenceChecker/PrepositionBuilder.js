@@ -27,6 +27,10 @@ const VALID_PREPOSITIONS = [
   ["with", "respect", "to"],
   ["with", "regard", "to"],
   ["with", "reference", "to"],
+  ["in", "respect", "to"],   
+  ["in", "relation", "to"],  
+  ["in", "regard", "to"],    
+  ["in", "reference", "to"],
 ];
 
 // Some fake fragments to make it harder
@@ -74,7 +78,7 @@ function PrepositionBuilder() {
 
   return (
     <div className="preposition-builder">
-      <h2>🧩 Build-a-Preposition (Level 2)</h2>
+      <h2>🧩 Build-a-Preposition</h2>
       <p>Click the fragments in order to build a compound preposition.</p>
 
       {/* Word Bank */}
