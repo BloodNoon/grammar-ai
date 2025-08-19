@@ -14,21 +14,24 @@
   }
   
   .choices {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
     justify-content: center;
     margin-bottom: 1rem;
   }
   
   .choice-btn {
-    padding: 0.6rem 1.2rem;
+    padding: 0.75rem 1rem;
     border: 2px solid #333;
     border-radius: 5px;
     background-color: white;
     cursor: pointer;
+    text-align: center;
+    word-break: break-word;
     transition: background-color 0.2s ease;
-  }
+    width: 100%; /* make buttons take full width of grid column */
+  }  
   
   .choice-btn:hover {
     background-color: #ddd;
