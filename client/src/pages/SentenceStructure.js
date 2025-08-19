@@ -12,6 +12,15 @@ import AdjectiveSentenceStructures from '../utils/SentenceChecker/AdjectiveSente
 import AdjectiveFillBlanks from '../utils/SentenceChecker/AdjectiveFillBlanks';
 import AdjectiveSortingGame from '../utils/SentenceChecker/AdjectiveSortingGame';
 import AdjectiveQuiz from '../utils/SentenceChecker/AdjectiveQuiz';
+// ADVERB COMPONENTS
+import AdverbLesson from '../utils/SentenceChecker/AdverbLesson';
+import AdverbTypes from '../utils/SentenceChecker/AdverbTypes';
+import AdverbRoyalOrder from '../utils/SentenceChecker/AdverbRoyalOrder';
+import AdverbForms from '../utils/SentenceChecker/AdverbForms';
+import AdverbSentenceStructures from '../utils/SentenceChecker/AdverbSentenceStructures';
+import AdverbIdentificationGame from '../utils/SentenceChecker/AdverbIdentificationGame';
+import AdverbTypeSorting from '../utils/SentenceChecker/AdverbTypeSorting';
+import AdverbQuiz from '../utils/SentenceChecker/AdverbQuiz';
 // PREP1 COMPONENTS
 import PrepositionSorter from '../utils/SentenceChecker/PrepositionSorter';
 import PrepositionStructureGame from '../utils/SentenceChecker/PrepositionStructureGame';
@@ -139,9 +148,9 @@ const SentenceStructures = () => {
 		}
 	};
 
-	//  lesson navigation
+	// MODIFIED: Updated handleNext for normal lesson navigation
 	const handleNext = () => {
-		if (lessonPage < 5) { // Updated to 5 lessons
+		if (lessonPage < 6) { // Updated to 6 lessons
 			setLessonPage(lessonPage + 1);
 		}
 	};
@@ -160,7 +169,7 @@ const SentenceStructures = () => {
 			>
 				{/* Header */}
 				<div>
-					<h3>Lesson {lessonPage} of 5</h3> {/* Updated to 5 lessons */}
+					<h3>Lesson {lessonPage} of 6</h3> {/* Updated to 6 lessons */}
 					<hr style={{ marginBottom: '2rem' }} />
 				</div>
 
@@ -453,14 +462,14 @@ const SentenceStructures = () => {
 								marginBottom: '2rem',
 								border: '2px solid #28a745'
 							}}>
-								<h3 style={{ color: '#28a745', marginBottom: '1rem' }}>🎨 Master Descriptive Words!</h3>
+								<h3 style={{ color: '#28a745', marginBottom: '1rem' }}> Master Descriptive Words!</h3>
 								<p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
 									Learn about adjectives - the words that make your sentences more colorful and descriptive! 
 									Discover the secret order that English adjectives follow.
 								</p>
 							</div>
 
-							{/* USE THE SEPARATED ADJECTIVE COMPONENTS */}
+							{/* ADJECTIVE COMPONENTS */}
 							<AdjectiveLesson />
 							<AdjectiveRoyalOrder />
 							<AdjectiveSentenceStructures />
@@ -471,6 +480,35 @@ const SentenceStructures = () => {
 					)}
 
 					{lessonPage === 5 && (
+						<div>
+							<h2>Lesson 5: Adverbs</h2>
+							<div style={{ 
+								padding: '1rem', 
+								backgroundColor: '#e8f5e8', 
+								borderRadius: '10px', 
+								marginBottom: '2rem',
+								border: '2px solid #28a745'
+							}}>
+								<h3 style={{ color: '#28a745', marginBottom: '1rem' }}> Master Action Modifiers!</h3>
+								<p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
+									Discover adverbs - the words that modify verbs, adjectives, and other adverbs! 
+									Learn how to use them correctly and understand their flexible placement in sentences.
+								</p>
+							</div>
+
+							{/* ADVERB COMPONENTS */}
+							<AdverbLesson />
+							<AdverbTypes />
+							<AdverbRoyalOrder />
+							<AdverbForms />
+							<AdverbSentenceStructures />
+							<AdverbIdentificationGame />
+							<AdverbTypeSorting />
+							<AdverbQuiz />
+						</div>
+					)}
+
+					{lessonPage === 6 && (
 						<div
 							style={{
 								textAlign: 'center',
@@ -531,7 +569,7 @@ const SentenceStructures = () => {
 											pronoun and other words in a sentence.
 										</p>
 
-										{/* Completion message for lesson 5 */}
+										{/* Completion message for lesson 6 */}
 										<div style={{ 
 											marginTop: '2rem', 
 											padding: '1.5rem',
@@ -541,8 +579,8 @@ const SentenceStructures = () => {
 										}}>
 											<h3 style={{ color: '#28a745', marginBottom: '1rem' }}>🎉 Congratulations!</h3>
 											<p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
-												You've completed all 5 lessons of Sentence Structure! 
-												You've learned about subjects, objects, verb tenses, articles, adjectives, and prepositions.
+												You've completed all 6 lessons of Sentence Structure! 
+												You've learned about subjects, objects, verb tenses, articles, adjectives, adverbs, and prepositions.
 											</p>
 											<p style={{ fontSize: '1rem', marginTop: '1rem', fontWeight: 'bold', color: '#28a745' }}>
 											 -- Remove if desired --
@@ -704,7 +742,7 @@ const SentenceStructures = () => {
 												</div>
 											</div>
 										</div>
-
+										{/* PREP1 COMPONENTS */}
 										<PrepositionSorter />
 										<PrepositionStructureGame />
 										<PrepositionQuiz />
@@ -728,7 +766,7 @@ const SentenceStructures = () => {
 											A <strong>prepositional phrase</strong> is a group of words that begins with a preposition and ends with a noun or pronoun. It adds detail about time, place, or manner.
 										</p>
 
-										{/* Use the separated components */}
+										{/* PREP2 COMPONENTS */}
 										<PrepositionPhraseLesson />
 										<PrepositionPhraseFillBlanks />
 										<PrepositionPhraseWordBlocks />
@@ -772,16 +810,16 @@ const SentenceStructures = () => {
 					<button
 						onClick={handleNext}
 						style={{
-							backgroundColor: lessonPage === 5 ? '#ccc' : '#007bff',
+							backgroundColor: lessonPage === 6 ? '#ccc' : '#007bff',
 							color: 'white',
 							padding: '10px 20px',
 							border: 'none',
 							borderRadius: '5px',
-							cursor: lessonPage === 5 ? 'not-allowed' : 'pointer',
+							cursor: lessonPage === 6 ? 'not-allowed' : 'pointer',
 						}}
-						disabled={lessonPage === 5}
+						disabled={lessonPage === 6}
 					>
-						{lessonPage === 5 ? 'Completed!' : 'Next'}
+						{lessonPage === 6 ? 'Completed!' : 'Next'}
 					</button>
 				</div>
 			</div>
