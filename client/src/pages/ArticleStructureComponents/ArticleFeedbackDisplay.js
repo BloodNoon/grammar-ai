@@ -224,7 +224,7 @@ const ArticleFeedbackDisplay = ({
           }}
           title="Dismiss feedback"
         >
-          ×
+          x
         </button>
       )}
     </div>
