@@ -17,6 +17,7 @@ import PrepositionPhraseTesting from '../utils/SentenceChecker/PrepositionPhrase
 import PrepositionPhraseSorting from '../utils/SentenceChecker/PrepositionPhraseSorting';
 // PREP3 COMPONENTS
 import SentenceScramble from '../utils/SentenceChecker/SentenceScramble';
+import PrepositionBuilder from '../utils/SentenceChecker/PrepositionBuilder';
 
 function tagWordsWithCompromise(sentence) {
 	const doc = nlp(sentence);
@@ -785,6 +786,7 @@ const SentenceStructures = () => {
 							</div>
 							</div>
 							<SentenceScramble />
+							<PrepositionBuilder />
 						</>
 						)}
 
