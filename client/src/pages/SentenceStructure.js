@@ -31,6 +31,9 @@ import PrepositionPhraseFillBlanks from '../utils/SentenceChecker/PrepositionPhr
 import PrepositionPhraseWordBlocks from '../utils/SentenceChecker/PrepositionPhraseWordBlocks';
 import PrepositionPhraseTesting from '../utils/SentenceChecker/PrepositionPhraseTesting';
 import PrepositionPhraseSorting from '../utils/SentenceChecker/PrepositionPhraseSorting';
+// PREP3 COMPONENTS
+import SentenceScramble from '../utils/SentenceChecker/SentenceScramble';
+import PrepositionBuilder from '../utils/SentenceChecker/PrepositionBuilder';
 
 function tagWordsWithCompromise(sentence) {
 	const doc = nlp(sentence);
@@ -775,14 +778,92 @@ const SentenceStructures = () => {
 									</>
 								)}
 
-								{activePrepTab === 'prep3' && (
-									<div>
-										<h2>Prep 3</h2>
-										<p>Coming soon...</p>
-									</div>
-								)}
+						{activePrepTab === 'prep3' && (
+						<>
+							<h1 style={{ fontSize: '48px', fontWeight: 'bold', marginBottom: '1rem' }}>
+							Compound Prepositions
+							</h1>
+
+							<p
+							style={{
+								fontSize: '1.25rem',
+								maxWidth: '700px',
+								margin: '0 auto',
+								lineHeight: '1.6',
+							}}
+							>
+							A <strong>compound preposition</strong> is a phrase that works like a single 
+							preposition, connecting a noun or pronoun to another word in the sentence.
+							</p>
+
+							{/* Different Compound Prepositions Section */}
+							<div
+							style={{
+								marginTop: '2rem',
+								padding: '1.5rem',
+								backgroundColor: '#f0f8ff',
+								borderRadius: '10px',
+								maxWidth: '900px',
+								marginLeft: 'auto',
+								marginRight: 'auto',
+								boxShadow: '0 4px 10px rgba(0, 0, 0, 0.05)',
+							}}
+							>
+							<h2
+								style={{
+								fontSize: '28px',
+								fontWeight: 'bold',
+								marginBottom: '1.5rem',
+								color: '#333',
+								textAlign: 'center',
+								}}
+							>
+								Different Compound Prepositions
+							</h2>
+
+							<div
+								style={{
+								display: 'grid',
+								gridTemplateColumns: 'repeat(4, 1fr)',
+								gap: '1rem',
+								}}
+							>
+								{[
+								"According to", "As of", "As well as", "Aside from",
+								"Because of", "In addition to", "Ahead of", "Due to",
+								"Along with", "Out of", "Next to", "Instead of",
+								"Prior to", "In respect to", "In spite of", "In place of"
+								].map((prep, idx) => (
+								<div
+									key={idx}
+									style={{
+									border: '2px dotted #007acc',
+									borderRadius: '8px',
+									padding: '1rem',
+									textAlign: 'center',
+									fontSize: '16px',
+									fontWeight: '500',
+									backgroundColor: idx % 2 === 0 ? '#ffffff' : '#e6f2fa',
+									color: '#333',
+									boxShadow: '0 2px 5px rgba(0,0,0,0.05)',
+									minHeight: '70px',
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center',
+									}}
+								>
+									{prep}
+								</div>
+								))}
 							</div>
+							</div>
+							<SentenceScramble />
+							<PrepositionBuilder />
+						</>
+						)}
+
 						</div>
+					</div>
 					)}
 
 
