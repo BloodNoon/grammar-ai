@@ -592,6 +592,21 @@ const SentenceStructures = () => {
 										</div>
 
 										{/* Types of Prepositions Section */}
+										<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+											<video
+												controls
+												style={{
+													width: '50%',
+													maxWidth: '200px',
+													height: 'auto',
+													borderRadius: '8px',
+													boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+												}}
+											>
+												<source src="/lesson6.mp4" type="video/mp4" />
+												Your browser does not support the video tag.
+											</video>
+										</div>
 										<div
 											style={{
 												marginTop: '2rem',
