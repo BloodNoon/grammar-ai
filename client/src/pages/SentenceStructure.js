@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import nlp from 'compromise';
 import { testCases } from '../utils/SentenceChecker/TestCases';
+import SubjectNounGame from '../utils/SentenceChecker/SubjectNounGame';
 import SubjectQuiz from '../utils/SentenceChecker/SubjectQuiz';
 import VerbTenseStructure from './VerbTenseStructure';
 import ArticleStructure from './ArticleStructure';
@@ -219,7 +220,7 @@ const SentenceStructures = () => {
 									marginTop: '2rem',
 								}}
 							>
-								<h3 style={{ marginBottom: '1rem' }}>Click Quiz</h3>
+								<h3 style={{ marginBottom: '1rem' }}>Structure Quiz</h3>
 								<p><b>Progress:</b> {progress}/10</p>
 
 								<div style={{ marginBottom: '1rem' }}>
@@ -381,17 +382,32 @@ const SentenceStructures = () => {
 										Your browser does not support the video tag.
 									</video>
 								</div>
-
 								<div
 									style={{
-										padding: '1rem',
-										backgroundColor: '#fffbe6',
-										border: '1px dashed #999',
-										borderRadius: '8px',
+										padding: '1.5rem',
+										backgroundColor: '#f9f9f9', // subtle light gray
+										border: '1px solid #ddd', // clean solid border
+										borderRadius: '10px',
+										boxShadow: '0 2px 6px rgba(0, 0, 0, 0.05)', // gentle shadow
+										marginBottom: '2rem', // spacing between components
 									}}
-								>
+									>
+									<SubjectNounGame />
+									</div>
+
+									<div
+									style={{
+										padding: '1.5rem',
+										backgroundColor: '#f9f9f9',
+										border: '1px solid #ddd',
+										borderRadius: '10px',
+										boxShadow: '0 2px 6px rgba(0, 0, 0, 0.05)',
+										marginBottom: '2rem',
+									}}
+									>
 									<SubjectQuiz />
-								</div>
+									</div>
+
 							</div>
 						</>
 					)}
