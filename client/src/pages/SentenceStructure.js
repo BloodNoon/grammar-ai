@@ -428,6 +428,21 @@ const SentenceStructures = () => {
 									how to use helping verbs like "is", "are", "have", "will" with main verbs.
 								</p>
 							</div>
+							<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+									<video
+										controls
+										style={{
+											width: '50%',
+											maxWidth: '200px',
+											height: 'auto',
+											borderRadius: '8px',
+											boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+										}}
+									>
+										<source src="/lesson2.mp4" type="video/mp4" />
+										Your browser does not support the video tag.
+									</video>
+								</div>
 							
 							{/* EMBED THE ENTIRE VerbTenseStructure COMPONENT */}
 							<div style={{ 
@@ -458,7 +473,21 @@ const SentenceStructures = () => {
 									when to use "a", "an", and "the" correctly in your sentences.
 								</p>
 							</div>
-							
+							<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+									<video
+										controls
+										style={{
+											width: '50%',
+											maxWidth: '200px',
+											height: 'auto',
+											borderRadius: '8px',
+											boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+										}}
+									>
+										<source src="/lesson3.mp4" type="video/mp4" />
+										Your browser does not support the video tag.
+									</video>
+								</div>
 							{/* EMBED THE ENTIRE ArticleStructure COMPONENT */}
 							<div style={{ 
 								marginTop: '2rem',
