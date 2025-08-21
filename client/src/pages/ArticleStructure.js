@@ -1,4 +1,4 @@
-//Main webpage of the Article Structure
+//Main webpage of the Article Structure with lesson2 styling
 import React, { useState, useEffect } from 'react';
 import { hasFullStructCheck, getFullStructCheck, getTags } from '../utils/SentenceChecker/StructureChecker';
 import { testCases } from '../utils/SentenceChecker/TestCases';
@@ -440,97 +440,275 @@ const ArticleStructure = () => {
     generateNewQuizQuestion();
   };
 
-  // ===== RENDER =====
-  return (
-    <div style={{ 
+  // Add CSS styles matching lesson2.css
+  const styles = {
+    body: {
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      background: 'rgba(249, 190, 134, 0.922)',
+      minHeight: '100vh',
+      padding: '20px',
+      margin: 0
+    },
+    container: {
       maxWidth: '800px',
       margin: '0 auto',
       padding: '20px',
       textAlign: 'center'
-    }}>
-      <h1>Definite and Indefinite Articles Builder</h1>
+    },
+    navHeader: {
+      color: 'rgb(8, 0, 0)',
+      border: '2px solid white',
+      borderRadius: '1rem',
+      padding: '0.5rem 1rem',
+      display: 'flex',
+      justifyContent: 'space-between',
+      position: 'sticky',
+      backgroundColor: 'rgba(249, 190, 134, 0.922)',
+      marginBottom: '20px'
+    },
+    mainContent: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: '20px',
+      marginTop: '35px',
+      marginBottom: '20px'
+    },
+    panel: {
+      background: 'white',
+      borderRadius: '15px',
+      padding: '20px',
+      boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+    },
+    lessonPanel: {
+      background: '#ffeaa7'
+    },
+    statusBadges: {
+      display: 'flex',
+      gap: '10px',
+      justifyContent: 'center',
+      marginBottom: '15px'
+    },
+    badge: {
+      padding: '8px 15px',
+      borderRadius: '20px',
+      fontWeight: 'bold',
+      fontSize: '12px',
+      transition: 'all 0.3s ease'
+    },
+    correct: { background: '#81c784', color: 'white' },
+    accuracy: { background: '#4dd0e1', color: 'white' },
+    incorrect: { background: '#e57373', color: 'white' },
+    streak: { background: '#ffb74d', color: 'white' },
+    typingChallenge: {
+      background: '#e3f2fd'
+    },
+    grammarReference: {
+      background: 'white',
+      borderRadius: '15px',
+      padding: '20px',
+      marginTop: '20px',
+      boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+    }
+  };
 
-      <ArticleLesson 
-        sentenceFeedback={sentenceFeedback}
-        handleArticleSentenceChoice={handleArticleSentenceChoice}
-      />
+  // ===== RENDER =====
+  return (
+    <div style={styles.body}>
+      <div style={styles.container}>
+        {/* Navigation Header */}
+        <header style={styles.navHeader}>
+          <h1>🐸 Sentence Structure Practice</h1>
+        </header>
 
-      <ArticleProgressTracker 
-        correctCount={correctCount}
-        totalAttempts={totalAttempts}
-        streak={streak}
-        isCompleted={isCompleted}
-        sessionHistory={sessionHistory}
-        showProgress={showProgress}
-        setShowProgress={setShowProgress}
-        resetProgress={resetProgress}
-        TARGET_CORRECT={TARGET_CORRECT}
-      />
+        {/* Main Title */}
+        <h1>Definite and Indefinite Articles Builder</h1>
 
-      <ArticleCompletionCelebration 
-        isCompleted={isCompleted}
-        correctCount={correctCount}
-        totalAttempts={totalAttempts}
-        resetProgress={resetProgress}
-      />
+        {/* Main Two-Column Layout */}
+        <div style={styles.mainContent}>
+          {/* LEFT COLUMN */}
+          <div>
+            {/* Top Left - ArticleLesson */}
+            <div style={{...styles.panel, ...styles.lessonPanel, marginBottom: '20px'}}>
+              <ArticleLesson 
+                sentenceFeedback={sentenceFeedback}
+                handleArticleSentenceChoice={handleArticleSentenceChoice}
+              />
+            </div>
 
-      <ArticleLevelSelection 
-        currentLevel={currentLevel}
-        setCurrentLevel={setCurrentLevel}
-      />
+            {/* Bottom Left - Articles Typing Challenge */}
+            <div style={{...styles.panel, ...styles.typingChallenge}}>
+              <ArticleTypingQuiz 
+                currentQuizQuestion={currentQuizQuestion}
+                quizAnswers={quizAnswers}
+                setQuizAnswers={setQuizAnswers}
+                quizCompleted={quizCompleted}
+                setQuizCompleted={setQuizCompleted}
+                quizCorrectCount={quizCorrectCount}
+                setQuizCorrectCount={setQuizCorrectCount}
+                quizTotalAttempts={quizTotalAttempts}
+                setQuizTotalAttempts={setQuizTotalAttempts}
+                quizSessionHistory={quizSessionHistory}
+                setQuizSessionHistory={setQuizSessionHistory}
+                currentQuizFeedback={currentQuizFeedback}
+                setCurrentQuizFeedback={setCurrentQuizFeedback}
+                generateNewQuizQuestion={generateNewQuizQuestion}
+                resetQuiz={resetQuiz}
+                QUIZ_TARGET_CORRECT={QUIZ_TARGET_CORRECT}
+              />
+            </div>
+          </div>
 
-      <ArticleStructureSelection 
-        articleStructureExamples={articleStructureExamples}
-        currentLevel={currentLevel}
-        selectedStructure={selectedStructure}
-        selectStructure={selectStructure}
-        setSelectedStructure={setSelectedStructure}
-      />
+          {/* RIGHT COLUMN */}
+          <div>
+            {/* Top Right - Today's Lesson Video */}
+            <div style={{
+              backgroundColor: '#f8f9fa',
+              borderRadius: '15px',
+              padding: '20px',
+              marginBottom: '20px',
+              border: '1px solid #ddd',
+              textAlign: 'center',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+            }}>
+              <h3 style={{ 
+                marginBottom: '15px',
+                color: '#333',
+                fontSize: '18px'
+              }}>
+                📹 Today's Lesson: Articles
+              </h3>
+              <p style={{
+                fontSize: '14px',
+                color: '#666',
+                marginBottom: '15px',
+                lineHeight: '1.4'
+              }}>
+                Watch this lesson to understand articles and sentence building:
+              </p>
+              <div style={{
+                position: 'relative',
+                width: '100%',
+                maxWidth: '100%',
+                margin: '0 auto',
+                backgroundColor: '#000',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
+              }}>
+                <video 
+                  controls
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    display: 'block'
+                  }}
+                  poster="/api/placeholder/400/225"
+                >
+                  <source src="lesson3.mp4" type="video/mp4" />
+                  <p style={{ 
+                    color: '#666', 
+                    padding: '20px',
+                    backgroundColor: '#f8f9fa'
+                  }}>
+                    Your browser does not support the video tag. 
+                    <a href="lesson2.mp4" style={{ color: '#007bff' }}>
+                      Click here to download the video
+                    </a>
+                  </p>
+                </video>
+              </div>
+              <div style={{
+                marginTop: '10px',
+                fontSize: '12px',
+                color: '#888',
+                fontStyle: 'italic'
+              }}>
+                💡 Watch the lesson before practicing with the drag & drop exercises below
+              </div>
+            </div>
 
-      <ArticleWordBank 
-        availableWords={availableWords}
-        handleDragStart={handleDragStart}
-      />
+            {/* Middle Right - Drag & Drop Sections */}
+            <div style={styles.panel}>
+              {/* Status Badges */}
+              <div style={styles.statusBadges}>
+                <div style={{...styles.badge, ...styles.correct}}>
+                  Correct: {correctCount}
+                </div>
+                <div style={{...styles.badge, ...styles.accuracy}}>
+                  Accuracy: {totalAttempts > 0 ? Math.round((correctCount / totalAttempts) * 100) : 0}%
+                </div>
+                <div style={{...styles.badge, ...styles.incorrect}}>
+                  Incorrect: {totalAttempts - correctCount}
+                </div>
+                <div style={{...styles.badge, ...styles.streak}}>
+                  Streak: {streak}
+                </div>
+              </div>
 
-      <ArticleSentenceBuilder 
-        sentenceArea={sentenceArea}
-        removeFromSentence={removeFromSentence}
-        handleDragOver={handleDragOver}
-        handleDrop={handleDrop}
-      />
+              <ArticleProgressTracker 
+                correctCount={correctCount}
+                totalAttempts={totalAttempts}
+                streak={streak}
+                isCompleted={isCompleted}
+                sessionHistory={sessionHistory}
+                showProgress={showProgress}
+                setShowProgress={setShowProgress}
+                resetProgress={resetProgress}
+                TARGET_CORRECT={TARGET_CORRECT}
+              />
 
-      <ArticleActionButtons 
-        checkSentence={checkSentence}
-        resetSentenceOnly={resetSentenceOnly}
-        generateArticleWordSetFromTestCases={generateArticleWordSetFromTestCases}
-        sentenceArea={sentenceArea}
-        isCompleted={isCompleted}
-      />
+              <ArticleCompletionCelebration 
+                isCompleted={isCompleted}
+                correctCount={correctCount}
+                totalAttempts={totalAttempts}
+                resetProgress={resetProgress}
+              />
 
-      <ArticleFeedbackDisplay 
-        feedback={feedback}
-      />
+              <ArticleLevelSelection 
+                currentLevel={currentLevel}
+                setCurrentLevel={setCurrentLevel}
+              />
 
-      <ArticleTypingQuiz 
-        currentQuizQuestion={currentQuizQuestion}
-        quizAnswers={quizAnswers}
-        setQuizAnswers={setQuizAnswers}
-        quizCompleted={quizCompleted}
-        setQuizCompleted={setQuizCompleted}
-        quizCorrectCount={quizCorrectCount}
-        setQuizCorrectCount={setQuizCorrectCount}
-        quizTotalAttempts={quizTotalAttempts}
-        setQuizTotalAttempts={setQuizTotalAttempts}
-        quizSessionHistory={quizSessionHistory}
-        setQuizSessionHistory={setQuizSessionHistory}
-        currentQuizFeedback={currentQuizFeedback}
-        setCurrentQuizFeedback={setCurrentQuizFeedback}
-        generateNewQuizQuestion={generateNewQuizQuestion}
-        resetQuiz={resetQuiz}
-        QUIZ_TARGET_CORRECT={QUIZ_TARGET_CORRECT}
-      />
+              <ArticleStructureSelection 
+                articleStructureExamples={articleStructureExamples}
+                currentLevel={currentLevel}
+                selectedStructure={selectedStructure}
+                selectStructure={selectStructure}
+                setSelectedStructure={setSelectedStructure}
+              />
 
-      <ArticleGrammarLegend />
+              <ArticleWordBank 
+                availableWords={availableWords}
+                handleDragStart={handleDragStart}
+              />
+
+              <ArticleSentenceBuilder 
+                sentenceArea={sentenceArea}
+                removeFromSentence={removeFromSentence}
+                handleDragOver={handleDragOver}
+                handleDrop={handleDrop}
+              />
+
+              <ArticleActionButtons 
+                checkSentence={checkSentence}
+                resetSentenceOnly={resetSentenceOnly}
+                generateArticleWordSetFromTestCases={generateArticleWordSetFromTestCases}
+                sentenceArea={sentenceArea}
+                isCompleted={isCompleted}
+              />
+
+              <ArticleFeedbackDisplay 
+                feedback={feedback}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Full Width - Grammar Reference Quiz */}
+        <div style={styles.grammarReference}>
+          <ArticleGrammarLegend />
+        </div>
+      </div>
     </div>
   );
 };
