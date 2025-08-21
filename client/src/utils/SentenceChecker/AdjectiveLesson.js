@@ -57,22 +57,10 @@ const AdjectiveLesson = () => {
         <h3 style={{ color: '#333', marginBottom: '1rem' }}>What is an Adjective?</h3>
         <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '1rem' }}>
           An <strong>adjective</strong> is a word that describes, modifies, or gives more information about a <strong>noun</strong> or <strong>pronoun</strong>. 
-          Adjectives help the reader visualize, feel, or understand something more precisely.
+          Adjectives help the reader visualize, feel, or understand something more precisely. Click on the video to the right to learn more
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
-									<video
-										controls
-										style={{
-											width: '50%',
-											maxWidth: '200px',
-											height: 'auto',
-											borderRadius: '8px',
-											boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
-										}}
-									>
-										<source src="/lesson4.mp4" type="video/mp4" />
-										Your browser does not support the video tag.
-									</video>
+
 								</div>
 
         {/* Examples Section */}

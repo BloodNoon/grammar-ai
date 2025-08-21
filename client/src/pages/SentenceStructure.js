@@ -901,61 +901,818 @@ const SentenceStructures = () => {
 					</div>
 				)}
 
-				{lessonPage === 4 && (
-					<div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem' }}>
-						<h2>Lesson 4: Adjectives</h2>
-						<div style={{ 
-							padding: '1rem', 
-							backgroundColor: '#e8f5e8', 
-							borderRadius: '10px', 
-							marginBottom: '2rem',
-							border: '2px solid #28a745'
-						}}>
-							<h3 style={{ color: '#28a745', marginBottom: '1rem' }}>🎨 Master Descriptive Words!</h3>
-							<p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
-								Learn about adjectives - the words that make your sentences more colorful and descriptive! 
-								Discover the secret order that English adjectives follow.
-							</p>
-						</div>
 
-						{/* ADJECTIVE COMPONENTS */}
-						<AdjectiveLesson />
-						<AdjectiveRoyalOrder />
-						<AdjectiveSentenceStructures />
-						<AdjectiveFillBlanks />
-						<AdjectiveSortingGame />
-						<AdjectiveQuiz />
+{lessonPage === 4 && (
+	<div style={{
+		maxWidth: '1200px',
+		margin: '0 auto',
+		display: 'grid',
+		gridTemplateColumns: '2fr 1fr',
+		gap: '20px',
+		minHeight: 'calc(100vh - 120px)'
+	}}>
+		{/* Main Content */}
+		<div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+			{/* Lesson Card */}
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '25px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)'
+			}}>
+				<div style={{
+					display: 'flex',
+					alignItems: 'center',
+					gap: '15px',
+					marginBottom: '20px'
+				}}>
+					<div style={{
+						width: '60px',
+						height: '60px',
+						background: '#E91E63',
+						borderRadius: '50%',
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center',
+						fontSize: '24px'
+					}}>
+						🎨
 					</div>
-				)}
-
-				{lessonPage === 5 && (
-					<div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem' }}>
-						<h2>Lesson 5: Adverbs</h2>
-						<div style={{ 
-							padding: '1rem', 
-							backgroundColor: '#e8f5e8', 
-							borderRadius: '10px', 
-							marginBottom: '2rem',
-							border: '2px solid #28a745'
-						}}>
-							<h3 style={{ color: '#28a745', marginBottom: '1rem' }}>⚡ Master Action Modifiers!</h3>
-							<p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
-								Discover adverbs - the words that modify verbs, adjectives, and other adverbs! 
-								Learn how to use them correctly and understand their flexible placement in sentences.
-							</p>
-						</div>
-
-						{/* ADVERB COMPONENTS */}
-						<AdverbLesson />
-						<AdverbTypes />
-						<AdverbRoyalOrder />
-						<AdverbForms />
-						<AdverbSentenceStructures />
-						<AdverbIdentificationGame />
-						<AdverbTypeSorting />
-						<AdverbQuiz />
+					<div style={{
+						background: '#E91E63',
+						padding: '10px 20px',
+						borderRadius: '25px',
+						fontSize: '24px',
+						fontWeight: 'bold',
+						color: 'white',
+						position: 'relative'
+					}}>
+						Lesson 4: Adjectives
+						<span style={{
+							color: '#FFD700',
+							fontSize: '20px',
+							position: 'absolute',
+							top: '-5px',
+							right: '-5px'
+						}}>⭐</span>
 					</div>
-				)}
+				</div>
+				
+				<div style={{
+					background: 'rgba(255,255,255,0.7)',
+					padding: '20px',
+					borderRadius: '10px',
+					marginBottom: '20px',
+					backdropFilter: 'blur(10px)'
+				}}>
+					<p>Learn about <span style={{
+						background: '#E91E63',
+						padding: '2px 6px',
+						borderRadius: '4px',
+						fontWeight: 'bold',
+						color: 'white'
+					}}>adjectives</span> - the words that make your sentences more colorful and descriptive! 
+					Discover the secret order that English adjectives follow.</p>
+					
+					<p style={{ marginTop: '15px' }}>For example:</p>
+					<div style={{
+						fontStyle: 'italic',
+						margin: '10px 0',
+						color: '#555'
+					}}>The beautiful red rose.</div>
+					<p>In this phrase, <strong>"beautiful"</strong> and <strong>"red"</strong> are adjectives describing the rose.</p>
+				</div>
+			</div>
+
+			{/* Adjective Components */}
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '25px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+				borderTop: '4px solid #E91E63'
+			}}>
+				<div style={{
+					background: '#E91E63',
+					color: 'white',
+					padding: '5px 15px',
+					borderRadius: '15px',
+					fontWeight: 'bold',
+					marginBottom: '20px',
+					display: 'inline-block'
+				}}>
+					📖 Adjective Lesson
+				</div>
+				
+				<div style={{
+					background: 'rgba(255,255,255,0.7)',
+					padding: '20px',
+					borderRadius: '10px',
+					marginBottom: '20px',
+					backdropFilter: 'blur(10px)'
+				}}>
+					<AdjectiveLesson />
+				</div>
+			</div>
+
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '25px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+				borderTop: '4px solid #FF5722'
+			}}>
+				<div style={{
+					background: '#FF5722',
+					color: 'white',
+					padding: '5px 15px',
+					borderRadius: '15px',
+					fontWeight: 'bold',
+					marginBottom: '20px',
+					display: 'inline-block'
+				}}>
+					👑 Royal Order
+				</div>
+				
+				<div style={{
+					background: 'rgba(255,255,255,0.7)',
+					padding: '20px',
+					borderRadius: '10px',
+					marginBottom: '20px',
+					backdropFilter: 'blur(10px)'
+				}}>
+					<AdjectiveRoyalOrder />
+				</div>
+			</div>
+
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '25px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+				borderTop: '4px solid #9C27B0'
+			}}>
+				<div style={{
+					background: '#9C27B0',
+					color: 'white',
+					padding: '5px 15px',
+					borderRadius: '15px',
+					fontWeight: 'bold',
+					marginBottom: '20px',
+					display: 'inline-block'
+				}}>
+					🏗️ Sentence Structures
+				</div>
+				
+				<div style={{
+					background: 'rgba(255,255,255,0.7)',
+					padding: '20px',
+					borderRadius: '10px',
+					marginBottom: '20px',
+					backdropFilter: 'blur(10px)'
+				}}>
+					<AdjectiveSentenceStructures />
+				</div>
+			</div>
+
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '25px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+				borderTop: '4px solid #00BCD4'
+			}}>
+				<div style={{
+					background: '#00BCD4',
+					color: 'white',
+					padding: '5px 15px',
+					borderRadius: '15px',
+					fontWeight: 'bold',
+					marginBottom: '20px',
+					display: 'inline-block'
+				}}>
+					📝 Fill in the Blanks
+				</div>
+				
+				<div style={{
+					background: 'rgba(255,255,255,0.7)',
+					padding: '20px',
+					borderRadius: '10px',
+					marginBottom: '20px',
+					backdropFilter: 'blur(10px)'
+				}}>
+					<AdjectiveFillBlanks />
+				</div>
+			</div>
+
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '25px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+				borderTop: '4px solid #4CAF50'
+			}}>
+				<div style={{
+					background: '#4CAF50',
+					color: 'white',
+					padding: '5px 15px',
+					borderRadius: '15px',
+					fontWeight: 'bold',
+					marginBottom: '20px',
+					display: 'inline-block'
+				}}>
+					🎮 Sorting Game
+				</div>
+				
+				<div style={{
+					background: 'rgba(255,255,255,0.7)',
+					padding: '20px',
+					borderRadius: '10px',
+					marginBottom: '20px',
+					backdropFilter: 'blur(10px)'
+				}}>
+					<AdjectiveSortingGame />
+				</div>
+			</div>
+
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '25px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+				borderTop: '4px solid #FF6B35'
+			}}>
+				<div style={{
+					background: '#FF6B35',
+					color: 'white',
+					padding: '5px 15px',
+					borderRadius: '15px',
+					fontWeight: 'bold',
+					marginBottom: '20px',
+					display: 'inline-block'
+				}}>
+					🏆 Final Quiz
+				</div>
+				
+				<div style={{
+					background: 'rgba(255,255,255,0.7)',
+					padding: '20px',
+					borderRadius: '10px',
+					marginBottom: '20px',
+					backdropFilter: 'blur(10px)'
+				}}>
+					<AdjectiveQuiz />
+				</div>
+			</div>
+		</div>
+
+		{/* Sidebar */}
+		<div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+			{/* Video Card */}
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '20px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+				textAlign: 'center'
+			}}>
+				<div style={{
+					fontSize: '48px',
+					fontWeight: 'bold',
+					color: '#333',
+					margin: '40px 0'
+				}}>
+				</div>
+				<div style={{ display: 'flex', justifyContent: 'center', margin: '2rem 0' }}>
+					<video
+						controls
+						style={{
+							width: '100%',
+							maxWidth: '200px',
+							height: 'auto',
+							borderRadius: '8px',
+							boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+						}}
+					>
+						<source src="/lesson4.mp4" type="video/mp4" />
+						Your browser does not support the video tag.
+					</video>
+				</div>
+			</div>
+
+			{/* Example Card */}
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '20px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+				textAlign: 'center'
+			}}>
+				<p style={{ marginBottom: '10px' }}><strong>Adjective Examples</strong></p>
+				<div style={{
+					background: 'rgba(255,255,255,0.7)',
+					padding: '15px',
+					borderRadius: '10px',
+					border: '2px dashed #E91E63',
+					margin: '10px 0'
+				}}>
+					<strong>Example:</strong> The small, red car<br />
+					<strong>Order:</strong> size [small] + color [red] + noun [car]
+				</div>
+			</div>
+
+			{/* Knowledge Check Card */}
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '20px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+				textAlign: 'center'
+			}}>
+				<div style={{
+					background: 'linear-gradient(135deg, #E91E63, #AD1457)',
+					color: 'white',
+					padding: '15px',
+					borderRadius: '10px',
+					fontWeight: 'bold',
+					marginBottom: '15px'
+				}}>
+					⭐ Quick Check ⭐
+				</div>
+
+				<div style={{
+					background: 'rgba(255,255,255,0.7)',
+					padding: '15px',
+					borderRadius: '10px',
+					border: '2px dashed #ccc',
+					marginBottom: '15px',
+					fontSize: '18px',
+					fontWeight: '500'
+				}}>
+					The _____ blue ocean
+				</div>
+
+				<div style={{
+					display: 'grid',
+					gridTemplateColumns: '1fr 1fr',
+					gap: '10px'
+				}}>
+					{['beautiful', 'quickly', 'run', 'under'].map((option, index) => (
+						<div
+							key={index}
+							style={{
+								background: 'rgba(255,255,255,0.5)',
+								border: '2px dashed #ccc',
+								padding: '10px',
+								borderRadius: '8px',
+								cursor: 'pointer',
+								transition: 'all 0.3s ease'
+							}}
+						>
+							{option}
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</div>
+)}
+
+{lessonPage === 5 && (
+	<div style={{
+		maxWidth: '1200px',
+		margin: '0 auto',
+		display: 'grid',
+		gridTemplateColumns: '2fr 1fr',
+		gap: '20px',
+		minHeight: 'calc(100vh - 120px)'
+	}}>
+		{/* Main Content */}
+		<div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+			{/* Lesson Card */}
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '25px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)'
+			}}>
+				<div style={{
+					display: 'flex',
+					alignItems: 'center',
+					gap: '15px',
+					marginBottom: '20px'
+				}}>
+					<div style={{
+						width: '60px',
+						height: '60px',
+						background: '#3F51B5',
+						borderRadius: '50%',
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'center',
+						fontSize: '24px'
+					}}>
+						⚡
+					</div>
+					<div style={{
+						background: '#3F51B5',
+						padding: '10px 20px',
+						borderRadius: '25px',
+						fontSize: '24px',
+						fontWeight: 'bold',
+						color: 'white',
+						position: 'relative'
+					}}>
+						Lesson 5: Adverbs
+						<span style={{
+							color: '#FFD700',
+							fontSize: '20px',
+							position: 'absolute',
+							top: '-5px',
+							right: '-5px'
+						}}>⭐</span>
+					</div>
+				</div>
+				
+				<div style={{
+					background: 'rgba(255,255,255,0.7)',
+					padding: '20px',
+					borderRadius: '10px',
+					marginBottom: '20px',
+					backdropFilter: 'blur(10px)'
+				}}>
+					<p>Discover <span style={{
+						background: '#3F51B5',
+						padding: '2px 6px',
+						borderRadius: '4px',
+						fontWeight: 'bold',
+						color: 'white'
+					}}>adverbs</span> - the words that modify verbs, adjectives, and other adverbs! 
+					Learn how to use them correctly and understand their flexible placement in sentences.</p>
+					
+					<p style={{ marginTop: '15px' }}>For example:</p>
+					<div style={{
+						fontStyle: 'italic',
+						margin: '10px 0',
+						color: '#555'
+					}}>She runs quickly.</div>
+					<p>In this sentence, <strong>"quickly"</strong> is an adverb describing how she runs.</p>
+				</div>
+			</div>
+
+			{/* Adverb Components */}
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '25px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+				borderTop: '4px solid #3F51B5'
+			}}>
+				<div style={{
+					background: '#3F51B5',
+					color: 'white',
+					padding: '5px 15px',
+					borderRadius: '15px',
+					fontWeight: 'bold',
+					marginBottom: '20px',
+					display: 'inline-block'
+				}}>
+					📖 Adverb Lesson
+				</div>
+				
+				<div style={{
+					background: 'rgba(255,255,255,0.7)',
+					padding: '20px',
+					borderRadius: '10px',
+					marginBottom: '20px',
+					backdropFilter: 'blur(10px)'
+				}}>
+					<AdverbLesson />
+				</div>
+			</div>
+
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '25px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+				borderTop: '4px solid #2196F3'
+			}}>
+				<div style={{
+					background: '#2196F3',
+					color: 'white',
+					padding: '5px 15px',
+					borderRadius: '15px',
+					fontWeight: 'bold',
+					marginBottom: '20px',
+					display: 'inline-block'
+				}}>
+					🔤 Adverb Types
+				</div>
+				
+				<div style={{
+					background: 'rgba(255,255,255,0.7)',
+					padding: '20px',
+					borderRadius: '10px',
+					marginBottom: '20px',
+					backdropFilter: 'blur(10px)'
+				}}>
+					<AdverbTypes />
+				</div>
+			</div>
+
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '25px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+				borderTop: '4px solid #FF5722'
+			}}>
+				<div style={{
+					background: '#FF5722',
+					color: 'white',
+					padding: '5px 15px',
+					borderRadius: '15px',
+					fontWeight: 'bold',
+					marginBottom: '20px',
+					display: 'inline-block'
+				}}>
+					👑 Royal Order
+				</div>
+				
+				<div style={{
+					background: 'rgba(255,255,255,0.7)',
+					padding: '20px',
+					borderRadius: '10px',
+					marginBottom: '20px',
+					backdropFilter: 'blur(10px)'
+				}}>
+					<AdverbRoyalOrder />
+				</div>
+			</div>
+
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '25px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+				borderTop: '4px solid #8BC34A'
+			}}>
+				<div style={{
+					background: '#8BC34A',
+					color: 'white',
+					padding: '5px 15px',
+					borderRadius: '15px',
+					fontWeight: 'bold',
+					marginBottom: '20px',
+					display: 'inline-block'
+				}}>
+					📐 Adverb Forms
+				</div>
+				
+				<div style={{
+					background: 'rgba(255,255,255,0.7)',
+					padding: '20px',
+					borderRadius: '10px',
+					marginBottom: '20px',
+					backdropFilter: 'blur(10px)'
+				}}>
+					<AdverbForms />
+				</div>
+			</div>
+
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '25px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+				borderTop: '4px solid #9C27B0'
+			}}>
+				<div style={{
+					background: '#9C27B0',
+					color: 'white',
+					padding: '5px 15px',
+					borderRadius: '15px',
+					fontWeight: 'bold',
+					marginBottom: '20px',
+					display: 'inline-block'
+				}}>
+					🏗️ Sentence Structures
+				</div>
+				
+				<div style={{
+					background: 'rgba(255,255,255,0.7)',
+					padding: '20px',
+					borderRadius: '10px',
+					marginBottom: '20px',
+					backdropFilter: 'blur(10px)'
+				}}>
+					<AdverbSentenceStructures />
+				</div>
+			</div>
+
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '25px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+				borderTop: '4px solid #00BCD4'
+			}}>
+				<div style={{
+					background: '#00BCD4',
+					color: 'white',
+					padding: '5px 15px',
+					borderRadius: '15px',
+					fontWeight: 'bold',
+					marginBottom: '20px',
+					display: 'inline-block'
+				}}>
+					🕵️ Identification Game
+				</div>
+				
+				<div style={{
+					background: 'rgba(255,255,255,0.7)',
+					padding: '20px',
+					borderRadius: '10px',
+					marginBottom: '20px',
+					backdropFilter: 'blur(10px)'
+				}}>
+					<AdverbIdentificationGame />
+				</div>
+			</div>
+
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '25px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+				borderTop: '4px solid #4CAF50'
+			}}>
+				<div style={{
+					background: '#4CAF50',
+					color: 'white',
+					padding: '5px 15px',
+					borderRadius: '15px',
+					fontWeight: 'bold',
+					marginBottom: '20px',
+					display: 'inline-block'
+				}}>
+					🎮 Type Sorting
+				</div>
+				
+				<div style={{
+					background: 'rgba(255,255,255,0.7)',
+					padding: '20px',
+					borderRadius: '10px',
+					marginBottom: '20px',
+					backdropFilter: 'blur(10px)'
+				}}>
+					<AdverbTypeSorting />
+				</div>
+			</div>
+
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '25px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+				borderTop: '4px solid #FF6B35'
+			}}>
+				<div style={{
+					background: '#FF6B35',
+					color: 'white',
+					padding: '5px 15px',
+					borderRadius: '15px',
+					fontWeight: 'bold',
+					marginBottom: '20px',
+					display: 'inline-block'
+				}}>
+					🏆 Final Quiz
+				</div>
+				
+				<div style={{
+					background: 'rgba(255,255,255,0.7)',
+					padding: '20px',
+					borderRadius: '10px',
+					marginBottom: '20px',
+					backdropFilter: 'blur(10px)'
+				}}>
+					<AdverbQuiz />
+				</div>
+			</div>
+		</div>
+
+		{/* Sidebar */}
+		<div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+			{/* Empty Video Card for Lesson 5 */}
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '20px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+				textAlign: 'center'
+			}}>
+				<div style={{
+					fontSize: '48px',
+					fontWeight: 'bold',
+					color: '#333',
+					margin: '40px 0'
+				}}>
+					Video
+				</div>
+				<div style={{ 
+					display: 'flex', 
+					justifyContent: 'center', 
+					alignItems: 'center',
+					margin: '2rem 0',
+					height: '150px',
+					background: 'rgba(0,0,0,0.1)',
+					borderRadius: '8px',
+					color: '#666',
+					fontSize: '16px',
+					fontStyle: 'italic'
+				}}>
+					Video coming soon...
+				</div>
+			</div>
+
+			{/* Example Card */}
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '20px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+				textAlign: 'center'
+			}}>
+				<p style={{ marginBottom: '10px' }}><strong>Adverb Examples</strong></p>
+				<div style={{
+					background: 'rgba(255,255,255,0.7)',
+					padding: '15px',
+					borderRadius: '10px',
+					border: '2px dashed #3F51B5',
+					margin: '10px 0'
+				}}>
+					<strong>Example:</strong> She sings beautifully<br />
+					<strong>Type:</strong> manner [beautifully] modifies verb [sings]
+				</div>
+			</div>
+
+			{/* Knowledge Check Card */}
+			<div style={{
+				background: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+				borderRadius: '15px',
+				padding: '20px',
+				boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+				textAlign: 'center'
+			}}>
+				<div style={{
+					background: 'linear-gradient(135deg, #3F51B5, #303F9F)',
+					color: 'white',
+					padding: '15px',
+					borderRadius: '10px',
+					fontWeight: 'bold',
+					marginBottom: '15px'
+				}}>
+					⭐ Quick Check ⭐
+				</div>
+
+				<div style={{
+					background: 'rgba(255,255,255,0.7)',
+					padding: '15px',
+					borderRadius: '10px',
+					border: '2px dashed #ccc',
+					marginBottom: '15px',
+					fontSize: '18px',
+					fontWeight: '500'
+				}}>
+					He speaks _____ clearly
+				</div>
+
+				<div style={{
+					display: 'grid',
+					gridTemplateColumns: '1fr 1fr',
+					gap: '10px'
+				}}>
+					{['very', 'blue', 'table', 'under'].map((option, index) => (
+						<div
+							key={index}
+							style={{
+								background: 'rgba(255,255,255,0.5)',
+								border: '2px dashed #ccc',
+								padding: '10px',
+								borderRadius: '8px',
+								cursor: 'pointer',
+								transition: 'all 0.3s ease'
+							}}
+						>
+							{option}
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</div>
+)}
 
 				{lessonPage === 6 && (
 					<div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem' }}>
@@ -1319,6 +2076,7 @@ const SentenceStructures = () => {
 											))}
 										</div>
 										</div>
+										{/* PREP3 COMPONENTS */}
 										<SentenceScramble />
 										<PrepositionBuilder />
 										<PrepositionQuizFinal />
