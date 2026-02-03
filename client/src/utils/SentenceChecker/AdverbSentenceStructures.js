@@ -1,0 +1,158 @@
+import React from 'react';
+
+const AdverbSentenceStructures = () => {
+  const sentenceStructures = [
+    {
+      pattern: '(Adverb,) Pronoun + (Adverb) Be Verb (Adverb) + Adjective (Adverb)',
+      example: 'He is quickly happy.',
+      breakdown: 'Adverb inside, after "Be Verb" — modifies "happy"',
+      position: 'after verb'
+    },
+    {
+      pattern: '(Adverb,) Article + Noun + (Adverb) Be Verb (Adverb) + Adjective (Adverb)',
+      example: 'The dog is playfully happy.',
+      breakdown: 'Adverb before adjective — shows manner of happiness',
+      position: 'before adjective'
+    },
+    {
+      pattern: '(Adverb,) Article + Adjective + Noun + (Adverb) Be Verb (Adverb) + Adjective (Adverb)',
+      example: 'Quickly, the small dog is friendly.',
+      breakdown: 'Adverb at sentence start — sets tone for entire action/state',
+      position: 'sentence start'
+    },
+    {
+      pattern: '(Adverb,) Pronoun + (Adverb) Verb (Adverb) + Preposition + Article + Adjective + Noun (Adverb)',
+      example: 'She sings beautifully to the bright crowd.',
+      breakdown: 'Adverb right after verb — describes "how" she sings',
+      position: 'after verb'
+    },
+    {
+      pattern: '(Adverb,) Article + Adjective + Noun + (Adverb) Verb (Adverb) + Article + Adjective + Noun (Adverb)',
+      example: 'The young student writes carefully a difficult essay.',
+      breakdown: 'Adverb between verb and object — emphasizes manner of action',
+      position: 'between verb and object'
+    },
+    {
+      pattern: '(Adverb,) Article + Adjective + Noun + Preposition + (Adverb) Verb (Adverb) + Article + Adjective + Noun + Preposition + Article + Adjective + Noun (Adverb)',
+      example: 'The excited class in the noisy room slowly discusses a new project in the large hall.',
+      breakdown: 'Adverb before main verb in a long sentence — keeps action deliberate',
+      position: 'before main verb'
+    },
+    {
+      pattern: '(Adverb,) Article + Adjective + Noun + (Adverb) Verb (Adverb) + Preposition + Article + Adjective + Noun + Article + Adjective + Noun (Adverb)',
+      example: 'The clever fox jumps quickly over the lazy dog and the small cat.',
+      breakdown: 'Adverb after verb — shows speed of action',
+      position: 'after verb'
+    }
+  ];
+
+  const getPositionColor = (position) => {
+    const colors = {
+      'sentence start': '#e3f2fd',
+      'after verb': '#e8f5e9',
+      'before adjective': '#fff3e0',
+      'between verb and object': '#f3e5f5',
+      'before main verb': '#ffebee'
+    };
+    return colors[position] || '#f5f5f5';
+  };
+
+  const getPositionBorder = (position) => {
+    const borders = {
+      'sentence start': '#1976d2',
+      'after verb': '#388e3c',
+      'before adjective': '#f57c00',
+      'between verb and object': '#7b1fa2',
+      'before main verb': '#c62828'
+    };
+    return borders[position] || '#999';
+  };
+
+  return (
+    <div style={{
+      backgroundColor: '#e8f4fd',
+      padding: '2rem',
+      borderRadius: '10px',
+      marginBottom: '2rem',
+      border: '1px solid #90caf9'
+    }}>
+      <h3 style={{ color: '#1565c0', marginBottom: '1.5rem' }}>🔄 Adverbs – Sentence Structures with Varied Placement</h3>
+      <p style={{ fontSize: '1rem', lineHeight: '1.6', marginBottom: '1.5rem', color: '#666' }}>
+        <em>One adverb per sentence, in a different position each time</em>
+      </p>
+      
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+        {sentenceStructures.map((structure, index) => (
+          <div key={index} style={{
+            backgroundColor: getPositionColor(structure.position),
+            padding: '1.5rem',
+            borderRadius: '8px',
+            border: `2px solid ${getPositionBorder(structure.position)}`
+          }}>
+            {/* Pattern */}
+            <div style={{ 
+              fontWeight: 'bold', 
+              color: '#333', 
+              marginBottom: '0.75rem',
+              fontSize: '0.95rem',
+              fontFamily: 'monospace'
+            }}>
+              {structure.pattern}
+            </div>
+            
+            {/* Example */}
+            <div style={{ 
+              fontSize: '1.1rem', 
+              fontStyle: 'italic', 
+              marginBottom: '0.75rem',
+              color: '#333',
+              padding: '0.5rem',
+              backgroundColor: '#fff',
+              borderRadius: '4px',
+              border: '1px solid #ddd'
+            }}>
+              {structure.example}
+            </div>
+            
+            {/* Breakdown */}
+            <div style={{ 
+              fontSize: '0.9rem', 
+              color: '#555',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem'
+            }}>
+              <span style={{
+                backgroundColor: getPositionBorder(structure.position),
+                color: 'white',
+                padding: '0.25rem 0.5rem',
+                borderRadius: '12px',
+                fontSize: '0.8rem',
+                fontWeight: 'bold'
+              }}>
+                {structure.position}
+              </span>
+              {structure.breakdown}
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      <div style={{
+        marginTop: '1.5rem',
+        padding: '1rem',
+        backgroundColor: '#fff',
+        borderRadius: '8px',
+        border: '1px solid #90caf9'
+      }}>
+        <h4 style={{ color: '#1565c0', marginBottom: '0.5rem' }}>🎯 Placement Strategy:</h4>
+        <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: '1.5', margin: 0 }}>
+          Adverbs are very flexible! They can move to different positions in a sentence to change emphasis. 
+          The key is understanding what you want to emphasize and how the adverb sounds in each position.
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default AdverbSentenceStructures;
