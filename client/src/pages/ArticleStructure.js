@@ -450,11 +450,33 @@ const ArticleStructure = () => {
       margin: 0
     },
     container: {
-      maxWidth: '800px',
+      // maxWidth: '800px',
       margin: '0 auto',
       padding: '20px',
       textAlign: 'center'
     },
+    Heading: {
+      fontSize: '32px',
+      marginLeft: '6.5in',
+      textAlign: 'center',
+      fontWeight: '600',
+      lineHeight: '1.2'
+    },
+    mainTitle: {
+      fontSize: '40px',
+      marginBottom: '1.5rem',
+      marginTop: '1rem',
+      textAlign: 'center',
+      fontWeight: '700',
+      color: '#333',
+      lineHeight: '1.2'
+    },
+
+
+
+
+
+
     navHeader: {
       color: 'rgb(8, 0, 0)',
       border: '2px solid white',
@@ -495,10 +517,10 @@ const ArticleStructure = () => {
       fontSize: '12px',
       transition: 'all 0.3s ease'
     },
-    correct: { background: '#81c784', color: 'white' },
-    accuracy: { background: '#4dd0e1', color: 'white' },
-    incorrect: { background: '#e57373', color: 'white' },
-    streak: { background: '#ffb74d', color: 'white' },
+    // correct: { background: '#81c784', color: 'white' },
+    // accuracy: { background: '#4dd0e1', color: 'white' },
+    // incorrect: { background: '#e57373', color: 'white' },
+    // streak: { background: '#ffb74d', color: 'white' },
     typingChallenge: {
       background: '#e3f2fd'
     },
@@ -517,11 +539,11 @@ const ArticleStructure = () => {
       <div style={styles.container}>
         {/* Navigation Header */}
         <header style={styles.navHeader}>
-          <h1>🐸 Sentence Structure Practice</h1>
+          <h1 style={styles.Heading}>🐸 Sentence Structure Practice</h1>
         </header>
 
         {/* Main Title */}
-        <h1>Definite and Indefinite Articles Builder</h1>
+        <h1 style={styles.mainTitle}>Definite and Indefinite Articles Builder</h1>
 
         {/* Main Two-Column Layout */}
         <div style={styles.mainContent}>
@@ -573,7 +595,7 @@ const ArticleStructure = () => {
               <h3 style={{ 
                 marginBottom: '15px',
                 color: '#333',
-                fontSize: '18px'
+                fontSize: '1.5rem'
               }}>
                 📹 Today's Lesson: Articles
               </h3>
@@ -631,7 +653,7 @@ const ArticleStructure = () => {
             <div style={styles.panel}>
               {/* Status Badges */}
               <div style={styles.statusBadges}>
-                <div style={{...styles.badge, ...styles.correct}}>
+                {/* <div style={{...styles.badge, ...styles.correct}}>
                   Correct: {correctCount}
                 </div>
                 <div style={{...styles.badge, ...styles.accuracy}}>
@@ -642,7 +664,7 @@ const ArticleStructure = () => {
                 </div>
                 <div style={{...styles.badge, ...styles.streak}}>
                   Streak: {streak}
-                </div>
+                </div> */}
               </div>
 
               <ArticleProgressTracker 

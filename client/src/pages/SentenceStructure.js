@@ -1,41 +1,41 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import nlp from 'compromise';
-import { testCases } from '../utils/SentenceChecker/TestCases';
-import SubjectNounGame from '../utils/SentenceChecker/SubjectNounGame';
-import SubjectQuiz from '../utils/SentenceChecker/SubjectQuiz';
+import { testCases } from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/TestCases';
+import SubjectNounGame from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/SubjectNounGame';
+import SubjectQuiz from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/SubjectQuiz';
 import VerbTenseStructure from './VerbTenseStructure';
 import ArticleStructure from './ArticleStructure';
 // ADJECTIVE COMPONENTS
-import AdjectiveLesson from '../utils/SentenceChecker/AdjectiveLesson';
-import AdjectiveRoyalOrder from '../utils/SentenceChecker/AdjectiveRoyalOrder';
-import AdjectiveSentenceStructures from '../utils/SentenceChecker/AdjectiveSentenceStructures';
-import AdjectiveFillBlanks from '../utils/SentenceChecker/AdjectiveFillBlanks';
-import AdjectiveSortingGame from '../utils/SentenceChecker/AdjectiveSortingGame';
-import AdjectiveQuiz from '../utils/SentenceChecker/AdjectiveQuiz';
+import AdjectiveLesson from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdjectiveLesson';
+import AdjectiveRoyalOrder from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdjectiveRoyalOrder';
+import AdjectiveSentenceStructures from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdjectiveSentenceStructures';
+import AdjectiveFillBlanks from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdjectiveFillBlanks';
+import AdjectiveSortingGame from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdjectiveSortingGame';
+import AdjectiveQuiz from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdjectiveQuiz';
 // ADVERB COMPONENTS
-import AdverbLesson from '../utils/SentenceChecker/AdverbLesson';
-import AdverbTypes from '../utils/SentenceChecker/AdverbTypes';
-import AdverbRoyalOrder from '../utils/SentenceChecker/AdverbRoyalOrder';
-import AdverbForms from '../utils/SentenceChecker/AdverbForms';
-import AdverbSentenceStructures from '../utils/SentenceChecker/AdverbSentenceStructures';
-import AdverbIdentificationGame from '../utils/SentenceChecker/AdverbIdentificationGame';
-import AdverbTypeSorting from '../utils/SentenceChecker/AdverbTypeSorting';
-import AdverbQuiz from '../utils/SentenceChecker/AdverbQuiz';
+import AdverbLesson from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdverbLesson';
+import AdverbTypes from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdverbTypes';
+import AdverbRoyalOrder from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdverbRoyalOrder';
+import AdverbForms from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdverbForms';
+import AdverbSentenceStructures from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdverbSentenceStructures';
+import AdverbIdentificationGame from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdverbIdentificationGame';
+import AdverbTypeSorting from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdverbTypeSorting';
+import AdverbQuiz from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdverbQuiz';
 // PREP1 COMPONENTS
-import PrepositionSorter from '../utils/SentenceChecker/PrepositionSorter';
-import PrepositionStructureGame from '../utils/SentenceChecker/PrepositionStructureGame';
-import PrepositionQuiz from '../utils/SentenceChecker/PrepositionQuiz';
+import PrepositionSorter from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/PrepositionSorter';
+import PrepositionStructureGame from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/PrepositionStructureGame';
+import PrepositionQuiz from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/PrepositionQuiz';
 // PREP2 COMPONENTS
-import PrepositionPhraseLesson from '../utils/SentenceChecker/PrepositionPhraseLesson';
-import PrepositionPhraseFillBlanks from '../utils/SentenceChecker/PrepositionPhraseFillBlanks';
-import PrepositionPhraseWordBlocks from '../utils/SentenceChecker/PrepositionPhraseWordBlocks';
-import PrepositionPhraseTesting from '../utils/SentenceChecker/PrepositionPhraseTesting';
-import PrepositionPhraseSorting from '../utils/SentenceChecker/PrepositionPhraseSorting';
+import PrepositionPhraseLesson from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/PrepositionPhraseLesson';
+import PrepositionPhraseFillBlanks from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/PrepositionPhraseFillBlanks';
+import PrepositionPhraseWordBlocks from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/PrepositionPhraseWordBlocks';
+import PrepositionPhraseTesting from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/PrepositionPhraseTesting';
+import PrepositionPhraseSorting from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/PrepositionPhraseSorting';
 // PREP3 COMPONENTS
-import SentenceScramble from '../utils/SentenceChecker/SentenceScramble';
-import PrepositionBuilder from '../utils/SentenceChecker/PrepositionBuilder';
-import PrepositionQuizFinal from '../utils/SentenceChecker/PrepositionQuizFinal';
+import SentenceScramble from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/SentenceScramble';
+import PrepositionBuilder from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/PrepositionBuilder';
+import PrepositionQuizFinal from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/PrepositionQuizFinal';
 
 function tagWordsWithCompromise(sentence) {
 	const doc = nlp(sentence);
@@ -203,16 +203,19 @@ const SentenceStructures = () => {
 					border: '2px solid white',
 					borderRadius: '1rem',
 					padding: '0.5rem 1rem',
-					display: 'flex',
-					justifyContent: 'space-between',
-					marginBottom: '35px'
+					// display: 'flex',
+					// justifyContent: 'space-between',
+					marginBottom: '35px',
+					fontSize: '1.5rem',
+					textAlign: 'center',
+					fontWeight: 'bold',
 				}}>
 					<h1>Sentence Structure Practice</h1>
 				</div>
 
 				{lessonPage === 1 && (
 					<div style={{
-						maxWidth: '1200px',
+						// maxWidth: '1200px',
 						margin: '0 auto',
 						display: 'grid',
 						gridTemplateColumns: '2fr 1fr',
@@ -301,7 +304,12 @@ const SentenceStructures = () => {
 								borderRadius: '15px',
 								padding: '25px',
 								boxShadow: '0 8px 25px rgba(0,0,0,0.1)'
-							}}>
+							}}><div style={{
+									background: 'rgba(255,255,255,0.7)',
+									padding: '20px',
+									borderRadius: '10px',
+									marginBottom: '20px',
+									backdropFilter: 'blur(10px)'}}>
 								<div style={{
 									background: '#FF6B35',
 									color: 'white',
@@ -415,6 +423,7 @@ const SentenceStructures = () => {
 										🔄 Reset Practice
 									</button>
 								</div>
+							</div>
 							</div>
 
 							{/* SubjectNounGame Section */}
@@ -700,6 +709,12 @@ const SentenceStructures = () => {
 								padding: '20px',
 								boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
 								textAlign: 'center'
+							}}><div style={{
+								background: 'rgba(255,255,255,0.7)',
+									padding: '20px',
+									borderRadius: '10px',
+									marginBottom: '20px',
+									backdropFilter: 'blur(10px)'
 							}}>
 								<div style={{
 									fontSize: '48px',
@@ -714,8 +729,8 @@ const SentenceStructures = () => {
 										controls
 										style={{
 											width: '100%',
-											maxWidth: '200px',
-											height: 'auto',
+											maxWidth: '5in',
+											height: '8in',
 											borderRadius: '8px',
 											boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
 										}}
@@ -724,6 +739,7 @@ const SentenceStructures = () => {
 										Your browser does not support the video tag.
 									</video>
 								</div>
+							</div>
 							</div>
 
 							{/* Example Card */}
@@ -904,7 +920,7 @@ const SentenceStructures = () => {
 
 {lessonPage === 4 && (
 	<div style={{
-		maxWidth: '1200px',
+		// maxWidth: '1200px',
 		margin: '0 auto',
 		display: 'grid',
 		gridTemplateColumns: '2fr 1fr',
@@ -1280,7 +1296,7 @@ const SentenceStructures = () => {
 
 {lessonPage === 5 && (
 	<div style={{
-		maxWidth: '1200px',
+		// maxWidth: '1200px',
 		margin: '0 auto',
 		display: 'grid',
 		gridTemplateColumns: '2fr 1fr',

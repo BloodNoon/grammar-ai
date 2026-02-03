@@ -668,7 +668,7 @@ const VerbTenseStructure = () => {
       margin: 0
     },
     container: {
-      maxWidth: '800px',
+      // maxWidth: '800px',
       margin: '0 auto',
       padding: '20px',
       textAlign: 'center'
@@ -683,6 +683,22 @@ const VerbTenseStructure = () => {
       position: 'sticky',
       backgroundColor: 'rgba(249, 190, 134, 0.922)',
       marginBottom: '20px'
+    },
+   Heading: {
+      fontSize: '32px',
+      marginLeft: '6.5in',
+      textAlign: 'center',
+      fontWeight: '600',
+      lineHeight: '1.2'
+    },
+    mainTitle: {
+      fontSize: '40px',
+      marginBottom: '1.5rem',
+      marginTop: '1rem',
+      textAlign: 'center',
+      fontWeight: '700',
+      color: '#333',
+      lineHeight: '1.2'
     },
     mainContent: {
       display: 'grid',
@@ -713,10 +729,10 @@ const VerbTenseStructure = () => {
       fontSize: '12px',
       transition: 'all 0.3s ease'
     },
-    correct: { background: '#81c784', color: 'white' },
-    accuracy: { background: '#4dd0e1', color: 'white' },
-    incorrect: { background: '#e57373', color: 'white' },
-    streak: { background: '#ffb74d', color: 'white' },
+    // correct: { background: '#81c784', color: 'white' },
+    // accuracy: { background: '#4dd0e1', color: 'white' },
+    // incorrect: { background: '#e57373', color: 'white' },
+    // streak: { background: '#ffb74d', color: 'white' },
     difficultyButtons: {
       display: 'flex',
       gap: '10px',
@@ -762,11 +778,11 @@ const VerbTenseStructure = () => {
       <div style={styles.container}>
         {/* Navigation Header */}
         <header style={styles.navHeader}>
-          <h1>🐸 Sentence Structure Practice</h1>
+          <h1 style={styles.Heading}>🐸 Sentence Structure Practice</h1>
         </header>
 
         {/* Main Title */}
-        <h1>Verb Tense & Auxiliary Verb Builder</h1>
+        <h1 style={styles.mainTitle}>Verb Tense & Auxiliary Verb Builder</h1>
 
         {/* Main Two-Column Layout */}
         <div style={styles.mainContent}>
@@ -818,7 +834,7 @@ const VerbTenseStructure = () => {
               <h3 style={{ 
                 marginBottom: '15px',
                 color: '#333',
-                fontSize: '18px'
+                fontSize: '1.5rem'
               }}>
                 📹 Today's Lesson: Verb
               </h3>
@@ -874,7 +890,7 @@ const VerbTenseStructure = () => {
 
             {/* Middle Right - Drag & Drop Sections */}
             <div style={styles.panel}>
-              {/* Status Badges */}
+              {/* Status Badges
               <div style={styles.statusBadges}>
                 <div style={{...styles.badge, ...styles.correct}}>
                   Correct: {correctCount}
@@ -888,7 +904,7 @@ const VerbTenseStructure = () => {
                 <div style={{...styles.badge, ...styles.streak}}>
                   Streak: {streak}
                 </div>
-              </div>
+              </div> */}
 
               <VerbProgressTracker 
                 correctCount={correctCount}
