@@ -1,1 +1,0 @@
-module.exports = { ESSAY: 'essay', PARAGRAPH: 'paragraph', SENTENCE: 'sentence' };

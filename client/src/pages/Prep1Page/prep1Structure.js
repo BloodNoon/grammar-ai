@@ -6,7 +6,7 @@ import PrepositionSorter from '../../utils/SentenceChecker/PrepositionSorter';
 import PrepositionStructureGame from '../../utils/SentenceChecker/PrepositionStructureGame';
 import PrepositionQuiz from '../../utils/SentenceChecker/PrepositionQuiz';
 
-const Prep1Page = () => {
+const Prep1Structure = () => {
   return (
     <div className="prep1-container">
       <div className="prep1-content">
@@ -133,4 +133,4 @@ const Prep1Page = () => {
   );
 };
 
-export default Prep1Page;
+export default Prep1Structure;

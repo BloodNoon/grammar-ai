@@ -1,22 +1,22 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { AuthProvider } from '../../StudentsWriting-main/client/src/contexts/AuthContext';
+import { AuthProvider } from './contexts/AuthContext';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import Home from '../../StudentsWriting-main/client/src/pages/Home';
-import Signup from '../../StudentsWriting-main/client/src/pages/Signup';
-import Login from '../../StudentsWriting-main/client/src/pages/Login';
-import Dashboard from '../../StudentsWriting-main/client/src/pages/Dashboard';
+import Home from './pages/Home';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
 import SentenceStructures from './pages/SentenceStructure';
-import VerbTenseStructure from '../../StudentsWriting-main/client/src/pages/VerbTenseStructure';
-import ArticleStructure from '../../StudentsWriting-main/client/src/pages/ArticleStructure';
-import AdjectiveStructure from '../../StudentsWriting-main/client/src/pages/adjectivePage/adjectiveStructure';
-import AdverbStructure from '../../StudentsWriting-main/client/src/pages/adverbPage/adverbPage';
-import PromptList from '../../StudentsWriting-main/client/src/pages/PromptList';
-import PromptOverview from '../../StudentsWriting-main/client/src/pages/PromptOverview';
-import PrivateRoute from '../../StudentsWriting-main/client/src/components/PrivateRoute';
-import Prep1Structure from '../../StudentsWriting-main/client/src/pages/Prep1Page/prep1Structure';
-import Prep2Structure from '../../StudentsWriting-main/client/src/pages/Prep2Page/prep2Structure';
+import VerbTenseStructure from './pages/VerbTenseStructure';
+import ArticleStructure from './pages/ArticleStructure';
+import AdjectiveStructure from './pages/adjectivePage/adjectiveStructure';
+import AdverbStructure from './pages/adverbPage/adverbPage';
+import PromptList from './pages/PromptList';
+import PromptOverview from './pages/PromptOverview';
+import PrivateRoute from './components/PrivateRoute';
+import Prep1Structure from './pages/Prep1Page/prep1Structure';
+import Prep2Structure from './pages/Prep2Page/prep2Structure';
 
 function App() {
 	const queryClient = new QueryClient();

@@ -1,41 +1,41 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import nlp from 'compromise';
-import { testCases } from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/TestCases';
-import SubjectNounGame from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/SubjectNounGame';
-import SubjectQuiz from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/SubjectQuiz';
+import { testCases } from '../utils/SentenceChecker/TestCases';
+import SubjectNounGame from '../utils/SentenceChecker/SubjectNounGame';
+import SubjectQuiz from '../utils/SentenceChecker/SubjectQuiz';
 import VerbTenseStructure from './VerbTenseStructure';
 import ArticleStructure from './ArticleStructure';
 // ADJECTIVE COMPONENTS
-import AdjectiveLesson from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdjectiveLesson';
-import AdjectiveRoyalOrder from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdjectiveRoyalOrder';
-import AdjectiveSentenceStructures from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdjectiveSentenceStructures';
-import AdjectiveFillBlanks from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdjectiveFillBlanks';
-import AdjectiveSortingGame from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdjectiveSortingGame';
-import AdjectiveQuiz from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdjectiveQuiz';
+import AdjectiveLesson from '../utils/SentenceChecker/AdjectiveLesson';
+import AdjectiveRoyalOrder from '../utils/SentenceChecker/AdjectiveRoyalOrder';
+import AdjectiveSentenceStructures from '../utils/SentenceChecker/AdjectiveSentenceStructures';
+import AdjectiveFillBlanks from '../utils/SentenceChecker/AdjectiveFillBlanks';
+import AdjectiveSortingGame from '../utils/SentenceChecker/AdjectiveSortingGame';
+import AdjectiveQuiz from '../utils/SentenceChecker/AdjectiveQuiz';
 // ADVERB COMPONENTS
-import AdverbLesson from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdverbLesson';
-import AdverbTypes from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdverbTypes';
-import AdverbRoyalOrder from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdverbRoyalOrder';
-import AdverbForms from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdverbForms';
-import AdverbSentenceStructures from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdverbSentenceStructures';
-import AdverbIdentificationGame from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdverbIdentificationGame';
-import AdverbTypeSorting from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdverbTypeSorting';
-import AdverbQuiz from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/AdverbQuiz';
+import AdverbLesson from '../utils/SentenceChecker/AdverbLesson';
+import AdverbTypes from '../utils/SentenceChecker/AdverbTypes';
+import AdverbRoyalOrder from '../utils/SentenceChecker/AdverbRoyalOrder';
+import AdverbForms from '../utils/SentenceChecker/AdverbForms';
+import AdverbSentenceStructures from '../utils/SentenceChecker/AdverbSentenceStructures';
+import AdverbIdentificationGame from '../utils/SentenceChecker/AdverbIdentificationGame';
+import AdverbTypeSorting from '../utils/SentenceChecker/AdverbTypeSorting';
+import AdverbQuiz from '../utils/SentenceChecker/AdverbQuiz';
 // PREP1 COMPONENTS
-import PrepositionSorter from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/PrepositionSorter';
-import PrepositionStructureGame from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/PrepositionStructureGame';
-import PrepositionQuiz from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/PrepositionQuiz';
+import PrepositionSorter from '../utils/SentenceChecker/PrepositionSorter';
+import PrepositionStructureGame from '../utils/SentenceChecker/PrepositionStructureGame';
+import PrepositionQuiz from '../utils/SentenceChecker/PrepositionQuiz';
 // PREP2 COMPONENTS
-import PrepositionPhraseLesson from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/PrepositionPhraseLesson';
-import PrepositionPhraseFillBlanks from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/PrepositionPhraseFillBlanks';
-import PrepositionPhraseWordBlocks from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/PrepositionPhraseWordBlocks';
-import PrepositionPhraseTesting from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/PrepositionPhraseTesting';
-import PrepositionPhraseSorting from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/PrepositionPhraseSorting';
+import PrepositionPhraseLesson from '../utils/SentenceChecker/PrepositionPhraseLesson';
+import PrepositionPhraseFillBlanks from '../utils/SentenceChecker/PrepositionPhraseFillBlanks';
+import PrepositionPhraseWordBlocks from '../utils/SentenceChecker/PrepositionPhraseWordBlocks';
+import PrepositionPhraseTesting from '../utils/SentenceChecker/PrepositionPhraseTesting';
+import PrepositionPhraseSorting from '../utils/SentenceChecker/PrepositionPhraseSorting';
 // PREP3 COMPONENTS
-import SentenceScramble from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/SentenceScramble';
-import PrepositionBuilder from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/PrepositionBuilder';
-import PrepositionQuizFinal from '../../../StudentsWriting-main/client/src/utils/SentenceChecker/PrepositionQuizFinal';
+import SentenceScramble from '../utils/SentenceChecker/SentenceScramble';
+import PrepositionBuilder from '../utils/SentenceChecker/PrepositionBuilder';
+import PrepositionQuizFinal from '../utils/SentenceChecker/PrepositionQuizFinal';
 
 function tagWordsWithCompromise(sentence) {
 	const doc = nlp(sentence);

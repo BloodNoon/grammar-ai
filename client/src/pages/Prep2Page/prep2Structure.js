@@ -8,7 +8,7 @@ import PrepositionPhraseWordBlocks from '../../utils/SentenceChecker/Preposition
 import PrepositionPhraseTesting from '../../utils/SentenceChecker/PrepositionPhraseTesting';
 import PrepositionPhraseSorting from '../../utils/SentenceChecker/PrepositionPhraseSorting';
 
-const Prep2Page = () => {
+const Prep2Structure = () => {
   return (
     <div className="prep2-container">
       <div className="prep2-content">
@@ -105,4 +105,4 @@ const Prep2Page = () => {
   );
 };
 
-export default Prep2Page;
+export default Prep2Structure;
