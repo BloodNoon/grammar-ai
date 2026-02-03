@@ -1,0 +1,308 @@
+/* Adverb.css - Adverb Lesson Styles */
+
+/* Main Layout */
+.lesson5-container {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  min-height: calc(100vh - 120px);
+}
+
+.lesson5-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.lesson5-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Lesson Card */
+.adverb-lesson-card {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.adverb-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.adverb-icon {
+  width: 60px;
+  height: 60px;
+  background: #3F51B5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+}
+
+.adverb-title {
+  background: #3F51B5;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  position: relative;
+}
+
+.adverb-star {
+  color: #FFD700;
+  font-size: 20px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+.adverb-content {
+  background: rgba(255,255,255,0.7);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.adverb-highlight {
+  background: #3F51B5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Component Cards */
+.adverb-component-card {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.adverb-component-header {
+  color: white;
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+/* Different header colors for each adverb component */
+.adverb-header-lesson { background: #3F51B5; }
+.adverb-header-types { background: #2196F3; }
+.adverb-header-royal { background: #FF5722; }
+.adverb-header-forms { background: #8BC34A; }
+.adverb-header-sentence { background: #9C27B0; }
+.adverb-header-identification { background: #00BCD4; }
+.adverb-header-sorting { background: #4CAF50; }
+.adverb-header-quiz { background: #FF6B35; }
+
+.adverb-component-content {
+  background: rgba(255,255,255,0.7);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+}
+
+/* Border tops for visual separation */
+.border-top-adverb-lesson { border-top: 4px solid #3F51B5; }
+.border-top-adverb-types { border-top: 4px solid #2196F3; }
+.border-top-adverb-royal { border-top: 4px solid #FF5722; }
+.border-top-adverb-forms { border-top: 4px solid #8BC34A; }
+.border-top-adverb-sentence { border-top: 4px solid #9C27B0; }
+.border-top-adverb-identification { border-top: 4px solid #00BCD4; }
+.border-top-adverb-sorting { border-top: 4px solid #4CAF50; }
+.border-top-adverb-quiz { border-top: 4px solid #FF6B35; }
+
+/* Sidebar Cards */
+.adverb-sidebar-card {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.adverb-video-title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #333;
+  margin: 40px 0;
+}
+
+.adverb-video-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.adverb-video-player {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.adverb-video-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  height: 150px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 8px;
+  color: #666;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.adverb-example-card-content {
+  background: rgba(255,255,255,0.7);
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px dashed #3F51B5;
+  margin: 10px 0;
+}
+
+.adverb-knowledge-header {
+  background: linear-gradient(135deg, #3F51B5, #303F9F);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.adverb-knowledge-question {
+  background: rgba(255,255,255,0.7);
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px dashed #ccc;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.adverb-options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.adverb-option-item {
+  background: rgba(255,255,255,0.5);
+  border: 2px dashed #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.adverb-option-item:hover {
+  background: rgba(255,255,255,0.8);
+  border-color: #3F51B5;
+}
+
+/* Shared styles that can be used across multiple lesson pages */
+.example-text {
+  font-style: italic;
+  margin: 10px 0;
+  color: #555;
+}
+
+.component-card-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .lesson5-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .lesson5-sidebar {
+    order: -1; /* Move sidebar to top on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .adverb-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .adverb-title {
+    font-size: 20px;
+  }
+  
+  .adverb-component-card {
+    padding: 15px;
+  }
+  
+  .adverb-component-content {
+    padding: 15px;
+  }
+}
+
+/* Animation for interactive elements */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.adverb-component-card {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.adverb-component-card:nth-child(2) { animation-delay: 0.1s; }
+.adverb-component-card:nth-child(3) { animation-delay: 0.2s; }
+.adverb-component-card:nth-child(4) { animation-delay: 0.3s; }
+.adverb-component-card:nth-child(5) { animation-delay: 0.4s; }
+.adverb-component-card:nth-child(6) { animation-delay: 0.5s; }
+.adverb-component-card:nth-child(7) { animation-delay: 0.6s; }
+.adverb-component-card:nth-child(8) { animation-delay: 0.7s; }
+.adverb-component-card:nth-child(9) { animation-delay: 0.8s; }
+
+/* Hover effects */
+.adverb-component-card:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.adverb-option-item:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+/* Accessibility focus styles */
+.adverb-option-item:focus,
+.adverb-component-card:focus-within {
+  outline: 2px solid #3F51B5;
+  outline-offset: 2px;
+}

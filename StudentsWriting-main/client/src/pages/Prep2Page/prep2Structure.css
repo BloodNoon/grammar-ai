@@ -1,0 +1,250 @@
+/* Prep2Structure.css - Prepositional Phrases Styles */
+
+/* Main Container */
+.prep2-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Content Wrapper */
+.prep2-content {
+  text-align: center;
+  padding: 2rem;
+  background-color: #fdfdfd;
+  border: 2px solid #eee;
+  border-radius: 10px;
+}
+
+/* Title Styles */
+.prep2-title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.prep2-description {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #555;
+}
+
+.prep2-highlight {
+  font-weight: bold;
+  color: #27ae60;
+}
+
+/* Definition Card */
+.definition-card {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.definition-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.definition-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  text-align: left;
+}
+
+.definition-example {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #e8f5e9;
+  border-radius: 8px;
+  border-left: 4px solid #27ae60;
+}
+
+.example-title {
+  font-weight: bold;
+  color: #27ae60;
+  margin-bottom: 0.5rem;
+}
+
+/* Components Section */
+.components-section {
+  margin-top: 2rem;
+}
+
+.component-wrapper {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.component-header {
+  color: white;
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.component-content {
+  background: rgba(255,255,255,0.7);
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+/* Different header colors for components */
+.header-phrase { background: #27ae60; }
+.header-fill { background: #3498db; }
+.header-blocks { background: #9b59b6; }
+.header-testing { background: #e74c3c; }
+.header-sorting { background: #f39c12; }
+
+/* Info Cards */
+.info-card {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid #2196F3;
+}
+
+.info-title {
+  font-weight: bold;
+  color: #1976D2;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.info-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.info-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-bullet {
+  color: #2196F3;
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+/* Diagram Styles */
+.diagram-container {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 2px dashed #27ae60;
+}
+
+.diagram-title {
+  font-weight: bold;
+  color: #27ae60;
+  margin-bottom: 0.5rem;
+}
+
+.diagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.diagram-part {
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.diagram-preposition {
+  background: #27ae60;
+  color: white;
+}
+
+.diagram-article {
+  background: #3498db;
+  color: white;
+}
+
+.diagram-noun {
+  background: #9b59b6;
+  color: white;
+}
+
+.diagram-arrow {
+  font-size: 1.5rem;
+  color: #666;
+  margin: 0 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .prep2-title {
+    font-size: 36px;
+  }
+  
+  .prep2-description {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+  
+  .diagram {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .diagram-arrow {
+    transform: rotate(90deg);
+    margin: 0.5rem 0;
+  }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.component-wrapper {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.component-wrapper:nth-child(1) { animation-delay: 0.1s; }
+.component-wrapper:nth-child(2) { animation-delay: 0.2s; }
+.component-wrapper:nth-child(3) { animation-delay: 0.3s; }
+.component-wrapper:nth-child(4) { animation-delay: 0.4s; }
+.component-wrapper:nth-child(5) { animation-delay: 0.5s; }

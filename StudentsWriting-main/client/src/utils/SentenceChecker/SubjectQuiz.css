@@ -1,0 +1,62 @@
+.quiz-box {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #f5f5f5;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .quiz-sentence {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .choices {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .choice-btn {
+    padding: 0.75rem 1rem;
+    border: 2px solid #333;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    text-align: center;
+    word-break: break-word;
+    transition: background-color 0.2s ease;
+    width: 100%; /* make buttons take full width of grid column */
+  }  
+  
+  .choice-btn:hover {
+    background-color: #ddd;
+  }
+  
+  .choice-btn.selected {
+    background-color: #add8e6;
+  }
+  
+  .check-btn,
+  .next-btn {
+    padding: 0.6rem 1.4rem;
+    margin-top: 0.5rem;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .check-btn:disabled {
+    background-color: gray;
+  }
+  
+  .quiz-result {
+    font-weight: bold;
+    margin-top: 1rem;
+  }  
