@@ -2,9 +2,9 @@
 
 /* Main Container */
 .prep1-container {
-  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  background-color: rgba(249, 190, 134);
 }
 
 /* Content Wrapper */
@@ -74,8 +74,8 @@
 
 .prep1-video {
   width: 50%;
-  max-width: 200px;
-  height: auto;
+  /* max-width: 200px; */
+  height: 8in;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }

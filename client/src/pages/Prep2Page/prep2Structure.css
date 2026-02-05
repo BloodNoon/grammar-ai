@@ -2,9 +2,9 @@
 
 /* Main Container */
 .prep2-container {
-  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  background-color: rgba(249, 190, 134);
 }
 
 /* Content Wrapper */

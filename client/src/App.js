@@ -17,6 +17,7 @@ import PromptOverview from './pages/PromptOverview';
 import PrivateRoute from './components/PrivateRoute';
 import Prep1Structure from './pages/Prep1Page/prep1Structure';
 import Prep2Structure from './pages/Prep2Page/prep2Structure';
+import Prep3Structure from './pages/Prep3Page/prep3Structure';
 
 function App() {
 	const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ function App() {
 						<Route path="/adverb-structure" component={AdverbStructure} />
 						<Route path="/prep1-structure" component={Prep1Structure} />
 						<Route path="/prep2-structure" component={Prep2Structure} />
+						<Route path="/prep3-structure" component={Prep3Structure} />
 					</Switch>
 				</Router>
 			</AuthProvider>
