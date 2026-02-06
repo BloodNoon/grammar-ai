@@ -1,6 +1,7 @@
 import React from 'react';
 import './adverbPage.css'; // Import CSS file
 
+
 // ADVERB COMPONENTS
 import AdverbLesson from '../../utils/SentenceChecker/AdverbLesson';
 import AdverbTypes from '../../utils/SentenceChecker/AdverbTypes';
@@ -13,6 +14,8 @@ import AdverbQuiz from '../../utils/SentenceChecker/AdverbQuiz';
 
 const AdverbStructure = () => {
   return (
+    <>
+
     <div className="lesson5-container">
       {/* Main Content */}
       <div className="lesson5-main-content">
@@ -167,6 +170,7 @@ const AdverbStructure = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

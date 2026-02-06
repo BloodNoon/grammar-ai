@@ -1,6 +1,9 @@
 import React from 'react';
 import './adjectivePage.css'; // Import CSS file
 
+
+
+
 // ADJECTIVE COMPONENTS
 import AdjectiveLesson from '../../utils/SentenceChecker/AdjectiveLesson';
 import AdjectiveRoyalOrder from '../../utils/SentenceChecker/AdjectiveRoyalOrder';
@@ -11,6 +14,8 @@ import AdjectiveQuiz from '../../utils/SentenceChecker/AdjectiveQuiz';
 
 const AdjectivePage = () => {
   return (
+  <>
+    
     <div className="lesson4-container">
       {/* Main Content */}
       <div className="lesson4-main-content">
@@ -149,6 +154,7 @@ const AdjectivePage = () => {
         </div>
       </div>
     </div>
+  </>
   );
 };
 

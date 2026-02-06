@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
@@ -18,6 +18,27 @@ import PrivateRoute from './components/PrivateRoute';
 import Prep1Structure from './pages/Prep1Page/prep1Structure';
 import Prep2Structure from './pages/Prep2Page/prep2Structure';
 import Prep3Structure from './pages/Prep3Page/prep3Structure';
+import MainNav from './components/MainNav';
+
+function ConditionalMainNav() {
+	const location = useLocation();
+	const structurePages = [
+		'/sentence-structure',
+		'/verb-tense-structure',
+		'/article-structure',
+		'/adjective-structure',
+		'/adverb-structure',
+		'/prep1-structure',
+		'/prep2-structure',
+		'/prep3-structure'
+	];
+
+	// Only show MainNav on structure pages
+	if (structurePages.includes(location.pathname)) {
+		return <MainNav />;
+	}
+	return null;
+}
 
 function App() {
 	const queryClient = new QueryClient();
@@ -26,16 +47,17 @@ function App() {
 		<QueryClientProvider client={queryClient}>
 			<AuthProvider>
 				<Router>
+					<ConditionalMainNav />
 					<Switch>
 						<Route path="/" component={Home} exact />
 						<Route path="/signup" component={Signup} />
 						<Route path="/login" component={Login} />
+						<PrivateRoute path="/dashboard" component={Dashboard} />
+						<Route path="/overview/:id" component={PromptOverview} />
 						<Route path="/sentence-structure" component={SentenceStructures} />
 						<Route path="/verb-tense-structure" component={VerbTenseStructure} />
 						<Route path="/article-structure" component={ArticleStructure} />
-						<PrivateRoute path="/dashboard" component={Dashboard} />
 						<Route path="/prompts" component={PromptList} />
-						<Route path="/overview/:id" component={PromptOverview} />
 						<Route path="/adjective-structure" component={AdjectiveStructure} />
 						<Route path="/adverb-structure" component={AdverbStructure} />
 						<Route path="/prep1-structure" component={Prep1Structure} />
