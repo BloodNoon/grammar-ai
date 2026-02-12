@@ -9,6 +9,20 @@ const MainNav = () => {
     <HStack background="rgba(255, 206, 160)" width="100%" spacing={0}>
       <div className="mainNav">
         
+<Button as={ReactRouterLink} 
+        to="/sentence-structure" 
+        colorScheme='rgb(255, 206, 160)' 
+        color="black.500"
+        fontSize="25px"
+        mx="10px"
+        my="5px"
+        _hover={{
+          backgroundColor: 'rgb(165, 132, 101)',
+          color: 'white',
+        }}>
+          Sentence Structure
+        </Button>
+
         <Button as={ReactRouterLink} 
         to="/adjective-structure" 
         colorScheme='rgb(255, 206, 160)' 

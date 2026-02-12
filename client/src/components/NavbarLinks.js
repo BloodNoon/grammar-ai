@@ -28,9 +28,9 @@ export default function NavbarLinks() {
 				}}
 				whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
 			>
-				<Link to="/prompts" mx="1rem">
+				<Link to="/sentence-structure" mx="1rem">
 					<Text mx="1rem" fontSize="lg">
-						Start Writing
+						Start Practice
 					</Text>
 				</Link>
 			</MotionBox>
