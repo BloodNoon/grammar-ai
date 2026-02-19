@@ -18,6 +18,8 @@ import PrivateRoute from './components/PrivateRoute';
 import Prep1Structure from './pages/Prep1Page/prep1Structure';
 import Prep2Structure from './pages/Prep2Page/prep2Structure';
 import Prep3Structure from './pages/Prep3Page/prep3Structure';
+import NounsPage from './pages/NounsPage';
+
 import MainNav from './components/MainNav';
 
 function ConditionalMainNav() {
@@ -30,7 +32,8 @@ function ConditionalMainNav() {
 		'/adverb-structure',
 		'/prep1-structure',
 		'/prep2-structure',
-		'/prep3-structure'
+		'/prep3-structure',
+		'/nouns'
 	];
 
 	// Only show MainNav on structure pages
@@ -63,6 +66,7 @@ function App() {
 						<Route path="/prep1-structure" component={Prep1Structure} />
 						<Route path="/prep2-structure" component={Prep2Structure} />
 						<Route path="/prep3-structure" component={Prep3Structure} />
+						<Route path="/nouns" component={NounsPage} />
 					</Switch>
 				</Router>
 			</AuthProvider>
