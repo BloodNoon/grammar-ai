@@ -101,6 +101,9 @@ export default function NounsPage() {
   Categories of Nouns
 </Heading>
 <WordPile />
+<Text fontSize="md" textAlign="center">
+  Nouns have categories. they aren't just random words. They have a category that describes what they are. For example, the word "dog" belongs to the category of "animals". The word "chair" belongs to the category of "things". The word "school" belongs to the category of "places" and the word "teacher" belongs to the category of "people".
+</Text>
         <Accordion>
   <AccordionItem>
     <h2>
@@ -157,6 +160,43 @@ export default function NounsPage() {
   
 </Accordion>
         </Box>
+       <ContentBox
+          title="Sentence Structure Focus"
+          info="Nouns often appear as the subject or the object in a sentence"
+        >
+          
+                      <Box display="flex" justifyContent="center" mt={4}>
+            <Popover>
+            <Text fontSize="xl">The </Text>
+              <PopoverTrigger>
+                <Button fontSize="xl">teacher</Button>
+              </PopoverTrigger>
+              <PopoverContent>
+                <PopoverArrow />
+                <PopoverCloseButton />
+                <PopoverHeader>Subject Noun</PopoverHeader>
+                <PopoverBody>
+                  <Text fontWeight="bold">Teacher is a subject noun</Text>
+                </PopoverBody>
+              </PopoverContent>
+              <Text fontSize="xl"> carried a  </Text>
+            </Popover>
+               <Popover>
+              <PopoverTrigger>
+                <Button fontSize="xl">book</Button>
+              </PopoverTrigger>
+              <PopoverContent>
+                <PopoverArrow />
+                <PopoverCloseButton />
+                <PopoverHeader>Object Noun</PopoverHeader>
+                <PopoverBody>
+                  <Text fontWeight="bold">Book is an object noun</Text>
+                </PopoverBody>
+              </PopoverContent>
+              <Text fontSize="xl">.</Text>
+            </Popover>
+          </Box>
+        </ContentBox>
       </VStack>
     </Box>
   );
