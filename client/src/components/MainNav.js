@@ -81,8 +81,26 @@ const MainNav = () => {
         </Button>
 
         <Menu>
-          
-          <MenuButton as={Button}  
+          <MenuButton as={Button}
+          variant="unstyled"
+          fontSize="25px"
+          mx="10px"
+          my="5px"
+          _hover={{
+          backgroundColor: 'rgb(165, 132, 101)',
+          color: 'white',
+        }}>
+            Noun Lessons
+          </MenuButton>
+          <MenuList>
+            <MenuItem as={ReactRouterLink} to="/nouns">Introduction to Nouns</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/propcom-nouns">Common & Proper Nouns</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/abplur-nouns">Abstract & Plural Nouns</MenuItem>
+          </MenuList>
+        </Menu>
+
+        <Menu>
+          <MenuButton as={Button}
           variant="unstyled"
           fontSize="25px"
           mx="10px"

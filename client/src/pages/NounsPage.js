@@ -28,13 +28,15 @@ function ContentBox({ title, info, children }) {
     <Box
       p={5}
       borderWidth="1px"
-      borderRadius="lg"
-      backgroundColor="white"
+      backgroundColor="#00E676"
+      borderColor="#062A17"
+      borderRadius="2xl"
+      boxShadow="6px 6px 0px #062A17"
     >
-      <Heading fontSize="2em" fontWeight="semibold" textAlign="center">
+      <Heading color="#062A17" fontSize="2em" fontWeight="semibold" textAlign="center">
         {title}
       </Heading>
-      <Text fontSize="xl" mt={4} textAlign="center">
+      <Text color="#062A17" fontSize="xl" mt={4} textAlign="center">
         {info}
       </Text>
       {children}
@@ -51,7 +53,7 @@ export default function NounsPage() {
 
 
   return (
-    <Box borderWidth="1px" backgroundColor="#F0FDF4" minH="100vh">
+    <Box borderWidth="1px" backgroundColor="#FFCEA0" minH="100vh">
       <VStack spacing={6} p={8} align="stretch">
         <ContentBox
           title="Lesson 1: Introduction to Nouns"
@@ -64,44 +66,44 @@ export default function NounsPage() {
         >
           <Box display="flex" justifyContent="center" mt={4}>
             <Popover>
-            <Text fontSize="xl">The </Text>
+            <Text color="#062A17" fontSize="xl">The </Text>
               <PopoverTrigger>
-                <Button>dog</Button>
+                <Button color="#062A17" backgroundColor="#FFFFFF" fontSize="xl">dog</Button>
               </PopoverTrigger>
               <PopoverContent>
                 <PopoverArrow />
                 <PopoverCloseButton />
                 <PopoverHeader>Noun</PopoverHeader>
                 <PopoverBody>
-                  <Text fontWeight="bold">Dog is a noun</Text>
+                  <Text color="#062A17" fontWeight="bold">Dog is a noun</Text>
                 </PopoverBody>
               </PopoverContent>
-              <Text fontSize="xl"> ran across the  </Text>
+              <Text color="#062A17" fontSize="xl"> ran across the  </Text>
             </Popover>
                <Popover>
               <PopoverTrigger>
-                <Button>yard</Button>
+                <Button color="#062A17" backgroundColor="#FFFFFF" fontSize="xl">yard</Button>
               </PopoverTrigger>
               <PopoverContent>
                 <PopoverArrow />
                 <PopoverCloseButton />
                 <PopoverHeader>Noun</PopoverHeader>
                 <PopoverBody>
-                  <Text fontWeight="bold">Yard is a noun</Text>
+                  <Text color="#062A17" fontWeight="bold">Yard is a noun</Text>
                 </PopoverBody>
               </PopoverContent>
-              <Text fontSize="xl">.</Text>
+              <Text color="#062A17" fontSize="xl">.</Text>
             </Popover>
           </Box>
         </ContentBox>
 
 
-<Box backgroundColor="white" p={5} borderWidth="1px" borderRadius="lg">
-<Heading as="h2" size="xl" textAlign="center" mb={6}>
+<Box backgroundColor="#00E676" borderColor="#062A17" p={5} borderWidth="1px" borderRadius="2xl" boxShadow="6px 6px 0px #062A17">
+<Heading color="#062A17" as="h2" size="xl" textAlign="center" mb={6} fontWeight="semibold">
   Categories of Nouns
 </Heading>
 <WordPile />
-<Text fontSize="md" textAlign="center">
+<Text color="#062A17" fontSize="lg" textAlign="center">
   Nouns have categories. they aren't just random words. They have a category that describes what they are. For example, the word "dog" belongs to the category of "animals". The word "chair" belongs to the category of "things". The word "school" belongs to the category of "places" and the word "teacher" belongs to the category of "people".
 </Text>
         <Accordion>
@@ -167,33 +169,33 @@ export default function NounsPage() {
           
                       <Box display="flex" justifyContent="center" mt={4}>
             <Popover>
-            <Text fontSize="xl">The </Text>
+            <Text color="#062A17" fontSize="xl">The </Text>
               <PopoverTrigger>
-                <Button fontSize="xl">teacher</Button>
+                <Button color="#062A17" backgroundColor="#FFFFFF" fontSize="xl">teacher</Button>
               </PopoverTrigger>
               <PopoverContent>
                 <PopoverArrow />
                 <PopoverCloseButton />
                 <PopoverHeader>Subject Noun</PopoverHeader>
                 <PopoverBody>
-                  <Text fontWeight="bold">Teacher is a subject noun</Text>
+                  <Text color="#062A17" fontWeight="bold">Teacher is a subject noun</Text>
                 </PopoverBody>
               </PopoverContent>
-              <Text fontSize="xl"> carried a  </Text>
+              <Text color="#062A17" fontSize="xl"> carried a  </Text>
             </Popover>
                <Popover>
               <PopoverTrigger>
-                <Button fontSize="xl">book</Button>
+                <Button color="#062A17" backgroundColor="#FFFFFF" fontSize="xl">book</Button>
               </PopoverTrigger>
               <PopoverContent>
                 <PopoverArrow />
                 <PopoverCloseButton />
                 <PopoverHeader>Object Noun</PopoverHeader>
                 <PopoverBody>
-                  <Text fontWeight="bold">Book is an object noun</Text>
+                  <Text color="#062A17" fontWeight="bold">Book is an object noun</Text>
                 </PopoverBody>
               </PopoverContent>
-              <Text fontSize="xl">.</Text>
+              <Text color="#062A17" fontSize="xl">.</Text>
             </Popover>
           </Box>
         </ContentBox>

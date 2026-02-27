@@ -20,6 +20,7 @@ import Prep2Structure from './pages/Prep2Page/prep2Structure';
 import Prep3Structure from './pages/Prep3Page/prep3Structure';
 import NounsPage from './pages/NounsPage';
 import PropComNouns from './pages/PropComNoun';
+import AbPlurNoun from './pages/AbPlurNoun';
 
 import MainNav from './components/MainNav';
 
@@ -35,7 +36,8 @@ function ConditionalMainNav() {
 		'/prep2-structure',
 		'/prep3-structure',
 		'/nouns',
-		'/propcom-nouns'
+		'/propcom-nouns',
+		'/abplur-nouns'
 	];
 
 	// Only show MainNav on structure pages
@@ -70,6 +72,7 @@ function App() {
 						<Route path="/prep3-structure" component={Prep3Structure} />
 						<Route path="/nouns" component={NounsPage} />
 						<Route path="/propcom-nouns" component={PropComNouns} />
+					<Route path="/abplur-nouns" component={AbPlurNoun} />
 					</Switch>
 				</Router>
 			</AuthProvider>
