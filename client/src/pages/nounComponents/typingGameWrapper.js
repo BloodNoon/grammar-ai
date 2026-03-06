@@ -1,26 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Button, Progress, VStack, Heading, Text, Flex } from '@chakra-ui/react';
-import SortingGame from './sortingComponent';
-import allQuestions from '../../data/nouns_questions.json';
+import TypingGame from './typingGame';
 
-const SortingGameWrapper = () => {
+const TypingGameWrapper = ({ questionsToPlay }) => {
   const [gameDeck, setGameDeck] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const startNewGame = () => {
-    // 1. Filter for sorting questions
-    const sortingQuestions = allQuestions.filter(q => q.topic === "Sorting Nouns");
-    
-    // 2. Shuffle and cap at 3
-    const shuffled = [...sortingQuestions].sort(() => Math.random() - 0.5).slice(0, 3);
-    
+    // We shuffle the questions passed in from the parent and take 3
+    const shuffled = [...questionsToPlay].sort(() => Math.random() - 0.5).slice(0, 3);
     setGameDeck(shuffled);
     setCurrentIndex(0);
   };
 
   useEffect(() => {
-    startNewGame();
-  }, []);
+    if (questionsToPlay && questionsToPlay.length > 0) {
+      startNewGame();
+    }
+  }, [questionsToPlay]); 
 
   const handleNext = () => {
     setCurrentIndex(prev => prev + 1);
@@ -33,7 +30,6 @@ const SortingGameWrapper = () => {
 
   return (
     <Box maxW="900px" mx="auto" p={6} fontFamily="'Inter', sans-serif">
-      
       <Box mb={8}>
          <Flex justify="space-between" mb={2}>
            <Text fontWeight="bold" color="#1A0933" fontSize="lg">Level Progress</Text>
@@ -55,15 +51,15 @@ const SortingGameWrapper = () => {
 
       {!isGameOver ? (
         <VStack spacing={6}>
-          <SortingGame 
+          <TypingGame 
             key={gameDeck[currentIndex].id} 
             question={gameDeck[currentIndex]} 
-            onNext={handleNext} // Passing the "next" function down to the game board
+            onNext={handleNext} 
           />
         </VStack>
       ) : (
         <Box 
-          bg="#00E676" 
+          bg="#9D4EDD" 
           p={10} 
           borderRadius="2xl" 
           textAlign="center" 
@@ -71,9 +67,9 @@ const SortingGameWrapper = () => {
           borderColor="#1A1A1A" 
           boxShadow="8px 8px 0px #1A1A1A"
         >
-          <Heading color="#062A17" mb={4} size="2xl">🎉 Level Complete! 🎉</Heading>
-          <Text fontSize="xl" color="#062A17" mb={8} fontWeight="bold">
-            You are a sorting master!
+          <Heading color="white" mb={4} size="2xl">🎉 Keyboard Master! 🎉</Heading>
+          <Text fontSize="xl" color="white" mb={8} fontWeight="bold">
+            Great job typing out those answers!
           </Text>
           <Button 
             onClick={startNewGame} 
@@ -84,8 +80,8 @@ const SortingGameWrapper = () => {
             borderWidth="3px"
             borderColor="#1A1A1A"
             boxShadow="4px 4px 0px #1A1A1A"
-            _hover={{ transform: "translateY(-2px)", boxShadow: "6px 6px 0px #1A1A1A" }}
-            _active={{ transform: "translateY(4px)", boxShadow: "0px 0px 0px #1A1A1A" }}
+            _hover={{ transform: "translateY(-2px)" }}
+            _active={{ transform: "translateY(4px)" }}
           >
             Play Again 🔄
           </Button>
@@ -95,4 +91,4 @@ const SortingGameWrapper = () => {
   );
 };
 
-export default SortingGameWrapper;
+export default TypingGameWrapper;
