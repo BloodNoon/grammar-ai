@@ -25,6 +25,7 @@ import SentenceArranger from './nounComponents/sentenceArranger';
 import SortingGame from './nounComponents/sortingComponent';
 import nounData from '../data/nouns_questions.json';
 import TypingGameWrapper from './nounComponents/typingGameWrapper';
+import MultipleChoiceWrapper from './nounComponents/multipleChoiceWrapper';
 
 // Content box template
 function ContentBox({ title, info, children }) {
@@ -49,21 +50,21 @@ function ContentBox({ title, info, children }) {
 }
 
 export default function NounComponentTest() {
-  // Filter for typing questions (Single answer)
+  // Filter for typing questions (Single answer, no arrows, max 2 words)
   const typingQuestions = nounData.filter(q => {
-  // 1. Must be a Single answer
-  if (q.answer_count !== "Single" || q.answer.length !== 1) return false;
-  
-  const answerText = q.answer[0];
-  
-  // 2. Reject if the answer contains an arrow (Error Correction questions)
-  if (answerText.includes("→")) return false;
-  
-  // 3. Reject if the answer is a full sentence (more than 1 or 2 words)
-  if (answerText.split(" ").length > 2) return false;
+    if (q.answer_count !== "Single" || q.answer.length !== 1) return false;
+    const answerText = q.answer[0];
+    if (answerText.includes("→")) return false;
+    if (answerText.split(" ").length > 2) return false;
+    return true;
+  });
 
-  return true; // If it survives all that, it's a good typing question!
-});
+  // Filter for multiple choice questions (Multiple answers with 4 options)
+  const multipleChoiceQuestions = nounData.filter(q => {
+    if (q.answer_count !== "Single") return false;
+    if (!q.options || q.options.length !== 4) return false;
+    return true;
+  });
 
   return (
     <Box borderWidth="1px" backgroundColor="#FFCEA0" minH="100vh">
@@ -76,6 +77,11 @@ export default function NounComponentTest() {
         <Box>
           <Heading mb={6} color="#073B4C" textAlign="center">Noun Typing Practice</Heading>
           <TypingGameWrapper questionsToPlay={typingQuestions} />
+        </Box>
+
+        <Box>
+          <Heading mb={6} color="#073B4C" textAlign="center">Noun Multiple Choice</Heading>
+          <MultipleChoiceWrapper questionsToPlay={multipleChoiceQuestions} />
         </Box>
       </VStack>
     </Box>
