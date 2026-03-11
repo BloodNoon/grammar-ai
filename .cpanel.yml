@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/studentsw/public_html
+    - /bin/cp -R client/* $DEPLOYPATH
