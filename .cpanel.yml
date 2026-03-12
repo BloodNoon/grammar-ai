@@ -2,8 +2,8 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/studentsw/public_html
-    - /bin/rm -rf $DEPLOYPATH/*
     - cd /home/studentsw/repositories/StudentsWriting/client
-    - /usr/bin/npm install
-    - /usr/bin/npm run build
+    - /home/studentsw/bin/npm install
+    - /home/studentsw/bin/npm run build
+    - /bin/mkdir -p $DEPLOYPATH
     - /bin/cp -R build/* $DEPLOYPATH
