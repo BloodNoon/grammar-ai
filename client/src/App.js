@@ -58,8 +58,11 @@ function App() {
 		<QueryClientProvider client={queryClient}>
 			<AuthProvider>
 				<Router>
-					<ConditionalMainNav />
-					<Switch>
+	<ConditionalMainNav />
+	<div style={{ textAlign: 'center', padding: '10px', fontWeight: 'bold' }}>
+		Deployment Test
+	</div>
+	<Switch>
 						<Route path="/" component={Home} exact />
 						<Route path="/signup" component={Signup} />
 						<Route path="/login" component={Login} />
