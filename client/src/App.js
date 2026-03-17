@@ -59,7 +59,7 @@ function App() {
 	return (
 		<QueryClientProvider client={queryClient}>
 			<AuthProvider>
-				<Router>
+								<Router>
 					<ConditionalMainNav />
 					<Switch>
 						<Route path="/" component={Home} exact />
