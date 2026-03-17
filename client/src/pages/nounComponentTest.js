@@ -83,6 +83,7 @@ export default function NounComponentTest() {
           <Heading mb={6} color="#073B4C" textAlign="center">Noun Multiple Choice</Heading>
           <MultipleChoiceWrapper questionsToPlay={multipleChoiceQuestions} />
         </Box>
+        <SentenceArranger />
       </VStack>
     </Box>
   );

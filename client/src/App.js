@@ -23,6 +23,7 @@ import PropComNouns from './pages/PropComNoun';
 import AbPlurNoun from './pages/AbPlurNoun';
 import NounSortingGame from './pages/nounComponents/SortingGameWrapper';
 import NounComponentTest from './pages/nounComponentTest';
+import NounQuizPageTest from './pages/nounQuizpageTest';
 
 import MainNav from './components/MainNav';
 
@@ -41,7 +42,8 @@ function ConditionalMainNav() {
 		'/propcom-nouns',
 		'/abplur-nouns',
 		'/NounSortingGame',
-		'/NounComponentTest'
+		'/NounComponentTest',
+		'/NounQuizPageTest'
 	];
 
 	// Only show MainNav on structure pages
@@ -79,6 +81,7 @@ function App() {
 					<Route path="/abplur-nouns" component={AbPlurNoun} />
 					<Route path="/NounSortingGame" component={NounSortingGame} />
 					<Route path="/NounComponentTest" component={NounComponentTest} />
+				<Route path="/NounQuizPageTest" component={NounQuizPageTest} />
 					</Switch>
 				</Router>
 			</AuthProvider>
