@@ -24,6 +24,7 @@ import AbPlurNoun from './pages/AbPlurNoun';
 import NounSortingGame from './pages/nounComponents/SortingGameWrapper';
 import NounComponentTest from './pages/nounComponentTest';
 import NounQuizPageTest from './pages/nounQuizpageTest';
+import NounPractice from './pages/nounPractice';
 
 import MainNav from './components/MainNav';
 
@@ -43,7 +44,8 @@ function ConditionalMainNav() {
 		'/abplur-nouns',
 		'/NounSortingGame',
 		'/NounComponentTest',
-		'/NounQuizPageTest'
+		'/NounQuizPageTest',
+		'/noun-practice'
 	];
 
 	// Only show MainNav on structure pages
@@ -82,6 +84,7 @@ function App() {
 					<Route path="/NounSortingGame" component={NounSortingGame} />
 					<Route path="/NounComponentTest" component={NounComponentTest} />
 				<Route path="/NounQuizPageTest" component={NounQuizPageTest} />
+			<Route path="/noun-practice" component={NounPractice} />
 					</Switch>
 				</Router>
 			</AuthProvider>

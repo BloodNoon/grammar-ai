@@ -96,6 +96,7 @@ const MainNav = () => {
             <MenuItem as={ReactRouterLink} to="/nouns">Introduction to Nouns</MenuItem>
             <MenuItem as={ReactRouterLink} to="/propcom-nouns">Common & Proper Nouns</MenuItem>
             <MenuItem as={ReactRouterLink} to="/abplur-nouns">Abstract & Plural Nouns</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/noun-practice">Noun Practice Games</MenuItem>
             <MenuItem as={ReactRouterLink} to="/noun-component-test">Component Test</MenuItem>
             <MenuItem as={ReactRouterLink} to="/NounQuizPageTest">Quiz Test</MenuItem>
           </MenuList>
