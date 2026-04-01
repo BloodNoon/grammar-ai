@@ -29,7 +29,7 @@ const Prep1Structure = () => {
 
         {/* Types of Prepositions Video */}
         <div className="prep1-video-container">
-          <video controls className="prep1-video">
+          <video controls className="prep1-video" autoplay muted>
             <source src="../public/Lesson6.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
