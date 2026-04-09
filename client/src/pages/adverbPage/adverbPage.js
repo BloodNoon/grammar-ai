@@ -133,8 +133,13 @@ const AdverbStructure = () => {
         {/* Video Card */}
         <div className="adverb-sidebar-card">
           <div className="adverb-video-title">Video</div>
-          <div className="adverb-video-placeholder">
-            Video coming soon...
+          <video
+              controls
+              className="video-player"
+            >
+              <source src="/lesson5.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
 
