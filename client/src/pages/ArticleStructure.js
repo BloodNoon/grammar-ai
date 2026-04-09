@@ -626,7 +626,7 @@ const ArticleStructure = () => {
                   }}
                   poster="/api/placeholder/400/225"
                 >
-                  <source src="lesson3.mp4" type="video/mp4" />
+                  <source src="/lesson3.mp4" type="video/mp4" />
                   <p style={{ 
                     color: '#666', 
                     padding: '20px',
