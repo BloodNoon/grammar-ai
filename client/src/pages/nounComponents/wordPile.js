@@ -18,6 +18,7 @@ const WordPile = () => {
       // Cluster the words near the center (between 35% and 65%)
       top: `${35 + Math.random() * 30}%`,
       left: `${35 + Math.random() * 30}%`,
+      right: `${35 + Math.random() * 30}%`,
       // Random font sizes to create depth
       fontSize: `${1.5 + Math.random() * 2.5}rem`,
       // Random z-index so the stacking order is mixed up
