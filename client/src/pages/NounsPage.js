@@ -62,7 +62,7 @@ export default function NounsPage() {
     
         <ContentBox
           title="Lesson 1: Introduction to Nouns"
-          info="A noun is a word that names a person, place, thing, or animal."
+          info="A noun is a word that names a person, place, thing (animal,objects, etc...), and ideas."
         />
 
         <ContentBox
@@ -109,7 +109,7 @@ export default function NounsPage() {
 </Heading>
 <WordPile />
 <Text color="#062A17" fontSize="lg" textAlign="center">
-  Nouns have categories. they aren't just random words. They have a category that describes what they are. For example, the word "dog" belongs to the category of "animals". The word "chair" belongs to the category of "things". The word "school" belongs to the category of "places" and the word "teacher" belongs to the category of "people".
+  Nouns have categories. They aren't just random words. They have a category that describes what they are. For example, the word "dog" belongs to the category of "animals". The word "chair" belongs to the category of "things". The word "school" belongs to the category of "places" and the word "teacher" belongs to the category of "people".
 </Text>
         <Accordion>
   <AccordionItem>
@@ -155,7 +155,7 @@ export default function NounsPage() {
     <h2>
       <AccordionButton>
         <Box flex='1' textAlign='center' fontSize='xx-large'>
-          Animal
+          Idea
         </Box>
         <AccordionIcon />
       </AccordionButton>
