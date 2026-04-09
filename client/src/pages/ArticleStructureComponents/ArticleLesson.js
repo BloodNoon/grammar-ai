@@ -31,20 +31,22 @@ const ArticleLesson = ({ sentenceFeedback, handleArticleSentenceChoice }) => {
     // Main container for the article lesson section
     <div style={{ 
       border: '2px solid black',    // Black border around entire lesson for visual separation
-      padding: '20px',              // Internal spacing for readability
+      padding: '25px',              // Internal spacing for readability
       marginBottom: '20px',         // Space below lesson section
       textAlign: 'left'             // Left-align text for better readability of educational content
     }}>
       {/* ===== LESSON TITLE AND INTRODUCTION ===== */}
-      <h2>Understanding Definite and Indefinite Articles</h2>
+      <h1>Understanding Definite and Indefinite Articles</h1>
       
       {/* Introduction paragraphs explaining articles */}
       <p>
-        Articles are a part of speech that help us identify words in a sentence.
+        <b>Articles are a part of speech that help us identify words in a sentence.</b>
       </p>
       <p>
-        There are three articles in the English language:
+        <b>There are three articles in the English language:</b>
       </p>
+
+      <h1>Articles in a Sentence</h1>
       <p><strong>Articles: a, an, the</strong></p>
 
       {/* ===== EXAMPLES SECTION ===== */}
@@ -138,7 +140,7 @@ const ArticleLesson = ({ sentenceFeedback, handleArticleSentenceChoice }) => {
       </table>
 
       {/* ===== PRACTICE SECTION ===== */}
-      <h3>Learn your new sentence structures:</h3>
+      <h1>Learn your new sentence structures:</h1>
       <p><strong>Article + Noun + Verb + Article + Noun</strong></p>
       <p style={{ marginBottom: '15px' }}>
         Choose the sentence with correct article usage
