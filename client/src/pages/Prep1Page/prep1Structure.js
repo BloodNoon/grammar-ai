@@ -5,9 +5,14 @@ import './prep1Structure.css';
 import PrepositionSorter from '../../utils/SentenceChecker/PrepositionSorter';
 import PrepositionStructureGame from '../../utils/SentenceChecker/PrepositionStructureGame';
 import PrepositionQuiz from '../../utils/SentenceChecker/PrepositionQuiz';
-
+const disp = "disp!";
+    document.getElementById("disp").innerHTML = disp;
+setTimeout(()=> {
+  document.getElementById("disp").remove();
+}, 10000);
 const Prep1Structure = () => {
   return (
+    
     <div className="prep1-container">
       <div className="prep1-content">
         <h1 className="prep1-title">Prepositions</h1>
@@ -18,11 +23,11 @@ const Prep1Structure = () => {
         </p>
 
         {/* Completion message */}
-        <div className="completion-message">
+        <div class="disp" className="completion-message">
           <h3 className="completion-title">🎉 Congratulations!</h3>
           <p className="completion-text">
             You've completed all 6 lessons of Sentence Structure! 
-            You've learned about subjects, objects, verb tenses, articles, adjectives, adverbs, and prepositions.
+            You've learned about subjects, objects, verb tenses, articles, adjectives, and adverbs.
           </p>
           <p className="completion-reminder">🏆 -- Remove if desired --</p>
         </div>
@@ -82,7 +87,7 @@ const Prep1Structure = () => {
 
               {/* Formula 3 */}
               <div className="formula-box formula-box-direction">
-                <span className="formula-label formula-direction">Formula:</span> Noun + verb + article + noun + preposition + noun
+                <span className="formula-label formula-direction">Formula:</span> Article + noun + verb + preposition + article + noun + preposition + article + noun
                 <div className="formula-example">
                   <em>Example: Mark gave the book <span className="formula-preposition preposition-direction">to</span> Sarah.</em>
                 </div>
@@ -90,7 +95,7 @@ const Prep1Structure = () => {
 
               {/* Formula 4 */}
               <div className="formula-box formula-box-situation">
-                <span className="formula-label formula-situation">Formula:</span> Noun + verb + preposition + gerund + noun
+                <span className="formula-label formula-situation">Formula:</span> Pronoun + verb + preposition + article + noun
                 <div className="formula-example">
                   <em>Example: They talked <span className="formula-preposition preposition-situation">about</span> eating lunch.</em>
                 </div>
@@ -98,9 +103,44 @@ const Prep1Structure = () => {
 
               {/* Formula 5 */}
               <div className="formula-box formula-box-comparison">
-                <span className="formula-label formula-comparison">Formula:</span> Preposition + article + noun + comma + noun + verb + article + noun
+                <span className="formula-label formula-comparison">Formula:</span> Article + noun + verb + preposition + article + noun
                 <div className="formula-example">
                   <em>Example: <span className="formula-preposition preposition-comparison">After</span> the movie, Jack ate the pizza.</em>
+                </div>
+
+                
+              </div>
+
+              {/* Formula 6 */}
+              <div className="formula-box formula-box-comparison">
+                <span className="formula-label formula-comparison">Formula:</span> Article + noun + verb + preposition + article + noun
+                <div className="formula-example">
+                  
+                </div>
+
+                
+              </div>
+              {/* Formula 7 */}
+              <div className="formula-box formula-box-comparison">
+                <span className="formula-label formula-comparison">Formula:</span> Article + noun + verb + preposition + article + noun
+                <div className="formula-example">
+                  
+                </div>
+              </div>
+
+              {/* Formula 8 */}
+              <div className="formula-box formula-box-comparison">
+                <span className="formula-label formula-comparison">Formula:</span> Article + noun + verb + preposition + article + noun + preposition + article + noun
+                <div className="formula-example">
+                  
+                </div>
+
+              </div>
+                {/* Formula 9 */}
+              <div className="formula-box formula-box-comparison">
+                <span className="formula-label formula-comparison">Formula:</span> Preposition + article + noun + article + noun + verb + preposition + article + noun + preposition + article + noun
+                <div className="formula-example">
+                  
                 </div>
               </div>
             </div>
