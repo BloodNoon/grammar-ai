@@ -19,6 +19,7 @@ import {
   AccordionPanel,
   AccordionIcon
 } from '@chakra-ui/react';
+import { useHistory } from 'react-router-dom';
 import Carousel from './nounComponents/carousel';
 import WordPile from './nounComponents/wordPile';
 
@@ -51,8 +52,12 @@ function ContentBox({ title, info, children }) {
 
 
 
-export default function NounsPage() {
+export default function PropComNoun() {
+  const history = useHistory();
 
+  const handleNextLesson = () => {
+    history.push('/abplur-nouns');
+  };
 
   return (
 
@@ -183,6 +188,7 @@ info="Proper nouns follow the same sentence patterns as common nouns but use cap
                             </Popover>
                    </Box>
 </ContentBox>
+<Button ml="45%" colorScheme="teal" variant="outline" size="lg" onClick={handleNextLesson}>Next Lesson</Button>
 </VStack>
     </Box>
 

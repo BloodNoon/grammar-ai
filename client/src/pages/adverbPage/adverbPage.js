@@ -14,8 +14,6 @@ import AdverbQuiz from '../../utils/SentenceChecker/AdverbQuiz';
 
 const AdverbStructure = () => {
   return (
-    <>
-
     <div className="lesson5-container">
       {/* Main Content */}
       <div className="lesson5-main-content">
@@ -140,7 +138,6 @@ const AdverbStructure = () => {
               <source src="/lesson5.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-          </div>
         </div>
 
         {/* Example Card */}
@@ -175,7 +172,6 @@ const AdverbStructure = () => {
         </div>
       </div>
     </div>
-    </>
   );
 };
 

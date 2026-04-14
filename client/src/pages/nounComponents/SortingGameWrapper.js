@@ -10,7 +10,7 @@ const SortingGameWrapper = () => {
   const startNewGame = () => {
     // 1. Filter for sorting questions
     const sortingQuestions = allQuestions.filter(q => q.topic === "Sorting Nouns");
-    
+
     // 2. Shuffle and cap at 3
     const shuffled = [...sortingQuestions].sort(() => Math.random() - 0.5).slice(0, 3);
     

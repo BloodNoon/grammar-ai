@@ -18,6 +18,7 @@ import {
   AccordionPanel,
   AccordionIcon
 } from '@chakra-ui/react';
+import { useHistory } from 'react-router-dom';
 import Carousel from './nounComponents/carousel';
 import WordPile from './nounComponents/wordPile';
 
@@ -50,7 +51,11 @@ function ContentBox({ title, info, children }) {
 
 
 export default function NounsPage() {
+  const history = useHistory();
 
+  const handleNextLesson = () => {
+    history.push('/propcom-nouns');
+  };
 
   return (
     <Box borderWidth="1px" backgroundColor="#FFCEA0" minH="100vh">
@@ -204,6 +209,9 @@ export default function NounsPage() {
             </Popover>
           </Box>
         </ContentBox>
+        <Box>
+          <Button ml="45%" colorScheme="teal" variant="outline" size="lg" onClick={handleNextLesson}>Next Lesson</Button>
+        </Box>
       </VStack>
     </Box>
   );

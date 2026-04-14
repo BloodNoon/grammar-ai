@@ -21,6 +21,7 @@ import {
 } from '@chakra-ui/react';
 import Carousel from './nounComponents/carousel';
 import WordPile from './nounComponents/wordPile';
+import { useHistory } from 'react-router-dom';
 
 // Content box template
 function ContentBox({ title, info, children }) {
@@ -45,6 +46,11 @@ function ContentBox({ title, info, children }) {
 }
 
 export default function AbPlurNoun() {
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push('/noun-practice');
+  };
   return (
     <Box borderWidth="1px" backgroundColor="#FFCEA0" minH="100vh">
       <VStack spacing={6} p={8} align="stretch">
@@ -84,6 +90,7 @@ info="Plural nouns show quantity.
 Abstract nouns show ideas or feelings.">
 
 </ContentBox>
+        <Button ml="45%" colorScheme="teal" variant="outline" size="lg" onClick={handleClick}>Go to Practice</Button>
       </VStack>
     </Box>
   );

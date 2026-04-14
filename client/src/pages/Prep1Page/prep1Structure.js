@@ -5,11 +5,7 @@ import './prep1Structure.css';
 import PrepositionSorter from '../../utils/SentenceChecker/PrepositionSorter';
 import PrepositionStructureGame from '../../utils/SentenceChecker/PrepositionStructureGame';
 import PrepositionQuiz from '../../utils/SentenceChecker/PrepositionQuiz';
-const disp = "disp!";
-    document.getElementById("disp").innerHTML = disp;
-setTimeout(()=> {
-  document.getElementById("disp").remove();
-}, 10000);
+
 const Prep1Structure = () => {
   return (
     
@@ -23,7 +19,7 @@ const Prep1Structure = () => {
         </p>
 
         {/* Completion message */}
-        <div class="disp" className="completion-message">
+        <div className="completion-message">
           <h3 className="completion-title">🎉 Congratulations!</h3>
           <p className="completion-text">
             You've completed all 6 lessons of Sentence Structure! 

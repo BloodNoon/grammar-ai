@@ -15,10 +15,10 @@ const NounQuizPageTest = () => {
   const generateQuiz = () => {
     
     const validQuestions = quizData.filter(
-      q => q.answer_count === "Single" && q.options && q.options.length > 0
+      q => q.answer_count === "Single" && "Multiple" && q.options && q.options.length > 0
     );
 
-    
+    // Shuffle and grab 10
     const shuffled = [...validQuestions].sort(() => Math.random() - 0.5).slice(0, 10);
     
     setActiveQuestions(shuffled);
