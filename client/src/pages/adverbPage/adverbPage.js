@@ -134,7 +134,7 @@ const AdverbStructure = () => {
 
           <video controls className="video-player">
             
-              <source src="/Adverbs 1.mp4" type="video/mp4"></source>
+              <source src="/Adverbs1.mp4" type="video/mp4"></source>
               Your browser does not support the video tag.
           </video>
         </div>
