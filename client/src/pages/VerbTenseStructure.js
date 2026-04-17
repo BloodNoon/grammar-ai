@@ -865,7 +865,7 @@ const VerbTenseStructure = () => {
                   }}
                   poster="/api/placeholder/400/225"
                 >
-                  <source src="lesson2.mp4" type="video/mp4" />
+                  <source src="/lesson2.mp4" type="video/mp4" />
                   <p style={{ 
                     color: '#666', 
                     padding: '20px',
