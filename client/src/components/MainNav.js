@@ -2,73 +2,54 @@ import React from 'react';
 import { HStack, Button, Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import { Link as ReactRouterLink } from "react-router-dom";
 
-
-
 const MainNav = () => {
+  // Shared styles for the top-level Menu Buttons to keep your code clean!
+  const menuButtonStyles = {
+    fontSize: "25px",
+    mx: "10px",
+    my: "5px",
+    _hover: {
+      backgroundColor: 'rgb(165, 132, 101)',
+      color: 'white',
+    }
+  };
+
   return (
     <HStack background="rgba(255, 206, 160)" width="100%" spacing={0}>
       <div className="mainNav">
+        
+        {/* Sentence Structure Menu */}
         <Menu>
-        <MenuButton as={ReactRouterLink} 
-        to="/sentence-structure" 
-        colorScheme='rgb(255, 206, 160)' 
-        color="black.500"
-        fontSize="25px"
-        mx="10px"
-        my="5px"
-        _hover={{
-          backgroundColor: 'rgb(165, 132, 101)',
-          color: 'white',
-        }}>
-          Sentence Structure
-        </MenuButton>
-        <MenuList>
-            <MenuItem as={ReactRouterLink} to="/sentence-structure">Sentence Structure Quiz</MenuItem>
+          <MenuButton as={Button} variant="unstyled" {...menuButtonStyles}>
+            Sentence Structure
+          </MenuButton>
+          <MenuList>
+            <MenuItem as={ReactRouterLink} to="/sentence-structure">Sentence Structure</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/sentence-structure-quiz">Sentence Structure Quiz</MenuItem>
           </MenuList>
         </Menu>
         
+        {/* Adjective Menu */}
         <Menu>
-        <MenuButton as={ReactRouterLink} 
-        to="/adjective-structure" 
-        colorScheme='rgb(255, 206, 160)' 
-        color="black.500"
-        fontSize="25px"
-        mx="10px"
-        my="5px"
-        _hover={{
-          backgroundColor: 'rgb(165, 132, 101)',
-          color: 'white',
-        }}>
-          Adjective Lesson
-            
-
-        </MenuButton>
-        <MenuList>
-            <MenuItem as={ReactRouterLink} to="/adjective-lesson">Introduction to Adjectives</MenuItem>
+          <MenuButton as={Button} variant="unstyled" {...menuButtonStyles}>
+            Adjective Lesson
+          </MenuButton>
+          <MenuList>
+            <MenuItem as={ReactRouterLink} to="/adjective-structure">Introduction to Adjectives</MenuItem>
             <MenuItem as={ReactRouterLink} to="/adjective-royal-order">Adjective Royal Order</MenuItem>
             <MenuItem as={ReactRouterLink} to="/adjective-sentence-structures">Adjective Sentence Structure</MenuItem>
             <MenuItem as={ReactRouterLink} to="/adjective-fill-blanks">Adjective Game</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/adjective-quiz">Adjective Quiz</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/adj-quiz">Adjective Quiz</MenuItem>
           </MenuList>
-          </Menu>
+        </Menu>
 
-
+        {/* Adverb Menu */}
         <Menu>
-          <MenuButton as={ReactRouterLink} 
-        to="/adverb-structure" 
-        colorScheme='rgb(255, 206, 160)' 
-        color="black.500"
-        fontSize="25px"
-        mx="10px"
-        my="5px"
-        _hover={{
-          backgroundColor: 'rgb(165, 132, 101)',
-          color: 'white',
-        }}>
-          Adverb Lesson
-        </MenuButton>
-         <MenuList>
-            <MenuItem as={ReactRouterLink} to="/adverb-lesson">Introduction to Adverbs</MenuItem>
+          <MenuButton as={Button} variant="unstyled" {...menuButtonStyles}>
+            Adverb Lesson
+          </MenuButton>
+          <MenuList>
+            <MenuItem as={ReactRouterLink} to="/adverb-structure">Introduction to Adverbs</MenuItem>
             <MenuItem as={ReactRouterLink} to="/adverb-types">Adverb Types</MenuItem>
             <MenuItem as={ReactRouterLink} to="/adverb-type-sorting">Adverb Type Sorting</MenuItem>
             <MenuItem as={ReactRouterLink} to="/adverb-forms">Adverb Forms</MenuItem>
@@ -80,67 +61,39 @@ const MainNav = () => {
           </MenuList>
         </Menu>
         
-
+        {/* Article Menu */}
         <Menu>
-        <MenuButton as={ReactRouterLink} 
-        to="/article-structure" 
-        colorScheme='rgb(255, 206, 160)' 
-        color="black.500" 
-        fontSize="25px"
-        mx="10px"
-        my="5px"
-        _hover={{
-          backgroundColor: 'rgb(165, 132, 101)',
-          color: 'white',
-        }}>
-          Article Lesson
-        </MenuButton>
-        <MenuList>
-            <MenuItem as={ReactRouterLink} to="/article-lesson">Introduction to Articles</MenuItem>
+          <MenuButton as={Button} variant="unstyled" {...menuButtonStyles}>
+            Article Lesson
+          </MenuButton>
+          <MenuList>
+            <MenuItem as={ReactRouterLink} to="/article-structure">Introduction to Articles</MenuItem>
             <MenuItem as={ReactRouterLink} to="/article-grammar-legend">Article Grammar</MenuItem>
             <MenuItem as={ReactRouterLink} to="/article-sentence-builder">Article Sentence Building</MenuItem>
             <MenuItem as={ReactRouterLink} to="/article-level-selection">Article Level Selector</MenuItem>
             <MenuItem as={ReactRouterLink} to="/article-wordbank">Article Word Game</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/article-typing-quiz">Article Quiz</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/article-quiz">Article Quiz</MenuItem>
           </MenuList>
         </Menu>
         
+        {/* Verb Tense Menu */}
         <Menu>
-        <MenuButton as={ReactRouterLink} 
-        to="/verb-tense-structure" 
-        colorScheme='rgb(255, 206, 160)' 
-        color="black.500"
-        fontSize="25px"
-        mx="10px"
-        my="5px"
-        _hover={{
-          backgroundColor: 'rgb(165, 132, 101)',
-          color: 'white',
-        }}
-        >
-          Verb Tense Lesson
-        </MenuButton>
-        <MenuList>
-            <MenuItem as={ReactRouterLink} to="/verb-tense-lesson">Introduction to Verbss</MenuItem>
+          <MenuButton as={Button} variant="unstyled" {...menuButtonStyles}>
+            Verb Tense Lesson
+          </MenuButton>
+          <MenuList>
+            <MenuItem as={ReactRouterLink} to="/verb-tense-structure">Introduction to Verbs</MenuItem>
             <MenuItem as={ReactRouterLink} to="/verb-grammar-legend">Verb Grammar</MenuItem>
             <MenuItem as={ReactRouterLink} to="/verb-sentence-builder">Verb Sentence Building</MenuItem>
             <MenuItem as={ReactRouterLink} to="/verb-level-selection">Verb Level Selector</MenuItem>
             <MenuItem as={ReactRouterLink} to="/verb-wordbank">Verb Word Game</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/verb-typing-quiz">Verb Quiz</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/verb-tense-quiz">Verb Quiz</MenuItem>
           </MenuList>
         </Menu>
         
-
+        {/* Noun Menu (The one that was right!) */}
         <Menu>
-          <MenuButton as={Button}
-          variant="unstyled"
-          fontSize="25px"
-          mx="10px"
-          my="5px"
-          _hover={{
-          backgroundColor: 'rgb(165, 132, 101)',
-          color: 'white',
-        }}>
+          <MenuButton as={Button} variant="unstyled" {...menuButtonStyles}>
             Noun Lessons
           </MenuButton>
           <MenuList>
@@ -153,22 +106,16 @@ const MainNav = () => {
           </MenuList>
         </Menu>
 
+        {/* Preposition Menu */}
         <Menu>
-          <MenuButton as={Button}
-          variant="unstyled"
-          fontSize="25px"
-          mx="10px"
-          my="5px"
-          _hover={{
-          backgroundColor: 'rgb(165, 132, 101)',
-          color: 'white',
-        }}>
+          <MenuButton as={Button} variant="unstyled" {...menuButtonStyles}>
             Preposition Lesson
           </MenuButton>
           <MenuList>
             <MenuItem as={ReactRouterLink} to="/prep1-structure">Preposition Lesson</MenuItem>
             <MenuItem as={ReactRouterLink} to="/prep2-structure">Prepositional Phrases</MenuItem>
             <MenuItem as={ReactRouterLink} to="/prep3-structure">Compound Prepositions</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/preposition-quiz">Preposition Quiz</MenuItem>
           </MenuList>
         </Menu>
 

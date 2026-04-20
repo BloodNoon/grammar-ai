@@ -93,7 +93,6 @@ const VerbTenseLesson = ({ sentenceFeedback, handleVerbSentenceChoice }) => {
             </th>
           </tr>
         </thead>
-        
         {/* Table Body with tense data - maps through all 9 tenses */}
         <tbody>
           {tenseData.map((row, index) => (

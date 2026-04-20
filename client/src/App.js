@@ -25,6 +25,11 @@ import NounSortingGame from './pages/nounComponents/SortingGameWrapper';
 import NounComponentTest from './pages/nounComponentTest';
 import NounQuizPageTest from './pages/nounQuizpageTest';
 import NounPractice from './pages/nounPractice';
+import AdjectiveQuizPage from './pages/adjquiz';
+import AdverbQuizPage from './pages/adverbQuiz';
+import VerbTenseQuizPage from './pages/verbTenseQuiz';
+import ArticleQuizPage from './pages/articleQuiz';
+import PrepositionQuizPage from './pages/prepositionQuiz';
 
 import MainNav from './components/MainNav';
 
@@ -45,7 +50,12 @@ function ConditionalMainNav() {
 		'/NounSortingGame',
 		'/NounComponentTest',
 		'/NounQuizPageTest',
-		'/noun-practice'
+		'/noun-practice',
+		'/adj-quiz',
+		'/adverb-quiz',
+		'/verb-tense-quiz',
+		'/article-quiz',
+		'/preposition-quiz'
 	];
 
 	// Only show MainNav on structure pages
@@ -85,6 +95,11 @@ function App() {
 					<Route path="/NounComponentTest" component={NounComponentTest} />
 				<Route path="/NounQuizPageTest" component={NounQuizPageTest} />
 			<Route path="/noun-practice" component={NounPractice} />
+			<Route path="/adj-quiz" component={AdjectiveQuizPage} />
+		<Route path="/adverb-quiz" component={AdverbQuizPage} />
+		<Route path="/verb-tense-quiz" component={VerbTenseQuizPage} />
+		<Route path="/article-quiz" component={ArticleQuizPage} />
+		<Route path="/preposition-quiz" component={PrepositionQuizPage} />
 					</Switch>
 				</Router>
 			</AuthProvider>

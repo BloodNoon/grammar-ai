@@ -99,7 +99,7 @@ const AdjectivePage = () => {
           <div className="component-header component-header-quiz">
             🏆 Final Quiz
           </div>
-          
+
           <div className="component-content">
             <AdjectiveQuiz />
           </div>

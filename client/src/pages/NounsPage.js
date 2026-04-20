@@ -61,15 +61,20 @@ export default function NounsPage() {
     <Box borderWidth="1px" backgroundColor="#FFCEA0" minH="100vh">
       <VStack spacing={6} p={8} align="stretch">
     
-    <video width="720" height="480">
-          <source public="Lesson1.MP4" type="video/mp4"></source>
-          </video>
+    
     
         <ContentBox
           title="Lesson 1: Introduction to Nouns"
           info="A noun is a word that names a person, place, thing (animal,objects, etc...), and ideas."
         />
-
+        <ContentBox>
+          <Box display="flex" justifyContent="center" alignItems="center" mt={4}>
+            <video width="420" height="480" controls>
+              <source src="/lesson1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </Box>
+        </ContentBox>
         <ContentBox
           title="Examples of Nouns"
           info="Here are some examples of nouns:"
