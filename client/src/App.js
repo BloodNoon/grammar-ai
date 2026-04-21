@@ -30,6 +30,7 @@ import AdverbQuizPage from './pages/adverbQuiz';
 import VerbTenseQuizPage from './pages/verbTenseQuiz';
 import ArticleQuizPage from './pages/articleQuiz';
 import PrepositionQuizPage from './pages/prepositionQuiz';
+import VerbGrammarLegend from './pages/VerbTenseComponents/VerbGrammarLegend';
 
 import MainNav from './components/MainNav';
 
@@ -55,7 +56,8 @@ function ConditionalMainNav() {
 		'/adverb-quiz',
 		'/verb-tense-quiz',
 		'/article-quiz',
-		'/preposition-quiz'
+		'/preposition-quiz',
+		'/verb-grammar-legend'
 	];
 
 	// Only show MainNav on structure pages
@@ -81,6 +83,7 @@ function App() {
 						<Route path="/overview/:id" component={PromptOverview} />
 						<Route path="/sentence-structure" component={SentenceStructures} />
 						<Route path="/verb-tense-structure" component={VerbTenseStructure} />
+						<Route path="/verb-grammar-legend" component={VerbGrammarLegend} />
 						<Route path="/article-structure" component={ArticleStructure} />
 						<Route path="/prompts" component={PromptList} />
 						<Route path="/adjective-structure" component={AdjectiveStructure} />
