@@ -31,6 +31,10 @@ import VerbTenseQuizPage from './pages/verbTenseQuiz';
 import ArticleQuizPage from './pages/articleQuiz';
 import PrepositionQuizPage from './pages/prepositionQuiz';
 import VerbGrammarLegend from './pages/VerbTenseComponents/VerbGrammarLegend';
+import VerbSentenceBuilder from './pages/VerbTenseComponents/VerbSentenceBuilder';
+import VerbLevelSelection from './pages/VerbTenseComponents/VerbLevelSelection';
+import VerbWordBank from './pages/VerbTenseComponents/VerbWordBank';
+
 
 import MainNav from './components/MainNav';
 
@@ -57,7 +61,10 @@ function ConditionalMainNav() {
 		'/verb-tense-quiz',
 		'/article-quiz',
 		'/preposition-quiz',
-		'/verb-grammar-legend'
+		'/verb-grammar-legend',
+		'/verb-sentence-builder',
+		'/verb-level-selection',
+		'/verb-wordbank'
 	];
 
 	// Only show MainNav on structure pages
@@ -84,6 +91,9 @@ function App() {
 						<Route path="/sentence-structure" component={SentenceStructures} />
 						<Route path="/verb-tense-structure" component={VerbTenseStructure} />
 						<Route path="/verb-grammar-legend" component={VerbGrammarLegend} />
+						<Route path="/verb-sentence-builder" component={VerbSentenceBuilder} />
+						<Route path="/verb-level-selection" component={VerbLevelSelection} />
+						<Route path="/verb-wordbank" component={VerbWordBank} />
 						<Route path="/article-structure" component={ArticleStructure} />
 						<Route path="/prompts" component={PromptList} />
 						<Route path="/adjective-structure" component={AdjectiveStructure} />
