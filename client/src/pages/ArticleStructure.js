@@ -85,15 +85,15 @@ const ArticleStructure = () => {
   // Structure examples that focus on articles
   const articleStructureExamples = [
     { 
-      pattern: '#Determiner #Noun #Verb', 
-      example: 'The cat runs.', 
-      description: 'Article-noun-verb',
+      pattern: '#Subject #Verb #Article #Noun ', 
+      example: 'She pet the cat .', 
+      description: 'Pronoun + verb + article + noun',
       level: 'beginner'
     },
     { 
-      pattern: '#Subject #Verb #Determiner #Noun', 
-      example: 'I see the dog.', 
-      description: 'Subject-verb-article-noun',
+      pattern: '#Article #Noun #Verb #Article #Noun', 
+      example: 'The bus transports the students.', 
+      description: 'Article + subject noun + verb + article + object noun',
       level: 'beginner'
     },
     { 
