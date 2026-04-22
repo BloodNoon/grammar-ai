@@ -26,6 +26,7 @@ const WordPile = () => {
     }));
   }, []);
 
+  
   return (
     <Box 
       position="relative" 
