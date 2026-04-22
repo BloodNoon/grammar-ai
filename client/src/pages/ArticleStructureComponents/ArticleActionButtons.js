@@ -65,7 +65,7 @@ const ArticleActionButtons = ({
           }}
         >
           {/* Button text with icon */}
-          ✅ Check Articles
+          ✅ Check Sentence
         </button>
 
         {/* Reset & New Words Button - Secondary action */}
