@@ -1,223 +1,127 @@
 import React from 'react';
-import {
-  Box,
-  VStack,
-  Heading,
-  Text,
-  Button,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverArrow,
-  PopoverCloseButton,
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon
-} from '@chakra-ui/react';
-import { useHistory } from 'react-router-dom';
-import Carousel from './nounComponents/carousel';
-import WordPile from './nounComponents/wordPile';
+import { Box, Heading, Text, Grid, GridItem, Flex, VStack, SimpleGrid, Badge, Divider } from '@chakra-ui/react';
 
+const nounTypes = [
+  { name: "Common", desc: "Everyday, generic names. No capital letters.", examples: "city, dog, car" },
+  { name: "Proper", desc: "Specific, special names. Always capitalized.", examples: "Paris, Rover, Tuesday" },
+  { name: "Concrete", desc: "Things you can physically touch or see.", examples: "apple, water, jacket" },
+  { name: "Abstract", desc: "Ideas or feelings. You cannot touch them.", examples: "love, bravery, time" },
+  { name: "Collective", desc: "A single word for a group of things.", examples: "flock, team, family" },
+  { name: "Countable", desc: "Things you can count with numbers.", examples: "one cat, two cats" },
+  { name: "Uncountable", desc: "Things you cannot easily count.", examples: "sand, knowledge, water" }
+];
 
-// Content box template
-function ContentBox({ title, info, children }) {
+const NounLessonDashboard = () => {
   return (
-    <Box
-      p={5}
-      borderWidth="1px"
-      backgroundColor="#00E676"
-      borderColor="#062A17"
-      borderRadius="2xl"
-      boxShadow="6px 6px 0px #062A17"
-    >
-      <Heading color="#062A17" fontSize="2em" fontWeight="semibold" textAlign="center">
-        {title}
-      </Heading>
-      <Text color="#062A17" fontSize="xl" mt={4} textAlign="center">
-        {info}
-      </Text>
-      {children}
-    </Box>
-  );
-}
-
-
-
-
-
-
-export default function NounsPage() {
-  const history = useHistory();
-
-  const handleNextLesson = () => {
-    history.push('/propcom-nouns');
-  };
-
-  return (
-    <Box borderWidth="1px" backgroundColor="#FFCEA0" minH="100vh">
-      <VStack spacing={6} p={8} align="stretch">
-    
-    
-    
-        <ContentBox
-          title="Lesson 1: Introduction to Nouns"
-          info="A noun is a word that names a person, place, thing (animal,objects, etc...), and ideas."
-        />
-        <ContentBox>
-          <Box display="flex" justifyContent="center" alignItems="center" mt={4}>
-            <video width="420" height="480" controls>
-              <source src="/lesson1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </Box>
-        </ContentBox>
-        <ContentBox
-          title="Examples of Nouns"
-          info="Here are some examples of nouns:"
-        >
-          <Box display="flex" justifyContent="center" mt={4}>
-            <Popover>
-            <Text color="#062A17" fontSize="xl">The </Text>
-              <PopoverTrigger>
-                <Button color="#062A17" backgroundColor="#FFFFFF" fontSize="xl">dog</Button>
-              </PopoverTrigger>
-              <PopoverContent>
-                <PopoverArrow />
-                <PopoverCloseButton />
-                <PopoverHeader>Noun</PopoverHeader>
-                <PopoverBody>
-                  <Text color="#062A17" fontWeight="bold">Dog is a noun</Text>
-                </PopoverBody>
-              </PopoverContent>
-              <Text color="#062A17" fontSize="xl"> ran across the  </Text>
-            </Popover>
-               <Popover>
-              <PopoverTrigger>
-                <Button color="#062A17" backgroundColor="#FFFFFF" fontSize="xl">yard</Button>
-              </PopoverTrigger>
-              <PopoverContent>
-                <PopoverArrow />
-                <PopoverCloseButton />
-                <PopoverHeader>Noun</PopoverHeader>
-                <PopoverBody>
-                  <Text color="#062A17" fontWeight="bold">Yard is a noun</Text>
-                </PopoverBody>
-              </PopoverContent>
-              <Text color="#062A17" fontSize="xl">.</Text>
-            </Popover>
-          </Box>
-        </ContentBox>
-
-
-<Box backgroundColor="#00E676" borderColor="#062A17" p={5} borderWidth="1px" borderRadius="2xl" boxShadow="6px 6px 0px #062A17">
-<Heading color="#062A17" as="h2" size="xl" textAlign="center" mb={6} fontWeight="semibold">
-  Categories of Nouns
-</Heading>
-<WordPile />
-<Text color="#062A17" fontSize="lg" textAlign="center">
-  Nouns have categories. They aren't just random words. They have a category that describes what they are. For example, the word "dog" belongs to the category of "animals". The word "chair" belongs to the category of "things". The word "school" belongs to the category of "places" and the word "teacher" belongs to the category of "people".
-</Text>
-        <Accordion>
-  <AccordionItem>
-    <h2>
-      <AccordionButton>
-        <Box flex='1' textAlign='center' fontSize='xx-large'>
-          Person
-        </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={4} textAlign="center" fontSize='xl'>
-      Teacher | Doctor | Girl
-    </AccordionPanel>
-  </AccordionItem>
-<AccordionItem>
-    <h2>
-      <AccordionButton>
-        <Box flex='1' textAlign='center' fontSize='xx-large'>
-          Place
-        </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={4} textAlign="center" fontSize='xl'>
-        School | Park | City
-    </AccordionPanel>
-  </AccordionItem>
-  <AccordionItem>
-    <h2>
-      <AccordionButton>
-        <Box flex='1' textAlign='center' fontSize='xx-large'>
-          Thing
-        </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={4} textAlign="center" fontSize='xl'>
-      Chair | Apple | Book
-    </AccordionPanel>
-  </AccordionItem>
-  <AccordionItem>
-    <h2>
-      <AccordionButton>
-        <Box flex='1' textAlign='center' fontSize='xx-large'>
-          Idea
-        </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={4} textAlign="center" fontSize='xl'>
-      Dog | Cat | Horse
-    </AccordionPanel>
-  </AccordionItem>
+    <Box bg="#F6D5B4" minH="100vh" p={6} fontFamily="'Inter', sans-serif">
+      
   
-</Accordion>
-        </Box>
-       <ContentBox
-          title="Sentence Structure Focus"
-          info="Nouns often appear as the subject or the object in a sentence"
-        >
-          
-                      <Box display="flex" justifyContent="center" mt={4}>
-            <Popover>
-            <Text color="#062A17" fontSize="xl">The </Text>
-              <PopoverTrigger>
-                <Button color="#062A17" backgroundColor="#FFFFFF" fontSize="xl">teacher</Button>
-              </PopoverTrigger>
-              <PopoverContent>
-                <PopoverArrow />
-                <PopoverCloseButton />
-                <PopoverHeader>Subject Noun</PopoverHeader>
-                <PopoverBody>
-                  <Text color="#062A17" fontWeight="bold">Teacher is a subject noun</Text>
-                </PopoverBody>
-              </PopoverContent>
-              <Text color="#062A17" fontSize="xl"> carried a  </Text>
-            </Popover>
-               <Popover>
-              <PopoverTrigger>
-                <Button color="#062A17" backgroundColor="#FFFFFF" fontSize="xl">book</Button>
-              </PopoverTrigger>
-              <PopoverContent>
-                <PopoverArrow />
-                <PopoverCloseButton />
-                <PopoverHeader>Object Noun</PopoverHeader>
-                <PopoverBody>
-                  <Text color="#062A17" fontWeight="bold">Book is an object noun</Text>
-                </PopoverBody>
-              </PopoverContent>
-              <Text color="#062A17" fontSize="xl">.</Text>
-            </Popover>
+
+      <Heading textAlign="center" color="#4A2C11" size="xl" mb={8}>
+        Noun Types & Categorization Builder
+      </Heading>
+
+      {/* The Master 2-Column Dashboard Layout */}
+      <Grid templateColumns={{ base: "1fr", xl: "400px 1fr" }} gap={6} maxW="1400px" mx="auto">
+        
+        {/* ========================================== */}
+        {/* LEFT COLUMN: The "Cheat Sheet" Sidebar */}
+        {/* ========================================== */}
+        <GridItem>
+          <Box bg="#FFF4CC" p={6} borderRadius="lg" borderWidth="2px" borderColor="#1A1A1A" boxShadow="4px 4px 0px rgba(0,0,0,0.1)">
+            <Heading size="md" color="#1A1A1A" mb={4}>Understanding Nouns</Heading>
+            <Text fontSize="sm" color="gray.800" mb={6}>
+              Nouns are the building blocks of sentences. They name people, places, things, or ideas. 
+              Use this quick-reference table to understand how they are categorized.
+            </Text>
+
+            {/* Compact Reference Table */}
+            <Box borderWidth="2px" borderColor="#1A1A1A" borderRadius="md" bg="white" overflow="hidden" mb={8}>
+              <Flex bg="#F0E6B4" borderBottomWidth="2px" borderColor="#1A1A1A" p={2}>
+                <Text fontWeight="bold" flex="1" fontSize="sm">Noun Type</Text>
+                <Text fontWeight="bold" flex="2" fontSize="sm">Quick Definition</Text>
+              </Flex>
+              {nounTypes.map((noun, idx) => (
+                <Flex key={idx} borderBottomWidth={idx === nounTypes.length - 1 ? "0px" : "1px"} borderColor="gray.300" p={2} bg={idx % 2 === 0 ? "white" : "gray.50"}>
+                  <Text fontWeight="bold" flex="1" fontSize="xs">{noun.name}</Text>
+                  <Text flex="2" fontSize="xs">{noun.desc}</Text>
+                </Flex>
+              ))}
+            </Box>
+
+            {/* Mini Practice Mockup (Matches the bottom of the yellow box in screenshot) */}
+            <Box>
+              <Text fontWeight="bold" fontSize="sm" mb={2}>Learn your new sentence structures:</Text>
+              <Text fontSize="xs" mb={4}><b>Subject Noun + Verb + Object Noun</b><br/>Try to include adjectives if the sentence requires one.</Text>
+              
+              <Box bg="white" p={4} borderRadius="md" borderWidth="1px" borderColor="gray.300" mb={4}>
+                <Text fontSize="sm" fontWeight="bold" mb={2}>Question 1: Choose the correct proper noun</Text>
+                <VStack align="stretch" spacing={2}>
+                  {['A. The big city', 'B. New York City', 'C. that tall building', 'D. a crowded street'].map((opt, i) => (
+                    <Box key={i} p={2} borderWidth="1px" borderRadius="md" fontSize="xs" _hover={{ bg: "gray.100", cursor: "pointer" }}>{opt}</Box>
+                  ))}
+                </VStack>
+              </Box>
+            </Box>
           </Box>
-        </ContentBox>
-        <Box>
-          <Button ml="45%" colorScheme="teal" variant="outline" size="lg" onClick={handleNextLesson}>Next Lesson</Button>
-        </Box>
-      </VStack>
+        </GridItem>
+
+
+        {/* ========================================== */}
+        {/* RIGHT COLUMN: Interactive & Detailed Modules */}
+        {/* ========================================== */}
+        <GridItem>
+          <VStack align="stretch" spacing={6}>
+            
+            {/* 1. Video Lesson Module */}
+            <Box bg="white" p={6} borderRadius="lg" borderWidth="2px" borderColor="#1A1A1A" boxShadow="4px 4px 0px rgba(0,0,0,0.1)">
+              <Heading size="sm" textAlign="center" mb={2}>📺 Today's Lesson: Nouns</Heading>
+              <Text fontSize="xs" textAlign="center" mb={4} color="gray.600">Watch this lesson to understand noun types and sentence building.</Text>
+              <Box bg="#1A1A1A" w="70%" borderRadius="md" display="flex" alignItems="center" justifyContent="center" p={4} ml={'15%'}>
+                <video controls style={{ width: '100%', maxHeight: '480px', borderRadius: '8px' }}>
+                  <source src="/lesson1.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </Box>
+            </Box>
+
+            {/* 2. Compact 7-Types Detailed Grid */}
+            <Box bg="white" p={6} borderRadius="lg" borderWidth="2px" borderColor="#1A1A1A" boxShadow="4px 4px 0px rgba(0,0,0,0.1)">
+              <Heading size="md" mb={4} textAlign="center" color="#1A1A1A">Detailed Noun Bank</Heading>
+              <Divider mb={6} />
+              
+              {/* This fits all 7 types compactly into a 2-column grid */}
+              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
+                {nounTypes.map((noun, index) => (
+                  <Flex key={index} bg="gray.50" p={4} borderRadius="md" borderWidth="1px" borderColor="gray.200" direction="column">
+                    <Flex justify="space-between" align="center" mb={2}>
+                      <Badge colorScheme="purple" fontSize="sm" px={2}>{noun.name} Nouns</Badge>
+                    </Flex>
+                    <Text fontSize="sm" color="gray.700" mb={3} flex="1">
+                      {noun.desc}
+                    </Text>
+                    <Box bg="white" p={2} borderRadius="sm" borderWidth="1px" borderColor="gray.100">
+                      <Text fontSize="xs" fontWeight="bold" color="gray.500">EXAMPLES:</Text>
+                      <Text fontSize="sm" fontWeight="bold">{noun.examples}</Text>
+                    </Box>
+                  </Flex>
+                ))}
+              </SimpleGrid>
+            </Box>
+
+            {/* Placeholder for the Noun Sentence Builder Game */}
+            <Box bg="white" p={6} borderRadius="lg" borderWidth="2px" borderColor="#1A1A1A" boxShadow="4px 4px 0px rgba(0,0,0,0.1)" textAlign="center">
+              <Heading size="sm" mb={4}>🏗️ Noun Sentence Builder</Heading>
+              <Box borderStyle="dashed" borderWidth="2px" borderColor="gray.300" p={10} borderRadius="md" bg="gray.50">
+                <Text color="gray.400" fontWeight="bold">Drag words here to build your sentence...</Text>
+              </Box>
+            </Box>
+
+          </VStack>
+        </GridItem>
+      </Grid>
     </Box>
   );
-}
+};
+
+export default NounLessonDashboard;

@@ -5,11 +5,11 @@ import './prep1Structure.css';
 import PrepositionSorter from '../../utils/SentenceChecker/PrepositionSorter';
 import PrepositionStructureGame from '../../utils/SentenceChecker/PrepositionStructureGame';
 import PrepositionQuiz from '../../utils/SentenceChecker/PrepositionQuiz';
-const disp = "disp!";
-    document.getElementById("disp").innerHTML = disp;
-setTimeout(()=> {
-  document.getElementById("disp").remove();
-}, 10000);
+// const disp = "disp!";
+//     document.getElementById("disp").innerHTML = disp;
+// setTimeout(()=> {
+//   document.getElementById("disp").remove();
+// }, 10000);
 const Prep1Structure = () => {
   return (
     
