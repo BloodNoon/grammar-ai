@@ -776,10 +776,6 @@ const VerbTenseStructure = () => {
   return (
     <div style={styles.body}>
       <div style={styles.container}>
-        {/* Navigation Header */}
-        <header style={styles.navHeader}>
-          <h1 style={styles.Heading}>🐸 Sentence Structure Practice</h1>
-        </header>
 
         {/* Main Title */}
         <h1 style={styles.mainTitle}>Verb Tense & Auxiliary Verb Builder</h1>

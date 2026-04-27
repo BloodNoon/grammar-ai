@@ -13,8 +13,7 @@ export default function Home() {
 				<Divider />
 				<Hero />
 				<HomeIntro />
-				<HomeFeature />
-				<HomeFooter />
+				
 			</VStack>
 		</Layout>
 	);

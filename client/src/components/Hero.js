@@ -44,10 +44,13 @@ export default function Hero() {
 						</Heading>
 						<Text fontSize={['lg', 'xl', '2xl']} color="gray.500">
 							Sentences, Paragraphs, Essays -{' '}
-							<strong>All become easy</strong> with structure
+							<strong>All become easy</strong> with <strong>STRUCTURE!</strong>
 						</Text>
 						<Text fontSize={['lg', 'xl', '2xl']} color="gray.500">
 							Learn the structure, view the edits, master writing
+						</Text>
+						<Text fontSize={['lg', 'xl', '2xl']} color="gray.500" textAlign="center">
+						Write a sentence here and see where your grammar is wrong in the sentence. A Short - Medium - Long sentence, try your best!"
 						</Text>
 						<Button
 							onClick={handleClick}

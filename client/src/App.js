@@ -67,7 +67,7 @@ function ConditionalMainNav() {
 		'/verb-wordbank'
 	];
 
-	// Only show MainNav on structure pages
+	
 	if (structurePages.includes(location.pathname)) {
 		return <MainNav />;
 	}

@@ -21,23 +21,29 @@ import {
 	Center,
 	Alert,
 	AlertIcon,
+    Tabs,
+    TabList,
+    Tab
 } from '@chakra-ui/react';
 
 export default function Signup() {
 	const { currentUser, signUp } = useAuth();
 	const queryClient = useQueryClient();
 	const history = useHistory();
-	const {
+	
+    // 1. We extracted 'setValue' here to programmatically update the role
+    const {
 		register,
 		watch,
 		handleSubmit,
+        setValue,
 		formState: { errors },
 	} = useForm({
-		defaultValues: { email: '', password: '', confirmPassword: '' },
+		defaultValues: { email: '', password: '', confirmPassword: '', role: 'student' },
 	});
 
 	const { isLoading, isError, error, mutate } = useMutation(
-		({ email, password }) => signUp(email, password),
+		({ email, password, role }) => signUp(email, password, role),
 		{ onSuccess: () => queryClient.invalidateQueries('user') }
 	);
 
@@ -46,15 +52,17 @@ export default function Signup() {
 	}
 
 	async function onSubmit(data) {
-		const { email, password } = data;
+		const { email, password, role } = data;
 
 		try {
-			mutate({ email, password });
+			mutate({ email, password, role });
 			history.push('/');
 		} catch (err) {
 			console.error(err, 'Failed to create an account.');
 		}
 	}
+
+    const themeColor = "#8B3A3A"; 
 
 	return (
 		<Layout>
@@ -65,33 +73,77 @@ export default function Signup() {
 				</Alert>
 			)}
 			<Grid
-				templateColumns="repeat(2, 1fr)"
+				templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
 				my="2rem"
 				gap="2rem"
-				boxShadow="md"
+				boxShadow="xl"
 				borderRadius="1rem"
+                bg="white"
 			>
-				<GridItem p="2rem">
-					<Image src={signUpImg} alt="signup" boxSize="30rem" />
+				<GridItem p="2rem" display={{ base: "none", md: "block" }}>
+					<Image src={signUpImg} alt="signup" boxSize="100%" objectFit="contain" />
 				</GridItem>
 				<GridItem p="2rem">
-					<Flex direction="column" justify="center" align="center">
-						<Heading size="lg" my="2rem">
+					<Flex direction="column" justify="center" align="center" h="100%">
+						<Heading size="lg" mb="2rem" color={themeColor} fontWeight="normal">
 							Create an account
 						</Heading>
+                        
 						<form
 							onSubmit={handleSubmit(onSubmit)}
-							style={{ width: '70%' }}
+							style={{ width: '100%', maxWidth: '400px' }}
 						>
-							<FormControl
-								id="email"
-								isRequired
-								isInvalid={errors.email}
-							>
-								<FormLabel>Email address</FormLabel>
+                            {/* Hidden input to ensure 'role' is tracked by the form */}
+                            <input type="hidden" {...register('role')} />
+
+                            {/* --- TABBED ROLE SELECTOR --- */}
+                            <Tabs 
+                                isFitted 
+                                variant="enclosed" 
+                                mb="1.5rem"
+                                /* Index 0 is the first tab (Student)
+                                  Index 1 is the second tab (Teacher)
+                                  When they click, we update the hidden form value!
+                                */
+                                onChange={(index) => setValue('role', index === 0 ? 'student' : 'teacher')}
+                            >
+                                <TabList mb="1em" borderColor="gray.200">
+                                    <Tab 
+                                        _selected={{ 
+                                            color: themeColor, 
+                                            borderColor: "gray.200", 
+                                            borderBottomColor: "white", 
+                                            bg: "white", 
+                                            fontWeight: "bold" 
+                                        }} 
+                                        color="gray.500"
+                                        bg="gray.50"
+                                    >
+                                        Student
+                                    </Tab>
+                                    <Tab 
+                                        _selected={{ 
+                                            color: themeColor, 
+                                            borderColor: "gray.200", 
+                                            borderBottomColor: "white", 
+                                            bg: "white", 
+                                            fontWeight: "bold" 
+                                        }} 
+                                        color="gray.500"
+                                        bg="gray.50"
+                                    >
+                                        Teacher
+                                    </Tab>
+                                </TabList>
+                            </Tabs>
+                            {/* --------------------------- */}
+
+							<FormControl id="email" isRequired isInvalid={errors.email} mb="1rem">
+								<FormLabel color={themeColor} fontWeight="600" fontSize="sm">Email address</FormLabel>
 								<Input
 									name="email"
 									type="email"
+                                    focusBorderColor="orange.300"
 									{...register('email', {
 										required: 'This is required',
 									})}
@@ -100,21 +152,18 @@ export default function Signup() {
 									{errors.email?.message}
 								</FormErrorMessage>
 							</FormControl>
-							<FormControl
-								id="password"
-								isRequired
-								isInvalid={errors.password}
-							>
-								<FormLabel>Password</FormLabel>
+
+							<FormControl id="password" isRequired isInvalid={errors.password} mb="1rem">
+								<FormLabel color={themeColor} fontWeight="600" fontSize="sm">Password</FormLabel>
 								<Input
 									name="password"
 									type="password"
+                                    focusBorderColor="orange.300"
 									{...register('password', {
 										required: 'This is required',
 										minLength: {
 											value: 8,
-											message:
-												'Password must have at least 8 characters',
+											message: 'Password must have at least 8 characters',
 										},
 									})}
 								/>
@@ -122,42 +171,45 @@ export default function Signup() {
 									{errors.password?.message}
 								</FormErrorMessage>
 							</FormControl>
-							<FormControl
-								id="confirmPassword"
-								isRequired
-								isInvalid={errors.confirmPassword}
-							>
-								<FormLabel>Confirm Password</FormLabel>
+
+							<FormControl id="confirmPassword" isRequired isInvalid={errors.confirmPassword} mb="1.5rem">
+								<FormLabel color={themeColor} fontWeight="600" fontSize="sm">Confirm Password</FormLabel>
 								<Input
 									name="confirmPassword"
 									type="password"
+                                    focusBorderColor="orange.300"
 									{...register('confirmPassword', {
 										required: 'This is required',
 										validate: (value) =>
-											value === watch('password') ||
-											'Password does not match.',
+											value === watch('password') || 'Password does not match.',
 									})}
 								/>
 								<FormErrorMessage>
 									{errors.confirmPassword?.message}
 								</FormErrorMessage>
 							</FormControl>
+
 							<Center>
 								<Button
 									isLoading={isLoading}
 									my="1rem"
 									loadingText="Creating"
 									type="submit"
+                                    bg="#EDF2F7" 
+                                    color={themeColor} 
+                                    _hover={{ bg: "#E2E8F0" }}
+                                    fontWeight="600"
 								>
 									Create account
 								</Button>
 							</Center>
-							<Center>
-								<HStack>
+                            
+							<Center mt={2}>
+								<HStack fontSize="sm">
 									<Text color="gray.400">
 										Already have an account?
 									</Text>
-									<Text as={Link} to="/login">
+									<Text as={Link} to="/login" color={themeColor}>
 										Log in
 									</Text>
 								</HStack>

@@ -1,8 +1,5 @@
 import React from 'react';
-import './adjectivePage.css'; // Import CSS file
-
-
-
+import './adjectivePage.css';
 
 // ADJECTIVE COMPONENTS
 import AdjectiveLesson from '../../utils/SentenceChecker/AdjectiveLesson';
@@ -11,150 +8,190 @@ import AdjectiveSentenceStructures from '../../utils/SentenceChecker/AdjectiveSe
 import AdjectiveFillBlanks from '../../utils/SentenceChecker/AdjectiveFillBlanks';
 import AdjectiveSortingGame from '../../utils/SentenceChecker/AdjectiveSortingGame';
 import AdjectiveQuiz from '../../utils/SentenceChecker/AdjectiveQuiz';
+import adjectivesData from '../../data/adjectives_questions.json';
+import WordHunterGame from '../../components/wordHunter';
 
 const AdjectivePage = () => {
-  return (
-  <>
+
+  const styles = {
+    body: {
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      background: 'rgba(249, 190, 134, 0.922)',
+      minHeight: '100vh',
+      padding: '20px',
+      margin: 0
+    },
+    container: {
+      margin: '0 auto',
+      padding: '20px',
+      textAlign: 'center'
+    },
+    navHeader: {
+      color: 'rgb(8, 0, 0)',
+      border: '2px solid white',
+      borderRadius: '1rem',
+      padding: '0.5rem 1rem',
+      display: 'flex',
+      justifyContent: 'space-between',
+      position: 'sticky',
+      backgroundColor: 'rgba(249, 190, 134, 0.922)',
+      marginBottom: '20px',
+      zIndex: 100
+    },
+    Heading: {
+      fontSize: '32px',
+      margin: '0 auto',
+      textAlign: 'center',
+      fontWeight: '600',
+      lineHeight: '1.2'
+    },
+    mainTitle: {
+      fontSize: '40px',
+      marginBottom: '1.5rem',
+      marginTop: '1rem',
+      textAlign: 'center',
+      fontWeight: '700',
+      color: '#333',
+      lineHeight: '1.2'
+    },
+    mainContent: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr', 
+      gap: '20px',
+      marginTop: '35px',
+      marginBottom: '20px',
+      textAlign: 'left' 
+    },
     
-    <div className="lesson4-container">
-      {/* Main Content */}
-      <div className="lesson4-main-content">
-        {/* Lesson Card */}
-        <div className="lesson-card">
-          <div className="lesson-header">
-            <div className="lesson-icon">🎨</div>
-            <div className="lesson-title">
-              Lesson 4: Adjectives
-              <span className="lesson-star">⭐</span>
+    // NEW: This makes the columns act like smart containers
+    columnFlex: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '20px',
+      height: '100%' 
+    },
+    // NEW: This forces the bottom boxes to stretch downward
+    stretchPanel: {
+      flex: 1 
+    },
+
+    panel: {
+      background: 'white',
+      borderRadius: '15px',
+      padding: '20px',
+      boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+      // Notice we removed marginBottom here! The columnFlex gap handles it now.
+    },
+    lessonPanel: {
+      background: '#ffeaa7' 
+    },
+    typingChallenge: {
+      background: '#e3f2fd' 
+    },
+    videoPanel: {
+      backgroundColor: '#f8f9fa',
+      borderRadius: '15px',
+      padding: '20px',
+      border: '1px solid #ddd',
+      textAlign: 'center',
+      boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
+    },
+    grammarReference: {
+      background: 'white',
+      borderRadius: '15px',
+      padding: '20px',
+      marginTop: '20px',
+      boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
+      textAlign: 'left'
+    }
+  };
+
+  return (
+    <div style={styles.body}>
+      <div style={styles.container}>
+
+        <h1 style={styles.mainTitle}>Adjective & Royal Order Builder</h1>
+
+      
+        <div style={styles.mainContent}>
+          
+       
+          {/* Inside the Left Column container */}
+<div style={styles.columnFlex}>
+  
+  
+  <div style={{...styles.panel, ...styles.lessonPanel}}>
+    <AdjectiveLesson />
+  </div>
+
+  
+  <div style={{...styles.panel, ...styles.typingChallenge}}>
+    <h3 style={{marginBottom: '15px', fontSize: '1.2rem', fontWeight: 'bold', color: '#1565c0'}}>
+      ✍️ Adjective Fill-in-the-Blank
+    </h3>
+    <AdjectiveFillBlanks />
+  </div>
+
+  {/* Word Hunter Box - Stretches to fill remaining space */}
+  <div style={{...styles.panel, ...styles.stretchPanel, background: '#FAF5FF'}}>
+    <WordHunterGame
+      questions={adjectivesData.filter(q => q.exercise === "identifying")}
+    />
+  </div>
+
+</div>
+
+          
+          <div style={styles.columnFlex}>
+            
+            <div style={styles.videoPanel}>
+              <h3 style={{ marginBottom: '15px', color: '#333', fontSize: '1.5rem' }}>
+                📹 Today's Lesson: Adjectives
+              </h3>
+              <p style={{ fontSize: '14px', color: '#666', marginBottom: '15px', lineHeight: '1.4' }}>
+                Watch this lesson to understand how to use and order adjectives:
+              </p>
+              
+              <div style={{ position: 'relative', width: '55%', backgroundColor: '#000', borderRadius: '8px', overflow: 'hidden', marginLeft: 'auto', marginRight: 'auto' }}>
+                <video controls style={{ width: '100%', height: '100%', display: 'block' }}>
+                  <source src="/lesson4.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div style={{ marginTop: '10px', fontSize: '12px', color: '#888', fontStyle: 'italic' }}>
+                💡 Watch the lesson before practicing with the exercises below
+              </div>
+            </div>
+
+            
+            <div style={{...styles.panel, ...styles.stretchPanel}}>
+              <h3 style={{marginBottom: '20px', fontSize: '1.5rem', fontWeight: 'bold', textAlign: 'center'}}>
+                Interactive Practice
+              </h3>
+              
+              <AdjectiveRoyalOrder />
+              
+              <hr style={{margin: '25px 0', borderColor: '#eee'}} />
+              
+              <AdjectiveSentenceStructures />
+              
+              <hr style={{margin: '25px 0', borderColor: '#eee'}} />
+              
+              <AdjectiveSortingGame />
             </div>
           </div>
-          
-          <div className="lesson-content">
-            <p>Learn about <span className="adjective-highlight">adjectives</span> - the words that make your sentences more colorful and descriptive! 
-            Discover the secret order that English adjectives follow.</p>
-            
-            <p style={{ marginTop: '15px' }}>For example:</p>
-            <div className="example-text">The beautiful red rose.</div>
-            <p>In this phrase, <strong>"beautiful"</strong> and <strong>"red"</strong> are adjectives describing the rose.</p>
-          </div>
         </div>
 
-        {/* Adjective Lesson Component */}
-        <div className="component-card border-top-adjective">
-          <div className="component-header component-header-adjective">
-            📖 Adjective Lesson
-          </div>
-          
-          <div className="component-content">
-            <AdjectiveLesson />
-          </div>
+        
+        <div style={styles.grammarReference}>
+          <h2 style={{fontSize: '2rem', textAlign: 'center', marginBottom: '20px', color: '#333'}}>
+            🏆 Final Adjective Quiz
+          </h2>
+          <AdjectiveQuiz />
         </div>
 
-        {/* Adjective Royal Order Component */}
-        <div className="component-card border-top-royal">
-          <div className="component-header component-header-royal">
-            👑 Royal Order
-          </div>
-          
-          <div className="component-content">
-            <AdjectiveRoyalOrder />
-          </div>
-        </div>
-
-        {/* Adjective Sentence Structures Component */}
-        <div className="component-card border-top-sentence">
-          <div className="component-header component-header-sentence">
-            🏗️ Sentence Structures
-          </div>
-          
-          <div className="component-content">
-            <AdjectiveSentenceStructures />
-          </div>
-        </div>
-
-        {/* Adjective Fill Blanks Component */}
-        <div className="component-card border-top-fill">
-          <div className="component-header component-header-fill">
-            📝 Fill in the Blanks
-          </div>
-          
-          <div className="component-content">
-            <AdjectiveFillBlanks />
-          </div>
-        </div>
-
-        {/* Adjective Sorting Game Component */}
-        <div className="component-card border-top-sorting">
-          <div className="component-header component-header-sorting">
-            🎮 Sorting Game
-          </div>
-          
-          <div className="component-content">
-            <AdjectiveSortingGame />
-          </div>
-        </div>
-
-        {/* Adjective Quiz Component */}
-        <div className="component-card border-top-quiz">
-          <div className="component-header component-header-quiz">
-            🏆 Final Quiz
-          </div>
-
-          <div className="component-content">
-            <AdjectiveQuiz />
-          </div>
-        </div>
-      </div>
-
-      {/* Sidebar */}
-      <div className="lesson4-sidebar">
-        {/* Video Card */}
-        <div className="sidebar-card">
-          <div className="video-title">Video</div>
-          <div className="video-container">
-            <video
-              controls
-              className="video-player"
-            >
-              <source src="/lesson4.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-
-        {/* Example Card */}
-        <div className="sidebar-card">
-          <p style={{ marginBottom: '10px' }}><strong>Adjective Examples</strong></p>
-          <div className="example-card-content">
-            <strong>Example:</strong> The small, red car<br />
-            <strong>Order:</strong> size [small] + color [red] + noun [car]
-          </div>
-        </div>
-
-        {/* Knowledge Check Card */}
-        <div className="sidebar-card">
-          <div className="knowledge-header">
-            ⭐ Quick Check ⭐
-          </div>
-
-          <div className="knowledge-question">
-            The _____ blue ocean
-          </div>
-
-          <div className="options-grid">
-            {['beautiful', 'quickly', 'run', 'under'].map((option, index) => (
-              <div
-                key={index}
-                className="option-item"
-              >
-                {option}
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </div>
-  </>
   );
 };
 

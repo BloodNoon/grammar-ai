@@ -18,16 +18,20 @@ const MainNav = () => {
     <HStack background="rgba(255, 206, 160)" width="100%" spacing={0}>
       <div className="mainNav">
         
-        {/* Sentence Structure Menu */}
         <Menu>
           <MenuButton as={Button} variant="unstyled" {...menuButtonStyles}>
-            Sentence Structure
+            Noun Lessons
           </MenuButton>
           <MenuList>
-            <MenuItem as={ReactRouterLink} to="/sentence-structure">Sentence Structure</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/sentence-structure-quiz">Sentence Structure Quiz</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/nouns">Introduction to Nouns</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/propcom-nouns">Common & Proper Nouns</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/abplur-nouns">Abstract & Plural Nouns</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/noun-practice">Noun Practice Games</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/nounComponentTest">Component Test</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/NounQuizPageTest">Quiz Test</MenuItem>
           </MenuList>
         </Menu>
+        
         
         {/* Adjective Menu */}
         <Menu>
@@ -60,6 +64,21 @@ const MainNav = () => {
             <MenuItem as={ReactRouterLink} to="/adverb-quiz">Adverb Quiz</MenuItem>
           </MenuList>
         </Menu>
+         
+         {/* Verb Tense Menu */}
+        <Menu>
+          <MenuButton as={Button} variant="unstyled" {...menuButtonStyles}>
+            Verb Tense Lesson
+          </MenuButton>
+          <MenuList>
+            <MenuItem as={ReactRouterLink} to="/verb-tense-structure">Introduction to Verbs</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/verb-grammar-legend">Verb Grammar</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/verb-sentence-builder">Verb Sentence Building</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/verb-level-selection">Verb Level Selector</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/verb-wordbank">Verb Word Game</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/verb-tense-quiz">Verb Quiz</MenuItem>
+          </MenuList>
+        </Menu>
         
         {/* Article Menu */}
         <Menu>
@@ -76,35 +95,9 @@ const MainNav = () => {
           </MenuList>
         </Menu>
         
-        {/* Verb Tense Menu */}
-        <Menu>
-          <MenuButton as={Button} variant="unstyled" {...menuButtonStyles}>
-            Verb Tense Lesson
-          </MenuButton>
-          <MenuList>
-            <MenuItem as={ReactRouterLink} to="/verb-tense-structure">Introduction to Verbs</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/verb-grammar-legend">Verb Grammar</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/verb-sentence-builder">Verb Sentence Building</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/verb-level-selection">Verb Level Selector</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/verb-wordbank">Verb Word Game</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/verb-tense-quiz">Verb Quiz</MenuItem>
-          </MenuList>
-        </Menu>
-        
+       
         {/* Noun Menu (The one that was right!) */}
-        <Menu>
-          <MenuButton as={Button} variant="unstyled" {...menuButtonStyles}>
-            Noun Lessons
-          </MenuButton>
-          <MenuList>
-            <MenuItem as={ReactRouterLink} to="/nouns">Introduction to Nouns</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/propcom-nouns">Common & Proper Nouns</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/abplur-nouns">Abstract & Plural Nouns</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/noun-practice">Noun Practice Games</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/nounComponentTest">Component Test</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/NounQuizPageTest">Quiz Test</MenuItem>
-          </MenuList>
-        </Menu>
+        
 
         {/* Preposition Menu */}
         <Menu>
@@ -119,6 +112,16 @@ const MainNav = () => {
           </MenuList>
         </Menu>
 
+{/* Sentence Structure Menu */}
+        <Menu>
+          <MenuButton as={Button} variant="unstyled" {...menuButtonStyles}>
+            Sentence Structure
+          </MenuButton>
+          <MenuList>
+            <MenuItem as={ReactRouterLink} to="/sentence-structure">Sentence Structure</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/sentence-structure-quiz">Sentence Structure Quiz</MenuItem>
+          </MenuList>
+        </Menu>
       </div>
     </HStack>
   );
