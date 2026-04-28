@@ -249,7 +249,7 @@ function PrepositionStructureGame() {
           fontSize: '1.1rem',
           marginBottom: '0.5rem'
         }}>
-          Formula 1: <span style={{ color: '#007acc' }}>Pronoun + Verb + Preposition + Determiner + Noun</span>
+          Formula 1: <span style={{ color: '#007acc' }}>Pronoun + Verb + Preposition + Article + Noun</span>
         </p>
 
         <input
@@ -305,7 +305,7 @@ function PrepositionStructureGame() {
           fontSize: '1.1rem',
           marginBottom: '0.5rem'
         }}>
-          Formula 2: <span style={{ color: '#007acc' }}>Determiner + Noun + Verb + Preposition + Determiner + Noun</span>
+          Formula 2: <span style={{ color: '#007acc' }}>Article + Noun + Verb + Preposition + Article + Noun</span>
         </p>
 
         <input
@@ -361,7 +361,7 @@ function PrepositionStructureGame() {
           fontSize: '1.1rem',
           marginBottom: '0.5rem'
         }}>
-          Formula 3: <span style={{ color: '#007acc' }}>Noun + Verb + Determiner + Noun + Preposition + Noun</span>
+          Formula 3: <span style={{ color: '#007acc' }}>Noun + Verb + Preposition + Article + Noun + Preposition + Article + Noun</span>
         </p>
 
         <input
