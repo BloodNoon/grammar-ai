@@ -16,7 +16,7 @@ const MainNav = () => {
 
   return (
     <HStack background="rgba(255, 206, 160)" width="100%" spacing={0}>
-      <div className="mainNav">
+      <div class="mx-auto" className="mainNav">
         
         <Menu>
           <MenuButton as={Button} variant="unstyled" {...menuButtonStyles}>
