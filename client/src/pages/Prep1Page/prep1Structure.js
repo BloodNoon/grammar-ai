@@ -82,7 +82,7 @@ const Prep1Structure = () => {
       boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
     },
     lessonPanel: {
-      background: '#ffeaa7' // The exact Verb Tense yellow
+      background: '#ffeaa7' 
     },
     videoPanel: {
       backgroundColor: '#f8f9fa',
@@ -100,7 +100,7 @@ const Prep1Structure = () => {
       boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
       textAlign: 'left'
     },
-    // --- NEW TABLE STYLES TO MATCH VERB PAGE ---
+  
     table: {
       width: '100%',
       borderCollapse: 'collapse',
@@ -122,7 +122,7 @@ const Prep1Structure = () => {
       fontSize: '14px',
       color: '#333'
     },
-    // --- NEW PATTERN CARD STYLES TO MATCH VERB PAGE ---
+
     patternCard: {
       backgroundColor: '#f8f9fa',
       border: '1px solid #ddd',
@@ -144,7 +144,7 @@ const Prep1Structure = () => {
     <div style={styles.body}>
       <div style={styles.container}>
 
-        <h1 style={styles.mainTitle}>Preposition & Phrase Builder</h1>
+        <h1 style={styles.mainTitle}>Prepositions</h1>
 
         {showCongrats && (
           <div style={{ backgroundColor: '#e8f5e8', border: '2px solid #28a745', borderRadius: '10px', padding: '1.5rem', transition: 'opacity 0.5s ease', maxWidth: '800px', margin: '0 auto 20px auto' }}>
@@ -157,9 +157,7 @@ const Prep1Structure = () => {
 
         <div style={styles.mainContent}>
           
-          {/* ========================================== */}
-          {/* LEFT COLUMN: Lesson & Formulas */}
-          {/* ========================================== */}
+       
           <div style={styles.columnFlex}>
             
             <div style={{...styles.panel, ...styles.lessonPanel}}>
@@ -168,7 +166,7 @@ const Prep1Structure = () => {
                 A <strong>preposition</strong> is a word that indicates the relationship between a noun or pronoun and other words in a sentence. They often express relationships of time, place, direction, or situation.
               </p>
 
-              {/* REPLACED THE LIST WITH A CLEAN VERB-STYLE TABLE */}
+             
               <table style={styles.table}>
                 <thead>
                   <tr>
@@ -212,7 +210,7 @@ const Prep1Structure = () => {
                  Learn your new sentence structures:
                </p>
                
-               {/* REPLACED THE COLORED CSS BOXES WITH CLEAN PATTERN CARDS */}
+              
                <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '15px' }}>
                   {formulas.map((item, index) => (
                     <div key={index} style={styles.patternCard}>
@@ -229,9 +227,7 @@ const Prep1Structure = () => {
 
           </div>
 
-          {/* ========================================== */}
-          {/* RIGHT COLUMN: Video & Interactive Games */}
-          {/* ========================================== */}
+      
           <div style={styles.columnFlex}>
             
             <div style={styles.videoPanel}>
@@ -266,7 +262,7 @@ const Prep1Structure = () => {
                 Practice 2: Preposition Fill-in-the-Blanks
               </h4>
               <div style={{background: '#f8f9fa', padding: '20px', borderRadius: '8px', textAlign: 'center', border: '1px solid #ddd'}}>
-                {/* <PrepositionFillBlanks /> */}
+               
                 <p style={{fontSize: '18px', fontWeight: 'bold', color: '#333'}}>The boy is sitting ______ a chair.</p>
                 <p style={{fontSize: '14px', color: '#666', marginTop: '10px', fontStyle: 'italic'}}>
                   (Fill-in-the-blank component will mount here)
@@ -284,9 +280,6 @@ const Prep1Structure = () => {
           </div>
         </div>
 
-        {/* ========================================== */}
-        {/* BOTTOM FULL WIDTH - Final Quiz */}
-        {/* ========================================== */}
         <div style={styles.grammarReference}>
           <h2 style={{fontSize: '2rem', textAlign: 'center', marginBottom: '20px', color: '#333'}}>
             🏆 Final Preposition Quiz

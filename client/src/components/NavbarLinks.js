@@ -28,7 +28,7 @@ export default function NavbarLinks() {
 				}}
 				whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
 			>
-				<Link to="/sentence-structure" mx="1rem">
+				<Link to="practice-menu" mx="1rem">
 					<Text mx="1rem" fontSize="lg">
 						Start Practice
 					</Text>

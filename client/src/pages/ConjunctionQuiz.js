@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Heading, Text, Button, SimpleGrid, VStack, Flex, Grid, GridItem, Progress, Badge } from '@chakra-ui/react';
-import adverbData from '../data/adverbs_questions.json';
+import conjunctionData from '../data/conjunctions_questions.json';
 
-const AdverbQuizPage = () => {
-  const quizData = adverbData;
+const ConjunctionQuiz = () => {
+  const quizData = conjunctionData;
   const [activeQuestions, setActiveQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(0);
 
   const generateQuiz = () => {
+   
     const validQuestions = quizData.filter(
       q => q.answer_count === "Single" && q.options && q.options.length > 0
     );
+   
     const shuffled = [...validQuestions].sort(() => Math.random() - 0.5).slice(0, 10);
     
     setActiveQuestions(shuffled);
@@ -52,12 +54,15 @@ const AdverbQuizPage = () => {
   return (
     <Box bg="#F6D5B4" minH="100vh" p={6} fontFamily="'Inter', sans-serif">
       
+   
       <Box bg="#F0B784" maxW="1200px" mx="auto" p={4} borderRadius="lg" mb={8} textAlign="center" borderWidth="2px" borderColor="whiteAlpha.600">
         <Heading size="lg" color="#4A2C11">📝 Final Knowledge Check</Heading>
       </Box>
 
+   
       <Grid templateColumns={{ base: "1fr", lg: "320px 1fr" }} gap={8} maxW="1200px" mx="auto">
         
+     
         <GridItem>
           <Box 
             bg="#FFF4CC" 
@@ -127,6 +132,7 @@ const AdverbQuizPage = () => {
           </Box>
         </GridItem>
 
+     
         <GridItem>
           <VStack spacing={6} align="stretch">
             {activeQuestions.map((q, index) => {
@@ -180,7 +186,7 @@ const AdverbQuizPage = () => {
                           borderRadius="md"
                           borderWidth="2px"
                           borderColor={borderColor}
-                          justifyContent="flex-start" 
+                          justifyContent="flex-start"
                           px={4}
                           transition="all 0.1s"
                           _hover={!isSubmitted ? { bg: option === userAnswer ? "#F0B784" : "gray.100" } : {}}
@@ -192,7 +198,7 @@ const AdverbQuizPage = () => {
                     })}
                   </SimpleGrid>
 
-                  {isSubmitted && (
+                  {isSubmitted && q.explanation && (
                     <Box mt={6} bg={userAnswer === correctAnswer ? "green.50" : "red.50"} p={4} borderRadius="md" borderWidth="1px" borderColor={userAnswer === correctAnswer ? "green.400" : "red.400"}>
                       <Text fontWeight="bold" color={userAnswer === correctAnswer ? "green.800" : "red.800"}>
                         {userAnswer === correctAnswer ? "✅ Correct:" : "❌ Incorrect:"} {q.explanation}
@@ -209,4 +215,4 @@ const AdverbQuizPage = () => {
   );
 };
 
-export default AdverbQuizPage;
+export default ConjunctionQuiz;

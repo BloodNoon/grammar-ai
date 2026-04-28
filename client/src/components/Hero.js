@@ -13,11 +13,7 @@ export default function Hero() {
 	const MotionBox = motion(Box);
 
 	function handleClick() {
-		if (currentUser) {
-			history.push('/prompts');
-		} else {
-			history.push('/signup');
-		}
+		history.push('/practice-menu');
 	}
 
 	return (
@@ -60,7 +56,7 @@ export default function Hero() {
 							// bgGradient="linear(to-r, red.400, yellow.300)"
 							rightIcon={<ChevronRightIcon />}
 						>
-							{currentUser ? 'Start Writing Now' : 'Sign Up Here'}
+							Start Practice
 						</Button>
 					</VStack>
 				</Center>

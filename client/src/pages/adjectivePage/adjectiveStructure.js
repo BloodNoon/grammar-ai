@@ -1,5 +1,5 @@
 import React from 'react';
-import './adjectivePage.css';
+
 
 // ADJECTIVE COMPONENTS
 import AdjectiveLesson from '../../utils/SentenceChecker/AdjectiveLesson';
@@ -63,14 +63,14 @@ const AdjectivePage = () => {
       textAlign: 'left' 
     },
     
-    // NEW: This makes the columns act like smart containers
+    
     columnFlex: {
       display: 'flex',
       flexDirection: 'column',
       gap: '20px',
       height: '100%' 
     },
-    // NEW: This forces the bottom boxes to stretch downward
+    
     stretchPanel: {
       flex: 1 
     },
@@ -80,7 +80,7 @@ const AdjectivePage = () => {
       borderRadius: '15px',
       padding: '20px',
       boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
-      // Notice we removed marginBottom here! The columnFlex gap handles it now.
+     
     },
     lessonPanel: {
       background: '#ffeaa7' 
@@ -116,7 +116,7 @@ const AdjectivePage = () => {
         <div style={styles.mainContent}>
           
        
-          {/* Inside the Left Column container */}
+          
 <div style={styles.columnFlex}>
   
   
@@ -132,7 +132,7 @@ const AdjectivePage = () => {
     <AdjectiveFillBlanks />
   </div>
 
-  {/* Word Hunter Box - Stretches to fill remaining space */}
+ 
   <div style={{...styles.panel, ...styles.stretchPanel, background: '#FAF5FF'}}>
     <WordHunterGame
       questions={adjectivesData.filter(q => q.exercise === "identifying")}

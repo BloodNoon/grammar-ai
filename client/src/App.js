@@ -34,14 +34,18 @@ import VerbGrammarLegend from './pages/VerbTenseComponents/VerbGrammarLegend';
 import VerbSentenceBuilder from './pages/VerbTenseComponents/VerbSentenceBuilder';
 import VerbLevelSelection from './pages/VerbTenseComponents/VerbLevelSelection';
 import VerbWordBank from './pages/VerbTenseComponents/VerbWordBank';
-
+import ConjunctionStructure from './pages/conjunctionStructure';
+import ConjunctionQuiz from './pages/ConjunctionQuiz';
+import PracticeMenu from './pages/PracticeMenu';
 
 import MainNav from './components/MainNav';
 
 function ConditionalMainNav() {
 	const location = useLocation();
 	const structurePages = [
+		'/practice-menu',
 		'/sentence-structure',
+		'/conjunction-structure',
 		'/verb-tense-structure',
 		'/article-structure',
 		'/adjective-structure',
@@ -61,6 +65,7 @@ function ConditionalMainNav() {
 		'/verb-tense-quiz',
 		'/article-quiz',
 		'/preposition-quiz',
+		'/conjunction-quiz',
 		'/verb-grammar-legend',
 		'/verb-sentence-builder',
 		'/verb-level-selection',
@@ -88,6 +93,7 @@ function App() {
 						<Route path="/login" component={Login} />
 						<PrivateRoute path="/dashboard" component={Dashboard} />
 						<Route path="/overview/:id" component={PromptOverview} />
+						<Route path="/practice-menu" component={PracticeMenu} />
 						<Route path="/sentence-structure" component={SentenceStructures} />
 						<Route path="/verb-tense-structure" component={VerbTenseStructure} />
 						<Route path="/verb-grammar-legend" component={VerbGrammarLegend} />
@@ -98,6 +104,7 @@ function App() {
 						<Route path="/prompts" component={PromptList} />
 						<Route path="/adjective-structure" component={AdjectiveStructure} />
 						<Route path="/adverb-structure" component={AdverbStructure} />
+						<Route path="/conjunction-structure" component={ConjunctionStructure} />
 						<Route path="/prep1-structure" component={Prep1Structure} />
 						<Route path="/prep2-structure" component={Prep2Structure} />
 						<Route path="/prep3-structure" component={Prep3Structure} />
@@ -113,6 +120,7 @@ function App() {
 		<Route path="/verb-tense-quiz" component={VerbTenseQuizPage} />
 		<Route path="/article-quiz" component={ArticleQuizPage} />
 		<Route path="/preposition-quiz" component={PrepositionQuizPage} />
+		<Route path="/conjunction-quiz" component={ConjunctionQuiz} />
 					</Switch>
 				</Router>
 			</AuthProvider>
