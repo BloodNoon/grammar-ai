@@ -115,7 +115,6 @@ const MainNav = () => {
             <MenuItem as={ReactRouterLink} to="/adverb-forms">Adverb Forms</MenuItem>
             <MenuItem as={ReactRouterLink} to="/adverb-royal-order">Adverb Royal Order</MenuItem>
             <MenuItem as={ReactRouterLink} to="/adverb-sentence-structures">Adverb Sentence Structure</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/adverb-sorting-game">Adverb Sorting Game</MenuItem>
             <MenuItem as={ReactRouterLink} to="/adverb-identification-game">Adverb Identification Game</MenuItem>
             <MenuItem as={ReactRouterLink} to="/adverb-quiz">Adverb Quiz</MenuItem>
           </MenuList>
