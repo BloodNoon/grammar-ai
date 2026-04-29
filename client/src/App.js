@@ -37,7 +37,19 @@ import VerbWordBank from './pages/VerbTenseComponents/VerbWordBank';
 import ConjunctionStructure from './pages/conjunctionStructure';
 import ConjunctionQuiz from './pages/ConjunctionQuiz';
 import PracticeMenu from './pages/PracticeMenu';
-
+import ArticleGrammarLegend from './pages/ArticleStructureComponents/ArticleGrammarLegend';
+import ArticleSentenceBuilder from './pages/ArticleStructureComponents/ArticleSentenceBuilder';
+import ArticleLevelSelection from './pages/ArticleStructureComponents/ArticleLevelSelection';
+import ArticleWordBank from './pages/ArticleStructureComponents/ArticleWordbank';
+import AdjectiveRoyalOrder from './utils/SentenceChecker/AdjectiveRoyalOrder';
+import AdjectiveSentenceStructures from './utils/SentenceChecker/AdjectiveSentenceStructures';
+import AdjectiveFillBlanks from './utils/SentenceChecker/AdjectiveFillBlanks';
+import AdverbTypes from './utils/SentenceChecker/AdverbTypes';
+import AdverbTypeSorting from './utils/SentenceChecker/AdverbTypeSorting';
+import AdverbForms from './utils/SentenceChecker/AdverbForms';
+import AdverbRoyalOrder from './utils/SentenceChecker/AdverbRoyalOrder';
+import AdverbSentenceStructures from './utils/SentenceChecker/AdverbSentenceStructures';
+import AdverbIdentificationGame from './utils/SentenceChecker/AdverbIdentificationGame';
 import MainNav from './components/MainNav';
 
 function ConditionalMainNav() {
@@ -69,7 +81,20 @@ function ConditionalMainNav() {
 		'/verb-grammar-legend',
 		'/verb-sentence-builder',
 		'/verb-level-selection',
-		'/verb-wordbank'
+		'/verb-wordbank',
+		'/article-grammar-legend',
+		'/article-sentence-builder',
+		'/article-level-selection',
+		'/article-wordbank',
+		'/adjective-royal-order',
+		'/adjective-sentence-structures',
+		'/adjective-fill-blanks',
+		'/adverb-types',
+		'/adverb-forms',
+		'/adverb-royal-order',
+		'/adverb-sentence-structures',
+		'/adverb-identification-game',
+		'/adverb-type-sorting'
 	];
 
 	
@@ -101,9 +126,22 @@ function App() {
 						<Route path="/verb-level-selection" component={VerbLevelSelection} />
 						<Route path="/verb-wordbank" component={VerbWordBank} />
 						<Route path="/article-structure" component={ArticleStructure} />
+						<Route path="/article-grammar-legend" component={ArticleGrammarLegend} />
+						<Route path="/article-sentence-builder" component={ArticleSentenceBuilder} />
+						<Route path="/article-level-selection" component={ArticleLevelSelection} />
+						<Route path="/article-wordbank" component={ArticleWordBank} />
 						<Route path="/prompts" component={PromptList} />
 						<Route path="/adjective-structure" component={AdjectiveStructure} />
+						<Route path="/adjective-royal-order" component={AdjectiveRoyalOrder} />
+						<Route path="/adjective-sentence-structures" component={AdjectiveSentenceStructures} />
+						<Route path="/adjective-fill-blanks" component={AdjectiveFillBlanks} />
 						<Route path="/adverb-structure" component={AdverbStructure} />
+						<Route path="/adverb-types" component={AdverbTypes} />
+						<Route path="/adverb-forms" component={AdverbForms} />
+						<Route path="/adverb-royal-order" component={AdverbRoyalOrder} />
+						<Route path="/adverb-sentence-structures" component={AdverbSentenceStructures} />
+						<Route path="/adverb-identification-game" component={AdverbIdentificationGame} />
+						<Route path="/adverb-type-sorting" component={AdverbTypeSorting} />
 						<Route path="/conjunction-structure" component={ConjunctionStructure} />
 						<Route path="/prep1-structure" component={Prep1Structure} />
 						<Route path="/prep2-structure" component={Prep2Structure} />
