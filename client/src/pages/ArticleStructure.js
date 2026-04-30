@@ -617,7 +617,7 @@ const ArticleStructure = () => {
                   controls
                   style={{
                     width: '100%',
-                    height: 'auto',
+                    height: '480px',
                     display: 'block'
                   }}
                   poster="/api/placeholder/400/225"
