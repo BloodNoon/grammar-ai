@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import PrepositionSorter from '../../utils/SentenceChecker/PrepositionSorter';
 import PrepositionStructureGame from '../../utils/SentenceChecker/PrepositionStructureGame';
 import PrepositionQuiz from '../../utils/SentenceChecker/PrepositionQuiz';
-// import PrepositionFillBlanks from '../../utils/SentenceChecker/PrepositionFillBlanks';
+import PrepositionFillBlanks from '../../utils/SentenceChecker/PrepositionFillBlanks';
 
 const Prep1Structure = () => {
   const [showCongrats, setShowCongrats] = useState(true);
@@ -265,7 +265,7 @@ const Prep1Structure = () => {
                
                 <p style={{fontSize: '18px', fontWeight: 'bold', color: '#333'}}>The boy is sitting ______ a chair.</p>
                 <p style={{fontSize: '14px', color: '#666', marginTop: '10px', fontStyle: 'italic'}}>
-                  (Fill-in-the-blank component will mount here)
+                  <PrepositionFillBlanks />
                 </p>
               </div>
               
@@ -280,12 +280,7 @@ const Prep1Structure = () => {
           </div>
         </div>
 
-        <div style={styles.grammarReference}>
-          <h2 style={{fontSize: '2rem', textAlign: 'center', marginBottom: '20px', color: '#333'}}>
-            🏆 Final Preposition Quiz
-          </h2>
-          <PrepositionQuiz />
-        </div>
+   
 
       </div>
     </div>

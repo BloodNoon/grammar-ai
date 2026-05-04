@@ -1,5 +1,12 @@
 import React from 'react';
-import { Box, Heading, Text, Grid, GridItem, Flex, VStack, SimpleGrid, Badge, Divider } from '@chakra-ui/react';
+import { Box, Heading, Text, Grid, GridItem, Flex, VStack, SimpleGrid, Badge } from '@chakra-ui/react';
+
+// Import our Interactive Components!
+import NounPronounSorter from '../utils/SentenceChecker/NounPronounSorter';
+import PronounReplacement from '../utils/SentenceChecker/PronounReplacement';
+import NounSentenceBuilder from '../utils/SentenceChecker/NounSentenceBuilder';
+import NounTypingGame from '../utils/SentenceChecker/NounTypingGame';
+
 
 const nounTypes = [
   { name: "Common", desc: "Everyday, generic names. No capital letters.", examples: "city, dog, car" },
@@ -11,117 +18,127 @@ const nounTypes = [
   { name: "Uncountable", desc: "Things you cannot easily count.", examples: "sand, knowledge, water" }
 ];
 
-const NounLessonDashboard = () => {
+const pronounTypes = [
+  { name: "Personal", desc: "Replaces specific people or things.", examples: "he, she, it, they, we" },
+  { name: "Possessive", desc: "Shows ownership of a noun.", examples: "mine, yours, his, theirs" },
+  { name: "Reflexive", desc: "Reflects back to the subject.", examples: "myself, herself, themselves" },
+  { name: "Demonstrative", desc: "Points to specific things.", examples: "this, that, these, those" },
+  { name: "Indefinite", desc: "Refers to non-specific people/things.", examples: "someone, anything, nobody" }
+];
+
+const NounsPage = () => {
   return (
-    <Box bg="#F6D5B4" minH="100vh" p={6} fontFamily="'Inter', sans-serif">
+    <Box bg="#F6D5B4" minH="100vh" p={{ base: 4, md: 8 }} fontFamily="'Inter', sans-serif">
       
-  
+      {/* Page Header */}
+      <Box maxW="1400px" mx="auto" mb={8} bg="#F0B784" p={4} borderRadius="xl" borderWidth="2px" borderColor="whiteAlpha.600" textAlign="center">
+        <Heading color="#4A2C11" size="xl">
+          🐸 Nouns & Pronouns Builder
+        </Heading>
+      </Box>
 
-      <Heading textAlign="center" color="#4A2C11" size="xl" mb={8}>
-        Noun Types & Categorization Builder
-      </Heading>
-
-      {/* The Master 2-Column Dashboard Layout */}
-      <Grid templateColumns={{ base: "1fr", xl: "400px 1fr" }} gap={6} maxW="1400px" mx="auto">
+      {/* Main 2-Column Grid */}
+      <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8} maxW="1400px" mx="auto">
         
-        {/* ========================================== */}
-        {/* LEFT COLUMN: The "Cheat Sheet" Sidebar */}
-        {/* ========================================== */}
-        <GridItem>
-          <Box bg="#FFF4CC" p={6} borderRadius="lg" borderWidth="2px" borderColor="#1A1A1A" boxShadow="4px 4px 0px rgba(0,0,0,0.1)">
-            <Heading size="md" color="#1A1A1A" mb={4}>Understanding Nouns</Heading>
-            <Text fontSize="sm" color="gray.800" mb={6}>
-              Nouns are the building blocks of sentences. They name people, places, things, or ideas. 
-              Use this quick-reference table to understand how they are categorized.
+      
+        <VStack spacing={6} align="stretch">
+          
+          {/* Nouns Lesson Box */}
+          <Box bg="white" p={8} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)">
+            <Heading size="lg" color="#1A0933" mb={4}>1. Types of Nouns</Heading>
+            <Text fontSize="md" color="gray.600" mb={6}>
+              A <strong>noun</strong> is a person, place, thing, or idea. They are the building blocks of every sentence you write!
             </Text>
-
-            {/* Compact Reference Table */}
-            <Box borderWidth="2px" borderColor="#1A1A1A" borderRadius="md" bg="white" overflow="hidden" mb={8}>
-              <Flex bg="#F0E6B4" borderBottomWidth="2px" borderColor="#1A1A1A" p={2}>
-                <Text fontWeight="bold" flex="1" fontSize="sm">Noun Type</Text>
-                <Text fontWeight="bold" flex="2" fontSize="sm">Quick Definition</Text>
-              </Flex>
+            
+            <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={4}>
               {nounTypes.map((noun, idx) => (
-                <Flex key={idx} borderBottomWidth={idx === nounTypes.length - 1 ? "0px" : "1px"} borderColor="gray.300" p={2} bg={idx % 2 === 0 ? "white" : "gray.50"}>
-                  <Text fontWeight="bold" flex="1" fontSize="xs">{noun.name}</Text>
-                  <Text flex="2" fontSize="xs">{noun.desc}</Text>
+                <Flex key={idx} bg="gray.50" p={4} borderRadius="xl" borderWidth="1px" borderColor="gray.200" direction="column">
+                  <Badge colorScheme="orange" w="fit-content" mb={2} px={2} py={1} borderRadius="md">{noun.name} Nouns</Badge>
+                  <Text fontSize="sm" color="gray.700" mb={3} flex="1">{noun.desc}</Text>
+                  <Box bg="white" p={2} borderRadius="md" borderWidth="1px" borderColor="gray.200">
+                    <Text fontSize="xs" fontWeight="bold" color="gray.500">EXAMPLES:</Text>
+                    <Text fontSize="sm" fontWeight="bold" color="#4A2C11">{noun.examples}</Text>
+                  </Box>
                 </Flex>
               ))}
-            </Box>
-
-            {/* Mini Practice Mockup (Matches the bottom of the yellow box in screenshot) */}
-            <Box>
-              <Text fontWeight="bold" fontSize="sm" mb={2}>Learn your new sentence structures:</Text>
-              <Text fontSize="xs" mb={4}><b>Subject Noun + Verb + Object Noun</b><br/>Try to include adjectives if the sentence requires one.</Text>
-              
-              <Box bg="white" p={4} borderRadius="md" borderWidth="1px" borderColor="gray.300" mb={4}>
-                <Text fontSize="sm" fontWeight="bold" mb={2}>Question 1: Choose the correct proper noun</Text>
-                <VStack align="stretch" spacing={2}>
-                  {['A. The big city', 'B. New York City', 'C. that tall building', 'D. a crowded street'].map((opt, i) => (
-                    <Box key={i} p={2} borderWidth="1px" borderRadius="md" fontSize="xs" _hover={{ bg: "gray.100", cursor: "pointer" }}>{opt}</Box>
-                  ))}
-                </VStack>
-              </Box>
-            </Box>
+            </SimpleGrid>
           </Box>
-        </GridItem>
 
-
-        {/* ========================================== */}
-        {/* RIGHT COLUMN: Interactive & Detailed Modules */}
-        {/* ========================================== */}
-        <GridItem>
-          <VStack align="stretch" spacing={6}>
+          {/* Pronouns Lesson Box */}
+          <Box bg="white" p={8} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)">
+            <Heading size="lg" color="#1A0933" mb={4}>2. Types of Pronouns</Heading>
+            <Text fontSize="md" color="gray.600" mb={6}>
+              A <strong>pronoun</strong> takes the place of a noun. If we didn't have pronouns, we would have to say: <em>"John drove John's car to John's house."</em>
+            </Text>
             
-            {/* 1. Video Lesson Module */}
-            <Box bg="white" p={6} borderRadius="lg" borderWidth="2px" borderColor="#1A1A1A" boxShadow="4px 4px 0px rgba(0,0,0,0.1)">
-              <Heading size="sm" textAlign="center" mb={2}>📺 Today's Lesson: Nouns</Heading>
-              <Text fontSize="xs" textAlign="center" mb={4} color="gray.600">Watch this lesson to understand noun types and sentence building.</Text>
-              <Box bg="#1A1A1A" w="70%" borderRadius="md" display="flex" alignItems="center" justifyContent="center" p={4} ml={'15%'}>
-                <video controls style={{ width: '100%', maxHeight: '480px', borderRadius: '8px' }}>
-                  <source src="/lesson1.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </Box>
-            </Box>
+            <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={4}>
+              {pronounTypes.map((pro, idx) => (
+                <Flex key={idx} bg="#F3E8FF" p={4} borderRadius="xl" borderWidth="1px" borderColor="#D8B4FE" direction="column">
+                  <Badge colorScheme="purple" w="fit-content" mb={2} px={2} py={1} borderRadius="md">{pro.name}</Badge>
+                  <Text fontSize="sm" color="gray.700" mb={3} flex="1">{pro.desc}</Text>
+                  <Box bg="white" p={2} borderRadius="md" borderWidth="1px" borderColor="#D8B4FE">
+                    <Text fontSize="xs" fontWeight="bold" color="purple.500">EXAMPLES:</Text>
+                    <Text fontSize="sm" fontWeight="bold" color="#4A2C11">{pro.examples}</Text>
+                  </Box>
+                </Flex>
+              ))}
+            </SimpleGrid>
+          </Box>
 
-            {/* 2. Compact 7-Types Detailed Grid */}
-            <Box bg="white" p={6} borderRadius="lg" borderWidth="2px" borderColor="#1A1A1A" boxShadow="4px 4px 0px rgba(0,0,0,0.1)">
-              <Heading size="md" mb={4} textAlign="center" color="#1A1A1A">Detailed Noun Bank</Heading>
-              <Divider mb={6} />
-              
-              {/* This fits all 7 types compactly into a 2-column grid */}
-              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
-                {nounTypes.map((noun, index) => (
-                  <Flex key={index} bg="gray.50" p={4} borderRadius="md" borderWidth="1px" borderColor="gray.200" direction="column">
-                    <Flex justify="space-between" align="center" mb={2}>
-                      <Badge colorScheme="purple" fontSize="sm" px={2}>{noun.name} Nouns</Badge>
-                    </Flex>
-                    <Text fontSize="sm" color="gray.700" mb={3} flex="1">
-                      {noun.desc}
-                    </Text>
-                    <Box bg="white" p={2} borderRadius="sm" borderWidth="1px" borderColor="gray.100">
-                      <Text fontSize="xs" fontWeight="bold" color="gray.500">EXAMPLES:</Text>
-                      <Text fontSize="sm" fontWeight="bold">{noun.examples}</Text>
-                    </Box>
-                  </Flex>
-                ))}
-              </SimpleGrid>
-            </Box>
+             {/* THE NEW TYPING COMPONENT */}
+          <Box bg="white" p={6} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)">
+             <Heading size="md" color="#9C27B0" mb={4}>Practice 4: Spelling & Forms Typer</Heading>
+             <NounTypingGame />
+          </Box>
+        </VStack>
 
-            {/* Placeholder for the Noun Sentence Builder Game */}
-            <Box bg="white" p={6} borderRadius="lg" borderWidth="2px" borderColor="#1A1A1A" boxShadow="4px 4px 0px rgba(0,0,0,0.1)" textAlign="center">
-              <Heading size="sm" mb={4}>🏗️ Noun Sentence Builder</Heading>
-              <Box borderStyle="dashed" borderWidth="2px" borderColor="gray.300" p={10} borderRadius="md" bg="gray.50">
-                <Text color="gray.400" fontWeight="bold">Drag words here to build your sentence...</Text>
-              </Box>
+        {/* ========================================== */}
+        {/* RIGHT COLUMN: Video & Interactive Games */}
+        {/* ========================================== */}
+        <VStack spacing={6} align="stretch">
+          
+          {/* THE VIDEO PANEL */}
+          <Box bg="#f8f9fa" p={6} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)" textAlign="center">
+            <Heading size="md" color="#1A0933" mb={4}>
+              📹 Today's Lesson: Nouns & Pronouns
+            </Heading>
+            
+            <Box position="relative" w="100%" bg="black" borderRadius="lg" overflow="hidden" borderWidth="1px" borderColor="gray.300">
+              <video controls style={{ width: '100%', height: 'auto', display: 'block' }}>
+                <source src="/nouns1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </Box>
+            
+            <Text mt={3} fontSize="sm" color="gray.500" fontStyle="italic">
+              💡 Watch the lesson before practicing with the exercises below
+            </Text>
+          </Box>
 
-          </VStack>
-        </GridItem>
+          <Box bg="white" p={6} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)">
+             <Heading size="md" color="#00BCD4" mb={4}>Practice 1: Noun vs Pronoun Sorter</Heading>
+             <NounPronounSorter />
+          </Box>
+
+          <Box bg="white" p={6} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)">
+             <Heading size="md" color="#4CAF50" mb={4}>Practice 2: Pronoun Replacement</Heading>
+             <PronounReplacement />
+          </Box>
+
+          <Box bg="white" p={6} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)">
+             <Heading size="md" color="#FF5722" mb={4}>Practice 3: Sentence Builder</Heading>
+             <NounSentenceBuilder />
+          </Box>
+
+       
+
+        </VStack>
       </Grid>
+
+
+
     </Box>
   );
 };
 
-export default NounLessonDashboard;
+export default NounsPage;
