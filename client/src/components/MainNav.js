@@ -35,9 +35,10 @@ const MainNav = () => {
           </MenuButton>
           <MenuList>
             <MenuItem as={ReactRouterLink} to="/nouns">Introduction to Nouns</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/plural-noun">Plural Nouns Lesson</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/possessive-nouns">Possessive Nouns</MenuItem>
             <MenuItem as={ReactRouterLink} to="/noun-practice">Noun Practice Games</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/nounComponentTest">Component Test</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/NounQuizPageTest">Quiz Test</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/NounQuizPageTest">Noun Quiz</MenuItem>
           </MenuList>
         </Menu>
         
