@@ -52,10 +52,7 @@ const MainNav = () => {
           </MenuButton>
           <MenuList>
             <MenuItem as={ReactRouterLink} to="/verb-tense-structure">Introduction to Verbs</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/verb-grammar-legend">Verb Grammar</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/verb-sentence-builder">Verb Sentence Building</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/verb-level-selection">Verb Level Selector</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/verb-wordbank">Verb Word Game</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/verb-practice">Verb Practice Games</MenuItem>
             <MenuItem as={ReactRouterLink} to="/verb-tense-quiz">Verb Quiz</MenuItem>
           </MenuList>
         </Menu>
@@ -67,10 +64,7 @@ const MainNav = () => {
           </MenuButton>
           <MenuList>
             <MenuItem as={ReactRouterLink} to="/article-structure">Introduction to Articles</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/article-grammar-legend">Article Grammar</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/article-sentence-builder">Article Sentence Building</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/article-level-selection">Article Level Selector</MenuItem>
-            <MenuItem as={ReactRouterLink} to="/article-wordbank">Article Word Game</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/article-practice">Article Practice Games</MenuItem>
             <MenuItem as={ReactRouterLink} to="/article-quiz">Article Quiz</MenuItem>
           </MenuList>
         </Menu>
@@ -85,6 +79,7 @@ const MainNav = () => {
             <MenuItem as={ReactRouterLink} to="/prep1-structure">Preposition Lesson</MenuItem>
             <MenuItem as={ReactRouterLink} to="/prep2-structure">Prepositional Phrases</MenuItem>
             <MenuItem as={ReactRouterLink} to="/prep3-structure">Compound Prepositions</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/preposition-practice">Preposition Practice Games</MenuItem>
             <MenuItem as={ReactRouterLink} to="/preposition-quiz">Preposition Quiz</MenuItem>
           </MenuList>
         </Menu>

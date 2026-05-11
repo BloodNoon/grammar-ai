@@ -22,10 +22,10 @@ import {
 import Carousel from './nounComponents/carousel';
 import WordPile from './nounComponents/wordPile';
 import SentenceArranger from './nounComponents/sentenceArranger';
-import SortingGame from './nounComponents/sortingComponent';
+import SortingGame from '../components/sortingComponent';
 import nounData from '../data/nouns_questions.json';
-import TypingGameWrapper from './nounComponents/typingGameWrapper';
-import MultipleChoiceWrapper from './nounComponents/multipleChoiceWrapper';
+import TypingGameWrapper from '../components/typingGameWrapper';
+import MultipleChoiceWrapper from '../components/multipleChoiceWrapper';
 
 // Content box template
 function ContentBox({ title, info, children }) {

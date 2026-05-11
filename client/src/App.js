@@ -23,10 +23,13 @@ import PropComNouns from './pages/PropComNoun';
 import AbPlurNoun from './pages/AbPlurNoun';
 import PluralNoun from './pages/pluralNoun';
 import PossessiveNouns from './pages/PossessiveNouns';
-import NounSortingGame from './pages/nounComponents/SortingGameWrapper';
+import NounSortingGame from './components/SortingGameWrapper';
 import NounComponentTest from './pages/nounComponentTest';
 import NounQuizPageTest from './pages/nounQuizpageTest';
 import NounPractice from './pages/nounPractice';
+import VerbPractice from './pages/verbPractice';
+import ArticlePractice from './pages/articlePractice';
+import PrepositionPractice from './pages/prepositionPractice';
 import AdjectiveQuizPage from './pages/adjquiz';
 import AdverbQuizPage from './pages/adverbQuiz';
 import VerbTenseQuizPage from './pages/verbTenseQuiz';
@@ -76,6 +79,9 @@ function ConditionalMainNav() {
 		'/NounComponentTest',
 		'/NounQuizPageTest',
 		'/noun-practice',
+		'/verb-practice',
+		'/article-practice',
+		'/preposition-practice',
 		'/adj-quiz',
 		'/adverb-quiz',
 		'/verb-tense-quiz',
@@ -159,6 +165,9 @@ function App() {
 						<Route path="/NounComponentTest" component={NounComponentTest} />
 						<Route path="/NounQuizPageTest" component={NounQuizPageTest} />
 						<Route path="/noun-practice" component={NounPractice} />
+						<Route path="/verb-practice" component={VerbPractice} />
+						<Route path="/article-practice" component={ArticlePractice} />
+						<Route path="/preposition-practice" component={PrepositionPractice} />
 			<Route path="/adj-quiz" component={AdjectiveQuizPage} />
 		<Route path="/adverb-quiz" component={AdverbQuizPage} />
 		<Route path="/verb-tense-quiz" component={VerbTenseQuizPage} />

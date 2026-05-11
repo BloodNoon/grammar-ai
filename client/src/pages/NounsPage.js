@@ -105,7 +105,7 @@ const NounsPage = () => {
             
             <Box position="relative" w="100%" bg="black" borderRadius="lg" overflow="hidden" borderWidth="1px" borderColor="gray.300">
               <video controls style={{ width: '100%', height: 'auto', display: 'block' }}>
-                <source src="/nouns1.mp4" type="video/mp4" />
+                <source src="/Lesson1.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </Box>

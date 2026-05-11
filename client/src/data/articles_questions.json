@@ -1,172 +1,1266 @@
 [
-    {
-    "id": "ATQ001",
-    "question_text": "I saw ___ elephant at the zoo.",
-    "options": null,
-    "answer_count": "Single",
-    "answer": ["an"],
-    "hint": "The word 'elephant' starts with a vowel sound",
-    "explanation": "Use 'an' before words that start with vowel sounds.",
-    "subject": "Articles",
-    "difficulty": null,
-    "topic": "A vs. An",
-    "lesson": null,
-    "exercise": null,
-    "skill": null,
-    "source": "ArticleTypingQuiz.js",
-    "version": 1
-  },
   {
-    "id": "ATQ002",
-    "question_text": "She bought ___ new car yesterday.",
-    "options": null,
-    "answer_count": "Single",
+    "id": 1,
+    "noun_type": "Indefinite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct article: 'I need to buy ___ new 5-bay docking station.'",
+    "options": ["a", "an", "the", "(no article)"],
     "answer": ["a"],
-    "hint": "The word 'new' starts with a consonant sound",
-    "explanation": "Use 'a' before words that start with consonant sounds.",
-    "subject": "Articles",
-    "difficulty": null,
-    "topic": "A vs. An",
-    "lesson": null,
-    "exercise": null,
-    "skill": null,
-    "source": "ArticleTypingQuiz.js",
-    "version": 1
+    "explanation": "Use 'a' before words starting with a consonant sound like 'new'."
   },
   {
-    "id": "ATQ003",
-    "question_text": "Please close ___ door behind you.",
-    "options": null,
-    "answer_count": "Single",
-    "answer": ["the"],
-    "hint": "We're talking about a specific door",
-    "explanation": "Use 'the' for specific things that both speaker and listener know about.",
-    "subject": "Articles",
-    "difficulty": null,
-    "topic": "Using The",
-    "lesson": null,
-    "exercise": null,
-    "skill": null,
-    "source": "ArticleTypingQuiz.js",
-    "version": 1
+    "id": 2,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'It takes ___ hour to commute to City Tech.'",
+    "answer": "an",
+    "hint": "Focus on the sound of the next word, not just the letter!"
   },
   {
-    "id": "ATQ004",
-    "question_text": "I need ___ umbrella because it's raining.",
-    "options": null,
-    "answer_count": "Single",
+    "id": 3,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "the",
+    "category": "Specific",
+    "explanation": "'The' is used for a specific item both the speaker and listener know about."
+  },
+  {
+    "id": 4,
+    "noun_type": "Zero Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Which sentence is correct?",
+    "options": ["I like the coding.", "I like a coding.", "I like coding.", "I like an coding."],
+    "answer": ["I like coding."],
+    "explanation": "General activities like 'coding' usually don't require an article."
+  },
+  {
+    "id": 5,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'I want to be ___ software engineer.'",
+    "answer": "a",
+    "hint": "Use 'a' because 'software' starts with a consonant sound."
+  },
+  {
+    "id": 6,
+    "noun_type": "Indefinite Article",
+    "practice_type": "sorting",
+    "word": "an",
+    "category": "Vowel Sound",
+    "explanation": "Use 'an' before words that begin with a vowel sound like 'apple' or 'intern'."
+  },
+  {
+    "id": 7,
+    "noun_type": "Definite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Choose the correct article: '___ bass guitar in the corner is mine.'",
+    "options": ["A", "An", "The", "(no article)"],
+    "answer": ["The"],
+    "explanation": "We use 'the' because we are talking about a specific bass guitar."
+  },
+  {
+    "id": 8,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'He is ___ honest person.'",
+    "answer": "an",
+    "hint": "The 'h' is silent, so focus on the vowel sound 'o'."
+  },
+  {
+    "id": 9,
+    "noun_type": "Zero Article",
+    "practice_type": "sorting",
+    "word": "Brooklyn",
+    "category": "(no article)",
+    "explanation": "Most names of cities and boroughs like Brooklyn do not use 'the'."
+  },
+  {
+    "id": 10,
+    "noun_type": "Indefinite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct article: 'I have ___ amazing idea for the React app.'",
+    "options": ["a", "an", "the", "(no article)"],
     "answer": ["an"],
-    "hint": "The word 'umbrella' starts with a vowel sound",
-    "explanation": "Use 'an' before words that start with vowel sounds.",
-    "subject": "Articles",
-    "difficulty": null,
-    "topic": "A vs. An",
-    "lesson": null,
-    "exercise": null,
-    "skill": null,
-    "source": "ArticleTypingQuiz.js",
-    "version": 1
+    "explanation": "Use 'an' because 'amazing' starts with a vowel sound."
+  },
+  
+  {
+    "id": 11,
+    "noun_type": "Indefinite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Choose the correct article: 'I have ___ uncle who lives in Brooklyn.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["an"],
+    "explanation": "Use 'an' because 'uncle' starts with a vowel sound."
   },
   {
-    "id": "ATQ005",
-    "question_text": "He found ___ book on the table.",
-    "options": null,
-    "answer_count": "Single",
+    "id": 12,
+    "noun_type": "Definite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'Please pass me ___ cinnamon rolls we baked today.'",
+    "answer": "the",
+    "hint": "We are talking about specific rolls, not just any rolls."
+  },
+  {
+    "id": 13,
+    "noun_type": "Zero Article",
+    "practice_type": "sorting",
+    "word": "math",
+    "category": "(no article)",
+    "explanation": "Academic subjects like math or calculus usually do not take an article."
+  },
+  {
+    "id": 14,
+    "noun_type": "Indefinite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct article: 'That is ___ unique PC setup!'",
+    "options": ["a", "an", "the", "(no article)"],
     "answer": ["a"],
-    "hint": "The word 'book' starts with a consonant sound",
-    "explanation": "Use 'a' before words that start with consonant sounds.",
-    "subject": "Articles",
-    "difficulty": null,
-    "topic": "A vs. An",
-    "lesson": null,
-    "exercise": null,
-    "skill": null,
-    "source": "ArticleTypingQuiz.js",
-    "version": 1
+    "explanation": "Even though 'unique' starts with 'u', it sounds like a 'y' (consonant sound), so we use 'a'."
   },
   {
-    "id": "ATQ006",
-    "question_text": "___ sun is shining brightly today.",
-    "options": null,
-    "answer_count": "Single",
-    "answer": ["the"],
-    "hint": "There's only one sun, making it specific",
-    "explanation": "Use 'the' for unique things that everyone knows about.",
-    "subject": "Articles",
-    "difficulty": null,
-    "topic": "A vs. An",
-    "lesson": null,
-    "exercise": null,
-    "skill": null,
-    "source": "ArticleTypingQuiz.js",
-    "version": 1
+    "id": 15,
+    "noun_type": "Definite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'I am going to ___ American Dream Mall.'",
+    "answer": "the",
+    "hint": "Specific well-known places often use 'the'."
   },
   {
-    "id": "ATQ007",
-    "question_text": "She ate ___ apple for lunch.",
-    "options": null,
-    "answer_count": "Single",
+    "id": 16,
+    "noun_type": "Indefinite Article",
+    "practice_type": "sorting",
+    "word": "internship",
+    "category": "an",
+    "explanation": "Starts with a vowel sound 'i', so it takes 'an'."
+  },
+  {
+    "id": 17,
+    "noun_type": "Zero Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Which is correct? 'I enjoy ___.'",
+    "options": ["the baking", "a baking", "baking", "an baking"],
+    "answer": ["baking"],
+    "explanation": "Gerunds used as subjects or objects generally don't need articles."
+  },
+  {
+    "id": 18,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'I need ___ new bass guitar string.'",
+    "answer": "a",
+    "hint": "'New' starts with a consonant sound."
+  },
+  {
+    "id": 19,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "sun",
+    "category": "the",
+    "explanation": "We use 'the' for things that are one-of-a-kind, like the sun or the moon."
+  },
+  {
+    "id": 20,
+    "noun_type": "Indefinite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct article: 'He wants to find ___ entry-level job.'",
+    "options": ["a", "an", "the", "(no article)"],
     "answer": ["an"],
-    "hint": "The word 'apple' starts with a vowel sound",
-    "explanation": "Use 'an' before words that start with vowel sounds.",
-    "subject": "Articles",
-    "difficulty": null,
-    "topic": "A vs. An",
-    "lesson": null,
-    "exercise": null,
-    "skill": null,
-    "source": "ArticleTypingQuiz.js",
-    "version": 1
+    "explanation": "Use 'an' because 'entry' starts with a vowel sound."
+  },
+  
+  {
+    "id": 21,
+    "noun_type": "Definite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct article: 'We took a walk along ___ East River.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["the"],
+    "explanation": "Names of rivers, like the East River or the Hudson, always take 'the'."
   },
   {
-    "id": "ATQ008",
-    "question_text": "I saw ___ movie last night.",
-    "options": null,
-    "answer_count": "Single",
+    "id": 22,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article or leave blank: 'I usually eat ___ dinner with my mother, Theresa.'",
+    "answer": "",
+    "hint": "Meals (breakfast, lunch, dinner) generally don't need an article."
+  },
+  {
+    "id": 23,
+    "noun_type": "Indefinite Article",
+    "practice_type": "sorting",
+    "word": "utility",
+    "category": "a",
+    "explanation": "Even though 'utility' starts with 'u', it has a consonant 'y' sound, so we use 'a'."
+  },
+  {
+    "id": 24,
+    "noun_type": "Definite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Choose the correct article: '___ weather in New York is finally getting warmer.'",
+    "options": ["A", "An", "The", "(no article)"],
+    "answer": ["The"],
+    "explanation": "We use 'the' for specific shared environments like 'the weather' or 'the sky'."
+  },
+  {
+    "id": 25,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article or leave blank: 'She is currently studying ___ Calculus 1.'",
+    "answer": "",
+    "hint": "Specific course names or subjects don't take articles."
+  },
+  {
+    "id": 26,
+    "noun_type": "Indefinite Article",
+    "practice_type": "sorting",
+    "word": "application",
+    "category": "an",
+    "explanation": "Starts with a vowel sound, so it takes 'an'."
+  },
+  {
+    "id": 27,
+    "noun_type": "Definite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Which is correct? 'I am waiting for ___ B62 bus.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["the"],
+    "explanation": "Specific public transit routes or buses use 'the'."
+  },
+  {
+    "id": 28,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'I need to find ___ adapter for my 5-bay dock.'",
+    "answer": "an",
+    "hint": "'Adapter' starts with a vowel sound."
+  },
+  {
+    "id": 29,
+    "noun_type": "Zero Article",
+    "practice_type": "sorting",
+    "word": "Manhattan",
+    "category": "(no article)",
+    "explanation": "Names of islands and city boroughs usually do not take 'the'."
+  },
+  {
+    "id": 30,
+    "noun_type": "Indefinite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct article: 'It was ___ honor to attend Anime NYC.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["an"],
+    "explanation": "The 'h' in 'honor' is silent, so we use 'an' for the vowel sound."
+  },
+  
+  {
+    "id": 31,
+    "noun_type": "Definite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct article: 'I'll meet you at ___ Barclays Center for the event.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["the"],
+    "explanation": "Names of specific venues or landmarks like 'the Barclays Center' almost always take 'the'."
+  },
+  {
+    "id": 32,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': 'I use ___ Docker to manage my home server.'",
+    "answer": "none",
+    "hint": "Software programs and platforms like Docker or Windows usually don't need an article."
+  },
+  {
+    "id": 33,
+    "noun_type": "Indefinite Article",
+    "practice_type": "sorting",
+    "word": "urgent",
+    "category": "an",
+    "explanation": "'Urgent' starts with a vowel sound, so it takes 'an'."
+  },
+  {
+    "id": 34,
+    "noun_type": "Definite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Choose the correct article: 'Please check ___ fridge for the spelt flour.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["the"],
+    "explanation": "We use 'the' for specific household items that the speaker and listener both know."
+  },
+  {
+    "id": 35,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': 'He is very interested in ___ technology.'",
+    "answer": "none",
+    "hint": "Abstract concepts or general fields of study usually don't take an article."
+  },
+  {
+    "id": 36,
+    "noun_type": "Indefinite Article",
+    "practice_type": "sorting",
+    "word": "hexagonal",
+    "category": "a",
+    "explanation": "Starts with a consonant sound 'h', so it takes 'a'."
+  },
+  {
+    "id": 37,
+    "noun_type": "Definite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Which is correct? 'I need to update ___ UI for the grammar app.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["the"],
+    "explanation": "We use 'the' because we are talking about a specific User Interface (UI)."
+  },
+  {
+    "id": 38,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'It is ___ honor to meet the professor.'",
+    "answer": "an",
+    "hint": "The 'h' in 'honor' is silent, so focus on the vowel sound."
+  },
+  {
+    "id": 39,
+    "noun_type": "Zero Article",
+    "practice_type": "sorting",
+    "word": "Japan",
+    "category": "(no article)",
+    "explanation": "Most names of countries (except those with words like 'Kingdom' or 'Republic') do not take 'the'."
+  },
+  {
+    "id": 40,
+    "noun_type": "Indefinite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct article: 'I need to find ___ use for this old motherboard.'",
+    "options": ["a", "an", "the", "(no article)"],
     "answer": ["a"],
-    "hint": "The word 'movie' starts with a consonant sound",
-    "explanation": "Use 'a' before words that start with consonant sounds.",
-    "subject": "Articles",
-    "difficulty": null,
-    "topic": "A vs. An",
-    "lesson": null,
-    "exercise": null,
-    "skill": null,
-    "source": "ArticleTypingQuiz.js",
-    "version": 1
+    "explanation": "Even though 'use' starts with 'u', it sounds like a consonant 'y', so it takes 'a'."
+  },
+  
+  {
+    "id": 41,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'There is ___ open window in the hallway.'",
+    "answer": "an",
+    "hint": "'Open' starts with a vowel sound."
   },
   {
-    "id": "ATQ009",
-    "question_text": "Can you pass me ___ salt, please?",
-    "options": null,
-    "answer_count": "Single",
-    "answer": ["the"],
-    "hint": "We're talking about specific salt on the table",
-    "explanation": "We're talking about specific salt on the table",
-    "subject": "Articles",
-    "difficulty": null,
-    "topic": "Using The",
-    "lesson": null,
-    "exercise": null,
-    "skill": null,
-    "source": "ArticleTypingQuiz.js",
-    "version": 1
+    "id": 42,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "The North Star",
+    "category": "the",
+    "explanation": "Specific names of stars and celestial bodies often take the definite article 'the'."
   },
   {
-    "id": "ATQ010",
-    "question_text": "We heard ___ interesting story today.",
-    "options": null,
-    "answer_count": "Single",
+    "id": 43,
+    "noun_type": "Zero Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Which is correct? 'They are eating ___.'",
+    "options": ["the bread", "a bread", "bread", "an bread"],
+    "answer": ["bread"],
+    "explanation": "Uncountable nouns used in a general sense do not require an article."
+  },
+  {
+    "id": 44,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article: 'It is ___ heavy box.'",
+    "answer": "a",
+    "hint": "'Heavy' starts with a consonant 'h' sound."
+  },
+  {
+    "id": 45,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "sky",
+    "category": "the",
+    "explanation": "We use 'the' for unique environmental elements like the sky or the ground."
+  },
+  {
+    "id": 46,
+    "noun_type": "Zero Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct sentence: 'I am drinking ___.'",
+    "options": ["the water", "a water", "water", "an water"],
+    "answer": ["water"],
+    "explanation": "General mass nouns (liquids) usually do not take an article."
+  },
+  {
+    "id": 47,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article: 'It was ___ unusual day.'",
+    "answer": "an",
+    "hint": "'Unusual' starts with a vowel sound."
+  },
+  {
+    "id": 48,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "Pacific Ocean",
+    "category": "the",
+    "explanation": "Names of oceans always take the definite article 'the'."
+  },
+  {
+    "id": 49,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': 'We are traveling to ___ Italy.'",
+    "answer": "none",
+    "hint": "Most country names do not take articles."
+  },
+  {
+    "id": 50,
+    "noun_type": "Indefinite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct article: 'She has ___ useful tool.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["a"],
+    "explanation": "Despite starting with 'u', 'useful' has a consonant 'y' sound, so we use 'a'."
+  },
+  
+  {
+    "id": 51,
+    "noun_type": "Indefinite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Choose the correct article: 'There is ___ huge tree in the backyard.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["a"],
+    "explanation": "'Huge' starts with a consonant 'h' sound, so we use 'a'."
+  },
+  {
+    "id": 52,
+    "noun_type": "Definite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'Please turn off ___ lights before you leave.'",
+    "answer": "the",
+    "hint": "Refers to specific lights in the room."
+  },
+  {
+    "id": 53,
+    "noun_type": "Zero Article",
+    "practice_type": "sorting",
+    "word": "happiness",
+    "category": "(no article)",
+    "explanation": "Abstract nouns like 'happiness' or 'love' generally do not take an article when used in a general sense."
+  },
+  {
+    "id": 54,
+    "noun_type": "Indefinite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct article: 'The bird sat on ___ old wooden fence.'",
+    "options": ["a", "an", "the", "(no article)"],
     "answer": ["an"],
-    "hint": "The word 'interesting' starts with a vowel sound",
-    "explanation": "Use 'an' before words that start with vowel sounds.",
-    "subject": "Articles",
-    "difficulty": null,
-    "topic": "A vs. An",
-    "lesson": null,
-    "exercise": null,
-    "skill": null,
-    "source": "ArticleTypingQuiz.js",
-    "version": 1
+    "explanation": "'Old' starts with a vowel sound, so it takes 'an'."
+  },
+  {
+    "id": 55,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "ground",
+    "category": "the",
+    "explanation": "We use 'the' for unique environmental elements like the ground, the sky, or the floor."
+  },
+  {
+    "id": 56,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'I saw ___ uniform hanging in the closet.'",
+    "answer": "a",
+    "hint": "The word starts with a 'y' consonant sound."
+  },
+  {
+    "id": 57,
+    "noun_type": "Zero Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Which is correct? 'They traveled to ___.'",
+    "options": ["the France", "a France", "France", "an France"],
+    "answer": ["France"],
+    "explanation": "Most country names do not use an article."
+  },
+  {
+    "id": 58,
+    "noun_type": "Definite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: '___ moon looks very bright tonight.'",
+    "answer": "the",
+    "hint": "There is only one moon in our sky."
+  },
+  {
+    "id": 59,
+    "noun_type": "Indefinite Article",
+    "practice_type": "sorting",
+    "word": "island",
+    "category": "an",
+    "explanation": "'Island' starts with a vowel sound, so it takes 'an'."
+  },
+  {
+    "id": 60,
+    "noun_type": "Zero Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct sentence: 'She studies ___.'",
+    "options": ["the history", "a history", "history", "an history"],
+    "answer": ["history"],
+    "explanation": "Academic subjects usually do not take an article."
+  },
+  
+  {
+    "id": 61,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'He carried ___ umbrella to stay dry.'",
+    "answer": "an",
+    "hint": "'Umbrella' starts with a vowel sound."
+  },
+  {
+    "id": 62,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "Atlantic",
+    "category": "the",
+    "explanation": "Names of oceans like 'the Atlantic' always take the definite article."
+  },
+  {
+    "id": 63,
+    "noun_type": "Zero Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Which is correct? 'I enjoy listening to ___.'",
+    "options": ["the music", "a music", "music", "an music"],
+    "answer": ["music"],
+    "explanation": "Abstract nouns or general categories of things usually do not need an article."
+  },
+  {
+    "id": 64,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'She saw ___ yellow butterfly.'",
+    "answer": "a",
+    "hint": "'Yellow' starts with a consonant sound."
+  },
+  {
+    "id": 65,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "ceiling",
+    "category": "the",
+    "explanation": "We use 'the' for specific parts of a room that are unique in that context."
+  },
+  {
+    "id": 66,
+    "noun_type": "Indefinite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct article: 'It was ___ once-in-a-lifetime opportunity.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["a"],
+    "explanation": "The word 'once' starts with a 'w' consonant sound, so we use 'a'."
+  },
+  {
+    "id": 67,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': 'They are traveling across ___ Europe.'",
+    "answer": "none",
+    "hint": "Names of continents do not take articles."
+  },
+  {
+    "id": 68,
+    "noun_type": "Indefinite Article",
+    "practice_type": "sorting",
+    "word": "honest",
+    "category": "an",
+    "explanation": "The 'h' is silent, so 'honest' begins with a vowel sound."
+  },
+  {
+    "id": 69,
+    "noun_type": "Definite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Choose the correct article: 'Please pass ___ salt.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["the"],
+    "explanation": "We use 'the' for specific items on a table that both people can see."
+  },
+  {
+    "id": 70,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': '___ gold is a precious metal.'",
+    "answer": "none",
+    "hint": "Generic substances or materials usually do not take an article."
+  },
+  
+  {
+    "id": 71,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'She has ___ unusual hobby.'",
+    "answer": "an",
+    "hint": "'Unusual' starts with a vowel sound."
+  },
+  {
+    "id": 72,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "stars",
+    "category": "the",
+    "explanation": "We use 'the' for celestial bodies that are unique or part of a specific group."
+  },
+  {
+    "id": 73,
+    "noun_type": "Zero Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Which is correct? 'He is allergic to ___.'",
+    "options": ["the dust", "a dust", "dust", "an dust"],
+    "answer": ["dust"],
+    "explanation": "General mass nouns (uncountable) do not require an article."
+  },
+  {
+    "id": 74,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'It was ___ historical moment.'",
+    "answer": "a",
+    "hint": "'Historical' starts with a voiced consonant 'h' sound."
+  },
+  {
+    "id": 75,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "floor",
+    "category": "the",
+    "explanation": "Specific parts of a room that are unique in that context take the definite article."
+  },
+  {
+    "id": 76,
+    "noun_type": "Indefinite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct article: 'They are looking for ___ European destination.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["a"],
+    "explanation": "The word 'European' starts with a 'y' consonant sound, so we use 'a'."
+  },
+  {
+    "id": 77,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': '___ oxygen is necessary for life.'",
+    "answer": "none",
+    "hint": "General elements or substances usually do not take an article."
+  },
+  {
+    "id": 78,
+    "noun_type": "Indefinite Article",
+    "practice_type": "sorting",
+    "word": "hour",
+    "category": "an",
+    "explanation": "The 'h' is silent, so the word begins with a vowel sound."
+  },
+  {
+    "id": 79,
+    "noun_type": "Definite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Choose the correct article: 'Did you see ___ news this morning?'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["the"],
+    "explanation": "We use 'the' for specific shared information sources."
+  },
+  {
+    "id": 80,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': 'I love traveling by ___ train.'",
+    "answer": "none",
+    "hint": "Modes of transportation following 'by' do not use an article."
+  },
+
+  {
+    "id": 81,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'I need to find ___ umbrella before it starts raining.'",
+    "answer": "an",
+    "hint": "'Umbrella' starts with a vowel sound."
+  },
+  {
+    "id": 82,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "Alps",
+    "category": "the",
+    "explanation": "Names of mountain ranges like 'the Alps' or 'the Rockies' always take the definite article."
+  },
+  {
+    "id": 83,
+    "noun_type": "Zero Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Which is correct? 'They are studying ___.'",
+    "options": ["the biology", "a biology", "biology", "an biology"],
+    "answer": ["biology"],
+    "explanation": "Academic subjects generally do not require an article."
+  },
+  {
+    "id": 84,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'That was ___ unexpected turn of events.'",
+    "answer": "an",
+    "hint": "'Unexpected' starts with a vowel sound."
+  },
+  {
+    "id": 85,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "internet",
+    "category": "the",
+    "explanation": "We use 'the' for global systems or unique entities like the internet or the environment."
+  },
+  {
+    "id": 86,
+    "noun_type": "Indefinite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct article: 'She wore ___ uniform to the event.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["a"],
+    "explanation": "The word 'uniform' starts with a 'y' consonant sound, so we use 'a'."
+  },
+  {
+    "id": 87,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': '___ silver is used to make jewelry.'",
+    "answer": "none",
+    "hint": "General materials and metals usually do not take an article."
+  },
+  {
+    "id": 88,
+    "noun_type": "Indefinite Article",
+    "practice_type": "sorting",
+    "word": "heir",
+    "category": "an",
+    "explanation": "The 'h' in 'heir' is silent, so it begins with a vowel sound."
+  },
+  {
+    "id": 89,
+    "noun_type": "Definite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Choose the correct article: 'Open ___ door, please.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["the"],
+    "explanation": "Use 'the' when referring to a specific object that is obvious in the current room."
+  },
+  {
+    "id": 90,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': 'We are going to visit ___ Chicago.'",
+    "answer": "none",
+    "hint": "Most city names do not use an article."
+  },
+  
+  {
+    "id": 91,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'There is ___ egg in the basket.'",
+    "answer": "an",
+    "hint": "'Egg' starts with a vowel sound."
+  },
+  {
+    "id": 92,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "Amazon",
+    "category": "the",
+    "explanation": "Names of rivers like 'the Amazon' always take the definite article."
+  },
+  {
+    "id": 93,
+    "noun_type": "Zero Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Which is correct? 'I like ___.'",
+    "options": ["the apples", "a apples", "apples", "an apples"],
+    "answer": ["apples"],
+    "explanation": "Plural nouns used in a general sense do not require an article."
+  },
+  {
+    "id": 94,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'She has ___ unique style.'",
+    "answer": "a",
+    "hint": "'Unique' starts with a 'y' consonant sound."
+  },
+  {
+    "id": 95,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "President",
+    "category": "the",
+    "explanation": "Specific titles referring to a unique position often take 'the'."
+  },
+  {
+    "id": 96,
+    "noun_type": "Indefinite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct article: 'I waited for ___ hour.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["an"],
+    "explanation": "The 'h' is silent, so we use 'an' for the vowel sound."
+  },
+  {
+    "id": 97,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': 'They go to ___ work by bus.'",
+    "answer": "none",
+    "hint": "Common expressions like 'go to work' or 'at home' do not use articles."
+  },
+  {
+    "id": 98,
+    "noun_type": "Indefinite Article",
+    "practice_type": "sorting",
+    "word": "idea",
+    "category": "an",
+    "explanation": "'Idea' starts with a vowel sound, so it takes 'an'."
+  },
+  {
+    "id": 99,
+    "noun_type": "Definite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Choose the correct article: 'Look at ___ moon!'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["the"],
+    "explanation": "We use 'the' for objects that are unique in our environment."
+  },
+  {
+    "id": 100,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': '___ patience is a virtue.'",
+    "answer": "none",
+    "hint": "Abstract nouns used generally do not take an article."
+  },
+  
+  {
+    "id": 101,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'There was ___ incident in the park.'",
+    "answer": "an",
+    "hint": "'Incident' starts with a vowel sound."
+  },
+  {
+    "id": 102,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "Red Sea",
+    "category": "the",
+    "explanation": "Names of seas and oceans almost always take the definite article 'the'."
+  },
+  {
+    "id": 103,
+    "noun_type": "Zero Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Which is correct? 'I like to look at ___.'",
+    "options": ["the stars", "a stars", "stars", "an stars"],
+    "answer": ["stars"],
+    "explanation": "General plural nouns usually do not take an article when used generally."
+  },
+  {
+    "id": 104,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'She joined ___ union at work.'",
+    "answer": "a",
+    "hint": "The word starts with a 'y' consonant sound."
+  },
+  {
+    "id": 105,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "governor",
+    "category": "the",
+    "explanation": "Specific political titles often take 'the' when referring to the unique person in that role."
+  },
+  {
+    "id": 106,
+    "noun_type": "Indefinite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct article: 'It is ___ honor to meet you.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["an"],
+    "explanation": "The 'h' is silent, so focus on the vowel sound."
+  },
+  {
+    "id": 107,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': 'They are going to ___ lunch.'",
+    "answer": "none",
+    "hint": "General meals do not use articles."
+  },
+  {
+    "id": 108,
+    "noun_type": "Indefinite Article",
+    "practice_type": "sorting",
+    "word": "orange",
+    "category": "an",
+    "explanation": "'Orange' starts with a vowel sound, so it takes 'an'."
+  },
+  {
+    "id": 109,
+    "noun_type": "Definite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Choose the correct article: 'I'll meet you at ___ bank.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["the"],
+    "explanation": "We use 'the' for specific communal locations like 'the bank' or 'the doctor'."
+  },
+  {
+    "id": 110,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': '___ water is essential for plants.'",
+    "answer": "none",
+    "hint": "Mass nouns used in a general sense do not take an article."
+  },
+  
+  {
+    "id": 111,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'I found ___ earring on the floor.'",
+    "answer": "an",
+    "hint": "'Earring' starts with a vowel sound."
+  },
+  {
+    "id": 112,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "Mississippi",
+    "category": "the",
+    "explanation": "Names of rivers like 'the Mississippi' always take the definite article 'the'."
+  },
+  {
+    "id": 113,
+    "noun_type": "Zero Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Which is correct? 'They are eating ___.'",
+    "options": ["the bananas", "a bananas", "bananas", "an bananas"],
+    "answer": ["bananas"],
+    "explanation": "General plural nouns used to describe a category of food do not need an article."
+  },
+  {
+    "id": 114,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'That is ___ unusual color for a car.'",
+    "answer": "an",
+    "hint": "'Unusual' starts with a vowel sound."
+  },
+  {
+    "id": 115,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "police",
+    "category": "the",
+    "explanation": "We use 'the' when referring to the police as a specific public institution."
+  },
+  {
+    "id": 116,
+    "noun_type": "Indefinite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct article: 'She is ___ university student.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["a"],
+    "explanation": "The word 'university' starts with a 'y' consonant sound, so we use 'a'."
+  },
+  {
+    "id": 117,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': 'They went ___ home after the meeting.'",
+    "answer": "none",
+    "hint": "The expression 'go home' does not use an article."
+  },
+  {
+    "id": 118,
+    "noun_type": "Indefinite Article",
+    "practice_type": "sorting",
+    "word": "engine",
+    "category": "an",
+    "explanation": "'Engine' starts with a vowel sound, so it takes 'an'."
+  },
+  {
+    "id": 119,
+    "noun_type": "Definite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Choose the correct article: 'Please pass ___ butter.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["the"],
+    "explanation": "We use 'the' for specific items on a table that are obvious to both people."
+  },
+  {
+    "id": 120,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': '___ silver is a shiny metal.'",
+    "answer": "none",
+    "hint": "General materials and metals usually do not take an article."
+  },
+  
+  {
+    "id": 121,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'I have ___ appointment at noon.'",
+    "answer": "an",
+    "hint": "'Appointment' starts with a vowel sound."
+  },
+  {
+    "id": 122,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "Himalayas",
+    "category": "the",
+    "explanation": "Names of mountain ranges always take the definite article 'the'."
+  },
+  {
+    "id": 123,
+    "noun_type": "Zero Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Which is correct? 'I am allergic to ___.'",
+    "options": ["the cats", "a cats", "cats", "an cats"],
+    "answer": ["cats"],
+    "explanation": "General plural nouns used to describe a category do not need an article."
+  },
+  {
+    "id": 124,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'It was ___ unusual discovery.'",
+    "answer": "an",
+    "hint": "'Unusual' starts with a vowel sound."
+  },
+  {
+    "id": 125,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "environment",
+    "category": "the",
+    "explanation": "We use 'the' for global or unique systems like the environment or the ozone layer."
+  },
+  {
+    "id": 126,
+    "noun_type": "Indefinite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct article: 'He belongs to ___ union.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["a"],
+    "explanation": "'Union' starts with a 'y' consonant sound, so it takes 'a'."
+  },
+  {
+    "id": 127,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': 'They study ___ physics together.'",
+    "answer": "none",
+    "hint": "Academic subjects like physics or chemistry do not take articles."
+  },
+  {
+    "id": 128,
+    "noun_type": "Indefinite Article",
+    "practice_type": "sorting",
+    "word": "artist",
+    "category": "an",
+    "explanation": "'Artist' starts with a vowel sound, so it takes 'an'."
+  },
+  {
+    "id": 129,
+    "noun_type": "Definite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Choose the correct article: '___ sun provides heat to the planet.'",
+    "options": ["A", "An", "The", "(no article)"],
+    "answer": ["The"],
+    "explanation": "Unique celestial objects that are one-of-a-kind use 'the'."
+  },
+  {
+    "id": 130,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': '___ travel is a great way to learn.'",
+    "answer": "none",
+    "hint": "General concepts or activities used as subjects usually don't take an article."
+  },
+
+  {
+    "id": 131,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'He received ___ unexpected gift.'",
+    "answer": "an",
+    "hint": "'Unexpected' starts with a vowel sound."
+  },
+  {
+    "id": 140,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "Nile",
+    "category": "the",
+    "explanation": "Names of rivers like 'the Nile' or 'the Thames' always take the definite article."
+  },
+  {
+    "id": 133,
+    "noun_type": "Zero Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Which is correct? 'They are playing ___.'",
+    "options": ["the tennis", "a tennis", "tennis", "an tennis"],
+    "answer": ["tennis"],
+    "explanation": "Names of sports generally do not take an article."
+  },
+  {
+    "id": 134,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'She has ___ European passport.'",
+    "answer": "a",
+    "hint": "The word starts with a 'y' consonant sound."
+  },
+  {
+    "id": 135,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "ocean",
+    "category": "the",
+    "explanation": "We use 'the' for specific geographical features shared by everyone."
+  },
+  {
+    "id": 136,
+    "noun_type": "Indefinite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct article: 'I need ___ honest opinion.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["an"],
+    "explanation": "The 'h' is silent, so focus on the vowel sound."
+  },
+  {
+    "id": 137,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': 'They usually go to bed at ___ midnight.'",
+    "answer": "none",
+    "hint": "Times of day like midnight or noon often do not take articles in this context."
+  },
+  {
+    "id": 138,
+    "noun_type": "Indefinite Article",
+    "practice_type": "sorting",
+    "word": "unit",
+    "category": "a",
+    "explanation": "'Unit' starts with a 'y' consonant sound, so it takes 'a'."
+  },
+  {
+    "id": 139,
+    "noun_type": "Definite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Choose the correct article: '___ stars are beautiful tonight.'",
+    "options": ["A", "An", "The", "(no article)"],
+    "answer": ["The"],
+    "explanation": "We use 'the' for specific groups of celestial objects."
+  },
+  {
+    "id": 132,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': '___ gold is found in these mountains.'",
+    "answer": "none",
+    "hint": "General materials and substances do not take articles."
+  },
+  
+  {
+    "id": 141,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'He is ___ honest man.'",
+    "answer": "an",
+    "hint": "The 'h' is silent, so focus on the vowel sound."
+  },
+  {
+    "id": 142,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "Rockies",
+    "category": "the",
+    "explanation": "Names of mountain ranges always take the definite article 'the'."
+  },
+  {
+    "id": 143,
+    "noun_type": "Zero Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Which is correct? 'She is interested in ___.'",
+    "options": ["the science", "a science", "science", "an science"],
+    "answer": ["science"],
+    "explanation": "General fields of study or academic subjects do not take an article."
+  },
+  {
+    "id": 144,
+    "noun_type": "Indefinite Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the correct article: 'I have ___ usual routine for Monday mornings.'",
+    "answer": "a",
+    "hint": "The word starts with a 'y' consonant sound."
+  },
+  {
+    "id": 145,
+    "noun_type": "Definite Article",
+    "practice_type": "sorting",
+    "word": "universe",
+    "category": "the",
+    "explanation": "We use 'the' for unique entities that represent the whole of something."
+  },
+  {
+    "id": 146,
+    "noun_type": "Indefinite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct article: 'It was ___ early start to the day.'",
+    "options": ["a", "an", "the", "(no article)"],
+    "answer": ["an"],
+    "explanation": "'Early' starts with a vowel sound, so it takes 'an'."
+  },
+  {
+    "id": 147,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': 'They usually have ___ breakfast at 8 am.'",
+    "answer": "none",
+    "hint": "Names of meals do not take an article in this general context."
+  },
+  {
+    "id": 148,
+    "noun_type": "Indefinite Article",
+    "practice_type": "sorting",
+    "word": "eucalyptus",
+    "category": "a",
+    "explanation": "Even though it starts with 'e', it has a 'y' consonant sound."
+  },
+  {
+    "id": 149,
+    "noun_type": "Definite Article",
+    "practice_type": "multiple_choice",
+    "question_text": "Choose the correct article: '___ environment needs our protection.'",
+    "options": ["A", "An", "The", "(no article)"],
+    "answer": ["The"],
+    "explanation": "We use 'the' when referring to the environment as a unique global system."
+  },
+  {
+    "id": 150,
+    "noun_type": "Zero Article",
+    "practice_type": "typing",
+    "prompt_text": "Type the article or 'none': '___ air is thin at high altitudes.'",
+    "answer": "none",
+    "hint": "General mass nouns or substances usually do not take an article."
   }
 ]
