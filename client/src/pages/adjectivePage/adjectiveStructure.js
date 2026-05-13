@@ -153,7 +153,7 @@ const AdjectivePage = () => {
               </p>
               
               <div style={{ position: 'relative', width: '55%', backgroundColor: '#000', borderRadius: '8px', overflow: 'hidden', marginLeft: 'auto', marginRight: 'auto' }}>
-                <video controls style={{ width: '100%', height: '100%', display: 'block' }}>
+                <video controls style={{ width: '100%', height: '480', display: 'block' }}>
                   <source src="/lesson4.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
