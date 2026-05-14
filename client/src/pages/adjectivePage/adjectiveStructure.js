@@ -166,7 +166,7 @@ const AdjectivePage = () => {
             
             <div style={{...styles.panel, ...styles.stretchPanel}}>
               <h3 style={{marginBottom: '20px', fontSize: '1.5rem', fontWeight: 'bold', textAlign: 'center'}}>
-                Interactive Practice
+                Practice
               </h3>
               
               <AdjectiveRoyalOrder />
