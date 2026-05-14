@@ -200,7 +200,7 @@ const Prep2Structure = () => {
 
             <div style={{...styles.panel, ...styles.stretchPanel}}>
               <h3 style={{marginBottom: '20px', fontSize: '1.5rem', fontWeight: 'bold', textAlign: 'center'}}>
-                Interactive Practice
+                Practice
               </h3>
               
               <h4 style={{fontSize: '1.1rem', fontWeight: 'bold', color: '#333', marginBottom: '10px'}}>Practice 1: Phrase Lesson</h4>
