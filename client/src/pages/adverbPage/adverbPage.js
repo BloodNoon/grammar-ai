@@ -174,7 +174,7 @@ const AdverbStructure = () => {
            
             <div style={{...styles.panel, ...styles.stretchPanel}}>
               <h3 style={{marginBottom: '20px', fontSize: '1.5rem', fontWeight: 'bold', textAlign: 'center'}}>
-                Interactive Practice
+                Practice
               </h3>
               
               <h4 style={{fontSize: '1.1rem', fontWeight: 'bold', color: '#00BCD4', marginBottom: '10px'}}>
