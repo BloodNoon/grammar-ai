@@ -138,7 +138,7 @@ const ConjunctionStructure = () => {
                   {complexStructures.map((struct, index) => (
                     <div key={index} style={styles.patternCard}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                        <span style={{ fontWeight: 'bold', color: '#2980b9', fontSize: '14px' }}>Level {struct.level}</span>
+                          <span style={{ fontWeight: 'bold', color: '#2980b9', fontSize: '14px' }}>Sentence Structure {struct.level}</span>
                       </div>
                       <div style={{ color: '#555', marginBottom: '8px', fontSize: '13px', fontFamily: 'monospace', lineHeight: '1.4' }}>
                         {struct.pattern}
