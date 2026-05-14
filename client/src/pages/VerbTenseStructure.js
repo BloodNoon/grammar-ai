@@ -228,7 +228,7 @@ const VerbTenseStructure = () => {
 
             {/* Verb Tense Lesson */}
             <Box bg="white" p={6} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)">
-              <Heading size="md" color="#FF9800" mb={4}>📚 Interactive Verb Lesson</Heading>
+              <Heading size="md" color="#FF9800" mb={4}>📚 Verb Lesson</Heading>
               <VerbTenseLesson
                 sentenceFeedback={sentenceFeedback}
                 handleVerbSentenceChoice={(n, s, c) => setSentenceFeedback({...sentenceFeedback, [n]: {text: c ? 'Correct!' : 'Try again', color: c ? 'green' : 'red'}})}
