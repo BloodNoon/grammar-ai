@@ -15,7 +15,8 @@ const nounTypes = [
   { name: "Abstract", desc: "Ideas or feelings. You cannot touch them.", examples: "love, bravery, time" },
   { name: "Collective", desc: "A single word for a group of things.", examples: "flock, team, family" },
   { name: "Countable", desc: "Things you can count with numbers.", examples: "one cat, two cats" },
-  { name: "Uncountable", desc: "Things you cannot easily count.", examples: "sand, knowledge, water" }
+  { name: "Uncountable", desc: "Things you cannot easily count.", examples: "sand, knowledge, water" },
+  { name: "Compound", desc: "Two or more words together make one noun.", examples: "toothbrush, basketball, bus stop" }
 ];
 
 const pronounTypes = [
