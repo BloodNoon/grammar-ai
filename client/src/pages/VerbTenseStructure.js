@@ -193,7 +193,7 @@ const VerbTenseStructure = () => {
       {/* Page Header */}
       <Box maxW="1400px" mx="auto" mb={8} bg="#F0B784" p={4} borderRadius="xl" borderWidth="2px" borderColor="whiteAlpha.600" textAlign="center">
         <Heading color="#4A2C11" size="xl">
-          🎬 Verb Tense & Auxiliary Verb Builder
+          🎬 Verb Forms and Usage
         </Heading>
       </Box>
 
