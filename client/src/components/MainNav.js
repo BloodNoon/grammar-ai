@@ -48,7 +48,7 @@ const MainNav = () => {
 {/* Verb Tense Menu */}
         <Menu>
           <MenuButton as={Button} variant="unstyled" {...menuButtonStyles}>
-            Verb Lesson
+            Verb Lessons
           </MenuButton>
           <MenuList>
             <MenuItem as={ReactRouterLink} to="/verb-tense-structure">Introduction to Verbs</MenuItem>
@@ -60,7 +60,7 @@ const MainNav = () => {
           {/* Article Menu */}
         <Menu>
           <MenuButton as={Button} variant="unstyled" {...menuButtonStyles}>
-            Article Lesson
+            Article Lessons
           </MenuButton>
           <MenuList>
             <MenuItem as={ReactRouterLink} to="/article-structure">Introduction to Articles</MenuItem>
@@ -73,7 +73,7 @@ const MainNav = () => {
        {/* Preposition Menu */}
         <Menu>
           <MenuButton as={Button} variant="unstyled" {...menuButtonStyles}>
-            Preposition Lesson
+            Preposition Lessons
           </MenuButton>
           <MenuList>
             <MenuItem as={ReactRouterLink} to="/prep1-structure">Preposition Lesson</MenuItem>
@@ -88,7 +88,7 @@ const MainNav = () => {
         {/* Adjective Menu */}
         <Menu>
           <MenuButton as={Button} variant="unstyled" {...menuButtonStyles}>
-            Adjective Lesson
+            Adjective Lessons
           </MenuButton>
           <MenuList>
             <MenuItem as={ReactRouterLink} to="/adjective-structure">Introduction to Adjectives</MenuItem>
@@ -102,7 +102,7 @@ const MainNav = () => {
         {/* Adverb Menu */}
         <Menu>
           <MenuButton as={Button} variant="unstyled" {...menuButtonStyles}>
-            Adverb Lesson
+            Adverb Lessons
           </MenuButton>
           <MenuList>
             <MenuItem as={ReactRouterLink} to="/adverb-structure">Introduction to Adverbs</MenuItem>
@@ -128,7 +128,7 @@ const MainNav = () => {
 {/* Conjunction Menu */}
         <Menu>
           <MenuButton as={Button} variant="unstyled" {...menuButtonStyles}>
-            Conjunctions
+            Conjunction Lessons
           </MenuButton>
           <MenuList>
             <MenuItem as={ReactRouterLink} to="/conjunction-structure">Introduction to Conjunctions</MenuItem>
