@@ -95,6 +95,7 @@ const MainNav = () => {
             <MenuItem as={ReactRouterLink} to="/adjective-royal-order">Adjective Royal Order</MenuItem>
             <MenuItem as={ReactRouterLink} to="/adjective-sentence-structures">Adjective Sentence Structure</MenuItem>
             <MenuItem as={ReactRouterLink} to="/adjective-fill-blanks">Adjective Game</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/adjective-practice">Adjective Practice Games</MenuItem>
             <MenuItem as={ReactRouterLink} to="/adj-quiz">Adjective Quiz</MenuItem>
           </MenuList>
         </Menu>
@@ -112,6 +113,7 @@ const MainNav = () => {
             <MenuItem as={ReactRouterLink} to="/adverb-royal-order">Adverb Royal Order</MenuItem>
             <MenuItem as={ReactRouterLink} to="/adverb-sentence-structures">Adverb Sentence Structure</MenuItem>
             <MenuItem as={ReactRouterLink} to="/adverb-identification-game">Adverb Identification Game</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/adverb-practice">Adverb Practice Games</MenuItem>
             <MenuItem as={ReactRouterLink} to="/adverb-quiz">Adverb Quiz</MenuItem>
           </MenuList>
         </Menu>
@@ -132,6 +134,7 @@ const MainNav = () => {
           </MenuButton>
           <MenuList>
             <MenuItem as={ReactRouterLink} to="/conjunction-structure">Introduction to Conjunctions</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/conjunction-practice">Conjunction Practice Games</MenuItem>
             <MenuItem as={ReactRouterLink} to="/conjunction-quiz">Conjunction Quiz</MenuItem>
           </MenuList>
         </Menu>

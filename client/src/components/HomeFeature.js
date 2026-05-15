@@ -9,7 +9,7 @@ import {
 	Heading,
 	Center,
 } from '@chakra-ui/react';
-import { BsBook, BsCheckBox } from 'react-icons/bs';
+import { BsBook, Bs2Square} from 'react-icons/bs';
 
 export default function HomeFeature() {
 	return (
@@ -60,7 +60,7 @@ export default function HomeFeature() {
 							borderRadius="1rem"
 						>
 							<Center>
-								<Icon as={BsCheckBox} boxSize="5rem" color="gray.200" />
+								<Icon as={Bs2Square} boxSize="5rem" color="gray.200" />
 							</Center>
 							<Heading
 								fontSize="lg"
