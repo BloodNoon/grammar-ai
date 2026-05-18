@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Box, Heading, Text, Grid, Flex, VStack, SimpleGrid, Badge, Table, Tbody, Tr, Td, Th, Thead, Divider } from '@chakra-ui/react';
 
 // PREP1 COMPONENTS
 import PrepositionSorter from '../../utils/SentenceChecker/PrepositionSorter';
@@ -16,122 +17,6 @@ const Prep1Structure = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const styles = {
-    body: {
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-      background: 'rgba(249, 190, 134, 0.922)',
-      minHeight: '100vh',
-      padding: '20px',
-      margin: 0
-    },
-    container: {
-      margin: '0 auto',
-      padding: '20px',
-      textAlign: 'center'
-    },
-    navHeader: {
-      color: 'rgb(8, 0, 0)',
-      border: '2px solid white',
-      borderRadius: '1rem',
-      padding: '0.5rem 1rem',
-      display: 'flex',
-      justifyContent: 'space-between',
-      position: 'sticky',
-      top: '20px',
-      backgroundColor: 'rgba(249, 190, 134, 0.922)',
-      marginBottom: '20px',
-      zIndex: 100
-    },
-    Heading: {
-      fontSize: '32px',
-      margin: '0 auto',
-      textAlign: 'center',
-      fontWeight: '600',
-      lineHeight: '1.2'
-    },
-    mainTitle: {
-      fontSize: '40px',
-      marginBottom: '1.5rem',
-      marginTop: '1rem',
-      textAlign: 'center',
-      fontWeight: '700',
-      color: '#333',
-      lineHeight: '1.2'
-    },
-    mainContent: {
-      display: 'grid',
-      gridTemplateColumns: '1fr 1fr', 
-      gap: '20px',
-      marginTop: '35px',
-      marginBottom: '20px',
-      textAlign: 'left' 
-    },
-    columnFlex: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '20px',
-      height: '100%' 
-    },
-    stretchPanel: {
-      flex: 1 
-    },
-    panel: {
-      background: 'white',
-      borderRadius: '15px',
-      padding: '25px',
-      boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
-    },
-    lessonPanel: {
-      background: '#ffeaa7' 
-    },
-    videoPanel: {
-      backgroundColor: '#f8f9fa',
-      borderRadius: '15px',
-      padding: '20px',
-      border: '1px solid #ddd',
-      textAlign: 'center',
-      boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
-    },
-    grammarReference: {
-      background: 'white',
-      borderRadius: '15px',
-      padding: '20px',
-      marginTop: '20px',
-      boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
-      textAlign: 'left'
-    },
-  
-    table: {
-      width: '100%',
-      borderCollapse: 'collapse',
-      marginTop: '15px',
-      backgroundColor: 'white',
-      border: '1px solid #333'
-    },
-    th: {
-      border: '1px solid #333',
-      padding: '10px',
-      textAlign: 'left',
-      backgroundColor: '#f8f9fa',
-      fontWeight: 'bold',
-      fontSize: '14px'
-    },
-    td: {
-      border: '1px solid #333',
-      padding: '10px',
-      fontSize: '14px',
-      color: '#333'
-    },
-
-    patternCard: {
-      backgroundColor: '#f8f9fa',
-      border: '1px solid #ddd',
-      borderRadius: '8px',
-      padding: '15px',
-      boxShadow: '0 2px 4px rgba(0,0,0,0.05)'
-    }
-  };
-
   const formulas = [
     { pattern: "#Pronoun #Verb #Preposition #Article #Noun", example: "She walked to the store." },
     { pattern: "#Article #Noun #Verb #Preposition #Article #Noun", example: "The dog ran through the yard." },
@@ -141,149 +26,112 @@ const Prep1Structure = () => {
   ];
 
   return (
-    <div style={styles.body}>
-      <div style={styles.container}>
-
-        <h1 style={styles.mainTitle}>Prepositions</h1>
-
-        {showCongrats && (
-          <div style={{ backgroundColor: '#e8f5e8', border: '2px solid #28a745', borderRadius: '10px', padding: '1.5rem', transition: 'opacity 0.5s ease', maxWidth: '800px', margin: '0 auto 20px auto' }}>
-            <h3 style={{ color: '#28a745', marginBottom: '1rem', fontSize: '1.5rem', fontWeight: 'bold' }}>🎉 Almost there!</h3>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.6', color: '#333' }}>
-              You are making great progress! You've learned about subjects, objects, verb tenses, and articles. Let's master prepositions!
-            </p>
-          </div>
-        )}
-
-        <div style={styles.mainContent}>
-          
-       
-          <div style={styles.columnFlex}>
-            
-            <div style={{...styles.panel, ...styles.lessonPanel}}>
-              <h2 style={{fontSize: '18px', fontWeight: 'bold', marginBottom: '10px', color: '#333'}}>Understanding Prepositions</h2>
-              <p style={{fontSize: '14px', lineHeight: '1.6', color: '#555', marginBottom: '15px'}}>
-                A <strong>preposition</strong> is a word that indicates the relationship between a noun or pronoun and other words in a sentence. They often express relationships of time, place, direction, or situation.
-              </p>
-
-             
-              <table style={styles.table}>
-                <thead>
-                  <tr>
-                    <th style={styles.th}>Type</th>
-                    <th style={styles.th}>Preposition Examples</th>
-                    <th style={styles.th}>Sample Phrase</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style={{...styles.td, fontWeight: 'bold'}}>Time</td>
-                    <td style={styles.td}>before, during, after</td>
-                    <td style={styles.td}>...<em>during</em> the movie.</td>
-                  </tr>
-                  <tr>
-                    <td style={{...styles.td, fontWeight: 'bold'}}>Place</td>
-                    <td style={styles.td}>in, on, under</td>
-                    <td style={styles.td}>...<em>under</em> the bed.</td>
-                  </tr>
-                  <tr>
-                    <td style={{...styles.td, fontWeight: 'bold'}}>Direction</td>
-                    <td style={styles.td}>to, through, around</td>
-                    <td style={styles.td}>...<em>through</em> the door.</td>
-                  </tr>
-                  <tr>
-                    <td style={{...styles.td, fontWeight: 'bold'}}>Situation</td>
-                    <td style={styles.td}>with, for, about</td>
-                    <td style={styles.td}>...<em>about</em> the test.</td>
-                  </tr>
-                  <tr>
-                    <td style={{...styles.td, fontWeight: 'bold'}}>Comparison</td>
-                    <td style={styles.td}>like, as, than</td>
-                    <td style={styles.td}>...<em>like</em> a tiger.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div style={{...styles.panel, ...styles.stretchPanel}}>
-               <p style={{fontSize: '16px', fontWeight: 'bold', marginBottom: '15px', color: '#333'}}>
-                 Learn your new sentence structures:
-               </p>
-               
-              
-               <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '15px' }}>
-                  {formulas.map((item, index) => (
-                    <div key={index} style={styles.patternCard}>
-                      <div style={{ fontWeight: 'bold', color: '#555', marginBottom: '8px', fontSize: '13px', fontFamily: 'monospace' }}>
-                        {item.pattern}
-                      </div>
-                      <div style={{ fontSize: '14px', color: '#333' }}>
-                        <strong>Example:</strong> "{item.example}"
-                      </div>
-                    </div>
-                  ))}
-               </div>
-            </div>
-
-          </div>
-
+    <Box bg="#F6D5B4" minH="100vh" p={{ base: 4, md: 8 }} fontFamily="'Inter', sans-serif">
       
-          <div style={styles.columnFlex}>
+      {/* Page Header */}
+      <Box maxW="1400px" mx="auto" mb={8} bg="#F0B784" p={4} borderRadius="xl" borderWidth="2px" borderColor="whiteAlpha.600" textAlign="center">
+        <Heading color="#4A2C11" size="xl">
+          🐸 Preposition Lessons
+        </Heading>
+      </Box>
+
+      {showCongrats && (
+        <Box maxW="800px" mx="auto" mb={8} bg="#e8f5e8" border="2px solid" borderColor="#28a745" borderRadius="10px" p={6}>
+          <Heading size="md" color="#28a745" mb={4}>🎉 Almost there!</Heading>
+          <Text fontSize="lg" color="#333">
+            You are making great progress! You've learned about subjects, objects, verb tenses, and articles. Let's master prepositions!
+          </Text>
+        </Box>
+      )}
+
+      {/* Main 2-Column Grid */}
+      <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8} maxW="1400px" mx="auto">
+        
+        {/* LEFT COLUMN */}
+        <VStack spacing={6} align="stretch">
+          
+          <Box bg="white" p={8} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)">
+            <Heading size="lg" color="#1A0933" mb={4}>1. Understanding Prepositions</Heading>
+            <Text fontSize="md" color="gray.600" mb={6}>
+              A <strong>preposition</strong> is a word that indicates the relationship between a noun or pronoun and other words in a sentence. They often express relationships of time, place, direction, or situation.
+            </Text>
+
+            <Table size="sm" variant="simple" border="1px solid" borderColor="gray.200">
+              <Thead bg="gray.50">
+                <Tr>
+                  <Th>Type</Th>
+                  <Th>Examples</Th>
+                  <Th>Sample Phrase</Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                <Tr><Td fontWeight="bold">Time</Td><Td>before, during, after</Td><Td>...<em>during</em> the movie.</Td></Tr>
+                <Tr><Td fontWeight="bold">Place</Td><Td>in, on, under</Td><Td>...<em>under</em> the bed.</Td></Tr>
+                <Tr><Td fontWeight="bold">Direction</Td><Td>to, through, around</Td><Td>...<em>through</em> the door.</Td></Tr>
+                <Tr><Td fontWeight="bold">Situation</Td><Td>with, for, about</Td><Td>...<em>about</em> the test.</Td></Tr>
+                <Tr><Td fontWeight="bold">Comparison</Td><Td>like, as, than</Td><Td>...<em>like</em> a tiger.</Td></Tr>
+              </Tbody>
+            </Table>
+          </Box>
+
+          <Box bg="white" p={8} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)">
+            <Heading size="md" color="#1A0933" mb={4}>2. Sentence Patterns</Heading>
+            <Text fontSize="sm" color="gray.600" mb={6}>Learn your new sentence structures:</Text>
             
-            <div style={styles.videoPanel}>
-              <h3 style={{ marginBottom: '15px', color: '#333', fontSize: '1.5rem' }}>
-                📹 Today's Lesson: Prepositions
-              </h3>
-              
-              <div style={{ position: 'relative', width: '100%', backgroundColor: '#000', borderRadius: '8px', overflow: 'hidden' }}>
-                <video controls style={{ width: '100%', height: '480px', display: 'block' }}> 
-                  <source src="/Lesson6.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <div style={{ marginTop: '10px', fontSize: '12px', color: '#888', fontStyle: 'italic' }}>
-                💡 Watch the lesson before practicing with the exercises below
-              </div>
-            </div>
+            <VStack spacing={4} align="stretch">
+              {formulas.map((item, index) => (
+                <Box key={index} p={4} bg="gray.50" borderRadius="xl" borderWidth="1px" borderColor="gray.200">
+                  <Text fontSize="xs" fontFamily="monospace" color="gray.600" mb={2}>{item.pattern}</Text>
+                  <Box bg="white" p={3} borderRadius="md" border="1px dashed" borderColor="gray.300">
+                    <Text fontSize="sm"><strong>Example:</strong> "{item.example}"</Text>
+                  </Box>
+                </Box>
+              ))}
+            </VStack>
+          </Box>
+        </VStack>
 
-            <div style={{...styles.panel, ...styles.stretchPanel}}>
-              <h3 style={{marginBottom: '20px', fontSize: '1.5rem', fontWeight: 'bold', textAlign: 'center'}}>
-                Practice
-              </h3>
-              
-              <h4 style={{fontSize: '1.1rem', fontWeight: 'bold', color: '#333', marginBottom: '10px'}}>
-                Practice 1: Prepositions Sorter
-              </h4>
-              <PrepositionSorter />
-              
-              <hr style={{margin: '30px 0', borderColor: '#eee'}} />
-              
-              <h4 style={{fontSize: '1.1rem', fontWeight: 'bold', color: '#333', marginBottom: '10px'}}>
-                Practice 2: Preposition Fill-in-the-Blanks
-              </h4>
-              <div style={{background: '#f8f9fa', padding: '20px', borderRadius: '8px', textAlign: 'center', border: '1px solid #ddd'}}>
-               
-                <p style={{fontSize: '18px', fontWeight: 'bold', color: '#333'}}>The boy is sitting ______ a chair.</p>
-                <p style={{fontSize: '14px', color: '#666', marginTop: '10px', fontStyle: 'italic'}}>
-                  <PrepositionFillBlanks />
-                </p>
-              </div>
-              
-              <hr style={{margin: '30px 0', borderColor: '#eee'}} />
-              
-              <h4 style={{fontSize: '1.1rem', fontWeight: 'bold', color: '#333', marginBottom: '10px'}}>
-                Practice 3: Structure Game
-              </h4>
-              <PrepositionStructureGame />
-              
-            </div>
-          </div>
-        </div>
+        {/* RIGHT COLUMN */}
+        <VStack spacing={6} align="stretch">
+          
+          {/* THE VIDEO PANEL */}
+          <Box bg="#f8f9fa" p={6} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)" textAlign="center">
+            <Heading size="md" color="#1A0933" mb={4}>
+              📹 Today's Lesson: Prepositions
+            </Heading>
+            
+            <Box position="relative" w="100%" bg="black" borderRadius="lg" overflow="hidden" borderWidth="1px" borderColor="gray.300">
+              <video controls style={{ width: '100%', height: '580px', display: 'block' }}> 
+                <source src="/Lesson6.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </Box>
+            
+            <Text mt={3} fontSize="sm" color="gray.500" fontStyle="italic">
+              💡 Watch the lesson before practicing with the exercises below
+            </Text>
+          </Box>
 
-   
-
-      </div>
-    </div>
+          <Box bg="white" p={6} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)">
+             <Heading size="md" color="#00BCD4" mb={4} textAlign="center">Practice 1: Prepositions Sorter</Heading>
+             <PrepositionSorter />
+             
+             <Divider my={8} />
+             
+             <Heading size="md" color="#4CAF50" mb={4} textAlign="center">Practice 2: Fill-in-the-Blanks</Heading>
+             <Box bg="gray.50" p={6} borderRadius="xl" border="1px solid" borderColor="gray.200" textAlign="center">
+               <Text fontSize="lg" fontWeight="bold" color="#333" mb={4}>The boy is sitting ______ a chair.</Text>
+               <PrepositionFillBlanks />
+             </Box>
+             
+             <Divider my={8} />
+             
+             <Heading size="md" color="#FF5722" mb={4} textAlign="center">Practice 3: Structure Game</Heading>
+             <PrepositionStructureGame />
+          </Box>
+        </VStack>
+      </Grid>
+    </Box>
   );
 };
 
