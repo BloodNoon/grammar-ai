@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Box, Heading, Text, Grid, Flex, VStack, SimpleGrid, Badge, Divider, Table, Tbody, Tr, Td, Th, Thead } from '@chakra-ui/react';
 
 // CONJUNCTION COMPONENTS
 import ConjunctionSorter from './../utils/SentenceChecker/ConjunctionSorter';
@@ -14,26 +15,6 @@ const ConjunctionStructure = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const styles = {
-    body: { fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif', background: 'rgba(249, 190, 134, 0.922)', minHeight: '100vh', padding: '20px', margin: 0 },
-    container: { margin: '0 auto', padding: '20px', textAlign: 'center', maxWidth: '1400px' },
-    navHeader: { color: 'rgb(8, 0, 0)', border: '2px solid white', borderRadius: '1rem', padding: '0.5rem 1rem', display: 'flex', justifyContent: 'space-between', position: 'sticky', top: '20px', backgroundColor: 'rgba(249, 190, 134, 0.922)', marginBottom: '20px', zIndex: 100 },
-    Heading: { fontSize: '32px', margin: '0 auto', textAlign: 'center', fontWeight: '600', lineHeight: '1.2' },
-    mainTitle: { fontSize: '40px', marginBottom: '1.5rem', marginTop: '1rem', textAlign: 'center', fontWeight: '700', color: '#333', lineHeight: '1.2' },
-    mainContent: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginTop: '35px', marginBottom: '20px', textAlign: 'left' },
-    columnFlex: { display: 'flex', flexDirection: 'column', gap: '20px', height: '100%' },
-    stretchPanel: { flex: 1 },
-    panel: { background: 'white', borderRadius: '15px', padding: '25px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' },
-    lessonPanel: { background: '#ffeaa7' },
-    videoPanel: { backgroundColor: '#f8f9fa', borderRadius: '15px', padding: '20px', border: '1px solid #ddd', textAlign: 'center', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' },
-    grammarReference: { background: 'white', borderRadius: '15px', padding: '20px', marginTop: '20px', boxShadow: '0 4px 15px rgba(0,0,0,0.1)', textAlign: 'left' },
-    table: { width: '100%', borderCollapse: 'collapse', marginTop: '10px', backgroundColor: 'white', border: '1px solid #333' },
-    th: { border: '1px solid #333', padding: '10px', textAlign: 'left', backgroundColor: '#f8f9fa', fontWeight: 'bold', fontSize: '14px' },
-    td: { border: '1px solid #333', padding: '8px', fontSize: '13px', color: '#333' },
-    patternCard: { backgroundColor: '#f8f9fa', border: '1px solid #ddd', borderRadius: '8px', padding: '15px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', marginBottom: '15px' },
-    exampleBox: { background: 'rgba(255,255,255,0.7)', padding: '12px', borderRadius: '8px', border: '1px dashed #333', fontSize: '14px', marginBottom: '10px' }
-  };
-
   const complexStructures = [
     { level: 1, pattern: "Pronoun + Be Verb + Adjective + SUB CONJ + Pronoun + Be Verb + Adjective", example: "He is quickly happy because she is calmly cheerful." },
     { level: 2, pattern: "Article + Noun + Be Verb + Adjective + SUB CONJ + Article + Noun + Be Verb + Adjective", example: "The dog is playfully happy although the cat is quietly content." },
@@ -45,163 +26,155 @@ const ConjunctionStructure = () => {
   ];
 
   return (
-    <div style={styles.body}>
-      <div style={styles.container}>
-        
-     
-
-        <h1 style={styles.mainTitle}>Conjunctions</h1>
-
-        {showCongrats && (
-          <div style={{ backgroundColor: '#e8f5e8', border: '2px solid #28a745', borderRadius: '10px', padding: '1.5rem', transition: 'opacity 0.5s ease', maxWidth: '800px', margin: '0 auto 20px auto' }}>
-            <h3 style={{ color: '#28a745', marginBottom: '1rem', fontSize: '1.5rem', fontWeight: 'bold' }}>🎉 Great job!</h3>
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.6', color: '#333' }}>
-              You have mastered the basic parts of speech. Now, let's learn how to glue them together into longer, complex sentences using conjunctions!
-            </p>
-          </div>
-        )}
-
-        <div style={styles.mainContent}>
-          
-       
-          <div style={styles.columnFlex}>
-            
-            <div style={{...styles.panel, ...styles.lessonPanel}}>
-              <h2 style={{fontSize: '24px', fontWeight: 'bold', marginBottom: '10px', color: '#333'}}>Types of Conjunctions</h2>
-              <p style={{fontSize: '15px', lineHeight: '1.6', color: '#444', marginBottom: '25px'}}>
-                A <strong>conjunction</strong> is the "glue" of the English language. It connects words, phrases, or entirely independent clauses together so your writing doesn't sound choppy.
-              </p>
-              
-              <h3 style={{fontSize: '18px', fontWeight: 'bold', color: '#d35400'}}>1. Coordinating Conjunctions (FANBOYS)</h3>
-              <p style={{fontSize: '14px', color: '#555', marginBottom: '10px'}}>
-                These connect two ideas that have <strong>equal importance</strong> (like two independent clauses). If you put one of these between two complete sentences, you must use a comma.
-              </p>
-              <div style={styles.exampleBox}>
-                <strong>Example:</strong> I wanted to go to the park, <strong>but</strong> it started raining.
-              </div>
-              <table style={styles.table}>
-                <tbody>
-                  <tr><td style={{...styles.td, fontWeight: 'bold'}}>F</td><td style={styles.td}>For</td><td style={styles.td}>Reason or purpose</td></tr>
-                  <tr><td style={{...styles.td, fontWeight: 'bold'}}>A</td><td style={styles.td}>And</td><td style={styles.td}>Addition</td></tr>
-                  <tr><td style={{...styles.td, fontWeight: 'bold'}}>N</td><td style={styles.td}>Nor</td><td style={styles.td}>Non-contrasting negative ideas</td></tr>
-                  <tr><td style={{...styles.td, fontWeight: 'bold'}}>B</td><td style={styles.td}>But</td><td style={styles.td}>Contrast</td></tr>
-                  <tr><td style={{...styles.td, fontWeight: 'bold'}}>O</td><td style={styles.td}>Or</td><td style={styles.td}>Choice</td></tr>
-                  <tr><td style={{...styles.td, fontWeight: 'bold'}}>Y</td><td style={styles.td}>Yet</td><td style={styles.td}>Contrast or exception</td></tr>
-                  <tr><td style={{...styles.td, fontWeight: 'bold'}}>S</td><td style={styles.td}>So</td><td style={styles.td}>Result or consequence</td></tr>
-                </tbody>
-              </table>
-
-              <h3 style={{fontSize: '18px', fontWeight: 'bold', color: '#8e44ad', marginTop: '30px'}}>2. Correlative Conjunctions (Pairs)</h3>
-              <p style={{fontSize: '14px', color: '#555', marginBottom: '10px'}}>
-                These conjunctions always travel in <strong>pairs</strong>. You use them to link two balanced options, actions, or ideas together in the same sentence. 
-              </p>
-              <div style={styles.exampleBox}>
-                <strong>Example:</strong> <strong>Not only</strong> is she a great singer, <strong>but also</strong> a talented dancer.
-              </div>
-              <table style={styles.table}>
-                <tbody>
-                  <tr><td style={{...styles.td, fontWeight: 'bold'}}>Not only... but also</td><td style={styles.td}>Emphasizes two qualities or actions</td></tr>
-                  <tr><td style={{...styles.td, fontWeight: 'bold'}}>Both... and</td><td style={styles.td}>Includes two things together</td></tr>
-                  <tr><td style={{...styles.td, fontWeight: 'bold'}}>Either... or</td><td style={styles.td}>Chooses between two options</td></tr>
-                  <tr><td style={{...styles.td, fontWeight: 'bold'}}>Neither... nor</td><td style={styles.td}>Excludes both options</td></tr>
-                  <tr><td style={{...styles.td, fontWeight: 'bold'}}>No sooner... than</td><td style={styles.td}>Something happens immediately after another</td></tr>
-                  <tr><td style={{...styles.td, fontWeight: 'bold'}}>As... as</td><td style={styles.td}>Compares two things equally</td></tr>
-                </tbody>
-              </table>
-
-              <h3 style={{fontSize: '18px', fontWeight: 'bold', color: '#2980b9', marginTop: '30px'}}>3. Subordinating Conjunctions (AWUBIS)</h3>
-              <p style={{fontSize: '14px', color: '#555', marginBottom: '10px'}}>
-                These attach to the front of a clause and make it <strong>dependent</strong> (meaning it can't stand alone anymore). They establish a relationship of time, cause, or condition with the main sentence.
-              </p>
-              <div style={styles.exampleBox}>
-                <strong>Example:</strong> We stayed inside <strong>because</strong> the storm was getting worse.
-              </div>
-              <table style={styles.table}>
-                <tbody>
-                  <tr><td style={{...styles.td, fontWeight: 'bold'}}>Time</td><td style={styles.td}>after, before, until, when, while</td></tr>
-                  <tr><td style={{...styles.td, fontWeight: 'bold'}}>Cause / Effect</td><td style={styles.td}>because, since, so that</td></tr>
-                  <tr><td style={{...styles.td, fontWeight: 'bold'}}>Contrast</td><td style={styles.td}>although, even though, whereas</td></tr>
-                  <tr><td style={{...styles.td, fontWeight: 'bold'}}>Condition</td><td style={styles.td}>if, unless, provided that</td></tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div style={{...styles.panel, ...styles.stretchPanel}}>
-               <p style={{fontSize: '18px', fontWeight: 'bold', marginBottom: '15px', color: '#333'}}>
-                 7 Complex Sentence Structures:
-               </p>
-               <p style={{fontSize: '14px', color: '#555', marginBottom: '15px'}}>
-                 You can place subordinating conjunctions in the middle of a sentence, or <strong>"front-load"</strong> them at the beginning. If you front-load them, you MUST use a comma!
-               </p>
-
-               <div>
-                  {complexStructures.map((struct, index) => (
-                    <div key={index} style={styles.patternCard}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                          <span style={{ fontWeight: 'bold', color: '#2980b9', fontSize: '14px' }}>Sentence Structure {struct.level}</span>
-                      </div>
-                      <div style={{ color: '#555', marginBottom: '8px', fontSize: '13px', fontFamily: 'monospace', lineHeight: '1.4' }}>
-                        {struct.pattern}
-                      </div>
-                      <div style={{ fontSize: '14px', color: '#333', background: 'white', padding: '10px', borderRadius: '6px', border: '1px dashed #ccc' }}>
-                        <strong>Example:</strong> "{struct.example}"
-                      </div>
-                    </div>
-                  ))}
-               </div>
-            </div>
-
-          </div>
-
+    <Box bg="#F6D5B4" minH="100vh" p={{ base: 4, md: 8 }} fontFamily="'Inter', sans-serif">
       
-          <div style={styles.columnFlex}>
-            
+      {/* Page Header */}
+      <Box maxW="1400px" mx="auto" mb={8} bg="#F0B784" p={4} borderRadius="xl" borderWidth="2px" borderColor="whiteAlpha.600" textAlign="center">
+        <Heading color="#4A2C11" size="xl">
+          🐸 Conjunction Lessons
+        </Heading>
+      </Box>
+
+      {showCongrats && (
+        <Box maxW="800px" mx="auto" mb={8} bg="#e8f5e8" border="2px solid" borderColor="#28a745" borderRadius="10px" p={6}>
+          <Heading size="md" color="#28a745" mb={4}>🎉 Great job!</Heading>
+          <Text fontSize="lg" color="#333">
+            You have mastered the basic parts of speech. Now, let's learn how to glue them together into longer, complex sentences using conjunctions!
+          </Text>
+        </Box>
+      )}
+
+      {/* Main 2-Column Grid */}
+      <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8} maxW="1400px" mx="auto">
+        
+        {/* LEFT COLUMN */}
+        <VStack spacing={6} align="stretch">
           
-            <div style={styles.videoPanel}>
-              <h3 style={{ marginBottom: '15px', color: '#333', fontSize: '1.5rem' }}>
-                📹 Today's Lesson: Conjunctions
-              </h3>
-              
-              <div style={{ position: 'relative', width: '100%', backgroundColor: '#000', borderRadius: '8px', overflow: 'hidden' }}>
-                <video controls style={{ width: '100%', height: 'auto', display: 'block' }}>
-                  <source src="/Coordinating Conjunctions (Part 1).mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </div>
-
-          
-            <div style={styles.panel}>
-              <h3 style={{marginBottom: '15px', fontSize: '1.5rem', fontWeight: 'bold', color: '#00BCD4'}}>
-                Practice 1: Conjunction Sorter
-              </h3>
-              <ConjunctionSorter />
-            </div>
+          <Box bg="white" p={8} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)">
+            <Heading size="lg" color="#1A0933" mb={4}>1. Types of Conjunctions</Heading>
+            <Text fontSize="md" color="gray.600" mb={6}>
+              A <strong>conjunction</strong> is the "glue" of the English language. It connects words, phrases, or entirely independent clauses together so your writing doesn't sound choppy.
+            </Text>
             
-          
-            <div style={styles.panel}>
-              <h3 style={{marginBottom: '15px', fontSize: '1.5rem', fontWeight: 'bold', color: '#4CAF50'}}>
-                Practice 2: Comma or No Comma?
-              </h3>
-              <ConjunctionFillBlanks />
-            </div>
+            <VStack spacing={8} align="stretch">
+              <Box>
+                <Heading size="sm" color="#d35400" mb={2}>1. Coordinating Conjunctions (FANBOYS)</Heading>
+                <Text fontSize="sm" color="gray.600" mb={4}>
+                  These connect two ideas that have <strong>equal importance</strong>. If you put one of these between two complete sentences, you must use a comma.
+                </Text>
+                <Box bg="gray.50" p={3} borderRadius="md" border="1px dashed" borderColor="gray.400" mb={4}>
+                  <Text fontSize="sm"><strong>Example:</strong> I wanted to go to the park, <strong>but</strong> it started raining.</Text>
+                </Box>
+                <Table size="sm" variant="simple" border="1px solid" borderColor="gray.200">
+                  <Tbody>
+                    <Tr><Td fontWeight="bold">F</Td><Td>For</Td><Td>Reason or purpose</Td></Tr>
+                    <Tr><Td fontWeight="bold">A</Td><Td>And</Td><Td>Addition</Td></Tr>
+                    <Tr><Td fontWeight="bold">N</Td><Td>Nor</Td><Td>Non-contrasting negative ideas</Td></Tr>
+                    <Tr><Td fontWeight="bold">B</Td><Td>But</Td><Td>Contrast</Td></Tr>
+                    <Tr><Td fontWeight="bold">O</Td><Td>Or</Td><Td>Choice</Td></Tr>
+                    <Tr><Td fontWeight="bold">Y</Td><Td>Yet</Td><Td>Contrast or exception</Td></Tr>
+                    <Tr><Td fontWeight="bold">S</Td><Td>So</Td><Td>Result or consequence</Td></Tr>
+                  </Tbody>
+                </Table>
+              </Box>
+
+              <Box>
+                <Heading size="sm" color="#8e44ad" mb={2}>2. Correlative Conjunctions (Pairs)</Heading>
+                <Text fontSize="sm" color="gray.600" mb={4}>
+                  These conjunctions always travel in <strong>pairs</strong>. They link two balanced options or ideas.
+                </Text>
+                <Box bg="gray.50" p={3} borderRadius="md" border="1px dashed" borderColor="gray.400" mb={4}>
+                  <Text fontSize="sm"><strong>Example:</strong> <strong>Not only</strong> is she a great singer, <strong>but also</strong> a talented dancer.</Text>
+                </Box>
+                <Table size="sm" variant="simple" border="1px solid" borderColor="gray.200">
+                  <Tbody>
+                    <Tr><Td fontWeight="bold">Not only... but also</Td><Td>Emphasizes two things</Td></Tr>
+                    <Tr><Td fontWeight="bold">Both... and</Td><Td>Includes both</Td></Tr>
+                    <Tr><Td fontWeight="bold">Either... or</Td><Td>One or the other</Td></Tr>
+                    <Tr><Td fontWeight="bold">Neither... nor</Td><Td>None of the two</Td></Tr>
+                  </Tbody>
+                </Table>
+              </Box>
+
+              <Box>
+                <Heading size="sm" color="#2980b9" mb={2}>3. Subordinating Conjunctions (AWUBIS)</Heading>
+                <Text fontSize="sm" color="gray.600" mb={4}>
+                  These make a clause <strong>dependent</strong>. They establish time, cause, or condition.
+                </Text>
+                <Box bg="gray.50" p={3} borderRadius="md" border="1px dashed" borderColor="gray.400" mb={4}>
+                  <Text fontSize="sm"><strong>Example:</strong> We stayed inside <strong>because</strong> the storm was getting worse.</Text>
+                </Box>
+                <Table size="sm" variant="simple" border="1px solid" borderColor="gray.200">
+                  <Tbody>
+                    <Tr><Td fontWeight="bold">Time</Td><Td>after, before, until, when, while</Td></Tr>
+                    <Tr><Td fontWeight="bold">Cause</Td><Td>because, since, so that</Td></Tr>
+                    <Tr><Td fontWeight="bold">Contrast</Td><Td>although, even though, whereas</Td></Tr>
+                    <Tr><Td fontWeight="bold">Condition</Td><Td>if, unless, provided that</Td></Tr>
+                  </Tbody>
+                </Table>
+              </Box>
+            </VStack>
+          </Box>
+
+          <Box bg="white" p={8} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)">
+            <Heading size="md" color="#1A0933" mb={4}>2. Complex Sentence Structures</Heading>
+            <Text fontSize="sm" color="gray.600" mb={6}>
+              You can place subordinating conjunctions in the middle, or <strong>"front-load"</strong> them at the beginning. If you front-load, you MUST use a comma!
+            </Text>
             
-           
-            <div style={{...styles.panel, ...styles.stretchPanel}}>
-              <h3 style={{marginBottom: '15px', fontSize: '1.5rem', fontWeight: 'bold', color: '#FF5722'}}>
-                Practice 3: Complex Builder
-              </h3>
-              <ConjunctionStructureGame />
-            </div>
+            <VStack spacing={4} align="stretch">
+              {complexStructures.map((struct, index) => (
+                <Box key={index} p={4} bg="gray.50" borderRadius="xl" borderWidth="1px" borderColor="gray.200">
+                  <Badge colorScheme="blue" mb={2}>Sentence Structure {struct.level}</Badge>
+                  <Text fontSize="xs" fontFamily="monospace" color="gray.600" mb={2}>{struct.pattern}</Text>
+                  <Box bg="white" p={3} borderRadius="md" border="1px dashed" borderColor="gray.300">
+                    <Text fontSize="sm"><strong>Example:</strong> "{struct.example}"</Text>
+                  </Box>
+                </Box>
+              ))}
+            </VStack>
+          </Box>
+        </VStack>
 
-          </div>
-        </div>
+        {/* RIGHT COLUMN */}
+        <VStack spacing={6} align="stretch">
+          
+          {/* THE VIDEO PANEL */}
+          <Box bg="#f8f9fa" p={6} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)" textAlign="center">
+            <Heading size="md" color="#1A0933" mb={4}>
+              📹 Today's Lesson: Conjunctions
+            </Heading>
+            
+            <Box position="relative" w="100%" bg="black" borderRadius="lg" overflow="hidden" borderWidth="1px" borderColor="gray.300">
+              <video controls style={{ width: '100%', height: '580px', display: 'block' }}>
+                <source src="/Coordinating Conjunctions (Part 1).mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </Box>
+            
+            <Text mt={3} fontSize="sm" color="gray.500" fontStyle="italic">
+              💡 Watch the lesson before practicing with the exercises below
+            </Text>
+          </Box>
 
-     
-   
+          <Box bg="white" p={6} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)">
+             <Heading size="md" color="#00BCD4" mb={4}>Practice 1: Conjunction Sorter</Heading>
+             <ConjunctionSorter />
+          </Box>
 
-      </div>
-    </div>
+          <Box bg="white" p={6} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)">
+             <Heading size="md" color="#4CAF50" mb={4}>Practice 2: Comma or No Comma?</Heading>
+             <ConjunctionFillBlanks />
+          </Box>
+
+          <Box bg="white" p={6} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)">
+             <Heading size="md" color="#FF5722" mb={4}>Practice 3: Complex Builder</Heading>
+             <ConjunctionStructureGame />
+          </Box>
+
+        </VStack>
+      </Grid>
+    </Box>
   );
 };
 
