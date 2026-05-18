@@ -1,97 +1,181 @@
-import React from 'react';
 import {
   Box,
   VStack,
   Heading,
   Text,
   Button,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverArrow,
-  PopoverCloseButton,
-  Divider,
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon
-} from '@chakra-ui/react';
-import Carousel from './nounComponents/carousel';
-import WordPile from './nounComponents/wordPile';
-import { useHistory } from 'react-router-dom';
-
-// Content box template
-function ContentBox({ title, info, children }) {
-  return (
-    <Box
-      p={5}
-      borderWidth="1px"
-      backgroundColor="#00C2D1"
-      borderColor="#073B4C" 
-      borderRadius="2xl" 
-      boxShadow="6px 6px 0px #073B4C"
-    >
-      <Heading color="#073B4C" fontSize="2em" fontWeight="semibold" textAlign="center">
-        {title}
-      </Heading>
-      <Text color="#073B4C" fontSize="xl" mt={4} textAlign="center">
-        {info}
-      </Text>
-      {children}
-    </Box>
-  );
-}
+  Grid,
+  Badge,
+} from "@chakra-ui/react";
+import { useHistory } from "react-router-dom";
 
 export default function AbPlurNoun() {
   const history = useHistory();
 
   const handleClick = () => {
-    history.push('/noun-practice');
+    history.push("/noun-practice");
   };
+
   return (
-    <Box borderWidth="1px" backgroundColor="#FFCEA0" minH="100vh">
-      <VStack spacing={6} p={8} align="stretch">
-        <ContentBox
-          title="Lesson 3: Abstract and Plural Nouns"
-          info="Learn about abstract nouns and how to form plural nouns."
-        ></ContentBox>
+    <Box
+      bg="#F6D5B4"
+      minH="100vh"
+      p={{ base: 4, md: 8 }}
+      fontFamily="'Inter', sans-serif"
+    >
+      {/* Page Header */}
+      <Box
+        maxW="1400px"
+        mx="auto"
+        mb={8}
+        bg="#F0B784"
+        p={4}
+        borderRadius="xl"
+        borderWidth="2px"
+        borderColor="whiteAlpha.600"
+        textAlign="center"
+      >
+        <Heading color="#4A2C11" size="xl">
+          🐸 Abstract & Plural Nouns
+        </Heading>
+      </Box>
 
-        <ContentBox
-        title={"Plural Nouns"}
-        info="Nouns can change form depending on meaning.
-Plural nouns mean more than one.">
-        <Text color="#073B4C" fontSize="3xl" textAlign="center">Examples:</Text>
-        <Text color="#073B4C" fontSize="2xl" textAlign="center">
-          <ul style={{ listStyleType: 'none' }}>
-            <li>dog → dogs</li>
-            <li>book → books</li>
-            <li>child → children</li>
-          </ul>
-        </Text>
+      <VStack spacing={8} maxW="1000px" mx="auto">
+        <Box
+          bg="white"
+          p={8}
+          borderRadius="2xl"
+          borderWidth="2px"
+          borderColor="#1A1A1A"
+          boxShadow="6px 6px 0px rgba(0,0,0,0.1)"
+          w="100%"
+        >
+          <Heading size="lg" color="#1A0933" mb={4}>
+            Lesson 3: Abstract and Plural Nouns
+          </Heading>
+          <Text fontSize="lg" color="gray.600">
+            Learn about abstract nouns and how to form plural nouns.
+          </Text>
+        </Box>
 
-</ContentBox>
+        <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }} gap={8} w="100%">
+          <Box
+            bg="white"
+            p={8}
+            borderRadius="2xl"
+            borderWidth="2px"
+            borderColor="#1A1A1A"
+            boxShadow="6px 6px 0px rgba(0,0,0,0.1)"
+          >
+            <Badge colorScheme="blue" mb={3} fontSize="md">
+              Plural Nouns
+            </Badge>
+            <Text fontSize="md" color="gray.600" mb={6}>
+              Nouns can change form depending on meaning.{" "}
+              <strong>Plural nouns</strong> mean more than one.
+            </Text>
+            <Box
+              bg="blue.50"
+              p={4}
+              borderRadius="xl"
+              border="1px solid"
+              borderColor="blue.200"
+            >
+              <Text fontWeight="bold" color="blue.700" mb={2}>
+                EXAMPLES:
+              </Text>
+              <VStack align="start" spacing={1} fontSize="lg">
+                <Text>
+                  dog → <strong>dogs</strong>
+                </Text>
+                <Text>
+                  book → <strong>books</strong>
+                </Text>
+                <Text>
+                  child → <strong>children</strong>
+                </Text>
+              </VStack>
+            </Box>
+          </Box>
 
-<ContentBox
-title="Abstract Nouns"
-info="Abstract nouns name ideas, feelings, or qualities that you cannot touch.">
-    <Text color="#073B4C" fontSize="3xl" textAlign="center">Compare:</Text>
-    <Text color="#073B4C" fontSize="2xl" textAlign="center">
-    <ul style={{ listStyleType: 'none' }}>
-      <li>She held a <Text color="#073B4C" as="mark">book</Text>. (concrete noun — you can touch it)</li>
-      <li>She felt <Text color="#073B4C" as="mark">happiness</Text>. (abstract noun — you cannot touch it)</li>
-    </ul></Text>
-</ContentBox>
-<ContentBox
-title="Key Idea"
-info="Plural nouns show quantity.
-Abstract nouns show ideas or feelings.">
+          <Box
+            bg="white"
+            p={8}
+            borderRadius="2xl"
+            borderWidth="2px"
+            borderColor="#1A1A1A"
+            boxShadow="6px 6px 0px rgba(0,0,0,0.1)"
+          >
+            <Badge colorScheme="purple" mb={3} fontSize="md">
+              Abstract Nouns
+            </Badge>
+            <Text fontSize="md" color="gray.600" mb={6}>
+              <strong>Abstract nouns</strong> name ideas, feelings, or qualities
+              that you cannot touch.
+            </Text>
+            <Box
+              bg="purple.50"
+              p={4}
+              borderRadius="xl"
+              border="1px solid"
+              borderColor="purple.200"
+            >
+              <Text fontWeight="bold" color="purple.700" mb={2}>
+                COMPARE:
+              </Text>
+              <VStack align="start" spacing={3} fontSize="md">
+                <Box>
+                  <Text color="gray.500" fontSize="xs">
+                    CONCRETE:
+                  </Text>
+                  <Text>
+                    She held a{" "}
+                    <Text as="mark" bg="blue.100">
+                      book
+                    </Text>
+                    . (You can touch it)
+                  </Text>
+                </Box>
+                <Box>
+                  <Text color="gray.500" fontSize="xs">
+                    ABSTRACT:
+                  </Text>
+                  <Text>
+                    She felt{" "}
+                    <Text as="mark" bg="purple.100">
+                      happiness
+                    </Text>
+                    . (You cannot touch it)
+                  </Text>
+                </Box>
+              </VStack>
+            </Box>
+          </Box>
+        </Grid>
 
-</ContentBox>
-        <Button ml="45%" colorScheme="teal" variant="outline" size="lg" onClick={handleClick}>Go to Practice</Button>
+        <Box
+          bg="#e8f5e8"
+          border="2px solid"
+          borderColor="#28a745"
+          borderRadius="2xl"
+          p={6}
+          w="100%"
+          textAlign="center"
+        >
+          <Heading size="md" color="#28a745" mb={2}>
+            Key Idea
+          </Heading>
+          <Text fontSize="lg" color="#333">
+            Plural nouns show <strong>quantity</strong>. Abstract nouns show{" "}
+            <strong>ideas or feelings</strong>.
+          </Text>
+        </Box>
+
+        <Button colorScheme="orange" size="lg" px={10} onClick={handleClick}>
+          Go to Practice Games ➡️
+        </Button>
       </VStack>
     </Box>
   );
 }
+  
