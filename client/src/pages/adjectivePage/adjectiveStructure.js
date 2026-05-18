@@ -1,4 +1,5 @@
 import React from 'react';
+import { Box, Heading, Text, Grid, Flex, VStack, SimpleGrid, Badge, Divider } from '@chakra-ui/react';
 
 
 // ADJECTIVE COMPONENTS
@@ -12,186 +13,76 @@ import adjectivesData from '../../data/adjectives_questions.json';
 import WordHunterGame from '../../components/wordHunter';
 
 const AdjectivePage = () => {
-
-  const styles = {
-    body: {
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-      background: 'rgba(249, 190, 134, 0.922)',
-      minHeight: '100vh',
-      padding: '20px',
-      margin: 0
-    },
-    container: {
-      margin: '0 auto',
-      padding: '20px',
-      textAlign: 'center'
-    },
-    navHeader: {
-      color: 'rgb(8, 0, 0)',
-      border: '2px solid white',
-      borderRadius: '1rem',
-      padding: '0.5rem 1rem',
-      display: 'flex',
-      justifyContent: 'space-between',
-      position: 'sticky',
-      backgroundColor: 'rgba(249, 190, 134, 0.922)',
-      marginBottom: '20px',
-      zIndex: 100
-    },
-    Heading: {
-      fontSize: '32px',
-      margin: '0 auto',
-      textAlign: 'center',
-      fontWeight: '600',
-      lineHeight: '1.2'
-    },
-    mainTitle: {
-      fontSize: '40px',
-      marginBottom: '1.5rem',
-      marginTop: '1rem',
-      textAlign: 'center',
-      fontWeight: '700',
-      color: '#333',
-      lineHeight: '1.2'
-    },
-    mainContent: {
-      display: 'grid',
-      gridTemplateColumns: '1fr 1fr', 
-      gap: '20px',
-      marginTop: '35px',
-      marginBottom: '20px',
-      textAlign: 'left' 
-    },
-    
-    
-    columnFlex: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '20px',
-      height: '100%' 
-    },
-    
-    stretchPanel: {
-      flex: 1 
-    },
-
-    panel: {
-      background: 'white',
-      borderRadius: '15px',
-      padding: '20px',
-      boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
-     
-    },
-    lessonPanel: {
-      background: '#ffeaa7' 
-    },
-    typingChallenge: {
-      background: '#e3f2fd' 
-    },
-    videoPanel: {
-      backgroundColor: '#f8f9fa',
-      borderRadius: '15px',
-      padding: '20px',
-      border: '1px solid #ddd',
-      textAlign: 'center',
-      boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
-    },
-    grammarReference: {
-      background: 'white',
-      borderRadius: '15px',
-      padding: '20px',
-      marginTop: '20px',
-      boxShadow: '0 4px 15px rgba(0,0,0,0.1)',
-      textAlign: 'left'
-    }
-  };
-
   return (
-    <div style={styles.body}>
-      <div style={styles.container}>
-
-        <h1 style={styles.mainTitle}>Adjective & Royal Order Builder</h1>
-
+    <Box bg="#F6D5B4" minH="100vh" p={{ base: 4, md: 8 }} fontFamily="'Inter', sans-serif">
       
-        <div style={styles.mainContent}>
-          
-       
-          
-<div style={styles.columnFlex}>
-  
-  
-  <div style={{...styles.panel, ...styles.lessonPanel}}>
-    <AdjectiveLesson />
-  </div>
+      {/* Page Header */}
+      <Box maxW="1400px" mx="auto" mb={8} bg="#F0B784" p={4} borderRadius="xl" borderWidth="2px" borderColor="whiteAlpha.600" textAlign="center">
+        <Heading color="#4A2C11" size="xl">
+          🐸 Adjective Lessons
+        </Heading>
+      </Box>
 
-  
-  <div style={{...styles.panel, ...styles.typingChallenge}}>
-    <h3 style={{marginBottom: '15px', fontSize: '1.2rem', fontWeight: 'bold', color: '#1565c0'}}>
-      ✍️ Adjective Fill-in-the-Blank
-    </h3>
-    <AdjectiveFillBlanks />
-  </div>
-
- 
-  <div style={{...styles.panel, ...styles.stretchPanel, background: '#FAF5FF'}}>
-    <WordHunterGame
-      questions={adjectivesData.filter(q => q.exercise === "identifying")}
-    />
-  </div>
-
-</div>
-
-          
-          <div style={styles.columnFlex}>
-            
-            <div style={styles.videoPanel}>
-              <h3 style={{ marginBottom: '15px', color: '#333', fontSize: '1.5rem' }}>
-                📹 Today's Lesson: Adjectives
-              </h3>
-              <p style={{ fontSize: '14px', color: '#666', marginBottom: '15px', lineHeight: '1.4' }}>
-                Watch this lesson to understand how to use and order adjectives:
-              </p>
-              
-              <div style={{ position: 'relative', width: '55%', backgroundColor: '#000', borderRadius: '8px', overflow: 'hidden', marginLeft: 'auto', marginRight: 'auto' }}>
-                <video controls style={{ width: '100%', height: '480', display: 'block' }}>
-                  <source src="/lesson4.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <div style={{ marginTop: '10px', fontSize: '12px', color: '#888', fontStyle: 'italic' }}>
-                💡 Watch the lesson before practicing with the exercises below
-              </div>
-            </div>
-
-            
-            <div style={{...styles.panel, ...styles.stretchPanel}}>
-              <h3 style={{marginBottom: '20px', fontSize: '1.5rem', fontWeight: 'bold', textAlign: 'center'}}>
-                Practice
-              </h3>
-              
-              <AdjectiveRoyalOrder />
-              
-              <hr style={{margin: '25px 0', borderColor: '#eee'}} />
-              
-              <AdjectiveSentenceStructures />
-              
-              <hr style={{margin: '25px 0', borderColor: '#eee'}} />
-              
-              <AdjectiveSortingGame />
-            </div>
-          </div>
-        </div>
-
+      {/* Main 2-Column Grid */}
+      <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8} maxW="1400px" mx="auto">
         
-        <div style={styles.grammarReference}>
-          <h2 style={{fontSize: '2rem', textAlign: 'center', marginBottom: '20px', color: '#333'}}>
-            🏆 Final Adjective Quiz
-          </h2>
-          <AdjectiveQuiz />
-        </div>
+        {/* LEFT COLUMN */}
+        <VStack spacing={6} align="stretch">
+          
+          <Box bg="white" p={8} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)">
+            <AdjectiveLesson />
+          </Box>
 
-      </div>
-    </div>
+          <Box bg="white" p={6} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)">
+            <Heading size="md" color="#1565c0" mb={4}>✍️ Adjective Fill-in-the-Blank</Heading>
+            <AdjectiveFillBlanks />
+          </Box>
+
+          <Box bg="#FAF5FF" p={6} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)">
+            <WordHunterGame
+              questions={adjectivesData.filter(q => q.exercise === "identifying")}
+            />
+          </Box>
+        </VStack>
+
+        {/* RIGHT COLUMN */}
+        <VStack spacing={6} align="stretch">
+          
+          {/* THE VIDEO PANEL */}
+          <Box bg="#f8f9fa" p={6} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)" textAlign="center">
+            <Heading size="md" color="#1A0933" mb={4}>
+              📹 Today's Lesson: Adjectives
+            </Heading>
+            
+            <Box position="relative" w="100%" bg="black" borderRadius="lg" overflow="hidden" borderWidth="1px" borderColor="gray.300">
+              <video controls style={{ width: '100%', height: '580px', display: 'block' }}>
+                <source src="/lesson4.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </Box>
+            
+            <Text mt={3} fontSize="sm" color="gray.500" fontStyle="italic">
+              💡 Watch the lesson before practicing with the exercises below
+            </Text>
+          </Box>
+
+          <Box bg="white" p={6} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)">
+            <Heading size="lg" textAlign="center" mb={6}>Interactive Practice</Heading>
+            <AdjectiveRoyalOrder />
+            <Divider my={6} />
+            <AdjectiveSentenceStructures />
+            <Divider my={6} />
+            <AdjectiveSortingGame />
+          </Box>
+        </VStack>
+      </Grid>
+
+      {/* Final Quiz Section */}
+      <Box maxW="1400px" mx="auto" mt={8} bg="white" p={8} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)">
+        <Heading size="xl" textAlign="center" mb={6} color="#333">🏆 Final Adjective Quiz</Heading>
+        <AdjectiveQuiz />
+      </Box>
+    </Box>
   );
 };
 
