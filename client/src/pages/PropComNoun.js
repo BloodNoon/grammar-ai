@@ -13,44 +13,10 @@ import {
   PopoverArrow,
   PopoverCloseButton,
   Divider,
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon
+  Grid,
+  Flex
 } from '@chakra-ui/react';
 import { useHistory } from 'react-router-dom';
-import Carousel from './nounComponents/carousel';
-import WordPile from './nounComponents/wordPile';
-
-
-
-// Content box template
-function ContentBox({ title, info, children }) {
-  return (
-    <Box
-      p={5}
-      borderWidth="1px"
-      backgroundColor="#9D4EDD"
-      borderColor="#073B4C"
-      borderRadius="2xl"
-      boxShadow="6px 6px 0px #073B4C"
-    >
-      <Heading color="#1A0933" fontSize="2em" fontWeight="semibold" textAlign="center">
-        {title}
-      </Heading>
-      <Text color="#1A0933" fontSize="xl" mt={4} textAlign="center">
-        {info}
-      </Text>
-      {children}
-    </Box>
-  );
-}
-
-
-
-
-
 
 export default function PropComNoun() {
   const history = useHistory();
@@ -60,140 +26,103 @@ export default function PropComNoun() {
   };
 
   return (
+    <Box bg="#F6D5B4" minH="100vh" p={{ base: 4, md: 8 }} fontFamily="'Inter', sans-serif">
+      
+      {/* Page Header */}
+      <Box maxW="1400px" mx="auto" mb={8} bg="#F0B784" p={4} borderRadius="xl" borderWidth="2px" borderColor="whiteAlpha.600" textAlign="center">
+        <Heading color="#4A2C11" size="xl">
+          🐸 Common & Proper Nouns
+        </Heading>
+      </Box>
 
-    <Box borderWidth="1px" backgroundColor="#FFCEA0" minH="100vh">
-<VStack spacing={6} p={8} align="stretch">
-<ContentBox
-title="Lesson 2: Common and Proper Nouns"
-info=" There are two main types of nouns: common nouns and proper nouns.
-"
->
+      <VStack spacing={8} maxW="1000px" mx="auto">
+        
+        <Box bg="white" p={8} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)" w="100%">
+          <Heading size="lg" color="#1A0933" mb={4}>Lesson 2: Common and Proper Nouns</Heading>
+          <Text fontSize="lg" color="gray.600" mb={6}>
+            There are two main types of nouns: <strong>common nouns</strong> and <strong>proper nouns</strong>.
+          </Text>
+          
+          <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }} gap={6}>
+            <Box p={5} bg="blue.50" borderRadius="xl" border="1px solid" borderColor="blue.200">
+              <Heading size="md" color="blue.700" mb={3}>Common Nouns</Heading>
+              <Text fontSize="sm" color="gray.700" mb={3}>Common nouns name general people, places, or things. They do not start with a capital letter.</Text>
+              <Box bg="white" p={2} borderRadius="md">
+                <Text fontSize="xs" fontWeight="bold" color="blue.500">EXAMPLES:</Text>
+                <Text fontSize="sm">teacher, school, park, city, dog, cat, horse, book, chair, apple.</Text>
+              </Box>
+            </Box>
 
-</ContentBox>
+            <Box p={5} bg="purple.50" borderRadius="xl" border="1px solid" borderColor="purple.200">
+              <Heading size="md" color="purple.700" mb={3}>Proper Nouns</Heading>
+              <Text fontSize="sm" color="gray.700" mb={3}>Proper nouns are specific names of people, places, or things. They always start with a capital letter.</Text>
+              <Box bg="white" p={2} borderRadius="md">
+                <Text fontSize="xs" fontWeight="bold" color="purple.500">EXAMPLES:</Text>
+                <Text fontSize="sm">John, Paris, New York, Bill Gates, Apple, Microsoft.</Text>
+              </Box>
+            </Box>
+          </Grid>
+        </Box>
 
-<Box backgroundColor="#9D4EDD" borderColor="#073B4C" p={5} borderWidth="1px" borderRadius="2xl" boxShadow="6px 6px 0px #073B4C">
-<Heading color="#1A0933" size="xl" textAlign="center" fontWeight="semibold">
-  Common Nouns
-</Heading>
-<Text color="#1A0933" fontSize="xl" textAlign="center">
-  Common nouns name general people, places, or things.
-</Text>
-<Text color="#1A0933" fontSize="xl" textAlign="center">
-    Examples of common nouns:
-</Text>
-<Text color="#1A0933" fontSize="xl" textAlign="center">
-    teacher, school, park, city, dog, cat, horse, book, chair, apple.
-</Text>
+        <Box bg="white" p={8} borderRadius="2xl" borderWidth="2px" borderColor="#1A1A1A" boxShadow="6px 6px 0px rgba(0,0,0,0.1)" w="100%">
+          <Heading size="lg" color="#1A0933" mb={6}>Comparison & Structure</Heading>
+          
+          <VStack spacing={6} align="stretch">
+            <Box p={4} bg="gray.50" borderRadius="xl">
+              <Text fontSize="md" fontWeight="bold" color="gray.500" mb={2}>COMMON NOUN SENTENCE:</Text>
+              <Text fontSize="xl">I visited <Text as="mark" bg="blue.100">the city.</Text></Text>
+            </Box>
 
+            <Box p={4} bg="gray.50" borderRadius="xl">
+              <Text fontSize="md" fontWeight="bold" color="gray.500" mb={2}>PROPER NOUN SENTENCE:</Text>
+              <Text fontSize="xl">I visited <Text as="mark" bg="purple.100">London.</Text></Text>
+            </Box>
 
+            <Box bg="orange.50" p={4} borderRadius="xl" border="1px dashed" borderColor="orange.300">
+              <Text as="em" color="orange.800">Key Idea: If the noun is a specific name and capitalized, it is a proper noun.</Text>
+            </Box>
 
-</Box>
-<ContentBox
-title="Proper Nouns"
-info=" Proper nouns are specific names of people, places, or things.">
-  <Text color="#1A0933" fontSize="xl" textAlign="center">Proper Nouns always start with a capital letter.</Text>
-  <Text color="#1A0933" fontSize="xl" textAlign="center">Examples off proper nouns:</Text>
-  <Text color="#1A0933" fontSize="xl" textAlign="center">
-    John, Paris, New York, Bill Gates, Apple, Microsoft.</Text>
-</ContentBox>
-<ContentBox
-title="Comparison of Common and Proper Nouns"
-info="Here is a comparison of common and proper nouns:">
-<Text color="#1A0933" fontSize="2xl" textAlign="center">
-  Common Noun Sentence:
-</Text>
-<Text color="#1A0933" fontSize="xl" textAlign="center">
-  I visited <Text as="mark">the city.</Text>
-</Text>
-<Text color="#1A0933" fontSize="2xl" textAlign="center">
-  Proper Noun Sentence:
-</Text>
-<Text color="#1A0933" fontSize="xl" textAlign="center">
-  I visited <Text as="mark">London.</Text>
-</Text>
-<Text color="#1A0933" fontSize="xl"  textAlign="center">
-  <Text as="em" color="#FF758F">Key Idea: If the noun is a specific name and capitalized, it is a proper noun.</Text>
-</Text>
-</ContentBox>
-<ContentBox
-title="Sentence Structure Focus"
-info="Proper nouns follow the same sentence patterns as common nouns but use capitalization">
-  <Text color="#1A0933" fontSize="2xl" textAlign="center">
-    Example: </Text>
-    <Box display="flex" justifyContent="center" mt={4}>
-    <Popover>
+            <Divider />
 
+            <Box>
+              <Text fontWeight="bold" mb={4}>Interactive Examples (Click words for tips):</Text>
+              <Flex justify="center" gap={4} wrap="wrap">
+                <Popover>
                   <PopoverTrigger>
-                    <Button color="#1A1A1A" backgroundColor="#00F5D4" fontSize="xl">James</Button>
+                    <Button colorScheme="teal" size="lg">James</Button>
                   </PopoverTrigger>
                   <PopoverContent>
                     <PopoverArrow />
                     <PopoverCloseButton />
-                    <PopoverHeader>Proper Noun</PopoverHeader>
+                    <PopoverHeader fontWeight="bold">Proper Noun</PopoverHeader>
                     <PopoverBody>
                       <Text color="#1A0933" fontWeight="bold">James is a name, which makes it a proper noun.</Text>
                     </PopoverBody>
                   </PopoverContent>
-                  <Text color="#1A0933" fontSize="xl"> visited  </Text>
                 </Popover>
-
-
-                               <Popover>
-                              <PopoverTrigger>
-                                <Button color="#1A1A1A" backgroundColor="#00F5D4" fontSize="xl">New York</Button>
-                              </PopoverTrigger>
-                              <PopoverContent>
-                                <PopoverArrow />
-                                <PopoverCloseButton />
-                                <PopoverHeader>Proper Noun</PopoverHeader>
-                                <PopoverBody>
-                                  <Text color="#1A0933" fontWeight="bold">New York is a named place, which makes it a proper noun.</Text>
-                                </PopoverBody>
-                              </PopoverContent>
-                              <Text color="#1A0933" fontSize="xl">.</Text>
-                            </Popover>
-                   </Box>
-                   <Divider size="sm" my={4} />
-                   <Box display="flex" justifyContent="center" mt={4}>
-    <Popover>
-                <Text color="#1A0933" fontSize="xl">The </Text>
+                
+                <Text fontSize="2xl" py={2}>visited</Text>
+                
+                <Popover>
                   <PopoverTrigger>
-                    <Button color="#1A1A1A" backgroundColor="#00F5D4" fontSize="xl">teacher</Button>
+                    <Button colorScheme="teal" size="lg">New York</Button>
                   </PopoverTrigger>
                   <PopoverContent>
                     <PopoverArrow />
                     <PopoverCloseButton />
-                    <PopoverHeader>Common Noun</PopoverHeader>
+                    <PopoverHeader fontWeight="bold">Proper Noun</PopoverHeader>
                     <PopoverBody>
-                      <Text color="#1A0933" fontWeight="bold">Teacher isn't a name, which makes it a common noun.</Text>
+                      <Text color="#1A0933" fontWeight="bold">New York is a named place, which makes it a proper noun.</Text>
                     </PopoverBody>
                   </PopoverContent>
-                  <Text color="#1A0933" fontSize="xl"> visited  </Text>
                 </Popover>
+              </Flex>
+            </Box>
+          </VStack>
+        </Box>
 
-
-                               <Popover>
-                              <PopoverTrigger>
-                                <Button color="#1A1A1A" backgroundColor="#00F5D4" fontSize="xl">a city</Button>
-                              </PopoverTrigger>
-                              <PopoverContent>
-                                <PopoverArrow />
-                                <PopoverCloseButton />
-                                <PopoverHeader>Common Noun</PopoverHeader>
-                                <PopoverBody>
-                                  <Text color="#1A0933" fontWeight="bold">the city isn't a named place, which makes it a common noun.</Text>
-                                </PopoverBody>
-                              </PopoverContent>
-                              <Text color="#1A0933" fontSize="xl">.</Text>
-                            </Popover>
-                   </Box>
-</ContentBox>
-<Button ml="45%" colorScheme="teal" variant="outline" size="lg" onClick={handleNextLesson}>Next Lesson</Button>
-</VStack>
+        <Button colorScheme="orange" size="lg" px={10} onClick={handleNextLesson}>Next Lesson: Abstract & Plural Nouns ➡️</Button>
+      </VStack>
     </Box>
-
   );
-
-
-
 }
