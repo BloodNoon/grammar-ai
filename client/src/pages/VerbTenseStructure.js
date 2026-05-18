@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Heading, Text, Flex, VStack } from '@chakra-ui/react';
+import { Box, Heading, Text, Flex, VStack, Grid } from '@chakra-ui/react';
 import { hasFullStructCheck } from '../utils/SentenceChecker/StructureChecker';
 
 // Import essential verb components
@@ -188,7 +188,7 @@ const VerbTenseStructure = () => {
   };
 
   return (
-    <Box bg="#F6D5B4" minH="100vh" p={{ base: 6, md: 8 }} fontFamily="'Inter', sans-serif">
+    <Box bg="#F6D5B4" minH="100vh" p={{ base: 4, md: 8 }} fontFamily="'Inter', sans-serif">
 
       {/* Page Header */}
       <Box maxW="1400px" mx="auto" mb={8} bg="#F0B784" p={4} borderRadius="xl" borderWidth="2px" borderColor="whiteAlpha.600" textAlign="center">
@@ -198,8 +198,7 @@ const VerbTenseStructure = () => {
       </Box>
 
       {/* Main 2-Column Grid */}
-      <Box maxW="1400px" mx="auto">
-        <Box display="grid" gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
+      <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8} maxW="1400px" mx="auto">
 
           {/* LEFT COLUMN: Lesson & Quiz */}
           <VStack align="stretch" spacing={6}>
@@ -269,7 +268,7 @@ const VerbTenseStructure = () => {
               </Heading>
 
               <Box position="relative" w="100%" bg="black" borderRadius="lg" overflow="hidden" borderWidth="1px" borderColor="gray.300">
-                <video controls style={{ width: '100%', height: '480', display: 'block' }}>
+                <video controls style={{ width: '100%', height: '580px', display: 'block' }}>
                   <source src="/lesson2.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
@@ -298,8 +297,7 @@ const VerbTenseStructure = () => {
             </Box>
 
           </VStack>
-        </Box>
-      </Box>
+      </Grid>
     </Box>
   );
 };
