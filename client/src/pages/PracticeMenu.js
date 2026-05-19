@@ -91,7 +91,7 @@ const PracticeMenu = () => {
             p={6}
             position="relative"
             transition="all 0.2s"
-            displays="flex"
+            display="flex"
             flexDirection="column"
             _hover={{
               transform: "translateY(-4px)",
