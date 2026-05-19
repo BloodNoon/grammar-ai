@@ -111,6 +111,6 @@ import PrepositionPhraseSorting from '../../utils/SentenceChecker/PrepositionPhr
       </Box>
     </Box>
   );
-};
+
 
 export default Prep2Structure;
