@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Heading, Text, Grid, Flex, VStack, SimpleGrid, Badge, Table, Tbody, Tr, Td, Th, Thead, Divider } from '@chakra-ui/react';
-
+ 
 // PREP1 COMPONENTS
 import PrepositionSorter from '../../utils/SentenceChecker/PrepositionSorter';
 import PrepositionStructureGame from '../../utils/SentenceChecker/PrepositionStructureGame';
