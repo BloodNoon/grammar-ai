@@ -133,6 +133,6 @@ const Prep1Structure = () => {
       </Grid>
     </Box>
   );
-
+};
 
 export default Prep1Structure;
