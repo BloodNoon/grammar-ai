@@ -7,7 +7,7 @@ import PrepositionPhraseFillBlanks from '../../utils/SentenceChecker/Preposition
 import PrepositionPhraseWordBlocks from '../../utils/SentenceChecker/PrepositionPhraseWordBlocks';
 import PrepositionPhraseTesting from '../../utils/SentenceChecker/PrepositionPhraseTesting';
 import PrepositionPhraseSorting from '../../utils/SentenceChecker/PrepositionPhraseSorting';
-
+const Prep2Structure = () => {
  return (
     <Box bg="#F6D5B4" minH="100vh" p={{ base: 4, md: 8 }} fontFamily="'Inter', sans-serif">
       
@@ -112,5 +112,5 @@ import PrepositionPhraseSorting from '../../utils/SentenceChecker/PrepositionPhr
     </Box>
   );
 
-
+}
 export default Prep2Structure;
