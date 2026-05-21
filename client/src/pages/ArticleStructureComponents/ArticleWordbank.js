@@ -1,10 +1,14 @@
 // This component shows available words that users can drag into the sentence building area
 import React from 'react';
 
+const ALLOWED_TYPES = ['Pronoun', 'Plural Noun'];
+
 const ArticleWordBank = ({ 
   availableWords,   // Array of word objects with id, text, and type properties
   handleDragStart   // Function called when user starts dragging a word
 }) => {
+
+  const filteredWords = availableWords.filter(word => ALLOWED_TYPES.includes(word.type));
 
   // Color mapping for different grammatical word types
   const getWordTypeColor = (type) => {
@@ -66,7 +70,7 @@ const ArticleWordBank = ({
       </p>
 
       {/* Check if there are words available to display */}
-      {availableWords.length === 0 ? (
+      {filteredWords.length === 0 ? (
         // Show message when no words are available
         <div style={{
           textAlign: 'center',          // Center the message
@@ -89,7 +93,7 @@ const ArticleWordBank = ({
           padding: '10px'               // Internal padding for grid container
         }}>
           {/* Map through each available word to create draggable cards */}
-          {availableWords.map((word) => (
+          {filteredWords.map((word) => (
             <div
               key={word.id}             // Unique key for React rendering
               draggable                 // Make the div draggable
@@ -159,7 +163,7 @@ const ArticleWordBank = ({
         color: '#888',                  // Light gray color
         fontStyle: 'italic'             // Italic styling
       }}>
-        {availableWords.length} words available for dragging
+        {filteredWords.length} words available for dragging
       </div>
 
       {/* Legend showing word type colors */}
@@ -188,12 +192,8 @@ const ArticleWordBank = ({
         }}>
           {/* Create legend items for common word types */}
           {[
-            { type: 'Determiner', label: 'Articles' },
-            { type: 'Subject', label: 'Subject' },
-            { type: 'Object', label: 'Object' },
-            { type: 'Noun', label: 'Noun' },
-            { type: 'Verb', label: 'Verb' },
-            { type: 'Adjective', label: 'Adjective' }
+            { type: 'Pronoun', label: 'Pronoun' },
+            { type: 'Plural Noun', label: 'Plural Noun' },
           ].map(({ type, label }) => (
             <div key={type} style={{
               display: 'flex',          // Horizontal layout
