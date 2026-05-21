@@ -1,7 +1,7 @@
 // This component shows available words that users can drag into the sentence building area
 import React from 'react';
 
-const ALLOWED_TYPES = ['Pronoun', 'Plural Noun'];
+const ALLOWED_TYPES = ['Subject', 'Object', 'Determiner', 'Noun'];
 
 const ArticleWordBank = ({ 
   availableWords,   // Array of word objects with id, text, and type properties
@@ -192,8 +192,10 @@ const ArticleWordBank = ({
         }}>
           {/* Create legend items for common word types */}
           {[
-            { type: 'Pronoun', label: 'Pronoun' },
-            { type: 'Plural Noun', label: 'Plural Noun' },
+            { type: 'Subject', label: 'Subject' },
+            { type: 'Determiner', label: 'Articles' },
+            { type: 'Object', label: 'Object' },
+            { type: 'Noun', label: 'Noun' },
           ].map(({ type, label }) => (
             <div key={type} style={{
               display: 'flex',          // Horizontal layout
