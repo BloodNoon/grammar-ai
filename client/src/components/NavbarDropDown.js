@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import {
 	Button,
@@ -29,6 +29,8 @@ export default function NavbarDropDown() {
 	const { currentUser, logout } = useAuth();
 	const queryClient = useQueryClient();
 	const [isMobile] = useMediaQuery('(max-width:480px)');
+	const location = useLocation();
+	const isLandingPage = location.pathname === '/';
 
 	function handleLogout() {
 		logout();
@@ -37,6 +39,30 @@ export default function NavbarDropDown() {
 
 	return (
 		<HStack>
+			{!isLandingPage && (
+				<Menu>
+					<MenuButton
+						as={Button}
+						mx="1rem"
+						rightIcon={<ChevronDownIcon />}
+						fontSize="lg"
+					>
+						Sentence Structure
+					</MenuButton>
+					<MenuList>
+						{SENTENCE_STRUCTURE_LESSONS.map((lesson) => (
+							<MenuItem
+								key={lesson.to}
+								as={Link}
+								to={lesson.to}
+								color="red.700"
+							>
+								{lesson.label}
+							</MenuItem>
+						))}
+					</MenuList>
+				</Menu>
+			)}
 			{!currentUser ? (
 				<>
 					<Text
@@ -56,72 +82,48 @@ export default function NavbarDropDown() {
 					</Button>
 				</>
 			) : (
-				<HStack>
-					<Menu>
-						<MenuButton
-							as={Button}
-							mx="1rem"
-							rightIcon={<ChevronDownIcon />}
-							fontSize="lg"
-						>
-							Sentence Structure
-						</MenuButton>
-						<MenuList>
-							{SENTENCE_STRUCTURE_LESSONS.map((lesson) => (
+				<Menu>
+					<MenuButton
+						as={Button}
+						mx="1rem"
+						rightIcon={<ChevronDownIcon />}
+						fontSize="lg"
+					>
+						{currentUser.data.alias
+							? currentUser.data.alias
+							: currentUser.data.email}
+					</MenuButton>
+					<MenuList>
+						<MenuItem as={Link} to="/dashboard" color="red.700">
+							DashBoard
+						</MenuItem>
+						{isMobile && (
+							<>
+								<MenuItem as={Link} to="/prompts" color="red.700">
+									Start Writing
+								</MenuItem>
 								<MenuItem
-									key={lesson.to}
 									as={Link}
-									to={lesson.to}
+									to={{
+										pathname: 'https://forms.gle/N8aZD3yeA9ya7SMW6',
+									}}
+									target="_blank"
 									color="red.700"
 								>
-									{lesson.label}
+									Report Bug
 								</MenuItem>
-							))}
-						</MenuList>
-					</Menu>
-					<Menu>
-						<MenuButton
-							as={Button}
-							mx="1rem"
-							rightIcon={<ChevronDownIcon />}
-							fontSize="lg"
+							</>
+						)}
+						<MenuItem
+							as={Link}
+							to="/"
+							onClick={handleLogout}
+							color="red.700"
 						>
-							{currentUser.data.alias
-								? currentUser.data.alias
-								: currentUser.data.email}
-						</MenuButton>
-						<MenuList>
-							<MenuItem as={Link} to="/dashboard" color="red.700">
-								DashBoard
-							</MenuItem>
-							{isMobile && (
-								<>
-									<MenuItem as={Link} to="/prompts" color="red.700">
-										Start Writing
-									</MenuItem>
-									<MenuItem
-										as={Link}
-										to={{
-											pathname: 'https://forms.gle/N8aZD3yeA9ya7SMW6',
-										}}
-										target="_blank"
-										color="red.700"
-									>
-										Report Bug
-									</MenuItem>
-								</>
-							)}
-							<MenuItem
-								as={Link}
-								to="/"
-								onClick={handleLogout}
-								color="red.700"
-							>
-								Log Out
-							</MenuItem>
-						</MenuList>
-					</Menu>
-				</HStack>
+							Log Out
+						</MenuItem>
+					</MenuList>
+				</Menu>
 			)}
 		</HStack>
 	);
