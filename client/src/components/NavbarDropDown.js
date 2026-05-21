@@ -15,6 +15,16 @@ import {
 import { useQueryClient } from 'react-query';
 import { ChevronDownIcon } from '@chakra-ui/icons';
 
+const SENTENCE_STRUCTURE_LESSONS = [
+	{ label: 'Lesson 1: Nouns', to: '/nouns' },
+	{ label: 'Lesson 2: Articles', to: '/article-structure' },
+	{ label: 'Lesson 3: Verb Tenses', to: '/verb-tense-structure' },
+	{ label: 'Lesson 4: Adjectives', to: '/adjective-structure' },
+	{ label: 'Lesson 5: Adverbs', to: '/adverb-structure' },
+	{ label: 'Lesson 6: Prepositions', to: '/prep1-structure' },
+	{ label: 'Lesson 7: Conjunctions', to: '/conjunction-structure' },
+];
+
 export default function NavbarDropDown() {
 	const { currentUser, logout } = useAuth();
 	const queryClient = useQueryClient();
@@ -46,48 +56,72 @@ export default function NavbarDropDown() {
 					</Button>
 				</>
 			) : (
-				<Menu>
-					<MenuButton
-						as={Button}
-						mx="1rem"
-						rightIcon={<ChevronDownIcon />}
-						fontSize="lg"
-					>
-						{currentUser.data.alias
-							? currentUser.data.alias
-							: currentUser.data.email}
-					</MenuButton>
-					<MenuList>
-						<MenuItem as={Link} to="/dashboard" color="red.700">
-							DashBoard
-						</MenuItem>
-						{isMobile && (
-							<>
-								<MenuItem as={Link} to="/prompts" color="red.700">
-									Start Writing
-								</MenuItem>
+				<HStack>
+					<Menu>
+						<MenuButton
+							as={Button}
+							mx="1rem"
+							rightIcon={<ChevronDownIcon />}
+							fontSize="lg"
+						>
+							Sentence Structure
+						</MenuButton>
+						<MenuList>
+							{SENTENCE_STRUCTURE_LESSONS.map((lesson) => (
 								<MenuItem
+									key={lesson.to}
 									as={Link}
-									to={{
-										pathname: 'https://forms.gle/N8aZD3yeA9ya7SMW6',
-									}}
-									target="_blank"
+									to={lesson.to}
 									color="red.700"
 								>
-									Report Bug
+									{lesson.label}
 								</MenuItem>
-							</>
-						)}
-						<MenuItem
-							as={Link}
-							to="/"
-							onClick={handleLogout}
-							color="red.700"
+							))}
+						</MenuList>
+					</Menu>
+					<Menu>
+						<MenuButton
+							as={Button}
+							mx="1rem"
+							rightIcon={<ChevronDownIcon />}
+							fontSize="lg"
 						>
-							Log Out
-						</MenuItem>
-					</MenuList>
-				</Menu>
+							{currentUser.data.alias
+								? currentUser.data.alias
+								: currentUser.data.email}
+						</MenuButton>
+						<MenuList>
+							<MenuItem as={Link} to="/dashboard" color="red.700">
+								DashBoard
+							</MenuItem>
+							{isMobile && (
+								<>
+									<MenuItem as={Link} to="/prompts" color="red.700">
+										Start Writing
+									</MenuItem>
+									<MenuItem
+										as={Link}
+										to={{
+											pathname: 'https://forms.gle/N8aZD3yeA9ya7SMW6',
+										}}
+										target="_blank"
+										color="red.700"
+									>
+										Report Bug
+									</MenuItem>
+								</>
+							)}
+							<MenuItem
+								as={Link}
+								to="/"
+								onClick={handleLogout}
+								color="red.700"
+							>
+								Log Out
+							</MenuItem>
+						</MenuList>
+					</Menu>
+				</HStack>
 			)}
 		</HStack>
 	);
