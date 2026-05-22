@@ -138,6 +138,23 @@ const MainNav = () => {
             <MenuItem as={ReactRouterLink} to="/conjunction-quiz">Conjunction Quiz</MenuItem>
           </MenuList>
         </Menu>
+
+        {/* Sentence Structure dropdown munu */}
+        <Menu>
+          <MenuButton as={Button} variant="unstyled" {...menuButtonStyles}>
+            Sentence Structure
+          </MenuButton>
+          <MenuList>
+            <MenuItem as={ReactRouterLink} to="/nouns">Lesson 1: Nouns</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/article-structure">Lesson 2: Articles</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/verb-tense-structure">Lesson 3: Verb Tenses</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/adjective-structure">Lesson 4: Adjectives</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/adverb-structure">Lesson 5: Adverbs</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/prep1-structure">Lesson 6: Prepositions</MenuItem>
+            <MenuItem as={ReactRouterLink} to="/conjunction-structure">Lesson 7: Conjunctions</MenuItem>
+          </MenuList>
+        </Menu>
+
       </div>
     </HStack>
   );
