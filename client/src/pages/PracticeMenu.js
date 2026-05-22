@@ -15,14 +15,6 @@ const PracticeMenu = () => {
     },
     {
       id: 2,
-      title: "Articles",
-      icon: "📰",
-      description: "Master the rules for using A, An, and The.",
-      path: "/article-structure",
-      colorScheme: "teal"
-    },
-    {
-      id: 3,
       title: "Verb Tenses",
       icon: "⏱️",
       description: "Master past, present, future, and auxiliary verbs.",
@@ -30,7 +22,23 @@ const PracticeMenu = () => {
       colorScheme: "red"
     },
     {
+      id: 3,
+      title: "Articles",
+      icon: "📰",
+      description: "Master the rules for using A, An, and The.",
+      path: "/article-structure",
+      colorScheme: "teal"
+    },
+    {
       id: 4,
+      title: "Prepositions",
+      icon: "📍",
+      description: "Connect nouns with time, place, and direction.",
+      path: "/prep1-structure",
+      colorScheme: "green"
+    },
+    {
+      id: 5,
       title: "Adjectives",
       icon: "🎨",
       description: "Learn how to describe nouns and use the Royal Order.",
@@ -38,20 +46,12 @@ const PracticeMenu = () => {
       colorScheme: "orange"
     },
     {
-      id: 5,
+      id: 6,
       title: "Adverbs",
       icon: "⚡",
       description: "Discover how to modify verbs, adjectives, and other adverbs.",
       path: "/adverb-structure",
       colorScheme: "purple"
-    },
-    {
-      id: 6,
-      title: "Prepositions",
-      icon: "📍",
-      description: "Connect nouns with time, place, and direction.",
-      path: "/prep1-structure",
-      colorScheme: "green"
     },
     {
       id: 7,
