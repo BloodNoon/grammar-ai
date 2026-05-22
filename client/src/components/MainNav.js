@@ -15,7 +15,7 @@ const MainNav = () => {
   };
 
   return (
-    <HStack background="rgba(255, 206, 160)" width="100%" spacing={2} pl="5%">
+    <HStack background="rgba(255, 206, 160)" width="100%" spacing={2} pl="5%" overflowX="auto">
       <div className="mainNav">
 
         {/* Practice Menu Button */}
