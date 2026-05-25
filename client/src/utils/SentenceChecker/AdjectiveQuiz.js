@@ -110,7 +110,7 @@ const AdjectiveQuiz = () => {
 
   return (
     <div style={{
-      backgroundColor: '#f3e5f5',
+      backgroundColor: 'purple.50',
       padding: '2rem',
       borderRadius: '10px',
       border: '2px solid #9c27b0'
@@ -119,7 +119,7 @@ const AdjectiveQuiz = () => {
       
       {!quizStarted ? (
         <div style={{ textAlign: 'center' }}>
-          <p style={{ fontSize: '1rem', marginBottom: '1rem', color: '#666' }}>
+          <p style={{ fontSize: '1rem', marginBottom: '1rem', color: 'gray.500' }}>
             Test your knowledge of adjectives, their types, and proper ordering!
           </p>
           <button
@@ -142,11 +142,11 @@ const AdjectiveQuiz = () => {
         <div>
           {quizQuestions.map((question, index) => (
             <div key={index} style={{
-              backgroundColor: '#fff',
+              backgroundColor: 'white',
               padding: '1.5rem',
               marginBottom: '1rem',
               borderRadius: '8px',
-              border: '1px solid #ddd'
+              border: '1px solid gray.200'
             }}>
               <div style={{ fontWeight: 'bold', marginBottom: '1rem' }}>
                 {index + 1}. {question.question}
@@ -194,10 +194,10 @@ const AdjectiveQuiz = () => {
                 <div style={{
                   marginTop: '1rem',
                   padding: '1rem',
-                  backgroundColor: feedback[index].correct ? '#d4edda' : '#f8d7da',
-                  color: feedback[index].correct ? '#155724' : '#721c24',
+                  backgroundColor: feedback[index].correct ? 'green.100' : 'red.100',
+                  color: feedback[index].correct ? 'green.800' : 'red.800',
                   borderRadius: '4px',
-                  border: `1px solid ${feedback[index].correct ? '#c3e6cb' : '#f5c6cb'}`
+                  border: `1px solid ${feedback[index].correct ? 'green.200' : 'red.200'}`
                 }}>
                   <div style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>
                     {feedback[index].correct ? '✅ Correct!' : '❌ Incorrect'}
@@ -214,7 +214,7 @@ const AdjectiveQuiz = () => {
             <button
               onClick={checkQuiz}
               style={{
-                backgroundColor: '#28a745',
+                backgroundColor: 'green.500',
                 color: 'white',
                 padding: '10px 20px',
                 border: 'none',
@@ -230,7 +230,7 @@ const AdjectiveQuiz = () => {
             <button
               onClick={resetQuiz}
               style={{
-                backgroundColor: '#6c757d',
+                backgroundColor: 'gray.500',
                 color: 'white',
                 padding: '10px 20px',
                 border: 'none',

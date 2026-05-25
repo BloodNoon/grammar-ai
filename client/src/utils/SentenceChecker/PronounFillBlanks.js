@@ -1,3 +1,4 @@
+import { Box, Button, Heading, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
 const PronounFillBlanks = () => {
@@ -66,7 +67,7 @@ const PronounFillBlanks = () => {
   };
 
   return (
-    <div style={{
+    <Box style={{
       marginTop: '2rem',
       padding: '1.5rem',
       backgroundColor: '#f9f9f9',
@@ -76,30 +77,30 @@ const PronounFillBlanks = () => {
       marginRight: 'auto',
       boxShadow: '0 4px 10px rgba(0, 0, 0, 0.05)',
     }}>
-      <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '1rem', color: '#333' }}>
+      <Heading as="h2" size="lg" sx={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '1rem', color: 'gray.700' }}>
         ✏️ Practice: Fill in the Pronouns
-      </h2>
+      </Heading>
 
-      <p style={{ fontSize: '1rem', marginBottom: '1.5rem', color: '#666' }}>
+      <Text sx={{ fontSize: '1rem', marginBottom: '1.5rem', color: 'gray.500' }}>
         Choose the correct Pronoun for each sentence:
-      </p>
+      </Text>
 
-      <div style={{ textAlign: 'left' }}>
+      <Box style={{ textAlign: 'left' }}>
         {questions.map((question, index) => (
-          <div key={index} style={{ 
+          <Box key={index} style={{ 
             margin: '1rem 0', 
             padding: '1.5rem', 
-            backgroundColor: '#fff', 
+            backgroundColor: 'white', 
             borderRadius: '8px',
-            border: '1px solid #ddd'
+            border: '1px solid gray.200'
           }}>
-            <p style={{ fontSize: '1.1rem', marginBottom: '1rem', lineHeight: '1.5' }}>
+            <Text style={{ fontSize: '1.1rem', marginBottom: '1rem', lineHeight: '1.5' }}>
               <strong>{index + 1}.</strong> {question.sentence}
-            </p>
+            </Text>
             
-            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+            <Box style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
               {question.options.map((option, optIndex) => (
-                <button
+                <Button
                   key={optIndex}
                   onClick={() => handleAnswerSelect(index, option)}
                   disabled={feedback[index] !== undefined}
@@ -107,15 +108,15 @@ const PronounFillBlanks = () => {
                     padding: '0.75rem 1rem',
                     backgroundColor: 
                       answers[index] === option 
-                        ? (feedback[index]?.correct ? '#d4edda' : '#f8d7da')
-                        : '#e9ecef',
-                    border: '1px solid #ced4da',
+                        ? (feedback[index]?.correct ? 'green.100' : 'red.100')
+                        : 'gray.100',
+                    border: '1px solid gray.200',
                     borderRadius: '4px',
                     cursor: feedback[index] ? 'default' : 'pointer',
                     color: 
                       answers[index] === option 
-                        ? (feedback[index]?.correct ? '#155724' : '#721c24')
-                        : '#495057',
+                        ? (feedback[index]?.correct ? 'green.800' : 'red.800')
+                        : 'gray.600',
                     fontWeight: answers[index] === option ? 'bold' : 'normal',
                     opacity: feedback[index] && answers[index] !== option ? 0.6 : 1
                   }}
@@ -124,15 +125,15 @@ const PronounFillBlanks = () => {
                   {answers[index] === option && feedback[index] && (
                     feedback[index].correct ? ' ✅' : ' ❌'
                   )}
-                </button>
+                </Button>
               ))}
-            </div>
+            </Box>
 
             {feedback[index] && (
-              <div style={{
+              <Box sx={{
                 padding: '1rem',
-                backgroundColor: feedback[index].correct ? '#d1ecf1' : '#f8d7da',
-                color: feedback[index].correct ? '#0c5460' : '#721c24',
+                backgroundColor: feedback[index].correct ? 'cyan.100' : 'red.100',
+                color: feedback[index].correct ? 'cyan.800' : 'red.800',
                 borderRadius: '4px',
                 fontSize: '0.9rem',
                 lineHeight: '1.4'
@@ -142,32 +143,32 @@ const PronounFillBlanks = () => {
                 </strong>
                 <br />
                 {feedback[index].explanation}
-              </div>
+              </Box>
             )}
-          </div>
+          </Box>
         ))}
-      </div>
+      </Box>
 
       {/* Score and Reset */}
-      <div style={{ 
+      <Box sx={{ 
         textAlign: 'center', 
         marginTop: '1.5rem',
         padding: '1rem',
-        backgroundColor: '#e3f2fd',
+        backgroundColor: 'blue.50',
         borderRadius: '8px'
       }}>
         {Object.keys(feedback).length > 0 && (
-          <p style={{ fontSize: '1.1rem', marginBottom: '1rem', color: '#1565c0' }}>
+          <Text sx={{ fontSize: '1.1rem', marginBottom: '1rem', color: 'blue.800' }}>
             <strong>Score: {getScore()} out of {questions.length}</strong>
             {getScore() === questions.length && " 🎉 Perfect!"}
-          </p>
+          </Text>
         )}
         
-        <button
+        <Button
           onClick={resetExercise}
-          style={{
+          sx={{
             padding: '0.75rem 1.5rem',
-            backgroundColor: '#6c757d',
+            backgroundColor: 'gray.500',
             color: 'white',
             border: 'none',
             borderRadius: '4px',
@@ -176,9 +177,9 @@ const PronounFillBlanks = () => {
           }}
         >
           Reset Exercise
-        </button>
-      </div>
-    </div>
+        </Button>
+      </Box>
+    </Box>
   );
 };
 

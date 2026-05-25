@@ -1,3 +1,4 @@
+import { Box, Heading, Text } from '@chakra-ui/react';
 import React from 'react';
 
 const AdverbSentenceStructures = () => {
@@ -48,81 +49,81 @@ const AdverbSentenceStructures = () => {
 
   const getPositionColor = (position) => {
     const colors = {
-      'sentence start': '#e3f2fd',
+      'sentence start': 'blue.50',
       'after verb': '#e8f5e9',
-      'before adjective': '#fff3e0',
-      'between verb and object': '#f3e5f5',
-      'before main verb': '#ffebee'
+      'before adjective': 'orange.50',
+      'between verb and object': 'purple.50',
+      'before main verb': 'red.50'
     };
-    return colors[position] || '#f5f5f5';
+    return colors[position] || 'gray.50';
   };
 
   const getPositionBorder = (position) => {
     const borders = {
-      'sentence start': '#1976d2',
+      'sentence start': 'blue.700',
       'after verb': '#388e3c',
       'before adjective': '#f57c00',
       'between verb and object': '#7b1fa2',
       'before main verb': '#c62828'
     };
-    return borders[position] || '#999';
+    return borders[position] || 'gray.400';
   };
 
   return (
-    <div style={{
+    <Box style={{
       backgroundColor: '#e8f4fd',
       padding: '2rem',
       borderRadius: '10px',
       marginBottom: '2rem',
       border: '1px solid #90caf9'
     }}>
-      <h3 style={{ color: '#1565c0', marginBottom: '1.5rem' }}>🔄 Adverbs – Sentence Structures with Varied Placement</h3>
-      <p style={{ fontSize: '1rem', lineHeight: '1.6', marginBottom: '1.5rem', color: '#666' }}>
+      <Heading as="h3" size="md" sx={{ color: 'blue.800', marginBottom: '1.5rem' }}>🔄 Adverbs – Sentence Structures with Varied Placement</Heading>
+      <Text sx={{ fontSize: '1rem', lineHeight: '1.6', marginBottom: '1.5rem', color: 'gray.500' }}>
         <em>One adverb per sentence, in a different position each time</em>
-      </p>
+      </Text>
       
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+      <Box style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
         {sentenceStructures.map((structure, index) => (
-          <div key={index} style={{
+          <Box key={index} style={{
             backgroundColor: getPositionColor(structure.position),
             padding: '1.5rem',
             borderRadius: '8px',
             border: `2px solid ${getPositionBorder(structure.position)}`
           }}>
             {/* Pattern */}
-            <div style={{ 
+            <Box sx={{ 
               fontWeight: 'bold', 
-              color: '#333', 
+              color: 'gray.700', 
               marginBottom: '0.75rem',
               fontSize: '0.95rem',
               fontFamily: 'monospace'
             }}>
               {structure.pattern}
-            </div>
+            </Box>
             
             {/* Example */}
-            <div style={{ 
+            <Box sx={{ 
               fontSize: '1.1rem', 
               fontStyle: 'italic', 
               marginBottom: '0.75rem',
-              color: '#333',
+              color: 'gray.700',
               padding: '0.5rem',
-              backgroundColor: '#fff',
+              backgroundColor: 'white',
               borderRadius: '4px',
-              border: '1px solid #ddd'
+              border: '1px solid gray.200'
             }}>
               {structure.example}
-            </div>
+            </Box>
             
             {/* Breakdown */}
-            <div style={{ 
+            <Box style={{ 
               fontSize: '0.9rem', 
               color: '#555',
               display: 'flex',
               alignItems: 'center',
               gap: '0.5rem'
             }}>
-              <span style={{
+              <Text as="span" style={{
                 backgroundColor: getPositionBorder(structure.position),
                 color: 'white',
                 padding: '0.25rem 0.5rem',
@@ -131,27 +132,27 @@ const AdverbSentenceStructures = () => {
                 fontWeight: 'bold'
               }}>
                 {structure.position}
-              </span>
+              </Text>
               {structure.breakdown}
-            </div>
-          </div>
+            </Box>
+          </Box>
         ))}
-      </div>
+      </Box>
       
-      <div style={{
+      <Box style={{
         marginTop: '1.5rem',
         padding: '1rem',
-        backgroundColor: '#fff',
+        backgroundColor: 'white',
         borderRadius: '8px',
         border: '1px solid #90caf9'
       }}>
-        <h4 style={{ color: '#1565c0', marginBottom: '0.5rem' }}>🎯 Placement Strategy:</h4>
-        <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: '1.5', margin: 0 }}>
+        <Heading as="h4" size="sm" sx={{ color: 'blue.800', marginBottom: '0.5rem' }}>🎯 Placement Strategy:</Heading>
+        <Text style={{ fontSize: '0.95rem', color: '#555', lineHeight: '1.5', margin: 0 }}>
           Adverbs are very flexible! They can move to different positions in a sentence to change emphasis. 
           The key is understanding what you want to emphasize and how the adverb sounds in each position.
-        </p>
-      </div>
-    </div>
+        </Text>
+      </Box>
+    </Box>
   );
 };
 

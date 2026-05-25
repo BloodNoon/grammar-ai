@@ -1,3 +1,4 @@
+import { Box, Button, Heading, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
 const AdverbQuiz = () => {
@@ -147,40 +148,40 @@ const AdverbQuiz = () => {
   };
 
   return (
-    <div style={{
+    <Box style={{
       backgroundColor: '#e8f4fd',
       padding: '2rem',
       borderRadius: '10px',
-      border: '2px solid #1976d2',
+      border: '2px solid blue.700',
       marginTop: '2rem'
     }}>
-      <h3 style={{ color: '#1565c0', marginBottom: '1rem' }}>🧠 Adverb Mastery Quiz</h3>
+      <Heading as="h3" size="md" sx={{ color: 'blue.800', marginBottom: '1rem' }}>🧠 Adverb Mastery Quiz</Heading>
       
       {!quizStarted ? (
-        <div style={{ textAlign: 'center' }}>
-          <p style={{ fontSize: '1rem', marginBottom: '1rem', color: '#666' }}>
+        <Box style={{ textAlign: 'center' }}>
+          <Text sx={{ fontSize: '1rem', marginBottom: '1rem', color: 'gray.500' }}>
             Test your comprehensive knowledge of adverbs! This quiz covers types, placement, Royal Order, and usage.
-          </p>
-          <div style={{
-            backgroundColor: '#fff',
+          </Text>
+          <Box style={{
+            backgroundColor: 'white',
             padding: '1rem',
             borderRadius: '8px',
             marginBottom: '1rem',
             border: '1px solid #90caf9'
           }}>
-            <h4 style={{ color: '#1565c0', marginBottom: '0.5rem' }}>Quiz Topics:</h4>
-            <ul style={{ textAlign: 'left', color: '#666', fontSize: '0.9rem' }}>
+            <Heading as="h4" size="sm" sx={{ color: 'blue.800', marginBottom: '0.5rem' }}>Quiz Topics:</Heading>
+            <ul style={{ textAlign: 'left', color: 'gray.500', fontSize: '0.9rem' }}>
               <li>• Identifying adverbs in sentences</li>
               <li>• Types of adverbs (manner, time, place, frequency, degree)</li>
               <li>• Royal Order of Adverbs</li>
               <li>• What adverbs modify (verbs, adjectives, other adverbs)</li>
               <li>• Adverb phrases and proper usage</li>
             </ul>
-          </div>
-          <button
+          </Box>
+          <Button
             onClick={startQuiz}
-            style={{
-              backgroundColor: '#1976d2',
+            sx={{
+              backgroundColor: 'blue.700',
               color: 'white',
               padding: '12px 24px',
               border: 'none',
@@ -191,34 +192,34 @@ const AdverbQuiz = () => {
             }}
           >
             Start Adverb Quiz ({quizQuestions.length} Questions)
-          </button>
-        </div>
+          </Button>
+        </Box>
       ) : (
-        <div>
-          <div style={{ marginBottom: '1rem', textAlign: 'center' }}>
-            <p style={{ color: '#1565c0', fontWeight: 'bold' }}>
+        <Box>
+          <Box style={{ marginBottom: '1rem', textAlign: 'center' }}>
+            <Text sx={{ color: 'blue.800', fontWeight: 'bold' }}>
               Progress: {Object.keys(answers).length}/{quizQuestions.length} answered
-            </p>
-          </div>
+            </Text>
+          </Box>
 
           {quizQuestions.map((question, index) => (
-            <div key={index} style={{
-              backgroundColor: '#fff',
+            <Box key={index} style={{
+              backgroundColor: 'white',
               padding: '1.5rem',
               marginBottom: '1rem',
               borderRadius: '8px',
-              border: '1px solid #ddd'
+              border: '1px solid gray.200'
             }}>
-              <div style={{ fontWeight: 'bold', marginBottom: '1rem', fontSize: '1rem' }}>
+              <Box style={{ fontWeight: 'bold', marginBottom: '1rem', fontSize: '1rem' }}>
                 {index + 1}. {question.question}
-              </div>
+              </Box>
               
               {question.type === 'multiple' ? (
                 // Multiple choice checkboxes
-                <div style={{ marginBottom: '1rem' }}>
-                  <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '0.5rem' }}>
+                <Box style={{ marginBottom: '1rem' }}>
+                  <Text sx={{ fontSize: '0.9rem', color: 'gray.500', marginBottom: '0.5rem' }}>
                     (Select all that apply)
-                  </p>
+                  </Text>
                   {question.options.map((option, optIndex) => (
                     <label key={optIndex} style={{
                       display: 'block',
@@ -235,10 +236,10 @@ const AdverbQuiz = () => {
                       {option}
                     </label>
                   ))}
-                </div>
+                </Box>
               ) : (
                 // Single choice radio buttons
-                <div style={{ marginBottom: '1rem' }}>
+                <Box style={{ marginBottom: '1rem' }}>
                   {question.options.map((option, optIndex) => (
                     <label key={optIndex} style={{
                       display: 'block',
@@ -257,35 +258,35 @@ const AdverbQuiz = () => {
                       {option}
                     </label>
                   ))}
-                </div>
+                </Box>
               )}
               
               {feedback[index] && (
-                <div style={{
+                <Box style={{
                   marginTop: '1rem',
                   padding: '1rem',
-                  backgroundColor: feedback[index].correct ? '#d4edda' : '#f8d7da',
-                  color: feedback[index].correct ? '#155724' : '#721c24',
+                  backgroundColor: feedback[index].correct ? 'green.100' : 'red.100',
+                  color: feedback[index].correct ? 'green.800' : 'red.800',
                   borderRadius: '4px',
-                  border: `1px solid ${feedback[index].correct ? '#c3e6cb' : '#f5c6cb'}`
+                  border: `1px solid ${feedback[index].correct ? 'green.200' : 'red.200'}`
                 }}>
-                  <div style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>
+                  <Box style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>
                     {feedback[index].correct ? '✅ Correct!' : '❌ Incorrect'}
-                  </div>
-                  <div style={{ fontSize: '0.9rem' }}>
+                  </Box>
+                  <Box style={{ fontSize: '0.9rem' }}>
                     {feedback[index].explanation}
-                  </div>
-                </div>
+                  </Box>
+                </Box>
               )}
-            </div>
+            </Box>
           ))}
           
-          <div style={{ textAlign: 'center', marginTop: '1.5rem', gap: '1rem', display: 'flex', justifyContent: 'center' }}>
-            <button
+          <Box style={{ textAlign: 'center', marginTop: '1.5rem', gap: '1rem', display: 'flex', justifyContent: 'center' }}>
+            <Button
               onClick={checkQuiz}
               disabled={Object.keys(answers).length < quizQuestions.length}
-              style={{
-                backgroundColor: Object.keys(answers).length === quizQuestions.length ? '#28a745' : '#ccc',
+              sx={{
+                backgroundColor: Object.keys(answers).length === quizQuestions.length ? 'green.500' : 'gray.300',
                 color: 'white',
                 padding: '10px 20px',
                 border: 'none',
@@ -296,12 +297,12 @@ const AdverbQuiz = () => {
               }}
             >
               Check All Answers
-            </button>
+            </Button>
             
-            <button
+            <Button
               onClick={resetQuiz}
-              style={{
-                backgroundColor: '#6c757d',
+              sx={{
+                backgroundColor: 'gray.500',
                 color: 'white',
                 padding: '10px 20px',
                 border: 'none',
@@ -311,11 +312,11 @@ const AdverbQuiz = () => {
               }}
             >
               Reset Quiz
-            </button>
-          </div>
-        </div>
+            </Button>
+          </Box>
+        </Box>
       )}
-    </div>
+    </Box>
   );
 };
 

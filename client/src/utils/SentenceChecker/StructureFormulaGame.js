@@ -1,3 +1,4 @@
+import { Box, Button, Heading, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import nlp from 'compromise';
 
@@ -5,7 +6,7 @@ const formulaData = [
   {
     formula:
       'Pronoun + verb + preposition + article + noun',
-    color: '#1565c0',
+    color: 'blue.800',
     example: 'She walked to the store.',
     pattern: ['pronoun', 'verb', 'preposition', 'determiner', 'noun'],
   },
@@ -97,11 +98,11 @@ const StructureFormulaGame = () => {
   };
 
   return (
-    <div
+    <Box
       style={{
         marginTop: '3rem',
         padding: '1.5rem',
-        backgroundColor: '#fff',
+        backgroundColor: 'white',
         borderRadius: '12px',
         boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
         maxWidth: '800px',
@@ -111,13 +112,13 @@ const StructureFormulaGame = () => {
         fontFamily: 'Arial, sans-serif',
       }}
     >
-      <h2 style={{ color: formulaData[currentQ].color, marginBottom: '0.5rem' }}>
+      <Heading as="h2" size="lg" style={{ color: formulaData[currentQ].color, marginBottom: '0.5rem' }}>
         Question {currentQ + 1} of {formulaData.length}: Structure Formula
-      </h2>
-      <p style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>{formulaData[currentQ].formula}</p>
-      <p>
+      </Heading>
+      <Text style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>{formulaData[currentQ].formula}</Text>
+      <Text>
         Example: <em>{formulaData[currentQ].example}</em>
-      </p>
+      </Text>
 
       <label htmlFor="sentenceInput" style={{ display: 'block', marginTop: '1rem', fontWeight: 'bold' }}>
         Enter a sentence matching the formula:
@@ -133,18 +134,18 @@ const StructureFormulaGame = () => {
           padding: '0.5rem',
           fontSize: '1rem',
           borderRadius: '6px',
-          border: '1px solid #ccc',
+          border: '1px solid gray.300',
           marginTop: '0.5rem',
           resize: 'vertical',
         }}
       />
 
-      <button
+      <Button
         onClick={checkStructure}
-        style={{
+        sx={{
           marginTop: '1rem',
           padding: '0.6rem 1.2rem',
-          backgroundColor: '#007bff',
+          backgroundColor: 'blue.500',
           color: 'white',
           border: 'none',
           borderRadius: '6px',
@@ -152,10 +153,10 @@ const StructureFormulaGame = () => {
         }}
       >
         Check
-      </button>
+      </Button>
 
       {feedback && (
-        <p
+        <Text
           style={{
             marginTop: '1rem',
             fontWeight: 'bold',
@@ -163,16 +164,16 @@ const StructureFormulaGame = () => {
           }}
         >
           {feedback}
-        </p>
+        </Text>
       )}
 
-      <div style={{ marginTop: '1.5rem', display: 'flex', justifyContent: 'space-between' }}>
-        <button
+      <Box style={{ marginTop: '1.5rem', display: 'flex', justifyContent: 'space-between' }}>
+        <Button
           onClick={prevQuestion}
           disabled={currentQ === 0}
-          style={{
+          sx={{
             padding: '0.5rem 1rem',
-            backgroundColor: currentQ === 0 ? '#ccc' : '#007bff',
+            backgroundColor: currentQ === 0 ? 'gray.300' : 'blue.500',
             color: 'white',
             border: 'none',
             borderRadius: '6px',
@@ -180,14 +181,14 @@ const StructureFormulaGame = () => {
           }}
         >
           Previous
-        </button>
+        </Button>
 
-        <button
+        <Button
           onClick={nextQuestion}
           disabled={currentQ === formulaData.length - 1}
-          style={{
+          sx={{
             padding: '0.5rem 1rem',
-            backgroundColor: currentQ === formulaData.length - 1 ? '#ccc' : '#007bff',
+            backgroundColor: currentQ === formulaData.length - 1 ? 'gray.300' : 'blue.500',
             color: 'white',
             border: 'none',
             borderRadius: '6px',
@@ -195,9 +196,9 @@ const StructureFormulaGame = () => {
           }}
         >
           Next
-        </button>
-      </div>
-    </div>
+        </Button>
+      </Box>
+    </Box>
   );
 };
 

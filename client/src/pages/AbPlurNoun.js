@@ -8,6 +8,7 @@ import {
   Badge,
 } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
+import { PageContainer, GameCard } from "../components/ui";
 
 export default function AbPlurNoun() {
   const history = useHistory();
@@ -17,56 +18,23 @@ export default function AbPlurNoun() {
   };
 
   return (
-    <Box
-      bg="#F6D5B4"
-      minH="100vh"
-      p={{ base: 4, md: 8 }}
-      fontFamily="'Inter', sans-serif"
-    >
-      {/* Page Header */}
-      <Box
-        maxW="1400px"
-        mx="auto"
-        mb={8}
-        bg="#F0B784"
-        p={4}
-        borderRadius="xl"
-        borderWidth="2px"
-        borderColor="whiteAlpha.600"
-        textAlign="center"
-      >
-        <Heading color="#4A2C11" size="xl">
-          🐸 Abstract & Plural Nouns
-        </Heading>
-      </Box>
+    <PageContainer>
+      <GameCard mb={8} textAlign="center" bg="brand.500">
+        <Heading size="xl">🐸 Abstract & Plural Nouns</Heading>
+      </GameCard>
 
       <VStack spacing={8} maxW="1000px" mx="auto">
-        <Box
-          bg="white"
-          p={8}
-          borderRadius="2xl"
-          borderWidth="2px"
-          borderColor="#1A1A1A"
-          boxShadow="6px 6px 0px rgba(0,0,0,0.1)"
-          w="100%"
-        >
-          <Heading size="lg" color="#1A0933" mb={4}>
+        <GameCard variant="game">
+          <Heading size="lg" color="ink.700" mb={4}>
             Lesson 3: Abstract and Plural Nouns
           </Heading>
           <Text fontSize="lg" color="gray.600">
             Learn about abstract nouns and how to form plural nouns.
           </Text>
-        </Box>
+        </GameCard>
 
         <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }} gap={8} w="100%">
-          <Box
-            bg="white"
-            p={8}
-            borderRadius="2xl"
-            borderWidth="2px"
-            borderColor="#1A1A1A"
-            boxShadow="6px 6px 0px rgba(0,0,0,0.1)"
-          >
+          <GameCard variant="game">
             <Badge colorScheme="blue" mb={3} fontSize="md">
               Plural Nouns
             </Badge>
@@ -96,16 +64,9 @@ export default function AbPlurNoun() {
                 </Text>
               </VStack>
             </Box>
-          </Box>
+          </GameCard>
 
-          <Box
-            bg="white"
-            p={8}
-            borderRadius="2xl"
-            borderWidth="2px"
-            borderColor="#1A1A1A"
-            boxShadow="6px 6px 0px rgba(0,0,0,0.1)"
-          >
+          <GameCard variant="game">
             <Badge colorScheme="purple" mb={3} fontSize="md">
               Abstract Nouns
             </Badge>
@@ -150,32 +111,23 @@ export default function AbPlurNoun() {
                 </Box>
               </VStack>
             </Box>
-          </Box>
+          </GameCard>
         </Grid>
 
-        <Box
-          bg="#e8f5e8"
-          border="2px solid"
-          borderColor="#28a745"
-          borderRadius="2xl"
-          p={6}
-          w="100%"
-          textAlign="center"
-        >
-          <Heading size="md" color="#28a745" mb={2}>
+        <GameCard variant="game" bg="green.50" borderColor="green.500">
+          <Heading size="md" color="green.500" mb={2}>
             Key Idea
           </Heading>
-          <Text fontSize="lg" color="#333">
+          <Text fontSize="lg" color="gray.700">
             Plural nouns show <strong>quantity</strong>. Abstract nouns show{" "}
             <strong>ideas or feelings</strong>.
           </Text>
-        </Box>
+        </GameCard>
 
         <Button colorScheme="orange" size="lg" px={10} onClick={handleClick}>
           Go to Practice Games ➡️
         </Button>
       </VStack>
-    </Box>
+    </PageContainer>
   );
 }
-  

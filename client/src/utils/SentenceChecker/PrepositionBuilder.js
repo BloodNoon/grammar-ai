@@ -1,3 +1,4 @@
+import { Box, Button, Heading, Text } from '@chakra-ui/react';
 // PrepositionBuilder.js
 import React, { useState } from "react";
 import "./PrepositionBuilder.css";
@@ -77,47 +78,47 @@ function PrepositionBuilder() {
   };
 
   return (
-    <div className="preposition-builder">
-      <h2>🧩 Build-a-Preposition</h2>
-      <p>Click the fragments in order to build a compound preposition.</p>
+    <Box className="preposition-builder">
+      <Heading as="h2" size="lg">🧩 Build-a-Preposition</Heading>
+      <Text>Click the fragments in order to build a compound preposition.</Text>
 
       {/* Word Bank */}
-      <div className="word-bank">
+      <Box className="word-bank">
         {wordBank.map((word, index) => (
-          <button
+          <Button
             key={index}
             className="word-button"
             onClick={() => handleSelect(word)}
           >
             {word}
-          </button>
+          </Button>
         ))}
-      </div>
+      </Box>
 
       {/* Selected Area */}
-      <div className="selected-area">
+      <Box className="selected-area">
         {selected.length > 0 ? (
           selected.map((word, idx) => (
-            <span key={idx} className="selected-word">
+            <Text as="span" key={idx} className="selected-word">
               {word}
-            </span>
+            </Text>
           ))
         ) : (
-          <p className="placeholder">Your preposition will appear here...</p>
+          <Text className="placeholder">Your preposition will appear here...</Text>
         )}
-      </div>
+      </Box>
 
       {/* Controls */}
-      <div className="controls">
-        <button onClick={checkPreposition} disabled={selected.length < 2}>
+      <Box className="controls">
+        <Button onClick={checkPreposition} disabled={selected.length < 2}>
           ✅ Check
-        </button>
-        <button onClick={resetSelection}>🔄 Reset</button>
-      </div>
+        </Button>
+        <Button onClick={resetSelection}>🔄 Reset</Button>
+      </Box>
 
       {/* Feedback */}
-      {message && <p className="feedback">{message}</p>}
-    </div>
+      {message && <Text className="feedback">{message}</Text>}
+    </Box>
   );
 }
 

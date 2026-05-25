@@ -1,3 +1,4 @@
+import { Box, Heading, Text } from '@chakra-ui/react';
 import React from 'react';
 
 const AdverbForms = () => {
@@ -26,104 +27,104 @@ const AdverbForms = () => {
   ];
 
   return (
-    <div style={{
-      backgroundColor: '#f3e5f5',
+    <Box sx={{
+      backgroundColor: 'purple.50',
       padding: '2rem',
       borderRadius: '10px',
       marginBottom: '2rem',
       border: '2px solid #9c27b0'
     }}>
-      <h3 style={{ color: '#7b1fa2', marginBottom: '1.5rem' }}>📝 5. Adverbs with -ly and without</h3>
+      <Heading as="h3" size="md" style={{ color: '#7b1fa2', marginBottom: '1.5rem' }}>📝 5. Adverbs with -ly and without</Heading>
       
       {/* With -ly Section */}
-      <div style={{ marginBottom: '2rem' }}>
-        <h4 style={{ color: '#7b1fa2', marginBottom: '1rem' }}>With -ly: Most Common Form</h4>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
+      <Box style={{ marginBottom: '2rem' }}>
+        <Heading as="h4" size="sm" style={{ color: '#7b1fa2', marginBottom: '1rem' }}>With -ly: Most Common Form</Heading>
+        <Box style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
           {lyAdverbs.map((item, index) => (
-            <div key={index} style={{
-              backgroundColor: '#fff',
+            <Box key={index} style={{
+              backgroundColor: 'white',
               padding: '1rem',
               borderRadius: '8px',
               border: '1px solid #ce93d8'
             }}>
-              <div style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>
-                <span style={{ color: '#666' }}>{item.base}</span> → <span style={{ color: '#7b1fa2' }}>{item.adverb}</span>
-              </div>
-              <div style={{ fontSize: '0.9rem', fontStyle: 'italic', color: '#555' }}>
+              <Box style={{ fontWeight: 'bold', marginBottom: '0.5rem' }}>
+                <Text as="span" sx={{ color: 'gray.500' }}>{item.base}</Text> → <Text as="span" style={{ color: '#7b1fa2' }}>{item.adverb}</Text>
+              </Box>
+              <Box style={{ fontSize: '0.9rem', fontStyle: 'italic', color: '#555' }}>
                 {item.example}
-              </div>
-            </div>
+              </Box>
+            </Box>
           ))}
-        </div>
-      </div>
+        </Box>
+      </Box>
 
       {/* Without -ly Section */}
-      <div style={{ marginBottom: '2rem' }}>
-        <h4 style={{ color: '#7b1fa2', marginBottom: '1rem' }}>Without -ly: Special Cases</h4>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+      <Box style={{ marginBottom: '2rem' }}>
+        <Heading as="h4" size="sm" style={{ color: '#7b1fa2', marginBottom: '1rem' }}>Without -ly: Special Cases</Heading>
+        <Box style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
           {withoutLyAdverbs.map((item, index) => (
-            <div key={index} style={{
-              backgroundColor: '#fff',
+            <Box key={index} style={{
+              backgroundColor: 'white',
               padding: '1rem',
               borderRadius: '8px',
               border: '1px solid #ce93d8'
             }}>
-              <div style={{ fontWeight: 'bold', color: '#7b1fa2', marginBottom: '0.25rem' }}>
+              <Box style={{ fontWeight: 'bold', color: '#7b1fa2', marginBottom: '0.25rem' }}>
                 {item.word}
-              </div>
-              <div style={{ fontSize: '0.8rem', color: '#999', marginBottom: '0.5rem' }}>
+              </Box>
+              <Box sx={{ fontSize: '0.8rem', color: 'gray.400', marginBottom: '0.5rem' }}>
                 ({item.type})
-              </div>
-              <div style={{ fontSize: '0.9rem', fontStyle: 'italic', color: '#555' }}>
+              </Box>
+              <Box style={{ fontSize: '0.9rem', fontStyle: 'italic', color: '#555' }}>
                 {item.example}
-              </div>
-            </div>
+              </Box>
+            </Box>
           ))}
-        </div>
-      </div>
+        </Box>
+      </Box>
 
       {/* Adverb Phrases Section */}
-      <div>
-        <h4 style={{ color: '#7b1fa2', marginBottom: '1rem' }}>6. Phrases that work as adverbs</h4>
-        <p style={{ fontSize: '0.95rem', color: '#666', marginBottom: '1rem' }}>
+      <Box>
+        <Heading as="h4" size="sm" style={{ color: '#7b1fa2', marginBottom: '1rem' }}>6. Phrases that work as adverbs</Heading>
+        <Text sx={{ fontSize: '0.95rem', color: 'gray.500', marginBottom: '1rem' }}>
           Adverb phrases act like a single adverb but use multiple words:
-        </p>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+        </Text>
+        <Box style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
           {adverbPhrases.map((item, index) => (
-            <div key={index} style={{
-              backgroundColor: '#fff',
+            <Box key={index} style={{
+              backgroundColor: 'white',
               padding: '1rem',
               borderRadius: '8px',
               border: '1px solid #ce93d8'
             }}>
-              <div style={{ fontWeight: 'bold', color: '#7b1fa2', marginBottom: '0.25rem' }}>
+              <Box style={{ fontWeight: 'bold', color: '#7b1fa2', marginBottom: '0.25rem' }}>
                 {item.phrase}
-              </div>
-              <div style={{ fontSize: '0.8rem', color: '#999', marginBottom: '0.5rem' }}>
+              </Box>
+              <Box sx={{ fontSize: '0.8rem', color: 'gray.400', marginBottom: '0.5rem' }}>
                 ({item.type})
-              </div>
-              <div style={{ fontSize: '0.9rem', fontStyle: 'italic', color: '#555' }}>
+              </Box>
+              <Box style={{ fontSize: '0.9rem', fontStyle: 'italic', color: '#555' }}>
                 {item.example}
-              </div>
-            </div>
+              </Box>
+            </Box>
           ))}
-        </div>
-      </div>
+        </Box>
+      </Box>
 
-      <div style={{
+      <Box style={{
         marginTop: '1.5rem',
         padding: '1rem',
-        backgroundColor: '#fff',
+        backgroundColor: 'white',
         borderRadius: '8px',
         border: '1px solid #9c27b0'
       }}>
-        <h4 style={{ color: '#7b1fa2', marginBottom: '0.5rem' }}>🎯 Remember:</h4>
-        <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: '1.5', margin: 0 }}>
+        <Heading as="h4" size="sm" style={{ color: '#7b1fa2', marginBottom: '0.5rem' }}>🎯 Remember:</Heading>
+        <Text style={{ fontSize: '0.95rem', color: '#555', lineHeight: '1.5', margin: 0 }}>
           Not all words ending in -ly are adverbs (like "friendly" which is an adjective), 
           and not all adverbs end in -ly. Focus on what the word does in the sentence!
-        </p>
-      </div>
-    </div>
+        </Text>
+      </Box>
+    </Box>
   );
 };
 

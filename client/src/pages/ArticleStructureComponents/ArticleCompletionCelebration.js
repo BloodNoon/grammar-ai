@@ -17,7 +17,7 @@ const ArticleCompletionCelebration = ({
     // Main celebration container with center alignment and prominent styling
     <div style={{ 
       textAlign: 'center',              // Center all celebration content
-      backgroundColor: '#4CAF50',       // Green background to indicate success
+      backgroundColor: 'green.500',       // Green background to indicate success
       color: 'white',                   // White text for good contrast
       padding: '30px',                  // Generous padding for celebration feel
       borderRadius: '12px',             // Rounded corners for modern appearance
@@ -64,7 +64,7 @@ const ArticleCompletionCelebration = ({
         onClick={resetProgress}         // Reset all progress when clicked
         style={{
           backgroundColor: 'white',     // White background for contrast against green
-          color: '#4CAF50',            // Green text to match theme
+          color: 'green.500',            // Green text to match theme
           border: '3px solid white',    // White border for button definition
           padding: '15px 30px',         // Large padding for prominent button
           cursor: 'pointer',            // Show clickable cursor

@@ -1,3 +1,4 @@
+import { Box, Button, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
 const ConjunctionFillBlanks = () => {
@@ -42,7 +43,7 @@ const ConjunctionFillBlanks = () => {
   };
 
   return (
-    <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+    <Box style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '20px' }}>
       
       {exercises.map((ex) => {
         const userAnswer = answers[ex.id];
@@ -55,53 +56,53 @@ const ConjunctionFillBlanks = () => {
           : ex.text;
 
         return (
-          <div key={ex.id} style={{ background: '#f8f9fa', padding: '20px', borderRadius: '10px', border: '2px solid #e2e8f0' }}>
+          <Box key={ex.id} sx={{ background: 'gray.50', padding: '20px', borderRadius: '10px', border: '2px solid #e2e8f0' }}>
             
-            <p style={{ fontSize: '1.15rem', fontWeight: 'bold', color: '#1A0933', marginBottom: '15px' }}>
+            <Text style={{ fontSize: '1.15rem', fontWeight: 'bold', color: '#1A0933', marginBottom: '15px' }}>
               {ex.id + 1}. {displayText}
-            </p>
+            </Text>
 
-            <div style={{ display: 'flex', gap: '10px', marginBottom: isAnswered ? '15px' : '0' }}>
+            <Box style={{ display: 'flex', gap: '10px', marginBottom: isAnswered ? '15px' : '0' }}>
               {ex.options.map(option => (
-                <button 
+                <Button 
                   key={option} 
                   onClick={() => handleSelect(ex.id, option)}
                   style={{ 
                     padding: '8px 16px', 
                     fontSize: '0.95rem', 
                     fontWeight: 'bold', 
-                    background: userAnswer === option ? '#1976d2' : '#e3f2fd', 
-                    color: userAnswer === option ? 'white' : '#1565c0', 
-                    border: '2px solid #1976d2', 
+                    background: userAnswer === option ? 'blue.700' : 'blue.50', 
+                    color: userAnswer === option ? 'white' : 'blue.800', 
+                    border: '2px solid blue.700', 
                     borderRadius: '6px', 
                     cursor: 'pointer',
                     transition: 'all 0.2s'
                   }}
                 >
                   {option}
-                </button>
+                </Button>
               ))}
-            </div>
+            </Box>
 
             {/* Validation Feedback Box */}
             {isAnswered && (
-              <div style={{ 
+              <Box style={{ 
                 padding: '12px', 
                 borderRadius: '6px', 
-                background: isCorrect ? '#d4edda' : '#f8d7da', 
-                color: isCorrect ? '#155724' : '#721c24',
-                borderLeft: `4px solid ${isCorrect ? '#28a745' : '#dc3545'}`
+                background: isCorrect ? 'green.100' : 'red.100', 
+                color: isCorrect ? 'green.800' : 'red.800',
+                borderLeft: `4px solid ${isCorrect ? 'green.500' : 'red.500'}`
               }}>
                 <strong>{isCorrect ? '✅ Correct: ' : '❌ Incorrect: '}</strong> 
                 {isCorrect ? ex.explanation : "Check your comma rules and try the other option!"}
-              </div>
+              </Box>
             )}
             
-          </div>
+          </Box>
         );
       })}
       
-    </div>
+    </Box>
   );
 };
 

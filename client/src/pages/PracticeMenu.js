@@ -1,9 +1,9 @@
-import React from 'react';
-import { Box, Heading, Text, SimpleGrid, Flex, VStack, Button } from '@chakra-ui/react';
-import { Link as RouterLink } from 'react-router-dom';
+import React from "react";
+import { Box, Heading, Text, SimpleGrid, Flex, VStack } from "@chakra-ui/react";
+import { Link as RouterLink } from "react-router-dom";
+import { PageContainer, ActionButton, GameCard } from "../components/ui";
 
 const PracticeMenu = () => {
-
   const categories = [
     {
       id: 1,
@@ -11,7 +11,7 @@ const PracticeMenu = () => {
       icon: "👤",
       description: "Learn about people, places, things, and ideas.",
       path: "/nouns",
-      colorScheme: "blue"
+      colorScheme: "blue",
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ const PracticeMenu = () => {
       icon: "⏱️",
       description: "Master past, present, future, and auxiliary verbs.",
       path: "/verb-tense-structure",
-      colorScheme: "red"
+      colorScheme: "red",
     },
     {
       id: 3,
@@ -27,7 +27,7 @@ const PracticeMenu = () => {
       icon: "📰",
       description: "Master the rules for using A, An, and The.",
       path: "/article-structure",
-      colorScheme: "teal"
+      colorScheme: "teal",
     },
     {
       id: 4,
@@ -35,7 +35,7 @@ const PracticeMenu = () => {
       icon: "📍",
       description: "Connect nouns with time, place, and direction.",
       path: "/prep1-structure",
-      colorScheme: "green"
+      colorScheme: "green",
     },
     {
       id: 5,
@@ -43,7 +43,7 @@ const PracticeMenu = () => {
       icon: "🎨",
       description: "Learn how to describe nouns and use the Royal Order.",
       path: "/adjective-structure",
-      colorScheme: "orange"
+      colorScheme: "orange",
     },
     {
       id: 6,
@@ -51,7 +51,7 @@ const PracticeMenu = () => {
       icon: "⚡",
       description: "Discover how to modify verbs, adjectives, and other adverbs.",
       path: "/adverb-structure",
-      colorScheme: "purple"
+      colorScheme: "purple",
     },
     {
       id: 7,
@@ -59,35 +59,28 @@ const PracticeMenu = () => {
       icon: "🔗",
       description: "Glue your sentences together with FANBOYS and AWUBIS.",
       path: "/conjunction-structure",
-      colorScheme: "pink"
-    }
+      colorScheme: "pink",
+    },
   ];
 
   return (
-    <Box bg="#F6D5B4" minH="100vh" p={{ base: 4, md: 8 }} fontFamily="'Inter', sans-serif">
-      
-      
-      <Box maxW="1200px" mx="auto" mb={10} textAlign="center">
-        <Heading size="2xl" color="#4A2C11" mb={4}>
+    <PageContainer>
+      <Box mb={10} textAlign="center">
+        <Heading size="2xl" color="brand.900" mb={4}>
           🐸 Sentence Structure Course
         </Heading>
-        <Text fontSize="xl" color="#8B3A3A" fontWeight="medium">
+        <Text fontSize="xl" color="brand.700" fontWeight="medium">
           Choose a category below to start building better sentences!
         </Text>
       </Box>
 
-   
-      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8} maxW="1200px" mx="auto">
+      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
         {categories.map((category) => (
-          <Box
+          <GameCard
             key={category.id}
             as={RouterLink}
             to={category.path}
             bg="white"
-            borderRadius="xl"
-            borderWidth="3px"
-            borderColor="#1A1A1A"
-            boxShadow="6px 6px 0px rgba(0,0,0,0.1)"
             p={6}
             position="relative"
             transition="all 0.2s"
@@ -95,20 +88,25 @@ const PracticeMenu = () => {
             flexDirection="column"
             _hover={{
               transform: "translateY(-4px)",
-              boxShadow: "8px 8px 0px rgba(0,0,0,0.15)",
-              borderColor: `${category.colorScheme}.400`
+              boxShadow: "neu-hover",
+              borderColor: `${category.colorScheme}.400`,
             }}
           >
-
             <Flex justify="center" align="center" mb={4}>
-              <Box fontSize="4xl" bg={`${category.colorScheme}.50`} p={3} borderRadius="lg" borderWidth="2px" borderColor={`${category.colorScheme}.200`}>
+              <Box
+                fontSize="4xl"
+                bg={`${category.colorScheme}.50`}
+                p={3}
+                borderRadius="lg"
+                borderWidth="2px"
+                borderColor={`${category.colorScheme}.200`}
+              >
                 {category.icon}
               </Box>
             </Flex>
 
-
-            <VStack align="flex-start" spacing={2} mb={6}>
-              <Heading size="md" color="#1A0933">
+            <VStack align="flex-start" spacing={2} mb={6} flex="1">
+              <Heading size="md" color="ink.700">
                 Lesson {category.id}: {category.title}
               </Heading>
               <Text color="gray.600" fontSize="md" lineHeight="tall">
@@ -116,21 +114,13 @@ const PracticeMenu = () => {
               </Text>
             </VStack>
 
-            <Button
-              w="100%"
-              bg="#F0B784"
-              color="#4A2C11"
-              borderWidth="2px"
-              borderColor="#1A1A1A"
-              _hover={{ bg: "#E5A872" }}
-            >
+            <ActionButton variant="primary" w="100%">
               Start Learning ➡️
-            </Button>
-          </Box>
+            </ActionButton>
+          </GameCard>
         ))}
       </SimpleGrid>
-
-    </Box>
+    </PageContainer>
   );
 };
 

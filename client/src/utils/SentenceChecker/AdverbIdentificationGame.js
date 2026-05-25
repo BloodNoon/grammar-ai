@@ -1,3 +1,4 @@
+import { Box, Button, Heading, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
 const AdverbIdentificationGame = () => {
@@ -99,25 +100,25 @@ const AdverbIdentificationGame = () => {
 
   if (!gameStarted) {
     return (
-      <div style={{
+      <Box sx={{
         marginTop: '2rem',
         padding: '2rem',
-        backgroundColor: '#e3f2fd',
+        backgroundColor: 'blue.50',
         borderRadius: '10px',
         maxWidth: '800px',
         marginLeft: 'auto',
         marginRight: 'auto',
         textAlign: 'center',
-        border: '2px solid #1976d2'
+        border: '2px solid blue.700'
       }}>
-        <h2 style={{ color: '#1565c0', marginBottom: '1rem' }}>🎯 Adverb Identification Game</h2>
-        <p style={{ fontSize: '1rem', marginBottom: '1.5rem', color: '#666' }}>
+        <Heading as="h2" size="lg" sx={{ color: 'blue.800', marginBottom: '1rem' }}>🎯 Adverb Identification Game</Heading>
+        <Text sx={{ fontSize: '1rem', marginBottom: '1.5rem', color: 'gray.500' }}>
           Click on all the adverbs in each sentence. Test your skills with 5 different sentences!
-        </p>
-        <button
+        </Text>
+        <Button
           onClick={startGame}
-          style={{
-            backgroundColor: '#1976d2',
+          sx={{
+            backgroundColor: 'blue.700',
             color: 'white',
             padding: '12px 24px',
             border: 'none',
@@ -128,72 +129,72 @@ const AdverbIdentificationGame = () => {
           }}
         >
           Start Game
-        </button>
-      </div>
+        </Button>
+      </Box>
     );
   }
 
   const current = sentences[currentSentence];
 
   return (
-    <div style={{
+    <Box sx={{
       marginTop: '2rem',
       padding: '2rem',
-      backgroundColor: '#e3f2fd',
+      backgroundColor: 'blue.50',
       borderRadius: '10px',
       maxWidth: '800px',
       marginLeft: 'auto',
       marginRight: 'auto',
-      border: '2px solid #1976d2'
+      border: '2px solid blue.700'
     }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-        <h2 style={{ color: '#1565c0', margin: 0 }}>🎯 Find the Adverbs</h2>
-        <div style={{ color: '#666' }}>
+      <Box style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+        <Heading as="h2" size="lg" sx={{ color: 'blue.800', margin: 0 }}>🎯 Find the Adverbs</Heading>
+        <Box sx={{ color: 'gray.500' }}>
           Sentence {currentSentence + 1} of {sentences.length} | Score: {score}/{sentences.length}
-        </div>
-      </div>
+        </Box>
+      </Box>
 
-      <p style={{ fontSize: '1rem', marginBottom: '1rem', color: '#666' }}>
+      <Text sx={{ fontSize: '1rem', marginBottom: '1rem', color: 'gray.500' }}>
         Click on all the adverbs in this sentence:
-      </p>
+      </Text>
 
-      <div style={{
+      <Box style={{
         fontSize: '1.2rem',
         lineHeight: '1.8',
         marginBottom: '1.5rem',
         padding: '1rem',
-        backgroundColor: '#fff',
+        backgroundColor: 'white',
         borderRadius: '8px',
-        border: '1px solid #ddd'
+        border: '1px solid gray.200'
       }}>
         {current.words.map((word, index) => {
           const wordKey = `${word}-${index}`;
           const isSelected = selectedWords.includes(wordKey);
           const isAdverb = current.adverbs.includes(word);
           
-          let backgroundColor = '#fff';
-          let color = '#333';
+          let backgroundColor = 'white';
+          let color = 'gray.700';
           let border = '1px solid transparent';
 
           if (feedback) {
             if (isAdverb) {
-              backgroundColor = '#d4edda';
-              color = '#155724';
-              border = '2px solid #28a745';
+              backgroundColor = 'green.100';
+              color = 'green.800';
+              border = '2px solid green.500';
             }
             if (isSelected && !isAdverb) {
-              backgroundColor = '#f8d7da';
-              color = '#721c24';
-              border = '2px solid #dc3545';
+              backgroundColor = 'red.100';
+              color = 'red.800';
+              border = '2px solid red.500';
             }
           } else if (isSelected) {
-            backgroundColor = '#fff3cd';
-            color = '#856404';
-            border = '2px solid #ffc107';
+            backgroundColor = 'yellow.100';
+            color = 'yellow.800';
+            border = '2px solid yellow.400';
           }
 
           return (
-            <span
+            <Text as="span"
               key={index}
               onClick={() => handleWordClick(word, index)}
               style={{
@@ -210,33 +211,33 @@ const AdverbIdentificationGame = () => {
               }}
             >
               {word}
-            </span>
+            </Text>
           );
         })}
-      </div>
+      </Box>
 
       {feedback && (
-        <div style={{
+        <Box style={{
           padding: '1rem',
           marginBottom: '1rem',
-          backgroundColor: feedback.correct ? '#d4edda' : '#f8d7da',
-          color: feedback.correct ? '#155724' : '#721c24',
+          backgroundColor: feedback.correct ? 'green.100' : 'red.100',
+          color: feedback.correct ? 'green.800' : 'red.800',
           borderRadius: '4px',
-          border: `1px solid ${feedback.correct ? '#c3e6cb' : '#f5c6cb'}`
+          border: `1px solid ${feedback.correct ? 'green.200' : 'red.200'}`
         }}>
           <strong>{feedback.correct ? '✅ Correct!' : '❌ Incorrect'}</strong>
           <br />
           {feedback.message}
-        </div>
+        </Box>
       )}
 
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
+      <Box style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
         {!feedback ? (
-          <button
+          <Button
             onClick={checkAnswer}
             disabled={selectedWords.length === 0}
-            style={{
-              backgroundColor: selectedWords.length > 0 ? '#28a745' : '#ccc',
+            sx={{
+              backgroundColor: selectedWords.length > 0 ? 'green.500' : 'gray.300',
               color: 'white',
               padding: '10px 20px',
               border: 'none',
@@ -246,12 +247,12 @@ const AdverbIdentificationGame = () => {
             }}
           >
             Check Answer
-          </button>
+          </Button>
         ) : (
-          <button
+          <Button
             onClick={nextSentence}
-            style={{
-              backgroundColor: '#1976d2',
+            sx={{
+              backgroundColor: 'blue.700',
               color: 'white',
               padding: '10px 20px',
               border: 'none',
@@ -261,13 +262,13 @@ const AdverbIdentificationGame = () => {
             }}
           >
             {currentSentence < sentences.length - 1 ? 'Next Sentence' : 'Finish Game'}
-          </button>
+          </Button>
         )}
 
-        <button
+        <Button
           onClick={resetGame}
-          style={{
-            backgroundColor: '#6c757d',
+          sx={{
+            backgroundColor: 'gray.500',
             color: 'white',
             padding: '10px 20px',
             border: 'none',
@@ -277,9 +278,9 @@ const AdverbIdentificationGame = () => {
           }}
         >
           Reset Game
-        </button>
-      </div>
-    </div>
+        </Button>
+      </Box>
+    </Box>
   );
 };
 

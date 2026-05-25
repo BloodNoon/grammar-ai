@@ -1,12 +1,21 @@
-import React, { useMemo } from 'react';
-import { Box, Text } from '@chakra-ui/react';
+import React, { useMemo } from "react";
+import { Box, Text } from "@chakra-ui/react";
 
 const WordPile = () => {
   // A collection of words to stack
   const words = [
-    "City", "Teacher", "Doctor", "Dog", "Cat", 
-    "School", "Girl", "Apple", "Horse", "Chair", 
-    "Park", "Book"
+    "City",
+    "Teacher",
+    "Doctor",
+    "Dog",
+    "Cat",
+    "School",
+    "Girl",
+    "Apple",
+    "Horse",
+    "Chair",
+    "Park",
+    "Book",
   ];
 
   // Calculate random positions, rotations, and sizes once on mount
@@ -24,17 +33,16 @@ const WordPile = () => {
       // Random z-index so the stacking order is mixed up
       zIndex: Math.floor(Math.random() * 20),
     }));
-  }, []);
+  }, [words]);
 
-  
   return (
-    <Box 
-      position="relative" 
-      maxW="600px" 
-      h="400px" 
+    <Box
+      position="relative"
+      maxW="600px"
+      h="400px"
       mx="auto"
-      bg="white" 
-      borderRadius="xl" 
+      bg="white"
+      borderRadius="xl"
       overflow="hidden"
       boxShadow="sm"
     >
@@ -52,10 +60,10 @@ const WordPile = () => {
           zIndex={item.zIndex}
           textShadow="2px 2px 4px rgba(0,0,0,0.15)"
           // Adding a hover effect to pull the word to the top of the pile
-          _hover={{ 
-            zIndex: 50, 
-            color: "blue.500", 
-            transform: `translate(-50%, -50%) rotate(0deg) scale(1.1)` 
+          _hover={{
+            zIndex: 50,
+            color: "blue.500",
+            transform: `translate(-50%, -50%) rotate(0deg) scale(1.1)`,
           }}
           transition="all 0.2s ease-in-out"
           cursor="default"

@@ -1,3 +1,4 @@
+import { Box, Button, Heading, Text } from '@chakra-ui/react';
 // This component provides buttons for checking sentences, resetting, and generating new words focused on articles
 import React from 'react';
 
@@ -11,17 +12,17 @@ const ArticleActionButtons = ({
 
   return (
     // Main container for action buttons with center alignment
-    <div style={{ 
+    <Box style={{ 
       textAlign: 'center',              // Center all buttons
       padding: '20px',                  // Internal spacing
-      backgroundColor: '#fff',          // White background
+      backgroundColor: 'white',          // White background
       borderRadius: '8px',              // Rounded corners
       margin: '20px 0',                 // Vertical spacing
-      border: '1px solid #dee2e6'       // Light border for definition
+      border: '1px solid gray.200'       // Light border for definition
     }}>
       
       {/* Button container with responsive layout */}
-      <div style={{
+      <Box style={{
         display: 'flex',                // Horizontal layout
         justifyContent: 'center',       // Center buttons
         gap: '15px',                    // Space between buttons
@@ -30,11 +31,11 @@ const ArticleActionButtons = ({
       }}>
         
         {/* Check Sentence Button - Primary action focused on article validation */}
-        <button 
+        <Button 
           onClick={checkSentence}
           disabled={sentenceArea.length === 0 || isCompleted} // Disable if no sentence or completed
-          style={{
-            backgroundColor: sentenceArea.length === 0 || isCompleted ? '#6c757d' : '#28a745',
+          sx={{
+            backgroundColor: sentenceArea.length === 0 || isCompleted ? 'gray.500' : 'green.500',
             color: 'white',                 // White text for contrast
             border: 'none',                 // No border for clean look
             padding: '15px 25px',           // Large padding for primary button
@@ -58,7 +59,7 @@ const ArticleActionButtons = ({
           }}
           onMouseOut={(e) => {
             if (sentenceArea.length > 0 && !isCompleted) {
-              e.target.style.backgroundColor = '#28a745'; // Return to original green
+              e.target.style.backgroundColor = 'green.500'; // Return to original green
               e.target.style.transform = 'translateY(0)'; // Return to original position
               e.target.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)'; // Original shadow
             }
@@ -66,15 +67,15 @@ const ArticleActionButtons = ({
         >
           {/* Button text with icon */}
           ✅ Check Sentence
-        </button>
+        </Button>
 
         {/* Reset & New Words Button - Secondary action */}
-        <button 
+        <Button 
           onClick={resetSentenceOnly}
           disabled={isCompleted} // Disable when challenge is completed
-          style={{
-            backgroundColor: isCompleted ? '#6c757d' : '#ffc107',
-            color: isCompleted ? 'white' : '#212529', // Dark text on yellow background
+          sx={{
+            backgroundColor: isCompleted ? 'gray.500' : 'yellow.400',
+            color: isCompleted ? 'white' : 'gray.800', // Dark text on yellow background
             border: 'none',                 // No border
             padding: '12px 20px',           // Medium padding for secondary button
             cursor: isCompleted ? 'not-allowed' : 'pointer',
@@ -95,7 +96,7 @@ const ArticleActionButtons = ({
           }}
           onMouseOut={(e) => {
             if (!isCompleted) {
-              e.target.style.backgroundColor = '#ffc107'; // Return to original yellow
+              e.target.style.backgroundColor = 'yellow.400'; // Return to original yellow
               e.target.style.transform = 'translateY(0)'; // Return to original position
               e.target.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)'; // Original shadow
             }
@@ -103,14 +104,14 @@ const ArticleActionButtons = ({
         >
           {/* Button text with icon */}
           🔄 Reset & New Words
-        </button>
+        </Button>
 
         {/* Generate New Words Button - Tertiary action */}
-        <button 
+        <Button 
           onClick={generateArticleWordSetFromTestCases}
           disabled={isCompleted} // Disable when challenge is completed
-          style={{
-            backgroundColor: isCompleted ? '#6c757d' : '#17a2b8',
+          sx={{
+            backgroundColor: isCompleted ? 'gray.500' : 'cyan.500',
             color: 'white',                 // White text for contrast
             border: 'none',                 // No border
             padding: '12px 20px',           // Medium padding
@@ -132,7 +133,7 @@ const ArticleActionButtons = ({
           }}
           onMouseOut={(e) => {
             if (!isCompleted) {
-              e.target.style.backgroundColor = '#17a2b8'; // Return to original teal
+              e.target.style.backgroundColor = 'cyan.500'; // Return to original teal
               e.target.style.transform = 'translateY(0)'; // Return to original position
               e.target.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)'; // Original shadow
             }
@@ -140,29 +141,29 @@ const ArticleActionButtons = ({
         >
           {/* Button text with icon */}
           🎲 Generate New Words
-        </button>
-      </div>
+        </Button>
+      </Box>
 
       {/* Button descriptions and help text */}
-      <div style={{
+      <Box sx={{
         marginTop: '20px',              // Space above help section
         padding: '15px',                // Internal spacing
-        backgroundColor: '#f8f9fa',     // Light gray background
+        backgroundColor: 'gray.50',     // Light gray background
         borderRadius: '6px',            // Rounded corners
-        border: '1px solid #dee2e6',    // Light border
+        border: '1px solid gray.200',    // Light border
         textAlign: 'left'               // Left-align help text for readability
       }}>
-        <h4 style={{ 
+        <Heading as="h4" size="sm" sx={{ 
           marginBottom: '12px',         // Space below title
-          color: '#495057',             // Dark gray
+          color: 'gray.600',             // Dark gray
           fontSize: '16px',             // Standard title size
           textAlign: 'center'           // Center the title
         }}>
           Button Guide:
-        </h4>
+        </Heading>
         
         {/* Button descriptions in a grid layout */}
-        <div style={{
+        <Box style={{
           display: 'grid',              // Grid layout for descriptions
           gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', // Responsive grid
           gap: '15px',                  // Space between descriptions
@@ -170,108 +171,108 @@ const ArticleActionButtons = ({
           lineHeight: '1.4'             // Better line spacing
         }}>
           {/* Check Articles description */}
-          <div style={{
+          <Box style={{
             padding: '10px',            // Internal spacing
             backgroundColor: 'white',   // White background
             borderRadius: '4px',        // Rounded corners
-            border: '1px solid #28a745' // Green border to match button
+            border: '1px solid green.500' // Green border to match button
           }}>
-            <div style={{ 
+            <Box sx={{ 
               fontWeight: 'bold', 
-              color: '#28a745',
+              color: 'green.500',
               marginBottom: '5px'
             }}>
               ✅ Check Articles
-            </div>
-            <div style={{ color: '#666' }}>
+            </Box>
+            <Box sx={{ color: 'gray.500' }}>
               Validates your sentence structure and article usage (a, an, the). Only works when you have words in your sentence.
-            </div>
-          </div>
+            </Box>
+          </Box>
 
           {/* Reset & New Words description */}
-          <div style={{
+          <Box style={{
             padding: '10px',            // Internal spacing
             backgroundColor: 'white',   // White background
             borderRadius: '4px',        // Rounded corners
-            border: '1px solid #ffc107' // Yellow border to match button
+            border: '1px solid yellow.400' // Yellow border to match button
           }}>
-            <div style={{ 
+            <Box sx={{ 
               fontWeight: 'bold', 
-              color: '#856404',
+              color: 'yellow.800',
               marginBottom: '5px'
             }}>
               🔄 Reset & New Words
-            </div>
-            <div style={{ color: '#666' }}>
+            </Box>
+            <Box sx={{ color: 'gray.500' }}>
               Clears your current sentence and generates a fresh set of words with articles to practice with.
-            </div>
-          </div>
+            </Box>
+          </Box>
 
           {/* Generate New Words description */}
-          <div style={{
+          <Box style={{
             padding: '10px',            // Internal spacing
             backgroundColor: 'white',   // White background
             borderRadius: '4px',        // Rounded corners
-            border: '1px solid #17a2b8' // Teal border to match button
+            border: '1px solid cyan.500' // Teal border to match button
           }}>
-            <div style={{ 
+            <Box sx={{ 
               fontWeight: 'bold', 
-              color: '#17a2b8',
+              color: 'cyan.500',
               marginBottom: '5px'
             }}>
               🎲 Generate New Words
-            </div>
-            <div style={{ color: '#666' }}>
+            </Box>
+            <Box sx={{ color: 'gray.500' }}>
               Gets a new random selection of words including articles without clearing your current sentence.
-            </div>
-          </div>
-        </div>
-      </div>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
 
       {/* Current sentence status indicator */}
       {sentenceArea.length > 0 && (
-        <div style={{
+        <Box sx={{
           marginTop: '15px',            // Space above status
           padding: '10px',              // Internal spacing
-          backgroundColor: '#d4edda',   // Light green background
-          color: '#155724',             // Dark green text
+          backgroundColor: 'green.100',   // Light green background
+          color: 'green.800',             // Dark green text
           borderRadius: '6px',          // Rounded corners
-          border: '1px solid #c3e6cb',  // Green border
+          border: '1px solid green.200',  // Green border
           fontSize: '14px',             // Standard text size
           fontWeight: 'bold'            // Bold text for status
         }}>
           📝 Ready to check: "{sentenceArea.map(word => word.text).join(' ')}"
           {sentenceArea.filter(w => w.type === 'Determiner').length > 0 && (
-            <span style={{ marginLeft: '10px', color: '#4CAF50' }}>
+            <Text as="span" sx={{ marginLeft: '10px', color: 'green.500' }}>
               • {sentenceArea.filter(w => w.type === 'Determiner').length} article(s) found
-            </span>
+            </Text>
           )}
-        </div>
+        </Box>
       )}
 
       {/* Empty sentence reminder */}
       {sentenceArea.length === 0 && !isCompleted && (
-        <div style={{
+        <Box sx={{
           marginTop: '15px',            // Space above reminder
           padding: '10px',              // Internal spacing
-          backgroundColor: '#fff3cd',   // Light yellow background
-          color: '#856404',             // Dark yellow text
+          backgroundColor: 'yellow.100',   // Light yellow background
+          color: 'yellow.800',             // Dark yellow text
           borderRadius: '6px',          // Rounded corners
           border: '1px solid #ffeaa7',  // Yellow border
           fontSize: '14px',             // Standard text size
           fontStyle: 'italic'           // Italic for reminder text
         }}>
           💡 Build a sentence first by dragging words from the word bank above. Remember to include articles!
-        </div>
+        </Box>
       )}
 
       {/* Completion status */}
       {isCompleted && (
-        <div style={{
+        <Box sx={{
           marginTop: '15px',            // Space above status
           padding: '15px',              // Internal spacing
-          backgroundColor: '#d1ecf1',   // Light blue background
-          color: '#0c5460',             // Dark blue text
+          backgroundColor: 'cyan.100',   // Light blue background
+          color: 'cyan.800',             // Dark blue text
           borderRadius: '6px',          // Rounded corners
           border: '1px solid #bee5eb',  // Blue border
           fontSize: '14px',             // Standard text size
@@ -279,14 +280,14 @@ const ArticleActionButtons = ({
           textAlign: 'center'           // Center completion message
         }}>
           🎉 Articles challenge completed! Use the reset button in the progress section to start a new challenge.
-        </div>
+        </Box>
       )}
 
       {/* Keyboard shortcuts info */}
-      <div style={{
+      <Box sx={{
         marginTop: '20px',              // Space above shortcuts
         fontSize: '11px',               // Small font for shortcuts
-        color: '#6c757d',               // Gray color
+        color: 'gray.500',               // Gray color
         textAlign: 'center',            // Center shortcuts info
         fontStyle: 'italic',            // Italic styling
         padding: '8px',                 // Internal spacing
@@ -294,8 +295,8 @@ const ArticleActionButtons = ({
         borderRadius: '4px'             // Rounded corners
       }}>
         💡 Pro tip: Focus on proper article usage - 'a' before consonants, 'an' before vowels, 'the' for specific things
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

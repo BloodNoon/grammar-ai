@@ -1,3 +1,4 @@
+import { Box, Heading, Text } from '@chakra-ui/react';
 import React from 'react';
 
 const AdverbTypes = () => {
@@ -6,9 +7,9 @@ const AdverbTypes = () => {
       type: 'Manner',
       description: 'How something happens',
       examples: ['quickly', 'gently', 'loudly', 'carefully', 'beautifully'],
-      color: '#e3f2fd',
-      borderColor: '#1976d2',
-      textColor: '#1565c0'
+      color: 'blue.50',
+      borderColor: 'blue.700',
+      textColor: 'blue.800'
     },
     {
       type: 'Time',
@@ -22,7 +23,7 @@ const AdverbTypes = () => {
       type: 'Place',
       description: 'Where something happens',
       examples: ['here', 'outside', 'upstairs', 'everywhere', 'nearby'],
-      color: '#fff3e0',
+      color: 'orange.50',
       borderColor: '#f57c00',
       textColor: '#ef6c00'
     },
@@ -30,7 +31,7 @@ const AdverbTypes = () => {
       type: 'Frequency',
       description: 'How often something happens',
       examples: ['always', 'often', 'rarely', 'sometimes', 'never'],
-      color: '#f3e5f5',
+      color: 'purple.50',
       borderColor: '#7b1fa2',
       textColor: '#6a1b9a'
     },
@@ -38,43 +39,43 @@ const AdverbTypes = () => {
       type: 'Degree',
       description: 'To what extent something happens',
       examples: ['very', 'completely', 'almost', 'quite', 'extremely'],
-      color: '#ffebee',
+      color: 'red.50',
       borderColor: '#c62828',
       textColor: '#c62828'
     }
   ];
 
   return (
-    <div style={{
-      backgroundColor: '#fff8e1',
+    <Box style={{
+      backgroundColor: 'white8e1',
       padding: '2rem',
       borderRadius: '10px',
       marginBottom: '2rem',
-      border: '2px solid #ffc107'
+      border: '2px solid yellow.400'
     }}>
-      <h3 style={{ color: '#e65100', marginBottom: '1rem' }}>⚡ 3. Types of Adverbs</h3>
-      <p style={{ fontSize: '1rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
+      <Heading as="h3" size="md" style={{ color: '#e65100', marginBottom: '1rem' }}>⚡ 3. Types of Adverbs</Heading>
+      <Text style={{ fontSize: '1rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
         Adverbs can be grouped into different categories based on what they describe:
-      </p>
+      </Text>
       
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+      <Box style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
         {adverbTypes.map((type, index) => (
-          <div key={index} style={{
+          <Box key={index} style={{
             backgroundColor: type.color,
             padding: '1.5rem',
             borderRadius: '8px',
             border: `2px solid ${type.borderColor}`
           }}>
-            <div style={{ fontWeight: 'bold', color: type.textColor, marginBottom: '0.5rem', fontSize: '1.1rem' }}>
+            <Box style={{ fontWeight: 'bold', color: type.textColor, marginBottom: '0.5rem', fontSize: '1.1rem' }}>
               {type.type}
-            </div>
-            <div style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1rem', fontStyle: 'italic' }}>
+            </Box>
+            <Box sx={{ fontSize: '0.9rem', color: 'gray.500', marginBottom: '1rem', fontStyle: 'italic' }}>
               {type.description}
-            </div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+            </Box>
+            <Box style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
               {type.examples.map((example, i) => (
-                <span key={i} style={{
-                  backgroundColor: '#fff',
+                <Text as="span" key={i} style={{
+                  backgroundColor: 'white',
                   padding: '0.25rem 0.5rem',
                   borderRadius: '4px',
                   fontSize: '0.85rem',
@@ -83,27 +84,27 @@ const AdverbTypes = () => {
                   fontWeight: '500'
                 }}>
                   {example}
-                </span>
+                </Text>
               ))}
-            </div>
-          </div>
+            </Box>
+          </Box>
         ))}
-      </div>
+      </Box>
       
-      <div style={{
+      <Box style={{
         marginTop: '1.5rem',
         padding: '1rem',
-        backgroundColor: '#fff',
+        backgroundColor: 'white',
         borderRadius: '8px',
-        border: '1px solid #ffc107'
+        border: '1px solid yellow.400'
       }}>
-        <h4 style={{ color: '#e65100', marginBottom: '0.5rem' }}>💡 Quick Tip:</h4>
-        <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: '1.5', margin: 0 }}>
+        <Heading as="h4" size="sm" style={{ color: '#e65100', marginBottom: '0.5rem' }}>💡 Quick Tip:</Heading>
+        <Text style={{ fontSize: '0.95rem', color: '#555', lineHeight: '1.5', margin: 0 }}>
           Many adverbs end in -ly (quickly, beautifully), but not all! Words like "fast," "well," "soon," and "here" 
           are also adverbs. The key is understanding what they modify in the sentence.
-        </p>
-      </div>
-    </div>
+        </Text>
+      </Box>
+    </Box>
   );
 };
 

@@ -1,3 +1,4 @@
+import { Box, Button, Heading, Text } from '@chakra-ui/react';
 // This component teaches users about verb tenses, auxiliary verbs, and provides practice questions
 import React from 'react';
 
@@ -42,23 +43,23 @@ const VerbTenseLesson = ({ sentenceFeedback, handleVerbSentenceChoice }) => {
 
   return (
     // Main container for the verb tense lesson section
-    <div style={{ 
+    <Box style={{ 
       border: '2px solid black',    // Black border around entire lesson for visual separation
       padding: '20px',              // Internal spacing for readability
       marginBottom: '20px',         // Space below lesson section
       textAlign: 'left'             // Left-align text for better readability of educational content
     }}>
       {/* ===== LESSON TITLE AND INTRODUCTION ===== */}
-      <h2>Understanding Verb Tense and Auxiliary Verbs</h2>
+      <Heading as="h2" size="lg">Understanding Verb Tense and Auxiliary Verbs</Heading>
       
       {/* Introduction paragraph explaining the purpose of verbs and tenses */}
-      <p>
+      <Text>
         Verbs tell us the action in a sentence. The form of the verb tells us when the action happens 
         (called tense) and sometimes uses a helper word (auxiliary verb) to express time or mood more clearly.
-      </p>
+      </Text>
 
       {/* ===== TENSE TABLE SECTION ===== */}
-      <h3>Tense</h3>
+      <Heading as="h3" size="md">Tense</Heading>
       <table style={{
         width: '100%',                // Full width table for better readability
         borderCollapse: 'collapse',   // Remove spacing between cells for clean appearance
@@ -123,48 +124,48 @@ const VerbTenseLesson = ({ sentenceFeedback, handleVerbSentenceChoice }) => {
       </table>
 
       {/* ===== AUXILIARY VERB EXAMPLES SECTION ===== */}
-      <h3>Auxiliary + Base Verb Examples</h3>
-      <div style={{ marginBottom: '20px' }}>
+      <Heading as="h3" size="md">Auxiliary + Base Verb Examples</Heading>
+      <Box style={{ marginBottom: '20px' }}>
         {/* Display each auxiliary verb example with its tense label */}
         {auxiliaryExamples.map((example, index) => (
-          <p key={index} style={{ 
+          <Text key={index} style={{ 
             marginBottom: '10px',       // Space between examples for readability
             fontSize: '16px'            // Standard text size for examples
           }}>
             <strong>{example.sentence}</strong> {example.tense}
-          </p>
+          </Text>
         ))}
-      </div>
+      </Box>
 
       {/* ===== PRACTICE SECTION ===== */}
-      <h3>Learn your new sentence Structures:</h3>
-      <p><strong>Subject Noun + Verb (in the correct tense) + Object Noun</strong></p>
-      <p style={{ marginBottom: '15px' }}>
+      <Heading as="h3" size="md">Learn your new sentence Structures:</Heading>
+      <Text><strong>Subject Noun + Verb (in the correct tense) + Object Noun</strong></Text>
+      <Text style={{ marginBottom: '15px' }}>
         Try to include an auxiliary verb if the sentence requires one
-      </p>
+      </Text>
 
       {/* ===== INTERACTIVE PRACTICE QUESTIONS ===== */}
       {/* Maps through each practice question to create interactive multiple choice */}
       {Object.keys(practiceOptions).map((questionNum) => (
-        <div key={questionNum} style={{
+        <Box key={questionNum} style={{
           backgroundColor: '#f9f9f9',   // Light gray background to separate question blocks
           padding: '15px',              // Internal spacing for comfortable reading
           marginBottom: '20px',         // Space between different questions
           borderRadius: '8px',          // Rounded corners for modern appearance
-          border: '1px solid #ddd'      // Light border for visual separation
+          border: '1px solid gray.200'      // Light border for visual separation
         }}>
-          <h4>Question {questionNum}: Choose the correct sentence</h4>
+          <Heading as="h4" size="sm">Question {questionNum}: Choose the correct sentence</Heading>
           
           {/* Display answer options as interactive buttons */}
-          <div style={{ marginBottom: '15px' }}>
+          <Box style={{ marginBottom: '15px' }}>
             {practiceOptions[questionNum].map((option, optionIndex) => (
-              <div key={optionIndex} style={{ marginBottom: '8px' }}>
-                <button
+              <Box key={optionIndex} style={{ marginBottom: '8px' }}>
+                <Button
                   // Handle click to check if selected option is correct
                   onClick={() => handleVerbSentenceChoice(questionNum, option.text, option.isCorrect)}
                   style={{
                     backgroundColor: '#f0f0f0',   // Light gray background for buttons
-                    border: '2px solid #ccc',     // Gray border for button definition
+                    border: '2px solid gray.300',     // Gray border for button definition
                     padding: '10px 15px',         // Internal button spacing
                     margin: '5px',                // Space between option buttons
                     cursor: 'pointer',            // Show clickable cursor on hover
@@ -178,23 +179,23 @@ const VerbTenseLesson = ({ sentenceFeedback, handleVerbSentenceChoice }) => {
                   // Add hover effects for better user interaction feedback
                   onMouseOver={(e) => {
                     e.target.style.backgroundColor = '#e0e0e0'; // Darker gray on hover
-                    e.target.style.borderColor = '#999';       // Darker border on hover
+                    e.target.style.borderColor = 'gray.400';       // Darker border on hover
                   }}
                   onMouseOut={(e) => {
                     e.target.style.backgroundColor = '#f0f0f0'; // Return to original color
-                    e.target.style.borderColor = '#ccc';       // Return to original border
+                    e.target.style.borderColor = 'gray.300';       // Return to original border
                   }}
                 >
                   {/* Display option letter (A, B, C, D) and the sentence text */}
                   {String.fromCharCode(65 + optionIndex)}. {option.text}
-                </button>
-              </div>
+                </Button>
+              </Box>
             ))}
-          </div>
+          </Box>
 
           {/* Display feedback if user has made a choice for this question */}
           {sentenceFeedback[questionNum] && (
-            <div style={{
+            <Box style={{
               color: sentenceFeedback[questionNum].color,     // Text color based on correctness (green/red)
               marginTop: '10px',                              // Space above feedback message
               fontWeight: 'bold',                             // Bold text for emphasis
@@ -203,14 +204,14 @@ const VerbTenseLesson = ({ sentenceFeedback, handleVerbSentenceChoice }) => {
               border: `2px solid ${sentenceFeedback[questionNum].color}`, // Border matching text color
               borderRadius: '6px',                            // Rounded corners for feedback box
               // Background color based on correctness - light green for correct, light red for incorrect
-              backgroundColor: sentenceFeedback[questionNum].color === 'green' ? '#e8f5e8' : '#ffebee'
+              backgroundColor: sentenceFeedback[questionNum].color === 'green' ? 'green.50' : 'red.50'
             }}>
               {sentenceFeedback[questionNum].text}
-            </div>
+            </Box>
           )}
-        </div>
+        </Box>
       ))}
-    </div>
+    </Box>
   );
 };
 

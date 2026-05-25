@@ -1,3 +1,4 @@
+import { Box, Button } from '@chakra-ui/react';
 // This component shows feedback to users about their sentence construction attempts
 import React from 'react';
 
@@ -27,28 +28,28 @@ const PronounFeedbackDisplay = ({
   const getFeedbackStyling = (type) => {
     const stylingMap = {
       success: {
-        backgroundColor: '#d4edda',   // Light green background
-        borderColor: '#c3e6cb',       // Green border
-        textColor: '#155724',         // Dark green text
-        iconColor: '#28a745'          // Green icon
+        backgroundColor: 'green.100',   // Light green background
+        borderColor: 'green.200',       // Green border
+        textColor: 'green.800',         // Dark green text
+        iconColor: 'green.500'          // Green icon
       },
       error: {
-        backgroundColor: '#f8d7da',   // Light red background
-        borderColor: '#f5c6cb',       // Red border
-        textColor: '#721c24',         // Dark red text
-        iconColor: '#dc3545'          // Red icon
+        backgroundColor: 'red.100',   // Light red background
+        borderColor: 'red.200',       // Red border
+        textColor: 'red.800',         // Dark red text
+        iconColor: 'red.500'          // Red icon
       },
       warning: {
-        backgroundColor: '#fff3cd',   // Light yellow background
+        backgroundColor: 'yellow.100',   // Light yellow background
         borderColor: '#ffeaa7',       // Yellow border
-        textColor: '#856404',         // Dark yellow text
-        iconColor: '#ffc107'          // Yellow icon
+        textColor: 'yellow.800',         // Dark yellow text
+        iconColor: 'yellow.400'          // Yellow icon
       },
       info: {
-        backgroundColor: '#d1ecf1',   // Light blue background
+        backgroundColor: 'cyan.100',   // Light blue background
         borderColor: '#bee5eb',       // Blue border
-        textColor: '#0c5460',         // Dark blue text
-        iconColor: '#17a2b8'          // Blue icon
+        textColor: 'cyan.800',         // Dark blue text
+        iconColor: 'cyan.500'          // Blue icon
       }
     };
     return stylingMap[type] || stylingMap.info;
@@ -62,7 +63,7 @@ const PronounFeedbackDisplay = ({
 
   return (
     // Main feedback container with dynamic styling based on feedback type
-    <div style={{
+    <Box style={{
       padding: '20px',                    // Internal spacing
       marginTop: '20px',                  // Space above feedback
       marginBottom: '20px',               // Space below feedback
@@ -79,7 +80,7 @@ const PronounFeedbackDisplay = ({
     }}>
 
       {/* Feedback icon based on type */}
-      <div style={{
+      <Box style={{
         fontSize: '24px',                 // Large icon size
         marginBottom: '10px',             // Space below icon
         color: styling.iconColor
@@ -88,29 +89,29 @@ const PronounFeedbackDisplay = ({
         {feedbackType === 'error' && '❌'}
         {feedbackType === 'warning' && '⚠️'}
         {feedbackType === 'info' && 'ℹ️'}
-      </div>
+      </Box>
 
       {/* Main feedback content */}
-      <div style={{
+      <Box style={{
         fontWeight: feedbackType === 'success' ? 'bold' : 'normal',
         fontSize: feedbackType === 'success' ? '18px' : '16px'
       }}>
         {/* Render each line of feedback */}
         {feedbackLines.map((line, index) => (
-          <div key={index} style={{
+          <Box key={index} style={{
             marginBottom: index < feedbackLines.length - 1 ? '8px' : '0',
             // Make first line (usually main message) more prominent
             fontWeight: index === 0 ? 'bold' : 'normal',
             fontSize: index === 0 ? '18px' : '16px'
           }}>
             {line}
-          </div>
+          </Box>
         ))}
-      </div>
+      </Box>
 
       {/* Progress indicator for success messages */}
       {feedbackType === 'success' && feedback.includes('/10') && (
-        <div style={{
+        <Box style={{
           marginTop: '15px',              // Space above progress
           padding: '10px',                // Internal spacing
           backgroundColor: 'rgba(255,255,255,0.3)', // Semi-transparent white
@@ -120,16 +121,16 @@ const PronounFeedbackDisplay = ({
         }}>
           {/* Extract and display progress information */}
           {feedback.match(/(\d+)\/(\d+)/g) && (
-            <div>
+            <Box>
               Keep going! You're doing great with pronoun practice! 🚀
-            </div>
+            </Box>
           )}
-        </div>
+        </Box>
       )}
 
       {/* Completion celebration for final success */}
       {feedback.includes('CONGRATULATIONS') && feedback.includes('10 correct') && (
-        <div style={{
+        <Box style={{
           marginTop: '15px',              // Space above celebration
           padding: '15px',                // Internal spacing
           backgroundColor: 'rgba(255,255,255,0.4)', // Semi-transparent white
@@ -138,17 +139,17 @@ const PronounFeedbackDisplay = ({
           fontWeight: 'bold',             // Bold celebration text
           border: `2px solid ${styling.iconColor}` // Colored border
         }}>
-          <div style={{ fontSize: '20px', marginBottom: '8px' }}>🏆</div>
-          <div>You've mastered pronouns in sentence building!</div>
-          <div style={{ fontSize: '14px', marginTop: '5px', opacity: '0.8' }}>
+          <Box style={{ fontSize: '20px', marginBottom: '8px' }}>🏆</Box>
+          <Box>You've mastered pronouns in sentence building!</Box>
+          <Box style={{ fontSize: '14px', marginTop: '5px', opacity: '0.8' }}>
             Ready for a new challenge?
-          </div>
-        </div>
+          </Box>
+        </Box>
       )}
 
       {/* Action suggestions based on feedback type */}
       {feedbackType === 'error' && (
-        <div style={{
+        <Box style={{
           marginTop: '15px',              // Space above suggestions
           padding: '12px',                // Internal spacing
           backgroundColor: 'rgba(255,255,255,0.2)', // Semi-transparent white
@@ -157,12 +158,12 @@ const PronounFeedbackDisplay = ({
           fontStyle: 'italic'             // Italic for suggestions
         }}>
           💡 Try focusing on when to use the different kinds of pronouns
-        </div>
+        </Box>
       )}
 
       {/* Encouragement for warning messages */}
       {feedbackType === 'warning' && (
-        <div style={{
+        <Box style={{
           marginTop: '15px',              // Space above encouragement
           padding: '12px',                // Internal spacing
           backgroundColor: 'rgba(255,255,255,0.2)', // Semi-transparent white
@@ -171,12 +172,12 @@ const PronounFeedbackDisplay = ({
           fontStyle: 'italic'             // Italic for encouragement
         }}>
           📚 Take your time and remember the different kinds of pronouns from the lesson above!
-        </div>
+        </Box>
       )}
 
       {/* Dismiss button for long feedback messages */}
       {feedback.length > 100 && (
-        <button
+        <Button
           onClick={() => {
             // This would need to be passed as a prop if we want dismiss functionality
             // For now, it's just visual
@@ -211,9 +212,9 @@ const PronounFeedbackDisplay = ({
           title="Dismiss feedback"
         >
           ×
-        </button>
+        </Button>
       )}
-    </div>
+    </Box>
   );
 };
 

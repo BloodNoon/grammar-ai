@@ -1,3 +1,4 @@
+import { Box, Heading, Text } from '@chakra-ui/react';
 import React from 'react';
 
 const AdjectiveSentenceStructures = () => {
@@ -25,54 +26,54 @@ const AdjectiveSentenceStructures = () => {
   ];
 
   return (
-    <div style={{
+    <Box style={{
       backgroundColor: '#e8f5e9',
       padding: '2rem',
       borderRadius: '10px',
       marginBottom: '2rem',
       border: '1px solid #4caf50'
     }}>
-      <h3 style={{ color: '#2e7d32', marginBottom: '1.5rem' }}>📝 Basic Adjective Sentence Structures</h3>
+      <Heading as="h3" size="md" style={{ color: '#2e7d32', marginBottom: '1.5rem' }}>📝 Basic Adjective Sentence Structures</Heading>
       
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+      <Box style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
         {sentenceStructures.map((structure, index) => (
-          <div key={index} style={{
-            backgroundColor: '#fff',
+          <Box key={index} style={{
+            backgroundColor: 'white',
             padding: '1.5rem',
             borderRadius: '8px',
-            border: '1px solid #ddd'
+            border: '1px solid gray.200'
           }}>
-            <div style={{ fontWeight: 'bold', color: '#2e7d32', marginBottom: '0.75rem' }}>
+            <Box style={{ fontWeight: 'bold', color: '#2e7d32', marginBottom: '0.75rem' }}>
               {structure.title}
-            </div>
+            </Box>
             {structure.examples.map((example, i) => (
-              <div key={i} style={{ 
+              <Box key={i} style={{ 
                 fontSize: '1rem', 
                 fontStyle: 'italic', 
                 marginBottom: '0.25rem',
                 color: '#555'
               }}>
                 • {example}
-              </div>
+              </Box>
             ))}
-          </div>
+          </Box>
         ))}
-      </div>
+      </Box>
       
-      <div style={{
+      <Box style={{
         marginTop: '1.5rem',
         padding: '1rem',
-        backgroundColor: '#fff',
+        backgroundColor: 'white',
         borderRadius: '8px',
         border: '1px solid #4caf50'
       }}>
-        <h4 style={{ color: '#2e7d32', marginBottom: '0.5rem' }}>💡 Pro Tip:</h4>
-        <p style={{ fontSize: '0.95rem', color: '#555', lineHeight: '1.5' }}>
+        <Heading as="h4" size="sm" style={{ color: '#2e7d32', marginBottom: '0.5rem' }}>💡 Pro Tip:</Heading>
+        <Text style={{ fontSize: '0.95rem', color: '#555', lineHeight: '1.5' }}>
           Notice how adjectives can come before nouns (descriptive) or after "be" verbs (predicative). 
           Both positions are correct but serve different purposes in your sentences!
-        </p>
-      </div>
-    </div>
+        </Text>
+      </Box>
+    </Box>
   );
 };
 

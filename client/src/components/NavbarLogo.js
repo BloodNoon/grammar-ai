@@ -12,13 +12,14 @@ export default function NavbarLogo() {
 				alt="logo"
 				boxShadow="xl"
 				rounded="md"
+				bg="brand.900"
+				p={1.5}
 			/>
 			<Link to="/">
 				<Heading
 					size="lg"
 					fontWeight="bold"
-					bgGradient="linear(to-l, red.400, yellow.300)"
-					bgClip="text"
+					color="brand.900"
 				>
 					Students Writing
 				</Heading>

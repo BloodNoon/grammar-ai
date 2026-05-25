@@ -1,8 +1,9 @@
+import { Box, Heading, Text } from '@chakra-ui/react';
 import React from 'react';
 
 const PrepositionPhraseLesson = () => {
   return (
-    <div
+    <Box
       style={{
         marginTop: '2rem',
         padding: '1.5rem',
@@ -14,22 +15,22 @@ const PrepositionPhraseLesson = () => {
         boxShadow: '0 4px 10px rgba(0, 0, 0, 0.05)',
       }}
     >
-      <h2
-        style={{
+      <Heading as="h2" size="lg"
+        sx={{
           fontSize: '28px',
           fontWeight: 'bold',
           marginBottom: '1rem',
-          color: '#333',
+          color: 'gray.700',
         }}
       >
         Learn the Lesson: What are Prepositional Phrases?
-      </h2>
+      </Heading>
 
-      <div style={{ textAlign: 'left', fontSize: '1.1rem', lineHeight: '1.8' }}>
-        <p><strong>Definition:</strong> A prepositional phrase = preposition + article/determiner + noun</p>
+      <Box style={{ textAlign: 'left', fontSize: '1.1rem', lineHeight: '1.8' }}>
+        <Text><strong>Definition:</strong> A prepositional phrase = preposition + article/determiner + noun</Text>
         
-        <div style={{ margin: '1rem 0', padding: '1rem', backgroundColor: '#e8f4fd', borderRadius: '8px' }}>
-          <h4 style={{ color: '#1565c0', marginBottom: '0.5rem' }}>Examples of Prepositional Phrases:</h4>
+        <Box style={{ margin: '1rem 0', padding: '1rem', backgroundColor: '#e8f4fd', borderRadius: '8px' }}>
+          <Heading as="h4" size="sm" sx={{ color: 'blue.800', marginBottom: '0.5rem' }}>Examples of Prepositional Phrases:</Heading>
           <ul style={{ margin: '0.5rem 0' }}>
             <li><strong>in the house</strong> (preposition + article + noun)</li>
             <li><strong>on the table</strong> (preposition + article + noun)</li>
@@ -37,16 +38,16 @@ const PrepositionPhraseLesson = () => {
             <li><strong>after the movie</strong> (preposition + article + noun)</li>
             <li><strong>during the game</strong> (preposition + article + noun)</li>
           </ul>
-        </div>
+        </Box>
 
-        <p><strong>How they work in sentences:</strong></p>
-        <div style={{ margin: '1rem 0', padding: '1rem', backgroundColor: '#fff3e0', borderRadius: '8px' }}>
-          <p>• <strong>After the movie</strong>, we went home.</p>
-          <p>• The cat sleeps <strong>on the couch</strong>.</p>
-          <p>• <strong>During the storm</strong>, the power went out.</p>
-        </div>
-      </div>
-    </div>
+        <Text><strong>How they work in sentences:</strong></Text>
+        <Box sx={{ margin: '1rem 0', padding: '1rem', backgroundColor: 'orange.50', borderRadius: '8px' }}>
+          <Text>• <strong>After the movie</strong>, we went home.</Text>
+          <Text>• The cat sleeps <strong>on the couch</strong>.</Text>
+          <Text>• <strong>During the storm</strong>, the power went out.</Text>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

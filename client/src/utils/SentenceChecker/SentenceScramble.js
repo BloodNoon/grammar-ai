@@ -1,3 +1,4 @@
+import { Box, Button, Heading, Text } from '@chakra-ui/react';
 import React, { useState, useEffect } from "react";
 
 // List of all 16 sentences (1 per compound preposition)
@@ -153,45 +154,45 @@ const SentenceScramble = () => {
   };
 
   return (
-    <div style={{ marginTop: "2rem" }}>
-      <h2 style={{ fontSize: "28px", fontWeight: "bold", marginBottom: "1rem" }}>
+    <Box style={{ marginTop: "2rem" }}>
+      <Heading as="h2" size="lg" style={{ fontSize: "28px", fontWeight: "bold", marginBottom: "1rem" }}>
         Sentence Scramble (Compound Preposition Focus)
-      </h2>
+      </Heading>
 
       {/* 🔀 Reshuffle Button */}
-      <div style={{ marginBottom: "1.5rem" }}>
-        <button
+      <Box style={{ marginBottom: "1.5rem" }}>
+        <Button
           onClick={initGame}
-          style={{
+          sx={{
             padding: "0.6rem 1.2rem",
             borderRadius: "8px",
             border: "none",
-            backgroundColor: "#007bff",
-            color: "#fff",
+            backgroundColor: "blue.500",
+            color: "white",
             cursor: "pointer",
             fontWeight: "bold",
           }}
         >
           Reshuffle 🔀
-        </button>
-      </div>
+        </Button>
+      </Box>
 
       {gameSentences.map((s) => (
-        <div
+        <Box
           key={s.id}
           style={{
             marginBottom: "2rem",
             padding: "1rem",
-            border: "2px solid #ccc",
+            border: "2px solid gray.300",
             borderRadius: "10px",
             backgroundColor: "#f9f9f9",
           }}
         >
-          <h3 style={{ marginBottom: "0.5rem" }}>Scramble this sentence:</h3>
+          <Heading as="h3" size="md" style={{ marginBottom: "0.5rem" }}>Scramble this sentence:</Heading>
           {/* Draggable words */}
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+          <Box style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
             {s.scrambled.map((word, i) => (
-              <button
+              <Button
                 key={i}
                 onClick={() => handleDrop(s.id, i)}
                 style={{
@@ -203,12 +204,12 @@ const SentenceScramble = () => {
                 }}
               >
                 {word}
-              </button>
+              </Button>
             ))}
-          </div>
+          </Box>
 
           {/* Drop area */}
-          <div
+          <Box
             style={{
               marginTop: "1rem",
               minHeight: "50px",
@@ -221,67 +222,67 @@ const SentenceScramble = () => {
             }}
           >
             {(answers[s.id] || []).map((word, i) => (
-              <span
+              <Text as="span"
                 key={i}
-                style={{
+                sx={{
                   padding: "0.5rem 1rem",
-                  border: "1px solid #28a745",
+                  border: "1px solid green.500",
                   borderRadius: "8px",
-                  backgroundColor: "#e8f5e8",
+                  backgroundColor: "green.50",
                   fontWeight: "500",
                 }}
               >
                 {word}
-              </span>
+              </Text>
             ))}
-          </div>
+          </Box>
 
           {/* Buttons */}
-          <div style={{ marginTop: "1rem" }}>
-            <button
+          <Box style={{ marginTop: "1rem" }}>
+            <Button
               onClick={() => handleCheck(s.id, s.sentence)}
               style={{
                 marginRight: "1rem",
                 padding: "0.5rem 1rem",
                 borderRadius: "6px",
                 border: "none",
-                backgroundColor: "#28a745",
-                color: "#fff",
+                backgroundColor: "green.500",
+                color: "white",
                 cursor: "pointer",
               }}
             >
               Check
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={() => handleReset(s.id, s.words)}
               style={{
                 padding: "0.5rem 1rem",
                 borderRadius: "6px",
                 border: "none",
-                backgroundColor: "#dc3545",
-                color: "#fff",
+                backgroundColor: "red.500",
+                color: "white",
                 cursor: "pointer",
               }}
             >
               Reset
-            </button>
-          </div>
+            </Button>
+          </Box>
 
           {/* Feedback */}
           {feedback[s.id] && (
-            <p
-              style={{
+            <Text
+              sx={{
                 marginTop: "0.5rem",
                 fontWeight: "bold",
-                color: feedback[s.id] === "Great job!" ? "#28a745" : "#c0392b",
+                color: feedback[s.id] === "Great job!" ? "green.500" : "#c0392b",
               }}
             >
               {feedback[s.id]}
-            </p>
+            </Text>
           )}
-        </div>
+        </Box>
       ))}
-    </div>
+    </Box>
   );
 };
 

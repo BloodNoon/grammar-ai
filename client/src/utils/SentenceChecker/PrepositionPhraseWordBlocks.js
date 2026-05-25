@@ -1,3 +1,4 @@
+import { Box, Button, Heading, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
 const PrepositionPhraseWordBlocks = () => {
@@ -51,7 +52,7 @@ const PrepositionPhraseWordBlocks = () => {
   };
 
   return (
-    <div
+    <Box
       style={{
         marginTop: '2rem',
         padding: '1.5rem',
@@ -63,36 +64,36 @@ const PrepositionPhraseWordBlocks = () => {
         boxShadow: '0 4px 10px rgba(0, 0, 0, 0.05)',
       }}
     >
-      <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '1rem', color: '#333' }}>
+      <Heading as="h2" size="lg" sx={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '1rem', color: 'gray.700' }}>
         🧩 Practice: Arrange Word Blocks
-      </h2>
+      </Heading>
       
-      <p style={{ fontSize: '1rem', marginBottom: '1rem' }}>
+      <Text style={{ fontSize: '1rem', marginBottom: '1rem' }}>
         Drag the words to create: <strong>"After the movie, we went to the store."</strong>
-      </p>
+      </Text>
 
       {/* Available Words */}
-      <div style={{ 
+      <Box style={{ 
         display: 'flex', 
         flexWrap: 'wrap', 
         gap: '0.5rem', 
         justifyContent: 'center',
         marginBottom: '1rem',
         padding: '1rem',
-        backgroundColor: '#fff',
+        backgroundColor: 'white',
         borderRadius: '8px',
-        border: '2px dashed #ccc',
+        border: '2px dashed gray.300',
         minHeight: '60px'
       }}>
         <strong style={{ width: '100%', textAlign: 'center', marginBottom: '0.5rem' }}>Available Words:</strong>
         {availableWords.map((wordObj) => (
-          <div
+          <Box
             key={wordObj.id}
             draggable
             onDragStart={(e) => handleDragStart(e, wordObj)}
             style={{
               padding: '0.5rem 1rem',
-              backgroundColor: '#007bff',
+              backgroundColor: 'blue.500',
               color: 'white',
               borderRadius: '4px',
               cursor: 'grab',
@@ -100,17 +101,17 @@ const PrepositionPhraseWordBlocks = () => {
             }}
           >
             {wordObj.text}
-          </div>
+          </Box>
         ))}
-      </div>
+      </Box>
 
       {/* Drop Zone */}
-      <div 
+      <Box 
         onDrop={handleDrop}
         onDragOver={handleDragOver}
         style={{
           minHeight: '80px',
-          border: '2px dashed #28a745',
+          border: '2px dashed green.500',
           borderRadius: '8px',
           padding: '1rem',
           backgroundColor: '#f8fff9',
@@ -120,34 +121,34 @@ const PrepositionPhraseWordBlocks = () => {
         }}
       >
         {droppedWords.length === 0 ? (
-          <span style={{ color: '#666' }}>Drop words here to build your sentence</span>
+          <Text as="span" sx={{ color: 'gray.500' }}>Drop words here to build your sentence</Text>
         ) : (
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
+          <Box style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
             {droppedWords.map((wordObj) => (
-              <div
+              <Box
                 key={`dropped-${wordObj.id}`}
-                style={{
+                sx={{
                   padding: '0.5rem 1rem',
-                  backgroundColor: '#28a745',
+                  backgroundColor: 'green.500',
                   color: 'white',
                   borderRadius: '4px'
                 }}
               >
                 {wordObj.text}
-              </div>
+              </Box>
             ))}
-          </div>
+          </Box>
         )}
-      </div>
+      </Box>
 
       {/* Control Buttons */}
-      <div style={{ textAlign: 'center', gap: '1rem', display: 'flex', justifyContent: 'center' }}>
-        <button
+      <Box style={{ textAlign: 'center', gap: '1rem', display: 'flex', justifyContent: 'center' }}>
+        <Button
           onClick={checkAnswer}
           disabled={droppedWords.length !== correctOrder.length}
-          style={{
+          sx={{
             padding: '0.75rem 1.5rem',
-            backgroundColor: droppedWords.length === correctOrder.length ? '#28a745' : '#ccc',
+            backgroundColor: droppedWords.length === correctOrder.length ? 'green.500' : 'gray.300',
             color: 'white',
             border: 'none',
             borderRadius: '4px',
@@ -156,13 +157,13 @@ const PrepositionPhraseWordBlocks = () => {
           }}
         >
           Check Answer
-        </button>
+        </Button>
         
-        <button
+        <Button
           onClick={resetGame}
-          style={{
+          sx={{
             padding: '0.75rem 1.5rem',
-            backgroundColor: '#6c757d',
+            backgroundColor: 'gray.500',
             color: 'white',
             border: 'none',
             borderRadius: '4px',
@@ -171,9 +172,9 @@ const PrepositionPhraseWordBlocks = () => {
           }}
         >
           Reset
-        </button>
-      </div>
-    </div>
+        </Button>
+      </Box>
+    </Box>
   );
 };
 

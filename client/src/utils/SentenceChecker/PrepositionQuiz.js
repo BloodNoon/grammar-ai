@@ -1,3 +1,4 @@
+import { Box, Button, Heading, Text } from '@chakra-ui/react';
 // PrepositionQuiz.js
 import React, { useState, useEffect } from 'react';
 import nlp from 'compromise';
@@ -118,51 +119,51 @@ const PrepositionQuiz = () => {
     loadNewQuestion();
   };
 
-  if (!question) return <p>Loading quiz...</p>;
+  if (!question) return <Text>Loading quiz...</Text>;
 
   return (
-    <div className="quiz-box">
-      <h2>Which preposition fits the blank?</h2>
-      <p className="quiz-sentence">"{question.sentence}"</p>
-      <p className="quiz-score">Score: {score}/10</p>
+    <Box className="quiz-box">
+      <Heading as="h2" size="lg">Which preposition fits the blank?</Heading>
+      <Text className="quiz-sentence">"{question.sentence}"</Text>
+      <Text className="quiz-score">Score: {score}/10</Text>
 
-      <div className="choices">
+      <Box className="choices">
         {question.choices.map((word, i) => (
-          <button
+          <Button
             key={i}
             className={`choice-btn ${selected === word ? 'selected' : ''}`}
             onClick={() => handleSelect(word)}
             disabled={showNext || quizOver}
           >
             {word}
-          </button>
+          </Button>
         ))}
-      </div>
+      </Box>
 
       {!quizOver && !showNext && (
-        <button className="check-btn" onClick={checkAnswer} disabled={!selected}>
+        <Button className="check-btn" onClick={checkAnswer} disabled={!selected}>
           Check Answer
-        </button>
+        </Button>
       )}
 
-      {result && <p className="quiz-result">{result}</p>}
+      {result && <Text className="quiz-result">{result}</Text>}
 
       {!quizOver && showNext && (
-        <button className="next-btn" onClick={nextQuestion}>
+        <Button className="next-btn" onClick={nextQuestion}>
           Next Question
-        </button>
+        </Button>
       )}
 
       {quizOver && (
-        <div className="quiz-end">
-          <h3>Final Score: {score}/10</h3>
-          <p>{getMessage(score)}</p>
-          <button className="reset-btn" onClick={resetQuiz}>
+        <Box className="quiz-end">
+          <Heading as="h3" size="md">Final Score: {score}/10</Heading>
+          <Text>{getMessage(score)}</Text>
+          <Button className="reset-btn" onClick={resetQuiz}>
             Restart Quiz
-          </button>
-        </div>
+          </Button>
+        </Box>
       )}
-    </div>
+    </Box>
   );
 };
 
