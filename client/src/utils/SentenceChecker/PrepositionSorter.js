@@ -9,7 +9,14 @@ const PrepositionSorter = () => {
     Place: ["in", "on", "at", "under", "over", "between"],
     Situation: ["about", "regarding", "concerning", "with", "without", "of"],
     Direction: ["to", "towards", "into", "onto", "through", "across"],
-    Comparison: ["like", "as", "than", "unlike", "similar to", "different from"],
+    Comparison: [
+      "like",
+      "as",
+      "than",
+      "unlike",
+      "similar to",
+      "different from",
+    ],
   };
 
   const getSubset = (difficulty) => {
@@ -90,13 +97,13 @@ const PrepositionSorter = () => {
   const allowDrop = (e) => e.preventDefault();
 
   const handleCheck = () => {
-    let correctCount = 0;
-    for (let cat of categories) {
-      let correctPreps = prepSet[cat] || [];
-      (slots[cat] || []).forEach((prep) => {
-        if (correctPreps.includes(prep)) correctCount++;
-      });
-    }
+    const correctCount = categories.reduce((count, cat) => {
+      const correctPreps = prepSet[cat] || [];
+      return (
+        count +
+        (slots[cat] || []).filter((p) => correctPreps.includes(p)).length
+      );
+    }, 0);
     setScore(correctCount);
     setChecked(true);
   };
@@ -116,7 +123,7 @@ const PrepositionSorter = () => {
       style={{
         marginTop: "2rem",
         padding: "1rem",
-        border: "2px solid #ccc",
+        border: "2px solid gray.300",
         borderRadius: "8px",
       }}
     >
@@ -163,7 +170,7 @@ const PrepositionSorter = () => {
             style={{
               marginBottom: "20px",
               padding: "10px",
-              border: "2px dashed #666",
+              border: "2px dashed gray.500",
               borderRadius: "8px",
               minHeight: "50px",
               background: "#f9f9f9",
@@ -187,8 +194,8 @@ const PrepositionSorter = () => {
                   onDragStart={(e) => onDragStart(e, prep)}
                   style={{
                     padding: "5px 10px",
-                    background: "#fff",
-                    border: "1px solid #ccc",
+                    background: "white",
+                    border: "1px solid gray.300",
                     borderRadius: "5px",
                     cursor: "grab",
                   }}
@@ -214,7 +221,7 @@ const PrepositionSorter = () => {
                 onDragOver={allowDrop}
                 style={{
                   padding: "10px",
-                  border: "2px solid #333",
+                  border: "2px solid gray.700",
                   borderRadius: "8px",
                   minHeight: "100px",
                   background: "#f5f5f5",
@@ -230,13 +237,12 @@ const PrepositionSorter = () => {
                   }}
                 >
                   {(slots[cat] || []).map((prep) => {
-                    const correct =
-                      prepSet[cat] && prepSet[cat].includes(prep);
+                    const correct = prepSet[cat] && prepSet[cat].includes(prep);
                     const bgColor = checked
                       ? correct
                         ? "#c8f7c5"
                         : "#f7c5c5"
-                      : "#fff";
+                      : "white";
                     return (
                       <div
                         key={prep}
@@ -245,7 +251,7 @@ const PrepositionSorter = () => {
                         style={{
                           padding: "5px 10px",
                           background: bgColor,
-                          border: "1px solid #ccc",
+                          border: "1px solid gray.300",
                           borderRadius: "5px",
                           cursor: checked ? "default" : "grab",
                         }}
@@ -269,8 +275,8 @@ const PrepositionSorter = () => {
                   marginTop: "20px",
                   padding: "10px 20px",
                   fontSize: "16px",
-                  background: "#007bff",
-                  color: "#fff",
+                  background: "blue.500",
+                  color: "white",
                   border: "none",
                   borderRadius: "5px",
                 }}
@@ -289,8 +295,8 @@ const PrepositionSorter = () => {
                 style={{
                   padding: "10px 20px",
                   fontSize: "16px",
-                  background: "#28a745",
-                  color: "#fff",
+                  background: "green.500",
+                  color: "white",
                   border: "none",
                   borderRadius: "5px",
                   marginTop: "10px",

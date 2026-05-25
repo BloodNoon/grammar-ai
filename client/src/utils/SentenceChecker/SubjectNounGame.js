@@ -1,3 +1,4 @@
+import { Box, Button, Heading, Text } from '@chakra-ui/react';
 import React, { useState, useEffect } from "react";
 
 // Sentence dataset: subject + object nouns marked
@@ -115,65 +116,65 @@ function SubjectNounGame() {
   const allPlaced = draggables.length === 0;
 
   return (
-    <div style={{ padding: "1rem", maxWidth: "900px", margin: "0 auto", textAlign: "center" }}>
+    <Box style={{ padding: "1rem", maxWidth: "900px", margin: "0 auto", textAlign: "center" }}>
       <h1 style={{ fontSize: "2rem", marginBottom: "1rem", color: "#2c3e50" }}>
         Subject vs Object Noun Game
       </h1>
-      <p style={{ marginBottom: "2rem", fontSize: "1.1rem" }}>
+      <Text style={{ marginBottom: "2rem", fontSize: "1.1rem" }}>
         Drag the highlighted nouns into the correct box.
-      </p>
+      </Text>
 
       {/* Sentences */}
-      <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "2rem" }}>
-        <div style={{ textAlign: "left", width: "45%" }}>
+      <Box style={{ display: "flex", justifyContent: "space-between", marginBottom: "2rem" }}>
+        <Box style={{ textAlign: "left", width: "45%" }}>
           {gameSentences.slice(0, 3).map((s, idx) => (
-            <p
+            <Text
               key={idx}
               style={{
                 background: "#f9f9f9",
                 padding: "0.5rem 1rem",
                 borderRadius: "6px",
                 marginBottom: "0.5rem",
-                border: "1px solid #ddd",
+                border: "1px solid gray.200",
               }}
             >
               {s.sentence}
-            </p>
+            </Text>
           ))}
-        </div>
-        <div style={{ textAlign: "left", width: "45%" }}>
+        </Box>
+        <Box style={{ textAlign: "left", width: "45%" }}>
           {gameSentences.slice(3, 6).map((s, idx) => (
-            <p
+            <Text
               key={idx}
               style={{
                 background: "#f9f9f9",
                 padding: "0.5rem 1rem",
                 borderRadius: "6px",
                 marginBottom: "0.5rem",
-                border: "1px solid #ddd",
+                border: "1px solid gray.200",
               }}
             >
               {s.sentence}
-            </p>
+            </Text>
           ))}
-        </div>
-      </div>
+        </Box>
+      </Box>
 
       {/* Pool of draggables */}
-      <div
+      <Box
         style={{
           display: "flex",
           flexWrap: "wrap",
           gap: "1rem",
           padding: "1rem",
-          border: "2px dashed #ccc",
+          border: "2px dashed gray.300",
           marginBottom: "2rem",
           minHeight: "60px",
           justifyContent: "center",
         }}
       >
         {draggables.map((item) => (
-          <div
+          <Box
             key={item.id}
             draggable
             onDragStart={(e) => handleDragStart(e, item)}
@@ -186,14 +187,14 @@ function SubjectNounGame() {
             }}
           >
             {item.word}
-          </div>
+          </Box>
         ))}
-      </div>
+      </Box>
 
       {/* Buckets */}
-      <div style={{ display: "flex", gap: "2rem", justifyContent: "center" }}>
+      <Box style={{ display: "flex", gap: "2rem", justifyContent: "center" }}>
         {["subjects", "objects"].map((bucket) => (
-          <div
+          <Box
             key={bucket}
             onDrop={(e) => handleDrop(e, bucket)}
             onDragOver={handleDragOver}
@@ -201,15 +202,15 @@ function SubjectNounGame() {
               flex: 1,
               minHeight: "120px",
               padding: "1rem",
-              border: "2px solid #333",
+              border: "2px solid gray.700",
               borderRadius: "8px",
               backgroundColor: "#fafafa",
               maxWidth: "300px",
             }}
           >
-            <h3>{bucket === "subjects" ? "Subject Nouns" : "Object Nouns"}</h3>
+            <Heading as="h3" size="md">{bucket === "subjects" ? "Subject Nouns" : "Object Nouns"}</Heading>
             {buckets[bucket].map((item) => (
-              <div
+              <Box
                 key={item.id}
                 style={{
                   padding: "0.5rem 1rem",
@@ -220,15 +221,15 @@ function SubjectNounGame() {
                 }}
               >
                 {item.word}
-              </div>
+              </Box>
             ))}
-          </div>
+          </Box>
         ))}
-      </div>
+      </Box>
 
       {/* Controls */}
-      <div style={{ marginTop: "2rem" }}>
-        <button
+      <Box style={{ marginTop: "2rem" }}>
+        <Button
           onClick={undoLastMove}
           disabled={history.length === 0 || feedback}
           style={{
@@ -242,14 +243,14 @@ function SubjectNounGame() {
           }}
         >
           Undo
-        </button>
+        </Button>
 
-        <button
+        <Button
           onClick={checkAnswers}
           disabled={!allPlaced || feedback}
-          style={{
+          sx={{
             padding: "0.5rem 1rem",
-            backgroundColor: allPlaced ? "#4caf50" : "#95a5a6",
+            backgroundColor: allPlaced ? "green.500" : "#95a5a6",
             color: "white",
             border: "none",
             borderRadius: "5px",
@@ -257,10 +258,10 @@ function SubjectNounGame() {
           }}
         >
           Check Answers
-        </button>
+        </Button>
 
         {feedback && (
-          <button
+          <Button
             onClick={resetGame}
             style={{
               marginLeft: "1rem",
@@ -273,14 +274,14 @@ function SubjectNounGame() {
             }}
           >
             Reset Game
-          </button>
+          </Button>
         )}
-      </div>
+      </Box>
 
       {feedback && (
-        <p style={{ marginTop: "1rem", fontWeight: "bold", fontSize: "1.2rem" }}>{feedback}</p>
+        <Text style={{ marginTop: "1rem", fontWeight: "bold", fontSize: "1.2rem" }}>{feedback}</Text>
       )}
-    </div>
+    </Box>
   );
 }
 

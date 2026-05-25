@@ -1,3 +1,4 @@
+import { Box, Button, Heading, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
 const AdjectiveSortingGame = () => {
@@ -95,13 +96,13 @@ const AdjectiveSortingGame = () => {
   };
 
   const renderAdjective = (item, index, source) => (
-    <div
+    <Box
       key={`${item.adjective}-${index}-${source}`}
       draggable
       onDragStart={(e) => handleDragStart(e, item)}
       style={{
         padding: '0.5rem 1rem',
-        backgroundColor: '#6c757d',
+        backgroundColor: 'gray.500',
         color: 'white',
         borderRadius: '4px',
         cursor: 'grab',
@@ -111,15 +112,15 @@ const AdjectiveSortingGame = () => {
       }}
     >
       {item.adjective}
-    </div>
+    </Box>
   );
 
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         marginTop: '2rem',
         padding: '1.5rem',
-        backgroundColor: '#f8f9fa',
+        backgroundColor: 'gray.50',
         borderRadius: '10px',
         maxWidth: '800px',
         marginLeft: 'auto',
@@ -127,38 +128,38 @@ const AdjectiveSortingGame = () => {
         boxShadow: '0 4px 10px rgba(0, 0, 0, 0.05)',
       }}
     >
-      <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '1rem', color: '#333' }}>
+      <Heading as="h2" size="lg" sx={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '1rem', color: 'gray.700' }}>
         🎨 Practice: Sort Adjectives by Type
-      </h2>
+      </Heading>
 
-      <p style={{ fontSize: '1rem', marginBottom: '1rem' }}>
+      <Text style={{ fontSize: '1rem', marginBottom: '1rem' }}>
         Drag each adjective to its correct category:
-      </p>
+      </Text>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+      <Box style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
         {/* Opinion Category */}
-        <div 
-          style={{ 
+        <Box 
+          sx={{ 
             padding: '1rem', 
-            backgroundColor: '#e3f2fd', 
+            backgroundColor: 'blue.50', 
             borderRadius: '8px',
-            border: '2px dashed #1976d2',
+            border: '2px dashed blue.700',
             minHeight: '120px'
           }}
           onDrop={(e) => handleDrop(e, 'opinion')}
           onDragOver={handleDragOver}
         >
-          <h4 style={{ color: '#1976d2', marginBottom: '0.5rem' }}>💭 Opinion</h4>
-          <p style={{ fontSize: '0.8rem', color: '#666', marginBottom: '0.5rem' }}>
+          <Heading as="h4" size="sm" sx={{ color: 'blue.700', marginBottom: '0.5rem' }}>💭 Opinion</Heading>
+          <Text sx={{ fontSize: '0.8rem', color: 'gray.500', marginBottom: '0.5rem' }}>
             subjective descriptions
-          </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+          </Text>
+          <Box style={{ display: 'flex', flexWrap: 'wrap' }}>
             {opinionCategory.map((item, index) => renderAdjective(item, index, 'opinion'))}
-          </div>
-        </div>
+          </Box>
+        </Box>
 
         {/* Color Category */}
-        <div 
+        <Box 
           style={{ 
             padding: '1rem', 
             backgroundColor: '#e8f5e9', 
@@ -169,20 +170,20 @@ const AdjectiveSortingGame = () => {
           onDrop={(e) => handleDrop(e, 'color')}
           onDragOver={handleDragOver}
         >
-          <h4 style={{ color: '#388e3c', marginBottom: '0.5rem' }}>🎨 Color</h4>
-          <p style={{ fontSize: '0.8rem', color: '#666', marginBottom: '0.5rem' }}>
+          <Heading as="h4" size="sm" style={{ color: '#388e3c', marginBottom: '0.5rem' }}>🎨 Color</Heading>
+          <Text sx={{ fontSize: '0.8rem', color: 'gray.500', marginBottom: '0.5rem' }}>
             what color is it?
-          </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+          </Text>
+          <Box style={{ display: 'flex', flexWrap: 'wrap' }}>
             {colorCategory.map((item, index) => renderAdjective(item, index, 'color'))}
-          </div>
-        </div>
+          </Box>
+        </Box>
 
         {/* Size Category */}
-        <div 
-          style={{ 
+        <Box 
+          sx={{ 
             padding: '1rem', 
-            backgroundColor: '#fff3e0', 
+            backgroundColor: 'orange.50', 
             borderRadius: '8px',
             border: '2px dashed #f57c00',
             minHeight: '120px'
@@ -190,27 +191,27 @@ const AdjectiveSortingGame = () => {
           onDrop={(e) => handleDrop(e, 'size')}
           onDragOver={handleDragOver}
         >
-          <h4 style={{ color: '#f57c00', marginBottom: '0.5rem' }}>📏 Size</h4>
-          <p style={{ fontSize: '0.8rem', color: '#666', marginBottom: '0.5rem' }}>
+          <Heading as="h4" size="sm" style={{ color: '#f57c00', marginBottom: '0.5rem' }}>📏 Size</Heading>
+          <Text sx={{ fontSize: '0.8rem', color: 'gray.500', marginBottom: '0.5rem' }}>
             how big or small?
-          </p>
-          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+          </Text>
+          <Box style={{ display: 'flex', flexWrap: 'wrap' }}>
             {sizeCategory.map((item, index) => renderAdjective(item, index, 'size'))}
-          </div>
-        </div>
-      </div>
+          </Box>
+        </Box>
+      </Box>
 
       {/* Available adjectives */}
-      <div 
+      <Box 
         style={{ 
           display: 'flex', 
           flexWrap: 'wrap', 
           gap: '0.5rem', 
           justifyContent: 'center',
           padding: '1rem',
-          backgroundColor: '#fff',
+          backgroundColor: 'white',
           borderRadius: '8px',
-          border: '1px solid #ddd',
+          border: '1px solid gray.200',
           minHeight: '80px'
         }}
         onDrop={handleDropToAvailable}
@@ -220,16 +221,16 @@ const AdjectiveSortingGame = () => {
           Available Adjectives:
         </strong>
         {availableAdjectives.map((item, index) => renderAdjective(item, index, 'available'))}
-      </div>
+      </Box>
 
       {/* Control Buttons */}
-      <div style={{ textAlign: 'center', marginTop: '1rem', gap: '1rem', display: 'flex', justifyContent: 'center' }}>
-        <button
+      <Box style={{ textAlign: 'center', marginTop: '1rem', gap: '1rem', display: 'flex', justifyContent: 'center' }}>
+        <Button
           onClick={checkAnswers}
           disabled={availableAdjectives.length > 0}
           style={{
             padding: '0.75rem 1.5rem',
-            backgroundColor: availableAdjectives.length === 0 ? '#28a745' : '#ccc',
+            backgroundColor: availableAdjectives.length === 0 ? 'green.500' : 'gray.300',
             color: 'white',
             border: 'none',
             borderRadius: '4px',
@@ -238,13 +239,13 @@ const AdjectiveSortingGame = () => {
           }}
         >
           Check Answers
-        </button>
+        </Button>
         
-        <button
+        <Button
           onClick={resetGame}
-          style={{
+          sx={{
             padding: '0.75rem 1.5rem',
-            backgroundColor: '#6c757d',
+            backgroundColor: 'gray.500',
             color: 'white',
             border: 'none',
             borderRadius: '4px',
@@ -253,9 +254,9 @@ const AdjectiveSortingGame = () => {
           }}
         >
           Reset
-        </button>
-      </div>
-    </div>
+        </Button>
+      </Box>
+    </Box>
   );
 };
 

@@ -1,3 +1,4 @@
+import { Box, Button, Heading } from '@chakra-ui/react';
 // This component displays essential grammar information in a clean, simple format
 import React, { useState } from 'react';
 
@@ -29,32 +30,32 @@ const VerbGrammarLegend = () => {
   ];
 
   return (
-    <div style={{
+    <Box style={{
       padding: '20px',
       backgroundColor: '#f9f9f9',
       borderRadius: '6px',
       margin: '20px 0',
-      border: '1px solid #ddd'
+      border: '1px solid gray.200'
     }}>
       
       {/* Simple title */}
-      <h2 style={{
+      <Heading as="h2" size="lg" sx={{
         textAlign: 'center',
         marginBottom: '20px',
-        color: '#333',
+        color: 'gray.700',
         fontSize: '20px'
       }}>
         📚 Grammar Quick Reference
-      </h2>
+      </Heading>
 
       {/* Verb Tenses Section */}
-      <div style={{ marginBottom: '15px' }}>
-        <button
+      <Box style={{ marginBottom: '15px' }}>
+        <Button
           onClick={() => toggleSection('tenses')}
           style={{
             width: '100%',
             padding: '12px',
-            backgroundColor: '#007bff',
+            backgroundColor: 'blue.500',
             color: 'white',
             border: 'none',
             borderRadius: '4px',
@@ -64,41 +65,41 @@ const VerbGrammarLegend = () => {
           }}
         >
           Verb Tenses {activeSection === 'tenses' ? '▼' : '▶'}
-        </button>
+        </Button>
 
         {activeSection === 'tenses' && (
-          <div style={{
+          <Box style={{
             marginTop: '10px',
             padding: '15px',
             backgroundColor: 'white',
             borderRadius: '4px',
-            border: '1px solid #ddd'
+            border: '1px solid gray.200'
           }}>
             {verbTenses.map((tense, index) => (
-              <div key={index} style={{
+              <Box key={index} style={{
                 padding: '8px 0',
                 borderBottom: index < verbTenses.length - 1 ? '1px solid #eee' : 'none'
               }}>
-                <div style={{ fontWeight: 'bold', color: '#333' }}>
+                <Box sx={{ fontWeight: 'bold', color: 'gray.700' }}>
                   {tense.name}: {tense.form}
-                </div>
-                <div style={{ fontSize: '14px', color: '#666', fontStyle: 'italic' }}>
+                </Box>
+                <Box sx={{ fontSize: '14px', color: 'gray.500', fontStyle: 'italic' }}>
                   "{tense.example}"
-                </div>
-              </div>
+                </Box>
+              </Box>
             ))}
-          </div>
+          </Box>
         )}
-      </div>
+      </Box>
 
       {/* Auxiliary Verbs Section */}
-      <div style={{ marginBottom: '15px' }}>
-        <button
+      <Box style={{ marginBottom: '15px' }}>
+        <Button
           onClick={() => toggleSection('auxiliaries')}
           style={{
             width: '100%',
             padding: '12px',
-            backgroundColor: '#28a745',
+            backgroundColor: 'green.500',
             color: 'white',
             border: 'none',
             borderRadius: '4px',
@@ -108,42 +109,42 @@ const VerbGrammarLegend = () => {
           }}
         >
           Helper Verbs {activeSection === 'auxiliaries' ? '▼' : '▶'}
-        </button>
+        </Button>
 
         {activeSection === 'auxiliaries' && (
-          <div style={{
+          <Box style={{
             marginTop: '10px',
             padding: '15px',
             backgroundColor: 'white',
             borderRadius: '4px',
-            border: '1px solid #ddd'
+            border: '1px solid gray.200'
           }}>
             {auxiliaries.map((aux, index) => (
-              <div key={index} style={{
+              <Box key={index} style={{
                 padding: '8px 0',
                 borderBottom: index < auxiliaries.length - 1 ? '1px solid #eee' : 'none'
               }}>
-                <div style={{ fontWeight: 'bold', color: '#333' }}>
+                <Box sx={{ fontWeight: 'bold', color: 'gray.700' }}>
                   {aux.type}: {aux.verbs}
-                </div>
-                <div style={{ fontSize: '14px', color: '#666' }}>
+                </Box>
+                <Box sx={{ fontSize: '14px', color: 'gray.500' }}>
                   Used for: {aux.use}
-                </div>
-              </div>
+                </Box>
+              </Box>
             ))}
-          </div>
+          </Box>
         )}
-      </div>
+      </Box>
 
       {/* Quick Tips Section */}
-      <div>
-        <button
+      <Box>
+        <Button
           onClick={() => toggleSection('tips')}
           style={{
             width: '100%',
             padding: '12px',
-            backgroundColor: '#ffc107',
-            color: '#212529',
+            backgroundColor: 'yellow.400',
+            color: 'gray.800',
             border: 'none',
             borderRadius: '4px',
             fontSize: '16px',
@@ -152,45 +153,45 @@ const VerbGrammarLegend = () => {
           }}
         >
           Quick Tips {activeSection === 'tips' ? '▼' : '▶'}
-        </button>
+        </Button>
 
         {activeSection === 'tips' && (
-          <div style={{
+          <Box style={{
             marginTop: '10px',
             padding: '15px',
             backgroundColor: 'white',
             borderRadius: '4px',
-            border: '1px solid #ddd'
+            border: '1px solid gray.200'
           }}>
-            <div style={{ fontSize: '14px', lineHeight: '1.6', color: '#333' }}>
-              <div style={{ marginBottom: '8px' }}>
+            <Box sx={{ fontSize: '14px', lineHeight: '1.6', color: 'gray.700' }}>
+              <Box style={{ marginBottom: '8px' }}>
                 <strong>✓ Subject-Verb Agreement:</strong> "I am" but "He is"
-              </div>
-              <div style={{ marginBottom: '8px' }}>
+              </Box>
+              <Box style={{ marginBottom: '8px' }}>
                 <strong>✓ Tense Consistency:</strong> Keep the same tense in your sentence
-              </div>
-              <div style={{ marginBottom: '8px' }}>
+              </Box>
+              <Box style={{ marginBottom: '8px' }}>
                 <strong>✓ Word Order:</strong> Subject + Verb + Object
-              </div>
-              <div>
+              </Box>
+              <Box>
                 <strong>✓ Practice:</strong> Start simple, then add complexity
-              </div>
-            </div>
-          </div>
+              </Box>
+            </Box>
+          </Box>
         )}
-      </div>
+      </Box>
 
       {/* Simple footer */}
-      <div style={{
+      <Box sx={{
         marginTop: '20px',
         textAlign: 'center',
         fontSize: '12px',
-        color: '#666',
+        color: 'gray.500',
         fontStyle: 'italic'
       }}>
         💡 Use this reference while practicing above!
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

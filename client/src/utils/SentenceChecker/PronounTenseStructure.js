@@ -1,3 +1,4 @@
+import { Box, Heading, Text } from '@chakra-ui/react';
 import React from "react";
 import { hasFullStructCheck, getFullStructCheck, getTags } from '../utils/SentenceChecker/StructureChecker';
 import { testCases } from '../utils/SentenceChecker/TestCases';
@@ -116,8 +117,8 @@ const PronounTenseStructure = () => {
 
   // ===== RENDER =====
   return (
-    <div style={styles.body}>
-      <div style={styles.container}>
+    <Box style={styles.body}>
+      <Box style={styles.container}>
         {/* Navigation Header */}
         <header style={styles.navHeader}>
           <h1 style={styles.Heading}>🐸 Sentence Structure Practice</h1>
@@ -127,19 +128,19 @@ const PronounTenseStructure = () => {
         <h1 style={styles.mainTitle}>Verb Tense & Auxiliary Verb Builder</h1>
 
         {/* Main Two-Column Layout */}
-        <div style={styles.mainContent}>
+        <Box style={styles.mainContent}>
           {/* LEFT COLUMN */}
-          <div>
+          <Box>
             {/* Top Left - VerbTenseLesson */}
-            <div style={{...styles.panel, ...styles.lessonPanel, marginBottom: '20px'}}>
+            <Box style={{...styles.panel, ...styles.lessonPanel, marginBottom: '20px'}}>
               <VerbTenseLesson 
                 sentenceFeedback={sentenceFeedback}
                 handleVerbSentenceChoice={handleVerbSentenceChoice}
               />
-            </div>
+            </Box>
 
             {/* Bottom Left - Verb Tense Typing Challenge */}
-            <div style={{...styles.panel, ...styles.typingChallenge}}>
+            <Box style={{...styles.panel, ...styles.typingChallenge}}>
               <PronounQuiz 
                 currentQuizQuestion={currentQuizQuestion}
                 quizAnswers={quizAnswers}
@@ -158,42 +159,42 @@ const PronounTenseStructure = () => {
                 resetQuiz={resetQuiz}
                 QUIZ_TARGET_CORRECT={QUIZ_TARGET_CORRECT}
               />
-            </div>
-          </div>
+            </Box>
+          </Box>
 
           {/* RIGHT COLUMN */}
-          <div>
+          <Box>
             {/* Top Right - Today's Lesson Video */}
-            <div style={{
-              backgroundColor: '#f8f9fa',
+            <Box sx={{
+              backgroundColor: 'gray.50',
               borderRadius: '15px',
               padding: '20px',
               marginBottom: '20px',
-              border: '1px solid #ddd',
+              border: '1px solid gray.200',
               textAlign: 'center',
               boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
             }}>
-              <h3 style={{ 
+              <Heading as="h3" size="md" sx={{ 
                 marginBottom: '15px',
-                color: '#333',
+                color: 'gray.700',
                 fontSize: '1.5rem'
               }}>
                 📹 Today's Lesson: Verb
-              </h3>
-              <p style={{
+              </Heading>
+              <Text sx={{
                 fontSize: '14px',
-                color: '#666',
+                color: 'gray.500',
                 marginBottom: '15px',
                 lineHeight: '1.4'
               }}>
                 Watch this lesson to understand pronouns and sentence building:
-              </p>
-              <div style={{
+              </Text>
+              <Box style={{
                 position: 'relative',
                 width: '100%',
                 maxWidth: '100%',
                 margin: '0 auto',
-                backgroundColor: '#000',
+                backgroundColor: 'black',
                 borderRadius: '8px',
                 overflow: 'hidden',
                 boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
@@ -208,45 +209,45 @@ const PronounTenseStructure = () => {
                   poster="/api/placeholder/400/225"
                 >
                   <source src="lesson2.mp4" type="video/mp4" />
-                  <p style={{ 
-                    color: '#666', 
+                  <Text sx={{ 
+                    color: 'gray.500', 
                     padding: '20px',
-                    backgroundColor: '#f8f9fa'
+                    backgroundColor: 'gray.50'
                   }}>
                     Your browser does not support the video tag. 
-                    <a href="lesson2.mp4" style={{ color: '#007bff' }}>
+                    <a href="lesson2.mp4" style={{ color: 'blue.500' }}>
                       Click here to download the video
                     </a>
-                  </p>
+                  </Text>
                 </video>
-              </div>
-              <div style={{
+              </Box>
+              <Box style={{
                 marginTop: '10px',
                 fontSize: '12px',
                 color: '#888',
                 fontStyle: 'italic'
               }}>
                 💡 Watch the lesson before practicing with the drag & drop exercises below
-              </div>
-            </div>
+              </Box>
+            </Box>
 
             {/* Middle Right - Drag & Drop Sections */}
-            <div style={styles.panel}>
+            <Box style={styles.panel}>
               {/* Status Badges
-              <div style={styles.statusBadges}>
-                <div style={{...styles.badge, ...styles.correct}}>
+              <Box style={styles.statusBadges}>
+                <Box style={{...styles.badge, ...styles.correct}}>
                   Correct: {correctCount}
-                </div>
-                <div style={{...styles.badge, ...styles.accuracy}}>
+                </Box>
+                <Box style={{...styles.badge, ...styles.accuracy}}>
                   Accuracy: {totalAttempts > 0 ? Math.round((correctCount / totalAttempts) * 100) : 0}%
-                </div>
-                <div style={{...styles.badge, ...styles.incorrect}}>
+                </Box>
+                <Box style={{...styles.badge, ...styles.incorrect}}>
                   Incorrect: {totalAttempts - correctCount}
-                </div>
-                <div style={{...styles.badge, ...styles.streak}}>
+                </Box>
+                <Box style={{...styles.badge, ...styles.streak}}>
                   Streak: {streak}
-                </div>
-              </div> */}
+                </Box>
+              </Box> */}
 
               <PronounProgressTracker 
                 correctCount={correctCount}
@@ -290,13 +291,13 @@ const PronounTenseStructure = () => {
               <PronounFeedbackDisplay
                 feedback={feedback}
               />
-            </div>
-          </div>
-        </div>
+            </Box>
+          </Box>
+        </Box>
 
        
-        </div>
-      </div>
+        </Box>
+      </Box>
     
   );
 

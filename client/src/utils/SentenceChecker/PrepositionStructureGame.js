@@ -1,3 +1,4 @@
+import { Box, Button, Text } from '@chakra-ui/react';
 // PrepositionStructureGame.js
 import React, { useState } from 'react';
 import nlp from 'compromise';
@@ -226,17 +227,17 @@ function PrepositionStructureGame() {
   };
 
   return (
-    <div style={{
+    <Box style={{
       padding: '2rem',
       backgroundColor: '#fdfdfd',
       borderRadius: '12px',
-      border: '1px solid #ddd',
+      border: '1px solid gray.200',
       maxWidth: '900px',
       margin: '2rem auto'
     }}>
 
       {/* First Box */}
-      <div style={{
+      <Box style={{
         backgroundColor: '#f9f9f9',
         border: '1px solid #eee',
         borderRadius: '10px',
@@ -244,13 +245,13 @@ function PrepositionStructureGame() {
         marginBottom: '2rem',
         boxShadow: '0 4px 10px rgba(0,0,0,0.05)'
       }}>
-        <p style={{
+        <Text style={{
           fontWeight: 'bold',
           fontSize: '1.1rem',
           marginBottom: '0.5rem'
         }}>
-          Formula 1: <span style={{ color: '#007acc' }}>Pronoun + Verb + Preposition + Article + Noun</span>
-        </p>
+          Formula 1: <Text as="span" style={{ color: '#007acc' }}>Pronoun + Verb + Preposition + Article + Noun</Text>
+        </Text>
 
         <input
           type="text"
@@ -262,12 +263,12 @@ function PrepositionStructureGame() {
             padding: '0.75rem',
             fontSize: '1rem',
             borderRadius: '6px',
-            border: '1px solid #ccc',
+            border: '1px solid gray.300',
             marginBottom: '0.5rem'
           }}
         />
 
-        <button
+        <Button
           onClick={checkFirstBox}
           style={{
             padding: '0.5rem 1rem',
@@ -280,19 +281,19 @@ function PrepositionStructureGame() {
           }}
         >
           Check
-        </button>
+        </Button>
 
-        <p style={{
+        <Text style={{
           marginTop: '0.5rem',
           fontWeight: 'bold',
           color: feedback1.startsWith("✅") ? 'green' : 'red'
         }}>
           {feedback1}
-        </p>
-      </div>
+        </Text>
+      </Box>
 
       {/* Second Box */}
-      <div style={{
+      <Box style={{
         backgroundColor: '#f9f9f9',
         border: '1px solid #eee',
         borderRadius: '10px',
@@ -300,13 +301,13 @@ function PrepositionStructureGame() {
         marginBottom: '2rem',
         boxShadow: '0 4px 10px rgba(0,0,0,0.05)'
       }}>
-        <p style={{
+        <Text style={{
           fontWeight: 'bold',
           fontSize: '1.1rem',
           marginBottom: '0.5rem'
         }}>
-          Formula 2: <span style={{ color: '#007acc' }}>Article + Noun + Verb + Preposition + Article + Noun</span>
-        </p>
+          Formula 2: <Text as="span" style={{ color: '#007acc' }}>Article + Noun + Verb + Preposition + Article + Noun</Text>
+        </Text>
 
         <input
           type="text"
@@ -318,12 +319,12 @@ function PrepositionStructureGame() {
             padding: '0.75rem',
             fontSize: '1rem',
             borderRadius: '6px',
-            border: '1px solid #ccc',
+            border: '1px solid gray.300',
             marginBottom: '0.5rem'
           }}
         />
 
-        <button
+        <Button
           onClick={checkSecondBox}
           style={{
             padding: '0.5rem 1rem',
@@ -336,19 +337,19 @@ function PrepositionStructureGame() {
           }}
         >
           Check
-        </button>
+        </Button>
 
-        <p style={{
+        <Text style={{
           marginTop: '0.5rem',
           fontWeight: 'bold',
           color: feedback2.startsWith("✅") ? 'green' : 'red'
         }}>
           {feedback2}
-        </p>
-      </div>
+        </Text>
+      </Box>
 
       {/* Third Box */}
-      <div style={{
+      <Box style={{
         backgroundColor: '#f9f9f9',
         border: '1px solid #eee',
         borderRadius: '10px',
@@ -356,13 +357,13 @@ function PrepositionStructureGame() {
         marginBottom: '2rem',
         boxShadow: '0 4px 10px rgba(0,0,0,0.05)'
       }}>
-        <p style={{
+        <Text style={{
           fontWeight: 'bold',
           fontSize: '1.1rem',
           marginBottom: '0.5rem'
         }}>
-          Formula 3: <span style={{ color: '#007acc' }}>Noun + Verb + Preposition + Article + Noun + Preposition + Article + Noun</span>
-        </p>
+          Formula 3: <Text as="span" style={{ color: '#007acc' }}>Noun + Verb + Preposition + Article + Noun + Preposition + Article + Noun</Text>
+        </Text>
 
         <input
           type="text"
@@ -374,12 +375,12 @@ function PrepositionStructureGame() {
             padding: '0.75rem',
             fontSize: '1rem',
             borderRadius: '6px',
-            border: '1px solid #ccc',
+            border: '1px solid gray.300',
             marginBottom: '0.5rem'
           }}
         />
 
-        <button
+        <Button
           onClick={checkThirdBox}
           style={{
             padding: '0.5rem 1rem',
@@ -392,19 +393,19 @@ function PrepositionStructureGame() {
           }}
         >
           Check
-        </button>
+        </Button>
 
-        <p style={{
+        <Text style={{
           marginTop: '0.5rem',
           fontWeight: 'bold',
           color: feedback3.startsWith("✅") ? 'green' : 'red'
         }}>
           {feedback3}
-        </p>
-      </div>
+        </Text>
+      </Box>
 
       {/* Fourth Box */}
-      <div style={{
+      <Box style={{
         backgroundColor: '#f9f9f9',
         border: '1px solid #eee',
         borderRadius: '10px',
@@ -412,13 +413,13 @@ function PrepositionStructureGame() {
         marginBottom: '2rem',
         boxShadow: '0 4px 10px rgba(0,0,0,0.05)'
       }}>
-        <p style={{
+        <Text style={{
           fontWeight: 'bold',
           fontSize: '1.1rem',
           marginBottom: '0.5rem'
         }}>
-          Formula 4: <span style={{ color: '#007acc' }}>Noun + Verb + Preposition + Gerund + Noun</span>
-        </p>
+          Formula 4: <Text as="span" style={{ color: '#007acc' }}>Noun + Verb + Preposition + Gerund + Noun</Text>
+        </Text>
 
         <input
           type="text"
@@ -430,12 +431,12 @@ function PrepositionStructureGame() {
             padding: '0.75rem',
             fontSize: '1rem',
             borderRadius: '6px',
-            border: '1px solid #ccc',
+            border: '1px solid gray.300',
             marginBottom: '0.5rem'
           }}
         />
 
-        <button
+        <Button
           onClick={checkFourthBox}
           style={{
             padding: '0.5rem 1rem',
@@ -448,19 +449,19 @@ function PrepositionStructureGame() {
           }}
         >
           Check
-        </button>
+        </Button>
 
-        <p style={{
+        <Text style={{
           marginTop: '0.5rem',
           fontWeight: 'bold',
           color: feedback4.startsWith("✅") ? 'green' : 'red'
         }}>
           {feedback4}
-        </p>
-      </div>
+        </Text>
+      </Box>
 
       {/* Fifth Box */}
-      <div style={{
+      <Box style={{
         backgroundColor: '#f9f9f9',
         border: '1px solid #eee',
         borderRadius: '10px',
@@ -468,13 +469,13 @@ function PrepositionStructureGame() {
         marginBottom: '2rem',
         boxShadow: '0 4px 10px rgba(0,0,0,0.05)'
       }}>
-        <p style={{
+        <Text style={{
           fontWeight: 'bold',
           fontSize: '1.1rem',
           marginBottom: '0.5rem'
         }}>
-          Formula 5: <span style={{ color: '#007acc' }}>Preposition + Determiner + Noun , Noun + Verb + Determiner + Noun</span>
-        </p>
+          Formula 5: <Text as="span" style={{ color: '#007acc' }}>Preposition + Determiner + Noun , Noun + Verb + Determiner + Noun</Text>
+        </Text>
 
         <input
           type="text"
@@ -486,12 +487,12 @@ function PrepositionStructureGame() {
             padding: '0.75rem',
             fontSize: '1rem',
             borderRadius: '6px',
-            border: '1px solid #ccc',
+            border: '1px solid gray.300',
             marginBottom: '0.5rem'
           }}
         />
 
-        <button
+        <Button
           onClick={checkFifthBox}
           style={{
             padding: '0.5rem 1rem',
@@ -504,18 +505,18 @@ function PrepositionStructureGame() {
           }}
         >
           Check
-        </button>
+        </Button>
 
-        <p style={{
+        <Text style={{
           marginTop: '0.5rem',
           fontWeight: 'bold',
           color: feedback5.startsWith("✅") ? 'green' : 'red'
         }}>
           {feedback5}
-        </p>
-      </div>
+        </Text>
+      </Box>
 
-    </div>
+    </Box>
   );
 }
 

@@ -1,3 +1,4 @@
+import { Box, Button, Heading, Text } from '@chakra-ui/react';
 // This component only renders when the drag & drop challenge is completed, showing success message and final stats
 import React from 'react';
 
@@ -15,9 +16,9 @@ const PronounCompletionCelebration = ({
 
   return (
     // Main celebration container with center alignment and prominent styling
-    <div style={{ 
+    <Box sx={{ 
       textAlign: 'center',              // Center all celebration content
-      backgroundColor: '#4CAF50',       // Green background to indicate success
+      backgroundColor: 'green.500',       // Green background to indicate success
       color: 'white',                   // White text for good contrast
       padding: '30px',                  // Generous padding for celebration feel
       borderRadius: '12px',             // Rounded corners for modern appearance
@@ -27,25 +28,25 @@ const PronounCompletionCelebration = ({
     }}>
       
       {/* Main celebration headline with emojis for visual impact */}
-      <h2 style={{ 
+      <Heading as="h2" size="lg" style={{ 
         fontSize: '28px',               // Large font for impact
         marginBottom: '15px',           // Space below headline
         textShadow: '1px 1px 2px rgba(0,0,0,0.3)' // Subtle text shadow for depth
       }}>
         🎉 DRAG & DROP MASTERY ACHIEVED! 🎉
-      </h2>
+      </Heading>
       
       {/* Success message with achievement details */}
-      <p style={{ 
+      <Text style={{ 
         fontSize: '18px',               // Large readable font
         marginBottom: '15px',           // Space below message
         lineHeight: '1.4'               // Better line spacing for readability
       }}>
         You've successfully built <strong>{correctCount}</strong> correct pronoun sentences!
-      </p>
+      </Text>
       
       {/* Final statistics display with detailed performance metrics */}
-      <p style={{ 
+      <Text style={{ 
         fontSize: '16px',               // Standard font size for stats
         marginBottom: '25px',           // Space below stats
         backgroundColor: 'rgba(255,255,255,0.2)', // Semi-transparent white background
@@ -57,14 +58,14 @@ const PronounCompletionCelebration = ({
         ✅ Correct Sentences: {correctCount}<br />
         📊 Total Attempts: {totalAttempts}<br />
         🎯 Success Rate: {Math.round((correctCount / totalAttempts) * 100)}% accuracy
-      </p>
+      </Text>
       
       {/* Button to start a new challenge */}
-      <button 
+      <Button 
         onClick={resetProgress}         // Reset all progress when clicked
-        style={{
+        sx={{
           backgroundColor: 'white',     // White background for contrast against green
-          color: '#4CAF50',            // Green text to match theme
+          color: 'green.500',            // Green text to match theme
           border: '3px solid white',    // White border for button definition
           padding: '15px 30px',         // Large padding for prominent button
           cursor: 'pointer',            // Show clickable cursor
@@ -87,18 +88,18 @@ const PronounCompletionCelebration = ({
         }}
       >
         🚀 Start New Drag & Drop Challenge
-      </button>
+      </Button>
 
       {/* Additional encouraging message */}
-      <div style={{
+      <Box style={{
         marginTop: '20px',              // Space above encouragement
         fontSize: '14px',               // Smaller font for secondary message
         fontStyle: 'italic',            // Italic styling for emphasis
         opacity: '0.9'                  // Slightly transparent for subtle appearance
       }}>
         Ready to master pronouns again? Challenge yourself with new sentences!
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

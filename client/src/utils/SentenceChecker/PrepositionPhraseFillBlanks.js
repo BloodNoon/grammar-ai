@@ -21,7 +21,7 @@ const PrepositionPhraseFillBlanks = () => {
         boxShadow: '0 4px 10px rgba(0, 0, 0, 0.05)',
       }}
     >
-      <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '1rem', color: '#333' }}>
+      <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '1rem', color: 'gray.700' }}>
           Practice Makes Perfect: Fill in the Prepositional Phrases
       </h2>
 
@@ -30,9 +30,9 @@ const PrepositionPhraseFillBlanks = () => {
           <div key={index} style={{ 
             margin: '1rem 0', 
             padding: '1rem', 
-            backgroundColor: '#fff', 
+            backgroundColor: 'white', 
             borderRadius: '8px',
-            border: '1px solid #ddd'
+            border: '1px solid gray.200'
           }}>
             <p style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>
               <strong>{index + 1}.</strong> {question.sentence}
@@ -43,19 +43,19 @@ const PrepositionPhraseFillBlanks = () => {
                   key={optIndex}
                   style={{
                     padding: '0.5rem 1rem',
-                    backgroundColor: '#e9ecef',
-                    border: '1px solid #ced4da',
+                    backgroundColor: 'gray.100',
+                    border: '1px solid gray.200',
                     borderRadius: '4px',
                     cursor: 'pointer'
                   }}
                   onClick={(e) => {
                     if (option === question.correct) {
-                      e.target.style.backgroundColor = '#d4edda';
-                      e.target.style.color = '#155724';
+                      e.target.style.backgroundColor = 'green.100';
+                      e.target.style.color = 'green.800';
                       e.target.textContent = option + ' ✓';
                     } else {
-                      e.target.style.backgroundColor = '#f8d7da';
-                      e.target.style.color = '#721c24';
+                      e.target.style.backgroundColor = 'red.100';
+                      e.target.style.color = 'red.800';
                       e.target.textContent = option + ' ✗';
                     }
                     // Disable all buttons in this question

@@ -1,3 +1,4 @@
+import { Box, Button, Heading, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
 const PrepositionPhraseTesting = () => {
@@ -70,11 +71,11 @@ const PrepositionPhraseTesting = () => {
   ];
 
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         marginTop: '2rem',
         padding: '1.5rem',
-        backgroundColor: '#fff3e0',
+        backgroundColor: 'orange.50',
         borderRadius: '10px',
         maxWidth: '800px',
         marginLeft: 'auto',
@@ -82,29 +83,29 @@ const PrepositionPhraseTesting = () => {
         boxShadow: '0 4px 10px rgba(0, 0, 0, 0.05)',
       }}
     >
-      <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '1rem', color: '#333' }}>
+      <Heading as="h2" size="lg" sx={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '1rem', color: 'gray.700' }}>
         🏆 Testing for Triumph: Create Prepositional Phrase Sentences
-      </h2>
+      </Heading>
 
-      <p style={{ fontSize: '1rem', marginBottom: '1.5rem', textAlign: 'left' }}>
+      <Text style={{ fontSize: '1rem', marginBottom: '1.5rem', textAlign: 'left' }}>
         Create sentences using these structures:
-      </p>
+      </Text>
 
       {patterns.map((pattern, index) => (
-        <div key={index} style={{
-          backgroundColor: '#fff',
+        <Box key={index} style={{
+          backgroundColor: 'white',
           border: '1px solid #eee',
           borderRadius: '8px',
           padding: '1rem',
           marginBottom: '1rem'
         }}>
-          <p style={{ fontWeight: 'bold', fontSize: '1rem', marginBottom: '0.5rem', textAlign: 'left' }}>
+          <Text style={{ fontWeight: 'bold', fontSize: '1rem', marginBottom: '0.5rem', textAlign: 'left' }}>
             {pattern.title}
-          </p>
-          <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '0.5rem', fontStyle: 'italic', textAlign: 'left' }}>
+          </Text>
+          <Text sx={{ fontSize: '0.9rem', color: 'gray.500', marginBottom: '0.5rem', fontStyle: 'italic', textAlign: 'left' }}>
             Example: "{pattern.example}"
-          </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          </Text>
+          <Box style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <input
               type="text"
               value={answers[index]}
@@ -114,14 +115,14 @@ const PrepositionPhraseTesting = () => {
                 flex: 1,
                 padding: '0.75rem',
                 fontSize: '1rem',
-                border: '1px solid #ccc',
+                border: '1px solid gray.300',
                 borderRadius: '4px'
               }}
             />
-            <button
-              style={{
+            <Button
+              sx={{
                 padding: '0.75rem 1.5rem',
-                backgroundColor: '#28a745',
+                backgroundColor: 'green.500',
                 color: 'white',
                 border: 'none',
                 borderRadius: '4px',
@@ -134,11 +135,11 @@ const PrepositionPhraseTesting = () => {
               }}
             >
               Check
-            </button>
-          </div>
-        </div>
+            </Button>
+          </Box>
+        </Box>
       ))}
-    </div>
+    </Box>
   );
 };
 

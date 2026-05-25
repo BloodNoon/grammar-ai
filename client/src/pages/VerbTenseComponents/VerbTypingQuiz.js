@@ -1,3 +1,4 @@
+import { Box, Button, Heading, Text } from '@chakra-ui/react';
 // This component manages a typing-based quiz where users must complete 10 correct verb tense answers
 import React from 'react';
 
@@ -201,8 +202,8 @@ const VerbTypingQuiz = ({
 
   return (
     // Main container for the typing quiz section
-    <div style={{
-      border: '2px solid #2196F3',    // Blue border to distinguish quiz section
+    <Box style={{
+      border: '2px solid blue.500',    // Blue border to distinguish quiz section
       padding: '20px',                // Internal spacing
       marginTop: '30px',              // Space above quiz section
       marginBottom: '20px',           // Space below quiz section
@@ -210,51 +211,51 @@ const VerbTypingQuiz = ({
       borderRadius: '8px'             // Rounded corners for modern appearance
     }}>
       {/* ===== QUIZ TITLE ===== */}
-      <h2 style={{ 
-        color: '#2196F3',             // Blue color to match border
+      <Heading as="h2" size="lg" sx={{ 
+        color: 'blue.500',             // Blue color to match border
         textAlign: 'center',          // Center the title
         marginBottom: '20px'          // Space below title
       }}>
         ✍️ Verb Tense Typing Challenge
-      </h2>
+      </Heading>
 
       {/* ===== QUIZ PROGRESS TRACKER ===== */}
-      <div style={{
-        backgroundColor: '#e3f2fd',   // Light blue background
+      <Box sx={{
+        backgroundColor: 'blue.50',   // Light blue background
         padding: '15px',              // Internal spacing
         borderRadius: '6px',          // Rounded corners
         marginBottom: '20px',         // Space below progress section
-        border: '1px solid #2196F3'   // Blue border
+        border: '1px solid blue.500'   // Blue border
       }}>
-        <h4>{quizCompleted ? 'Typing Challenge Completed!' : 'Typing Challenge Progress'}</h4>
+        <Heading as="h4" size="sm">{quizCompleted ? 'Typing Challenge Completed!' : 'Typing Challenge Progress'}</Heading>
         {/* Progress bar showing completion percentage */}
-        <div>Progress: {quizCorrectCount}/{QUIZ_TARGET_CORRECT} correct ({Math.round((quizCorrectCount / QUIZ_TARGET_CORRECT) * 100)}%)</div>
+        <Box>Progress: {quizCorrectCount}/{QUIZ_TARGET_CORRECT} correct ({Math.round((quizCorrectCount / QUIZ_TARGET_CORRECT) * 100)}%)</Box>
         {/* Statistics display */}
-        <div>
-          <div>Correct: {quizCorrectCount}</div>
-          <div>Incorrect: {quizTotalAttempts - quizCorrectCount}</div>
-          <div>Accuracy: {quizTotalAttempts > 0 ? Math.round((quizCorrectCount / quizTotalAttempts) * 100) : 0}%</div>
-        </div>
-      </div>
+        <Box>
+          <Box>Correct: {quizCorrectCount}</Box>
+          <Box>Incorrect: {quizTotalAttempts - quizCorrectCount}</Box>
+          <Box>Accuracy: {quizTotalAttempts > 0 ? Math.round((quizCorrectCount / quizTotalAttempts) * 100) : 0}%</Box>
+        </Box>
+      </Box>
 
       {/* ===== QUIZ COMPLETION CELEBRATION ===== */}
       {quizCompleted && (
-        <div style={{
-          backgroundColor: '#4CAF50',  // Green background for success
+        <Box sx={{
+          backgroundColor: 'green.500',  // Green background for success
           color: 'white',              // White text for contrast
           padding: '25px',             // Generous padding for celebration
           borderRadius: '8px',         // Rounded corners
           textAlign: 'center',         // Center-align celebration content
           marginBottom: '20px'         // Space below celebration
         }}>
-          <h3>🎉 VERB TENSE TYPING MASTERY ACHIEVED! 🎉</h3>
-          <p>You've successfully completed {QUIZ_TARGET_CORRECT} correct verb tense answers!</p>
-          <p>Final Stats: {quizCorrectCount} correct out of {quizTotalAttempts} attempts ({Math.round((quizCorrectCount / quizTotalAttempts) * 100)}% accuracy)</p>
-          <button
+          <Heading as="h3" size="md">🎉 VERB TENSE TYPING MASTERY ACHIEVED! 🎉</Heading>
+          <Text>You've successfully completed {QUIZ_TARGET_CORRECT} correct verb tense answers!</Text>
+          <Text>Final Stats: {quizCorrectCount} correct out of {quizTotalAttempts} attempts ({Math.round((quizCorrectCount / quizTotalAttempts) * 100)}% accuracy)</Text>
+          <Button
             onClick={resetQuiz}
-            style={{
+            sx={{
               backgroundColor: 'white', // White background for contrast
-              color: '#4CAF50',        // Green text to match theme
+              color: 'green.500',        // Green text to match theme
               padding: '12px 24px',    // Button spacing
               border: 'none',          // No border for clean look
               borderRadius: '6px',     // Rounded corners
@@ -265,39 +266,39 @@ const VerbTypingQuiz = ({
             }}
           >
             🚀 Start New Typing Challenge
-          </button>
-        </div>
+          </Button>
+        </Box>
       )}
 
       {/* ===== CURRENT QUIZ QUESTION ===== */}
       {!quizCompleted && (
-        <div style={{
+        <Box style={{
           backgroundColor: '#f9f9f9', // Light gray background for question area
           padding: '25px',            // Internal spacing
           borderRadius: '8px',        // Rounded corners
-          border: '1px solid #ddd',   // Light border
+          border: '1px solid gray.200',   // Light border
           marginBottom: '20px'        // Space below question area
         }}>
-          <h4 style={{ color: '#333', marginBottom: '15px' }}>
+          <Heading as="h4" size="sm" sx={{ color: 'gray.700', marginBottom: '15px' }}>
             Complete the sentence with the correct verb tense:
-          </h4>
+          </Heading>
 
           {/* Display current question sentence with blank to fill in */}
-          <div style={{ 
+          <Box style={{ 
             fontSize: '18px',          // Large text for readability
             marginBottom: '20px',      // Space below question
             padding: '15px',           // Internal spacing
             backgroundColor: 'white',  // White background for emphasis
             borderRadius: '6px',       // Rounded corners
-            border: '2px solid #2196F3' // Blue border to highlight question
+            border: '2px solid blue.500' // Blue border to highlight question
           }}>
             {verbQuizQuestions[currentQuizQuestion]?.sentence}
-          </div>
+          </Box>
 
           {/* Display hint for the current question */}
-          <div style={{ marginBottom: '15px' }}>
+          <Box style={{ marginBottom: '15px' }}>
             <strong>Hint:</strong> {verbQuizQuestions[currentQuizQuestion]?.tenseHint}
-          </div>
+          </Box>
 
           {/* Input field for user to type their answer */}
           <input
@@ -309,7 +310,7 @@ const VerbTypingQuiz = ({
               width: '100%',           // Full width input
               padding: '12px',         // Internal spacing
               fontSize: '16px',        // Large text for readability
-              border: '2px solid #ccc', // Gray border
+              border: '2px solid gray.300', // Gray border
               borderRadius: '6px',     // Rounded corners
               marginBottom: '15px'     // Space below input
             }}
@@ -329,7 +330,7 @@ const VerbTypingQuiz = ({
           />
 
           {/* Check Answer Button */}
-          <button
+          <Button
             onClick={() => {
               const result = checkQuizAnswer(currentQuizQuestion);
               // If correct and not completed, generate new question after delay for user to see feedback
@@ -341,7 +342,7 @@ const VerbTypingQuiz = ({
               }
             }}
             style={{
-              backgroundColor: '#4CAF50', // Green background for primary action
+              backgroundColor: 'green.500', // Green background for primary action
               color: 'white',             // White text
               padding: '12px 24px',       // Button spacing
               border: 'none',             // No border
@@ -353,13 +354,13 @@ const VerbTypingQuiz = ({
             }}
           >
             Check Answer
-          </button>
+          </Button>
 
           {/* Skip Question Button */}
-          <button
+          <Button
             onClick={generateNewQuizQuestion}
-            style={{
-              backgroundColor: '#ff9800', // Orange background for secondary action
+            sx={{
+              backgroundColor: 'orange.500', // Orange background for secondary action
               color: 'white',             // White text
               padding: '12px 24px',       // Button spacing
               border: 'none',             // No border
@@ -370,60 +371,60 @@ const VerbTypingQuiz = ({
             }}
           >
             Skip Question
-          </button>
+          </Button>
 
           {/* Display current question feedback */}
           {currentQuizFeedback && (
-            <div style={{
+            <Box sx={{
               marginTop: '15px',         // Space above feedback
               padding: '10px',           // Internal spacing
               borderRadius: '6px',       // Rounded corners
-              border: '2px solid #ddd',  // Light border
+              border: '2px solid gray.200',  // Light border
               // Background color based on feedback type (green for correct, red for incorrect)
-              backgroundColor: currentQuizFeedback.includes('✅') ? '#e8f5e8' : '#ffebee'
+              backgroundColor: currentQuizFeedback.includes('✅') ? 'green.50' : 'red.50'
             }}>
-              <div style={{ fontWeight: 'bold' }}>
+              <Box style={{ fontWeight: 'bold' }}>
                 {currentQuizFeedback}
-              </div>
+              </Box>
               {/* Show explanation for the current question */}
-              <div style={{ marginTop: '10px', fontStyle: 'italic' }}>
+              <Box style={{ marginTop: '10px', fontStyle: 'italic' }}>
                 Explanation: {verbQuizQuestions[currentQuizQuestion]?.explanation}
-              </div>
-            </div>
+              </Box>
+            </Box>
           )}
-        </div>
+        </Box>
       )}
 
       {/* ===== QUIZ SESSION HISTORY ===== */}
       {quizSessionHistory.length > 0 && (
-        <div style={{
+        <Box style={{
           backgroundColor: '#fafafa', // Very light gray background
           padding: '15px',            // Internal spacing
           borderRadius: '6px',        // Rounded corners
           marginTop: '20px'           // Space above history section
         }}>
-          <h4>Recent Typing Attempts:</h4>
+          <Heading as="h4" size="sm">Recent Typing Attempts:</Heading>
           {/* Display last 5 attempts in reverse chronological order */}
           {quizSessionHistory.slice(-5).reverse().map((entry, index) => (
-            <div key={index} style={{
+            <Box key={index} sx={{
               padding: '8px',                                        // Internal spacing
               marginBottom: '5px',                                   // Space between entries
-              backgroundColor: entry.correct ? '#e8f5e8' : '#ffebee', // Green for correct, red for incorrect
+              backgroundColor: entry.correct ? 'green.50' : 'red.50', // Green for correct, red for incorrect
               borderRadius: '4px',                                   // Rounded corners
               fontSize: '14px'                                       // Smaller text for history
             }}>
               <strong>"{entry.userAnswer}"</strong> for "{entry.question.replace('_____', '___')}" - 
               {entry.correct ? ' ✅ Correct' : ' ❌ Incorrect'} - {entry.timestamp}
-            </div>
+            </Box>
           ))}
-        </div>
+        </Box>
       )}
 
       {/* ===== RESET QUIZ BUTTON ===== */}
-      <button
+      <Button
         onClick={resetQuiz}
-        style={{
-          backgroundColor: '#f44336', // Red background for reset action
+        sx={{
+          backgroundColor: 'red.500', // Red background for reset action
           color: 'white',             // White text
           padding: '10px 20px',       // Button spacing
           border: 'none',             // No border
@@ -435,8 +436,8 @@ const VerbTypingQuiz = ({
         }}
       >
         🔄 Reset Typing Challenge
-      </button>
-    </div>
+      </Button>
+    </Box>
   );
 };
 

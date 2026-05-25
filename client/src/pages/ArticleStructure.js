@@ -1,10 +1,10 @@
 //Main webpage of the Article Structure with lesson2 styling
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { Box, Heading, Text, Grid, VStack, Divider } from "@chakra-ui/react";
+import { PageContainer, GameCard } from "../components/ui";
 import {
   hasFullStructCheck,
   getFullStructCheck,
-  getTags,
 } from "../utils/SentenceChecker/StructureChecker";
 import { testCases } from "../utils/SentenceChecker/TestCases";
 
@@ -126,7 +126,6 @@ const ArticleStructure = () => {
   const [sentenceArea, setSentenceArea] = useState([]);
   const [selectedStructure, setSelectedStructure] = useState("");
   const [feedback, setFeedback] = useState("");
-  const [isValid, setIsValid] = useState(null);
   const [draggedWord, setDraggedWord] = useState(null);
   const [currentLevel, setCurrentLevel] = useState("beginner");
 
@@ -151,71 +150,74 @@ const ArticleStructure = () => {
   const QUIZ_TARGET_CORRECT = 10;
 
   // ===== DATA STRUCTURES ===== (COMPATIBLE WITH BACKEND)
-  const articleWordBank = {
-    Subject: ["I", "He", "She", "It", "You", "We", "They"],
-    Object: ["me", "him", "her", "it", "you", "us", "them"],
-    Determiner: ["The", "A", "An", "This", "That"],
-    Adjective: [
-      "big",
-      "small",
-      "red",
-      "blue",
-      "happy",
-      "beautiful",
-      "old",
-      "new",
-      "tall",
-      "short",
-      "fast",
-      "interesting",
-    ],
-    Noun: [
-      "dog",
-      "cat",
-      "house",
-      "car",
-      "book",
-      "tree",
-      "ball",
-      "bird",
-      "fish",
-      "apple",
-      "cats",
-      "dogs",
-      "children",
-      "room",
-      "table",
-      "chair",
-      "window",
-      "door",
-      "garden",
-      "flower",
-      "student",
-      "teacher",
-      "computer",
-      "elephant",
-      "umbrella",
-      "orange",
-      "university",
-    ],
-    Verb: [
-      "cleaned",
-      "saw",
-      "bought",
-      "found",
-      "read",
-      "opened",
-      "closed",
-      "watched",
-      "heard",
-      "ate",
-      "drank",
-      "painted",
-      "fixed",
-      "built",
-    ],
-    Conjunction: ["and", "or"],
-  };
+  const articleWordBank = useMemo(
+    () => ({
+      Subject: ["I", "He", "She", "It", "You", "We", "They"],
+      Object: ["me", "him", "her", "it", "you", "us", "them"],
+      Determiner: ["The", "A", "An", "This", "That"],
+      Adjective: [
+        "big",
+        "small",
+        "red",
+        "blue",
+        "happy",
+        "beautiful",
+        "old",
+        "new",
+        "tall",
+        "short",
+        "fast",
+        "interesting",
+      ],
+      Noun: [
+        "dog",
+        "cat",
+        "house",
+        "car",
+        "book",
+        "tree",
+        "ball",
+        "bird",
+        "fish",
+        "apple",
+        "cats",
+        "dogs",
+        "children",
+        "room",
+        "table",
+        "chair",
+        "window",
+        "door",
+        "garden",
+        "flower",
+        "student",
+        "teacher",
+        "computer",
+        "elephant",
+        "umbrella",
+        "orange",
+        "university",
+      ],
+      Verb: [
+        "cleaned",
+        "saw",
+        "bought",
+        "found",
+        "read",
+        "opened",
+        "closed",
+        "watched",
+        "heard",
+        "ate",
+        "drank",
+        "painted",
+        "fixed",
+        "built",
+      ],
+      Conjunction: ["and", "or"],
+    }),
+    [],
+  );
 
   // Structure examples that focus on articles
   const articleStructureExamples = [
@@ -245,12 +247,6 @@ const ArticleStructure = () => {
     },
   ];
 
-  // ===== EFFECTS =====
-  useEffect(() => {
-    generateArticleWordSetFromTestCases();
-    generateNewQuizQuestion();
-  }, [currentLevel, selectedStructure]);
-
   // ===== UTILITY FUNCTIONS ===== (SAME AS VerbTenseStructure.js)
   const shuffleArray = (array) => {
     const newArray = [...array];
@@ -262,7 +258,7 @@ const ArticleStructure = () => {
   };
 
   // ===== WORD GENERATION ===== (SIMILAR TO VerbTenseStructure.js)
-  const generateArticleWordSetFromTestCases = () => {
+  const generateArticleWordSetFromTestCases = useCallback(() => {
     let words = [];
 
     // Extract realistic words from test cases
@@ -337,7 +333,7 @@ const ArticleStructure = () => {
         type: getWordType(word),
       })),
     );
-  };
+  }, [articleWordBank, currentLevel, selectedStructure]);
 
   // ===== DRAG AND DROP HANDLERS ===== (SAME AS VerbTenseStructure.js)
   const handleDragStart = (e, word) => {
@@ -374,7 +370,6 @@ const ArticleStructure = () => {
   const checkSentence = () => {
     if (sentenceArea.length === 0) {
       setFeedback("Please build a sentence first!");
-      setIsValid(false);
       return;
     }
 
@@ -395,8 +390,6 @@ const ArticleStructure = () => {
 
       // Additional article-specific validation
       const hasArticles = sentenceArea.some((w) => w.type === "Determiner");
-      const hasNouns = sentenceArea.some((w) => w.type === "Noun");
-
       // Check for proper article usage
       if (isStructureValid && hasArticles) {
         for (let i = 0; i < sentenceArea.length - 1; i++) {
@@ -503,7 +496,6 @@ const ArticleStructure = () => {
       }
 
       setFeedback(feedbackText);
-      setIsValid(isStructureValid);
       if (
         isStructureValid &&
         !isCompleted &&
@@ -515,7 +507,6 @@ const ArticleStructure = () => {
       }
     } catch (error) {
       setFeedback("Error checking sentence. Please try again.");
-      setIsValid(false);
     }
   };
 
@@ -524,7 +515,6 @@ const ArticleStructure = () => {
     setAvailableWords([...availableWords, ...sentenceArea]);
     setSentenceArea([]);
     setFeedback("");
-    setIsValid(null);
     generateArticleWordSetFromTestCases();
   };
 
@@ -569,12 +559,12 @@ const ArticleStructure = () => {
   };
 
   // ===== QUIZ FUNCTIONS =====
-  const generateNewQuizQuestion = () => {
+  const generateNewQuizQuestion = useCallback(() => {
     const totalQuestions = 10;
     const randomIndex = Math.floor(Math.random() * totalQuestions);
     setCurrentQuizQuestion(randomIndex);
     setCurrentQuizFeedback("");
-  };
+  }, []);
 
   const resetQuiz = () => {
     setQuizAnswers({});
@@ -586,61 +576,35 @@ const ArticleStructure = () => {
     generateNewQuizQuestion();
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    generateArticleWordSetFromTestCases();
+    generateNewQuizQuestion();
+  }, [
+    currentLevel,
+    selectedStructure,
+    generateArticleWordSetFromTestCases,
+    generateNewQuizQuestion,
+  ]);
+
   return (
-    <Box
-      bg="#F6D5B4"
-      minH="100vh"
-      p={{ base: 4, md: 8 }}
-      fontFamily="'Inter', sans-serif"
-    >
-      {/* Page Header */}
-      <Box
-        maxW="1400px"
-        mx="auto"
-        mb={8}
-        bg="#F0B784"
-        p={4}
-        borderRadius="xl"
-        borderWidth="2px"
-        borderColor="whiteAlpha.600"
-        textAlign="center"
-      >
-        <Heading color="#4A2C11" size="xl">
-          🐸 Definite and Indefinite Articles Builder
-        </Heading>
-      </Box>
+    <PageContainer>
+      <GameCard mb={8} textAlign="center" bg="brand.500">
+        <Heading size="xl">🐸 Definite and Indefinite Articles Builder</Heading>
+      </GameCard>
 
       {/* Main 2-Column Grid */}
-      <Grid
-        templateColumns={{ base: "1fr", lg: "1fr 1fr" }}
-        gap={8}
-        maxW="1400px"
-        mx="auto"
-      >
+      <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
         {/* LEFT COLUMN */}
         <VStack spacing={6} align="stretch">
-          <Box
-            bg="white"
-            p={8}
-            borderRadius="2xl"
-            borderWidth="2px"
-            borderColor="#1A1A1A"
-            boxShadow="6px 6px 0px rgba(0,0,0,0.1)"
-          >
+          <GameCard variant="game">
             <ArticleLesson
               sentenceFeedback={sentenceFeedback}
               handleArticleSentenceChoice={handleArticleSentenceChoice}
             />
-          </Box>
+          </GameCard>
 
-          <Box
-            bg="white"
-            p={6}
-            borderRadius="2xl"
-            borderWidth="2px"
-            borderColor="#1A1A1A"
-            boxShadow="6px 6px 0px rgba(0,0,0,0.1)"
-          >
+          <GameCard variant="game">
             <ArticleTypingQuiz
               currentQuizQuestion={currentQuizQuestion}
               quizAnswers={quizAnswers}
@@ -659,22 +623,14 @@ const ArticleStructure = () => {
               resetQuiz={resetQuiz}
               QUIZ_TARGET_CORRECT={QUIZ_TARGET_CORRECT}
             />
-          </Box>
+          </GameCard>
         </VStack>
 
         {/* RIGHT COLUMN */}
         <VStack spacing={6} align="stretch">
           {/* THE VIDEO PANEL */}
-          <Box
-            bg="#f8f9fa"
-            p={6}
-            borderRadius="2xl"
-            borderWidth="2px"
-            borderColor="#1A1A1A"
-            boxShadow="6px 6px 0px rgba(0,0,0,0.1)"
-            textAlign="center"
-          >
-            <Heading size="md" color="#1A0933" mb={4}>
+          <GameCard variant="game" bg="gray.50">
+            <Heading size="md" color="ink.700" mb={4}>
               📹 Today's Lesson: Articles
             </Heading>
 
@@ -700,20 +656,13 @@ const ArticleStructure = () => {
               💡 Watch the lesson before practicing with the exercises below
             </Text>
             <Text mt={2} fontSize="sm" textAlign="center">
-              <a href="/lesson2.mp4" download style={{ color: "#007bff" }}>
+              <a href="/lesson2.mp4" download style={{ color: "blue.500" }}>
                 Click here to download the video
               </a>
             </Text>
-          </Box>
+          </GameCard>
 
-          <Box
-            bg="white"
-            p={6}
-            borderRadius="2xl"
-            borderWidth="2px"
-            borderColor="#1A1A1A"
-            boxShadow="6px 6px 0px rgba(0,0,0,0.1)"
-          >
+          <GameCard variant="game">
             <ArticleProgressTracker
               correctCount={correctCount}
               totalAttempts={totalAttempts}
@@ -765,25 +714,15 @@ const ArticleStructure = () => {
               isCompleted={isCompleted}
             />
             <ArticleFeedbackDisplay feedback={feedback} />
-          </Box>
+          </GameCard>
         </VStack>
       </Grid>
 
       {/* Grammar Reference Section */}
-      <Box
-        maxW="1400px"
-        mx="auto"
-        mt={8}
-        bg="white"
-        p={8}
-        borderRadius="2xl"
-        borderWidth="2px"
-        borderColor="#1A1A1A"
-        boxShadow="6px 6px 0px rgba(0,0,0,0.1)"
-      >
+      <GameCard variant="game" mt={8}>
         <ArticleGrammarLegend />
-      </Box>
-    </Box>
+      </GameCard>
+    </PageContainer>
   );
 };
 

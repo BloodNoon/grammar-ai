@@ -1,3 +1,4 @@
+import { Box, Button, Heading, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
 const PossessiveTypingGame = () => {
@@ -36,15 +37,15 @@ const PossessiveTypingGame = () => {
   };
 
   return (
-    <div style={{ background: '#f8f9fa', padding: '20px', borderRadius: '12px', border: '2px solid #e2e8f0', textAlign: 'center' }}>
+    <Box sx={{ background: 'gray.50', padding: '20px', borderRadius: '12px', border: '2px solid #e2e8f0', textAlign: 'center' }}>
       
-      <p style={{ fontSize: '1.1rem', color: '#475569', marginBottom: '10px' }}>
+      <Text style={{ fontSize: '1.1rem', color: '#475569', marginBottom: '10px' }}>
         Rewrite this phrase using a possessive noun: ({currentIndex + 1}/{challenges.length})
-      </p>
+      </Text>
       
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#1e293b', margin: '0 0 20px 0' }}>
+      <Heading as="h2" size="lg" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#1e293b', margin: '0 0 20px 0' }}>
         "{currentChallenge.prompt}"
-      </h2>
+      </Heading>
 
       <form onSubmit={handleSubmit} style={{ display: 'flex', gap: '10px', justifyContent: 'center', maxWidth: '400px', margin: '0 auto' }}>
         <input
@@ -60,38 +61,38 @@ const PossessiveTypingGame = () => {
           }}
         />
         {!feedback?.isCorrect && (
-          <button type="submit" style={{ padding: '0 15px', background: '#f97316', color: 'white', fontWeight: 'bold', border: 'none', borderRadius: '8px', cursor: 'pointer' }}>
+          <Button type="submit" style={{ padding: '0 15px', background: '#f97316', color: 'white', fontWeight: 'bold', border: 'none', borderRadius: '8px', cursor: 'pointer' }}>
             Check
-          </button>
+          </Button>
         )}
       </form>
 
-      <div style={{ minHeight: '60px', marginTop: '15px' }}>
+      <Box style={{ minHeight: '60px', marginTop: '15px' }}>
         {feedback && (
-          <div style={{ padding: '10px', borderRadius: '8px', background: feedback.isCorrect ? '#dcfce7' : '#fee2e2', color: feedback.isCorrect ? '#15803d' : '#b91c1c', fontWeight: 'bold', marginBottom: '10px' }}>
+          <Box style={{ padding: '10px', borderRadius: '8px', background: feedback.isCorrect ? '#dcfce7' : '#fee2e2', color: feedback.isCorrect ? '#15803d' : '#b91c1c', fontWeight: 'bold', marginBottom: '10px' }}>
             {feedback.text}
-          </div>
+          </Box>
         )}
 
         {!feedback?.isCorrect && !showHint && (
-          <button onClick={() => setShowHint(true)} style={{ background: 'transparent', border: 'none', color: '#64748b', textDecoration: 'underline', cursor: 'pointer' }}>
+          <Button onClick={() => setShowHint(true)} style={{ background: 'transparent', border: 'none', color: '#64748b', textDecoration: 'underline', cursor: 'pointer' }}>
             I'm stuck. Give me a hint!
-          </button>
+          </Button>
         )}
 
         {showHint && !feedback?.isCorrect && (
-          <div style={{ background: '#fef3c7', color: '#b45309', padding: '8px', borderRadius: '6px', fontSize: '0.95rem', maxWidth: '350px', margin: '0 auto', border: '1px dashed #d97706' }}>
+          <Box style={{ background: '#fef3c7', color: '#b45309', padding: '8px', borderRadius: '6px', fontSize: '0.95rem', maxWidth: '350px', margin: '0 auto', border: '1px dashed #d97706' }}>
             💡 <strong>Hint:</strong> {currentChallenge.hint}
-          </div>
+          </Box>
         )}
 
         {feedback?.isCorrect && (
-          <button onClick={nextQuestion} style={{ padding: '10px 20px', background: '#22c55e', color: 'white', fontWeight: 'bold', border: 'none', borderRadius: '8px', cursor: 'pointer' }}>
+          <Button onClick={nextQuestion} style={{ padding: '10px 20px', background: '#22c55e', color: 'white', fontWeight: 'bold', border: 'none', borderRadius: '8px', cursor: 'pointer' }}>
             Next Question ➡️
-          </button>
+          </Button>
         )}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

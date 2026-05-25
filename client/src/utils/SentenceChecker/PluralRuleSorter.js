@@ -1,3 +1,4 @@
+import { Box, Button, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
 const PluralRuleSorter = () => {
@@ -41,17 +42,17 @@ const PluralRuleSorter = () => {
   const handleDragOver = (e) => e.preventDefault();
 
   const renderWord = (item) => (
-    <div
+    <Box
       key={item.word}
       draggable
       onDragStart={(e) => handleDragStart(e, item)}
       style={{
-        padding: '6px 10px', background: '#fff', border: '2px solid #cbd5e1', borderRadius: '6px',
+        padding: '6px 10px', background: 'white', border: '2px solid #cbd5e1', borderRadius: '6px',
         cursor: 'grab', display: 'inline-block', margin: '4px', fontWeight: 'bold', color: '#1e293b', fontSize: '0.9rem'
       }}
     >
       {item.word}
-    </div>
+    </Box>
   );
 
   const checkAnswers = () => {
@@ -73,36 +74,36 @@ const PluralRuleSorter = () => {
   };
 
   return (
-    <div style={{ width: '100%' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '15px' }}>
-        <div onDrop={(e) => handleDrop(e, 's')} onDragOver={handleDragOver} style={{ minHeight: '100px', padding: '10px', background: '#e0f2fe', border: '2px dashed #0284c7', borderRadius: '8px' }}>
+    <Box style={{ width: '100%' }}>
+      <Box style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '15px' }}>
+        <Box onDrop={(e) => handleDrop(e, 's')} onDragOver={handleDragOver} style={{ minHeight: '100px', padding: '10px', background: '#e0f2fe', border: '2px dashed #0284c7', borderRadius: '8px' }}>
           <strong style={{ color: '#0369a1', display: 'block', textAlign: 'center', marginBottom: '8px' }}>Add -s</strong>
           {sWords.map(renderWord)}
-        </div>
-        <div onDrop={(e) => handleDrop(e, 'es')} onDragOver={handleDragOver} style={{ minHeight: '100px', padding: '10px', background: '#ffedd5', border: '2px dashed #ea580c', borderRadius: '8px' }}>
+        </Box>
+        <Box onDrop={(e) => handleDrop(e, 'es')} onDragOver={handleDragOver} style={{ minHeight: '100px', padding: '10px', background: '#ffedd5', border: '2px dashed #ea580c', borderRadius: '8px' }}>
           <strong style={{ color: '#c2410c', display: 'block', textAlign: 'center', marginBottom: '8px' }}>Add -es</strong>
           {esWords.map(renderWord)}
-        </div>
-        <div onDrop={(e) => handleDrop(e, 'ies')} onDragOver={handleDragOver} style={{ minHeight: '100px', padding: '10px', background: '#f3e8ff', border: '2px dashed #9333ea', borderRadius: '8px' }}>
+        </Box>
+        <Box onDrop={(e) => handleDrop(e, 'ies')} onDragOver={handleDragOver} style={{ minHeight: '100px', padding: '10px', background: '#f3e8ff', border: '2px dashed #9333ea', borderRadius: '8px' }}>
           <strong style={{ color: '#7e22ce', display: 'block', textAlign: 'center', marginBottom: '8px' }}>Change to -ies</strong>
           {iesWords.map(renderWord)}
-        </div>
-        <div onDrop={(e) => handleDrop(e, 'irregular')} onDragOver={handleDragOver} style={{ minHeight: '100px', padding: '10px', background: '#dcfce7', border: '2px dashed #16a34a', borderRadius: '8px' }}>
+        </Box>
+        <Box onDrop={(e) => handleDrop(e, 'irregular')} onDragOver={handleDragOver} style={{ minHeight: '100px', padding: '10px', background: '#dcfce7', border: '2px dashed #16a34a', borderRadius: '8px' }}>
           <strong style={{ color: '#15803d', display: 'block', textAlign: 'center', marginBottom: '8px' }}>Irregular</strong>
           {irregular.map(renderWord)}
-        </div>
-      </div>
+        </Box>
+      </Box>
 
-      <div onDrop={(e) => handleDrop(e, 'available')} onDragOver={handleDragOver} style={{ minHeight: '60px', padding: '10px', background: '#f8f9fa', border: '2px solid #ddd', borderRadius: '8px', textAlign: 'center' }}>
+      <Box onDrop={(e) => handleDrop(e, 'available')} onDragOver={handleDragOver} style={{ minHeight: '60px', padding: '10px', background: 'gray.50', border: '2px solid gray.200', borderRadius: '8px', textAlign: 'center' }}>
         {availableWords.map(renderWord)}
-        {availableWords.length === 0 && <span style={{color: '#94a3b8', fontSize: '0.9rem'}}>All words placed!</span>}
-      </div>
+        {availableWords.length === 0 && <Text as="span" style={{color: '#94a3b8', fontSize: '0.9rem'}}>All words placed!</Text>}
+      </Box>
 
-      <div style={{ textAlign: 'center', marginTop: '15px', display: 'flex', gap: '10px', justifyContent: 'center' }}>
-        <button onClick={checkAnswers} disabled={availableWords.length > 0} style={{ padding: '8px 16px', backgroundColor: availableWords.length === 0 ? '#22c55e' : '#cbd5e1', color: 'white', border: 'none', borderRadius: '6px', cursor: availableWords.length === 0 ? 'pointer' : 'not-allowed', fontWeight: 'bold' }}>Check Answers</button>
-        <button onClick={resetGame} style={{ padding: '8px 16px', backgroundColor: '#64748b', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>Reset</button>
-      </div>
-    </div>
+      <Box style={{ textAlign: 'center', marginTop: '15px', display: 'flex', gap: '10px', justifyContent: 'center' }}>
+        <Button onClick={checkAnswers} disabled={availableWords.length > 0} style={{ padding: '8px 16px', backgroundColor: availableWords.length === 0 ? '#22c55e' : '#cbd5e1', color: 'white', border: 'none', borderRadius: '6px', cursor: availableWords.length === 0 ? 'pointer' : 'not-allowed', fontWeight: 'bold' }}>Check Answers</Button>
+        <Button onClick={resetGame} style={{ padding: '8px 16px', backgroundColor: '#64748b', color: 'white', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>Reset</Button>
+      </Box>
+    </Box>
   );
 };
 

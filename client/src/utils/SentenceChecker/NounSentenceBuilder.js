@@ -1,3 +1,4 @@
+import { Box, Button, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
 const NounSentenceBuilder = () => {
@@ -28,7 +29,7 @@ const NounSentenceBuilder = () => {
   };
 
   return (
-    <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '25px' }}>
+    <Box style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '25px' }}>
       {challenges.map((challenge) => {
         const currentParts = userSentences[challenge.id];
         const currentString = currentParts.join(" ").replace(" .", ".");
@@ -37,30 +38,30 @@ const NounSentenceBuilder = () => {
         const isWrong = isComplete && !isPerfect;
 
         return (
-          <div key={challenge.id} style={{ background: '#f8f9fa', padding: '15px', borderRadius: '10px', border: '2px solid #e2e8f0' }}>
-            <p style={{ color: '#0f172a', marginBottom: '10px', fontWeight: 'bold' }}>🎯 {challenge.goal}</p>
+          <Box key={challenge.id} sx={{ background: 'gray.50', padding: '15px', borderRadius: '10px', border: '2px solid #e2e8f0' }}>
+            <Text style={{ color: '#0f172a', marginBottom: '10px', fontWeight: 'bold' }}>🎯 {challenge.goal}</Text>
             
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '15px' }}>
+            <Box style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '15px' }}>
               {challenge.options.map((opt, i) => (
-                <button key={i} onClick={() => addPart(challenge.id, opt)} style={{ padding: '6px 12px', background: '#fff', border: '2px solid #cbd5e1', borderRadius: '6px', cursor: 'pointer', fontWeight: '600' }}>
+                <Button key={i} onClick={() => addPart(challenge.id, opt)} style={{ padding: '6px 12px', background: 'white', border: '2px solid #cbd5e1', borderRadius: '6px', cursor: 'pointer', fontWeight: '600' }}>
                   {opt}
-                </button>
+                </Button>
               ))}
-            </div>
+            </Box>
 
-            <div style={{ minHeight: '50px', padding: '10px', background: '#fff', border: `2px dashed ${isPerfect ? '#22c55e' : isWrong ? '#ef4444' : '#94a3b8'}`, borderRadius: '8px', fontWeight: 'bold', color: isPerfect ? '#15803d' : '#1e293b', display: 'flex', alignItems: 'center' }}>
-              {currentString || <span style={{ color: '#94a3b8', fontWeight: 'normal' }}>Click words above...</span>}
-            </div>
+            <Box style={{ minHeight: '50px', padding: '10px', background: 'white', border: `2px dashed ${isPerfect ? '#22c55e' : isWrong ? '#ef4444' : '#94a3b8'}`, borderRadius: '8px', fontWeight: 'bold', color: isPerfect ? '#15803d' : '#1e293b', display: 'flex', alignItems: 'center' }}>
+              {currentString || <Text as="span" style={{ color: '#94a3b8', fontWeight: 'normal' }}>Click words above...</Text>}
+            </Box>
 
-            <div style={{ marginTop: '10px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <button onClick={() => clearParts(challenge.id)} style={{ padding: '6px 12px', background: '#e2e8f0', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>Clear</button>
-              {isPerfect && <span style={{ color: '#15803d', fontWeight: 'bold' }}>✅ Perfect!</span>}
-              {isWrong && <span style={{ color: '#b91c1c', fontWeight: 'bold' }}>❌ Try again!</span>}
-            </div>
-          </div>
+            <Box style={{ marginTop: '10px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <Button onClick={() => clearParts(challenge.id)} style={{ padding: '6px 12px', background: '#e2e8f0', border: 'none', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}>Clear</Button>
+              {isPerfect && <Text as="span" style={{ color: '#15803d', fontWeight: 'bold' }}>✅ Perfect!</Text>}
+              {isWrong && <Text as="span" style={{ color: '#b91c1c', fontWeight: 'bold' }}>❌ Try again!</Text>}
+            </Box>
+          </Box>
         );
       })}
-    </div>
+    </Box>
   );
 };
 

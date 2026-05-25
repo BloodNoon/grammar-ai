@@ -1,3 +1,4 @@
+import { Box, Button, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
 const PrepositionFillBlanks = () => {
@@ -40,7 +41,7 @@ const PrepositionFillBlanks = () => {
 
   return (
     // This Grid layout completely eliminates the need to scroll!
-    <div style={{ 
+    <Box style={{ 
       display: 'grid', 
       gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
       gap: '15px', 
@@ -57,8 +58,8 @@ const PrepositionFillBlanks = () => {
           : ex.text;
 
         return (
-          <div key={ex.id} style={{ 
-            background: '#f8f9fa', 
+          <Box key={ex.id} sx={{ 
+            background: 'gray.50', 
             padding: '15px', 
             borderRadius: '10px', 
             border: '2px solid #e2e8f0',
@@ -67,56 +68,56 @@ const PrepositionFillBlanks = () => {
             justifyContent: 'space-between'
           }}>
             
-            <div>
-              <p style={{ fontSize: '1rem', fontWeight: 'bold', color: '#1A0933', marginBottom: '12px' }}>
+            <Box>
+              <Text style={{ fontSize: '1rem', fontWeight: 'bold', color: '#1A0933', marginBottom: '12px' }}>
                 {ex.id + 1}. {displayText}
-              </p>
+              </Text>
 
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: isAnswered ? '12px' : '0' }}>
+              <Box style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: isAnswered ? '12px' : '0' }}>
                 {ex.options.map(option => (
-                  <button 
+                  <Button 
                     key={option} 
                     onClick={() => handleSelect(ex.id, option)}
                     style={{ 
                       padding: '6px 12px', 
                       fontSize: '0.9rem', 
                       fontWeight: 'bold', 
-                      background: userAnswer === option ? '#1976d2' : '#e3f2fd', 
-                      color: userAnswer === option ? 'white' : '#1565c0', 
-                      border: '2px solid #1976d2', 
+                      background: userAnswer === option ? 'blue.700' : 'blue.50', 
+                      color: userAnswer === option ? 'white' : 'blue.800', 
+                      border: '2px solid blue.700', 
                       borderRadius: '6px', 
                       cursor: 'pointer',
                       transition: 'all 0.2s'
                     }}
                   >
                     {option}
-                  </button>
+                  </Button>
                 ))}
-              </div>
-            </div>
+              </Box>
+            </Box>
 
             {/* Compact Validation Feedback */}
             {isAnswered && (
-              <div style={{ 
+              <Box style={{ 
                 padding: '10px', 
                 borderRadius: '6px', 
                 fontSize: '0.85rem',
                 lineHeight: '1.4',
-                background: isCorrect ? '#d4edda' : '#f8d7da', 
-                color: isCorrect ? '#155724' : '#721c24',
-                borderLeft: `4px solid ${isCorrect ? '#28a745' : '#dc3545'}`,
+                background: isCorrect ? 'green.100' : 'red.100', 
+                color: isCorrect ? 'green.800' : 'red.800',
+                borderLeft: `4px solid ${isCorrect ? 'green.500' : 'red.500'}`,
                 marginTop: 'auto' // Pushes feedback to the bottom to keep cards even
               }}>
                 <strong>{isCorrect ? '✅ Correct: ' : '❌ Incorrect: '}</strong> 
                 {isCorrect ? ex.explanation : "Try a different preposition!"}
-              </div>
+              </Box>
             )}
             
-          </div>
+          </Box>
         );
       })}
       
-    </div>
+    </Box>
   );
 };
 

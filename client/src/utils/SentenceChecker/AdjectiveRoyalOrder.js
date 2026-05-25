@@ -1,3 +1,4 @@
+import { Box, Heading, Text } from '@chakra-ui/react';
 import React from 'react';
 
 const AdjectiveRoyalOrder = () => {
@@ -15,52 +16,52 @@ const AdjectiveRoyalOrder = () => {
   ];
 
   return (
-    <div style={{
-      backgroundColor: '#fff3e0',
+    <Box sx={{
+      backgroundColor: 'orange.50',
       padding: '2rem',
       borderRadius: '10px',
       marginBottom: '2rem',
       border: '2px solid #ff9800'
     }}>
-      <h3 style={{ color: '#e65100', marginBottom: '1rem' }}>👑 The Royal Order of Adjectives</h3>
-      <p style={{ fontSize: '1rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
+      <Heading as="h3" size="md" style={{ color: '#e65100', marginBottom: '1rem' }}>👑 The Royal Order of Adjectives</Heading>
+      <Text style={{ fontSize: '1rem', lineHeight: '1.6', marginBottom: '1.5rem' }}>
         When using multiple adjectives before a noun in English, they usually follow this order:
-      </p>
+      </Text>
       
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
+      <Box style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
         {adjectiveOrder.map((item) => (
-          <div key={item.order} style={{
-            backgroundColor: '#fff',
+          <Box key={item.order} style={{
+            backgroundColor: 'white',
             padding: '1rem',
             borderRadius: '8px',
-            border: '1px solid #ddd'
+            border: '1px solid gray.200'
           }}>
-            <div style={{ fontWeight: 'bold', color: '#e65100', marginBottom: '0.5rem' }}>
+            <Box style={{ fontWeight: 'bold', color: '#e65100', marginBottom: '0.5rem' }}>
               {item.order}. {item.type}
-            </div>
-            <div style={{ fontSize: '0.9rem', color: '#666', fontStyle: 'italic' }}>
+            </Box>
+            <Box sx={{ fontSize: '0.9rem', color: 'gray.500', fontStyle: 'italic' }}>
               {item.examples}
-            </div>
-          </div>
+            </Box>
+          </Box>
         ))}
-      </div>
+      </Box>
       
-      <div style={{
+      <Box style={{
         marginTop: '1.5rem',
         padding: '1rem',
-        backgroundColor: '#fff',
+        backgroundColor: 'white',
         borderRadius: '8px',
-        border: '1px solid #ddd'
+        border: '1px solid gray.200'
       }}>
-        <h4 style={{ color: '#e65100', marginBottom: '0.5rem' }}>Perfect Example:</h4>
-        <p style={{ fontSize: '1.1rem', fontStyle: 'italic', color: '#333' }}>
+        <Heading as="h4" size="sm" style={{ color: '#e65100', marginBottom: '0.5rem' }}>Perfect Example:</Heading>
+        <Text sx={{ fontSize: '1.1rem', fontStyle: 'italic', color: 'gray.700' }}>
           "My two beautiful small old round green Italian wooden racing chairs"
-        </p>
-        <p style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
+        </Text>
+        <Text sx={{ fontSize: '0.9rem', color: 'gray.500', marginTop: '0.5rem' }}>
           This follows the exact order: Determiner → Quantity → Opinion → Size → Age → Shape → Color → Origin → Material → Purpose → Noun
-        </p>
-      </div>
-    </div>
+        </Text>
+      </Box>
+    </Box>
   );
 };
 

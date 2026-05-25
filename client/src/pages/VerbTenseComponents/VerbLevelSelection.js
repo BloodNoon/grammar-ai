@@ -1,3 +1,4 @@
+import { Box, Button, Heading, Text } from '@chakra-ui/react';
 // This component allows users to choose between beginner, intermediate, and advanced verb complexity
 import React from 'react';
 
@@ -12,54 +13,54 @@ const VerbLevelSelection = ({
       name: 'beginner',
       displayName: 'Beginner',
       description: 'Simple present/past tenses',
-      color: '#4CAF50' // Green for beginner
+      color: 'green.500' // Green for beginner
     },
     {
       name: 'intermediate', 
       displayName: 'Intermediate',
       description: 'Continuous tenses & auxiliaries',
-      color: '#ff9800' // Orange for intermediate
+      color: 'orange.500' // Orange for intermediate
     },
     {
       name: 'advanced',
       displayName: 'Advanced', 
       description: 'Perfect tenses & complex structures',
-      color: '#f44336' // Red for advanced
+      color: 'red.500' // Red for advanced
     }
   ];
 
   return (
     // Main container for level selection with center alignment
-    <div style={{ 
+    <Box sx={{ 
       textAlign: 'center',              // Center all content
       padding: '20px',                  // Internal spacing
-      backgroundColor: '#f8f9fa',       // Light gray background
+      backgroundColor: 'gray.50',       // Light gray background
       borderRadius: '8px',              // Rounded corners
       margin: '20px 0',                 // Vertical spacing
-      border: '1px solid #ddd'          // Light border for definition
+      border: '1px solid gray.200'          // Light border for definition
     }}>
       
       {/* Section title */}
-      <h3 style={{ 
+      <Heading as="h3" size="md" sx={{ 
         marginBottom: '15px',           // Space below title
-        color: '#333',                  // Dark gray color
+        color: 'gray.700',                  // Dark gray color
         fontSize: '20px'                // Standard title size
       }}>
         Choose Difficulty Level:
-      </h3>
+      </Heading>
 
       {/* Description of what level selection affects */}
-      <p style={{
+      <Text sx={{
         fontSize: '14px',               // Smaller descriptive text
-        color: '#666',                  // Gray color for secondary text
+        color: 'gray.500',                  // Gray color for secondary text
         marginBottom: '20px',           // Space below description
         lineHeight: '1.4'               // Better line spacing
       }}>
         Select your skill level to get appropriate verb tenses and sentence complexity
-      </p>
+      </Text>
       
       {/* Level selection buttons container */}
-      <div style={{
+      <Box style={{
         display: 'flex',                // Horizontal layout
         justifyContent: 'center',       // Center the buttons
         gap: '10px',                    // Space between buttons
@@ -67,15 +68,15 @@ const VerbLevelSelection = ({
       }}>
         {/* Map through each level to create selection buttons */}
         {levels.map(level => (
-          <div key={level.name} style={{ textAlign: 'center' }}>
+          <Box key={level.name} style={{ textAlign: 'center' }}>
             {/* Level selection button */}
-            <button
+            <Button
               onClick={() => setCurrentLevel(level.name)} // Update level when clicked
               style={{
                 // Conditional styling based on whether this level is currently selected
                 backgroundColor: currentLevel === level.name ? level.color : '#f0f0f0',
                 color: currentLevel === level.name ? 'white' : 'black',
-                border: `2px solid ${currentLevel === level.name ? level.color : '#ccc'}`,
+                border: `2px solid ${currentLevel === level.name ? level.color : 'gray.300'}`,
                 padding: '12px 20px',       // Internal spacing for comfortable clicking
                 margin: '4px',              // Small margin around each button
                 cursor: 'pointer',          // Show clickable cursor
@@ -89,61 +90,61 @@ const VerbLevelSelection = ({
               onMouseOver={(e) => {
                 if (currentLevel !== level.name) {
                   e.target.style.backgroundColor = '#e0e0e0'; // Darker gray on hover
-                  e.target.style.borderColor = '#999';       // Darker border on hover
+                  e.target.style.borderColor = 'gray.400';       // Darker border on hover
                   e.target.style.transform = 'translateY(-1px)'; // Slight lift effect
                 }
               }}
               onMouseOut={(e) => {
                 if (currentLevel !== level.name) {
                   e.target.style.backgroundColor = '#f0f0f0'; // Return to original gray
-                  e.target.style.borderColor = '#ccc';       // Return to original border
+                  e.target.style.borderColor = 'gray.300';       // Return to original border
                   e.target.style.transform = 'translateY(0)'; // Return to original position
                 }
               }}
             >
               {level.displayName}
-            </button>
+            </Button>
 
             {/* Level description displayed below each button */}
-            <div style={{
+            <Box sx={{
               fontSize: '12px',           // Small font for descriptions
-              color: '#666',              // Gray color for secondary text
+              color: 'gray.500',              // Gray color for secondary text
               marginTop: '5px',           // Space above description
               lineHeight: '1.3',          // Compact line spacing
               fontStyle: 'italic'         // Italic styling for descriptions
             }}>
               {level.description}
-            </div>
-          </div>
+            </Box>
+          </Box>
         ))}
-      </div>
+      </Box>
 
       {/* Current level indicator */}
-      <div style={{
+      <Box style={{
         marginTop: '20px',              // Space above indicator
         padding: '10px',                // Internal spacing
-        backgroundColor: currentLevel === 'beginner' ? '#e8f5e8' : 
-                         currentLevel === 'intermediate' ? '#fff3e0' : '#ffebee',
+        backgroundColor: currentLevel === 'beginner' ? 'green.50' : 
+                         currentLevel === 'intermediate' ? 'orange.50' : 'red.50',
         borderRadius: '6px',            // Rounded corners
-        border: `1px solid ${currentLevel === 'beginner' ? '#4CAF50' : 
-                             currentLevel === 'intermediate' ? '#ff9800' : '#f44336'}`,
+        border: `1px solid ${currentLevel === 'beginner' ? 'green.500' : 
+                             currentLevel === 'intermediate' ? 'orange.500' : 'red.500'}`,
         fontSize: '14px'                // Standard text size
       }}>
         <strong>Current Level:</strong> {levels.find(l => l.name === currentLevel)?.displayName}
         <br />
         <em>{levels.find(l => l.name === currentLevel)?.description}</em>
-      </div>
+      </Box>
 
       {/* Help text explaining what happens when level changes */}
-      <div style={{
+      <Box style={{
         marginTop: '15px',              // Space above help text
         fontSize: '12px',               // Small font for help text
         color: '#888',                  // Light gray for subtle appearance
         fontStyle: 'italic'             // Italic styling
       }}>
         💡 Changing levels will generate new words and adjust sentence complexity
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };
 

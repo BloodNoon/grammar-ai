@@ -1,8 +1,9 @@
+import { Box, Heading, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
 const PronounsLesson = () => {
   return (
-    <div
+    <Box
       style={{
         marginTop: '2rem',
         padding: '1.5rem',
@@ -14,96 +15,96 @@ const PronounsLesson = () => {
         boxShadow: '0 4px 10px rgba(0, 0, 0, 0.05)',
       }}
     >
-      <h2
-        style={{
+      <Heading as="h2" size="lg"
+        sx={{
           fontSize: '28px',
           fontWeight: 'bold',
           marginBottom: '1rem',
-          color: '#333',
+          color: 'gray.700',
         }}
       >
        
         Learn the Lesson: Pronouns
-      </h2>
+      </Heading>
 
-      <div style={{ textAlign: 'left', fontSize: '1.1rem', lineHeight: '1.8' }}>
-        <p><strong>Definition:</strong> a word that <strong>replaces a noun.</strong></p>
+      <Box style={{ textAlign: 'left', fontSize: '1.1rem', lineHeight: '1.8' }}>
+        <Text><strong>Definition:</strong> a word that <strong>replaces a noun.</strong></Text>
         
         
-        <div style={{ margin: '1rem 0', padding: '1rem', backgroundColor: '#e8f4fd', borderRadius: '8px' }}>
-          <h4 style={{ color: '#1565c0', marginBottom: '0.5rem' }}>Types of conjunctions:</h4>
+        <Box style={{ margin: '1rem 0', padding: '1rem', backgroundColor: '#e8f4fd', borderRadius: '8px' }}>
+          <Heading as="h4" size="sm" sx={{ color: 'blue.800', marginBottom: '0.5rem' }}>Types of conjunctions:</Heading>
           <ul style={{ margin: '0.5rem 0' }}>
-            <p>We use pronouns so we don’t repeat the same noun again and again.</p>
-            <p>• Noun: Maria has a book. Maria is reading the book.</p>
-            <p>• Pronoun: Maria has a book. <strong>She</strong> is reading <strong>it.</strong></p>
-            <p>Pronouns make our writing smoother and less repetitive.</p>
-            <p>Types of Pronouns (with Examples)</p>
+            <Text>We use pronouns so we don’t repeat the same noun again and again.</Text>
+            <Text>• Noun: Maria has a book. Maria is reading the book.</Text>
+            <Text>• Pronoun: Maria has a book. <strong>She</strong> is reading <strong>it.</strong></Text>
+            <Text>Pronouns make our writing smoother and less repetitive.</Text>
+            <Text>Types of Pronouns (with Examples)</Text>
 
-            <p>Subject Pronouns:</p>
-            <p>Used as the <strong>subject</strong> of a sentence.</p>
-            <p><strong> I, you, he, she, it, we, they</strong></p>
-            <p><strong>Lena </strong>is my friend.<strong> She</strong> is very kind.</p>
-            <p>(The subject pronoun <strong>she</strong> replaces Lena.)</p>
+            <Text>Subject Pronouns:</Text>
+            <Text>Used as the <strong>subject</strong> of a sentence.</Text>
+            <Text><strong> I, you, he, she, it, we, they</strong></Text>
+            <Text><strong>Lena </strong>is my friend.<strong> She</strong> is very kind.</Text>
+            <Text>(The subject pronoun <strong>she</strong> replaces Lena.)</Text>
 
-            <p> Object Pronouns:</p>
-            <p>Used after a <strong>verb</strong> or <strong>preposition</strong>.</p>
-            <p>I saw<strong> the dogs</strong>. I called them.</p>
-            <p>(The object pronoun <strong> them </strong>replaces the dogs.)</p>
+            <Text> Object Pronouns:</Text>
+            <Text>Used after a <strong>verb</strong> or <strong>preposition</strong>.</Text>
+            <Text>I saw<strong> the dogs</strong>. I called them.</Text>
+            <Text>(The object pronoun <strong> them </strong>replaces the dogs.)</Text>
 
-            <p>Possessive Pronouns: </p>
-            <p>Show <strong> ownership.</strong></p>
-            <p><strong> mine, yours, his, hers, its, ours, theirs</strong></p>
-            <p>This backpack is<strong> mine.</strong></p>
-            <p>(The possessive pronoun <strong> mine </strong>shows ownership.)</p>
+            <Text>Possessive Pronouns: </Text>
+            <Text>Show <strong> ownership.</strong></Text>
+            <Text><strong> mine, yours, his, hers, its, ours, theirs</strong></Text>
+            <Text>This backpack is<strong> mine.</strong></Text>
+            <Text>(The possessive pronoun <strong> mine </strong>shows ownership.)</Text>
 
-            <p> Reflexive Pronouns:</p>
-            <p>Refer <strong>back to the subject.</strong></p>
-            <p><strong>myself, yourself, himself, herself, itself, ourselves, yourselves, themselves</strong></p>
-            <p>Carlos made the project <strong>himself.</strong></p>
-            <p>(The reflexive pronoun<strong> himself </strong>refers back to Carlos.)</p>
+            <Text> Reflexive Pronouns:</Text>
+            <Text>Refer <strong>back to the subject.</strong></Text>
+            <Text><strong>myself, yourself, himself, herself, itself, ourselves, yourselves, themselves</strong></Text>
+            <Text>Carlos made the project <strong>himself.</strong></Text>
+            <Text>(The reflexive pronoun<strong> himself </strong>refers back to Carlos.)</Text>
 
-            <p> Interrogative Pronouns</p>
-            <p>Used to <strong>ask questions</strong></p>
-            <p><strong> who, whom, whose, which, what</strong></p>
-            <p><strong>Who</strong> is at the door?</p>
-            <p> (The interrogative pronoun<strong> who </strong>asks a question.)</p>
+            <Text> Interrogative Pronouns</Text>
+            <Text>Used to <strong>ask questions</strong></Text>
+            <Text><strong> who, whom, whose, which, what</strong></Text>
+            <Text><strong>Who</strong> is at the door?</Text>
+            <Text> (The interrogative pronoun<strong> who </strong>asks a question.)</Text>
 
 
-            <p>Relative Pronouns: </p>
-            <p>Connect a<strong> dependent clause </strong>to a noun.</p>
-            <p><strong> who, whom, whose, which, that</strong></p>
-            <p>The student <strong>who</strong> won the prize is my sister.</p>
-            <p>(The relative pronoun<strong> who </strong>connects the ideas.)</p>
+            <Text>Relative Pronouns: </Text>
+            <Text>Connect a<strong> dependent clause </strong>to a noun.</Text>
+            <Text><strong> who, whom, whose, which, that</strong></Text>
+            <Text>The student <strong>who</strong> won the prize is my sister.</Text>
+            <Text>(The relative pronoun<strong> who </strong>connects the ideas.)</Text>
 
-            <p><strong>Demonstrative Pronouns:</strong></p>
-            <p>Point to <strong>specific people or things.</strong></p>
-            <p><strong> this, that, these, those</strong></p>
-            <p><strong>These</strong> are my favorite cookies.</p>
-            <p> (The demonstrative pronoun <strong>these</strong> points to specific things.)</p>
+            <Text><strong>Demonstrative Pronouns:</strong></Text>
+            <Text>Point to <strong>specific people or things.</strong></Text>
+            <Text><strong> this, that, these, those</strong></Text>
+            <Text><strong>These</strong> are my favorite cookies.</Text>
+            <Text> (The demonstrative pronoun <strong>these</strong> points to specific things.)</Text>
 
-            <p>Indefinite Pronouns:</p>
-            <p>Do<strong> not </strong>name a specific person or thing.</p>
-            <p><strong>someone, anyone, everyone, no one, something, anything, everything, nothing, each, few, many, several, all, some, none</strong></p>
-            <p><strong>Someone</strong> left a notebook on the desk.</p>
-            <p>(The indefinite pronoun <strong>someone </strong>does not name a specific person.)</p>
+            <Text>Indefinite Pronouns:</Text>
+            <Text>Do<strong> not </strong>name a specific person or thing.</Text>
+            <Text><strong>someone, anyone, everyone, no one, something, anything, everything, nothing, each, few, many, several, all, some, none</strong></Text>
+            <Text><strong>Someone</strong> left a notebook on the desk.</Text>
+            <Text>(The indefinite pronoun <strong>someone </strong>does not name a specific person.)</Text>
 
 
             
           </ul>
-        </div>
+        </Box>
 
           <video width="720" height="480">
           <source public="Pronouns.mp4" type="video/mp4"></source>
           </video>
 
-        <p><strong>How they work in sentences:</strong></p>
-        <div style={{ margin: '1rem 0', padding: '1rem', backgroundColor: '#fff3e0', borderRadius: '8px' }}>
-          <p>• Coordinating Conjunction: She wanted to go to the museum, <strong>but</strong> it was closed.</p>
-          <p>• Subordinating Conjunctions: He stayed home <strong>because</strong> he was feeling sick.</p>
-          <p>• Correlative Conjunctions: She is interested in <strong>both</strong> science <strong>and</strong> literature.</p>
-        </div>
-      </div>
-    </div>
+        <Text><strong>How they work in sentences:</strong></Text>
+        <Box sx={{ margin: '1rem 0', padding: '1rem', backgroundColor: 'orange.50', borderRadius: '8px' }}>
+          <Text>• Coordinating Conjunction: She wanted to go to the museum, <strong>but</strong> it was closed.</Text>
+          <Text>• Subordinating Conjunctions: He stayed home <strong>because</strong> he was feeling sick.</Text>
+          <Text>• Correlative Conjunctions: She is interested in <strong>both</strong> science <strong>and</strong> literature.</Text>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

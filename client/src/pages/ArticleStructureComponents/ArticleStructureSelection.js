@@ -1,3 +1,4 @@
+import { Box, Button, Heading, Text } from '@chakra-ui/react';
 // This component allows users to choose target sentence structures for focused article practice
 import React from 'react';
 
@@ -11,35 +12,35 @@ const ArticleStructureSelection = ({
 
   return (
     // Main container for structure selection with left alignment for readability
-    <div style={{ 
+    <Box sx={{ 
       textAlign: 'left',               // Left-align content for better readability
       padding: '20px',                 // Internal spacing
-      backgroundColor: '#f8f9fa',      // Light gray background
+      backgroundColor: 'gray.50',      // Light gray background
       borderRadius: '8px',             // Rounded corners
       margin: '20px 0',                // Vertical spacing
-      border: '1px solid #ddd'         // Light border for definition
+      border: '1px solid gray.200'         // Light border for definition
     }}>
       
       {/* Section title */}
-      <h3 style={{ 
+      <Heading as="h3" size="md" sx={{ 
         marginBottom: '15px',          // Space below title
-        color: '#333'                  // Dark gray color
+        color: 'gray.700'                  // Dark gray color
       }}>
         Choose an Article Structure to Practice (Optional)
-      </h3>
+      </Heading>
 
       {/* Explanation of structure practice */}
-      <p style={{
+      <Text sx={{
         fontSize: '14px',              // Standard descriptive text size
-        color: '#666',                 // Gray color for secondary text
+        color: 'gray.500',                 // Gray color for secondary text
         marginBottom: '20px',          // Space below explanation
         lineHeight: '1.4'              // Better line spacing for readability
       }}>
         Select a specific sentence pattern to focus your article practice, or leave unselected for free-form building.
-      </p>
+      </Text>
       
       {/* Display structures filtered by current level or show all for advanced */}
-      <div style={{
+      <Box style={{
         display: 'grid',               // Grid layout for structure cards
         gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', // Responsive grid
         gap: '15px',                   // Space between structure cards
@@ -48,9 +49,9 @@ const ArticleStructureSelection = ({
         {articleStructureExamples
           .filter(s => s.level === currentLevel || currentLevel === 'advanced') // Filter by level
           .map((structure, index) => (
-            <div key={index} style={{ 
-              border: selectedStructure === structure.pattern ? '2px solid #2196F3' : '1px solid #ccc',
-              backgroundColor: selectedStructure === structure.pattern ? '#e3f2fd' : 'white',
+            <Box key={index} sx={{ 
+              border: selectedStructure === structure.pattern ? '2px solid blue.500' : '1px solid gray.300',
+              backgroundColor: selectedStructure === structure.pattern ? 'blue.50' : 'white',
               padding: '15px',          // Internal spacing for each structure card
               borderRadius: '8px',      // Rounded corners
               transition: 'all 0.3s ease', // Smooth transition for selection
@@ -59,64 +60,64 @@ const ArticleStructureSelection = ({
             // Add hover effects for better user interaction
             onMouseOver={(e) => {
               if (selectedStructure !== structure.pattern) {
-                e.target.style.backgroundColor = '#f5f5f5';
-                e.target.style.borderColor = '#999';
+                e.target.style.backgroundColor = 'gray.50';
+                e.target.style.borderColor = 'gray.400';
               }
             }}
             onMouseOut={(e) => {
               if (selectedStructure !== structure.pattern) {
                 e.target.style.backgroundColor = 'white';
-                e.target.style.borderColor = '#ccc';
+                e.target.style.borderColor = 'gray.300';
               }
             }}
             onClick={() => selectStructure(structure)} // Select structure when card is clicked
             >
               
               {/* Structure description/title */}
-              <div style={{ 
+              <Box sx={{ 
                 fontWeight: 'bold', 
                 fontSize: '16px',
                 marginBottom: '8px',
-                color: selectedStructure === structure.pattern ? '#2196F3' : '#333'
+                color: selectedStructure === structure.pattern ? 'blue.500' : 'gray.700'
               }}>
                 {structure.description}
-              </div>
+              </Box>
               
               {/* Structure pattern syntax */}
-              <div style={{ 
+              <Box sx={{ 
                 fontSize: '14px',
-                color: '#666',
+                color: 'gray.500',
                 marginBottom: '8px',
                 fontFamily: 'monospace',    // Monospace font for pattern syntax
-                backgroundColor: '#f8f9fa',  // Light background for code-like appearance
+                backgroundColor: 'gray.50',  // Light background for code-like appearance
                 padding: '4px 8px',         // Small padding for pattern display
                 borderRadius: '4px',        // Rounded corners
-                border: '1px solid #e9ecef' // Light border
+                border: '1px solid gray.100' // Light border
               }}>
                 <strong>Pattern:</strong> {structure.pattern}
-              </div>
+              </Box>
               
               {/* Example sentence showing the pattern in use */}
-              <div style={{ 
+              <Box style={{ 
                 fontSize: '14px',
                 fontStyle: 'italic',
                 color: '#555',
                 marginBottom: '12px'
               }}>
                 <strong>Example:</strong> "{structure.example}"
-              </div>
+              </Box>
               
               {/* Selection button for each structure */}
-              <button 
+              <Button 
                 onClick={(e) => {
                   e.stopPropagation(); // Prevent card click when button is clicked
                   selectStructure(structure);
                 }}
                 style={{
                   // Conditional styling based on whether this structure is selected
-                  backgroundColor: selectedStructure === structure.pattern ? '#2196F3' : '#f0f0f0',
+                  backgroundColor: selectedStructure === structure.pattern ? 'blue.500' : '#f0f0f0',
                   color: selectedStructure === structure.pattern ? 'white' : 'black',
-                  border: '2px solid #ccc',
+                  border: '2px solid gray.300',
                   padding: '8px 16px',      // Internal button spacing
                   cursor: 'pointer',        // Show clickable cursor
                   borderRadius: '4px',      // Rounded corners
@@ -128,33 +129,33 @@ const ArticleStructureSelection = ({
                 onMouseOver={(e) => {
                   if (selectedStructure !== structure.pattern) {
                     e.target.style.backgroundColor = '#e0e0e0';
-                    e.target.style.borderColor = '#999';
+                    e.target.style.borderColor = 'gray.400';
                   }
                 }}
                 onMouseOut={(e) => {
                   if (selectedStructure !== structure.pattern) {
                     e.target.style.backgroundColor = '#f0f0f0';
-                    e.target.style.borderColor = '#ccc';
+                    e.target.style.borderColor = 'gray.300';
                   }
                 }}
               >
                 {/* Button text changes based on selection state */}
                 {selectedStructure === structure.pattern ? '✓ Selected' : 'Practice This Pattern'}
-              </button>
-            </div>
+              </Button>
+            </Box>
           ))}
-      </div>
+      </Box>
 
       {/* Display selected structure information and clear option */}
       {selectedStructure && (
-        <div style={{ 
-          border: '2px solid #2196F3',  // Blue border to highlight selected structure
-          backgroundColor: '#e3f2fd',   // Light blue background
+        <Box sx={{ 
+          border: '2px solid blue.500',  // Blue border to highlight selected structure
+          backgroundColor: 'blue.50',   // Light blue background
           padding: '15px',              // Internal spacing
           borderRadius: '8px',          // Rounded corners
           marginTop: '20px'             // Space above selected structure display
         }}>
-          <div style={{
+          <Box style={{
             display: 'flex',            // Horizontal layout
             justifyContent: 'space-between', // Space between content and button
             alignItems: 'center',       // Vertical alignment
@@ -162,28 +163,28 @@ const ArticleStructureSelection = ({
             gap: '10px'                 // Space between items when wrapped
           }}>
             {/* Selected structure information */}
-            <div>
-              <strong style={{ color: '#2196F3', fontSize: '16px' }}>
+            <Box>
+              <strong style={{ color: 'blue.500', fontSize: '16px' }}>
                 🎯 Target Structure:
               </strong>
-              <div style={{ 
+              <Box style={{ 
                 marginTop: '5px',
                 fontFamily: 'monospace',    // Monospace font for pattern
                 fontSize: '14px',
                 backgroundColor: 'white',   // White background for contrast
                 padding: '8px',             // Internal spacing
                 borderRadius: '4px',        // Rounded corners
-                border: '1px solid #2196F3' // Blue border
+                border: '1px solid blue.500' // Blue border
               }}>
                 {selectedStructure}
-              </div>
-            </div>
+              </Box>
+            </Box>
             
             {/* Clear target structure button */}
-            <button 
+            <Button 
               onClick={() => setSelectedStructure('')} // Clear selection when clicked
               style={{
-                backgroundColor: '#f44336',  // Red background for clear action
+                backgroundColor: 'red.500',  // Red background for clear action
                 color: 'white',              // White text for contrast
                 border: '2px solid #d32f2f', // Darker red border
                 padding: '8px 16px',         // Internal spacing
@@ -197,29 +198,29 @@ const ArticleStructureSelection = ({
                 e.target.style.backgroundColor = '#d32f2f';
               }}
               onMouseOut={(e) => {
-                e.target.style.backgroundColor = '#f44336';
+                e.target.style.backgroundColor = 'red.500';
               }}
             >
               ✖ Clear Target
-            </button>
-          </div>
+            </Button>
+          </Box>
 
           {/* Help text explaining what targeting a structure does */}
-          <div style={{
+          <Box sx={{
             marginTop: '10px',           // Space above help text
             fontSize: '12px',            // Small font for help text
-            color: '#666',               // Gray color for secondary text
+            color: 'gray.500',               // Gray color for secondary text
             fontStyle: 'italic'          // Italic styling
           }}>
             💡 With a target structure selected, you'll only get feedback when your sentence matches this exact pattern.
-          </div>
-        </div>
+          </Box>
+        </Box>
       )}
 
       {/* General help text when no structure is selected */}
       {!selectedStructure && (
-        <div style={{
-          backgroundColor: '#fff3e0',    // Light orange background
+        <Box sx={{
+          backgroundColor: 'orange.50',    // Light orange background
           border: '1px solid #ff9800',   // Orange border
           padding: '12px',               // Internal spacing
           borderRadius: '6px',           // Rounded corners
@@ -227,9 +228,9 @@ const ArticleStructureSelection = ({
           color: '#e65100'               // Dark orange text
         }}>
           <strong>💡 Tip:</strong> Without a target structure, you can build any grammatically correct sentence and receive feedback on whatever pattern you create.
-        </div>
+        </Box>
       )}
-    </div>
+    </Box>
   );
 };
 
