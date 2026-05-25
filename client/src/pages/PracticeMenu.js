@@ -49,8 +49,7 @@ const PracticeMenu = () => {
       id: 6,
       title: "Adverbs",
       icon: "⚡",
-      description:
-        "Discover how to modify verbs, adjectives, and other adverbs.",
+      description: "Discover how to modify verbs, adjectives, and other adverbs.",
       path: "/adverb-structure",
       colorScheme: "purple",
     },
