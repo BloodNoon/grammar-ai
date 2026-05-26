@@ -40,6 +40,7 @@ const NAV_SECTIONS = [
     title: "Verb Lessons",
     items: [
       { label: "Introduction to Verbs", to: "/verb-tense-structure" },
+      { label: "Sentence Structures", to: "/verb-sentence-structures" },
       { label: "Verb Practice Games", to: "/verb-practice" },
       { label: "Verb Quiz", to: "/verb-tense-quiz" },
     ],
@@ -48,6 +49,7 @@ const NAV_SECTIONS = [
     title: "Article Lessons",
     items: [
       { label: "Introduction to Articles", to: "/article-structure" },
+      { label: "Sentence Structures", to: "/article-sentence-structures" },
       { label: "Article Practice Games", to: "/article-practice" },
       { label: "Article Quiz", to: "/article-quiz" },
     ],
@@ -58,6 +60,7 @@ const NAV_SECTIONS = [
       { label: "Preposition Lesson", to: "/prep1-structure" },
       { label: "Prepositional Phrases", to: "/prep2-structure" },
       { label: "Compound Prepositions", to: "/prep3-structure" },
+      { label: "Sentence Structures", to: "/preposition-sentence-structures" },
       { label: "Preposition Practice", to: "/preposition-practice" },
       { label: "Preposition Quiz", to: "/preposition-quiz" },
     ],
@@ -91,6 +94,7 @@ const NAV_SECTIONS = [
     title: "Conjunction Lessons",
     items: [
       { label: "Introduction to Conjunctions", to: "/conjunction-structure" },
+      { label: "Sentence Structures", to: "/conjunction-sentence-structures" },
       { label: "Conjunction Practice", to: "/conjunction-practice" },
       { label: "Conjunction Quiz", to: "/conjunction-quiz" },
     ],
