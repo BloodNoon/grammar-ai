@@ -647,7 +647,7 @@ const ArticleStructure = () => {
                 controls
                 style={{ width: "100%", height: "580px", display: "block" }}
               >
-                <source src="/lesson2.mp4" type="video/mp4" />
+                <source src="/Lesson3.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </Box>
@@ -656,7 +656,7 @@ const ArticleStructure = () => {
               💡 Watch the lesson before practicing with the exercises below
             </Text>
             <Text mt={2} fontSize="sm" textAlign="center">
-              <a href="/lesson2.mp4" download style={{ color: "blue.500" }}>
+              <a href="/Lesson3.mp4" download style={{ color: "blue.500" }}>
                 Click here to download the video
               </a>
             </Text>
