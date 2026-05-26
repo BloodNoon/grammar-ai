@@ -228,7 +228,7 @@ const Prep1Structure = () => {
 
         {/* RIGHT COLUMN */}
         <VStack spacing={6} align="stretch">
-          {/* THE VIDEO PANEL */}
+          {/* THE  PANEL */}
           <GameCard variant="game" bg="gray.50" textAlign="center">
             <Heading size="md" color="ink.700" mb={4}>
               📹 Today's Lesson: Prepositions
@@ -248,6 +248,13 @@ const Prep1Structure = () => {
                 style={{ width: "100%", height: "480px", display: "block" }}
               >
                 <source src="/Lesson6.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>  
+                <video
+                controls
+                style={{ width: "100%", height: "480px", display: "block" }}
+              >
+                <source src="/prepositions-(revised).mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </Box>
