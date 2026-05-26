@@ -40,18 +40,18 @@ const NAV_SECTIONS = [
     title: "Verb Lessons",
     items: [
       { label: "Introduction to Verbs", to: "/verb-tense-structure" },
-      { label: "Sentence Structures", to: "/verb-sentence-structures" },
       { label: "Verb Practice Games", to: "/verb-practice" },
       { label: "Verb Quiz", to: "/verb-tense-quiz" },
+      { label: "Sentence Structures", to: "/verb-sentence-structures" },
     ],
   },
   {
     title: "Article Lessons",
     items: [
       { label: "Introduction to Articles", to: "/article-structure" },
-      { label: "Sentence Structures", to: "/article-sentence-structures" },
       { label: "Article Practice Games", to: "/article-practice" },
       { label: "Article Quiz", to: "/article-quiz" },
+      { label: "Sentence Structures", to: "/article-sentence-structures" },
     ],
   },
   {
@@ -60,9 +60,9 @@ const NAV_SECTIONS = [
       { label: "Preposition Lesson", to: "/prep1-structure" },
       { label: "Prepositional Phrases", to: "/prep2-structure" },
       { label: "Compound Prepositions", to: "/prep3-structure" },
-      { label: "Sentence Structures", to: "/preposition-sentence-structures" },
       { label: "Preposition Practice", to: "/preposition-practice" },
       { label: "Preposition Quiz", to: "/preposition-quiz" },
+      { label: "Sentence Structures", to: "/preposition-sentence-structures" },
     ],
   },
   {
@@ -70,10 +70,10 @@ const NAV_SECTIONS = [
     items: [
       { label: "Introduction to Adjectives", to: "/adjective-structure" },
       { label: "Adjective Royal Order", to: "/adjective-royal-order" },
-      { label: "Sentence Structures", to: "/adjective-sentence-structures" },
       { label: "Adjective Game", to: "/adjective-fill-blanks" },
       { label: "Adjective Practice", to: "/adjective-practice" },
       { label: "Adjective Quiz", to: "/adj-quiz" },
+      { label: "Sentence Structures", to: "/adjective-sentence-structures" },
     ],
   },
   {
@@ -84,19 +84,19 @@ const NAV_SECTIONS = [
       { label: "Type Sorting", to: "/adverb-type-sorting" },
       { label: "Adverb Forms", to: "/adverb-forms" },
       { label: "Adverb Royal Order", to: "/adverb-royal-order" },
-      { label: "Sentence Structures", to: "/adverb-sentence-structures" },
       { label: "Identification Game", to: "/adverb-identification-game" },
       { label: "Adverb Practice", to: "/adverb-practice" },
       { label: "Adverb Quiz", to: "/adverb-quiz" },
+      { label: "Sentence Structures", to: "/adverb-sentence-structures" },
     ],
   },
   {
     title: "Conjunction Lessons",
     items: [
       { label: "Introduction to Conjunctions", to: "/conjunction-structure" },
-      { label: "Sentence Structures", to: "/conjunction-sentence-structures" },
       { label: "Conjunction Practice", to: "/conjunction-practice" },
       { label: "Conjunction Quiz", to: "/conjunction-quiz" },
+      { label: "Sentence Structures", to: "/conjunction-sentence-structures" },
     ],
   },
   {
