@@ -292,6 +292,7 @@ function AppLayout() {
     location.pathname !== "/" &&
     location.pathname !== "/login" &&
     location.pathname !== "/signup";
+  const isHome = location.pathname === "/";
 
   return (
     <Flex direction="column" minH="100vh">
@@ -308,7 +309,12 @@ function AppLayout() {
             <Sidebar />
           </Box>
         )}
-        <Box flex="1" minW="0" position="relative" bg="brand.300">
+        <Box
+          flex="1"
+          minW="0"
+          position="relative"
+          bg={isHome ? "paper" : "brand.300"}
+        >
           <Suspense fallback={<LoadingFallback />}>
             <Switch>
               <Route path="/" component={Home} exact />

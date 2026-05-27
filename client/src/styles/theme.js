@@ -19,6 +19,7 @@ const theme = extendTheme({
       green: "#00E676",
       red: "#FF1053",
     },
+    paper: "#FAFAF8",
     pastel: {
       green: "#CAFFBF",
       red: "#FFADAD",
