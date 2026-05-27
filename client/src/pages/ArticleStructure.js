@@ -1,7 +1,7 @@
 //Main webpage of the Article Structure with lesson2 styling
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { Box, Heading, Text, Grid, VStack, Divider } from "@chakra-ui/react";
-import { PageContainer, GameCard } from "../components/ui";
+import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader } from "../components/ui";
 import {
   hasFullStructCheck,
   getFullStructCheck,
@@ -589,9 +589,8 @@ const ArticleStructure = () => {
 
   return (
     <PageContainer>
-      <GameCard mb={8} textAlign="center" bg="brand.500">
-        <Heading size="xl">🐸 Definite and Indefinite Articles Builder</Heading>
-      </GameCard>
+      <LessonPageHeader icon="🐸" title="Definite and Indefinite Articles Builder" />
+      <LessonIntroCard />
 
       {/* Main 2-Column Grid */}
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
@@ -662,6 +661,10 @@ const ArticleStructure = () => {
             </Text>
           </GameCard>
 
+          <LessonIntroCard 
+            title="Practice Makes Perfect" 
+            directions="Directions: Complete each of the practice exercises to improve your grammar" 
+          />
           <GameCard variant="game">
             <ArticleProgressTracker
               correctCount={correctCount}

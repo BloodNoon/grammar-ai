@@ -10,7 +10,7 @@ import {
   Badge,
   Button,
 } from "@chakra-ui/react";
-import { PageContainer, GameCard } from "../components/ui";
+import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader } from "../components/ui";
 
 import PluralRuleSorter from "../utils/SentenceChecker/PluralRuleSorter";
 import PluralTypingGame from "../utils/SentenceChecker/PluralTypingGame";
@@ -73,9 +73,8 @@ const PluralNoun = () => {
 
   return (
     <PageContainer>
-      <GameCard mb={8} textAlign="center" bg="brand.500">
-        <Heading size="xl">🐸 Plural Nouns & Spelling Rules</Heading>
-      </GameCard>
+      <LessonPageHeader icon="🐸" title="Plural Nouns & Spelling Rules" />
+      <LessonIntroCard />
 
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
         <VStack spacing={6} align="stretch">
@@ -153,7 +152,7 @@ const PluralNoun = () => {
                 controls
                 style={{ width: "100%", height: "580px", display: "block" }}
               >
-                <source src="/plurals1.mp4" type="video/mp4" />
+                <source src="/The-Plural-Nouns-Power-Up.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </Box>
@@ -164,6 +163,10 @@ const PluralNoun = () => {
           </GameCard>
 
           {/* Active Practice Card */}
+          <LessonIntroCard 
+            title="Practice Makes Perfect" 
+            directions="Directions: Complete each of the practice exercises to improve your grammar" 
+          />
           <GameCard variant="game">
             <Flex justify="space-between" align="center" mb={4}>
               <Heading size="md" color={practices[activePractice].color}>

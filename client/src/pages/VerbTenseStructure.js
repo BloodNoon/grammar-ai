@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Box, Heading, Text, Flex, VStack, Grid } from "@chakra-ui/react";
-import { PageContainer, GameCard } from "../components/ui";
+import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader } from "../components/ui";
 import { hasFullStructCheck } from "../utils/SentenceChecker/StructureChecker";
 
 // Import essential verb components
@@ -216,9 +216,8 @@ const VerbTenseStructure = () => {
 
   return (
     <PageContainer>
-      <GameCard mb={8} textAlign="center" bg="brand.500">
-        <Heading size="xl">🎬 Verb Forms and Usage</Heading>
-      </GameCard>
+      <LessonPageHeader icon="🎬" title="Verb Forms and Usage" />
+      <LessonIntroCard />
 
       {/* Main 2-Column Grid */}
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
@@ -347,6 +346,10 @@ const VerbTenseStructure = () => {
           </GameCard>
 
           {/* Interactive Builder */}
+          <LessonIntroCard 
+            title="Practice Makes Perfect" 
+            directions="Directions: Complete each of the practice exercises to improve your grammar" 
+          />
           <GameCard variant="game">
             <Heading size="md" color="blue.500" mb={4}>
               🎮 Sentence Builder

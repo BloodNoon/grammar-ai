@@ -12,7 +12,7 @@ import {
   Td,
   Button,
 } from "@chakra-ui/react";
-import { PageContainer, GameCard } from "../../components/ui";
+import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader } from "../../components/ui";
 
 // PREP3 COMPONENTS
 import SentenceScramble from "../../utils/SentenceChecker/SentenceScramble";
@@ -42,9 +42,8 @@ const Prep3Structure = () => {
 
   return (
     <PageContainer>
-      <GameCard mb={8} textAlign="center" bg="brand.500">
-        <Heading size="xl">🐸 Compound Prepositions</Heading>
-      </GameCard>
+      <LessonPageHeader icon="🐸" title="Compound Prepositions" />
+      <LessonIntroCard />
 
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
         {/* LEFT COLUMN */}
@@ -207,6 +206,10 @@ const Prep3Structure = () => {
           </GameCard>
 
           {/* Active Practice Card */}
+          <LessonIntroCard 
+            title="Practice Makes Perfect" 
+            directions="Directions: Complete each of the practice exercises to improve your grammar" 
+          />
           <GameCard variant="game">
             <Flex justify="space-between" align="center" mb={4}>
               <Heading size="md" color={current.color}>

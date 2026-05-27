@@ -9,7 +9,7 @@ import {
   SimpleGrid,
   Flex,
 } from "@chakra-ui/react";
-import { PageContainer, GameCard } from "../components/ui";
+import { PageContainer, GameCard, LessonPageHeader } from "../components/ui";
 
 // Import the refactored wrappers
 import SortingGameWrapper from "../components/SortingGameWrapper";
@@ -54,7 +54,8 @@ const NounPractice = () => {
 
   return (
     <PageContainer>
-      <GameCard mb={8} textAlign="center" bg="brand.500">
+      <LessonPageHeader icon="🎯" title="Noun Practice Games" />
+      <GameCard mb={8} textAlign="center" bg="brand.500" display="none">
         <Heading size="xl">🎯 Noun Practice Games</Heading>
         <Text fontSize="md" color="brand.900" mt={2} opacity={0.8}>
           Complete 15 questions with 100% accuracy in each game to master nouns!

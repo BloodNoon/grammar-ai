@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { HStack, Image, Heading } from '@chakra-ui/react';
 import logo from '../images/logo.svg';
 
-export default function NavbarLogo() {
+export default function NavbarLogo(props) {
 	return (
-		<HStack>
+		<HStack {...props}>
 			<Image
 				boxSize="2.5rem"
 				src={logo}

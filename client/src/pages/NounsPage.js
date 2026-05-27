@@ -10,7 +10,12 @@ import {
   Badge,
   Button,
 } from "@chakra-ui/react";
-import { PageContainer, GameCard } from "../components/ui";
+import {
+  PageContainer,
+  GameCard,
+  LessonIntroCard,
+  LessonPageHeader,
+} from "../components/ui";
 
 // Import our Interactive Components!
 import NounPronounSorter from "../utils/SentenceChecker/NounPronounSorter";
@@ -124,9 +129,8 @@ const NounsPage = () => {
 
   return (
     <PageContainer>
-      <GameCard mb={8} textAlign="center" bg="brand.500">
-        <Heading size="xl">🐸 Nouns & Pronouns Builder</Heading>
-      </GameCard>
+      <LessonPageHeader icon="🐸" title="Nouns & Pronouns Builder" />
+      <LessonIntroCard />
 
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
         <VStack spacing={6} align="stretch">
@@ -272,6 +276,10 @@ const NounsPage = () => {
           </GameCard>
 
           {/* Active Practice Card */}
+          <LessonIntroCard 
+            title="Practice Makes Perfect" 
+            directions="Directions: Complete each of the practice exercises to improve your grammar" 
+          />
           <GameCard variant="game">
             <Flex justify="space-between" align="center" mb={4}>
               <Heading size="md" color={current.color}>

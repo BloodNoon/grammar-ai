@@ -13,7 +13,7 @@ import {
   Td,
   Button,
 } from "@chakra-ui/react";
-import { PageContainer, GameCard } from "../components/ui";
+import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader } from "../components/ui";
 
 // CONJUNCTION COMPONENTS
 import ConjunctionSorter from "./../utils/SentenceChecker/ConjunctionSorter";
@@ -103,9 +103,8 @@ const ConjunctionStructure = () => {
 
   return (
     <PageContainer>
-      <GameCard mb={8} textAlign="center" bg="brand.500">
-        <Heading size="xl">🐸 Conjunction Lessons</Heading>
-      </GameCard>
+      <LessonPageHeader icon="🐸" title="Conjunction Lessons" />
+      <LessonIntroCard />
 
       {showCongrats && (
         <GameCard
@@ -391,6 +390,10 @@ const ConjunctionStructure = () => {
           </GameCard>
 
           {/* Active Practice Card */}
+          <LessonIntroCard 
+            title="Practice Makes Perfect" 
+            directions="Directions: Complete each of the practice exercises to improve your grammar" 
+          />
           <GameCard variant="game">
             <Flex justify="space-between" align="center" mb={4}>
               <Heading size="md" color={practices[activePractice].color}>

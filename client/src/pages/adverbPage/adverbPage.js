@@ -9,7 +9,7 @@ import {
   Badge,
   Button,
 } from "@chakra-ui/react";
-import { PageContainer, GameCard } from "../../components/ui";
+import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader } from "../../components/ui";
 
 // ADVERB COMPONENTS
 import AdverbLesson from "../../utils/SentenceChecker/AdverbLesson";
@@ -56,9 +56,8 @@ const AdverbStructure = () => {
 
   return (
     <PageContainer>
-      <GameCard mb={8} textAlign="center" bg="brand.500">
-        <Heading size="xl">🐸 Adverb Lessons</Heading>
-      </GameCard>
+      <LessonPageHeader icon="🐸" title="Adverb Lessons" />
+      <LessonIntroCard />
 
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
         {/* LEFT COLUMN */}
@@ -143,6 +142,10 @@ const AdverbStructure = () => {
           </GameCard>
 
           {/* Active Practice Card */}
+          <LessonIntroCard 
+            title="Practice Makes Perfect" 
+            directions="Directions: Complete each of the practice exercises to improve your grammar" 
+          />
           <GameCard variant="game">
             <Flex justify="space-between" align="center" mb={4}>
               <Heading size="md" color={current.color}>

@@ -8,7 +8,7 @@ import {
   Badge,
 } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
-import { PageContainer, GameCard } from "../components/ui";
+import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader } from "../components/ui";
 
 export default function AbPlurNoun() {
   const history = useHistory();
@@ -19,9 +19,8 @@ export default function AbPlurNoun() {
 
   return (
     <PageContainer>
-      <GameCard mb={8} textAlign="center" bg="brand.500">
-        <Heading size="xl">🐸 Abstract & Plural Nouns</Heading>
-      </GameCard>
+      <LessonPageHeader icon="🐸" title="Abstract & Plural Nouns" />
+      <LessonIntroCard />
 
       <VStack spacing={8} maxW="1000px" mx="auto">
         <GameCard variant="game">
