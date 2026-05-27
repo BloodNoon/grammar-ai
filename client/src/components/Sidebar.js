@@ -17,6 +17,7 @@ import {
 } from "@chakra-ui/react";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import { preloadRoute } from "../lazyComponents";
 import {
   ChevronRightIcon,
   ChevronDownIcon,
@@ -243,6 +244,8 @@ const SidebarContent = ({
                 colorScheme={isActive(section.to) ? "brand" : undefined}
                 fontWeight={isActive(section.to) ? "bold" : "normal"}
                 whiteSpace="nowrap"
+                onMouseEnter={() => preloadRoute(section.to)}
+                onFocus={() => preloadRoute(section.to)}
                 onClick={() => {
                   if (isCollapsed) {
                     setIsCollapsed(false);
@@ -293,6 +296,8 @@ const SidebarContent = ({
                         whiteSpace="nowrap"
                         overflow="hidden"
                         textOverflow="ellipsis"
+                        onMouseEnter={() => preloadRoute(item.to)}
+                        onFocus={() => preloadRoute(item.to)}
                         onClick={() => {
                           if (isMobileDrawer && onClose) {
                             onClose();
@@ -335,6 +340,8 @@ const SidebarContent = ({
             whiteSpace="nowrap"
             overflow="hidden"
             textOverflow="ellipsis"
+            onMouseEnter={() => preloadRoute("/dashboard")}
+            onFocus={() => preloadRoute("/dashboard")}
             onClick={() => {
               if (isCollapsed) setIsCollapsed(false);
               if (isMobileDrawer && onClose) onClose();
@@ -380,6 +387,8 @@ const SidebarContent = ({
                 bg: "brand.900",
                 boxShadow: "1px 1px 0px rgba(0,0,0,0.1)",
               }}
+              onMouseEnter={() => preloadRoute("/signup")}
+              onFocus={() => preloadRoute("/signup")}
               onClick={() => onClose && onClose()}
             >
               Sign Up
@@ -402,6 +411,8 @@ const SidebarContent = ({
                 bg: "brand.100",
                 boxShadow: "1px 1px 0px rgba(0,0,0,0.1)",
               }}
+              onMouseEnter={() => preloadRoute("/login")}
+              onFocus={() => preloadRoute("/login")}
               onClick={() => onClose && onClose()}
             >
               Login
