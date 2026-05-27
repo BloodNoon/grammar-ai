@@ -10,7 +10,7 @@ import {
   Badge,
   Button,
 } from "@chakra-ui/react";
-import { PageContainer, GameCard } from "../components/ui";
+import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader } from "../components/ui";
 
 import PossessiveSorter from "../utils/SentenceChecker/PossessiveSorter";
 import PossessiveTypingGame from "../utils/SentenceChecker/PossessiveTypingGame";
@@ -58,9 +58,8 @@ const PossessiveNouns = () => {
 
   return (
     <PageContainer>
-      <GameCard mb={8} textAlign="center" bg="brand.500">
-        <Heading size="xl">🐸 Possessive Nouns & Apostrophes</Heading>
-      </GameCard>
+      <LessonPageHeader icon="🐸" title="Possessive Nouns & Apostrophes" />
+      <LessonIntroCard />
 
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
         <VStack spacing={6} align="stretch">
@@ -149,6 +148,10 @@ const PossessiveNouns = () => {
           </GameCard>
 
           {/* Active Practice Card */}
+          <LessonIntroCard 
+            title="Practice Makes Perfect" 
+            directions="Directions: Complete each of the practice exercises to improve your grammar" 
+          />
           <GameCard variant="game">
             <Flex justify="space-between" align="center" mb={4}>
               <Heading size="md" color={practices[activePractice].color}>

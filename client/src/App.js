@@ -293,25 +293,32 @@ function AppLayout() {
     location.pathname !== "/login" &&
     location.pathname !== "/signup";
   const isHome = location.pathname === "/";
+  const contentRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if (contentRef.current) {
+      contentRef.current.scrollTop = 0;
+    }
+  }, [location.pathname]);
 
   return (
-    <Flex direction="column" minH="100vh">
-      <Navbar />
-      <Flex flex="1">
+    <Flex direction="column" h="100vh" overflow="hidden">
+      <Navbar showSidebar={showSidebar} />
+      <Flex flex="1" overflow="hidden">
         {showSidebar && (
           <Box
             flexShrink="0"
-            alignSelf="flex-start"
-            position="sticky"
-            top="0"
-            h="calc(100vh - 60px)"
+            h={{ base: "auto", md: "100%" }}
           >
             <Sidebar />
           </Box>
         )}
         <Box
+          ref={contentRef}
           flex="1"
           minW="0"
+          h="100%"
+          overflowY="auto"
           position="relative"
           bg={isHome ? "paper" : "brand.300"}
         >
@@ -443,7 +450,7 @@ function App() {
           <AppLayout />
         </Router>
       </AuthProvider>
-      <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+      <ReactQueryDevtools initialIsOpen={false} position="bottom-left" />
     </QueryClientProvider>
   );
 }

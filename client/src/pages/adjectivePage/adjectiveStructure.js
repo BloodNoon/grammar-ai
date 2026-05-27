@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Heading, Text, Grid, VStack, Divider } from "@chakra-ui/react";
-import { PageContainer, GameCard } from "../../components/ui";
+import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader } from "../../components/ui";
 
 // ADJECTIVE COMPONENTS
 import AdjectiveLesson from "../../utils/SentenceChecker/AdjectiveLesson";
@@ -15,9 +15,8 @@ import WordHunterGame from "../../components/wordHunter";
 const AdjectivePage = () => {
   return (
     <PageContainer>
-      <GameCard mb={8} textAlign="center" bg="brand.500">
-        <Heading size="xl">🐸 Adjective Lessons</Heading>
-      </GameCard>
+      <LessonPageHeader icon="🐸" title="Adjective Lessons" />
+      <LessonIntroCard />
 
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
         {/* LEFT COLUMN */}
@@ -73,6 +72,10 @@ const AdjectivePage = () => {
             </Text>
           </GameCard>
 
+          <LessonIntroCard 
+            title="Practice Makes Perfect" 
+            directions="Directions: Complete each of the practice exercises to improve your grammar" 
+          />
           <GameCard variant="game">
             <Heading size="lg" textAlign="center" mb={6}>
               Interactive Practice

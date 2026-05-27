@@ -35,6 +35,9 @@ const theme = extendTheme({
         bg: "brand.300",
         fontFamily: "body",
       },
+      "body.drawer-open button[aria-label*='React Query Devtools'], body.drawer-open [class*='ReactQueryDevtools']": {
+        display: "none !important",
+      },
     },
   },
   components: {
@@ -45,8 +48,13 @@ const theme = extendTheme({
           color: "brand.500",
           textDecoration: "none",
         },
-        _click: {
+        _focus: {
           outline: "none",
+          boxShadow: "none",
+        },
+        _focusVisible: {
+          outline: "none",
+          boxShadow: "none",
         },
       },
     },
@@ -54,6 +62,13 @@ const theme = extendTheme({
       baseStyle: {
         fontWeight: "500",
         borderRadius: "md",
+        _focus: {
+          boxShadow: "none",
+        },
+        _focusVisible: {
+          outline: "none",
+          boxShadow: "none",
+        },
       },
       variants: {
         primary: {
@@ -71,6 +86,9 @@ const theme = extendTheme({
             transform: "translateY(1px)",
             boxShadow: "1px 1px 0px rgba(0,0,0,0.1)",
           },
+          _focus: {
+            boxShadow: "2px 2px 0px rgba(0,0,0,0.1)",
+          },
         },
         check: {
           bg: "accent.yellow",
@@ -86,6 +104,9 @@ const theme = extendTheme({
           _active: {
             transform: "translateY(1px)",
             boxShadow: "1px 1px 0px #1A1A1A",
+          },
+          _focus: {
+            boxShadow: "2px 2px 0px #1A1A1A",
           },
         },
         success: {
@@ -103,6 +124,9 @@ const theme = extendTheme({
             transform: "translateY(1px)",
             boxShadow: "1px 1px 0px #1A1A1A",
           },
+          _focus: {
+            boxShadow: "2px 2px 0px #1A1A1A",
+          },
         },
         danger: {
           bg: "accent.red",
@@ -119,6 +143,9 @@ const theme = extendTheme({
             transform: "translateY(1px)",
             boxShadow: "1px 1px 0px #1A1A1A",
           },
+          _focus: {
+            boxShadow: "2px 2px 0px #1A1A1A",
+          },
         },
         nav: {
           bg: "brand.100",
@@ -134,6 +161,9 @@ const theme = extendTheme({
           _active: {
             transform: "translateY(1px)",
             boxShadow: "1px 1px 0px #1A1A1A",
+          },
+          _focus: {
+            boxShadow: "2px 2px 0px #1A1A1A",
           },
         },
       },

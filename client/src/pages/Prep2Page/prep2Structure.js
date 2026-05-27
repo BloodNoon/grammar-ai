@@ -14,7 +14,7 @@ import {
   Thead,
   Button,
 } from "@chakra-ui/react";
-import { PageContainer, GameCard } from "../../components/ui";
+import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader } from "../../components/ui";
 
 // PREP2 COMPONENTS
 import PrepositionPhraseLesson from "../../utils/SentenceChecker/PrepositionPhraseLesson";
@@ -57,9 +57,8 @@ const Prep2Structure = () => {
 
   return (
     <PageContainer>
-      <GameCard mb={8} textAlign="center" bg="brand.500">
-        <Heading size="xl">🐸 Prepositional Phrases</Heading>
-      </GameCard>
+      <LessonPageHeader icon="🐸" title="Prepositional Phrases" />
+      <LessonIntroCard />
 
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
         {/* LEFT COLUMN */}
@@ -183,6 +182,10 @@ const Prep2Structure = () => {
           </GameCard>
 
           {/* Active Practice Card */}
+          <LessonIntroCard 
+            title="Practice Makes Perfect" 
+            directions="Directions: Complete each of the practice exercises to improve your grammar" 
+          />
           <GameCard variant="game">
             <Flex justify="space-between" align="center" mb={4}>
               <Heading size="md" color={current.color}>

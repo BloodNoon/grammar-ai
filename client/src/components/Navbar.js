@@ -4,8 +4,8 @@ import NavbarLinks from "./NavbarLinks";
 import NavbarLogo from "./NavbarLogo";
 import NavbarDropDown from "./NavbarDropDown";
 
-export default function Navbar() {
-  const [isMobile] = useMediaQuery("(max-width:480px)");
+export default function Navbar({ showSidebar }) {
+  const [isMobile] = useMediaQuery("(max-width:768px)");
 
   return (
     <Flex
@@ -16,9 +16,9 @@ export default function Navbar() {
       align="center"
       bg="brand.100"
     >
-      <NavbarLogo />
+      <NavbarLogo ml={isMobile && showSidebar ? "56px" : "0px"} />
       {!isMobile && <NavbarLinks />}
-      <NavbarDropDown />
+      {!isMobile && <NavbarDropDown />}
     </Flex>
   );
 }

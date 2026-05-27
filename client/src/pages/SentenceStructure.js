@@ -11,7 +11,7 @@ import {
   Input,
   Badge,
 } from "@chakra-ui/react";
-import { PageContainer, GameCard } from "../components/ui";
+import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader } from "../components/ui";
 import nlp from "compromise";
 import { testCases } from "../utils/SentenceChecker/TestCases";
 import SubjectNounGame from "../utils/SentenceChecker/SubjectNounGame";
@@ -145,9 +145,8 @@ const SentenceStructures = () => {
 
   return (
     <PageContainer>
-      <GameCard mb={8} textAlign="center" bg="brand.500">
-        <Heading size="xl">🐸 Sentence Structure Practice</Heading>
-      </GameCard>
+      <LessonPageHeader icon="🐸" title="Sentence Structure Practice" />
+      <LessonIntroCard />
 
       <Grid templateColumns={{ base: "1fr", lg: "1.5fr 1fr" }} gap={8}>
         {/* LEFT COLUMN */}

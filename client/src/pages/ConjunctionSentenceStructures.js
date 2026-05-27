@@ -1,13 +1,12 @@
 import React from "react";
 import { Box, Heading, Text, Grid, VStack } from "@chakra-ui/react";
-import { PageContainer, GameCard } from "../../components/ui";
+import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader } from "../components/ui";
 
 const ConjunctionSentenceStructures = () => {
   return (
     <PageContainer>
-      <GameCard mb={8} textAlign="center" bg="brand.500">
-        <Heading size="xl">🐸 Conjunction Sentence Structures</Heading>
-      </GameCard>
+      <LessonPageHeader icon="🐸" title="Conjunction Sentence Structures" />
+      <LessonIntroCard />
 
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
         {/* LEFT COLUMN */}

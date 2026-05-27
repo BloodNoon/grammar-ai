@@ -9,7 +9,7 @@ import {
   SimpleGrid,
   Flex,
 } from "@chakra-ui/react";
-import { PageContainer, GameCard } from "../components/ui";
+import { PageContainer, GameCard, LessonPageHeader } from "../components/ui";
 
 // Import the refactored wrappers
 import SortingGameWrapper from "../components/SortingGameWrapper";
@@ -54,7 +54,8 @@ const VerbPractice = () => {
 
   return (
     <PageContainer>
-      <GameCard mb={8} textAlign="center" bg="brand.500">
+      <LessonPageHeader icon="🎯" title="Verb Practice Games" />
+      <GameCard mb={8} textAlign="center" bg="brand.500" display="none">
         <Heading size="xl">🎯 Verb Practice Games</Heading>
         <Text fontSize="md" color="brand.900" mt={2} opacity={0.8}>
           Complete 15 questions with 100% accuracy in each game to master verbs!

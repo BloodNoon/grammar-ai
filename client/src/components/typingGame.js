@@ -11,7 +11,7 @@ const TypingGame = ({ question, onNext }) => {
     setInputValue("");
     setIsCorrect(null);
     setAttempts(0);
-    if (inputRef.current) inputRef.current.focus();
+    if (inputRef.current) inputRef.current.focus({ preventScroll: true });
   }, [question]);
 
   const checkAnswer = () => {

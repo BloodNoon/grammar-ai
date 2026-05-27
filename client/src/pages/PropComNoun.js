@@ -17,7 +17,7 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
-import { PageContainer, GameCard } from "../components/ui";
+import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader } from "../components/ui";
 
 export default function PropComNoun() {
   const history = useHistory();
@@ -28,9 +28,8 @@ export default function PropComNoun() {
 
   return (
     <PageContainer>
-      <GameCard mb={8} textAlign="center" bg="brand.500">
-        <Heading size="xl">🐸 Common & Proper Nouns</Heading>
-      </GameCard>
+      <LessonPageHeader icon="🐸" title="Common & Proper Nouns" />
+      <LessonIntroCard />
 
       <VStack spacing={8} maxW="1000px" mx="auto">
         <GameCard variant="game">

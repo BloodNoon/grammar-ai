@@ -15,6 +15,7 @@ import {
   OptionButton,
   FeedbackBanner,
   QuizSidebar,
+  LessonPageHeader,
 } from "../components/ui";
 import useQuiz from "../hooks/useQuiz";
 
@@ -33,9 +34,7 @@ const AdverbQuizPage = () => {
 
   return (
     <PageContainer>
-      <GameCard mb={8} textAlign="center" bg="brand.500">
-        <Heading size="lg">📝 Final Knowledge Check</Heading>
-      </GameCard>
+      <LessonPageHeader icon="📝" title="Final Knowledge Check" />
 
       <Grid templateColumns={{ base: "1fr", lg: "320px 1fr" }} gap={8}>
         <GridItem>
