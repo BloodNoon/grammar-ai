@@ -170,7 +170,7 @@ const VerbTenseStructure = () => {
   const checkSentence = () => {
     const sentence = sentenceArea.map((w) => w.text).join(" ");
     const verbAnalysis = analyzeVerbTenses(sentenceArea);
-    const isStructureValid = hasFullStructCheck(sentence); // General check without specific pattern
+    const isStructureValid = hasFullStructCheck(sentence);
 
     const overallValid = isStructureValid && verbAnalysis.isValidCombination;
     setTotalAttempts((prev) => prev + 1);
@@ -217,12 +217,21 @@ const VerbTenseStructure = () => {
   return (
     <PageContainer>
       <LessonPageHeader icon="🎬" title="Verb Forms and Usage" />
-      <LessonIntroCard />
 
       {/* Main 2-Column Grid */}
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
         {/* LEFT COLUMN: Lesson & Quiz */}
         <VStack align="stretch" spacing={6}>
+          {/* Learn The Lesson Box */}
+          <GameCard variant="game">
+            <Heading size="lg" color="ink.700" mb={2}>
+              Learn the Lesson
+            </Heading>
+            <Text fontSize="md" color="gray.600">
+              <strong>Directions:</strong> Read the explanation in the boxes, take notes, and watch the video(s).
+            </Text>
+          </GameCard>
+
           {/* Verb Education Section */}
           <GameCard variant="game">
             <Heading size="lg" color="ink.700" mb={4}>
