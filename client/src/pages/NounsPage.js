@@ -133,16 +133,11 @@ const NounsPage = () => {
 
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
         <VStack spacing={6} align="stretch">
-  
           {/* Learn the Lesson Box */}
-          <GameCard variant="game">
-            <Heading size="lg" color="ink.700" mb={2}>
-              Learn the Lesson
-            </Heading>
-            <Text fontSize="md" color="gray.600">
-              <strong>Directions:</strong> Read the explanation in the boxes, take notes, and watch the video(s).
-            </Text>
-          </GameCard>
+          <LessonIntroCard
+            title="Learn the Lesson"
+            directions="Directions: Read the explanation in the boxes, take notes, and watch the video(s)."
+          />
 
           {/* Nouns Lesson Box */}
           <GameCard variant="game">
