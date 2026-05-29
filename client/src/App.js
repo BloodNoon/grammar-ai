@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { Suspense } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,277 +14,63 @@ import LoadingFallback from "./components/LoadingFallback";
 import { Flex, Box } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 
-// default chunk
-const Home = lazy(
-  () => import(/* webpackChunkName: "default" */ "./pages/Home"),
-);
-const Dashboard = lazy(
-  () => import(/* webpackChunkName: "default" */ "./pages/Dashboard"),
-);
-const PracticeMenu = lazy(
-  () => import(/* webpackChunkName: "default" */ "./pages/PracticeMenu"),
-);
-const PromptList = lazy(
-  () => import(/* webpackChunkName: "default" */ "./pages/PromptList"),
-);
-const PromptOverview = lazy(
-  () => import(/* webpackChunkName: "default" */ "./pages/PromptOverview"),
-);
-const NounSortingGame = lazy(
-  () =>
-    import(/* webpackChunkName: "default" */ "./components/SortingGameWrapper"),
-);
-
-// auth chunk
-const Signup = lazy(
-  () => import(/* webpackChunkName: "auth" */ "./pages/Signup"),
-);
-const Login = lazy(
-  () => import(/* webpackChunkName: "auth" */ "./pages/Login"),
-);
-
-// sentence-checker chunk
-const SentenceStructures = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "sentence-checker" */ "./pages/SentenceStructure"
-    ),
-);
-const NounsPage = lazy(
-  () => import(/* webpackChunkName: "sentence-checker" */ "./pages/NounsPage"),
-);
-const Prep1Structure = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "sentence-checker" */ "./pages/Prep1Page/prep1Structure"
-    ),
-);
-const Prep2Structure = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "sentence-checker" */ "./pages/Prep2Page/prep2Structure"
-    ),
-);
-const Prep3Structure = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "sentence-checker" */ "./pages/Prep3Page/prep3Structure"
-    ),
-);
-const ConjunctionStructure = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "sentence-checker" */ "./pages/conjunctionStructure"
-    ),
-);
-const AdjectiveStructure = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "sentence-checker" */ "./pages/adjectivePage/adjectiveStructure"
-    ),
-);
-const AdverbStructure = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "sentence-checker" */ "./pages/adverbPage/adverbPage"
-    ),
-);
-const PluralNoun = lazy(
-  () => import(/* webpackChunkName: "sentence-checker" */ "./pages/pluralNoun"),
-);
-const PossessiveNouns = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "sentence-checker" */ "./pages/PossessiveNouns"
-    ),
-);
-const PropComNouns = lazy(
-  () =>
-    import(/* webpackChunkName: "sentence-checker" */ "./pages/PropComNoun"),
-);
-const AbPlurNoun = lazy(
-  () => import(/* webpackChunkName: "sentence-checker" */ "./pages/AbPlurNoun"),
-);
-const NounComponentTest = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "sentence-checker" */ "./pages/nounComponentTest"
-    ),
-);
-const NounQuizPageTest = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "sentence-checker" */ "./pages/nounQuizpageTest"
-    ),
-);
-
-// article chunk
-const ArticleStructure = lazy(
-  () => import(/* webpackChunkName: "article" */ "./pages/ArticleStructure"),
-);
-const ArticleGrammarLegend = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "article" */ "./pages/ArticleStructureComponents/ArticleGrammarLegend"
-    ),
-);
-const ArticleSentenceBuilder = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "article" */ "./pages/ArticleStructureComponents/ArticleSentenceBuilder"
-    ),
-);
-const ArticleLevelSelection = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "article" */ "./pages/ArticleStructureComponents/ArticleLevelSelection"
-    ),
-);
-const ArticleWordBank = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "article" */ "./pages/ArticleStructureComponents/ArticleWordbank"
-    ),
-);
-
-// verb-tense chunk
-const VerbTenseStructure = lazy(
-  () =>
-    import(/* webpackChunkName: "verb-tense" */ "./pages/VerbTenseStructure"),
-);
-const VerbGrammarLegend = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "verb-tense" */ "./pages/VerbTenseComponents/VerbGrammarLegend"
-    ),
-);
-const VerbSentenceBuilder = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "verb-tense" */ "./pages/VerbTenseComponents/VerbSentenceBuilder"
-    ),
-);
-const VerbLevelSelection = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "verb-tense" */ "./pages/VerbTenseComponents/VerbLevelSelection"
-    ),
-);
-const VerbWordBank = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "verb-tense" */ "./pages/VerbTenseComponents/VerbWordBank"
-    ),
-);
-
-// quiz chunk
-const AdjectiveQuizPage = lazy(
-  () => import(/* webpackChunkName: "quiz" */ "./pages/adjquiz"),
-);
-const AdverbQuizPage = lazy(
-  () => import(/* webpackChunkName: "quiz" */ "./pages/adverbQuiz"),
-);
-const VerbTenseQuizPage = lazy(
-  () => import(/* webpackChunkName: "quiz" */ "./pages/verbTenseQuiz"),
-);
-const ArticleQuizPage = lazy(
-  () => import(/* webpackChunkName: "quiz" */ "./pages/articleQuiz"),
-);
-const PrepositionQuizPage = lazy(
-  () => import(/* webpackChunkName: "quiz" */ "./pages/prepositionQuiz"),
-);
-const ConjunctionQuiz = lazy(
-  () => import(/* webpackChunkName: "quiz" */ "./pages/ConjunctionQuiz"),
-);
-
-// practice chunk
-const NounPractice = lazy(
-  () => import(/* webpackChunkName: "practice" */ "./pages/nounPractice"),
-);
-const VerbPractice = lazy(
-  () => import(/* webpackChunkName: "practice" */ "./pages/verbPractice"),
-);
-const ArticlePractice = lazy(
-  () => import(/* webpackChunkName: "practice" */ "./pages/articlePractice"),
-);
-const PrepositionPractice = lazy(
-  () =>
-    import(/* webpackChunkName: "practice" */ "./pages/prepositionPractice"),
-);
-const AdjectivePractice = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "practice" */ "./pages/adjectivePage/adjectivePractice"
-    ),
-);
-const AdverbPractice = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "practice" */ "./pages/adverbPage/adverbPractice"
-    ),
-);
-const ConjunctionPractice = lazy(
-  () =>
-    import(/* webpackChunkName: "practice" */ "./pages/conjunctionPractice"),
-);
-
-// adjective chunk
-const AdjectiveRoyalOrder = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "adjective" */ "./utils/SentenceChecker/AdjectiveRoyalOrder"
-    ),
-);
-const AdjectiveSentenceStructures = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "adjective" */ "./utils/SentenceChecker/AdjectiveSentenceStructures"
-    ),
-);
-const AdjectiveFillBlanks = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "adjective" */ "./utils/SentenceChecker/AdjectiveFillBlanks"
-    ),
-);
-
-// adverb chunk
-const AdverbTypes = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "adverb" */ "./utils/SentenceChecker/AdverbTypes"
-    ),
-);
-const AdverbTypeSorting = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "adverb" */ "./utils/SentenceChecker/AdverbTypeSorting"
-    ),
-);
-const AdverbForms = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "adverb" */ "./utils/SentenceChecker/AdverbForms"
-    ),
-);
-const AdverbRoyalOrder = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "adverb" */ "./utils/SentenceChecker/AdverbRoyalOrder"
-    ),
-);
-const AdverbSentenceStructures = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "adverb" */ "./utils/SentenceChecker/AdverbSentenceStructures"
-    ),
-);
-const AdverbIdentificationGame = lazy(
-  () =>
-    import(
-      /* webpackChunkName: "adverb" */ "./utils/SentenceChecker/AdverbIdentificationGame"
-    ),
-);
+// Lazy-loaded components imported from centralized lazyComponents definition
+import {
+  Home,
+  Dashboard,
+  PracticeMenu,
+  PromptList,
+  PromptOverview,
+  NounSortingGame,
+  Signup,
+  Login,
+  SentenceStructures,
+  NounsPage,
+  Prep1Structure,
+  Prep2Structure,
+  Prep3Structure,
+  ConjunctionStructure,
+  AdjectiveStructure,
+  AdverbStructure,
+  PluralNoun,
+  PossessiveNouns,
+  PropComNouns,
+  AbPlurNoun,
+  NounComponentTest,
+  NounQuizPageTest,
+  ArticleStructure,
+  ArticleGrammarLegend,
+  ArticleSentenceBuilder,
+  ArticleLevelSelection,
+  ArticleWordBank,
+  VerbTenseStructure,
+  VerbGrammarLegend,
+  VerbSentenceBuilder,
+  VerbLevelSelection,
+  VerbWordBank,
+  AdjectiveQuizPage,
+  AdverbQuizPage,
+  VerbTenseQuizPage,
+  ArticleQuizPage,
+  PrepositionQuizPage,
+  ConjunctionQuiz,
+  NounPractice,
+  VerbPractice,
+  ArticlePractice,
+  PrepositionPractice,
+  AdjectivePractice,
+  AdverbPractice,
+  ConjunctionPractice,
+  AdjectiveRoyalOrder,
+  AdjectiveSentenceStructures,
+  AdjectiveFillBlanks,
+  AdverbTypes,
+  AdverbTypeSorting,
+  AdverbForms,
+  AdverbRoyalOrder,
+  AdverbSentenceStructures,
+  AdverbIdentificationGame,
+} from "./lazyComponents";
 
 function AppLayout() {
   const location = useLocation();
