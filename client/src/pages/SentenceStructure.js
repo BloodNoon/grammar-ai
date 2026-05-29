@@ -146,11 +146,15 @@ const SentenceStructures = () => {
   return (
     <PageContainer>
       <LessonPageHeader icon="🐸" title="Sentence Structure Practice" />
-      <LessonIntroCard />
-
       <Grid templateColumns={{ base: "1fr", lg: "1.5fr 1fr" }} gap={8}>
         {/* LEFT COLUMN */}
         <VStack spacing={6} align="stretch">
+          {/* Learn the Lesson Box */}
+          <LessonIntroCard
+            title="Learn the Lesson"
+            directions="Directions: Read the explanation in the boxes, take notes, and watch the video(s)."
+          />
+
           {/* Lesson Card */}
           <GameCard variant="game">
             <Flex align="center" gap={4} mb={6}>

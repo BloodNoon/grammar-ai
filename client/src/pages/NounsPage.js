@@ -149,7 +149,7 @@ const NounsPage = () => {
               are the building blocks of every sentence you write!
             </Text>
 
-            <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={4}>
+            <SimpleGrid minChildWidth="240px" spacing={4}>
               {nounTypes.map((noun, idx) => (
                 <Flex
                   key={idx}
@@ -203,7 +203,7 @@ const NounsPage = () => {
               <em>"John drove John's car to John's house."</em>
             </Text>
 
-            <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={4}>
+            <SimpleGrid minChildWidth="240px" spacing={4}>
               {pronounTypes.map((pro, idx) => (
                 <Flex
                   key={idx}
@@ -251,10 +251,10 @@ const NounsPage = () => {
         {/* RIGHT COLUMN: Video & Sequential Practice */}
         {/* ========================================== */}
         <VStack spacing={6} align="stretch">
-          {/* THE VIDEO PANEL */}
+          {/* THE NOUNS VIDEO PANEL */}
           <GameCard variant="game" bg="gray.50">
             <Heading size="md" color="ink.700" mb={4}>
-              📹 Today's Lesson: Nouns & Pronouns
+              📹 Today's Lesson: Nouns
             </Heading>
 
             <Box
@@ -278,6 +278,31 @@ const NounsPage = () => {
             <Text mt={3} fontSize="sm" color="gray.500" fontStyle="italic">
               💡 Watch the lesson before practicing with the exercises below
             </Text>
+          </GameCard>
+
+          {/* THE PRONOUNS VIDEO PANEL */}
+          <GameCard variant="game" bg="gray.50">
+            <Heading size="md" color="ink.700" mb={4}>
+              📹 Today's Lesson: Pronouns
+            </Heading>
+
+            <Box
+              position="relative"
+              w="100%"
+              bg="black"
+              borderRadius="lg"
+              overflow="hidden"
+              borderWidth="1px"
+              borderColor="gray.300"
+            >
+              <video
+                controls
+                style={{ width: "100%", height: "480px", display: "block" }}
+              >
+                <source src="/Pronouns_vid.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </Box>
           </GameCard>
 
           <LessonIntroCard 

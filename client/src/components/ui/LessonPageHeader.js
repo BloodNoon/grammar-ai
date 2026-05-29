@@ -10,10 +10,7 @@ const LessonPageHeader = ({ children, title, icon, ...rest }) => {
       px={{ base: 5, md: 6 }}
       borderRadius="xl"
       w="fit-content"
-      maxW={{ base: "100%", lg: "calc(100vw - 2rem)" }}
       mb={8}
-      ml={{ base: 0, lg: "calc(-1 * max(0px, (100vw - var(--sidebar-width, 260px) - 1264px) / 2))" }}
-      transition="margin-left 0.3s ease"
       {...rest}
     >
       <Heading size="lg" color="brand.900" whiteSpace={{ base: "normal", md: "nowrap" }}>

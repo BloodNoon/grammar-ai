@@ -74,10 +74,14 @@ const PluralNoun = () => {
   return (
     <PageContainer>
       <LessonPageHeader icon="🐸" title="Plural Nouns & Spelling Rules" />
-      <LessonIntroCard />
-
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
         <VStack spacing={6} align="stretch">
+          {/* Learn the Lesson Box */}
+          <LessonIntroCard
+            title="Learn the Lesson"
+            directions="Directions: Read the explanation in the boxes, take notes, and watch the video(s)."
+          />
+
           <GameCard variant="game">
             <Heading size="lg" color="ink.700" mb={4}>
               How to Make Nouns Plural
@@ -89,7 +93,7 @@ const PluralNoun = () => {
               you must memorize!
             </Text>
 
-            <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={4}>
+            <SimpleGrid minChildWidth="240px" spacing={4}>
               {pluralRules.map((rule, idx) => (
                 <Flex
                   key={idx}
