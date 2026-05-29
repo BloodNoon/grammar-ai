@@ -104,7 +104,6 @@ const ConjunctionStructure = () => {
   return (
     <PageContainer>
       <LessonPageHeader icon="🐸" title="Conjunction Lessons" />
-      <LessonIntroCard />
 
       {showCongrats && (
         <GameCard
@@ -130,6 +129,12 @@ const ConjunctionStructure = () => {
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
         {/* LEFT COLUMN */}
         <VStack spacing={6} align="stretch">
+          {/* Learn the Lesson Box */}
+          <LessonIntroCard
+            title="Learn the Lesson"
+            directions="Directions: Read the explanation in the boxes, take notes, and watch the video(s)."
+          />
+
           <GameCard variant="game">
             <Heading size="lg" color="ink.700" mb={4}>
               1. Types of Conjunctions
@@ -389,11 +394,13 @@ const ConjunctionStructure = () => {
             </Text>
           </GameCard>
 
-          {/* Active Practice Card */}
+          {/* This is the new added section. */}
           <LessonIntroCard 
             title="Practice Makes Perfect" 
             directions="Directions: Complete each of the practice exercises to improve your grammar" 
           />
+
+          {/* Active Practice Card */}
           <GameCard variant="game">
             <Flex justify="space-between" align="center" mb={4}>
               <Heading size="md" color={practices[activePractice].color}>

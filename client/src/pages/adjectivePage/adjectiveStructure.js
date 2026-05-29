@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Heading, Text, Grid, VStack, Divider } from "@chakra-ui/react";
 import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader } from "../../components/ui";
-
 // ADJECTIVE COMPONENTS
 import AdjectiveLesson from "../../utils/SentenceChecker/AdjectiveLesson";
 import AdjectiveRoyalOrder from "../../utils/SentenceChecker/AdjectiveRoyalOrder";
@@ -16,22 +15,24 @@ const AdjectivePage = () => {
   return (
     <PageContainer>
       <LessonPageHeader icon="🐸" title="Adjective Lessons" />
-      <LessonIntroCard />
-
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
         {/* LEFT COLUMN */}
         <VStack spacing={6} align="stretch">
+          {/* Learn the Lesson Box */}
+          <LessonIntroCard
+            title="Learn the Lesson"
+            directions="Directions: Read the explanation in the boxes, take notes, and watch the video(s)."
+          />
+
           <GameCard variant="game">
             <AdjectiveLesson />
           </GameCard>
-
           <GameCard variant="game">
             <Heading size="md" color="blue.700" mb={4}>
               ✍️ Adjective Fill-in-the-Blank
             </Heading>
             <AdjectiveFillBlanks />
           </GameCard>
-
           <GameCard variant="game" bg="purple.50">
             <WordHunterGame
               questions={adjectivesData.filter(
@@ -40,7 +41,6 @@ const AdjectivePage = () => {
             />
           </GameCard>
         </VStack>
-
         {/* RIGHT COLUMN */}
         <VStack spacing={6} align="stretch">
           {/* THE VIDEO PANEL */}
@@ -48,7 +48,6 @@ const AdjectivePage = () => {
             <Heading size="md" color="ink.700" mb={4}>
               📹 Today's Lesson: Adjectives
             </Heading>
-
             <Box
               position="relative"
               w="100%"
@@ -66,12 +65,10 @@ const AdjectivePage = () => {
                 Your browser does not support the video tag.
               </video>
             </Box>
-
             <Text mt={3} fontSize="sm" color="gray.500" fontStyle="italic">
               💡 Watch the lesson before practicing with the exercises below
             </Text>
           </GameCard>
-
           <LessonIntroCard 
             title="Practice Makes Perfect" 
             directions="Directions: Complete each of the practice exercises to improve your grammar" 
@@ -88,7 +85,6 @@ const AdjectivePage = () => {
           </GameCard>
         </VStack>
       </Grid>
-
       <GameCard variant="game" mt={8}>
         <Heading size="xl" textAlign="center" mb={6} color="gray.700">
           🏆 Final Adjective Quiz
@@ -98,5 +94,4 @@ const AdjectivePage = () => {
     </PageContainer>
   );
 };
-
 export default AdjectivePage;
