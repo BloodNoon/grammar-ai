@@ -15,6 +15,7 @@ import {
   GameCard,
   LessonIntroCard,
   LessonPageHeader,
+  LessonVideoCard,
 } from "../components/ui";
 
 // Import our Interactive Components!
@@ -251,59 +252,12 @@ const NounsPage = () => {
         {/* RIGHT COLUMN: Video & Sequential Practice */}
         {/* ========================================== */}
         <VStack spacing={6} align="stretch">
-          {/* THE NOUNS VIDEO PANEL */}
-          <GameCard variant="game" bg="gray.50">
-            <Heading size="md" color="ink.700" mb={4}>
-              📹 Today's Lesson: Nouns
-            </Heading>
-
-            <Box
-              position="relative"
-              w="100%"
-              bg="black"
-              borderRadius="lg"
-              overflow="hidden"
-              borderWidth="1px"
-              borderColor="gray.300"
-            >
-              <video
-                controls
-                style={{ width: "100%", height: "480px", display: "block" }}
-              >
-                <source src="/Lesson1.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </Box>
-
-            <Text mt={3} fontSize="sm" color="gray.500" fontStyle="italic">
-              💡 Watch the lesson before practicing with the exercises below
-            </Text>
-          </GameCard>
-
-          {/* THE PRONOUNS VIDEO PANEL */}
-          <GameCard variant="game" bg="gray.50">
-            <Heading size="md" color="ink.700" mb={4}>
-              📹 Today's Lesson: Pronouns
-            </Heading>
-
-            <Box
-              position="relative"
-              w="100%"
-              bg="black"
-              borderRadius="lg"
-              overflow="hidden"
-              borderWidth="1px"
-              borderColor="gray.300"
-            >
-              <video
-                controls
-                style={{ width: "100%", height: "480px", display: "block" }}
-              >
-                <source src="/Pronouns_vid.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </Box>
-          </GameCard>
+          <LessonVideoCard 
+            videos={[
+              { src: "/Lesson1.mp4", title: "Nouns", subtitle: "💡 Watch the lesson before practicing with the exercises below" },
+              { src: "/Pronouns_vid.mp4", title: "Pronouns" }
+            ]} 
+          />
 
           <LessonIntroCard 
             title="Practice Makes Perfect" 

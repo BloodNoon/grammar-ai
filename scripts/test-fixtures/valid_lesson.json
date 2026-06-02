@@ -1,0 +1,61 @@
+[
+  {
+    "id": 1,
+    "step_type": "lesson",
+    "title": "Welcome to Nouns",
+    "content": "A noun is a person, place, thing, or idea.",
+    "media_url": "https://example.com/noun-intro.mp4",
+    "media_type": "video"
+  },
+  {
+    "id": 2,
+    "step_type": "select",
+    "question_text": "Choose the noun in the sentence: 'The cat slept.'",
+    "options": ["The", "cat", "slept"],
+    "answer": ["cat"],
+    "explanation": "'cat' is a thing/animal, so it is a noun.",
+    "select_mode": "single"
+  },
+  {
+    "id": 3,
+    "step_type": "select",
+    "question_text": "Put these adjectives in the correct Royal Order:",
+    "options": ["Size", "Opinion", "Color"],
+    "answer": ["Opinion", "Size", "Color"],
+    "explanation": "Opinion comes before Size, which comes before Color.",
+    "select_mode": "order"
+  },
+  {
+    "id": 4,
+    "step_type": "type",
+    "prompt_text": "Type the plural form of 'dog'.",
+    "answer": ["dogs"],
+    "explanation": "To make 'dog' plural, we add -s.",
+    "case_sensitive": false
+  },
+  {
+    "id": 5,
+    "step_type": "sort",
+    "instructions": "Sort these nouns into Common and Proper categories:",
+    "items": [
+      { "word": "london", "category": "Proper" },
+      { "word": "city", "category": "Common" }
+    ],
+    "categories": ["Common", "Proper"],
+    "explanation": "'london' is a specific city, so it is Proper. 'city' is generic, so it is Common."
+  },
+  {
+    "id": 6,
+    "step_type": "build",
+    "instructions": "Build the sentence using all words in the bank:",
+    "target": "The dog barked.",
+    "word_bank": ["The", "dog", "barked"],
+    "allow_extra": false,
+    "explanation": "'The dog barked.' is the correct sentence order."
+  },
+  {
+    "id": "sandbox-1",
+    "step_type": "component",
+    "props": { "startActive": true }
+  }
+]

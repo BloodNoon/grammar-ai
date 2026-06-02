@@ -14,7 +14,7 @@ import {
   Thead,
   Button,
 } from "@chakra-ui/react";
-import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader } from "../../components/ui";
+import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader, LessonVideoCard } from "../../components/ui";
 
 // PREP2 COMPONENTS
 import PrepositionPhraseLesson from "../../utils/SentenceChecker/PrepositionPhraseLesson";
@@ -156,34 +156,10 @@ const Prep2Structure = () => {
 
         {/* RIGHT COLUMN */}
         <VStack spacing={6} align="stretch">
-          {/* THE VIDEO PANEL */}
-          <GameCard variant="game" bg="gray.50" textAlign="center">
-            <Heading size="md" color="ink.700" mb={4}>
-              📹 Today's Lesson
-            </Heading>
-
-            <Box
-              position="relative"
-              w="100%"
-              bg="black"
-              borderRadius="lg"
-              overflow="hidden"
-              borderWidth="1px"
-              borderColor="gray.300"
-            >
-              <video
-                controls
-                style={{ width: "100%", height: "580px", display: "block" }}
-              >
-                <source src="/PrepPhrase.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </Box>
-
-            <Text mt={3} fontSize="sm" color="gray.500" fontStyle="italic">
-              💡 Watch the lesson before practicing with the exercises below
-            </Text>
-          </GameCard>
+          <LessonVideoCard 
+            videos="/PrepPhrase.mp4"
+            subtitle="💡 Watch the lesson before practicing with the exercises below"
+          />
 
           {/* Active Practice Card */}
           <LessonIntroCard 

@@ -14,7 +14,7 @@ import {
   Thead,
   Button,
 } from "@chakra-ui/react";
-import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader } from "../../components/ui";
+import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader, LessonVideoCard } from "../../components/ui";
 
 // PREP1 COMPONENTS
 import PrepositionSorter from "../../utils/SentenceChecker/PrepositionSorter";
@@ -232,41 +232,14 @@ const Prep1Structure = () => {
 
         {/* RIGHT COLUMN */}
         <VStack spacing={6} align="stretch">
-          {/* THE  PANEL */}
-          <GameCard variant="game" bg="gray.50" textAlign="center">
-            <Heading size="md" color="ink.700" mb={4}>
-              📹 Today's Lesson: Prepositions
-            </Heading>
-
-            <Box
-              position="relative"
-              w="100%"
-              bg="black"
-              borderRadius="lg"
-              overflow="hidden"
-              borderWidth="1px"
-              borderColor="gray.300"
-            >
-              <video
-                controls
-                style={{ width: "100%", height: "480px", display: "block" }}
-              >
-                <source src="/Lesson6.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>  
-                <video
-                controls
-                style={{ width: "100%", height: "480px", display: "block" }}
-              >
-                <source src="/prepositions-(revised).mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </Box>
-
-            <Text mt={3} fontSize="sm" color="gray.500" fontStyle="italic">
-              💡 Watch the lesson before practicing with the exercises below
-            </Text>
-          </GameCard>
+          <LessonVideoCard 
+            title="Prepositions"
+            videos={[
+              "/Lesson6.mp4",
+              "/prepositions-(revised).mp4"
+            ]}
+            subtitle="💡 Watch the lesson before practicing with the exercises below"
+          />
 
           {/* Active Practice Card */}
           <LessonIntroCard 

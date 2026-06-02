@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "step_type": "sort",
+    "instructions": "Sort nouns:",
+    "items": [
+      { "word": "london", "category": "Proper" },
+      { "word": "city", "category": "IncorrectCategory" }
+    ],
+    "categories": ["Common", "Proper"],
+    "explanation": "Category mismatch test."
+  }
+]

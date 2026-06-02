@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "step_type": "build",
+    "instructions": "Build sentence:",
+    "target": "The dog barked.",
+    "word_bank": ["The", "dog", "jumped"],
+    "allow_extra": false,
+    "explanation": "Target word missing from word bank test."
+  }
+]

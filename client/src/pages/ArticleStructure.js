@@ -1,7 +1,7 @@
 //Main webpage of the Article Structure with lesson2 styling
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { Box, Heading, Text, Grid, VStack, Divider } from "@chakra-ui/react";
-import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader } from "../components/ui";
+import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader, LessonVideoCard } from "../components/ui";
 import {
   hasFullStructCheck,
   getFullStructCheck,
@@ -631,39 +631,11 @@ const ArticleStructure = () => {
 
         {/* RIGHT COLUMN */}
         <VStack spacing={6} align="stretch">
-          {/* THE VIDEO PANEL */}
-          <GameCard variant="game" bg="gray.50">
-            <Heading size="md" color="ink.700" mb={4}>
-              📹 Today's Lesson: Articles
-            </Heading>
-
-            <Box
-              position="relative"
-              w="100%"
-              bg="black"
-              borderRadius="lg"
-              overflow="hidden"
-              borderWidth="1px"
-              borderColor="gray.300"
-            >
-              <video
-                controls
-                style={{ width: "100%", height: "580px", display: "block" }}
-              >
-                <source src="/Lesson3.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </Box>
-
-            <Text mt={3} fontSize="sm" color="gray.500" fontStyle="italic">
-              💡 Watch the lesson before practicing with the exercises below
-            </Text>
-            <Text mt={2} fontSize="sm" textAlign="center">
-              <a href="/Lesson3.mp4" download style={{ color: "blue.500" }}>
-                Click here to download the video
-              </a>
-            </Text>
-          </GameCard>
+          <LessonVideoCard 
+            title="Articles"
+            videos="/Lesson3.mp4"
+            subtitle="💡 Watch the lesson before practicing with the exercises below"
+          />
 
           <LessonIntroCard 
             title="Practice Makes Perfect" 

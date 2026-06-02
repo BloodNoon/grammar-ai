@@ -12,7 +12,7 @@ import {
   Td,
   Button,
 } from "@chakra-ui/react";
-import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader } from "../../components/ui";
+import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader, LessonVideoCard } from "../../components/ui";
 
 // PREP3 COMPONENTS
 import SentenceScramble from "../../utils/SentenceChecker/SentenceScramble";
@@ -180,34 +180,10 @@ const Prep3Structure = () => {
 
         {/* RIGHT COLUMN */}
         <VStack spacing={6} align="stretch">
-          {/* THE VIDEO PANEL */}
-          <GameCard variant="game" bg="gray.50" textAlign="center">
-            <Heading size="md" color="ink.700" mb={4}>
-              📹 Today's Lesson
-            </Heading>
-
-            <Box
-              position="relative"
-              w="100%"
-              bg="black"
-              borderRadius="lg"
-              overflow="hidden"
-              borderWidth="1px"
-              borderColor="gray.300"
-            >
-              <video
-                controls
-                style={{ width: "100%", height: "580px", display: "block" }}
-              >
-                <source src="/Lesson8.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </Box>
-
-            <Text mt={3} fontSize="sm" color="gray.500" fontStyle="italic">
-              💡 Watch the lesson before practicing with the exercises below
-            </Text>
-          </GameCard>
+          <LessonVideoCard 
+            videos="/Lesson8.mp4"
+            subtitle="💡 Watch the lesson before practicing with the exercises below"
+          />
 
           {/* Active Practice Card */}
           <LessonIntroCard 
