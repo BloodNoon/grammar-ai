@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Box, Heading, Text, Flex, VStack, Grid } from "@chakra-ui/react";
-import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader } from "../components/ui";
+import { PageContainer, GameCard, LessonIntroCard, LessonPageHeader, LessonVideoCard } from "../components/ui";
 import { hasFullStructCheck } from "../utils/SentenceChecker/StructureChecker";
 
 // Import essential verb components
@@ -321,34 +321,11 @@ const VerbTenseStructure = () => {
 
         {/* RIGHT COLUMN: Video & Builder */}
         <VStack align="stretch" spacing={6}>
-          {/* Video Panel */}
-          <GameCard variant="game" bg="gray.50">
-            <Heading size="md" color="ink.700" mb={4}>
-              📹 Today's Lesson: Verb Tenses
-            </Heading>
-
-            <Box
-              position="relative"
-              w="100%"
-              bg="black"
-              borderRadius="lg"
-              overflow="hidden"
-              borderWidth="1px"
-              borderColor="gray.300"
-            >
-              <video
-                controls
-                style={{ width: "100%", height: "580px", display: "block" }}
-              >
-                <source src="/lesson2.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </Box>
-
-            <Text mt={3} fontSize="sm" color="gray.500" fontStyle="italic">
-              💡 Watch the lesson before practicing with the exercises below
-            </Text>
-          </GameCard>
+          <LessonVideoCard 
+            title="Verb Tenses"
+            videos="/lesson2.mp4"
+            subtitle="💡 Watch the lesson before practicing with the exercises below"
+          />
 
           {/* Interactive Builder */}
           <LessonIntroCard 

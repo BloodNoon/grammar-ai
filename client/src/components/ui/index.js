@@ -8,3 +8,4 @@ export { default as ProgressBar } from "./ProgressBar";
 export { default as StatCard } from "./StatCard";
 export { default as LessonIntroCard } from "./LessonIntroCard";
 export { default as LessonPageHeader } from "./LessonPageHeader";
+export { default as LessonVideoCard } from "./LessonVideoCard";

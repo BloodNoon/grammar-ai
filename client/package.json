@@ -39,7 +39,8 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"win-start": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start"
+		"win-start": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+		"validate-lessons": "node ../scripts/validate-lessons.js"
 	},
 	"eslintConfig": {
 		"extends": [

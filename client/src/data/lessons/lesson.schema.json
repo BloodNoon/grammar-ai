@@ -1,0 +1,132 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Lesson Schema",
+  "description": "Schema for lesson steps in StudentsWriting",
+  "type": "array",
+  "items": {
+    "anyOf": [
+      { "$ref": "#/definitions/lesson_step" },
+      { "$ref": "#/definitions/select_step" },
+      { "$ref": "#/definitions/type_step" },
+      { "$ref": "#/definitions/sort_step" },
+      { "$ref": "#/definitions/build_step" },
+      { "$ref": "#/definitions/component_step" }
+    ]
+  },
+  "definitions": {
+    "lesson_step": {
+      "type": "object",
+      "properties": {
+        "id": { "type": ["string", "integer"] },
+        "step_type": { "const": "lesson" },
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "media_url": { "type": "string" },
+        "media_type": { "type": "string", "enum": ["video", "image", "none"] }
+      },
+      "required": ["id", "step_type", "title", "content"],
+      "additionalProperties": false
+    },
+    "select_step": {
+      "type": "object",
+      "properties": {
+        "id": { "type": ["string", "integer"] },
+        "step_type": { "const": "select" },
+        "question_text": { "type": "string" },
+        "options": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 2,
+          "uniqueItems": true
+        },
+        "answer": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "explanation": { "type": "string" },
+        "select_mode": { "type": "string", "enum": ["single", "multi", "order"] },
+        "hint": { "type": "string" }
+      },
+      "required": ["id", "step_type", "question_text", "options", "answer", "explanation", "select_mode"],
+      "additionalProperties": false
+    },
+    "type_step": {
+      "type": "object",
+      "properties": {
+        "id": { "type": ["string", "integer"] },
+        "step_type": { "const": "type" },
+        "prompt_text": { "type": "string" },
+        "answer": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "hint": { "type": "string" },
+        "explanation": { "type": "string" },
+        "case_sensitive": { "type": "boolean" }
+      },
+      "required": ["id", "step_type", "prompt_text", "answer", "explanation"],
+      "additionalProperties": false
+    },
+    "sort_step": {
+      "type": "object",
+      "properties": {
+        "id": { "type": ["string", "integer"] },
+        "step_type": { "const": "sort" },
+        "instructions": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "word": { "type": "string" },
+              "category": { "type": "string" }
+            },
+            "required": ["word", "category"],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "categories": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 2,
+          "uniqueItems": true
+        },
+        "explanation": { "type": "string" }
+      },
+      "required": ["id", "step_type", "instructions", "items", "categories", "explanation"],
+      "additionalProperties": false
+    },
+    "build_step": {
+      "type": "object",
+      "properties": {
+        "id": { "type": ["string", "integer"] },
+        "step_type": { "const": "build" },
+        "instructions": { "type": "string" },
+        "target": { "type": "string" },
+        "word_bank": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 2
+        },
+        "allow_extra": { "type": "boolean" },
+        "explanation": { "type": "string" },
+        "hint": { "type": "string" }
+      },
+      "required": ["id", "step_type", "instructions", "target", "word_bank", "allow_extra", "explanation"],
+      "additionalProperties": false
+    },
+    "component_step": {
+      "type": "object",
+      "properties": {
+        "id": { "type": ["string", "integer"] },
+        "step_type": { "const": "component" },
+        "props": { "type": "object" }
+      },
+      "required": ["id", "step_type"],
+      "additionalProperties": false
+    }
+  }
+}

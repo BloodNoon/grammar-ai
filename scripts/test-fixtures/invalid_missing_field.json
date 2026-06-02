@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "step_type": "select",
+    "question_text": "Identify the noun:",
+    "options": ["dog", "run"],
+    "answer": ["dog"],
+    "explanation": "'dog' is a noun."
+  }
+]
