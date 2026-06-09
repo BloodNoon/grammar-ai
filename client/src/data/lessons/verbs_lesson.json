@@ -1,0 +1,219 @@
+[
+  {
+    "step_type": "lesson",
+    "title": "What is a Verb?",
+    "content": "A verb is a word that expresses an action, occurrence, or state of being. Every complete sentence must have a verb. Verbs can describe physical actions (run, jump), mental actions (think, believe), or states (is, seem, become).",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Present Tenses",
+    "content": "Present Simple describes habits and general truths: 'She walks the dog every morning.' Present Continuous describes actions happening right now: 'The cat is sleeping on the windowsill.' Use 'is/am/are + verb-ing' for present continuous.",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Past Tenses",
+    "content": "Past Simple describes completed actions: 'They finished their homework yesterday.' Past Continuous describes ongoing past actions, often interrupted: 'She was cooking dinner when I called.' Past Perfect describes actions completed before another past action: 'They had gone to the store before it closed.'",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Future Tenses",
+    "content": "Future Simple describes actions that will happen: 'He will sing at the concert tomorrow.' Future Continuous describes ongoing future actions: 'He will be singing at the concert.' Future Perfect describes actions that will be completed before a future point: 'By next year, I will have finished my degree.' Present Continuous can also describe planned future actions: 'We are going to Paris next summer.'",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Present Perfect",
+    "content": "Present Perfect connects a past action to the present moment. Use 'have/has + past participle.' Use it for: experiences ('We have seen this movie before'), recent actions with present consequences ('I have lost my keys'), and actions in an unfinished time period ('He has drunk three cups of coffee today').",
+    "media_url": null
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Present Tense",
+    "prompt_text": "She _____ the dog every morning. (Present Simple or Continuous)",
+    "answer": [
+      "walks",
+      "is walking"
+    ],
+    "hint": "Present Simple or Present Continuous.",
+    "explanation": "Use 'walks' for a habitual action or 'is walking' for an action happening right now.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Past Simple",
+    "prompt_text": "They _____ their homework yesterday.",
+    "answer": [
+      "finished",
+      "completed"
+    ],
+    "hint": "Past Simple.",
+    "explanation": "Use past simple tense for completed actions in the past.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Future Tense",
+    "prompt_text": "He _____ at the concert tomorrow.",
+    "answer": [
+      "will sing",
+      "will be singing"
+    ],
+    "hint": "Future Simple or Future Continuous.",
+    "explanation": "Use 'will sing' or 'will be singing' for future actions.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Present Perfect",
+    "prompt_text": "We _____ this movie before.",
+    "answer": [
+      "have seen",
+      "have watched"
+    ],
+    "hint": "Present Perfect.",
+    "explanation": "Use present perfect for experiences or actions with present relevance.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Past Continuous",
+    "prompt_text": "She _____ dinner when I called.",
+    "answer": [
+      "was cooking",
+      "was making",
+      "was preparing"
+    ],
+    "hint": "Past Continuous.",
+    "explanation": "Use past continuous for ongoing actions interrupted by another action.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Future Perfect",
+    "prompt_text": "By next year, I _____ my degree.",
+    "answer": [
+      "will have finished",
+      "will have completed"
+    ],
+    "hint": "Future Perfect.",
+    "explanation": "Use future perfect for actions that will be completed before a future point in time.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Present Continuous",
+    "prompt_text": "The cat _____ on the windowsill right now.",
+    "answer": [
+      "is sleeping",
+      "is lying",
+      "is sitting"
+    ],
+    "hint": "Present Continuous.",
+    "explanation": "Use present continuous for actions happening at the moment of speaking.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Past Perfect",
+    "prompt_text": "They _____ to the store before it closed.",
+    "answer": [
+      "had gone",
+      "had walked",
+      "had driven"
+    ],
+    "hint": "Past Perfect.",
+    "explanation": "Use past perfect for actions completed before another past action.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Present Perfect",
+    "prompt_text": "I _____ my keys somewhere in the house.",
+    "answer": [
+      "have lost",
+      "have left",
+      "have misplaced"
+    ],
+    "hint": "Present Perfect.",
+    "explanation": "Use present perfect for recent actions with present consequences.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Present Tense",
+    "prompt_text": "The children _____ outside every afternoon.",
+    "answer": [
+      "play",
+      "are playing"
+    ],
+    "hint": "Present Simple or Present Continuous.",
+    "explanation": "Use present simple for habits or present continuous for current actions.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Past Continuous",
+    "prompt_text": "She _____ a letter when the phone rang.",
+    "answer": [
+      "was writing",
+      "was typing"
+    ],
+    "hint": "Past Continuous.",
+    "explanation": "Use past continuous for ongoing past actions interrupted by another action.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Future Tense",
+    "prompt_text": "We _____ to Paris next summer.",
+    "answer": [
+      "will travel",
+      "will go",
+      "will fly",
+      "are going"
+    ],
+    "hint": "Future Simple or Present Continuous for future.",
+    "explanation": "Use future tense or present continuous for planned future actions.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Present Perfect",
+    "prompt_text": "He _____ three cups of coffee today.",
+    "answer": [
+      "has drunk",
+      "has had"
+    ],
+    "hint": "Present Perfect.",
+    "explanation": "Use present perfect for actions completed within a time period that includes now.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Future Perfect",
+    "prompt_text": "The students _____ their presentation by tomorrow.",
+    "answer": [
+      "will have prepared",
+      "will have finished"
+    ],
+    "hint": "Future Perfect.",
+    "explanation": "Use future perfect for actions that will be completed before a future deadline.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Past Continuous",
+    "prompt_text": "She _____ to work when it started raining.",
+    "answer": [
+      "was walking",
+      "was driving",
+      "was going"
+    ],
+    "hint": "Past Continuous.",
+    "explanation": "Use past continuous for ongoing actions interrupted by another event.",
+    "case_sensitive": false
+  }
+]
