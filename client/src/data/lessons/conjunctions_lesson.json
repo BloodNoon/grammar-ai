@@ -1,0 +1,201 @@
+[
+  {
+    "step_type": "lesson",
+    "title": "What is a Conjunction?",
+    "content": "A conjunction is a word that connects words, phrases, or clauses together. There are three main types: Coordinating, Subordinating, and Correlative conjunctions. Each type creates a different kind of relationship between the parts it joins.",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Coordinating Conjunctions (FANBOYS)",
+    "content": "Coordinating conjunctions join two independent clauses of equal importance. Remember them with the acronym FANBOYS: For, And, Nor, But, Or, Yet, So. When joining two independent clauses, place a comma before the conjunction: 'I wanted to play outside, but it started to rain.'",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Subordinating Conjunctions (AWUBIS)",
+    "content": "Subordinating conjunctions join a dependent clause to an independent clause, creating a complex sentence. Common ones include: Although, When, Until, Because, If, Since (AWUBIS). Comma rule: if the dependent clause comes FIRST (front-loaded), use a comma after it: 'Because the dog is playful, the cat is quiet.' If the dependent clause comes SECOND, no comma is needed: 'We will go to the beach if the weather is nice.'",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Correlative Conjunctions",
+    "content": "Correlative conjunctions work in pairs to join equal elements in a sentence. Common pairs: Both...and ('Both Sarah and Tom came'), Either...or ('Either you leave or I will'), Neither...nor ('Neither the cat nor the dog ate'), Not only...but also ('Not only did she win, but she also broke the record'). The elements joined by each pair must be grammatically parallel.",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Comma Rules with Conjunctions",
+    "content": "The comma rules are one of the trickiest parts of conjunctions. Rule 1: FANBOYS joining two independent clauses → comma before the conjunction: 'I like tea, and she likes coffee.' Rule 2: Subordinating conjunction front-loaded → comma after the dependent clause: 'Although it was late, we kept working.' Rule 3: Subordinating conjunction in the middle → no comma: 'We kept working although it was late.'",
+    "media_url": null
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Conjunction Types",
+    "instructions": "Drag each conjunction into the correct category: Coordinating, Subordinating, or Correlative.",
+    "items": [
+      {
+        "word": "and",
+        "category": "Coordinating"
+      },
+      {
+        "word": "because",
+        "category": "Subordinating"
+      },
+      {
+        "word": "Both... and",
+        "category": "Correlative"
+      },
+      {
+        "word": "although",
+        "category": "Subordinating"
+      },
+      {
+        "word": "but",
+        "category": "Coordinating"
+      },
+      {
+        "word": "Either... or",
+        "category": "Correlative"
+      },
+      {
+        "word": "if",
+        "category": "Subordinating"
+      },
+      {
+        "word": "so",
+        "category": "Coordinating"
+      },
+      {
+        "word": "Not only... but also",
+        "category": "Correlative"
+      }
+    ],
+    "categories": [
+      "Coordinating",
+      "Subordinating",
+      "Correlative"
+    ],
+    "explanation": "FANBOYS are coordinating. AWUBIS words are subordinating. Paired conjunctions like Both...and are correlative."
+  },
+  {
+    "step_type": "select",
+    "title": "Comma or No Comma: Front-loaded",
+    "question_text": "___ it was raining, we stayed inside.",
+    "options": [
+      "Because",
+      "Because,"
+    ],
+    "answer": [
+      "Because"
+    ],
+    "explanation": "When front-loading a subordinating conjunction, the comma goes at the end of the dependent clause — not right after the conjunction itself.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Comma or No Comma: FANBOYS",
+    "question_text": "I wanted to go to the park ___ it started raining.",
+    "options": [
+      "but",
+      ", but"
+    ],
+    "answer": [
+      ", but"
+    ],
+    "explanation": "'But' is a coordinating conjunction (FANBOYS) joining two independent clauses, so it needs a comma before it.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Comma or No Comma: Middle Position",
+    "question_text": "We will go to the beach ___ the weather is nice.",
+    "options": [
+      "if",
+      ", if"
+    ],
+    "answer": [
+      "if"
+    ],
+    "explanation": "When a subordinating conjunction appears in the middle of a sentence, you do NOT need a comma.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Comma or No Comma: Front-loaded",
+    "question_text": "___ the dog is playfully happy, the cat is quietly content.",
+    "options": [
+      "Although",
+      "Although,"
+    ],
+    "answer": [
+      "Although"
+    ],
+    "explanation": "The comma belongs between the two clauses, not right after 'Although'.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "build",
+    "title": "Build: Front-loaded Complex Sentence",
+    "instructions": "Click the words in the correct order to build the sentence. Don't forget the comma!",
+    "target": "Because the dog is playful , the cat is quiet .",
+    "word_bank": [
+      "Because",
+      "the dog is playful",
+      ",",
+      "the cat is quiet",
+      "."
+    ],
+    "required_words": [
+      "Because",
+      "the dog is playful",
+      ",",
+      "the cat is quiet",
+      "."
+    ],
+    "allow_extra": false,
+    "explanation": "When a subordinating conjunction is front-loaded, the dependent clause is followed by a comma before the independent clause."
+  },
+  {
+    "step_type": "build",
+    "title": "Build: FANBOYS Conjunction in the Middle",
+    "instructions": "Click the words in the correct order to build the sentence.",
+    "target": "I wanted to play outside , but it started to rain .",
+    "word_bank": [
+      "I wanted to play outside",
+      ",",
+      "but",
+      "it started to rain",
+      "."
+    ],
+    "required_words": [
+      "I wanted to play outside",
+      ",",
+      "but",
+      "it started to rain",
+      "."
+    ],
+    "allow_extra": false,
+    "explanation": "'But' is a FANBOYS conjunction joining two independent clauses. A comma always comes before FANBOYS in this position."
+  },
+  {
+    "step_type": "build",
+    "title": "Build: Subordinating Conjunction in the Middle",
+    "instructions": "Click the words in the correct order to build the sentence.",
+    "target": "We stayed inside since the storm was bad .",
+    "word_bank": [
+      "We stayed inside",
+      "since",
+      "the storm was bad",
+      "."
+    ],
+    "required_words": [
+      "We stayed inside",
+      "since",
+      "the storm was bad",
+      "."
+    ],
+    "allow_extra": false,
+    "explanation": "When a subordinating conjunction appears in the middle of a sentence, no comma is needed before it."
+  }
+]
