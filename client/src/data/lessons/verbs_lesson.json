@@ -215,5 +215,2077 @@
     "hint": "Past Continuous.",
     "explanation": "Use past continuous for ongoing actions interrupted by another event.",
     "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Action Verb",
+    "question_text": "Which word is the Action Verb? 'The intern refactored the legacy code.'",
+    "options": [
+      "intern",
+      "refactored",
+      "legacy",
+      "code"
+    ],
+    "answer": [
+      "refactored"
+    ],
+    "explanation": "'Refactored' is the action being performed on the code.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Linking Verb",
+    "instructions": "Place 'became' in the correct verb category.",
+    "items": [
+      {
+        "word": "became",
+        "category": "Linking Verb"
+      }
+    ],
+    "categories": [
+      "Linking Verb"
+    ],
+    "explanation": "'Became' links the subject to a new state or identity."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Helping Verb",
+    "prompt_text": "In the sentence 'I am building a website,' which word is the helping verb?",
+    "answer": [
+      "am"
+    ],
+    "hint": "It helps the main verb 'building' show that the action is happening now.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Past Tense",
+    "prompt_text": "Type the past tense of the verb 'teach'.",
+    "answer": [
+      "taught"
+    ],
+    "hint": "This is an irregular verb.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Action Verb",
+    "instructions": "Place 'bakes' in the correct verb category.",
+    "items": [
+      {
+        "word": "bakes",
+        "category": "Action Verb"
+      }
+    ],
+    "categories": [
+      "Action Verb"
+    ],
+    "explanation": "Baking is a physical action."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Future Tense",
+    "question_text": "Which sentence uses the Future Tense correctly?",
+    "options": [
+      "I code yesterday.",
+      "I am coding now.",
+      "I will code tomorrow.",
+      "I coded already."
+    ],
+    "answer": [
+      "I will code tomorrow."
+    ],
+    "explanation": "The helping verb 'will' signals a future action.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Helping Verb",
+    "instructions": "Place 'could' in the correct verb category.",
+    "items": [
+      {
+        "word": "could",
+        "category": "Helping Verb"
+      }
+    ],
+    "categories": [
+      "Helping Verb"
+    ],
+    "explanation": "'Could' is a modal helping verb that expresses possibility."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Present Tense",
+    "prompt_text": "Type the present tense of 'to be' for the subject 'They'.",
+    "answer": [
+      "are"
+    ],
+    "hint": "They ____ students at City Tech.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Action Verb",
+    "question_text": "Identify the Action Verb: 'She practiced the bass guitar for two hours.'",
+    "options": [
+      "She",
+      "practiced",
+      "bass",
+      "hours"
+    ],
+    "answer": [
+      "practiced"
+    ],
+    "explanation": "'Practiced' is the physical act of playing the instrument.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Linking Verb",
+    "prompt_text": "Type the linking verb: 'The weather feels very hot today.'",
+    "answer": [
+      "feels"
+    ],
+    "hint": "It connects 'weather' to how it 'feels'.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Helping Verb",
+    "question_text": "Identify the helping verb: 'I will host my media on a new 5-bay docking station.'",
+    "options": [
+      "will",
+      "host",
+      "media",
+      "station"
+    ],
+    "answer": [
+      "will"
+    ],
+    "explanation": "'Will' places the action 'host' in the future.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Past Tense",
+    "instructions": "Place 'bought' in the correct verb category.",
+    "items": [
+      {
+        "word": "bought",
+        "category": "Past Tense"
+      }
+    ],
+    "categories": [
+      "Past Tense"
+    ],
+    "explanation": "'Bought' is the irregular past tense of 'buy'."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Action Verb",
+    "prompt_text": "Type the action verb: 'The developer updated the Chakra UI components.'",
+    "answer": [
+      "updated"
+    ],
+    "hint": "What did the developer do to the components?",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Continuous Tense",
+    "question_text": "Which sentence is in the Continuous Tense?",
+    "options": [
+      "I bake cookies.",
+      "I baked cookies.",
+      "I am baking cookies.",
+      "I will bake cookies."
+    ],
+    "answer": [
+      "I am baking cookies."
+    ],
+    "explanation": "The 'am' + '-ing' form indicates an action in progress.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Linking Verb",
+    "instructions": "Place 'is' in the correct verb category.",
+    "items": [
+      {
+        "word": "is",
+        "category": "Linking Verb"
+      }
+    ],
+    "categories": [
+      "Linking Verb"
+    ],
+    "explanation": "'Is' connects the subject to a state of being."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Helping Verb",
+    "prompt_text": "Type the helping verb: 'He has finished his homework.'",
+    "answer": [
+      "has"
+    ],
+    "hint": "It comes before the main verb 'finished'.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Action Verb",
+    "instructions": "Place 'climb' in the correct verb category.",
+    "items": [
+      {
+        "word": "climb",
+        "category": "Action Verb"
+      }
+    ],
+    "categories": [
+      "Action Verb"
+    ],
+    "explanation": "'Climb' represents a physical movement or action."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Past Tense",
+    "question_text": "Select the correct past tense: 'Last night, we ___ a movie.'",
+    "options": [
+      "watch",
+      "watches",
+      "watched",
+      "watching"
+    ],
+    "answer": [
+      "watched"
+    ],
+    "explanation": "For regular verbs, we usually add '-ed' to show the past tense.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Present Tense",
+    "prompt_text": "Type the present tense: 'She ___ her bass guitar every day.'",
+    "answer": [
+      "plays"
+    ],
+    "hint": "The subject is singular (She).",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Helping Verb",
+    "instructions": "Place 'should' in the correct verb category.",
+    "items": [
+      {
+        "word": "should",
+        "category": "Helping Verb"
+      }
+    ],
+    "categories": [
+      "Helping Verb"
+    ],
+    "explanation": "'Should' is a helping verb used to show a suggestion or requirement."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Irregular Verb",
+    "prompt_text": "Type the past tense of the verb 'go'.",
+    "answer": [
+      "went"
+    ],
+    "hint": "It does NOT end in -ed!",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Helping Verb",
+    "instructions": "Place 'could' in the correct verb category.",
+    "items": [
+      {
+        "word": "could",
+        "category": "Helping Verb"
+      }
+    ],
+    "categories": [
+      "Helping Verb"
+    ],
+    "explanation": "'Could' is a helping verb that shows a past ability or a possibility."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Action Verb",
+    "question_text": "Identify the action verb: 'The teacher explained the difference between nouns and verbs.'",
+    "options": [
+      "teacher",
+      "explained",
+      "difference",
+      "between"
+    ],
+    "answer": [
+      "explained"
+    ],
+    "explanation": "'Explained' is the action of speaking or teaching.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Linking Verb",
+    "prompt_text": "Type the linking verb: 'This new laptop is extremely fast.'",
+    "answer": [
+      "is"
+    ],
+    "hint": "It connects the laptop to the description 'fast'.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Past Tense",
+    "instructions": "Place 'flew' in the correct verb category.",
+    "items": [
+      {
+        "word": "flew",
+        "category": "Past Tense"
+      }
+    ],
+    "categories": [
+      "Past Tense"
+    ],
+    "explanation": "'Flew' is the irregular past tense of 'fly'."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Helping Verb",
+    "question_text": "Which word is the helping verb? 'You should check your work before submitting.'",
+    "options": [
+      "You",
+      "should",
+      "check",
+      "submitting"
+    ],
+    "answer": [
+      "should"
+    ],
+    "explanation": "'Should' helps the main verb 'check' show advice or duty.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Irregular Verb",
+    "prompt_text": "Type the past tense of the verb 'see'.",
+    "answer": [
+      "saw"
+    ],
+    "hint": "I ____ a great movie over the weekend.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Action Verb",
+    "instructions": "Place 'fixes' in the correct verb category.",
+    "items": [
+      {
+        "word": "fixes",
+        "category": "Action Verb"
+      }
+    ],
+    "categories": [
+      "Action Verb"
+    ],
+    "explanation": "'Fixes' is an action, like when you fix a bug in your React code."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Future Tense",
+    "question_text": "Choose the future tense: 'I ___ my bass guitar later today.'",
+    "options": [
+      "play",
+      "played",
+      "will play",
+      "playing"
+    ],
+    "answer": [
+      "will play"
+    ],
+    "explanation": "'Will' signals a future action.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Helping Verb",
+    "prompt_text": "In 'I have eaten dinner,' which word is the helping verb?",
+    "answer": [
+      "have"
+    ],
+    "hint": "It helps 'eaten' form the perfect tense.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Past Tense",
+    "prompt_text": "Type the past tense of the verb 'make'.",
+    "answer": [
+      "made"
+    ],
+    "hint": "I ____ a custom PC last month.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Helping Verb",
+    "instructions": "Place 'were' in the correct verb category.",
+    "items": [
+      {
+        "word": "were",
+        "category": "Helping Verb"
+      }
+    ],
+    "categories": [
+      "Helping Verb"
+    ],
+    "explanation": "'Were' is a helping verb used with plural subjects in the past."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Action Verb",
+    "question_text": "Identify the action verb: 'The teacher helps the students with their grammar.'",
+    "options": [
+      "teacher",
+      "helps",
+      "students",
+      "grammar"
+    ],
+    "answer": [
+      "helps"
+    ],
+    "explanation": "'Helps' is the action being performed.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Future Tense",
+    "prompt_text": "Complete the future tense: 'Next semester, I ___ take Calculus again.'",
+    "answer": [
+      "will"
+    ],
+    "hint": "Use the helping verb that points to the future.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Linking Verb",
+    "instructions": "Place 'am' in the correct verb category.",
+    "items": [
+      {
+        "word": "am",
+        "category": "Linking Verb"
+      }
+    ],
+    "categories": [
+      "Linking Verb"
+    ],
+    "explanation": "'Am' connects the subject 'I' to a state or identity."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Action Verb",
+    "question_text": "Which word is an Action Verb? 'The cyclist rode along the Greenway.'",
+    "options": [
+      "cyclist",
+      "rode",
+      "along",
+      "Greenway"
+    ],
+    "answer": [
+      "rode"
+    ],
+    "explanation": "'Rode' describes the physical action of cycling.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Present Tense",
+    "prompt_text": "Type the present tense: 'The cat ____ on the sofa.'",
+    "answer": [
+      "sleeps"
+    ],
+    "hint": "The subject is singular (The cat).",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Helping Verb",
+    "instructions": "Place 'did' in the correct verb category.",
+    "items": [
+      {
+        "word": "did",
+        "category": "Helping Verb"
+      }
+    ],
+    "categories": [
+      "Helping Verb"
+    ],
+    "explanation": "'Did' is a helping verb used for emphasis or to ask questions about the past."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Continuous Tense",
+    "question_text": "Identify the continuous verb phrase: 'They are studying for the exam.'",
+    "options": [
+      "They",
+      "are studying",
+      "for",
+      "exam"
+    ],
+    "answer": [
+      "are studying"
+    ],
+    "explanation": "Continuous tense uses a helping verb + '-ing' verb.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Past Tense",
+    "prompt_text": "Type the past tense of 'build'.",
+    "answer": [
+      "built"
+    ],
+    "hint": "It ends with a 't' instead of a 'd'.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Helping Verb",
+    "question_text": "Identify the helping verb: 'I have learned a lot during my internship.'",
+    "options": [
+      "have",
+      "learned",
+      "lot",
+      "internship"
+    ],
+    "answer": [
+      "have"
+    ],
+    "explanation": "'Have' is the helping verb in a perfect tense construction.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Past Tense",
+    "instructions": "Place 'taught' in the correct verb category.",
+    "items": [
+      {
+        "word": "taught",
+        "category": "Past Tense"
+      }
+    ],
+    "categories": [
+      "Past Tense"
+    ],
+    "explanation": "'Taught' is the irregular past tense of 'teach'."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Action Verb",
+    "prompt_text": "Type the action verb: 'The teacher opens the classroom door at 8 am.'",
+    "answer": [
+      "opens"
+    ],
+    "hint": "What does the teacher do to the door?",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Linking Verb",
+    "question_text": "Which word is a Linking Verb? 'The cinnamon rolls smell delicious.'",
+    "options": [
+      "cinnamon",
+      "smell",
+      "delicious",
+      "rolls"
+    ],
+    "answer": [
+      "smell"
+    ],
+    "explanation": "'Smell' links the subject (rolls) to the description (delicious).",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Helping Verb",
+    "instructions": "Place 'must' in the correct verb category.",
+    "items": [
+      {
+        "word": "must",
+        "category": "Helping Verb"
+      }
+    ],
+    "categories": [
+      "Helping Verb"
+    ],
+    "explanation": "'Must' is a modal helping verb that expresses necessity."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Future Tense",
+    "prompt_text": "Complete the future tense: 'I ___ finish my 120-hour requirement by May.'",
+    "answer": [
+      "will"
+    ],
+    "hint": "Use the helping verb for the future.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Action Verb",
+    "instructions": "Place 'refactor' in the correct verb category.",
+    "items": [
+      {
+        "word": "refactor",
+        "category": "Action Verb"
+      }
+    ],
+    "categories": [
+      "Action Verb"
+    ],
+    "explanation": "To refactor is to reorganize code, which is a specific action."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Present Tense",
+    "question_text": "Select the correct present tense: 'They ___ to school every morning.'",
+    "options": [
+      "walk",
+      "walks",
+      "walked",
+      "walking"
+    ],
+    "answer": [
+      "walk"
+    ],
+    "explanation": "The subject is plural (They), so we use 'walk'.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Helping Verb",
+    "prompt_text": "Type the helping verb: 'She is practicing the bass guitar.'",
+    "answer": [
+      "is"
+    ],
+    "hint": "It helps the main verb 'practicing'.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Past Tense",
+    "instructions": "Place 'found' in the correct verb category.",
+    "items": [
+      {
+        "word": "found",
+        "category": "Past Tense"
+      }
+    ],
+    "categories": [
+      "Past Tense"
+    ],
+    "explanation": "'Found' is the irregular past tense of 'find'."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Helping Verb",
+    "question_text": "Identify the modal helping verb: 'I could build a server using Docker.'",
+    "options": [
+      "I",
+      "could",
+      "build",
+      "Docker"
+    ],
+    "answer": [
+      "could"
+    ],
+    "explanation": "'Could' shows possibility or ability.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Past Tense",
+    "instructions": "Place 'sang' in the correct verb category.",
+    "items": [
+      {
+        "word": "sang",
+        "category": "Past Tense"
+      }
+    ],
+    "categories": [
+      "Past Tense"
+    ],
+    "explanation": "'Sang' is the irregular past tense of 'sing'."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Action Verb",
+    "prompt_text": "Type the action verb: 'The teacher listens to the student's question.'",
+    "answer": [
+      "listens"
+    ],
+    "hint": "What is the teacher doing?",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Continuous Tense",
+    "question_text": "Which phrase is in the continuous tense? 'They ___ for the exam right now.'",
+    "options": [
+      "study",
+      "studied",
+      "are studying",
+      "will study"
+    ],
+    "answer": [
+      "are studying"
+    ],
+    "explanation": "Continuous tense describes an action happening right now.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Linking Verb",
+    "instructions": "Place 'was' in the correct verb category.",
+    "items": [
+      {
+        "word": "was",
+        "category": "Linking Verb"
+      }
+    ],
+    "categories": [
+      "Linking Verb"
+    ],
+    "explanation": "'Was' is a linking verb used for the past tense state of being."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Helping Verb",
+    "prompt_text": "Type the helping verb: 'We have finished the grammar educational website.'",
+    "answer": [
+      "have"
+    ],
+    "hint": "It helps 'finished' show the action is complete.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Action Verb",
+    "instructions": "Place 'draws' in the correct verb category.",
+    "items": [
+      {
+        "word": "draws",
+        "category": "Action Verb"
+      }
+    ],
+    "categories": [
+      "Action Verb"
+    ],
+    "explanation": "Drawing is a physical action."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Future Tense",
+    "question_text": "Select the correct future tense: 'She ___ the guitar at the concert tomorrow.'",
+    "options": [
+      "play",
+      "played",
+      "will play",
+      "playing"
+    ],
+    "answer": [
+      "will play"
+    ],
+    "explanation": "We use 'will' to talk about future actions.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Action Verb",
+    "prompt_text": "Type the action verb: 'The dog chases the ball.'",
+    "answer": [
+      "chases"
+    ],
+    "hint": "What is the dog doing?",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Past Tense",
+    "instructions": "Place 'made' in the correct verb category.",
+    "items": [
+      {
+        "word": "made",
+        "category": "Past Tense"
+      }
+    ],
+    "categories": [
+      "Past Tense"
+    ],
+    "explanation": "'Made' is the irregular past tense of 'make'."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Irregular Verb",
+    "prompt_text": "Type the past tense of the verb 'write'.",
+    "answer": [
+      "wrote"
+    ],
+    "hint": "I ____ a function for the grammar website yesterday.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Helping Verb",
+    "instructions": "Place 'must' in the correct verb category.",
+    "items": [
+      {
+        "word": "must",
+        "category": "Helping Verb"
+      }
+    ],
+    "categories": [
+      "Helping Verb"
+    ],
+    "explanation": "'Must' is a helping verb that shows necessity or a rule."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Action Verb",
+    "question_text": "Identify the action verb: 'The teacher corrected the spelling on the whiteboard.'",
+    "options": [
+      "teacher",
+      "corrected",
+      "spelling",
+      "whiteboard"
+    ],
+    "answer": [
+      "corrected"
+    ],
+    "explanation": "'Corrected' is the specific action performed.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Linking Verb",
+    "prompt_text": "Type the linking verb: 'The coffee cake smells amazing while baking.'",
+    "answer": [
+      "smells"
+    ],
+    "hint": "It links 'cake' to the description 'amazing'.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Past Tense",
+    "instructions": "Place 'caught' in the correct verb category.",
+    "items": [
+      {
+        "word": "caught",
+        "category": "Past Tense"
+      }
+    ],
+    "categories": [
+      "Past Tense"
+    ],
+    "explanation": "'Caught' is the irregular past tense of 'catch'."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Helping Verb",
+    "question_text": "Which word is the helping verb? 'He could fix the computer performance issues.'",
+    "options": [
+      "He",
+      "could",
+      "fix",
+      "issues"
+    ],
+    "answer": [
+      "could"
+    ],
+    "explanation": "'Could' shows ability or possibility.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Irregular Verb",
+    "prompt_text": "Type the past tense of the verb 'buy'.",
+    "answer": [
+      "bought"
+    ],
+    "hint": "The intern ____ a new blender in March.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Action Verb",
+    "instructions": "Place 'climb' in the correct verb category.",
+    "items": [
+      {
+        "word": "climb",
+        "category": "Action Verb"
+      }
+    ],
+    "categories": [
+      "Action Verb"
+    ],
+    "explanation": "'Climb' is a physical action verb."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Future Tense",
+    "question_text": "Choose the correct future tense: 'We ___ to the theme park in New Jersey.'",
+    "options": [
+      "go",
+      "went",
+      "will go",
+      "going"
+    ],
+    "answer": [
+      "will go"
+    ],
+    "explanation": "'Will' shifts the action to the future.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Helping Verb",
+    "prompt_text": "In the sentence 'I am learning React,' what is the helping verb?",
+    "answer": [
+      "am"
+    ],
+    "hint": "It helps the main verb 'learning' show the present continuous tense.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Irregular Verb",
+    "prompt_text": "Type the past tense of the verb 'know'.",
+    "answer": [
+      "knew"
+    ],
+    "hint": "I ____ that refactoring the Chakra UI would take time.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Helping Verb",
+    "instructions": "Place 'should' in the correct verb category.",
+    "items": [
+      {
+        "word": "should",
+        "category": "Helping Verb"
+      }
+    ],
+    "categories": [
+      "Helping Verb"
+    ],
+    "explanation": "'Should' shows advice or obligation."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Action Verb",
+    "question_text": "Identify the action verb: 'The baker kneaded the spelt flour for the cinnamon rolls.'",
+    "options": [
+      "baker",
+      "kneaded",
+      "spelt",
+      "rolls"
+    ],
+    "answer": [
+      "kneaded"
+    ],
+    "explanation": "'Kneaded' is the physical action of working the dough.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Linking Verb",
+    "prompt_text": "Type the linking verb: 'The new PC setup stays cool under heavy loads.'",
+    "answer": [
+      "stays"
+    ],
+    "hint": "It links the subject 'setup' to its state 'cool'.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Past Tense",
+    "instructions": "Place 'woke' in the correct verb category.",
+    "items": [
+      {
+        "word": "woke",
+        "category": "Past Tense"
+      }
+    ],
+    "categories": [
+      "Past Tense"
+    ],
+    "explanation": "'Woke' is the irregular past tense of 'wake'."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Helping Verb",
+    "question_text": "Which word is the helping verb? 'You must study for the Calculus summer session.'",
+    "options": [
+      "You",
+      "must",
+      "study",
+      "session"
+    ],
+    "answer": [
+      "must"
+    ],
+    "explanation": "'Must' shows a strong necessity.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Irregular Verb",
+    "prompt_text": "Type the past tense of the verb 'speak'.",
+    "answer": [
+      "spoke"
+    ],
+    "hint": "The teacher ____ to the class about the field trip.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Action Verb",
+    "instructions": "Place 'builds' in the correct verb category.",
+    "items": [
+      {
+        "word": "builds",
+        "category": "Action Verb"
+      }
+    ],
+    "categories": [
+      "Action Verb"
+    ],
+    "explanation": "Building is an active physical or digital creation."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Future Tense",
+    "question_text": "Choose the correct future tense: 'She ___ the bass guitar melody tomorrow.'",
+    "options": [
+      "learn",
+      "learned",
+      "will learn",
+      "learning"
+    ],
+    "answer": [
+      "will learn"
+    ],
+    "explanation": "'Will' is the auxiliary verb used to create future tense.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Continuous Tense",
+    "prompt_text": "Complete the continuous tense: 'Right now, the intern ___ refactoring the website.'",
+    "answer": [
+      "is"
+    ],
+    "hint": "It helps the main verb 'refactoring' show action in progress.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Helping Verb",
+    "instructions": "Place 'can' in the correct verb category.",
+    "items": [
+      {
+        "word": "can",
+        "category": "Helping Verb"
+      }
+    ],
+    "categories": [
+      "Helping Verb"
+    ],
+    "explanation": "'Can' is a modal helping verb used to show ability."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Action Verb",
+    "question_text": "Identify the action verb: 'Theresa baked delicious cinnamon rolls yesterday.'",
+    "options": [
+      "Theresa",
+      "baked",
+      "delicious",
+      "rolls"
+    ],
+    "answer": [
+      "baked"
+    ],
+    "explanation": "'Baked' is the physical action performed.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Linking Verb",
+    "prompt_text": "Type the linking verb: 'The City Tech campus seems busy today.'",
+    "answer": [
+      "seems"
+    ],
+    "hint": "It links the campus to the description 'busy'.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Past Tense",
+    "instructions": "Place 'swam' in the correct verb category.",
+    "items": [
+      {
+        "word": "swam",
+        "category": "Past Tense"
+      }
+    ],
+    "categories": [
+      "Past Tense"
+    ],
+    "explanation": "'Swam' is the irregular past tense of 'swim'."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Helping Verb",
+    "question_text": "Which word is the helping verb? 'You would like the new anime I found.'",
+    "options": [
+      "You",
+      "would",
+      "like",
+      "found"
+    ],
+    "answer": [
+      "would"
+    ],
+    "explanation": "'Would' shows a conditional state.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Irregular Verb",
+    "prompt_text": "Type the past tense of the verb 'give'.",
+    "answer": [
+      "gave"
+    ],
+    "hint": "The teacher ____ a clear explanation.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Action Verb",
+    "instructions": "Place 'teaches' in the correct verb category.",
+    "items": [
+      {
+        "word": "teaches",
+        "category": "Action Verb"
+      }
+    ],
+    "categories": [
+      "Action Verb"
+    ],
+    "explanation": "'Teaches' describes professional work."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Future Tense",
+    "question_text": "Identify the future tense: 'I ___ my bass guitar melodies later.'",
+    "options": [
+      "practice",
+      "practiced",
+      "will practice",
+      "practicing"
+    ],
+    "answer": [
+      "will practice"
+    ],
+    "explanation": "'Will' is the auxiliary verb for the future.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Helping Verb",
+    "prompt_text": "In the sentence 'I was building a PC,' what is the helping verb?",
+    "answer": [
+      "was"
+    ],
+    "hint": "It helps 'building' show action in the past.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Irregular Verb",
+    "prompt_text": "Type the past tense of the verb 'take'.",
+    "answer": [
+      "took"
+    ],
+    "hint": "I ____ a Citi Bike to the City Tech campus.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Helping Verb",
+    "instructions": "Place 'must' in the correct verb category.",
+    "items": [
+      {
+        "word": "must",
+        "category": "Helping Verb"
+      }
+    ],
+    "categories": [
+      "Helping Verb"
+    ],
+    "explanation": "'Must' shows a strong necessity or rule."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Action Verb",
+    "question_text": "Identify the action verb: 'The teacher explained how to use React components.'",
+    "options": [
+      "teacher",
+      "explained",
+      "React",
+      "components"
+    ],
+    "answer": [
+      "explained"
+    ],
+    "explanation": "'Explained' is the mental and vocal action of teaching.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Helping Verb",
+    "prompt_text": "In the sentence 'I should refactor the code,' which word is the helping verb?",
+    "answer": [
+      "should"
+    ],
+    "hint": "It helps 'refactor' show a recommendation.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Linking Verb",
+    "instructions": "Place 'stayed' in the correct verb category.",
+    "items": [
+      {
+        "word": "stayed",
+        "category": "Linking Verb"
+      }
+    ],
+    "categories": [
+      "Linking Verb"
+    ],
+    "explanation": "'Stayed' can act as a linking verb connecting the subject to a state."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Helping Verb",
+    "question_text": "Which word is the helping verb? 'You could learn the bass guitar melody quickly.'",
+    "options": [
+      "You",
+      "could",
+      "learn",
+      "quickly"
+    ],
+    "answer": [
+      "could"
+    ],
+    "explanation": "'Could' shows ability or possibility.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Past Tense",
+    "prompt_text": "Type the past tense of the verb 'find'.",
+    "answer": [
+      "found"
+    ],
+    "hint": "I ____ a great recipe for millet coffee cake.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Action Verb",
+    "instructions": "Place 'types' in the correct verb category.",
+    "items": [
+      {
+        "word": "types",
+        "category": "Action Verb"
+      }
+    ],
+    "categories": [
+      "Action Verb"
+    ],
+    "explanation": "Typing is a physical action performed at a computer."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Future Tense",
+    "question_text": "Select the correct future tense: 'Next month, we ___ to Anime NYC.'",
+    "options": [
+      "go",
+      "went",
+      "will go",
+      "going"
+    ],
+    "answer": [
+      "will go"
+    ],
+    "explanation": "'Will' points to a future event.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Irregular Verb",
+    "prompt_text": "Type the past tense of the verb 'feel'.",
+    "answer": [
+      "felt"
+    ],
+    "hint": "The intern ____ happy after fixing the bug.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Helping Verb",
+    "question_text": "Identify the helping verb: 'I would install Linux on the old laptop if I had time.'",
+    "options": [
+      "I",
+      "would",
+      "install",
+      "time"
+    ],
+    "answer": [
+      "would"
+    ],
+    "explanation": "'Would' is used for conditional actions.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Past Tense",
+    "instructions": "Place 'drank' in the correct verb category.",
+    "items": [
+      {
+        "word": "drank",
+        "category": "Past Tense"
+      }
+    ],
+    "categories": [
+      "Past Tense"
+    ],
+    "explanation": "'Drank' is the irregular past tense of 'drink'."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Action Verb",
+    "prompt_text": "Type the action verb: 'The teacher organizes the lesson plan for City Tech.'",
+    "answer": [
+      "organizes"
+    ],
+    "hint": "What is the teacher doing with the lesson plan?",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Continuous Tense",
+    "question_text": "Choose the continuous verb phrase: 'We are riding Citi Bikes to Brooklyn.'",
+    "options": [
+      "We",
+      "are riding",
+      "Citi Bikes",
+      "Brooklyn"
+    ],
+    "answer": [
+      "are riding"
+    ],
+    "explanation": "Continuous tense uses a helping verb + '-ing' verb.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Linking Verb",
+    "instructions": "Place 'sound' in the correct verb category.",
+    "items": [
+      {
+        "word": "sound",
+        "category": "Linking Verb"
+      }
+    ],
+    "categories": [
+      "Linking Verb"
+    ],
+    "explanation": "'Sound' links the subject to a sensory description."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Helping Verb",
+    "prompt_text": "Type the helping verb: 'She can play Francis Forever on the bass guitar.'",
+    "answer": [
+      "can"
+    ],
+    "hint": "It shows ability and helps the main verb 'play'.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Action Verb",
+    "instructions": "Place 'bakes' in the correct verb category.",
+    "items": [
+      {
+        "word": "bakes",
+        "category": "Action Verb"
+      }
+    ],
+    "categories": [
+      "Action Verb"
+    ],
+    "explanation": "Baking is a physical action performed in the kitchen."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Future Tense",
+    "question_text": "Select the future tense: 'I ___ my password after the security update.'",
+    "options": [
+      "change",
+      "changed",
+      "will change",
+      "changing"
+    ],
+    "answer": [
+      "will change"
+    ],
+    "explanation": "'Will' is used to indicate the future.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Action Verb",
+    "prompt_text": "Type the action verb: 'The dog barked loudly at the mailman.'",
+    "answer": [
+      "barked"
+    ],
+    "hint": "What was the dog's action?",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Past Tense",
+    "instructions": "Place 'found' in the correct verb category.",
+    "items": [
+      {
+        "word": "found",
+        "category": "Past Tense"
+      }
+    ],
+    "categories": [
+      "Past Tense"
+    ],
+    "explanation": "'Found' is the irregular past tense of 'find'."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Helping Verb",
+    "question_text": "Which word is the helping verb? 'I might retake Calculus during the summer session.'",
+    "options": [
+      "I",
+      "might",
+      "retake",
+      "summer"
+    ],
+    "answer": [
+      "might"
+    ],
+    "explanation": "'Might' expresses a possibility.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Past Tense",
+    "instructions": "Place 'forgot' in the correct verb category.",
+    "items": [
+      {
+        "word": "forgot",
+        "category": "Past Tense"
+      }
+    ],
+    "categories": [
+      "Past Tense"
+    ],
+    "explanation": "'Forgot' is the irregular past tense of 'forget'."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Action Verb",
+    "prompt_text": "Type the action verb: 'The developer tested the new API endpoints.'",
+    "answer": [
+      "tested"
+    ],
+    "hint": "What action was performed on the API?",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Continuous Tense",
+    "question_text": "Identify the continuous tense: 'She is practicing Mitski's Francis Forever.'",
+    "options": [
+      "is practicing",
+      "Mitski",
+      "Francis Forever",
+      "She"
+    ],
+    "answer": [
+      "is practicing"
+    ],
+    "explanation": "This uses 'is' + '-ing' to show an action happening right now.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Linking Verb",
+    "instructions": "Place 'looked' in the correct verb category.",
+    "items": [
+      {
+        "word": "looked",
+        "category": "Linking Verb"
+      }
+    ],
+    "categories": [
+      "Linking Verb"
+    ],
+    "explanation": "In sentences like 'The code looked clean,' this word links the subject to a description."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Helping Verb",
+    "prompt_text": "Type the helping verb: 'We shall complete the internship requirements.'",
+    "answer": [
+      "shall"
+    ],
+    "hint": "A formal helping verb used to show future intent.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Action Verb",
+    "instructions": "Place 'deletes' in the correct verb category.",
+    "items": [
+      {
+        "word": "deletes",
+        "category": "Action Verb"
+      }
+    ],
+    "categories": [
+      "Action Verb"
+    ],
+    "explanation": "Deleting files is a digital action."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Future Tense",
+    "question_text": "Choose the future tense: 'I ___ my bass guitar after work.'",
+    "options": [
+      "tune",
+      "tuned",
+      "will tune",
+      "tuning"
+    ],
+    "answer": [
+      "will tune"
+    ],
+    "explanation": "The helping verb 'will' indicates a future action.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Action Verb",
+    "prompt_text": "Type the action verb: 'The cat jumped onto the window sill.'",
+    "answer": [
+      "jumped"
+    ],
+    "hint": "What physical action did the cat take?",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Past Tense",
+    "instructions": "Place 'slept' in the correct verb category.",
+    "items": [
+      {
+        "word": "slept",
+        "category": "Past Tense"
+      }
+    ],
+    "categories": [
+      "Past Tense"
+    ],
+    "explanation": "'Slept' is the irregular past tense of 'sleep'."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Helping Verb",
+    "question_text": "Identify the helping verb: 'I have successfully refactored the grammar app logic.'",
+    "options": [
+      "I",
+      "have",
+      "refactored",
+      "logic"
+    ],
+    "answer": [
+      "have"
+    ],
+    "explanation": "'Have' works with 'refactored' to show a completed action.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Past Tense",
+    "instructions": "Place 'built' in the correct verb category.",
+    "items": [
+      {
+        "word": "built",
+        "category": "Past Tense"
+      }
+    ],
+    "categories": [
+      "Past Tense"
+    ],
+    "explanation": "'Built' is the irregular past tense of 'build'."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Action Verb",
+    "prompt_text": "Type the action verb: 'The developer installs the new Chakra UI package.'",
+    "answer": [
+      "installs"
+    ],
+    "hint": "What is the developer doing with the package?",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Continuous Tense",
+    "question_text": "Which phrase indicates a continuous action? 'He ___ his Citi Bike to the station.'",
+    "options": [
+      "ride",
+      "rode",
+      "is riding",
+      "will ride"
+    ],
+    "answer": [
+      "is riding"
+    ],
+    "explanation": "'Is riding' uses the helping verb + '-ing' to show action in progress.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Linking Verb",
+    "instructions": "Place 'seemed' in the correct verb category.",
+    "items": [
+      {
+        "word": "seemed",
+        "category": "Linking Verb"
+      }
+    ],
+    "categories": [
+      "Linking Verb"
+    ],
+    "explanation": "'Seemed' links the subject to a state of being in the past."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Helping Verb",
+    "prompt_text": "Type the helping verb: 'You must check your tasks in Augment Code.'",
+    "answer": [
+      "must"
+    ],
+    "hint": "It shows necessity and helps the main verb 'check'.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Action Verb",
+    "instructions": "Place 'fixes' in the correct verb category.",
+    "items": [
+      {
+        "word": "fixes",
+        "category": "Action Verb"
+      }
+    ],
+    "categories": [
+      "Action Verb"
+    ],
+    "explanation": "Fixing a bug is a direct action."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Future Tense",
+    "question_text": "Select the future tense: 'She ___ the melody on her bass guitar tonight.'",
+    "options": [
+      "learn",
+      "learned",
+      "will learn",
+      "learning"
+    ],
+    "answer": [
+      "will learn"
+    ],
+    "explanation": "'Will' is required to form the future tense.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Action Verb",
+    "prompt_text": "Type the action verb: 'The dog barked at the stranger.'",
+    "answer": [
+      "barked"
+    ],
+    "hint": "What physical action did the dog perform?",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Past Tense",
+    "instructions": "Place 'ate' in the correct verb category.",
+    "items": [
+      {
+        "word": "ate",
+        "category": "Past Tense"
+      }
+    ],
+    "categories": [
+      "Past Tense"
+    ],
+    "explanation": "'Ate' is the irregular past tense of 'eat'."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Helping Verb",
+    "question_text": "Identify the helping verb: 'I might take a break after finishing this batch of code.'",
+    "options": [
+      "I",
+      "might",
+      "break",
+      "code"
+    ],
+    "answer": [
+      "might"
+    ],
+    "explanation": "'Might' shows a possibility.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Past Tense",
+    "instructions": "Place 'spent' in the correct verb category.",
+    "items": [
+      {
+        "word": "spent",
+        "category": "Past Tense"
+      }
+    ],
+    "categories": [
+      "Past Tense"
+    ],
+    "explanation": "'Spent' is the irregular past tense of 'spend'."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Action Verb",
+    "prompt_text": "Type the action verb: 'The student practices the bass guitar every afternoon.'",
+    "answer": [
+      "practices"
+    ],
+    "hint": "What is the student doing with the guitar?",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Continuous Tense",
+    "question_text": "Choose the continuous verb phrase: 'They are walking along the Brooklyn Greenway.'",
+    "options": [
+      "They",
+      "are walking",
+      "Brooklyn",
+      "Greenway"
+    ],
+    "answer": [
+      "are walking"
+    ],
+    "explanation": "Continuous tense combines 'are' with the '-ing' verb.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Linking Verb",
+    "instructions": "Place 'felt' in the correct verb category.",
+    "items": [
+      {
+        "word": "felt",
+        "category": "Linking Verb"
+      }
+    ],
+    "categories": [
+      "Linking Verb"
+    ],
+    "explanation": "'Felt' links the subject to a feeling or state of being."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Helping Verb",
+    "prompt_text": "Type the helping verb: 'She could help her brother with his computer.'",
+    "answer": [
+      "could"
+    ],
+    "hint": "It helps the main verb 'help' show ability.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Action Verb",
+    "instructions": "Place 'types' in the correct verb category.",
+    "items": [
+      {
+        "word": "types",
+        "category": "Action Verb"
+      }
+    ],
+    "categories": [
+      "Action Verb"
+    ],
+    "explanation": "'Types' is a physical action performed on a keyboard."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Future Tense",
+    "question_text": "Select the future tense: 'I ___ my media on the 5-bay dock.'",
+    "options": [
+      "store",
+      "stored",
+      "will store",
+      "storing"
+    ],
+    "answer": [
+      "will store"
+    ],
+    "explanation": "'Will' is needed to show the action will happen later.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Action Verb",
+    "prompt_text": "Type the action verb: 'The dog jumped over the fence.'",
+    "answer": [
+      "jumped"
+    ],
+    "hint": "What physical action did the dog take?",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Past Tense",
+    "instructions": "Place 'saw' in the correct verb category.",
+    "items": [
+      {
+        "word": "saw",
+        "category": "Past Tense"
+      }
+    ],
+    "categories": [
+      "Past Tense"
+    ],
+    "explanation": "'Saw' is the irregular past tense of 'see'."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Irregular Verb",
+    "prompt_text": "Type the past tense of the verb 'sing'.",
+    "answer": [
+      "sang"
+    ],
+    "hint": "The choir ____ at the City Tech graduation ceremony.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Helping Verb",
+    "instructions": "Place 'could' in the correct verb category.",
+    "items": [
+      {
+        "word": "could",
+        "category": "Helping Verb"
+      }
+    ],
+    "categories": [
+      "Helping Verb"
+    ],
+    "explanation": "'Could' expresses a past ability or possibility."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Action Verb",
+    "question_text": "Identify the action verb: 'Taralynn developed a new feature for the grammar site.'",
+    "options": [
+      "Taralynn",
+      "developed",
+      "new",
+      "feature"
+    ],
+    "answer": [
+      "developed"
+    ],
+    "explanation": "'Developed' is the creative and technical action performed.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Linking Verb",
+    "instructions": "Place 'appeared' in the correct verb category.",
+    "items": [
+      {
+        "word": "appeared",
+        "category": "Linking Verb"
+      }
+    ],
+    "categories": [
+      "Linking Verb"
+    ],
+    "explanation": "In 'The code appeared correct,' this word links the subject to a state."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Past Tense",
+    "prompt_text": "Type the past tense of the verb 'give'.",
+    "answer": [
+      "gave"
+    ],
+    "hint": "The teacher ____ the students extra time for the quiz.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Helping Verb",
+    "question_text": "Which word is the helping verb? 'You must complete 120 hours for your internship.'",
+    "options": [
+      "You",
+      "must",
+      "complete",
+      "hours"
+    ],
+    "answer": [
+      "must"
+    ],
+    "explanation": "'Must' shows a strong obligation.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Irregular Verb",
+    "instructions": "Place 'swam' in the correct verb category.",
+    "items": [
+      {
+        "word": "swam",
+        "category": "Past Tense"
+      }
+    ],
+    "categories": [
+      "Past Tense"
+    ],
+    "explanation": "'Swam' is the irregular past tense of 'swim'."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Action Verb",
+    "prompt_text": "Type the action verb: 'The dog chases the ball across the park.'",
+    "answer": [
+      "chases"
+    ],
+    "hint": "What physical action is the dog performing?",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Future Tense",
+    "question_text": "Choose the correct future tense: 'I ___ my bass guitar after I finish coding.'",
+    "options": [
+      "play",
+      "played",
+      "will play",
+      "playing"
+    ],
+    "answer": [
+      "will play"
+    ],
+    "explanation": "'Will' is the auxiliary verb used to indicate a future action.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Helping Verb",
+    "prompt_text": "In the sentence 'I am learning Chakra UI,' which word is the helping verb?",
+    "answer": [
+      "am"
+    ],
+    "hint": "It helps the main verb 'learning' show the present continuous tense.",
+    "explanation": "",
+    "case_sensitive": false
   }
 ]
