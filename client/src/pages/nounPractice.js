@@ -16,6 +16,9 @@ import SortingGameWrapper from "../components/SortingGameWrapper";
 import TypingGameWrapper from "../components/typingGameWrapper";
 import MultipleChoiceWrapper from "../components/multipleChoiceWrapper";
 
+// Import Noun Hunt Game
+import NounHuntGame from "./nounComponents/NounHuntGame";
+
 // Import your 150-item JSON file
 import nounData from "../data/nouns_questions.json";
 
@@ -41,6 +44,13 @@ const practiceTypes = [
     icon: "🔀",
     examples: "Concrete vs Abstract, Common vs Proper",
   },
+  {
+    name: "Noun Hunt",
+    desc: "Find every noun in a paragraph and identify its type.",
+    color: "yellow",
+    icon: "🔍",
+    examples: "Common, Proper, Abstract, Collective",
+  },
 ];
 
 const NounPractice = () => {
@@ -63,7 +73,7 @@ const NounPractice = () => {
       </GameCard>
 
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
-        {/* LEFT COLUMN: Practice Types Info */}
+        {/* LEFT COLUMN: Practice Types Info + Typing Game + Noun Hunt */}
         <VStack spacing={6} align="stretch">
           {/* Practice Types Overview */}
           <GameCard variant="game">
@@ -71,7 +81,7 @@ const NounPractice = () => {
               Practice Game Types
             </Heading>
             <Text fontSize="md" color="gray.600" mb={6}>
-              Master your noun knowledge through three different interactive
+              Master your noun knowledge through four different interactive
               challenges. Each game tests your skills in a unique way!
             </Text>
 
@@ -132,9 +142,17 @@ const NounPractice = () => {
               nextPath="/propcom-nouns"
             />
           </GameCard>
+
+          {/* Noun Hunt Game */}
+          <GameCard variant="game">
+            <Heading size="md" color="yellow.500" mb={4}>
+              🔍 Noun Hunt
+            </Heading>
+            <NounHuntGame />
+          </GameCard>
         </VStack>
 
-        {/* RIGHT COLUMN: Practice Games */}
+        {/* RIGHT COLUMN: Multiple Choice + Sorting Game */}
         <VStack spacing={6} align="stretch">
           {/* Multiple Choice Game */}
           <GameCard variant="game">
