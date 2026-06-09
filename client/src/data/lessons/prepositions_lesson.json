@@ -1,0 +1,893 @@
+[
+  {
+    "step_type": "lesson",
+    "title": "What is a Preposition?",
+    "content": "A preposition is a word that shows the relationship between a noun (or pronoun) and other words in a sentence. Prepositions indicate time, place, direction, situation, or comparison.",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Simple Prepositions",
+    "content": "Simple prepositions are single words: in, on, at, by, over, under, through, between, above, below, near, along, across, behind, inside, outside, towards, since, for, during, before, after, against, around, beside, onto, within, without.",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Prepositions of Time",
+    "content": "Use 'at' for specific times (at noon, at 5pm). Use 'on' for specific days and dates (on Monday, on March 5th). Use 'in' for months, years, and parts of the day (in October, in 1995, in the morning). Use 'since' for a starting point (since 5pm). Use 'for' for a duration (for an hour).",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Prepositions of Place",
+    "content": "Use 'at' for a specific point or location (at the station, at home). Use 'in' for an enclosed space or area (in the box, in the room). Use 'on' for surfaces (on the table, on the wall). Other place prepositions include: above, below, behind, beside, between, under, over, near, inside, outside, across, along.",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "What are Prepositional Phrases?",
+    "content": "A prepositional phrase = preposition + article/determiner + noun. Examples: 'in the house', 'on the table', 'under the bridge', 'after the movie', 'during the game'. They function as adjectives or adverbs in sentences: 'After the movie, we went home.' / 'The cat sleeps on the couch.'",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Compound Prepositions",
+    "content": "Compound prepositions are made of two or more words: according to, instead of, apart from, due to, because of, on behalf of, in front of, on top of, out of, away from, next to, in spite of, regardless of, by means of, with respect to, in line with, as far as, in order to, prior to, as well as.",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Fixed Prepositional Phrases",
+    "content": "Some prepositional phrases are fixed expressions: 'on time' (punctual), 'on holiday/vacation', 'on strike', 'on a diet', 'on purpose', 'on behalf of', 'in favor of', 'in debt', 'in danger', 'in love', 'in a hurry', 'by accident', 'by heart', 'by chance', 'at home', 'at your service', 'under construction', 'under control'.",
+    "media_url": null
+  },
+  {
+    "step_type": "select",
+    "title": "Fill in the Blank: Preposition",
+    "question_text": "The boy is sitting ___ a chair.",
+    "options": [
+      "on",
+      "in",
+      "above",
+      "through"
+    ],
+    "answer": [
+      "on"
+    ],
+    "explanation": "'On' is used when resting upon a surface.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Fill in the Blank: Preposition",
+    "question_text": "We always eat lunch ___ noon.",
+    "options": [
+      "on",
+      "in",
+      "at"
+    ],
+    "answer": [
+      "at"
+    ],
+    "explanation": "'At' is used for specific times on the clock.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Fill in the Blank: Preposition",
+    "question_text": "The cat quickly hid ___ the bed.",
+    "options": [
+      "over",
+      "under",
+      "between"
+    ],
+    "answer": [
+      "under"
+    ],
+    "explanation": "'Under' shows position directly below.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Fill in the Blank: Preposition",
+    "question_text": "My birthday is ___ October.",
+    "options": [
+      "in",
+      "on",
+      "at"
+    ],
+    "answer": [
+      "in"
+    ],
+    "explanation": "'In' is used for longer periods like months.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Prepositional Phrases by Type",
+    "instructions": "Drag each prepositional phrase into the correct category: Time or Place.",
+    "items": [
+      {
+        "word": "after the movie",
+        "category": "Time"
+      },
+      {
+        "word": "in the kitchen",
+        "category": "Place"
+      },
+      {
+        "word": "during the game",
+        "category": "Time"
+      },
+      {
+        "word": "under the bridge",
+        "category": "Place"
+      },
+      {
+        "word": "before dinner",
+        "category": "Time"
+      },
+      {
+        "word": "on the table",
+        "category": "Place"
+      }
+    ],
+    "categories": [
+      "Time",
+      "Place"
+    ],
+    "explanation": "Time phrases tell us when something happens. Place phrases tell us where something is or happens."
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Prepositions by Category",
+    "instructions": "Drag each preposition into the correct category.",
+    "items": [
+      {
+        "word": "before",
+        "category": "Time"
+      },
+      {
+        "word": "after",
+        "category": "Time"
+      },
+      {
+        "word": "during",
+        "category": "Time"
+      },
+      {
+        "word": "since",
+        "category": "Time"
+      },
+      {
+        "word": "until",
+        "category": "Time"
+      },
+      {
+        "word": "for",
+        "category": "Time"
+      },
+      {
+        "word": "in",
+        "category": "Place"
+      },
+      {
+        "word": "on",
+        "category": "Place"
+      },
+      {
+        "word": "at",
+        "category": "Place"
+      },
+      {
+        "word": "under",
+        "category": "Place"
+      },
+      {
+        "word": "over",
+        "category": "Place"
+      },
+      {
+        "word": "between",
+        "category": "Place"
+      },
+      {
+        "word": "to",
+        "category": "Direction"
+      },
+      {
+        "word": "towards",
+        "category": "Direction"
+      },
+      {
+        "word": "into",
+        "category": "Direction"
+      },
+      {
+        "word": "through",
+        "category": "Direction"
+      },
+      {
+        "word": "across",
+        "category": "Direction"
+      },
+      {
+        "word": "like",
+        "category": "Comparison"
+      },
+      {
+        "word": "than",
+        "category": "Comparison"
+      },
+      {
+        "word": "unlike",
+        "category": "Comparison"
+      }
+    ],
+    "categories": [
+      "Time",
+      "Place",
+      "Direction",
+      "Comparison"
+    ],
+    "explanation": "Prepositions fall into categories based on what relationship they express between words in a sentence."
+  },
+  {
+    "step_type": "build",
+    "title": "Build a Sentence: Prepositional Phrase",
+    "instructions": "Drag the words into the correct order to build the sentence.",
+    "target": "After the movie , we went to the store .",
+    "word_bank": [
+      "After",
+      "the",
+      "movie",
+      ",",
+      "we",
+      "went",
+      "to",
+      "the",
+      "store",
+      "."
+    ],
+    "required_words": [
+      "After",
+      "the",
+      "movie",
+      ",",
+      "we",
+      "went",
+      "to",
+      "the",
+      "store",
+      "."
+    ],
+    "allow_extra": false,
+    "explanation": "'After the movie' is a prepositional phrase that tells us when the action happened."
+  },
+  {
+    "step_type": "build",
+    "title": "Build a Compound Preposition",
+    "instructions": "Click the word fragments in the correct order to build a valid compound preposition. Choose from: according, to, instead, of, due, apart, from, by, means, on, behalf, in, front, out, top, as, far.",
+    "target": "according to",
+    "word_bank": [
+      "according",
+      "to",
+      "instead",
+      "of",
+      "due",
+      "apart",
+      "from",
+      "by",
+      "means",
+      "on",
+      "behalf",
+      "in",
+      "front",
+      "out",
+      "top",
+      "as",
+      "far",
+      "before",
+      "under",
+      "towards",
+      "beyond",
+      "since",
+      "after",
+      "next",
+      "about",
+      "between"
+    ],
+    "required_words": [
+      "according",
+      "to"
+    ],
+    "allow_extra": false,
+    "explanation": "Valid compound prepositions include: 'according to', 'instead of', 'due to', 'apart from', 'by means of', 'on behalf of', 'in front of', 'out of', 'on top of', 'as far as'."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Preposition of Place",
+    "prompt_text": "Type the preposition: 'The book is ___ the table.'",
+    "answer": [
+      "on"
+    ],
+    "hint": "Surface contact.",
+    "explanation": "'On' is used when something is resting on a surface.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Preposition of Place",
+    "prompt_text": "Type: 'I am hiding ___ the curtain.'",
+    "answer": [
+      "behind"
+    ],
+    "hint": "Positioned at the back.",
+    "explanation": "'Behind' indicates a position at the rear of something.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Compound Preposition",
+    "prompt_text": "Complete: 'The car is parked ___ of the house.'",
+    "answer": [
+      "in front"
+    ],
+    "hint": "Opposite of behind.",
+    "explanation": "'In front of' is a compound preposition meaning at the forward side of something.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Preposition of Transport",
+    "prompt_text": "Complete: 'We traveled ___ bus.'",
+    "answer": [
+      "by"
+    ],
+    "hint": "Method of transport.",
+    "explanation": "'By' is used to indicate the method or means of transport.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Fixed Phrase",
+    "prompt_text": "Complete: 'The building is ___ construction.'",
+    "answer": [
+      "under"
+    ],
+    "hint": "Being worked on.",
+    "explanation": "'Under construction' is a fixed phrase meaning something is being built or repaired.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Preposition of Time",
+    "prompt_text": "Type: 'The plane flew ___ the clouds.'",
+    "answer": [
+      "above"
+    ],
+    "hint": "Higher than.",
+    "explanation": "'Above' indicates a position higher than something else.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Preposition of Movement",
+    "prompt_text": "Type: 'He walked ___ the door.'",
+    "answer": [
+      "through"
+    ],
+    "hint": "Moving from one side to the other.",
+    "explanation": "'Through' indicates movement from one side of something to the other.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Compound Preposition",
+    "prompt_text": "Complete: 'He stayed home ___ of the rain.'",
+    "answer": [
+      "because"
+    ],
+    "hint": "Often followed by 'of'.",
+    "explanation": "'Because of' is a compound preposition expressing reason or cause.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Fixed Phrase",
+    "prompt_text": "Complete: 'He did it ___ mistake.'",
+    "answer": [
+      "by"
+    ],
+    "hint": "Accidentally.",
+    "explanation": "'By mistake' is a fixed phrase meaning something was done accidentally.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Compound Preposition",
+    "prompt_text": "Complete: 'He did it ___ of his parents.'",
+    "answer": [
+      "on behalf"
+    ],
+    "hint": "Representing someone.",
+    "explanation": "'On behalf of' means acting in the name of or representing someone.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Preposition of Place",
+    "prompt_text": "Type: 'The mouse ran ___ the table.'",
+    "answer": [
+      "under"
+    ],
+    "hint": "Below something.",
+    "explanation": "'Under' indicates a position directly below something.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Fixed Phrase",
+    "prompt_text": "Complete: 'Everything is ___ control.'",
+    "answer": [
+      "under"
+    ],
+    "hint": "Managed.",
+    "explanation": "'Under control' is a fixed phrase meaning something is being properly managed.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Fixed Phrase",
+    "prompt_text": "Complete: 'He fell ___ love.'",
+    "answer": [
+      "in"
+    ],
+    "hint": "Emotional state.",
+    "explanation": "'In love' is a fixed expression describing a romantic emotional state.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Fixed Phrase",
+    "prompt_text": "Complete: 'Please stay ___ touch.'",
+    "answer": [
+      "in"
+    ],
+    "hint": "Maintain communication.",
+    "explanation": "'In touch' is a fixed phrase meaning to maintain communication.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Simple Preposition",
+    "question_text": "The cat jumped ___ the fence.",
+    "options": [
+      "over",
+      "in",
+      "at",
+      "during"
+    ],
+    "answer": [
+      "over"
+    ],
+    "explanation": "'Over' is used for movement across the top of something.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Preposition of Time",
+    "question_text": "I'll meet you ___ noon.",
+    "options": [
+      "on",
+      "at",
+      "in",
+      "by"
+    ],
+    "answer": [
+      "at"
+    ],
+    "explanation": "'At' is used for specific points in time.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Preposition of Time",
+    "question_text": "She was born ___ 1995.",
+    "options": [
+      "on",
+      "at",
+      "in",
+      "since"
+    ],
+    "answer": [
+      "in"
+    ],
+    "explanation": "'In' is used for years and months.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Fixed Phrase",
+    "question_text": "She arrived ___ time for the meeting.",
+    "options": [
+      "on",
+      "at",
+      "in",
+      "by"
+    ],
+    "answer": [
+      "on"
+    ],
+    "explanation": "'On time' is a fixed phrase meaning punctual.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Compound Preposition",
+    "question_text": "Choose: 'He sat ___ the window.'",
+    "options": [
+      "next to",
+      "in to",
+      "at on",
+      "from"
+    ],
+    "answer": [
+      "next to"
+    ],
+    "explanation": "'Next to' is a compound preposition meaning positioned beside something.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Preposition of Time",
+    "question_text": "I've been here ___ 5:00 PM.",
+    "options": [
+      "since",
+      "for",
+      "at",
+      "until"
+    ],
+    "answer": [
+      "since"
+    ],
+    "explanation": "'Since' indicates a starting point in time.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Simple Preposition",
+    "question_text": "The secret is ___ you and me.",
+    "options": [
+      "between",
+      "among",
+      "with",
+      "from"
+    ],
+    "answer": [
+      "between"
+    ],
+    "explanation": "'Between' is used when comparing or involving two distinct things.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Compound Preposition",
+    "question_text": "Choose: '___ of the heat, we went inside.'",
+    "options": [
+      "Out",
+      "Instead",
+      "Because",
+      "Aside"
+    ],
+    "answer": [
+      "Because"
+    ],
+    "explanation": "'Because of' is a compound preposition expressing reasoning.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Fixed Phrase",
+    "question_text": "They are ___ holiday.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "to"
+    ],
+    "answer": [
+      "on"
+    ],
+    "explanation": "'On holiday' is a fixed phrase for being away on vacation.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Compound Preposition",
+    "question_text": "Choose: 'I chose tea ___ coffee.'",
+    "options": [
+      "instead of",
+      "out of",
+      "away from",
+      "up to"
+    ],
+    "answer": [
+      "instead of"
+    ],
+    "explanation": "'Instead of' is a compound preposition expressing substitution.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Simple Preposition",
+    "question_text": "The key is ___ the lock.",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "to"
+    ],
+    "answer": [
+      "in"
+    ],
+    "explanation": "'In' is used when something is contained within something else.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Fixed Phrase",
+    "question_text": "Are you ___ favor of the plan?",
+    "options": [
+      "in",
+      "on",
+      "at",
+      "with"
+    ],
+    "answer": [
+      "in"
+    ],
+    "explanation": "'In favor of' means supporting an idea.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Preposition of Time",
+    "question_text": "I have been waiting ___ an hour.",
+    "options": [
+      "for",
+      "since",
+      "at",
+      "during"
+    ],
+    "answer": [
+      "for"
+    ],
+    "explanation": "'For' is used to indicate a duration of time.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Fixed Phrase",
+    "question_text": "The store is ___ strike.",
+    "options": [
+      "on",
+      "at",
+      "in",
+      "by"
+    ],
+    "answer": [
+      "on"
+    ],
+    "explanation": "'On strike' is a fixed phrase meaning workers are refusing to work.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Compound Preposition",
+    "question_text": "Choose: 'The box is ___ the desk.'",
+    "options": [
+      "on top of",
+      "into",
+      "along with",
+      "away from"
+    ],
+    "answer": [
+      "on top of"
+    ],
+    "explanation": "'On top of' is a compound preposition meaning resting on the upper surface.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Simple Preposition",
+    "question_text": "The bridge goes ___ the river.",
+    "options": [
+      "across",
+      "through",
+      "into",
+      "at"
+    ],
+    "answer": [
+      "across"
+    ],
+    "explanation": "'Across' means from one side to the other.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Fixed Phrase",
+    "question_text": "He is good ___ math.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "with"
+    ],
+    "answer": [
+      "at"
+    ],
+    "explanation": "'Good at' is a fixed expression for describing skill level.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Quiz: Compound Preposition Usage",
+    "question_text": "Which sentence uses the preposition correctly?",
+    "options": [
+      "She arrived according the schedule.",
+      "She arrived according to the schedule.",
+      "She arrived according with the schedule.",
+      "She arrived according from the schedule."
+    ],
+    "answer": [
+      "She arrived according to the schedule."
+    ],
+    "explanation": "'According to' is the correct compound preposition. It always requires 'to' after it.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Quiz: Compound Preposition",
+    "question_text": "Which compound preposition best completes: 'The event was canceled ___ the storm.'",
+    "options": [
+      "due to",
+      "apart from",
+      "instead of",
+      "outside of"
+    ],
+    "answer": [
+      "due to"
+    ],
+    "explanation": "'Due to' is a compound preposition meaning because of. It expresses cause.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Quiz: Compound Preposition",
+    "question_text": "Which preposition fits: '___ his illness, he continued to work hard.'",
+    "options": [
+      "Apart from",
+      "Regardless of",
+      "Outside of",
+      "Instead of"
+    ],
+    "answer": [
+      "Regardless of"
+    ],
+    "explanation": "'Regardless of' means without being affected by a condition.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Quiz: Invalid Compound Preposition",
+    "question_text": "Which of the following is NOT a correct compound preposition?",
+    "options": [
+      "In line with",
+      "On top of",
+      "By means of",
+      "Across between"
+    ],
+    "answer": [
+      "Across between"
+    ],
+    "explanation": "'Across between' is not a valid compound preposition in English.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Quiz: Compound Preposition Meaning",
+    "question_text": "Which compound preposition means 'concerning' or 'about'?",
+    "options": [
+      "As regards",
+      "Due to",
+      "Apart from",
+      "Outside of"
+    ],
+    "answer": [
+      "As regards"
+    ],
+    "explanation": "'As regards' is a formal compound preposition meaning concerning or about something.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Quiz: Compound Preposition in Context",
+    "question_text": "Choose the correct completion: 'She succeeded ___ hard work and dedication.'",
+    "options": [
+      "by means of",
+      "apart from",
+      "outside of",
+      "as for"
+    ],
+    "answer": [
+      "by means of"
+    ],
+    "explanation": "'By means of' indicates the method or instrument used to achieve something.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Quiz: Fixed Expression",
+    "question_text": "Which sentence is correct?",
+    "options": [
+      "As far as I know, she is honest.",
+      "As far to I know, she is honest.",
+      "As far from I know, she is honest.",
+      "As far by I know, she is honest."
+    ],
+    "answer": [
+      "As far as I know, she is honest."
+    ],
+    "explanation": "'As far as' is the correct fixed compound preposition used in this context.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Quiz: Simple Preposition",
+    "question_text": "Which preposition best completes: 'He applied ___ the job yesterday.'",
+    "options": [
+      "for",
+      "as to",
+      "due to",
+      "apart from"
+    ],
+    "answer": [
+      "for"
+    ],
+    "explanation": "'Apply for' is the correct fixed verb-preposition combination for job applications.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Quiz: Compound Preposition",
+    "question_text": "We went for a walk ___ the rain.",
+    "options": [
+      "in spite of",
+      "across from",
+      "out of",
+      "up to"
+    ],
+    "answer": [
+      "in spite of"
+    ],
+    "explanation": "'In spite of' shows contrast — the walk happened even though it was raining.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Quiz: Fixed Phrase",
+    "question_text": "He is ___ the verge of quitting.",
+    "options": [
+      "on",
+      "at",
+      "in",
+      "by"
+    ],
+    "answer": [
+      "on"
+    ],
+    "explanation": "'On the verge of' is a fixed phrase meaning very close to doing something.",
+    "select_mode": "single"
+  }
+]
