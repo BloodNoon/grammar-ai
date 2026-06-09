@@ -1,0 +1,136 @@
+[
+  {
+    "step_type": "lesson",
+    "title": "What is an Article?",
+    "content": "Articles are a type of determiner that come before nouns. English has three articles: 'a', 'an', and 'the'. They tell us whether we are talking about a specific thing or a general one.",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Indefinite Articles: A and An",
+    "content": "Use 'a' and 'an' when referring to something non-specific or mentioned for the first time. Use 'a' before words that start with a consonant sound: a car, a book, a university (note: 'university' starts with a 'y' sound). Use 'an' before words that start with a vowel sound: an apple, an elephant, an hour (note: 'hour' starts with a silent 'h', so it takes 'an').",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "The Definite Article: The",
+    "content": "Use 'the' when referring to something specific that both the speaker and listener already know about. Examples: 'Please close the door behind you' (a specific door). 'The sun is shining' (there is only one sun). 'Can you pass me the salt?' (the salt on this table). 'The' can be used before both singular and plural nouns.",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "When NOT to Use an Article",
+    "content": "Articles are not used before: proper nouns (Paris, Microsoft), most country names (France, Brazil), uncountable nouns used in general (Water is important), plural nouns used in general (Dogs are loyal), and languages or subjects (She studies English, He teaches math).",
+    "media_url": null
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: A or An",
+    "prompt_text": "I saw ___ elephant at the zoo.",
+    "answer": [
+      "an"
+    ],
+    "hint": "The word 'elephant' starts with a vowel sound.",
+    "explanation": "Use 'an' before words that start with vowel sounds.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: A or An",
+    "prompt_text": "She bought ___ new car yesterday.",
+    "answer": [
+      "a"
+    ],
+    "hint": "The word 'new' starts with a consonant sound.",
+    "explanation": "Use 'a' before words that start with consonant sounds.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: The",
+    "prompt_text": "Please close ___ door behind you.",
+    "answer": [
+      "the"
+    ],
+    "hint": "We are talking about a specific door.",
+    "explanation": "Use 'the' for specific things that both speaker and listener know about.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: A or An",
+    "prompt_text": "I need ___ umbrella because it's raining.",
+    "answer": [
+      "an"
+    ],
+    "hint": "The word 'umbrella' starts with a vowel sound.",
+    "explanation": "Use 'an' before words that start with vowel sounds.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: A or An",
+    "prompt_text": "He found ___ book on the table.",
+    "answer": [
+      "a"
+    ],
+    "hint": "The word 'book' starts with a consonant sound.",
+    "explanation": "Use 'a' before words that start with consonant sounds.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: The",
+    "prompt_text": "___ sun is shining brightly today.",
+    "answer": [
+      "the"
+    ],
+    "hint": "There is only one sun, making it specific.",
+    "explanation": "Use 'the' for unique things that everyone knows about.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: A or An",
+    "prompt_text": "She ate ___ apple for lunch.",
+    "answer": [
+      "an"
+    ],
+    "hint": "The word 'apple' starts with a vowel sound.",
+    "explanation": "Use 'an' before words that start with vowel sounds.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: A or An",
+    "prompt_text": "I saw ___ movie last night.",
+    "answer": [
+      "a"
+    ],
+    "hint": "The word 'movie' starts with a consonant sound.",
+    "explanation": "Use 'a' before words that start with consonant sounds.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: The",
+    "prompt_text": "Can you pass me ___ salt, please?",
+    "answer": [
+      "the"
+    ],
+    "hint": "We are talking about specific salt on the table.",
+    "explanation": "Use 'the' when referring to something specific both speaker and listener know about.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: A or An",
+    "prompt_text": "We heard ___ interesting story today.",
+    "answer": [
+      "an"
+    ],
+    "hint": "The word 'interesting' starts with a vowel sound.",
+    "explanation": "Use 'an' before words that start with vowel sounds.",
+    "case_sensitive": false
+  }
+]
