@@ -10,18 +10,18 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { PageContainer, GameCard, LessonPageHeader } from "../components/ui";
-
+ 
 // Import the refactored wrappers
 import SortingGameWrapper from "../components/SortingGameWrapper";
 import TypingGameWrapper from "../components/typingGameWrapper";
 import MultipleChoiceWrapper from "../components/multipleChoiceWrapper";
-
+ 
 // Import Noun Hunt Game
 import NounHuntGame from "./nounComponents/NounHuntGame";
-
+ 
 // Import your 150-item JSON file
 import nounData from "../data/nouns_questions.json";
-
+ 
 const practiceTypes = [
   {
     name: "Multiple Choice",
@@ -52,7 +52,7 @@ const practiceTypes = [
     examples: "Common, Proper, Abstract, Collective",
   },
 ];
-
+ 
 const NounPractice = () => {
   const sortingQuestions = nounData.filter(
     (q) => q.practice_type === "sorting",
@@ -61,7 +61,7 @@ const NounPractice = () => {
   const mcQuestions = nounData.filter(
     (q) => q.practice_type === "multiple_choice",
   );
-
+ 
   return (
     <PageContainer>
       <LessonPageHeader icon="🎯" title="Noun Practice Games" />
@@ -71,7 +71,7 @@ const NounPractice = () => {
           Complete 15 questions with 100% accuracy in each game to master nouns!
         </Text>
       </GameCard>
-
+ 
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
         {/* LEFT COLUMN: Practice Types Info + Typing Game + Noun Hunt */}
         <VStack spacing={6} align="stretch">
@@ -84,7 +84,7 @@ const NounPractice = () => {
               Master your noun knowledge through four different interactive
               challenges. Each game tests your skills in a unique way!
             </Text>
-
+ 
             <SimpleGrid columns={1} spacing={4}>
               {practiceTypes.map((type, idx) => (
                 <Flex
@@ -131,7 +131,7 @@ const NounPractice = () => {
               ))}
             </SimpleGrid>
           </GameCard>
-
+ 
           {/* Typing Game */}
           <GameCard variant="game">
             <Heading size="md" color="purple.500" mb={4}>
@@ -142,7 +142,7 @@ const NounPractice = () => {
               nextPath="/propcom-nouns"
             />
           </GameCard>
-
+ 
           {/* Noun Hunt Game */}
           <GameCard variant="game">
             <Heading size="md" color="yellow.500" mb={4}>
@@ -151,7 +151,7 @@ const NounPractice = () => {
             <NounHuntGame />
           </GameCard>
         </VStack>
-
+ 
         {/* RIGHT COLUMN: Multiple Choice + Sorting Game */}
         <VStack spacing={6} align="stretch">
           {/* Multiple Choice Game */}
@@ -164,7 +164,7 @@ const NounPractice = () => {
               nextPath="/propcom-nouns"
             />
           </GameCard>
-
+ 
           {/* Sorting Game */}
           <GameCard variant="game">
             <Heading size="md" color="#FF5722" mb={4}>
@@ -180,5 +180,5 @@ const NounPractice = () => {
     </PageContainer>
   );
 };
-
+ 
 export default NounPractice;
