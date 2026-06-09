@@ -1,0 +1,842 @@
+[
+  {
+    "step_type": "lesson",
+    "title": "What is a Noun?",
+    "content": "A noun is a word that names a person, place, thing, or idea. There are several types of nouns: Common, Proper, Abstract, Concrete, Collective, Countable, and Uncountable.",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Common vs. Proper Nouns",
+    "content": "A Common Noun is a general name for a person, place, or thing (e.g. city, dog, idea). A Proper Noun is a specific name and is always capitalized (e.g. Paris, Sarah, Tuesday).",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Abstract vs. Concrete Nouns",
+    "content": "A Concrete Noun refers to something you can perceive with your senses (e.g. thunder, marker). An Abstract Noun refers to an idea, feeling, or quality you cannot touch (e.g. bravery, friendship, curiosity).",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Collective, Countable, and Uncountable Nouns",
+    "content": "A Collective Noun names a group (e.g. a pride of lions, a school of fish, a fleet of ships). A Countable Noun can be counted (e.g. chair, idea, suitcase). An Uncountable Noun is a mass noun that cannot be counted with numbers (e.g. water, information, furniture).",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Introduction to Pronouns",
+    "content": "A Pronoun replaces a noun to avoid repetition. Types include: Personal (I, he, she, they), Possessive (mine, ours, theirs), Reflexive (himself, themselves), Demonstrative (this, that, these, those), and Indefinite (anyone, everyone, nobody).",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Plural Nouns",
+    "content": "To make nouns plural: add -s (cats), add -es for words ending in s/ch/sh/x (buses, foxes), change consonant+y to -ies (babies), change f/fe to -ves (leaves, wolves), or use irregular forms (mouse → mice, person → people, tooth → teeth).",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Possessive Nouns",
+    "content": "To show ownership: add 's to singular nouns (the dog's toy, James's book), add only ' to regular plural nouns ending in s (the teachers' lounge, the wolves' den), and add 's to irregular plural nouns that do not end in s (children's playground, women's room).",
+    "media_url": null
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Nouns and Pronouns",
+    "instructions": "Drag each word into the correct category: Common Noun, Proper Noun, or Pronoun.",
+    "items": [
+      {
+        "word": "city",
+        "category": "Common Noun"
+      },
+      {
+        "word": "Sarah",
+        "category": "Proper Noun"
+      },
+      {
+        "word": "they",
+        "category": "Pronoun"
+      },
+      {
+        "word": "dog",
+        "category": "Common Noun"
+      },
+      {
+        "word": "Chicago",
+        "category": "Proper Noun"
+      },
+      {
+        "word": "herself",
+        "category": "Pronoun"
+      },
+      {
+        "word": "idea",
+        "category": "Common Noun"
+      },
+      {
+        "word": "mine",
+        "category": "Pronoun"
+      },
+      {
+        "word": "Tuesday",
+        "category": "Proper Noun"
+      }
+    ],
+    "categories": [
+      "Common Noun",
+      "Proper Noun",
+      "Pronoun"
+    ],
+    "explanation": "Proper Nouns are always capitalized. Pronouns replace nouns — they include subject, object, possessive, and reflexive forms."
+  },
+  {
+    "step_type": "select",
+    "title": "Pronoun Replacement",
+    "question_text": "Replace the bolded noun: 'MARIA gave the book to John.'",
+    "options": [
+      "He",
+      "She",
+      "They"
+    ],
+    "answer": [
+      "She"
+    ],
+    "explanation": "Maria is the subject acting in the sentence, so we use the subject pronoun 'She'.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Pronoun Replacement",
+    "question_text": "Replace the bolded noun: 'The dog chased THE BALL.'",
+    "options": [
+      "it",
+      "them",
+      "him"
+    ],
+    "answer": [
+      "it"
+    ],
+    "explanation": "'The ball' is an object and a thing, so we replace it with 'it'.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Pronoun Replacement",
+    "question_text": "Replace the bolded phrase: 'Those shoes belong to ME AND MY BROTHER.'",
+    "options": [
+      "us",
+      "we",
+      "them"
+    ],
+    "answer": [
+      "us"
+    ],
+    "explanation": "'Me and my brother' are the object of the sentence, so we use the object pronoun 'us', not 'we'.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "build",
+    "title": "Build a Sentence: Abstract + Proper Noun",
+    "instructions": "Click the words in the correct order to build the sentence.",
+    "target": "John has a lot of courage today .",
+    "word_bank": [
+      "John",
+      "has",
+      "a lot of",
+      "courage",
+      "today",
+      "."
+    ],
+    "required_words": [
+      "John",
+      "has",
+      "a lot of",
+      "courage",
+      "today",
+      "."
+    ],
+    "allow_extra": false,
+    "explanation": "This sentence uses the Proper Noun 'John' and the Abstract Noun 'courage'."
+  },
+  {
+    "step_type": "build",
+    "title": "Build a Sentence: Subject + Possessive Pronoun",
+    "instructions": "Click the words in the correct order to build the sentence.",
+    "target": "She told me that the book is hers .",
+    "word_bank": [
+      "She",
+      "told",
+      "me",
+      "that",
+      "the book",
+      "is",
+      "hers",
+      "."
+    ],
+    "required_words": [
+      "She",
+      "told",
+      "me",
+      "that",
+      "the book",
+      "is",
+      "hers",
+      "."
+    ],
+    "allow_extra": false,
+    "explanation": "'She' is a Subject Pronoun and 'hers' is a Possessive Pronoun."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Plural Form",
+    "prompt_text": "Type the plural form of 'city'.",
+    "answer": [
+      "cities"
+    ],
+    "hint": "Drop the 'y' and add 'ies'.",
+    "explanation": "'City' ends in a consonant + y, so you drop the y and add 'ies'.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Plural Form",
+    "prompt_text": "Type the plural form of 'wolf'.",
+    "answer": [
+      "wolves"
+    ],
+    "hint": "Change the 'f' to a 'v' and add 'es'.",
+    "explanation": "Nouns ending in 'f' change to 'ves' in the plural form.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Abstract Noun",
+    "prompt_text": "Type the abstract noun form of 'brave'.",
+    "answer": [
+      "bravery"
+    ],
+    "hint": "Add a suffix to make it a state of being.",
+    "explanation": "Adding '-ry' to 'brave' creates the abstract noun 'bravery'.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Collective Noun",
+    "prompt_text": "A group of birds is called a...",
+    "answer": [
+      "flock"
+    ],
+    "hint": "A _____ of birds.",
+    "explanation": "'Flock' is the correct collective noun for a group of birds.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Plural Form",
+    "prompt_text": "Type the plural form of 'bus'.",
+    "answer": [
+      "buses"
+    ],
+    "hint": "Words ending in 's' need '-es'.",
+    "explanation": "Words ending in 's', 'ch', 'sh', or 'x' add '-es' to form the plural.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Plural Form",
+    "prompt_text": "Type the plural form of 'cherry'.",
+    "answer": [
+      "cherries"
+    ],
+    "hint": "Ends in consonant + y. Drop the y!",
+    "explanation": "'Cherry' ends in consonant + y, so drop the y and add 'ies'.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Plural Form",
+    "prompt_text": "Type the plural form of 'watch'.",
+    "answer": [
+      "watches"
+    ],
+    "hint": "Ends in 'ch'. Add 'es'.",
+    "explanation": "Words ending in 'ch' take '-es' in the plural.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Plural Form",
+    "prompt_text": "Type the plural form of 'leaf'.",
+    "answer": [
+      "leaves"
+    ],
+    "hint": "Ends in 'f'. Change to 'ves'.",
+    "explanation": "Nouns ending in 'f' or 'fe' change to '-ves' in the plural.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Plural Form",
+    "prompt_text": "Type the plural form of 'monkey'.",
+    "answer": [
+      "monkeys"
+    ],
+    "hint": "Ends in vowel + y. Just add 's'.",
+    "explanation": "'Monkey' ends in a vowel + y, so you just add 's'.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Irregular Plural",
+    "prompt_text": "Type the plural form of 'tooth'.",
+    "answer": [
+      "teeth"
+    ],
+    "hint": "This is completely irregular!",
+    "explanation": "'Tooth' is an irregular noun that changes its internal vowels to form 'teeth'.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Plural Rules",
+    "instructions": "Drag each plural word into the rule category that explains how it was formed.",
+    "items": [
+      {
+        "word": "cats",
+        "category": "Add -s"
+      },
+      {
+        "word": "foxes",
+        "category": "Add -es"
+      },
+      {
+        "word": "babies",
+        "category": "Change to -ies"
+      },
+      {
+        "word": "mice",
+        "category": "Irregular"
+      },
+      {
+        "word": "buses",
+        "category": "Add -es"
+      },
+      {
+        "word": "apples",
+        "category": "Add -s"
+      },
+      {
+        "word": "children",
+        "category": "Irregular"
+      },
+      {
+        "word": "cities",
+        "category": "Change to -ies"
+      }
+    ],
+    "categories": [
+      "Add -s",
+      "Add -es",
+      "Change to -ies",
+      "Irregular"
+    ],
+    "explanation": "Most nouns add -s. Nouns ending in s/ch/sh/x add -es. Consonant+y nouns drop y and add -ies. Irregular nouns change completely."
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Possessive Noun",
+    "prompt_text": "Rewrite 'the toy belonging to the dog' using a possessive noun.",
+    "answer": [
+      "the dog's toy"
+    ],
+    "hint": "Dog is singular. Add 's.",
+    "explanation": "For singular nouns, add apostrophe + s to show possession.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Possessive Noun",
+    "prompt_text": "Rewrite 'the lounge for the teachers' using a possessive noun.",
+    "answer": [
+      "the teachers' lounge"
+    ],
+    "hint": "Teachers is plural and ends in 's'. Just add an apostrophe!",
+    "explanation": "For regular plural nouns ending in 's', only add an apostrophe at the end.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Possessive Noun",
+    "prompt_text": "Rewrite 'the playground for the children' using a possessive noun.",
+    "answer": [
+      "the children's playground"
+    ],
+    "hint": "Children is plural but doesn't end in 's'. Add 's.",
+    "explanation": "Irregular plural nouns that don't end in 's' take apostrophe + s.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Possessive Noun",
+    "prompt_text": "Rewrite 'the desk belonging to the boss' using a possessive noun.",
+    "answer": [
+      "the boss's desk"
+    ],
+    "hint": "Boss is singular. Even though it ends in 's', add 's.",
+    "explanation": "Singular nouns ending in 's' typically take apostrophe + s.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Possessive Nouns",
+    "instructions": "Drag each possessive form into the correct category.",
+    "items": [
+      {
+        "word": "boy's",
+        "category": "Singular ('s)"
+      },
+      {
+        "word": "boys'",
+        "category": "Regular Plural (s')"
+      },
+      {
+        "word": "children's",
+        "category": "Irregular Plural ('s)"
+      },
+      {
+        "word": "teachers'",
+        "category": "Regular Plural (s')"
+      },
+      {
+        "word": "teacher's",
+        "category": "Singular ('s)"
+      },
+      {
+        "word": "women's",
+        "category": "Irregular Plural ('s)"
+      },
+      {
+        "word": "dog's",
+        "category": "Singular ('s)"
+      },
+      {
+        "word": "cats'",
+        "category": "Regular Plural (s')"
+      }
+    ],
+    "categories": [
+      "Singular ('s)",
+      "Regular Plural (s')",
+      "Irregular Plural ('s)"
+    ],
+    "explanation": "Look closely at where the apostrophe is placed — before or after the 's' tells you everything."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Proper Noun",
+    "question_text": "Identify the Proper Noun in the following sentence: 'We traveled to Paris last summer.'",
+    "options": [
+      "traveled",
+      "Paris",
+      "last",
+      "summer"
+    ],
+    "answer": [
+      "Paris"
+    ],
+    "explanation": "Paris is a specific name of a city and is capitalized, making it a Proper Noun.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Abstract Noun",
+    "question_text": "Which of these nouns represents an idea or feeling that you cannot touch?",
+    "options": [
+      "Table",
+      "Water",
+      "Bravery",
+      "Bird"
+    ],
+    "answer": [
+      "Bravery"
+    ],
+    "explanation": "Bravery is an Abstract Noun because it is a quality or state of being, not a physical object.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Uncountable Noun",
+    "question_text": "Which of these nouns is Uncountable?",
+    "options": [
+      "Chair",
+      "Information",
+      "Apple",
+      "Coin"
+    ],
+    "answer": [
+      "Information"
+    ],
+    "explanation": "You cannot count 'informations'; it is a mass noun representing a concept.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Abstract Noun in Context",
+    "question_text": "Which noun in this sentence is Abstract? 'The child's curiosity led to a great discovery.'",
+    "options": [
+      "child",
+      "curiosity",
+      "discovery",
+      "led"
+    ],
+    "answer": [
+      "curiosity"
+    ],
+    "explanation": "Curiosity is a mental state and feeling, making it abstract.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subject Pronoun",
+    "question_text": "Choose the correct subject pronoun to replace 'DAVID AND SARAH went to the library.'",
+    "options": [
+      "We",
+      "Them",
+      "They",
+      "Us"
+    ],
+    "answer": [
+      "They"
+    ],
+    "explanation": "David and Sarah are the plural subjects, so we use 'They'.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Reflexive Pronoun",
+    "question_text": "Fill in the blank: 'The cat cleaned ___ after eating lunch.'",
+    "options": [
+      "it",
+      "itself",
+      "himself",
+      "herself"
+    ],
+    "answer": [
+      "itself"
+    ],
+    "explanation": "Reflexive pronouns like 'itself' refer back to the subject (the cat) when subject and object are the same.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Demonstrative Pronoun",
+    "question_text": "Which word is a Demonstrative Pronoun used for something far away?",
+    "options": [
+      "This",
+      "That",
+      "These",
+      "Those"
+    ],
+    "answer": [
+      "That"
+    ],
+    "explanation": "'That' points to a singular object that is not nearby.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Possessive Pronoun",
+    "question_text": "Select the Possessive Pronoun: 'That red car is ours.'",
+    "options": [
+      "That",
+      "red",
+      "car",
+      "ours"
+    ],
+    "answer": [
+      "ours"
+    ],
+    "explanation": "'Ours' shows ownership and replaces a noun phrase.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Object Pronoun",
+    "question_text": "Which pronoun is an Object pronoun?",
+    "options": [
+      "I",
+      "She",
+      "Him",
+      "We"
+    ],
+    "answer": [
+      "Him"
+    ],
+    "explanation": "'Him' is used as the receiver of an action, unlike 'I' or 'She' which are subjects.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Collective Noun",
+    "question_text": "Which collective noun is used for a group of fish?",
+    "options": [
+      "Pack",
+      "School",
+      "Flock",
+      "Herd"
+    ],
+    "answer": [
+      "School"
+    ],
+    "explanation": "A 'school' of fish is the correct collective noun for a large group of fish swimming together.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Indefinite Pronoun",
+    "question_text": "Identify the Indefinite Pronoun: 'Does anyone have a pencil I can borrow?'",
+    "options": [
+      "anyone",
+      "have",
+      "pencil",
+      "borrow"
+    ],
+    "answer": [
+      "anyone"
+    ],
+    "explanation": "'Anyone' refers to a non-specific person, making it an indefinite pronoun.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Plural Possession",
+    "question_text": "Which sentence shows correct plural possession for 'the shoes belonging to the girls'?",
+    "options": [
+      "The girl's shoes",
+      "The girls' shoes",
+      "The girls's shoes"
+    ],
+    "answer": [
+      "The girls' shoes"
+    ],
+    "explanation": "For a regular plural noun ending in 's', you only add an apostrophe at the very end.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Plural Rule",
+    "question_text": "What is the correct plural of 'category'?",
+    "options": [
+      "categorys",
+      "categories",
+      "categoryes"
+    ],
+    "answer": [
+      "categories"
+    ],
+    "explanation": "Since 'category' ends in a consonant + y, you drop the 'y' and add 'ies'.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Countable Noun",
+    "question_text": "Which of these is a Countable Noun?",
+    "options": [
+      "Furniture",
+      "Equipment",
+      "Chair",
+      "Luggage"
+    ],
+    "answer": [
+      "Chair"
+    ],
+    "explanation": "You can count 'one chair' or 'two chairs', whereas furniture and luggage are mass nouns.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Collective Noun",
+    "question_text": "What is the collective noun for a group of ships?",
+    "options": [
+      "Fleet",
+      "Pack",
+      "Flock",
+      "Herd"
+    ],
+    "answer": [
+      "Fleet"
+    ],
+    "explanation": "A 'fleet' is the correct term for a group of ships or vehicles working together.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Collective Noun",
+    "prompt_text": "A group of lions is called a...",
+    "answer": [
+      "pride"
+    ],
+    "hint": "It starts with the letter 'P'.",
+    "explanation": "'Pride' is the collective noun for a group of lions.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Collective Noun",
+    "prompt_text": "Type the collective noun for a group of players.",
+    "answer": [
+      "team"
+    ],
+    "hint": "They play together to win.",
+    "explanation": "'Team' is the collective noun for a group of players.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Possessive Pronoun",
+    "prompt_text": "The phone belongs to me. It is...",
+    "answer": [
+      "mine"
+    ],
+    "hint": "It shows I own it.",
+    "explanation": "'Mine' is the possessive pronoun for the first person singular.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Indefinite Pronoun",
+    "prompt_text": "Type a pronoun that means 'no person'.",
+    "answer": [
+      "nobody"
+    ],
+    "hint": "Synonym for 'no one'.",
+    "explanation": "'Nobody' is an indefinite pronoun meaning no person.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Reflexive Pronoun",
+    "prompt_text": "Complete the sentence: 'We should be proud of...'",
+    "answer": [
+      "ourselves"
+    ],
+    "hint": "The plural version of 'myself'.",
+    "explanation": "'Ourselves' is the reflexive pronoun for 'we'.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Abstract Noun",
+    "prompt_text": "Type the abstract noun form of the word 'honest'.",
+    "answer": [
+      "honesty"
+    ],
+    "hint": "Change the ending to 'y'.",
+    "explanation": "Adding '-y' to 'honest' creates the abstract noun 'honesty'.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Proper Noun",
+    "prompt_text": "Type the Proper Noun for the day that comes after Friday.",
+    "answer": [
+      "Saturday"
+    ],
+    "hint": "Remember to capitalize the first letter!",
+    "explanation": "Days of the week are Proper Nouns and must be capitalized.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Plural Form",
+    "prompt_text": "Type the plural form of 'hero'.",
+    "answer": [
+      "heroes"
+    ],
+    "hint": "Most nouns ending in 'o' preceded by a consonant add 'es'.",
+    "explanation": "'Hero' follows the rule of adding '-es' after a consonant + o.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Possessive Pronoun",
+    "prompt_text": "Complete the sentence: 'The dog wagged ___ tail.'",
+    "answer": [
+      "its"
+    ],
+    "hint": "Be careful! 'It's' means 'it is'. Use the possessive version.",
+    "explanation": "'Its' (no apostrophe) is the possessive pronoun for a non-human subject.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Plural Form",
+    "prompt_text": "Type the plural form of 'person'.",
+    "answer": [
+      "people"
+    ],
+    "hint": "This word changes completely.",
+    "explanation": "'Person' is an irregular noun whose plural is 'people'.",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "sort",
+    "title": "Sort: Noun Types",
+    "instructions": "Drag each word into the correct noun category.",
+    "items": [
+      {
+        "word": "Thunder",
+        "category": "Concrete"
+      },
+      {
+        "word": "skyscraper",
+        "category": "Common"
+      },
+      {
+        "word": "Advice",
+        "category": "Uncountable"
+      },
+      {
+        "word": "Staircase",
+        "category": "Countable"
+      },
+      {
+        "word": "These",
+        "category": "Demonstrative"
+      },
+      {
+        "word": "Mice",
+        "category": "Irregular Plural"
+      },
+      {
+        "word": "Intelligence",
+        "category": "Abstract"
+      },
+      {
+        "word": "Furniture",
+        "category": "Uncountable"
+      },
+      {
+        "word": "Microsoft",
+        "category": "Proper"
+      },
+      {
+        "word": "Audience",
+        "category": "Collective"
+      }
+    ],
+    "categories": [
+      "Concrete",
+      "Common",
+      "Uncountable",
+      "Countable",
+      "Demonstrative",
+      "Irregular Plural",
+      "Abstract",
+      "Proper",
+      "Collective"
+    ],
+    "explanation": "Each noun type has a different role. Proper nouns are capitalized. Abstract nouns can't be touched. Collective nouns name groups."
+  }
+]
