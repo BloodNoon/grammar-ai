@@ -1,0 +1,172 @@
+[
+  {
+    "step_type": "lesson",
+    "title": "What is an Adverb?",
+    "content": "An adverb is a word that modifies a verb, adjective, or another adverb. It can describe how, when, where, how often, or to what extent something happens. Examples: 'She sings beautifully' (how), 'Yesterday I finished my homework' (when), 'Come here!' (where).",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "What Do Adverbs Modify?",
+    "content": "Adverbs modify three things: (1) Verbs — show how an action happens: 'She sings beautifully.' (2) Adjectives — modify intensity: 'The water is extremely cold.' (3) Other adverbs — strengthen or weaken meaning: 'He ran very quickly.'",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Types of Adverbs",
+    "content": "Adverbs fall into five categories: (1) Manner — how something happens: quickly, gently, loudly, carefully, beautifully. (2) Time — when something happens: yesterday, soon, now, later, always. (3) Place — where something happens: here, outside, upstairs, everywhere, nearby. (4) Frequency — how often something happens: always, often, rarely, sometimes, never. (5) Degree — to what extent: very, completely, almost, quite, extremely.",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Adverb Forms: With and Without -ly",
+    "content": "Most adverbs are formed by adding -ly to an adjective: slow → slowly, happy → happily, clear → clearly, careful → carefully, quick → quickly. However, some adverbs do not end in -ly: fast (manner), well (manner), soon (time), here (place), very (degree). Important: not all words ending in -ly are adverbs — 'friendly' is an adjective. Focus on what the word does in the sentence.",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Adverb Phrases",
+    "content": "Adverb phrases act like a single adverb but use multiple words: 'in the morning' (time) — 'I exercise in the morning.' / 'with great care' (manner) — 'Handle it with great care.' / 'to a large extent' (degree) — 'The plan succeeded to a large extent.' / 'once in a while' (frequency) — 'We visit once in a while.' / 'in the garden' (place) — 'Children play in the garden.'",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "The Royal Order of Adverbs",
+    "content": "When using multiple adverbs, English follows this order: Manner → Place → Time. Example: 'He worked hard (manner) in the office (place) yesterday (time).' Placing them out of order sounds unnatural. Frequency adverbs (always, often, never) usually go before the main verb: 'She always arrives on time.'",
+    "media_url": null
+  },
+  {
+    "step_type": "select",
+    "title": "Identify the Adverbs",
+    "question_text": "Identify the adverbs in: 'She quickly ran outside yesterday.'",
+    "options": [
+      "quickly",
+      "ran",
+      "outside",
+      "yesterday"
+    ],
+    "answer": [
+      "quickly",
+      "outside",
+      "yesterday"
+    ],
+    "explanation": "'Quickly' (manner), 'outside' (place), and 'yesterday' (time) are all adverbs modifying the verb 'ran'.",
+    "select_mode": "multi"
+  },
+  {
+    "step_type": "select",
+    "title": "Adverb Type",
+    "question_text": "What type of adverb is 'very' in 'The movie was very exciting'?",
+    "options": [
+      "Manner",
+      "Time",
+      "Degree",
+      "Frequency"
+    ],
+    "answer": [
+      "Degree"
+    ],
+    "explanation": "'Very' is a degree adverb that intensifies the adjective 'exciting'.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Royal Order of Adverbs",
+    "question_text": "Put these adverbs in the correct Royal Order: 'last week', 'carefully', 'in the garden'.",
+    "options": [
+      "carefully in the garden last week",
+      "in the garden carefully last week",
+      "last week carefully in the garden"
+    ],
+    "answer": [
+      "carefully in the garden last week"
+    ],
+    "explanation": "Royal Order: Manner (carefully) → Place (in the garden) → Time (last week).",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Identify Multiple Adverbs",
+    "question_text": "Which words are adverbs in: 'He always speaks extremely clearly here.'?",
+    "options": [
+      "always",
+      "speaks",
+      "extremely",
+      "clearly",
+      "here"
+    ],
+    "answer": [
+      "always",
+      "extremely",
+      "clearly",
+      "here"
+    ],
+    "explanation": "'Always' (frequency), 'extremely' (degree), 'clearly' (manner), and 'here' (place) are adverbs.",
+    "select_mode": "multi"
+  },
+  {
+    "step_type": "select",
+    "title": "What Does the Adverb Modify?",
+    "question_text": "What does the adverb 'beautifully' modify in: 'She sings beautifully'?",
+    "options": [
+      "She",
+      "sings",
+      "the whole sentence",
+      "nothing"
+    ],
+    "answer": [
+      "sings"
+    ],
+    "explanation": "'Beautifully' is an adverb of manner that modifies the verb 'sings', describing HOW she sings.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Correct Adverb Usage",
+    "question_text": "Which sentence uses adverbs correctly?",
+    "options": [
+      "He worked hardly yesterday in the office.",
+      "He worked hard yesterday in the office.",
+      "He worked hardly in the office yesterday."
+    ],
+    "answer": [
+      "He worked hard yesterday in the office."
+    ],
+    "explanation": "'Hard' (not 'hardly') is the correct adverb for effort. The order follows: Manner → Time → Place.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Adverb Types in Context",
+    "question_text": "In 'Tomorrow, we will carefully review the documents', what types of adverbs are used?",
+    "options": [
+      "Time and Manner",
+      "Place and Frequency",
+      "Degree and Time",
+      "Manner and Place"
+    ],
+    "answer": [
+      "Time and Manner"
+    ],
+    "explanation": "'Tomorrow' is a time adverb and 'carefully' is a manner adverb.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Identify Adverb Phrases",
+    "question_text": "Which of these are adverb phrases?",
+    "options": [
+      "in the morning",
+      "with great care",
+      "very quickly",
+      "to a large extent"
+    ],
+    "answer": [
+      "in the morning",
+      "with great care",
+      "to a large extent"
+    ],
+    "explanation": "These are adverb phrases. 'Very quickly' contains adverbs but 'very' modifies 'quickly' — it is not a phrase on its own.",
+    "select_mode": "multi"
+  }
+]
