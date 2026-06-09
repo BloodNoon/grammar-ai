@@ -1,0 +1,190 @@
+[
+  {
+    "step_type": "lesson",
+    "title": "What is an Adjective?",
+    "content": "An adjective is a word that describes, modifies, or gives more information about a noun or pronoun. Adjectives help the reader visualize, feel, or understand something more precisely.",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "How Adjectives Work",
+    "content": "Adjectives can appear before a noun ('the red apple', 'a difficult question') or after a linking verb ('she is happy', 'the movie was exciting'). They answer questions like: What kind? Which one? How many? How much?",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Types of Adjectives",
+    "content": "Adjectives fall into categories based on what they describe: Opinion (beautiful, difficult), Size (small, large), Age (old, ancient), Shape (round, square), Color (red, green), Origin (Italian, French), Material (wooden, metal), Purpose (racing, sleeping). Each type answers a different question about the noun.",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "The Royal Order of Adjectives",
+    "content": "When using multiple adjectives, English follows a specific order: Determiner → Quantity → Opinion → Size → Age → Shape → Color → Origin → Material → Purpose → Noun. Example: 'My two beautiful small old round green Italian wooden racing chairs.' Breaking this order sounds unnatural to native speakers.",
+    "media_url": null
+  },
+  {
+    "step_type": "lesson",
+    "title": "Interactive Examples",
+    "content": "Study these examples: (1) 'The red apple' — red is a color adjective describing the noun apple. (2) 'A difficult question' — difficult is an opinion adjective describing the noun question. (3) 'She is happy' — happy is an emotion adjective describing the pronoun she. (4) 'My two beautiful small old round green Italian wooden racing chairs' — all adjectives follow the Royal Order.",
+    "media_url": null
+  },
+  {
+    "step_type": "select",
+    "title": "Identify the Adjectives",
+    "question_text": "Identify the adjectives in: 'The tall building is impressive.'",
+    "options": [
+      "tall",
+      "building",
+      "is",
+      "impressive"
+    ],
+    "answer": [
+      "tall",
+      "impressive"
+    ],
+    "explanation": "Both 'tall' (describes the building) and 'impressive' (describes how the building seems) are adjectives.",
+    "select_mode": "multi"
+  },
+  {
+    "step_type": "select",
+    "title": "Adjective Order",
+    "question_text": "Put these adjectives in the correct order: wooden, beautiful, small.",
+    "options": [
+      "beautiful small wooden",
+      "small beautiful wooden",
+      "wooden beautiful small"
+    ],
+    "answer": [
+      "beautiful small wooden"
+    ],
+    "explanation": "Opinion (beautiful) comes before Size (small) which comes before Material (wooden).",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Adjective Order in a Sentence",
+    "question_text": "Which sentence follows proper adjective order?",
+    "options": [
+      "A wooden beautiful table",
+      "A beautiful wooden table",
+      "A table beautiful wooden"
+    ],
+    "answer": [
+      "A beautiful wooden table"
+    ],
+    "explanation": "Opinion adjectives (beautiful) come before Material adjectives (wooden).",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Identify Adjectives in Context",
+    "question_text": "In 'She bought three expensive red cars', which words are adjectives?",
+    "options": [
+      "three",
+      "expensive",
+      "red",
+      "cars"
+    ],
+    "answer": [
+      "expensive",
+      "red"
+    ],
+    "explanation": "'Three' is a number/determiner, 'expensive' is an opinion adjective, 'red' is a color adjective, and 'cars' is a noun.",
+    "select_mode": "multi"
+  },
+  {
+    "step_type": "select",
+    "title": "Adjective Type",
+    "question_text": "What type of adjective is 'ancient' in 'the ancient castle'?",
+    "options": [
+      "Opinion",
+      "Age",
+      "Size",
+      "Color"
+    ],
+    "answer": [
+      "Age"
+    ],
+    "explanation": "'Ancient' describes how old something is, making it an Age adjective.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Fill in the Blank: Adjective",
+    "question_text": "The _____ cat sat on the warm mat.",
+    "options": [
+      "fluffy",
+      "table",
+      "running"
+    ],
+    "answer": [
+      "fluffy"
+    ],
+    "explanation": "We need an adjective to describe the cat. 'Fluffy' describes what the cat looks and feels like.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Fill in the Blank: Adjective Order",
+    "question_text": "She wore a _____ dress to the party.",
+    "options": [
+      "beautiful red",
+      "red beautiful",
+      "dress beautiful"
+    ],
+    "answer": [
+      "beautiful red"
+    ],
+    "explanation": "Opinion adjectives (beautiful) come before color adjectives (red) in English.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Fill in the Blank: Adjective vs Noun",
+    "question_text": "The movie was very _____.",
+    "options": [
+      "excitement",
+      "exciting",
+      "excite"
+    ],
+    "answer": [
+      "exciting"
+    ],
+    "explanation": "'Exciting' is an adjective that describes what the movie was like. 'Excitement' is a noun.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Fill in the Blank: Royal Order",
+    "question_text": "I bought _____ apples.",
+    "options": [
+      "red three small",
+      "three small red",
+      "small red three"
+    ],
+    "answer": [
+      "three small red"
+    ],
+    "explanation": "Correct order: Number (three) → Size (small) → Color (red). Remember the Royal Order!",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "select",
+    "title": "Fill in the Blank: Multiple Adjectives",
+    "question_text": "The _____ building downtown is _____.",
+    "options": [
+      "old",
+      "impressive",
+      "impressively",
+      "older",
+      "impression"
+    ],
+    "answer": [
+      "old",
+      "impressive"
+    ],
+    "explanation": "Both blanks need adjectives. 'Old' describes the building, 'impressive' describes how it seems.",
+    "select_mode": "multi"
+  }
+]
