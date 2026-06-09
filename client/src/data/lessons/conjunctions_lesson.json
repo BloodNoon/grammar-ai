@@ -197,5 +197,2030 @@
     ],
     "allow_extra": false,
     "explanation": "When a subordinating conjunction appears in the middle of a sentence, no comma is needed before it."
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Choose the conjunction: 'I wanted to go, ___ it was raining.'",
+    "options": [
+      "but",
+      "or",
+      "so",
+      "for"
+    ],
+    "answer": [
+      "but"
+    ],
+    "explanation": "Shows contrast between two ideas.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type the conjunction: 'We stayed inside ___ it was raining.'",
+    "answer": [
+      "because"
+    ],
+    "hint": "Introduces a reason.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Identify the conjunction: 'Do you want tea ___ coffee?'",
+    "options": [
+      "or",
+      "and",
+      "but",
+      "yet"
+    ],
+    "answer": [
+      "or"
+    ],
+    "explanation": "Presents an alternative or choice.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type the conjunction: '___ I am tired, I will help you.'",
+    "answer": [
+      "Although"
+    ],
+    "hint": "Shows a concession or contrast.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Choose the conjunction: 'He was hungry, ___ he ate a sandwich.'",
+    "options": [
+      "so",
+      "but",
+      "or",
+      "for"
+    ],
+    "answer": [
+      "so"
+    ],
+    "explanation": "Shows a result or consequence.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type the conjunction: 'I will wait ___ you arrive.'",
+    "answer": [
+      "until"
+    ],
+    "hint": "Refers to a point in time.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Identify the conjunction: 'I like apples ___ oranges.'",
+    "options": [
+      "and",
+      "but",
+      "yet",
+      "for"
+    ],
+    "answer": [
+      "and"
+    ],
+    "explanation": "Adds one thing to another.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type the conjunction: 'Clean your room ___ you go out.'",
+    "answer": [
+      "before"
+    ],
+    "hint": "Shows a sequence in time.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Choose the conjunction: 'She is small, ___ she is strong.'",
+    "options": [
+      "yet",
+      "or",
+      "so",
+      "for"
+    ],
+    "answer": [
+      "yet"
+    ],
+    "explanation": "Similar to 'but', shows contrast.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type the conjunction: '___ it stops raining, we will leave.'",
+    "answer": [
+      "If"
+    ],
+    "hint": "Introduces a condition.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Identify the conjunction: 'I cannot sing, ___ can I dance.'",
+    "options": [
+      "nor",
+      "and",
+      "but",
+      "so"
+    ],
+    "answer": [
+      "nor"
+    ],
+    "explanation": "Used to present a second negative idea.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type the conjunction: 'He has been happy ___ he moved.'",
+    "answer": [
+      "since"
+    ],
+    "hint": "Refers to a starting point in time.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Choose the conjunction: 'He studied hard, ___ he passed.'",
+    "options": [
+      "and",
+      "but",
+      "or",
+      "for"
+    ],
+    "answer": [
+      "and"
+    ],
+    "explanation": "Connects two related actions.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type the conjunction: '___ you finish, you can play.'",
+    "answer": [
+      "When"
+    ],
+    "hint": "Refers to the time something happens.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Identify the conjunction: 'He is tired, ___ he worked late.'",
+    "options": [
+      "for",
+      "and",
+      "or",
+      "so"
+    ],
+    "answer": [
+      "for"
+    ],
+    "explanation": "Used like 'because' to show reason.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type the conjunction: 'I am reading ___ she is sleeping.'",
+    "answer": [
+      "while"
+    ],
+    "hint": "Indicates simultaneous actions.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Choose: 'Would you like to walk ___ take the bus?'",
+    "options": [
+      "or",
+      "and",
+      "yet",
+      "so"
+    ],
+    "answer": [
+      "or"
+    ],
+    "explanation": "Presents a choice.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: '___ you are here, help me.'",
+    "answer": [
+      "Since"
+    ],
+    "hint": "Meaning 'because'.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Identify: 'The sky is dark, ___ it's not raining.'",
+    "options": [
+      "but",
+      "so",
+      "for",
+      "or"
+    ],
+    "answer": [
+      "but"
+    ],
+    "explanation": "Shows contrast.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'Keep trying ___ you succeed.'",
+    "answer": [
+      "until"
+    ],
+    "hint": "Point in time.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Choose: 'He is smart ___ kind.'",
+    "options": [
+      "and",
+      "but",
+      "nor",
+      "for"
+    ],
+    "answer": [
+      "and"
+    ],
+    "explanation": "Joins two positive traits.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I'll go ___ you go.'",
+    "answer": [
+      "if"
+    ],
+    "hint": "Condition.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Identify: 'I don't like milk, ___ do I like cheese.'",
+    "options": [
+      "nor",
+      "so",
+      "and",
+      "yet"
+    ],
+    "answer": [
+      "nor"
+    ],
+    "explanation": "Second negative idea.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: '___ he was late, he missed the bus.'",
+    "answer": [
+      "As"
+    ],
+    "hint": "Showing reason.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Choose: 'It was late, ___ we went home.'",
+    "options": [
+      "so",
+      "but",
+      "or",
+      "for"
+    ],
+    "answer": [
+      "so"
+    ],
+    "explanation": "Result.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'He left ___ I arrived.'",
+    "answer": [
+      "after"
+    ],
+    "hint": "Time sequence.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Identify: 'It's cold, ___ the sun is out.'",
+    "options": [
+      "yet",
+      "so",
+      "or",
+      "for"
+    ],
+    "answer": [
+      "yet"
+    ],
+    "explanation": "Contrast.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: '___ I am busy, I will call you.'",
+    "answer": [
+      "Though"
+    ],
+    "hint": "Concession.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Choose: 'You can stay ___ leave.'",
+    "options": [
+      "or",
+      "and",
+      "yet",
+      "for"
+    ],
+    "answer": [
+      "or"
+    ],
+    "explanation": "Choice.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'He smiled ___ he saw me.'",
+    "answer": [
+      "as soon as"
+    ],
+    "hint": "Immediate time.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Identify: 'I am tired, ___ I am happy.'",
+    "options": [
+      "but",
+      "so",
+      "or",
+      "for"
+    ],
+    "answer": [
+      "but"
+    ],
+    "explanation": "Contrast.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: '___ you leave, lock the door.'",
+    "answer": [
+      "Once"
+    ],
+    "hint": "After a specific time.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Choose: 'Run fast, ___ you will be late.'",
+    "options": [
+      "or",
+      "and",
+      "yet",
+      "for"
+    ],
+    "answer": [
+      "or"
+    ],
+    "explanation": "Consequence if not followed.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: '___ he is young, he is wise.'",
+    "answer": [
+      "Even though"
+    ],
+    "hint": "Strong contrast.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Identify: 'He likes tea, ___ I like coffee.'",
+    "options": [
+      "and",
+      "so",
+      "or",
+      "for"
+    ],
+    "answer": [
+      "and"
+    ],
+    "explanation": "Simple connection.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I slept ___ the movie was on.'",
+    "answer": [
+      "while"
+    ],
+    "hint": "Simultaneous.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Choose: 'I was sick, ___ I stayed home.'",
+    "options": [
+      "so",
+      "but",
+      "yet",
+      "for"
+    ],
+    "answer": [
+      "so"
+    ],
+    "explanation": "Result.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'Check the map ___ you get lost.'",
+    "answer": [
+      "lest"
+    ],
+    "hint": "To prevent something (formal).",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Identify: 'She is neither tall ___ short.'",
+    "options": [
+      "nor",
+      "or",
+      "and",
+      "but"
+    ],
+    "answer": [
+      "nor"
+    ],
+    "explanation": "Second part of 'neither'.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: '___ it rains, the game is on.'",
+    "answer": [
+      "Unless"
+    ],
+    "hint": "Except if.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Choose: 'Be quiet, ___ leave the room.'",
+    "options": [
+      "or",
+      "and",
+      "so",
+      "yet"
+    ],
+    "answer": [
+      "or"
+    ],
+    "explanation": "Options.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'He works hard ___ he can succeed.'",
+    "answer": [
+      "so that"
+    ],
+    "hint": "Purpose.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Identify: 'The car is old ___ reliable.'",
+    "options": [
+      "yet",
+      "so",
+      "for",
+      "or"
+    ],
+    "answer": [
+      "yet"
+    ],
+    "explanation": "Contrast.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: '___ he arrives, tell him.'",
+    "answer": [
+      "Whenever"
+    ],
+    "hint": "Any time.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Choose: 'I eat bread ___ butter.'",
+    "options": [
+      "and",
+      "but",
+      "so",
+      "for"
+    ],
+    "answer": [
+      "and"
+    ],
+    "explanation": "Addition.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'He fell ___ he was running.'",
+    "answer": [
+      "because"
+    ],
+    "hint": "Reason.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Identify: 'I will go, ___ I must.'",
+    "options": [
+      "for",
+      "so",
+      "or",
+      "yet"
+    ],
+    "answer": [
+      "for"
+    ],
+    "explanation": "Formal reason.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: '___ the sun sets, it gets cold.'",
+    "answer": [
+      "As soon as"
+    ],
+    "hint": "Immediate sequence.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Coordinating",
+    "question_text": "Choose: 'She doesn't eat meat, ___ does she eat fish.'",
+    "options": [
+      "nor",
+      "so",
+      "or",
+      "and"
+    ],
+    "answer": [
+      "nor"
+    ],
+    "explanation": "Negative addition.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'Stay ___ you are.'",
+    "answer": [
+      "where"
+    ],
+    "hint": "Location.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Correlative",
+    "question_text": "Choose the pair: '___ the blue one ___ the red one will work.'",
+    "options": [
+      "Either/or",
+      "Neither/nor",
+      "Both/and",
+      "Whether/or"
+    ],
+    "answer": [
+      "Either/or"
+    ],
+    "explanation": "Correlative conjunctions work in pairs to show a choice.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type the conjunction: 'I am saving money ___ I can buy a car.'",
+    "answer": [
+      "so that"
+    ],
+    "hint": "Introduces a purpose or goal.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Correlative",
+    "question_text": "Identify the pair: '___ Sarah ___ Mark arrived on time.'",
+    "options": [
+      "Neither/nor",
+      "Either/or",
+      "Not only/but also",
+      "Both/and"
+    ],
+    "answer": [
+      "Neither/nor"
+    ],
+    "explanation": "Indicates that both subjects failed to meet the condition.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type the conjunction: '___ you study, you will pass.'",
+    "answer": [
+      "As long as"
+    ],
+    "hint": "Shows a condition that must be met.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Correlative",
+    "question_text": "Choose the pair: 'She is ___ smart ___ kind.'",
+    "options": [
+      "not only/but also",
+      "either/or",
+      "neither/nor",
+      "whether/or"
+    ],
+    "answer": [
+      "not only/but also"
+    ],
+    "explanation": "Emphasizes two positive traits.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type the conjunction: 'I will go ___ you go.'",
+    "answer": [
+      "provided that"
+    ],
+    "hint": "A formal way to say 'if'.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Correlative",
+    "question_text": "Identify the pair: 'I don't know ___ to stay ___ leave.'",
+    "options": [
+      "whether/or",
+      "either/or",
+      "neither/nor",
+      "both/and"
+    ],
+    "answer": [
+      "whether/or"
+    ],
+    "explanation": "Expresses doubt or a choice between two possibilities.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type the conjunction: '___ it was late, we finished the job.'",
+    "answer": [
+      "Even though"
+    ],
+    "hint": "Shows a strong contrast.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Correlative",
+    "question_text": "Choose the pair: '___ the cake ___ the pie are delicious.'",
+    "options": [
+      "Both/and",
+      "Either/or",
+      "Neither/nor",
+      "Whether/or"
+    ],
+    "answer": [
+      "Both/and"
+    ],
+    "explanation": "Joins two subjects as a plural group.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type the conjunction: 'I'll bring an umbrella ___ it rains.'",
+    "answer": [
+      "in case"
+    ],
+    "hint": "Shows preparation for a possible event.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: 'He failed ___ he didn't study.'",
+    "options": [
+      "inasmuch as",
+      "unless",
+      "until",
+      "where"
+    ],
+    "answer": [
+      "inasmuch as"
+    ],
+    "explanation": "A formal way to show reason or extent.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type the conjunction: '___ I were you, I would wait.'",
+    "answer": [
+      "If"
+    ],
+    "hint": "Hypothetical condition.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Correlative",
+    "question_text": "Choose: '___ had I finished ___ the phone rang.'",
+    "options": [
+      "No sooner/than",
+      "Neither/nor",
+      "Both/and",
+      "Whether/or"
+    ],
+    "answer": [
+      "No sooner/than"
+    ],
+    "explanation": "Shows an event happening immediately after another.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'He smiled ___ he was winning.'",
+    "answer": [
+      "as if"
+    ],
+    "hint": "Showing manner or appearance.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ you are here, let's start.'",
+    "options": [
+      "Now that",
+      "Lest",
+      "Unless",
+      "Whereas"
+    ],
+    "answer": [
+      "Now that"
+    ],
+    "explanation": "Reason based on a current situation.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'Check the tire ___ it is flat.'",
+    "answer": [
+      "lest"
+    ],
+    "hint": "To prevent a negative outcome.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: 'I like winter ___ she likes summer.'",
+    "options": [
+      "whereas",
+      "unless",
+      "provided",
+      "lest"
+    ],
+    "answer": [
+      "whereas"
+    ],
+    "explanation": "Shows a direct comparison or contrast.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: '___ you work hard, you won't pass.'",
+    "answer": [
+      "Unless"
+    ],
+    "hint": "Except if.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: 'He ran ___ his life depended on it.'",
+    "options": [
+      "as though",
+      "until",
+      "since",
+      "while"
+    ],
+    "answer": [
+      "as though"
+    ],
+    "explanation": "Manner or hypothetical comparison.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'Wait here ___ I return.'",
+    "answer": [
+      "until"
+    ],
+    "hint": "Time limit.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ the movie ended, we left.'",
+    "options": [
+      "Once",
+      "Unless",
+      "Whether",
+      "If"
+    ],
+    "answer": [
+      "Once"
+    ],
+    "explanation": "After a specific point in time.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I am happy ___ you are here.'",
+    "answer": [
+      "because"
+    ],
+    "hint": "Standard reason.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: 'He behaves ___ he is the boss.'",
+    "options": [
+      "as if",
+      "while",
+      "though",
+      "since"
+    ],
+    "answer": [
+      "as if"
+    ],
+    "explanation": "Showing appearance.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I will go ___ it rains.'",
+    "answer": [
+      "even if"
+    ],
+    "hint": "Condition with no effect on outcome.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: 'I'll stay ___ you need me.'",
+    "options": [
+      "supposing",
+      "unless",
+      "as long as",
+      "lest"
+    ],
+    "answer": [
+      "as long as"
+    ],
+    "explanation": "Condition of duration.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: '___ he arrives, let me know.'",
+    "answer": [
+      "When"
+    ],
+    "hint": "At that time.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: 'We stayed ___ it was dark.'",
+    "options": [
+      "until",
+      "if",
+      "unless",
+      "while"
+    ],
+    "answer": [
+      "until"
+    ],
+    "explanation": "Time duration.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'He succeeded ___ he worked hard.'",
+    "answer": [
+      "because"
+    ],
+    "hint": "Cause.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: 'I like tea ___ he likes coffee.'",
+    "options": [
+      "while",
+      "until",
+      "because",
+      "if"
+    ],
+    "answer": [
+      "while"
+    ],
+    "explanation": "Contrast.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: '___ you are ready, we will go.'",
+    "answer": [
+      "As soon as"
+    ],
+    "hint": "Immediate sequence.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ you don't like it, you must eat it.'",
+    "options": [
+      "Even if",
+      "Because",
+      "Unless",
+      "Until"
+    ],
+    "answer": [
+      "Even if"
+    ],
+    "explanation": "Concession.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'He works ___ he can save money.'",
+    "answer": [
+      "so that"
+    ],
+    "hint": "Purpose.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ I was walking, I saw him.'",
+    "options": [
+      "While",
+      "Unless",
+      "Until",
+      "If"
+    ],
+    "answer": [
+      "While"
+    ],
+    "explanation": "Simultaneous time.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I am late ___ I missed the bus.'",
+    "answer": [
+      "since"
+    ],
+    "hint": "Reason.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ he is young, he is strong.'",
+    "options": [
+      "Though",
+      "Until",
+      "Unless",
+      "Because"
+    ],
+    "answer": [
+      "Though"
+    ],
+    "explanation": "Contrast.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I am here ___ I can help.'",
+    "answer": [
+      "so that"
+    ],
+    "hint": "Purpose.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ the sun sets, we will go.'",
+    "options": [
+      "When",
+      "If",
+      "Unless",
+      "Though"
+    ],
+    "answer": [
+      "When"
+    ],
+    "explanation": "Specific time.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'He is happy ___ he is healthy.'",
+    "answer": [
+      "inasmuch as"
+    ],
+    "hint": "Formal extent/reason.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: 'I will go ___ you come.'",
+    "options": [
+      "after",
+      "until",
+      "unless",
+      "while"
+    ],
+    "answer": [
+      "after"
+    ],
+    "explanation": "Time sequence.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: '___ he is rich, he is unhappy.'",
+    "answer": [
+      "While"
+    ],
+    "hint": "Showing contrast.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: 'I'll wait ___ the rain stops.'",
+    "options": [
+      "until",
+      "because",
+      "while",
+      "though"
+    ],
+    "answer": [
+      "until"
+    ],
+    "explanation": "Time endpoint.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'He is smart ___ he is lazy.'",
+    "answer": [
+      "but"
+    ],
+    "hint": "Coordinating contrast.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ you are here, help me.'",
+    "options": [
+      "Since",
+      "Until",
+      "Unless",
+      "While"
+    ],
+    "answer": [
+      "Since"
+    ],
+    "explanation": "Causal reason.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'He looked ___ he had seen a ghost.'",
+    "answer": [
+      "as though"
+    ],
+    "hint": "Appearance.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ it rains, we will stay.'",
+    "options": [
+      "If",
+      "Until",
+      "Unless",
+      "Though"
+    ],
+    "answer": [
+      "If"
+    ],
+    "explanation": "Condition.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I am here ___ I love you.'",
+    "answer": [
+      "because"
+    ],
+    "hint": "Cause.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ he was tired, he kept going.'",
+    "options": [
+      "Although",
+      "Until",
+      "Unless",
+      "If"
+    ],
+    "answer": [
+      "Although"
+    ],
+    "explanation": "Concession.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I'll stay ___ you go.'",
+    "answer": [
+      "after"
+    ],
+    "hint": "Time sequence.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ you like it or not, we are going.'",
+    "options": [
+      "Whether",
+      "If",
+      "Unless",
+      "Since"
+    ],
+    "answer": [
+      "Whether"
+    ],
+    "explanation": "Condition with alternatives.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: '___ it stops snowing, we can drive.'",
+    "answer": [
+      "As soon as"
+    ],
+    "hint": "Immediate time.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Correlative",
+    "question_text": "Choose the pair: '___ had I sat down ___ the doorbell rang.'",
+    "options": [
+      "No sooner/than",
+      "Neither/nor",
+      "Whether/or",
+      "Both/and"
+    ],
+    "answer": [
+      "No sooner/than"
+    ],
+    "explanation": "Shows an action happening immediately after another.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type the conjunction: 'He acted ___ he owned the place.'",
+    "answer": [
+      "as though"
+    ],
+    "hint": "Describes manner or appearance.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Correlative",
+    "question_text": "Identify the pair: '___ only did he win, ___ he also set a record.'",
+    "options": [
+      "Not/but",
+      "Either/or",
+      "Neither/nor",
+      "Whether/or"
+    ],
+    "answer": [
+      "Not/but"
+    ],
+    "explanation": "Part of the 'not only... but also' structure.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type the conjunction: '___ you are finished, you may leave.'",
+    "answer": [
+      "Now that"
+    ],
+    "hint": "Shows a result based on a newly completed action.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Correlative",
+    "question_text": "Choose the pair: '___ you win ___ lose, play fair.'",
+    "options": [
+      "Whether/or",
+      "Both/and",
+      "Neither/nor",
+      "Not only/but also"
+    ],
+    "answer": [
+      "Whether/or"
+    ],
+    "explanation": "Shows the condition applies regardless of outcome.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type the conjunction: 'I like fruit, ___ he prefers sweets.'",
+    "answer": [
+      "whereas"
+    ],
+    "hint": "A formal way to show contrast.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ it was expensive, she bought it.'",
+    "options": [
+      "Inasmuch as",
+      "Lest",
+      "Unless",
+      "While"
+    ],
+    "answer": [
+      "Inasmuch as"
+    ],
+    "explanation": "Shows reason or the extent of a situation.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I am here ___ help you.'",
+    "answer": [
+      "so that"
+    ],
+    "hint": "Shows purpose.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Correlative",
+    "question_text": "Identify: '___ the teacher ___ the students were happy.'",
+    "options": [
+      "Both/and",
+      "Either/or",
+      "Neither/nor",
+      "Whether/or"
+    ],
+    "answer": [
+      "Both/and"
+    ],
+    "explanation": "Joins two subjects as a group.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: '___ you hear the bell, start writing.'",
+    "answer": [
+      "As soon as"
+    ],
+    "hint": "Immediate timing.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: 'He ran ___ the police were chasing him.'",
+    "options": [
+      "as if",
+      "until",
+      "unless",
+      "since"
+    ],
+    "answer": [
+      "as if"
+    ],
+    "explanation": "Shows appearance or manner.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'Lock the gate ___ the dog escapes.'",
+    "answer": [
+      "lest"
+    ],
+    "hint": "To prevent a negative event.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ you don't hurry, you'll be late.'",
+    "options": [
+      "If",
+      "Until",
+      "Unless",
+      "Though"
+    ],
+    "answer": [
+      "If"
+    ],
+    "explanation": "Standard conditional.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I will stay ___ the end.'",
+    "answer": [
+      "until"
+    ],
+    "hint": "Shows a time limit.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ he was poor, he was generous.'",
+    "options": [
+      "Although",
+      "Because",
+      "Unless",
+      "Since"
+    ],
+    "answer": [
+      "Although"
+    ],
+    "explanation": "Shows concession/contrast.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I'll go ___ you stay.'",
+    "answer": [
+      "while"
+    ],
+    "hint": "Simultaneous contrast.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ you are here, we can talk.'",
+    "options": [
+      "Since",
+      "Until",
+      "Unless",
+      "Whether"
+    ],
+    "answer": [
+      "Since"
+    ],
+    "explanation": "Causal reason.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I am late ___ I overslept.'",
+    "answer": [
+      "because"
+    ],
+    "hint": "Direct cause.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: 'Wait ___ the light turns green.'",
+    "options": [
+      "until",
+      "because",
+      "though",
+      "if"
+    ],
+    "answer": [
+      "until"
+    ],
+    "explanation": "Time boundary.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: '___ it rains, the ground gets wet.'",
+    "answer": [
+      "Whenever"
+    ],
+    "hint": "Every time that.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: 'He works ___ he can thrive.'",
+    "options": [
+      "so that",
+      "unless",
+      "until",
+      "while"
+    ],
+    "answer": [
+      "so that"
+    ],
+    "explanation": "Indicates purpose.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I am here ___ I care.'",
+    "answer": [
+      "since"
+    ],
+    "hint": "Shows reason.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ you practice, you will improve.'",
+    "options": [
+      "Provided",
+      "Unless",
+      "Lest",
+      "Whether"
+    ],
+    "answer": [
+      "Provided"
+    ],
+    "explanation": "A condition for success.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'He left ___ I arrived.'",
+    "answer": [
+      "after"
+    ],
+    "hint": "Sequence.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ he was tired, he finished.'",
+    "options": [
+      "Even though",
+      "Unless",
+      "Until",
+      "Because"
+    ],
+    "answer": [
+      "Even though"
+    ],
+    "explanation": "Contrast.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'It happened ___ I was out.'",
+    "answer": [
+      "while"
+    ],
+    "hint": "Simultaneous.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: 'I'll go ___ you want me to.'",
+    "options": [
+      "if",
+      "unless",
+      "until",
+      "whereas"
+    ],
+    "answer": [
+      "if"
+    ],
+    "explanation": "Condition.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I am happy ___ you are here.'",
+    "answer": [
+      "because"
+    ],
+    "hint": "Reason.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ the movie ended, we spoke.'",
+    "options": [
+      "Once",
+      "Unless",
+      "Whether",
+      "If"
+    ],
+    "answer": [
+      "Once"
+    ],
+    "explanation": "Time point.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I'll wait ___ you are ready.'",
+    "answer": [
+      "until"
+    ],
+    "hint": "Time limit.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ he is young, he is clever.'",
+    "options": [
+      "Though",
+      "Because",
+      "Unless",
+      "Until"
+    ],
+    "answer": [
+      "Though"
+    ],
+    "explanation": "Concession.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'He yelled ___ he had won.'",
+    "answer": [
+      "as if"
+    ],
+    "hint": "Appearance.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ the sun shines, it is hot.'",
+    "options": [
+      "When",
+      "Until",
+      "Unless",
+      "Though"
+    ],
+    "answer": [
+      "When"
+    ],
+    "explanation": "Time/Condition.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I am here ___ I want to be.'",
+    "answer": [
+      "because"
+    ],
+    "hint": "Reason.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ he is rich, he is sad.'",
+    "options": [
+      "While",
+      "Unless",
+      "Until",
+      "If"
+    ],
+    "answer": [
+      "While"
+    ],
+    "explanation": "Contrast.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I'll stay ___ it stops.'",
+    "answer": [
+      "until"
+    ],
+    "hint": "Boundary.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ you are late, you miss it.'",
+    "options": [
+      "If",
+      "Unless",
+      "Until",
+      "Though"
+    ],
+    "answer": [
+      "If"
+    ],
+    "explanation": "Condition.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I am here ___ you called.'",
+    "answer": [
+      "since"
+    ],
+    "hint": "Reason.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ she was crying, he left.'",
+    "options": [
+      "While",
+      "Unless",
+      "Until",
+      "If"
+    ],
+    "answer": [
+      "While"
+    ],
+    "explanation": "Simultaneous.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I'll wait ___ you arrive.'",
+    "answer": [
+      "until"
+    ],
+    "hint": "Time boundary.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ he was tired, he smiled.'",
+    "options": [
+      "Even though",
+      "Because",
+      "Unless",
+      "Until"
+    ],
+    "answer": [
+      "Even though"
+    ],
+    "explanation": "Contrast.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'It happened ___ I slept.'",
+    "answer": [
+      "while"
+    ],
+    "hint": "Time duration.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ you like it, you can have it.'",
+    "options": [
+      "If",
+      "Unless",
+      "Until",
+      "Whether"
+    ],
+    "answer": [
+      "If"
+    ],
+    "explanation": "Condition.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I am sad ___ he is gone.'",
+    "answer": [
+      "because"
+    ],
+    "hint": "Reason.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ the bell rings, we leave.'",
+    "options": [
+      "When",
+      "If",
+      "Unless",
+      "Though"
+    ],
+    "answer": [
+      "When"
+    ],
+    "explanation": "Time point.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I'll wait ___ you are ready.'",
+    "answer": [
+      "until"
+    ],
+    "hint": "Time boundary.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ he is old, he is fast.'",
+    "options": [
+      "Though",
+      "Because",
+      "Unless",
+      "Until"
+    ],
+    "answer": [
+      "Though"
+    ],
+    "explanation": "Contrast.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'He sighed ___ he sat.'",
+    "answer": [
+      "as"
+    ],
+    "hint": "Simultaneous time.",
+    "explanation": "",
+    "case_sensitive": false
+  },
+  {
+    "step_type": "select",
+    "title": "Multiple Choice: Subordinating",
+    "question_text": "Choose: '___ the day ends, we sleep.'",
+    "options": [
+      "When",
+      "If",
+      "Unless",
+      "Though"
+    ],
+    "answer": [
+      "When"
+    ],
+    "explanation": "Specific time.",
+    "select_mode": "single"
+  },
+  {
+    "step_type": "type",
+    "title": "Typing: Subordinating",
+    "prompt_text": "Type: 'I am here ___ help is needed.'",
+    "answer": [
+      "because"
+    ],
+    "hint": "Reason.",
+    "explanation": "",
+    "case_sensitive": false
   }
 ]
