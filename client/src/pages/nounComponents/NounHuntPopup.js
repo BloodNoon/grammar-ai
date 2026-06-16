@@ -11,48 +11,57 @@ const shuffleArray = (arr) => {
   return shuffled;
 };
 
+// Estimated popup height — used to decide whether it fits below the
+// click point, or whether it should flip and render above it instead.
+const POPUP_HEIGHT = 250;
+const POPUP_WIDTH = 230;
+const MARGIN = 12;
+
 const NounHuntPopup = ({ token, onAnswer, onClose, position }) => {
-  // Shuffle choices once when the popup opens
   const shuffledChoices = useMemo(() => shuffleArray(token.choices), [token]);
+
+  const spaceBelow = window.innerHeight - position.y;
+  const shouldFlipUp = spaceBelow < POPUP_HEIGHT + MARGIN;
+
+  const top = shouldFlipUp
+    ? Math.max(position.y - POPUP_HEIGHT - 10, MARGIN)
+    : Math.min(position.y + 10, window.innerHeight - POPUP_HEIGHT - MARGIN);
+
+  const left = Math.min(
+    Math.max(position.x - POPUP_WIDTH / 2, MARGIN),
+    window.innerWidth - POPUP_WIDTH - MARGIN
+  );
 
   const popupContent = (
     <>
-      {/* Backdrop — clicking outside closes the popup */}
-      <div
-        onClick={onClose}
-        style={{ position: "fixed", inset: 0, zIndex: 9998 }}
-      />
+      <div onClick={onClose} style={{ position: "fixed", inset: 0, zIndex: 9998 }} />
 
-      {/* Popup card */}
       <div style={{
         position: "fixed",
-        top: Math.min(position.y + 10, window.innerHeight - 220),
-        left: Math.min(Math.max(position.x - 100, 10), window.innerWidth - 260),
+        top,
+        left,
         zIndex: 9999,
         background: "white",
-        border: "3px solid #1a1a2e",
-        borderRadius: "16px",
+        border: "1px solid #e5e7eb",
+        borderRadius: "14px",
         padding: "16px",
-        boxShadow: "4px 4px 0px #1a1a2e",
-        minWidth: "230px",
+        boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
+        width: `${POPUP_WIDTH}px`,
+        maxHeight: `calc(100vh - ${MARGIN * 2}px)`,
+        overflowY: "auto",
       }}>
         <p style={{
           margin: "0 0 6px 0",
-          fontSize: "0.8rem",
-          fontWeight: "800",
-          color: "#e85d04",
+          fontSize: "0.75rem",
+          fontWeight: "700",
+          color: "#ea580c",
           textTransform: "uppercase",
-          letterSpacing: "0.06em",
+          letterSpacing: "0.05em",
         }}>
           What type of noun?
         </p>
 
-        <p style={{
-          margin: "0 0 14px 0",
-          fontSize: "1.3rem",
-          fontWeight: "900",
-          color: "#1a1a2e",
-        }}>
+        <p style={{ margin: "0 0 14px 0", fontSize: "1.2rem", fontWeight: "800", color: "#1f2937" }}>
           "{token.word}"
         </p>
 
@@ -62,26 +71,19 @@ const NounHuntPopup = ({ token, onAnswer, onClose, position }) => {
               key={choice}
               onClick={() => onAnswer(choice)}
               style={{
-                padding: "10px 14px",
-                background: "#ffe600",
-                border: "2.5px solid #1a1a2e",
-                borderRadius: "10px",
+                padding: "9px 14px",
+                background: "#fef9c3",
+                border: "1.5px solid #fde047",
+                borderRadius: "9px",
                 cursor: "pointer",
-                fontSize: "0.95rem",
-                fontWeight: "800",
-                color: "#1a1a2e",
+                fontSize: "0.9rem",
+                fontWeight: "700",
+                color: "#1f2937",
                 textAlign: "left",
-                boxShadow: "2px 2px 0px #1a1a2e",
-                transition: "transform 0.1s, box-shadow 0.1s",
+                transition: "background 0.15s",
               }}
-              onMouseEnter={e => {
-                e.currentTarget.style.transform = "translate(-1px,-1px)";
-                e.currentTarget.style.boxShadow = "3px 3px 0px #1a1a2e";
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.transform = "translate(0,0)";
-                e.currentTarget.style.boxShadow = "2px 2px 0px #1a1a2e";
-              }}
+              onMouseEnter={e => { e.currentTarget.style.background = "#fef08a"; }}
+              onMouseLeave={e => { e.currentTarget.style.background = "#fef9c3"; }}
             >
               {choice}
             </button>
