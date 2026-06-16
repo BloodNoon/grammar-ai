@@ -7,7 +7,7 @@ import NounHuntResults from "./NounHuntResults";
 const NounHuntGame = () => {
   const [paragraphIndex, setParagraphIndex] = useState(0);
   const [tokenStates, setTokenStates] = useState({});
-  const [popup, setPopup] = useState(null); 
+  const [popup, setPopup] = useState(null);
   const [score, setScore] = useState(0);
   const [wrongClicks, setWrongClicks] = useState(0);
   const [gameOver, setGameOver] = useState(false);
@@ -17,8 +17,11 @@ const NounHuntGame = () => {
   const totalNouns = paragraph.tokens.filter((t) => t.isNoun).length;
   const correctCount = Object.values(tokenStates).filter((s) => s === "correct").length;
 
+ 
   const handleTokenClick = (token, index, e) => {
+    
     if (tokenStates[index]) return;
+    
     if (token.word === "." || token.word === "," || token.word === "!") return;
 
     if (!token.isNoun) {
@@ -35,11 +38,12 @@ const NounHuntGame = () => {
       return;
     }
 
-    // Correct noun click and open the type popup
+    // Correct noun click — open the type popup
     const rect = e.target.getBoundingClientRect();
     setPopup({ tokenIndex: index, position: { x: rect.left, y: rect.bottom } });
   };
 
+  
   const handleAnswer = (choice) => {
     const { tokenIndex } = popup;
     const token = paragraph.tokens[tokenIndex];
@@ -67,6 +71,7 @@ const NounHuntGame = () => {
     }
   };
 
+  
   const handleReplay = () => {
     setTokenStates({});
     setPopup(null);
@@ -77,14 +82,10 @@ const NounHuntGame = () => {
     setParagraphIndex((paragraphIndex + 1) % PARAGRAPHS.length);
   };
 
-  // Results screen
+  // ─── Results screen ─────────────────────────────────────────────────────────
   if (gameOver) {
     return (
       <div style={{ fontFamily: "'Inter', sans-serif", background: "#fde8c8", minHeight: "100%", padding: "24px", borderRadius: "20px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "20px" }}>
-          <span style={{ fontSize: "1.3rem" }}>🔍</span>
-          <h2 style={{ margin: 0, fontSize: "1.3rem", fontWeight: "900", color: "#e85d04" }}>Noun Hunt</h2>
-        </div>
         <NounHuntResults
           score={score}
           total={totalNouns}
@@ -95,14 +96,9 @@ const NounHuntGame = () => {
     );
   }
 
+  // ─── Main game ──────────────────────────────────────────────────────────────
   return (
     <div style={{ fontFamily: "'Inter', sans-serif", background: "#fde8c8", minHeight: "100%", padding: "24px", borderRadius: "20px" }}>
-
-      {/* Title */}
-      <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "20px" }}>
-        <span style={{ fontSize: "1.3rem" }}>🔍</span>
-        <h2 style={{ margin: 0, fontSize: "1.3rem", fontWeight: "900", color: "#e85d04" }}>Noun Hunt</h2>
-      </div>
 
       {/* Progress card */}
       <div style={{
@@ -137,6 +133,7 @@ const NounHuntGame = () => {
         boxShadow: "5px 5px 0px #1a1a2e",
       }}>
 
+        {/* Instruction banner */}
         <div style={{
           background: "#00e5cc",
           border: "2.5px solid #1a1a2e",
