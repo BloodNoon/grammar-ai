@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
+import { createPortal } from "react-dom";
 
-// Shuffle an array
+// Shuffle an array using Fisher-Yates algorithm
 const shuffleArray = (arr) => {
   const shuffled = [...arr];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -14,12 +15,12 @@ const NounHuntPopup = ({ token, onAnswer, onClose, position }) => {
   // Shuffle choices once when the popup opens
   const shuffledChoices = useMemo(() => shuffleArray(token.choices), [token]);
 
-  return (
+  const popupContent = (
     <>
       {/* Backdrop — clicking outside closes the popup */}
       <div
         onClick={onClose}
-        style={{ position: "fixed", inset: 0, zIndex: 999 }}
+        style={{ position: "fixed", inset: 0, zIndex: 9998 }}
       />
 
       {/* Popup card */}
@@ -27,7 +28,7 @@ const NounHuntPopup = ({ token, onAnswer, onClose, position }) => {
         position: "fixed",
         top: Math.min(position.y + 10, window.innerHeight - 220),
         left: Math.min(Math.max(position.x - 100, 10), window.innerWidth - 260),
-        zIndex: 1000,
+        zIndex: 9999,
         background: "white",
         border: "3px solid #1a1a2e",
         borderRadius: "16px",
@@ -89,6 +90,8 @@ const NounHuntPopup = ({ token, onAnswer, onClose, position }) => {
       </div>
     </>
   );
+
+  return createPortal(popupContent, document.body);
 };
 
 export default NounHuntPopup;
