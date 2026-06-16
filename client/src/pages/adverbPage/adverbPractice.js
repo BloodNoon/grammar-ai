@@ -11,9 +11,12 @@ import {
 } from "@chakra-ui/react";
 import { PageContainer, GameCard, LessonPageHeader } from "../../components/ui";
 
-// Import the refactored wrappers
+
 import TypingGameWrapper from "../../components/typingGameWrapper";
 import MultipleChoiceWrapper from "../../components/multipleChoiceWrapper";
+
+// Import Adverb Hunt Game
+import AdverbHuntGame from "./adverbComponents/AdverbHuntGame";
 
 // Import adverb questions JSON file
 import adverbData from "../../data/adverbs_questions.json";
@@ -32,6 +35,13 @@ const practiceTypes = [
     color: "purple",
     icon: "✍️",
     examples: "quickly, soon, here, often, very",
+  },
+  {
+    name: "Adverb Hunt",
+    desc: "Find every adverb in a paragraph and identify its type.",
+    color: "yellow",
+    icon: "🔍",
+    examples: "Manner, Time, Place, Frequency, Degree",
   },
 ];
 
@@ -55,7 +65,7 @@ const AdverbPractice = () => {
       </GameCard>
 
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
-        {/* LEFT COLUMN: Practice Types Info */}
+        {/* LEFT COLUMN: Practice Types Info + Adverb Hunt */}
         <VStack spacing={6} align="stretch">
           {/* Practice Types Overview */}
           <GameCard variant="game">
@@ -63,7 +73,7 @@ const AdverbPractice = () => {
               Practice Game Types
             </Heading>
             <Text fontSize="md" color="gray.600" mb={6}>
-              Master your adverb knowledge through two different interactive
+              Master your adverb knowledge through three different interactive
               challenges. Each game tests your skills in a unique way!
             </Text>
 
@@ -126,7 +136,7 @@ const AdverbPractice = () => {
           </GameCard>
         </VStack>
 
-        {/* RIGHT COLUMN: Practice Games */}
+        {/* RIGHT COLUMN: Multiple Choice + Adverb Hunt */}
         <VStack spacing={6} align="stretch">
           {/* Multiple Choice Game */}
           <GameCard variant="game">
@@ -137,6 +147,14 @@ const AdverbPractice = () => {
               questionsToPlay={mcQuestions}
               nextPath="/adverb-structure"
             />
+          </GameCard>
+
+          {/* Adverb Hunt Game */}
+          <GameCard variant="game">
+            <Heading size="md" color="yellow.500" mb={4}>
+              🔍 Adverb Hunt
+            </Heading>
+            <AdverbHuntGame />
           </GameCard>
         </VStack>
       </Grid>
