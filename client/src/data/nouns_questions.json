@@ -1,0 +1,1187 @@
+[
+  {
+    "id": 1,
+    "noun_type": "Proper",
+    "practice_type": "multiple_choice",
+    "question_text": "Identify the Proper Noun in the following sentence: 'We traveled to Paris last summer.'",
+    "options": ["traveled", "Paris", "last", "summer"],
+    "answer": ["Paris"],
+    "explanation": "Paris is a specific name of a city and is capitalized, making it a Proper Noun."
+  },
+  {
+    "id": 2,
+    "noun_type": "Abstract",
+    "practice_type": "multiple_choice",
+    "question_text": "Which of these nouns represents an idea or feeling that you cannot touch?",
+    "options": ["Table", "Water", "Bravery", "Bird"],
+    "answer": ["Bravery"],
+    "explanation": "Bravery is an Abstract Noun because it is a quality or state of being, not a physical object."
+  },
+  {
+    "id": 3,
+    "noun_type": "Collective",
+    "practice_type": "typing",
+    "prompt_text": "A group of lions is called a...",
+    "answer": "pride",
+    "hint": "It starts with the letter 'P'."
+  },
+  {
+    "id": 4,
+    "noun_type": "Uncountable",
+    "practice_type": "multiple_choice",
+    "question_text": "Which of these nouns is Uncountable?",
+    "options": ["Chair", "Information", "Apple", "Coin"],
+    "answer": ["Information"],
+    "explanation": "You cannot count 'informations'; it is a mass noun representing a concept."
+  },
+  {
+    "id": 5,
+    "noun_type": "Concrete",
+    "practice_type": "sorting",
+    "word": "Thunder",
+    "category": "Concrete",
+    "explanation": "Even though you can't touch it, you can hear it with your physical senses."
+  },
+  {
+    "id": 6,
+    "noun_type": "Collective",
+    "practice_type": "typing",
+    "prompt_text": "Type the collective noun for a group of players.",
+    "answer": "team",
+    "hint": "They play together to win."
+  },
+  {
+    "id": 7,
+    "noun_type": "Common",
+    "practice_type": "sorting",
+    "word": "skyscraper",
+    "category": "Common",
+    "explanation": "It is a generic name for a tall building, not a specific one."
+  },
+  {
+    "id": 8,
+    "noun_type": "Abstract",
+    "practice_type": "multiple_choice",
+    "question_text": "Which noun in this sentence is Abstract? 'The child's curiosity led to a great discovery.'",
+    "options": ["child", "curiosity", "discovery", "led"],
+    "answer": ["curiosity"],
+    "explanation": "Curiosity is a mental state/feeling, making it abstract."
+  },
+
+
+  {
+    "id": 9,
+    "noun_type": "Personal Pronoun",
+    "practice_type": "multiple_choice",
+    "question_text": "Choose the correct subject pronoun to replace the bolded words: 'DAVID AND SARAH went to the library.'",
+    "options": ["We", "Them", "They", "Us"],
+    "answer": ["They"],
+    "explanation": "David and Sarah are the plural subjects of the sentence, so we use 'They'."
+  },
+  {
+    "id": 10,
+    "noun_type": "Possessive Pronoun",
+    "practice_type": "typing",
+    "prompt_text": "The phone belongs to me. It is...",
+    "answer": "mine",
+    "hint": "It shows I own it."
+  },
+  {
+    "id": 11,
+    "noun_type": "Reflexive Pronoun",
+    "practice_type": "multiple_choice",
+    "question_text": "Fill in the blank: 'The cat cleaned ___ after eating lunch.'",
+    "options": ["it", "itself", "himself", "herself"],
+    "answer": ["itself"],
+    "explanation": "Reflexive pronouns like 'itself' refer back to the subject (the cat) when the subject and object are the same."
+  },
+  {
+    "id": 12,
+    "noun_type": "Uncountable",
+    "practice_type": "sorting",
+    "word": "Advice",
+    "category": "Uncountable",
+    "explanation": "Advice is a concept that cannot be counted with numbers; you give 'some' advice, not 'three' advices."
+  },
+  {
+    "id": 13,
+    "noun_type": "Demonstrative Pronoun",
+    "practice_type": "multiple_choice",
+    "question_text": "Which word is a Demonstrative Pronoun used for something far away?",
+    "options": ["This", "That", "These", "Those"],
+    "answer": ["That"],
+    "explanation": "'That' points to a singular object that is not nearby."
+  },
+  {
+    "id": 14,
+    "noun_type": "Indefinite Pronoun",
+    "practice_type": "typing",
+    "prompt_text": "Type a pronoun that means 'no person'.",
+    "answer": "nobody",
+    "hint": "Synonym for 'no one'."
+  },
+  {
+    "id": 15,
+    "noun_type": "Countable",
+    "practice_type": "sorting",
+    "word": "Staircase",
+    "category": "Countable",
+    "explanation": "You can physically count one staircase, two staircases, etc."
+  },
+  {
+    "id": 16,
+    "noun_type": "Possessive Pronoun",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the Possessive Pronoun: 'That red car is ours.'",
+    "options": ["That", "red", "car", "ours"],
+    "answer": ["ours"],
+    "explanation": "'Ours' shows ownership and replaces a noun phrase."
+  },
+  {
+    "id": 17,
+    "noun_type": "Reflexive Pronoun",
+    "practice_type": "typing",
+    "prompt_text": "Complete the sentence: 'We should be proud of...'",
+    "answer": "ourselves",
+    "hint": "The plural version of 'myself'."
+  },
+  {
+    "id": 18,
+    "noun_type": "Demonstrative Pronoun",
+    "practice_type": "sorting",
+    "word": "These",
+    "category": "Demonstrative",
+    "explanation": "It points to a plural group of things that are nearby."
+  },
+  {
+    "id": 19,
+    "noun_type": "Personal Pronoun",
+    "practice_type": "multiple_choice",
+    "question_text": "Which pronoun is an OBJECT pronoun?",
+    "options": ["I", "She", "Him", "We"],
+    "answer": ["Him"],
+    "explanation": "'Him' is used as the receiver of an action, unlike 'I' or 'She' which are subjects."
+  },
+
+
+  {
+    "id": 20,
+    "noun_type": "Plural Rule",
+    "practice_type": "typing",
+    "prompt_text": "Type the plural form of 'leaf'.",
+    "answer": "leaves",
+    "hint": "Rule: Change the 'f' to a 'v' and add 'es'."
+  },
+  {
+    "id": 21,
+    "noun_type": "Possessive Noun",
+    "practice_type": "multiple_choice",
+    "question_text": "Which sentence shows correct plural possession for 'the shoes belonging to the girls'?",
+    "options": ["The girl's shoes", "The girls' shoes", "The girls's shoes"],
+    "answer": ["The girls' shoes"],
+    "explanation": "For a regular plural noun ending in 's', you only add an apostrophe at the very end."
+  },
+  {
+    "id": 22,
+    "noun_type": "Irregular Plural",
+    "practice_type": "sorting",
+    "word": "Mice",
+    "category": "Irregular",
+    "explanation": "'Mouse' changes completely to 'Mice' rather than adding an 's'."
+  },
+  {
+    "id": 23,
+    "noun_type": "Possessive Noun",
+    "practice_type": "typing",
+    "prompt_text": "Rewrite 'the book belonging to James' using a possessive noun.",
+    "answer": "James's book",
+    "hint": "James is singular. Add 's."
+  },
+  {
+    "id": 24,
+    "noun_type": "Plural Rule",
+    "practice_type": "multiple_choice",
+    "question_text": "What is the correct plural of 'category'?",
+    "options": ["categorys", "categories", "categoryes"],
+    "answer": ["categories"],
+    "explanation": "Since 'category' ends in a consonant + y, you drop the 'y' and add 'ies'."
+  },
+  {
+    "id": 25,
+    "noun_type": "Possessive Noun",
+    "practice_type": "sorting",
+    "word": "children's",
+    "category": "Irregular Plural Possessive",
+    "explanation": "'Children' is already plural but doesn't end in 's', so it follows the 's rule."
+  },
+  {
+    "id": 26,
+    "noun_type": "Plural Rule",
+    "practice_type": "typing",
+    "prompt_text": "Type the plural form of 'bus'.",
+    "answer": "buses",
+    "hint": "Words ending in 's' need '-es'."
+  },
+  {
+    "id": 27,
+    "noun_type": "Possessive Noun",
+    "practice_type": "multiple_choice",
+    "question_text": "Identify the error: 'The three dogs's bowls are empty.'",
+    "options": ["dogs's", "bowls", "empty", "No error"],
+    "answer": ["dogs's"],
+    "explanation": "Since 'dogs' is a plural noun ending in 's', it should be 'dogs' with only an apostrophe."
+  },
+  {
+    "id": 28,
+    "noun_type": "Irregular Plural",
+    "practice_type": "typing",
+    "prompt_text": "Type the plural form of 'person'.",
+    "answer": "people",
+    "hint": "This word changes completely."
+  },
+  {
+    "id": 29,
+    "noun_type": "Plural Rule",
+    "practice_type": "sorting",
+    "word": "keys",
+    "category": "Vowel + Y Rule",
+    "explanation": "'Key' ends in a vowel + y, so you just add 's' without changing the spelling."
+  },
+  {
+    "id": 30,
+    "noun_type": "Possessive Noun",
+    "practice_type": "typing",
+    "prompt_text": "Type the possessive form of 'the desk belonging to the boss'.",
+    "answer": "the boss's desk",
+    "hint": "Boss is singular. Add 's."
+  },
+
+  {
+    "id": 31,
+    "noun_type": "Collective",
+    "practice_type": "multiple_choice",
+    "question_text": "Which collective noun is used for a group of fish?",
+    "options": ["Pack", "School", "Flock", "Herd"],
+    "answer": ["School"],
+    "explanation": "A 'school' of fish is the correct collective noun for a large group of fish swimming together."
+  },
+  {
+    "id": 32,
+    "noun_type": "Abstract",
+    "practice_type": "sorting",
+    "word": "Intelligence",
+    "category": "Abstract",
+    "explanation": "Intelligence is a mental capacity or quality; it cannot be physically touched or held."
+  },
+  {
+    "id": 33,
+    "noun_type": "Indefinite Pronoun",
+    "practice_type": "multiple_choice",
+    "question_text": "Identify the Indefinite Pronoun: 'Does anyone have a pencil I can borrow?'",
+    "options": ["anyone", "have", "pencil", "borrow"],
+    "answer": ["anyone"],
+    "explanation": "'Anyone' refers to a non-specific person, making it an indefinite pronoun."
+  },
+  {
+    "id": 34,
+    "noun_type": "Concrete",
+    "practice_type": "typing",
+    "prompt_text": "Type a concrete noun that you can use to write on a whiteboard.",
+    "answer": "marker",
+    "hint": "It has a cap and ink."
+  },
+  {
+    "id": 35,
+    "noun_type": "Personal Pronoun",
+    "practice_type": "sorting",
+    "word": "Us",
+    "category": "Object Pronoun",
+    "explanation": "'Us' is a personal pronoun used when a group including the speaker is the object of the action."
+  },
+  {
+    "id": 36,
+    "noun_type": "Reflexive Pronoun",
+    "practice_type": "typing",
+    "prompt_text": "Type the reflexive pronoun for 'He'.",
+    "answer": "himself",
+    "hint": "He did it by _____."
+  },
+  {
+    "id": 37,
+    "noun_type": "Collective",
+    "practice_type": "typing",
+    "prompt_text": "A group of wolves is called a...",
+    "answer": "pack",
+    "hint": "It rhymes with 'back'."
+  },
+  {
+    "id": 38,
+    "noun_type": "Abstract",
+    "practice_type": "multiple_choice",
+    "question_text": "Which noun in this sentence is Abstract? 'Her friendship means the world to me.'",
+    "options": ["Her", "friendship", "world", "me"],
+    "answer": ["friendship"],
+    "explanation": "Friendship is a relationship/concept, which is abstract."
+  },
+  {
+    "id": 39,
+    "noun_type": "Demonstrative Pronoun",
+    "practice_type": "sorting",
+    "word": "Those",
+    "category": "Demonstrative (Far/Plural)",
+    "explanation": "'Those' is used to point to multiple items that are at a distance."
+  },
+  {
+    "id": 40,
+    "noun_type": "Indefinite Pronoun",
+    "practice_type": "typing",
+    "prompt_text": "Type the pronoun that means 'every single person'.",
+    "answer": "everyone",
+    "hint": "It starts with 'every'."
+  },
+
+  {
+    "id": 31,
+    "noun_type": "Collective",
+    "practice_type": "multiple_choice",
+    "question_text": "Which collective noun is used for a group of fish?",
+    "options": ["Pack", "School", "Flock", "Herd"],
+    "answer": ["School"],
+    "explanation": "A 'school' of fish is the correct collective noun for a large group of fish swimming together."
+  },
+  {
+    "id": 32,
+    "noun_type": "Abstract",
+    "practice_type": "sorting",
+    "word": "Intelligence",
+    "category": "Abstract",
+    "explanation": "Intelligence is a mental capacity or quality; it cannot be physically touched or held."
+  },
+  {
+    "id": 33,
+    "noun_type": "Indefinite Pronoun",
+    "practice_type": "multiple_choice",
+    "question_text": "Identify the Indefinite Pronoun: 'Does anyone have a pencil I can borrow?'",
+    "options": ["anyone", "have", "pencil", "borrow"],
+    "answer": ["anyone"],
+    "explanation": "'Anyone' refers to a non-specific person, making it an indefinite pronoun."
+  },
+  {
+    "id": 34,
+    "noun_type": "Concrete",
+    "practice_type": "typing",
+    "prompt_text": "Type a concrete noun that you can use to write on a whiteboard.",
+    "answer": "marker",
+    "hint": "It has a cap and ink."
+  },
+  {
+    "id": 35,
+    "noun_type": "Personal Pronoun",
+    "practice_type": "sorting",
+    "word": "Us",
+    "category": "Object Pronoun",
+    "explanation": "'Us' is a personal pronoun used when a group including the speaker is the object of the action."
+  },
+  {
+    "id": 36,
+    "noun_type": "Reflexive Pronoun",
+    "practice_type": "typing",
+    "prompt_text": "Type the reflexive pronoun for 'He'.",
+    "answer": "himself",
+    "hint": "He did it by _____."
+  },
+  {
+    "id": 37,
+    "noun_type": "Collective",
+    "practice_type": "typing",
+    "prompt_text": "A group of wolves is called a...",
+    "answer": "pack",
+    "hint": "It rhymes with 'back'."
+  },
+  {
+    "id": 38,
+    "noun_type": "Abstract",
+    "practice_type": "multiple_choice",
+    "question_text": "Which noun in this sentence is Abstract? 'Her friendship means the world to me.'",
+    "options": ["Her", "friendship", "world", "me"],
+    "answer": ["friendship"],
+    "explanation": "Friendship is a relationship/concept, which is abstract."
+  },
+  {
+    "id": 39,
+    "noun_type": "Demonstrative Pronoun",
+    "practice_type": "sorting",
+    "word": "Those",
+    "category": "Demonstrative (Far/Plural)",
+    "explanation": "'Those' is used to point to multiple items that are at a distance."
+  },
+  {
+    "id": 40,
+    "noun_type": "Indefinite Pronoun",
+    "practice_type": "typing",
+    "prompt_text": "Type the pronoun that means 'every single person'.",
+    "answer": "everyone",
+    "hint": "It starts with 'every'."
+  },
+
+  {
+    "id": 51,
+    "noun_type": "Possessive Pronoun",
+    "practice_type": "typing",
+    "prompt_text": "The house belongs to them. It is...",
+    "answer": "theirs",
+    "hint": "Do not use an apostrophe!"
+  },
+  {
+    "id": 52,
+    "noun_type": "Uncountable",
+    "practice_type": "sorting",
+    "word": "Furniture",
+    "category": "Uncountable",
+    "explanation": "Furniture is a mass noun; you count 'pieces of furniture,' not 'furnitures'."
+  },
+  {
+    "id": 53,
+    "noun_type": "Personal Pronoun",
+    "practice_type": "multiple_choice",
+    "question_text": "Identify the Object Pronoun: 'The teacher gave a gold star to her.'",
+    "options": ["teacher", "gave", "star", "her"],
+    "answer": ["her"],
+    "explanation": "'Her' is receiving the star, making it the object of the sentence."
+  },
+  {
+    "id": 54,
+    "noun_type": "Countable",
+    "practice_type": "typing",
+    "prompt_text": "Type the plural form of the countable noun 'Strawberry'.",
+    "answer": "strawberries",
+    "hint": "Rule: Consonant + y becomes 'ies'."
+  },
+  {
+    "id": 55,
+    "noun_type": "Demonstrative Pronoun",
+    "practice_type": "multiple_choice",
+    "question_text": "Which pronoun points to a group of things right here in my hand?",
+    "options": ["This", "That", "These", "Those"],
+    "answer": ["These"],
+    "explanation": "'These' is plural and used for things that are close to the speaker."
+  },
+  {
+    "id": 56,
+    "noun_type": "Possessive Pronoun",
+    "practice_type": "sorting",
+    "word": "His",
+    "category": "Possessive Pronoun",
+    "explanation": "'His' shows that something belongs to a male person."
+  },
+  {
+    "id": 57,
+    "noun_type": "Uncountable",
+    "practice_type": "typing",
+    "prompt_text": "Type the mass noun for the liquid we drink to stay hydrated.",
+    "answer": "water",
+    "hint": "It has no color or taste."
+  },
+  {
+    "id": 58,
+    "noun_type": "Indefinite Pronoun",
+    "practice_type": "multiple_choice",
+    "question_text": "Which word is an Indefinite Pronoun? 'Everything is going according to plan.'",
+    "options": ["Everything", "going", "according", "plan"],
+    "answer": ["Everything"],
+    "explanation": "'Everything' refers to all things in a general, non-specific way."
+  },
+  {
+    "id": 59,
+    "noun_type": "Reflexive Pronoun",
+    "practice_type": "sorting",
+    "word": "Themselves",
+    "category": "Reflexive Pronoun",
+    "explanation": "This refers back to a plural subject like 'They'."
+  },
+  {
+    "id": 60,
+    "noun_type": "Proper",
+    "practice_type": "typing",
+    "prompt_text": "Type the Proper Noun for the day that comes after Friday.",
+    "answer": "Saturday",
+    "hint": "Remember to capitalize the first letter!"
+  },
+
+  {
+    "id": 61,
+    "noun_type": "Plural Rule",
+    "practice_type": "typing",
+    "prompt_text": "Type the plural form of 'hero'.",
+    "answer": "heroes",
+    "hint": "Rule: Most nouns ending in 'o' preceded by a consonant add 'es'."
+  },
+  {
+    "id": 62,
+    "noun_type": "Possessive Noun",
+    "practice_type": "multiple_choice",
+    "question_text": "Which sentence shows correct ownership for 'the den of the wolves'?",
+    "options": ["The wolf's den", "The wolves's den", "The wolves' den"],
+    "answer": ["The wolves' den"],
+    "explanation": "'Wolves' is a plural noun ending in 's', so you only add the apostrophe at the end."
+  },
+  {
+    "id": 63,
+    "noun_type": "Irregular Plural",
+    "practice_type": "sorting",
+    "word": "Geese",
+    "category": "Irregular",
+    "explanation": "'Goose' changes its internal vowels to become 'Geese' in the plural form."
+  },
+  {
+    "id": 64,
+    "noun_type": "Possessive Pronoun",
+    "practice_type": "typing",
+    "prompt_text": "Complete the sentence: 'The dog wagged ___ tail.'",
+    "answer": "its",
+    "hint": "Be careful! 'It's' means 'it is'. Use the possessive version."
+  },
+  {
+    "id": 65,
+    "noun_type": "Plural Rule",
+    "practice_type": "multiple_choice",
+    "question_text": "What is the plural of 'cactus'?",
+    "options": ["cactuses", "cacti", "cactusies"],
+    "answer": ["cacti"],
+    "explanation": "Many Latin-origin words ending in 'us' change to 'i' in the plural form."
+  },
+  {
+    "id": 66,
+    "noun_type": "Possessive Noun",
+    "practice_type": "sorting",
+    "word": "men's",
+    "category": "Irregular Plural Possessive",
+    "explanation": "'Men' is plural but doesn't end in 's', so we add 's to show possession."
+  },
+  {
+    "id": 67,
+    "noun_type": "Plural Rule",
+    "practice_type": "typing",
+    "prompt_text": "Type the plural form of 'potato'.",
+    "answer": "potatoes",
+    "hint": "Think of the 'hero' rule!"
+  },
+  {
+    "id": 68,
+    "noun_type": "Possessive Noun",
+    "practice_type": "multiple_choice",
+    "question_text": "How do you show ownership for a singular name ending in 's', like 'Chris'?",
+    "options": ["Chris's", "Chris'", "Both are acceptable"],
+    "answer": ["Both are acceptable"],
+    "explanation": "Modern style usually prefers 'Chris's', but 'Chris'' is also commonly used in academic writing."
+  },
+  {
+    "id": 69,
+    "noun_type": "Irregular Plural",
+    "practice_type": "sorting",
+    "word": "Feet",
+    "category": "Irregular",
+    "explanation": "'Foot' changes to 'Feet' rather than adding an 's'."
+  },
+  {
+    "id": 70,
+    "noun_type": "Possessive Noun",
+    "practice_type": "typing",
+    "prompt_text": "Rewrite 'the toys of the babies' as a possessive noun.",
+    "answer": "the babies' toys",
+    "hint": "Babies is plural. Put the apostrophe after the 's'."
+  },
+
+  {
+    "id": 71,
+    "noun_type": "Personal Pronoun",
+    "practice_type": "multiple_choice",
+    "question_text": "Choose the correct pronoun to complete the sentence: 'Between you and ___, I think we should leave early.'",
+    "options": ["I", "me", "we", "they"],
+    "answer": ["me"],
+    "explanation": "After a preposition like 'between,' we must use an object pronoun like 'me'."
+  },
+  {
+    "id": 72,
+    "noun_type": "Collective",
+    "practice_type": "sorting",
+    "word": "Audience",
+    "category": "Collective",
+    "explanation": "An audience is a group of people gathered to watch or listen to a performance."
+  },
+  {
+    "id": 73,
+    "noun_type": "Abstract",
+    "practice_type": "typing",
+    "prompt_text": "Type the abstract noun form of the word 'honest'.",
+    "answer": "honesty",
+    "hint": "Change the ending to 'y'."
+  },
+  {
+    "id": 74,
+    "noun_type": "Countable",
+    "practice_type": "multiple_choice",
+    "question_text": "Which of these is a Countable Noun?",
+    "options": ["Furniture", "Equipment", "Chair", "Luggage"],
+    "answer": ["Chair"],
+    "explanation": "You can count 'one chair' or 'two chairs,' whereas furniture and luggage are mass nouns."
+  },
+  {
+    "id": 75,
+    "noun_type": "Uncountable",
+    "practice_type": "sorting",
+    "word": "Knowledge",
+    "category": "Uncountable",
+    "explanation": "Knowledge is a mass noun that cannot be counted with numbers."
+  },
+  {
+    "id": 76,
+    "noun_type": "Possessive Pronoun",
+    "practice_type": "typing",
+    "prompt_text": "The laptop belongs to you. It is...",
+    "answer": "yours",
+    "hint": "Remember, no apostrophes for possessive pronouns!"
+  },
+  {
+    "id": 77,
+    "noun_type": "Reflexive Pronoun",
+    "practice_type": "multiple_choice",
+    "question_text": "Identify the reflexive pronoun: 'They fixed the computer themselves.'",
+    "options": ["They", "fixed", "computer", "themselves"],
+    "answer": ["themselves"],
+    "explanation": "'Themselves' refers back to the subject 'They'."
+  },
+  {
+    "id": 78,
+    "noun_type": "Proper",
+    "practice_type": "sorting",
+    "word": "Microsoft",
+    "category": "Proper",
+    "explanation": "Microsoft is a specific name for a company and must be capitalized."
+  },
+  {
+    "id": 79,
+    "noun_type": "Common",
+    "practice_type": "typing",
+    "prompt_text": "Type a common noun for a person who teaches at a school.",
+    "answer": "teacher",
+    "hint": "It starts with a 'T'."
+  },
+  {
+    "id": 80,
+    "noun_type": "Collective",
+    "practice_type": "multiple_choice",
+    "question_text": "What is the collective noun for a group of ships?",
+    "options": ["Fleet", "Pack", "Flock", "Herd"],
+    "answer": ["Fleet"],
+    "explanation": "A 'fleet' is the correct term for a group of ships or vehicles working together."
+  },
+  
+  {
+    "id": 81,
+    "noun_type": "Personal Pronoun",
+    "practice_type": "multiple_choice",
+    "question_text": "Which pronoun is the correct OBJECT of the sentence? 'The principal called ___ to the office.'",
+    "options": ["he", "him", "they", "we"],
+    "answer": ["him"],
+    "explanation": "'Him' is an object pronoun used when someone is receiving the action of the verb."
+  },
+  {
+    "id": 82,
+    "noun_type": "Demonstrative Pronoun",
+    "practice_type": "sorting",
+    "word": "This",
+    "category": "Demonstrative (Near/Singular)",
+    "explanation": "'This' points to one specific thing that is close to the speaker."
+  },
+  {
+    "id": 83,
+    "noun_type": "Personal Pronoun",
+    "practice_type": "typing",
+    "prompt_text": "Type the subject pronoun for a group of people that includes yourself.",
+    "answer": "we",
+    "hint": "It starts with 'W'."
+  },
+  {
+    "id": 84,
+    "noun_type": "Demonstrative Pronoun",
+    "practice_type": "multiple_choice",
+    "question_text": "Which pronoun would you use to point at many birds flying far away in the sky?",
+    "options": ["This", "That", "These", "Those"],
+    "answer": ["Those"],
+    "explanation": "'Those' is used for plural objects that are at a distance."
+  },
+  {
+    "id": 85,
+    "noun_type": "Personal Pronoun",
+    "practice_type": "sorting",
+    "word": "Them",
+    "category": "Object Pronoun",
+    "explanation": "'Them' is used as the object in a sentence when referring to a group of people or things."
+  },
+  {
+    "id": 86,
+    "noun_type": "Personal Pronoun",
+    "practice_type": "typing",
+    "prompt_text": "Type the object pronoun for 'She'.",
+    "answer": "her",
+    "hint": "I gave the book to ____."
+  },
+  {
+    "id": 87,
+    "noun_type": "Demonstrative Pronoun",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the correct pronoun: '___ cookies in my hand are delicious!'",
+    "options": ["This", "That", "These", "Those"],
+    "answer": ["These"],
+    "explanation": "Since the cookies are plural and 'in my hand' (near), we use 'These'."
+  },
+  {
+    "id": 88,
+    "noun_type": "Personal Pronoun",
+    "practice_type": "sorting",
+    "word": "She",
+    "category": "Subject Pronoun",
+    "explanation": "'She' is used as the subject of a sentence for a female person."
+  },
+  {
+    "id": 89,
+    "noun_type": "Personal Pronoun",
+    "practice_type": "typing",
+    "prompt_text": "Type the plural object pronoun for 'We'.",
+    "answer": "us",
+    "hint": "They came with ___."
+  },
+  {
+    "id": 90,
+    "noun_type": "Demonstrative Pronoun",
+    "practice_type": "typing",
+    "prompt_text": "Type the singular pronoun used for something far away.",
+    "answer": "that",
+    "hint": "Look at ____ mountain over there!"
+  },
+
+  
+  {
+    "id": 91,
+    "noun_type": "Uncountable",
+    "practice_type": "multiple_choice",
+    "question_text": "Which of these nouns is Uncountable?",
+    "options": ["Coin", "Note", "Money", "Dollar"],
+    "answer": ["Money"],
+    "explanation": "While you can count dollars and coins, 'money' is a mass noun and cannot be pluralized as 'monies' in standard counting."
+  },
+  {
+    "id": 92,
+    "noun_type": "Countable",
+    "practice_type": "sorting",
+    "word": "assignment",
+    "category": "Countable",
+    "explanation": "Students can have one, two, or many specific assignments to complete."
+  },
+  {
+    "id": 93,
+    "noun_type": "Collective",
+    "practice_type": "typing",
+    "prompt_text": "Type the collective noun for a group of cattle or elephants.",
+    "answer": "herd",
+    "hint": "It starts with an 'H'."
+  },
+  {
+    "id": 94,
+    "noun_type": "Uncountable",
+    "practice_type": "multiple_choice",
+    "question_text": "Select the mass noun: 'We need to buy more ___ for the printer.'",
+    "options": ["paper", "sheets", "pages", "documents"],
+    "answer": ["paper"],
+    "explanation": "'Paper' is uncountable when referring to the material itself."
+  },
+  {
+    "id": 95,
+    "noun_type": "Collective",
+    "practice_type": "sorting",
+    "word": "committee",
+    "category": "Collective",
+    "explanation": "A committee is a group of people appointed for a specific function."
+  },
+  {
+    "id": 96,
+    "noun_type": "Uncountable",
+    "practice_type": "typing",
+    "prompt_text": "Type the mass noun for the 'white liquid' used in baking cakes.",
+    "answer": "milk",
+    "hint": "It's an uncountable liquid."
+  },
+  {
+    "id": 97,
+    "noun_type": "Countable",
+    "practice_type": "multiple_choice",
+    "question_text": "Which of these is a Countable noun?",
+    "options": ["Laughter", "Knowledge", "Idea", "Happiness"],
+    "answer": ["Idea"],
+    "explanation": "You can have 'an idea' or 'many ideas,' whereas the others are abstract mass nouns."
+  },
+  {
+    "id": 98,
+    "noun_type": "Collective",
+    "practice_type": "sorting",
+    "word": "staff",
+    "category": "Collective",
+    "explanation": "A staff refers to the group of people who work for an organization."
+  },
+  {
+    "id": 99,
+    "noun_type": "Uncountable",
+    "practice_type": "typing",
+    "prompt_text": "Type the mass noun for 'the power that runs your computer'.",
+    "answer": "electricity",
+    "hint": "It's a form of energy."
+  },
+  {
+    "id": 100,
+    "noun_type": "Collective",
+    "practice_type": "multiple_choice",
+    "question_text": "What is the collective noun for a group of kittens?",
+    "options": ["Pack", "Litter", "School", "Pride"],
+    "answer": ["Litter"],
+    "explanation": "A 'litter' refers to a group of young animals born at the same time."
+  },
+  
+  {
+    "id": 101,
+    "noun_type": "Reflexive Pronoun",
+    "practice_type": "typing",
+    "prompt_text": "Type the reflexive pronoun for 'The students'.",
+    "answer": "themselves",
+    "hint": "They did the project by ____."
+  },
+  {
+    "id": 102,
+    "noun_type": "Abstract",
+    "practice_type": "sorting",
+    "word": "Success",
+    "category": "Abstract",
+    "explanation": "Success is a concept or result of effort; it is not a physical object you can hold."
+  },
+  {
+    "id": 103,
+    "noun_type": "Proper",
+    "practice_type": "multiple_choice",
+    "question_text": "Which of these is a Proper Noun for a specific school?",
+    "options": ["College", "City Tech", "University", "Building"],
+    "answer": ["City Tech"],
+    "explanation": "City Tech is the specific name of the New York City College of Technology."
+  },
+  {
+    "id": 104,
+    "noun_type": "Personal Pronoun",
+    "practice_type": "typing",
+    "prompt_text": "Type the subject pronoun used for an inanimate object like a 'PC'.",
+    "answer": "it",
+    "hint": "____ is a fast computer."
+  },
+  {
+    "id": 105,
+    "noun_type": "Abstract",
+    "practice_type": "sorting",
+    "word": "Dedication",
+    "category": "Abstract",
+    "explanation": "Dedication is a quality or feeling toward a goal."
+  },
+  {
+    "id": 106,
+    "noun_type": "Proper",
+    "practice_type": "typing",
+    "prompt_text": "Type the Proper Noun for the month you attended Anime NYC in 2024.",
+    "answer": "August",
+    "hint": "It starts with an 'A'."
+  },
+  {
+    "id": 107,
+    "noun_type": "Personal Pronoun",
+    "practice_type": "multiple_choice",
+    "question_text": "Which pronoun is an OBJECT pronoun?",
+    "options": ["He", "She", "Me", "I"],
+    "answer": ["Me"],
+    "explanation": "'Me' is used when the speaker is the receiver of the action."
+  },
+  {
+    "id": 108,
+    "noun_type": "Common",
+    "practice_type": "sorting",
+    "word": "internship",
+    "category": "Common",
+    "explanation": "An internship is a general category of work experience."
+  },
+  {
+    "id": 109,
+    "noun_type": "Reflexive Pronoun",
+    "practice_type": "typing",
+    "prompt_text": "Type the reflexive pronoun for 'You' (singular).",
+    "answer": "yourself",
+    "hint": "You should believe in ____."
+  },
+  {
+    "id": 110,
+    "noun_type": "Abstract",
+    "practice_type": "multiple_choice",
+    "question_text": "Identify the Abstract Noun: 'The teacher praised the student's bravery.'",
+    "options": ["teacher", "praised", "student", "bravery"],
+    "answer": ["bravery"],
+    "explanation": "Bravery is a quality that cannot be physically seen or touched."
+  },
+
+
+  {
+    "id": 111,
+    "noun_type": "Possessive Noun",
+    "practice_type": "typing",
+    "prompt_text": "Rewrite 'the wings of the butterflies' as a possessive noun.",
+    "answer": "the butterflies' wings",
+    "hint": "Butterflies is a plural ending in 's'. Just add the apostrophe at the end."
+  },
+  {
+    "id": 112,
+    "noun_type": "Plural Rule",
+    "practice_type": "sorting",
+    "word": "knives",
+    "category": "f to ves",
+    "explanation": "Nouns ending in 'f' or 'fe' like 'knife' change to 'ves' in the plural form."
+  },
+  {
+    "id": 113,
+    "noun_type": "Possessive Noun",
+    "practice_type": "multiple_choice",
+    "question_text": "Which sentence correctly shows singular possession for 'the computer belonging to the intern'?",
+    "options": ["The interns' computer", "The intern's computer", "The interns computer"],
+    "answer": ["The intern's computer"],
+    "explanation": "Since 'intern' is singular, you add an apostrophe + s."
+  },
+  {
+    "id": 114,
+    "noun_type": "Plural Rule",
+    "practice_type": "typing",
+    "prompt_text": "Type the plural form of 'loaf'.",
+    "answer": "loaves",
+    "hint": "Change the 'f' to 'ves'."
+  },
+  {
+    "id": 115,
+    "noun_type": "Possessive Noun",
+    "practice_type": "sorting",
+    "word": "people's",
+    "category": "Irregular Plural Possessive",
+    "explanation": "'People' is plural but doesn't end in 's', so it uses 's to show possession."
+  },
+  {
+    "id": 116,
+    "noun_type": "Plural Rule",
+    "practice_type": "multiple_choice",
+    "question_text": "What is the plural of 'syllabus'?",
+    "options": ["syllabuses", "syllabi", "syllabusies"],
+    "answer": ["syllabi"],
+    "explanation": "Like 'cactus', 'syllabus' often takes the Latin plural 'syllabi'."
+  },
+  {
+    "id": 117,
+    "noun_type": "Possessive Noun",
+    "practice_type": "typing",
+    "prompt_text": "Type the possessive form of 'the car belonging to my parents'.",
+    "answer": "my parents' car",
+    "hint": "Parents is plural ending in 's'. Place the apostrophe after the 's'."
+  },
+  {
+    "id": 118,
+    "noun_type": "Plural Rule",
+    "practice_type": "sorting",
+    "word": "halves",
+    "category": "f to ves",
+    "explanation": "The plural of 'half' changes 'f' to 'ves'."
+  },
+  {
+    "id": 119,
+    "noun_type": "Possessive Noun",
+    "practice_type": "multiple_choice",
+    "question_text": "Identify the correct plural possessive: 'The ___ projects were all excellent.'",
+    "options": ["student's", "students'", "students"],
+    "answer": ["students'"],
+    "explanation": "We are talking about projects from multiple students, so we use the plural possessive."
+  },
+  {
+    "id": 120,
+    "noun_type": "Plural Rule",
+    "practice_type": "typing",
+    "prompt_text": "Type the plural form of 'shelf'.",
+    "answer": "shelves",
+    "hint": "Change 'f' to 'ves'."
+  },
+  
+  {
+    "id": 131,
+    "noun_type": "Reflexive Pronoun",
+    "practice_type": "multiple_choice",
+    "question_text": "Choose the correct pronoun: 'The computer program finished the update by ___.'",
+    "options": ["itself", "it", "themselves", "himself"],
+    "answer": ["itself"],
+    "explanation": "Since the subject is an inanimate program, the reflexive pronoun must be 'itself'."
+  },
+  {
+    "id": 132,
+    "noun_type": "Collective",
+    "practice_type": "sorting",
+    "word": "faculty",
+    "category": "Collective",
+    "explanation": "A faculty refers to the entire group of teaching staff at a college or school."
+  },
+  {
+    "id": 133,
+    "noun_type": "Abstract",
+    "practice_type": "typing",
+    "prompt_text": "Type the abstract noun form of the word 'patient'.",
+    "answer": "patience",
+    "hint": "It ends with 'ce'."
+  },
+  {
+    "id": 134,
+    "noun_type": "Personal Pronoun",
+    "practice_type": "multiple_choice",
+    "question_text": "Identify the OBJECT pronoun: 'The manager hired them for the web development project.'",
+    "options": ["manager", "hired", "them", "project"],
+    "answer": ["them"],
+    "explanation": "'Them' is an object pronoun representing the group receiving the action of being hired."
+  },
+  {
+    "id": 135,
+    "noun_type": "Collective",
+    "practice_type": "sorting",
+    "word": "swarm",
+    "category": "Collective",
+    "explanation": "A swarm is a large group of flying insects, like bees, moving together."
+  },
+  {
+    "id": 136,
+    "noun_type": "Possessive Pronoun",
+    "practice_type": "typing",
+    "prompt_text": "The responsibility for the code belongs to us. It is...",
+    "answer": "ours",
+    "hint": "Possessive pronouns do not use apostrophes!"
+  },
+  {
+    "id": 137,
+    "noun_type": "Personal Pronoun",
+    "practice_type": "multiple_choice",
+    "question_text": "Which pronoun should be used to avoid repetition? 'Sarah likes coding, so ___ built a new React app.'",
+    "options": ["she", "her", "herself", "it"],
+    "answer": ["she"],
+    "explanation": "'She' is the subject pronoun needed to replace 'Sarah'."
+  },
+  {
+    "id": 138,
+    "noun_type": "Collective",
+    "practice_type": "sorting",
+    "word": "jury",
+    "category": "Collective",
+    "explanation": "A jury is a group of people sworn to give a verdict in a legal case."
+  },
+  {
+    "id": 139,
+    "noun_type": "Reflexive Pronoun",
+    "practice_type": "typing",
+    "prompt_text": "Type the reflexive pronoun for 'You' (plural/group).",
+    "answer": "yourselves",
+    "hint": "Make 'yourself' plural."
+  },
+  {
+    "id": 140,
+    "noun_type": "Abstract",
+    "practice_type": "multiple_choice",
+    "question_text": "Which noun in this sentence is Abstract? 'The team's unity helped them win the competition.'",
+    "options": ["team", "unity", "win", "competition"],
+    "answer": ["unity"],
+    "explanation": "Unity is a state of being joined or in agreement, making it an abstract concept."
+  },
+  
+  {
+    "id": 141,
+    "noun_type": "Uncountable",
+    "practice_type": "typing",
+    "prompt_text": "Type the mass noun for 'the grain used to make bread'.",
+    "answer": "wheat",
+    "hint": "It is an uncountable grain often used in flour."
+  },
+  {
+    "id": 142,
+    "noun_type": "Proper",
+    "practice_type": "sorting",
+    "word": "Chakra UI",
+    "category": "Proper",
+    "explanation": "Chakra UI is a specific software library name and must be capitalized."
+  },
+  {
+    "id": 143,
+    "noun_type": "Countable",
+    "practice_type": "multiple_choice",
+    "question_text": "Which of these is a Countable noun?",
+    "options": ["Luggage", "Suitcase", "Equipment", "Information"],
+    "answer": ["Suitcase"],
+    "explanation": "You can count 'three suitcases,' but 'luggage' and 'equipment' are uncountable mass nouns."
+  },
+  {
+    "id": 144,
+    "noun_type": "Uncountable",
+    "practice_type": "sorting",
+    "word": "Patience",
+    "category": "Uncountable",
+    "explanation": "Patience is an abstract quality that cannot be counted with numbers."
+  },
+  {
+    "id": 145,
+    "noun_type": "Proper",
+    "practice_type": "typing",
+    "prompt_text": "Type the Proper Noun for the borough in NYC where City Tech is located.",
+    "answer": "Brooklyn",
+    "hint": "It starts with a 'B'."
+  },
+  {
+    "id": 146,
+    "noun_type": "Collective",
+    "practice_type": "multiple_choice",
+    "question_text": "What is the collective noun for a group of stars?",
+    "options": ["Galaxy", "Flock", "Bunch", "Pack"],
+    "answer": ["Galaxy"],
+    "explanation": "A galaxy is a massive collective system of stars, gas, and dust."
+  },
+  {
+    "id": 147,
+    "noun_type": "Common",
+    "practice_type": "sorting",
+    "word": "browser",
+    "category": "Common",
+    "explanation": "A browser is a general tool for accessing the web, like Chrome or Firefox."
+  },
+  {
+    "id": 148,
+    "noun_type": "Countable",
+    "practice_type": "typing",
+    "prompt_text": "Type the plural form of the countable noun 'Battery'.",
+    "answer": "batteries",
+    "hint": "Change the 'y' to 'ies'."
+  },
+  {
+    "id": 149,
+    "noun_type": "Uncountable",
+    "practice_type": "multiple_choice",
+    "question_text": "Identify the mass noun: 'We need to get some ___ for the new PC.'",
+    "options": ["software", "programs", "applications", "apps"],
+    "answer": ["software"],
+    "explanation": "'Software' is an uncountable noun; you don't say 'softwares'."
+  },
+  {
+    "id": 150,
+    "noun_type": "Proper",
+    "practice_type": "typing",
+    "prompt_text": "Type the Proper Noun for the name of the AI platform you use for coding.",
+    "answer": "Augment Code",
+    "hint": "It starts with an 'A'."
+  }
+]
