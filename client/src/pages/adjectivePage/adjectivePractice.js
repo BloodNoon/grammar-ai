@@ -15,6 +15,9 @@ import { PageContainer, GameCard, LessonPageHeader } from "../../components/ui";
 import TypingGameWrapper from "../../components/typingGameWrapper";
 import MultipleChoiceWrapper from "../../components/multipleChoiceWrapper";
 
+// Import Adjective Hunt Game
+import AdjectiveHuntGame from "./adjectiveComponents/AdjectiveHuntGame";
+
 // Import adjective questions JSON file
 import adjectiveData from "../../data/adjectives_questions.json";
 
@@ -32,6 +35,13 @@ const practiceTypes = [
     color: "purple",
     icon: "✍️",
     examples: "taller, happiest, more careful",
+  },
+  {
+    name: "Adjective Hunt",
+    desc: "Find every adjective in a paragraph and identify its type.",
+    color: "yellow",
+    icon: "🔍",
+    examples: "Descriptive, Comparative, Superlative, Proper",
   },
 ];
 
@@ -55,7 +65,7 @@ const AdjectivePractice = () => {
       </GameCard>
 
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
-        {/* LEFT COLUMN: Practice Types Info */}
+        {/* LEFT COLUMN: Practice Types Info + Adjective Hunt */}
         <VStack spacing={6} align="stretch">
           {/* Practice Types Overview */}
           <GameCard variant="game">
@@ -63,7 +73,7 @@ const AdjectivePractice = () => {
               Practice Game Types
             </Heading>
             <Text fontSize="md" color="gray.600" mb={6}>
-              Master your adjective knowledge through two different interactive
+              Master your adjective knowledge through three different interactive
               challenges. Each game tests your skills in a unique way!
             </Text>
 
@@ -126,7 +136,7 @@ const AdjectivePractice = () => {
           </GameCard>
         </VStack>
 
-        {/* RIGHT COLUMN: Practice Games */}
+        {/* RIGHT COLUMN: Multiple Choice + Adjective Hunt */}
         <VStack spacing={6} align="stretch">
           {/* Multiple Choice Game */}
           <GameCard variant="game">
@@ -137,6 +147,14 @@ const AdjectivePractice = () => {
               questionsToPlay={mcQuestions}
               nextPath="/adjective-structure"
             />
+          </GameCard>
+
+          {/* Adjective Hunt Game */}
+          <GameCard variant="game">
+            <Heading size="md" color="yellow.500" mb={4}>
+              🔍 Adjective Hunt
+            </Heading>
+            <AdjectiveHuntGame />
           </GameCard>
         </VStack>
       </Grid>
