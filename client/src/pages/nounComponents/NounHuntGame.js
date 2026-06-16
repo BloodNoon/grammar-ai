@@ -17,15 +17,11 @@ const NounHuntGame = () => {
   const totalNouns = paragraph.tokens.filter((t) => t.isNoun).length;
   const correctCount = Object.values(tokenStates).filter((s) => s === "correct").length;
 
- 
   const handleTokenClick = (token, index, e) => {
-    
     if (tokenStates[index]) return;
-    
     if (token.word === "." || token.word === "," || token.word === "!") return;
 
     if (!token.isNoun) {
-      // Wrong click — flash red briefly
       setWrongClicks((prev) => prev + 1);
       setTokenStates((prev) => ({ ...prev, [index]: "wrong-click" }));
       setTimeout(() => {
@@ -38,12 +34,10 @@ const NounHuntGame = () => {
       return;
     }
 
-    // Correct noun click — open the type popup
     const rect = e.target.getBoundingClientRect();
     setPopup({ tokenIndex: index, position: { x: rect.left, y: rect.bottom } });
   };
 
-  
   const handleAnswer = (choice) => {
     const { tokenIndex } = popup;
     const token = paragraph.tokens[tokenIndex];
@@ -55,7 +49,6 @@ const NounHuntGame = () => {
     if (isCorrect) setScore((prev) => prev + 1);
     setPopup(null);
 
-    // Check if all nouns have been answered
     const answeredNouns = Object.keys(newStates).filter(
       (k) => paragraph.tokens[k]?.isNoun
     ).length;
@@ -71,7 +64,6 @@ const NounHuntGame = () => {
     }
   };
 
-  
   const handleReplay = () => {
     setTokenStates({});
     setPopup(null);
@@ -82,10 +74,9 @@ const NounHuntGame = () => {
     setParagraphIndex((paragraphIndex + 1) % PARAGRAPHS.length);
   };
 
-  // ─── Results screen ─────────────────────────────────────────────────────────
   if (gameOver) {
     return (
-      <div style={{ fontFamily: "'Inter', sans-serif", background: "#fde8c8", minHeight: "100%", padding: "24px", borderRadius: "20px" }}>
+      <div style={{ fontFamily: "'Inter', sans-serif" }}>
         <NounHuntResults
           score={score}
           total={totalNouns}
@@ -96,26 +87,25 @@ const NounHuntGame = () => {
     );
   }
 
-  // ─── Main game ──────────────────────────────────────────────────────────────
   return (
-    <div style={{ fontFamily: "'Inter', sans-serif", background: "#fde8c8", minHeight: "100%", padding: "24px", borderRadius: "20px" }}>
+    <div style={{ fontFamily: "'Inter', sans-serif" }}>
 
       {/* Progress card */}
       <div style={{
         background: "white",
-        border: "3px solid #1a1a2e",
-        borderRadius: "16px",
+        border: "1px solid #e5e7eb",
+        borderRadius: "14px",
         padding: "16px 20px",
         marginBottom: "16px",
-        boxShadow: "4px 4px 0px #1a1a2e",
+        boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
       }}>
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "10px" }}>
-          <span style={{ fontWeight: "800", fontSize: "0.95rem", color: "#1a1a2e" }}>Nouns Found</span>
-          <span style={{ fontWeight: "800", fontSize: "0.95rem", color: "#1a1a2e" }}>{correctCount} / {totalNouns}</span>
+          <span style={{ fontWeight: "700", fontSize: "0.9rem", color: "#1f2937" }}>Nouns Found</span>
+          <span style={{ fontWeight: "700", fontSize: "0.9rem", color: "#1f2937" }}>{correctCount} / {totalNouns}</span>
         </div>
-        <div style={{ background: "#e5e7eb", borderRadius: "999px", height: "10px", border: "2px solid #1a1a2e" }}>
+        <div style={{ background: "#e5e7eb", borderRadius: "999px", height: "8px" }}>
           <div style={{
-            background: "#00e5cc",
+            background: "#22d3ee",
             height: "100%",
             borderRadius: "999px",
             width: `${(correctCount / totalNouns) * 100}%`,
@@ -127,46 +117,42 @@ const NounHuntGame = () => {
       {/* Main game card */}
       <div style={{
         background: "white",
-        border: "3px solid #1a1a2e",
-        borderRadius: "20px",
+        border: "1px solid #e5e7eb",
+        borderRadius: "16px",
         padding: "24px",
-        boxShadow: "5px 5px 0px #1a1a2e",
+        boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
       }}>
 
         {/* Instruction banner */}
         <div style={{
-          background: "#00e5cc",
-          border: "2.5px solid #1a1a2e",
+          background: "#ecfeff",
+          border: "1px solid #a5f3fc",
           borderRadius: "10px",
           padding: "10px 14px",
           marginBottom: "20px",
         }}>
-          <p style={{ margin: 0, fontSize: "0.9rem", fontWeight: "800", color: "#1a1a2e" }}>
+          <p style={{ margin: 0, fontSize: "0.85rem", fontWeight: "600", color: "#0e7490" }}>
             📖 Click every noun — then identify its type. Yellow words are nouns!
           </p>
         </div>
 
-        {/* Paragraph */}
         <NounHuntParagraph
           tokens={paragraph.tokens}
           tokenStates={tokenStates}
           onTokenClick={handleTokenClick}
         />
 
-        {/* Wrong click counter */}
         {wrongClicks > 0 && (
-          <p style={{ marginTop: "12px", fontSize: "0.85rem", fontWeight: "700", color: "#dc2626", textAlign: "right" }}>
+          <p style={{ marginTop: "12px", fontSize: "0.8rem", fontWeight: "600", color: "#dc2626", textAlign: "right" }}>
             ❌ {wrongClicks} wrong click{wrongClicks > 1 ? "s" : ""}
           </p>
         )}
 
-        {/* Paragraph indicator */}
-        <p style={{ marginTop: "14px", fontSize: "0.8rem", fontWeight: "700", color: "#9ca3af", textAlign: "center" }}>
+        <p style={{ marginTop: "14px", fontSize: "0.75rem", fontWeight: "600", color: "#9ca3af", textAlign: "center" }}>
           Paragraph {paragraphIndex + 1} of {PARAGRAPHS.length}
         </p>
       </div>
 
-      {/* Type choice popup */}
       {popup && (
         <NounHuntPopup
           token={paragraph.tokens[popup.tokenIndex]}
