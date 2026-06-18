@@ -14,7 +14,7 @@ const AdjectiveHuntGame = () => {
   const [missed, setMissed] = useState([]);
 
   const paragraph = PARAGRAPHS[paragraphIndex];
-  const totalAdj = paragraph.tokens.filter((t) => t.isAdj).length;
+  const totalItems = paragraph.tokens.filter((t) => t.isAdj).length;
   const correctCount = Object.values(tokenStates).filter((s) => s === "correct").length;
 
   const handleTokenClick = (token, index, e) => {
@@ -39,7 +39,7 @@ const AdjectiveHuntGame = () => {
     if (isCorrect) setScore((prev) => prev + 1);
     setPopup(null);
     const answered = Object.keys(newStates).filter((k) => paragraph.tokens[k]?.isAdj).length;
-    if (answered === totalAdj) {
+    if (answered === totalItems) {
       const missedList = paragraph.tokens.filter((t, i) => t.isAdj && newStates[i] !== "correct").map((t) => ({ word: t.word, type: t.type }));
       setTimeout(() => { setMissed(missedList); setGameOver(true); }, 400);
     }
@@ -54,7 +54,7 @@ const AdjectiveHuntGame = () => {
   if (gameOver) {
     return (
       <div style={{ fontFamily: "'Inter', sans-serif" }}>
-        <AdjectiveHuntResults score={score} total={totalAdj} missed={missed} onReplay={handleReplay} />
+        <AdjectiveHuntResults score={score} total={totalItems} missed={missed} onReplay={handleReplay} />
       </div>
     );
   }
@@ -64,18 +64,20 @@ const AdjectiveHuntGame = () => {
       <div style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: "14px", padding: "16px 20px", marginBottom: "16px", boxShadow: "0 2px 8px rgba(0,0,0,0.05)" }}>
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "10px" }}>
           <span style={{ fontWeight: "700", fontSize: "0.9rem", color: "#1f2937" }}>Adjectives Found</span>
-          <span style={{ fontWeight: "700", fontSize: "0.9rem", color: "#1f2937" }}>{correctCount} / {totalAdj}</span>
+          <span style={{ fontWeight: "700", fontSize: "0.9rem", color: "#1f2937" }}>{correctCount} / {totalItems}</span>
         </div>
         <div style={{ background: "#e5e7eb", borderRadius: "999px", height: "8px" }}>
-          <div style={{ background: "#22d3ee", height: "100%", borderRadius: "999px", width: `${(correctCount / totalAdj) * 100}%`, transition: "width 0.3s ease" }} />
+          <div style={{ background: "#22d3ee", height: "100%", borderRadius: "999px", width: `${(correctCount / totalItems) * 100}%`, transition: "width 0.3s ease" }} />
         </div>
       </div>
       <div style={{ background: "white", border: "1px solid #e5e7eb", borderRadius: "16px", padding: "24px", boxShadow: "0 2px 8px rgba(0,0,0,0.05)" }}>
+        
         <div style={{ background: "#ecfeff", border: "1px solid #a5f3fc", borderRadius: "10px", padding: "10px 14px", marginBottom: "20px" }}>
           <p style={{ margin: 0, fontSize: "0.85rem", fontWeight: "600", color: "#0e7490" }}>
-            📖 Click every adjective — then identify its type. Yellow words are adjectives!
+            📖 Find every adjective in the sentence, then identify its type!
           </p>
         </div>
+        
         <AdjectiveHuntParagraph tokens={paragraph.tokens} tokenStates={tokenStates} onTokenClick={handleTokenClick} />
         {wrongClicks > 0 && (
           <p style={{ marginTop: "12px", fontSize: "0.8rem", fontWeight: "600", color: "#dc2626", textAlign: "right" }}>
