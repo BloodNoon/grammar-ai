@@ -16,6 +16,9 @@ import SortingGameWrapper from "../components/SortingGameWrapper";
 import TypingGameWrapper from "../components/typingGameWrapper";
 import MultipleChoiceWrapper from "../components/multipleChoiceWrapper";
 
+// Import Verb Hunt Game
+import VerbHuntGame from "./verbComponents/VerbHuntGame";
+
 // Import verb questions JSON file
 import verbData from "../data/verbs_questions.json";
 
@@ -41,6 +44,13 @@ const practiceTypes = [
     icon: "🔀",
     examples: "Action vs Linking, Helping vs Main",
   },
+  {
+    name: "Verb Hunt",
+    desc: "Find every verb in a paragraph and identify its type.",
+    color: "yellow",
+    icon: "🔍",
+    examples: "Action, Linking, Helping",
+  },
 ];
 
 const VerbPractice = () => {
@@ -63,7 +73,7 @@ const VerbPractice = () => {
       </GameCard>
 
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
-        {/* LEFT COLUMN: Practice Types Info */}
+        {/* LEFT COLUMN: Practice Types Info + Typing Game + Verb Hunt */}
         <VStack spacing={6} align="stretch">
           {/* Practice Types Overview */}
           <GameCard variant="game">
@@ -71,7 +81,7 @@ const VerbPractice = () => {
               Practice Game Types
             </Heading>
             <Text fontSize="md" color="gray.600" mb={6}>
-              Master your verb knowledge through three different interactive
+              Master your verb knowledge through four different interactive
               challenges. Each game tests your skills in a unique way!
             </Text>
 
@@ -132,9 +142,17 @@ const VerbPractice = () => {
               nextPath="/verb-tense-structure"
             />
           </GameCard>
+
+          {/* Verb Hunt Game */}
+          <GameCard variant="game">
+            <Heading size="md" color="yellow.500" mb={4}>
+              🔍 Verb Hunt
+            </Heading>
+            <VerbHuntGame />
+          </GameCard>
         </VStack>
 
-        {/* RIGHT COLUMN: Practice Games */}
+        {/* RIGHT COLUMN: Multiple Choice + Sorting Game */}
         <VStack spacing={6} align="stretch">
           {/* Multiple Choice Game */}
           <GameCard variant="game">
