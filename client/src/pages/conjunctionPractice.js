@@ -15,6 +15,9 @@ import { PageContainer, GameCard, LessonPageHeader } from "../components/ui";
 import TypingGameWrapper from "../components/typingGameWrapper";
 import MultipleChoiceWrapper from "../components/multipleChoiceWrapper";
 
+// Import Conjunction Hunt Game
+import ConjunctionHuntGame from "./conjunctionComponents/ConjunctionHuntGame";
+
 // Import conjunction questions JSON file
 import conjunctionData from "../data/conjunctions_questions.json";
 
@@ -32,6 +35,13 @@ const practiceTypes = [
     color: "purple",
     icon: "✍️",
     examples: "and, but, because, although, when",
+  },
+  {
+    name: "Conjunction Hunt",
+    desc: "Find every conjunction in a paragraph and identify its type.",
+    color: "yellow",
+    icon: "🔍",
+    examples: "Coordinating, Subordinating, Correlative",
   },
 ];
 
@@ -55,7 +65,7 @@ const ConjunctionPractice = () => {
       </GameCard>
 
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
-        {/* LEFT COLUMN: Practice Types Info */}
+        {/* LEFT COLUMN: Practice Types Info + Conjunction Hunt */}
         <VStack spacing={6} align="stretch">
           {/* Practice Types Overview */}
           <GameCard variant="game">
@@ -63,7 +73,7 @@ const ConjunctionPractice = () => {
               Practice Game Types
             </Heading>
             <Text fontSize="md" color="gray.600" mb={6}>
-              Master your conjunction knowledge through two different
+              Master your conjunction knowledge through three different
               interactive challenges. Each game tests your skills in a unique
               way!
             </Text>
@@ -125,9 +135,17 @@ const ConjunctionPractice = () => {
               nextPath="/conjunction-structure"
             />
           </GameCard>
+
+          {/* Conjunction Hunt Game */}
+          <GameCard variant="game">
+            <Heading size="md" color="yellow.500" mb={4}>
+              🔍 Conjunction Hunt
+            </Heading>
+            <ConjunctionHuntGame />
+          </GameCard>
         </VStack>
 
-        {/* RIGHT COLUMN: Practice Games */}
+        {/* RIGHT COLUMN: Multiple Choice */}
         <VStack spacing={6} align="stretch">
           {/* Multiple Choice Game */}
           <GameCard variant="game">
