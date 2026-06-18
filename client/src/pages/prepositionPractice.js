@@ -15,6 +15,9 @@ import { PageContainer, GameCard, LessonPageHeader } from "../components/ui";
 import TypingGameWrapper from "../components/typingGameWrapper";
 import MultipleChoiceWrapper from "../components/multipleChoiceWrapper";
 
+// Import Preposition Hunt Game
+import PrepositionHuntGame from "./prepositionComponents/PrepositionHuntGame";
+
 // Import preposition questions JSON file
 import prepositionData from "../data/prepositions_questions.json";
 
@@ -32,6 +35,13 @@ const practiceTypes = [
     color: "purple",
     icon: "✍️",
     examples: "in, on, at, by, with",
+  },
+  {
+    name: "Preposition Hunt",
+    desc: "Find every preposition in a paragraph and identify its type.",
+    color: "yellow",
+    icon: "🔍",
+    examples: "Time, Place, Direction",
   },
 ];
 
@@ -55,7 +65,7 @@ const PrepositionPractice = () => {
       </GameCard>
 
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
-        {/* LEFT COLUMN: Practice Types Info */}
+        {/* LEFT COLUMN: Practice Types Info + Preposition Hunt */}
         <VStack spacing={6} align="stretch">
           {/* Practice Types Overview */}
           <GameCard variant="game">
@@ -125,9 +135,17 @@ const PrepositionPractice = () => {
               nextPath="/prep1-structure"
             />
           </GameCard>
+
+          {/* Preposition Hunt Game */}
+          <GameCard variant="game">
+            <Heading size="md" color="yellow.500" mb={4}>
+              🔍 Preposition Hunt
+            </Heading>
+            <PrepositionHuntGame />
+          </GameCard>
         </VStack>
 
-        {/* RIGHT COLUMN: Practice Games */}
+        {/* RIGHT COLUMN: Multiple Choice */}
         <VStack spacing={6} align="stretch">
           {/* Multiple Choice Game */}
           <GameCard variant="game">
