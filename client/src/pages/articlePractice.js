@@ -16,6 +16,9 @@ import SortingGameWrapper from "../components/SortingGameWrapper";
 import TypingGameWrapper from "../components/typingGameWrapper";
 import MultipleChoiceWrapper from "../components/multipleChoiceWrapper";
 
+// Import Article Hunt Game
+import ArticleHuntGame from "./articleComponents/ArticleHuntGame";
+
 // Import article questions JSON file
 import articleData from "../data/articles_questions.json";
 
@@ -40,6 +43,13 @@ const practiceTypes = [
     color: "orange",
     icon: "🔀",
     examples: "Definite vs Indefinite, A vs An",
+  },
+  {
+    name: "Article Hunt",
+    desc: "Find every article in a paragraph and identify its type.",
+    color: "yellow",
+    icon: "🔍",
+    examples: "Definite, Indefinite",
   },
 ];
 
@@ -66,7 +76,7 @@ const ArticlePractice = () => {
       </GameCard>
 
       <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
-        {/* LEFT COLUMN: Practice Types Info */}
+        {/* LEFT COLUMN: Practice Types Info + Typing Game + Article Hunt */}
         <VStack spacing={6} align="stretch">
           {/* Practice Types Overview */}
           <GameCard variant="game">
@@ -74,7 +84,7 @@ const ArticlePractice = () => {
               Practice Game Types
             </Heading>
             <Text fontSize="md" color="gray.600" mb={6}>
-              Master your article knowledge through three different interactive
+              Master your article knowledge through four different interactive
               challenges. Each game tests your skills in a unique way!
             </Text>
 
@@ -135,9 +145,17 @@ const ArticlePractice = () => {
               nextPath="/article-structure"
             />
           </GameCard>
+
+          {/* Article Hunt Game */}
+          <GameCard variant="game">
+            <Heading size="md" color="yellow.500" mb={4}>
+              🔍 Article Hunt
+            </Heading>
+            <ArticleHuntGame />
+          </GameCard>
         </VStack>
 
-        {/* RIGHT COLUMN: Practice Games */}
+        {/* RIGHT COLUMN: Multiple Choice + Sorting Game */}
         <VStack spacing={6} align="stretch">
           {/* Multiple Choice Game */}
           <GameCard variant="game">
