@@ -48,6 +48,7 @@ export const VerbGrammarLegend = lazyWithPreload(() => import(/* webpackPrefetch
 export const VerbSentenceBuilder = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "verb-tense" */ "./pages/VerbTenseComponents/VerbSentenceBuilder"));
 export const VerbLevelSelection = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "verb-tense" */ "./pages/VerbTenseComponents/VerbLevelSelection"));
 export const VerbWordBank = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "verb-tense" */ "./pages/VerbTenseComponents/VerbWordBank"));
+export const AuxiliaryVerbsAndVerbals = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "verb-tense" */ "./pages/AuxiliaryVerbsAndVerbals"));
 
 // quiz chunk
 export const AdjectiveQuizPage = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "quiz" */ "./pages/adjquiz"));
@@ -93,6 +94,7 @@ export const routePreloadMap = {
   "/verb-sentence-builder": VerbSentenceBuilder,
   "/verb-level-selection": VerbLevelSelection,
   "/verb-wordbank": VerbWordBank,
+  "/auxiliary-verbs": AuxiliaryVerbsAndVerbals,
   "/article-structure": ArticleStructure,
   "/article-grammar-legend": ArticleGrammarLegend,
   "/article-sentence-builder": ArticleSentenceBuilder,
