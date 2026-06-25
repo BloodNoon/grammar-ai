@@ -48,6 +48,7 @@ import {
   VerbSentenceBuilder,
   VerbLevelSelection,
   VerbWordBank,
+  AuxiliaryVerbsAndVerbals,
   AdjectiveQuizPage,
   AdverbQuizPage,
   VerbTenseQuizPage,
@@ -137,6 +138,10 @@ function AppLayout() {
                 component={VerbLevelSelection}
               />
               <Route path="/verb-wordbank" component={VerbWordBank} />
+              <Route
+                path="/auxiliary-verbs"
+                component={AuxiliaryVerbsAndVerbals}
+              />
               <Route path="/article-structure" component={ArticleStructure} />
               <Route
                 path="/article-grammar-legend"
