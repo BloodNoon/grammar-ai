@@ -41,6 +41,7 @@ const NAV_SECTIONS = [
     title: "Verb Lessons",
     items: [
       { label: "Introduction to Verbs", to: "/verb-tense-structure" },
+      { label: "Auxiliary Verbs & Verbals", to: "/auxiliary-verbs" },
       { label: "Verb Practice Games", to: "/verb-practice" },
       { label: "Verb Quiz", to: "/verb-tense-quiz" },
       { label: "Sentence Structures", to: "/verb-sentence-structures" },
@@ -156,7 +157,7 @@ const SidebarContent = ({
   const location = useLocation();
 
   const isActive = (path) => location.pathname === path;
-  
+
   useEffect(() => {
     if (isMobileDrawer) {
       document.documentElement.style.setProperty("--sidebar-width", "0px");
@@ -166,7 +167,6 @@ const SidebarContent = ({
         isCollapsed ? "160px" : "260px"
       );
     }
-    // Clean up when unmounting sidebar
     return () => {
       document.documentElement.style.setProperty("--sidebar-width", "0px");
     };
@@ -226,10 +226,7 @@ const SidebarContent = ({
         pb={4}
       >
         {NAV_SECTIONS.map((section, index) => (
-          <Box
-            key={index}
-            w="100%"
-          >
+          <Box key={index} w="100%">
             {section.isLink ? (
               <Button
                 as={RouterLink}
@@ -247,12 +244,8 @@ const SidebarContent = ({
                 onMouseEnter={() => preloadRoute(section.to)}
                 onFocus={() => preloadRoute(section.to)}
                 onClick={() => {
-                  if (isCollapsed) {
-                    setIsCollapsed(false);
-                  }
-                  if (isMobileDrawer && onClose) {
-                    onClose();
-                  }
+                  if (isCollapsed) setIsCollapsed(false);
+                  if (isMobileDrawer && onClose) onClose();
                 }}
               >
                 {renderTitle(section.title, isCollapsed)}
@@ -299,9 +292,7 @@ const SidebarContent = ({
                         onMouseEnter={() => preloadRoute(item.to)}
                         onFocus={() => preloadRoute(item.to)}
                         onClick={() => {
-                          if (isMobileDrawer && onClose) {
-                            onClose();
-                          }
+                          if (isMobileDrawer && onClose) onClose();
                         }}
                       >
                         {item.label}
