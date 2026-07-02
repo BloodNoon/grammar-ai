@@ -1,12 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Heading,
   Text,
-  VStack,
-  Grid,
-  Badge,
-  SimpleGrid,
   Flex,
 } from "@chakra-ui/react";
 import { PageContainer, GameCard, LessonPageHeader } from "../../components/ui";
@@ -21,143 +17,135 @@ import AdjectiveHuntGame from "./adjectiveComponents/AdjectiveHuntGame";
 // Import adjective questions JSON file
 import adjectiveData from "../../data/adjectives_questions.json";
 
-const practiceTypes = [
-  {
-    name: "Multiple Choice",
-    desc: "Identify the correct adjective or its form from given options.",
-    color: "green",
-    icon: "📝",
-    examples: "Descriptive, Comparative, Superlative",
-  },
-  {
-    name: "Typing Practice",
-    desc: "Type the correct adjective form for the sentence.",
-    color: "purple",
-    icon: "✍️",
-    examples: "taller, happiest, more careful",
-  },
-  {
-    name: "Adjective Hunt",
-    desc: "Find every adjective in a paragraph and identify its type.",
-    color: "yellow",
-    icon: "🔍",
-    examples: "Descriptive, Comparative, Superlative, Proper",
-  },
-];
-
 const AdjectivePractice = () => {
-  const typingQuestions = adjectiveData.filter(
-    (q) => q.practice_type === "typing",
-  );
-  const mcQuestions = adjectiveData.filter(
-    (q) => q.practice_type === "multiple_choice",
-  );
+  const typingQuestions = adjectiveData.filter((q) => q.practice_type === "typing");
+  const mcQuestions = adjectiveData.filter((q) => q.practice_type === "multiple_choice");
+
+  const games = [
+    {
+      id: "mc",
+      title: "📝 Adjective Identification Challenge",
+      color: "green.500",
+      component: <MultipleChoiceWrapper questionsToPlay={mcQuestions} nextPath="/adjective-structure" />,
+    },
+    {
+      id: "typing",
+      title: "✍️ Typing Challenge",
+      color: "purple.500",
+      component: <TypingGameWrapper questionsToPlay={typingQuestions} nextPath="/adjective-structure" />,
+    },
+    {
+      id: "hunt",
+      title: "🔍 Adjective Hunt",
+      color: "yellow.500",
+      component: <AdjectiveHuntGame />,
+    },
+  ];
+
+  const [activeGame, setActiveGame] = useState(0);
+  const [completed, setCompleted] = useState(false);
+
+  const current = games[activeGame];
+  const isLast = activeGame === games.length - 1;
+
+  const handleNext = () => {
+    if (isLast) {
+      setCompleted(true);
+    } else {
+      setActiveGame((prev) => prev + 1);
+    }
+  };
+
+  const handleRestart = () => {
+    setActiveGame(0);
+    setCompleted(false);
+  };
 
   return (
     <PageContainer>
       <LessonPageHeader icon="🎯" title="Adjective Practice Games" />
-      <GameCard mb={8} textAlign="center" bg="brand.500" display="none">
-        <Heading size="xl">🎯 Adjective Practice Games</Heading>
-        <Text fontSize="md" color="brand.900" mt={2} opacity={0.8}>
-          Complete 15 questions with 100% accuracy in each game type to master
-          adjectives!
-        </Text>
-      </GameCard>
 
-      <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
-        {/* LEFT COLUMN: Practice Types Info + Adjective Hunt */}
-        <VStack spacing={6} align="stretch">
-          {/* Practice Types Overview */}
-          <GameCard variant="game">
-            <Heading size="lg" color="ink.700" mb={4}>
-              Practice Game Types
+      <Box maxW="800px" mx="auto">
+        {completed ? (
+          <GameCard variant="game" textAlign="center" py={12}>
+            <Text fontSize="4xl" mb={3}>🏆</Text>
+            <Heading size="lg" color="ink.700" mb={3}>
+              You've completed all the Adjective games!
             </Heading>
             <Text fontSize="md" color="gray.600" mb={6}>
-              Master your adjective knowledge through three different interactive
-              challenges. Each game tests your skills in a unique way!
+              Great work mastering adjectives through Multiple Choice, Typing,
+              and Adjective Hunt.
+            </Text>
+            <Box
+              as="button"
+              onClick={handleRestart}
+              bg="brand.500"
+              color="ink.900"
+              px={6}
+              py={3}
+              borderRadius="xl"
+              fontWeight="700"
+              border="2px solid"
+              borderColor="ink.900"
+              boxShadow="2px 2px 0px rgba(0,0,0,0.1)"
+              _hover={{ boxShadow: "3px 3px 0px rgba(0,0,0,0.15)" }}
+            >
+              ↺ Restart All Games
+            </Box>
+          </GameCard>
+        ) : (
+          <GameCard variant="game">
+            <Flex justify="space-between" align="center" mb={4}>
+              <Heading size="md" color={current.color}>
+                {current.title}
+              </Heading>
+              <Flex gap={1.5} align="center">
+                {games.map((g, idx) => (
+                  <Box
+                    key={g.id}
+                    w={2}
+                    h={2}
+                    borderRadius="full"
+                    bg={
+                      idx === activeGame
+                        ? "brand.500"
+                        : idx < activeGame
+                          ? "green.400"
+                          : "gray.300"
+                    }
+                    transition="background 0.3s"
+                  />
+                ))}
+              </Flex>
+            </Flex>
+
+            <Text fontSize="xs" color="gray.500" mb={4}>
+              Game {activeGame + 1} of {games.length}
             </Text>
 
-            <SimpleGrid columns={1} spacing={4}>
-              {practiceTypes.map((type, idx) => (
-                <Flex
-                  key={idx}
-                  bg="gray.50"
-                  p={4}
-                  borderRadius="xl"
-                  borderWidth="1px"
-                  borderColor="gray.200"
-                  direction="column"
-                >
-                  <Flex align="center" mb={2}>
-                    <Text fontSize="2xl" mr={2}>
-                      {type.icon}
-                    </Text>
-                    <Badge
-                      colorScheme={type.color}
-                      w="fit-content"
-                      px={2}
-                      py={1}
-                      borderRadius="md"
-                    >
-                      {type.name}
-                    </Badge>
-                  </Flex>
-                  <Text fontSize="sm" color="gray.700" mb={3}>
-                    {type.desc}
-                  </Text>
-                  <Box
-                    bg="white"
-                    p={2}
-                    borderRadius="md"
-                    borderWidth="1px"
-                    borderColor="gray.200"
-                  >
-                    <Text fontSize="xs" fontWeight="bold" color="gray.500">
-                      EXAMPLES:
-                    </Text>
-                    <Text fontSize="sm" fontWeight="bold" color="brand.900">
-                      {type.examples}
-                    </Text>
-                  </Box>
-                </Flex>
-              ))}
-            </SimpleGrid>
-          </GameCard>
+            {current.component}
 
-          {/* Typing Game */}
-          <GameCard variant="game">
-            <Heading size="md" color="purple.500" mb={4}>
-              ✍️ Typing Challenge
-            </Heading>
-            <TypingGameWrapper
-              questionsToPlay={typingQuestions}
-              nextPath="/adjective-structure"
-            />
+            <Flex justify="flex-end" mt={6}>
+              <Box
+                as="button"
+                onClick={handleNext}
+                bg={isLast ? "green.500" : current.color}
+                color="white"
+                px={6}
+                py={2.5}
+                borderRadius="xl"
+                fontWeight="600"
+                border="2px solid"
+                borderColor="ink.900"
+                boxShadow="2px 2px 0px rgba(0,0,0,0.1)"
+                _hover={{ boxShadow: "3px 3px 0px rgba(0,0,0,0.15)" }}
+              >
+                {isLast ? "Finish ✓" : "Next Game →"}
+              </Box>
+            </Flex>
           </GameCard>
-        </VStack>
-
-        {/* RIGHT COLUMN: Multiple Choice + Adjective Hunt */}
-        <VStack spacing={6} align="stretch">
-          {/* Multiple Choice Game */}
-          <GameCard variant="game">
-            <Heading size="md" color="green.500" mb={4}>
-              📝 Adjective Identification Challenge
-            </Heading>
-            <MultipleChoiceWrapper
-              questionsToPlay={mcQuestions}
-              nextPath="/adjective-structure"
-            />
-          </GameCard>
-
-          {/* Adjective Hunt Game */}
-          <GameCard variant="game">
-            <Heading size="md" color="yellow.500" mb={4}>
-              🔍 Adjective Hunt
-            </Heading>
-            <AdjectiveHuntGame />
-          </GameCard>
-        </VStack>
-      </Grid>
+        )}
+      </Box>
     </PageContainer>
   );
 };
