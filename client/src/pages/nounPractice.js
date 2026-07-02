@@ -1,12 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Heading,
   Text,
   VStack,
-  Grid,
-  Badge,
-  SimpleGrid,
   Flex,
 } from "@chakra-ui/react";
 import { PageContainer, GameCard, LessonPageHeader } from "../components/ui";
@@ -22,161 +19,142 @@ import NounHuntGame from "./nounComponents/NounHuntGame";
 // Import your 150-item JSON file
 import nounData from "../data/nouns_questions.json";
 
-const practiceTypes = [
-  {
-    name: "Multiple Choice",
-    desc: "Identify the correct noun type from given options.",
-    color: "green",
-    icon: "📝",
-    examples: "Abstract, Proper, Collective",
-  },
-  {
-    name: "Typing Practice",
-    desc: "Type the correct word form or collective noun.",
-    color: "purple",
-    icon: "✍️",
-    examples: "pride, team, children's",
-  },
-  {
-    name: "Sorting Game",
-    desc: "Drag and drop words into the correct categories.",
-    color: "orange",
-    icon: "🔀",
-    examples: "Concrete vs Abstract, Common vs Proper",
-  },
-  {
-    name: "Noun Hunt",
-    desc: "Find every noun in a paragraph and identify its type.",
-    color: "yellow",
-    icon: "🔍",
-    examples: "Common, Proper, Abstract, Collective",
-  },
-];
-
 const NounPractice = () => {
-  const sortingQuestions = nounData.filter(
-    (q) => q.practice_type === "sorting",
-  );
+  const sortingQuestions = nounData.filter((q) => q.practice_type === "sorting");
   const typingQuestions = nounData.filter((q) => q.practice_type === "typing");
-  const mcQuestions = nounData.filter(
-    (q) => q.practice_type === "multiple_choice",
-  );
+  const mcQuestions = nounData.filter((q) => q.practice_type === "multiple_choice");
+
+  const games = [
+    {
+      id: "mc",
+      title: "📝 Noun Identification Challenge",
+      color: "green.500",
+      component: <MultipleChoiceWrapper questionsToPlay={mcQuestions} nextPath="/propcom-nouns" />,
+    },
+    {
+      id: "typing",
+      title: "✍️ Typing Challenge",
+      color: "purple.500",
+      component: <TypingGameWrapper questionsToPlay={typingQuestions} nextPath="/propcom-nouns" />,
+    },
+    {
+      id: "sorting",
+      title: "🔀 Noun Category Sorting",
+      color: "#FF5722",
+      component: <SortingGameWrapper questionsToPlay={sortingQuestions} nextPath="/propcom-nouns" />,
+    },
+    {
+      id: "hunt",
+      title: "🔍 Noun Hunt",
+      color: "yellow.500",
+      component: <NounHuntGame />,
+    },
+  ];
+
+  const [activeGame, setActiveGame] = useState(0);
+  const [completed, setCompleted] = useState(false);
+
+  const current = games[activeGame];
+  const isLast = activeGame === games.length - 1;
+
+  const handleNext = () => {
+    if (isLast) {
+      setCompleted(true);
+    } else {
+      setActiveGame((prev) => prev + 1);
+    }
+  };
+
+  const handleRestart = () => {
+    setActiveGame(0);
+    setCompleted(false);
+  };
 
   return (
     <PageContainer>
       <LessonPageHeader icon="🎯" title="Noun Practice Games" />
-      <GameCard mb={8} textAlign="center" bg="brand.500" display="none">
-        <Heading size="xl">🎯 Noun Practice Games</Heading>
-        <Text fontSize="md" color="brand.900" mt={2} opacity={0.8}>
-          Complete 15 questions with 100% accuracy in each game to master nouns!
-        </Text>
-      </GameCard>
 
-      <Grid templateColumns={{ base: "1fr", lg: "1fr 1fr" }} gap={8}>
-        {/* LEFT COLUMN: Practice Types Info + Typing Game + Noun Hunt */}
-        <VStack spacing={6} align="stretch">
-          {/* Practice Types Overview */}
-          <GameCard variant="game">
-            <Heading size="lg" color="ink.700" mb={4}>
-              Practice Game Types
+      <Box maxW="800px" mx="auto">
+        {completed ? (
+          <GameCard variant="game" textAlign="center" py={12}>
+            <Text fontSize="4xl" mb={3}>🏆</Text>
+            <Heading size="lg" color="ink.700" mb={3}>
+              You've completed all the Noun games!
             </Heading>
             <Text fontSize="md" color="gray.600" mb={6}>
-              Master your noun knowledge through four different interactive
-              challenges. Each game tests your skills in a unique way!
+              Great work mastering nouns through Multiple Choice, Typing,
+              Sorting, and Noun Hunt.
+            </Text>
+            <Box
+              as="button"
+              onClick={handleRestart}
+              bg="brand.500"
+              color="ink.900"
+              px={6}
+              py={3}
+              borderRadius="xl"
+              fontWeight="700"
+              border="2px solid"
+              borderColor="ink.900"
+              boxShadow="2px 2px 0px rgba(0,0,0,0.1)"
+              _hover={{ boxShadow: "3px 3px 0px rgba(0,0,0,0.15)" }}
+            >
+              ↺ Restart All Games
+            </Box>
+          </GameCard>
+        ) : (
+          <GameCard variant="game">
+            <Flex justify="space-between" align="center" mb={4}>
+              <Heading size="md" color={current.color}>
+                {current.title}
+              </Heading>
+              <Flex gap={1.5} align="center">
+                {games.map((g, idx) => (
+                  <Box
+                    key={g.id}
+                    w={2}
+                    h={2}
+                    borderRadius="full"
+                    bg={
+                      idx === activeGame
+                        ? "brand.500"
+                        : idx < activeGame
+                          ? "green.400"
+                          : "gray.300"
+                    }
+                    transition="background 0.3s"
+                  />
+                ))}
+              </Flex>
+            </Flex>
+
+            <Text fontSize="xs" color="gray.500" mb={4}>
+              Game {activeGame + 1} of {games.length}
             </Text>
 
-            <SimpleGrid columns={1} spacing={4}>
-              {practiceTypes.map((type, idx) => (
-                <Flex
-                  key={idx}
-                  bg="gray.50"
-                  p={4}
-                  borderRadius="xl"
-                  borderWidth="1px"
-                  borderColor="gray.200"
-                  direction="column"
-                >
-                  <Flex align="center" mb={2}>
-                    <Text fontSize="2xl" mr={2}>
-                      {type.icon}
-                    </Text>
-                    <Badge
-                      colorScheme={type.color}
-                      w="fit-content"
-                      px={2}
-                      py={1}
-                      borderRadius="md"
-                    >
-                      {type.name}
-                    </Badge>
-                  </Flex>
-                  <Text fontSize="sm" color="gray.700" mb={3}>
-                    {type.desc}
-                  </Text>
-                  <Box
-                    bg="white"
-                    p={2}
-                    borderRadius="md"
-                    borderWidth="1px"
-                    borderColor="gray.200"
-                  >
-                    <Text fontSize="xs" fontWeight="bold" color="gray.500">
-                      EXAMPLES:
-                    </Text>
-                    <Text fontSize="sm" fontWeight="bold" color="brand.900">
-                      {type.examples}
-                    </Text>
-                  </Box>
-                </Flex>
-              ))}
-            </SimpleGrid>
-          </GameCard>
+            {current.component}
 
-          {/* Typing Game */}
-          <GameCard variant="game">
-            <Heading size="md" color="purple.500" mb={4}>
-              ✍️ Typing Challenge
-            </Heading>
-            <TypingGameWrapper
-              questionsToPlay={typingQuestions}
-              nextPath="/propcom-nouns"
-            />
+            <Flex justify="flex-end" mt={6}>
+              <Box
+                as="button"
+                onClick={handleNext}
+                bg={isLast ? "green.500" : current.color}
+                color="white"
+                px={6}
+                py={2.5}
+                borderRadius="xl"
+                fontWeight="600"
+                border="2px solid"
+                borderColor="ink.900"
+                boxShadow="2px 2px 0px rgba(0,0,0,0.1)"
+                _hover={{ boxShadow: "3px 3px 0px rgba(0,0,0,0.15)" }}
+              >
+                {isLast ? "Finish ✓" : "Next Game →"}
+              </Box>
+            </Flex>
           </GameCard>
-
-          {/* Noun Hunt Game */}
-          <GameCard variant="game">
-            <Heading size="md" color="yellow.500" mb={4}>
-              🔍 Noun Hunt
-            </Heading>
-            <NounHuntGame />
-          </GameCard>
-        </VStack>
-
-        {/* RIGHT COLUMN: Multiple Choice + Sorting Game */}
-        <VStack spacing={6} align="stretch">
-          {/* Multiple Choice Game */}
-          <GameCard variant="game">
-            <Heading size="md" color="green.500" mb={4}>
-              📝 Noun Identification Challenge
-            </Heading>
-            <MultipleChoiceWrapper
-              questionsToPlay={mcQuestions}
-              nextPath="/propcom-nouns"
-            />
-          </GameCard>
-
-          {/* Sorting Game */}
-          <GameCard variant="game">
-            <Heading size="md" color="#FF5722" mb={4}>
-              🔀 Noun Category Sorting
-            </Heading>
-            <SortingGameWrapper
-              questionsToPlay={sortingQuestions}
-              nextPath="/propcom-nouns"
-            />
-          </GameCard>
-        </VStack>
-      </Grid>
+        )}
+      </Box>
     </PageContainer>
   );
 };
