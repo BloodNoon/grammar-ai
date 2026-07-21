@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../components/Layout";
 import { Link, useHistory, Redirect } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import signUpImg from "../images/undraw_sign_in.svg";
 import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from "react-query";
 import {
@@ -11,20 +10,25 @@ import {
   Text,
   Heading,
   Button,
-  Image,
   Input,
   FormControl,
   FormLabel,
   FormErrorMessage,
   Flex,
   HStack,
-  Center,
+  VStack,
+  Box,
   Alert,
   AlertIcon,
   Tabs,
   TabList,
   Tab,
 } from "@chakra-ui/react";
+
+const SIGNUP_HIGHLIGHTS = [
+  "Students get a grade-based dashboard with recommended next steps.",
+  "Teachers can monitor classroom growth and unlock better interventions.",
+];
 
 export default function Signup() {
   const { currentUser, signUp } = useAuth();
@@ -58,7 +62,6 @@ export default function Signup() {
 
   async function onSubmit(data) {
     const { email, password, role } = data;
-
     try {
       mutate({ email, password, role });
       history.push("/");
@@ -78,28 +81,43 @@ export default function Signup() {
       <Grid
         templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
         my="2rem"
-        gap="2rem"
+        gap="0"
         boxShadow="xl"
         borderRadius="1rem"
+        overflow="hidden"
         bg="white"
       >
-        <GridItem p="2rem" display={{ base: "none", md: "block" }}>
-          <Image
-            src={signUpImg}
-            alt="signup"
-            boxSize="100%"
-            objectFit="contain"
-          />
+        <GridItem
+          p="2.5rem"
+          bg="brand.700"
+          color="white"
+          display={{ base: "none", md: "flex" }}
+          flexDirection="column"
+          justifyContent="center"
+        >
+          <Heading size="xl" mb="1rem" color="white">
+            Start your learning path
+          </Heading>
+          <Text mb="2rem" color="whiteAlpha.900">
+            Create the right account type and move straight into lessons,
+            practice, tests, and a clearer progress dashboard.
+          </Text>
+          <VStack spacing={3} align="stretch">
+            {SIGNUP_HIGHLIGHTS.map((h) => (
+              <Box key={h} bg="whiteAlpha.200" borderRadius="md" p="1rem">
+                <Text fontSize="sm" color="whiteAlpha.900">
+                  {h}
+                </Text>
+              </Box>
+            ))}
+          </VStack>
         </GridItem>
-        <GridItem p="2rem">
-          <Flex direction="column" justify="center" align="center" h="100%">
-            <Heading size="lg" mb="2rem" color="brand.700" fontWeight="normal">
-              Create an account
-            </Heading>
 
+        <GridItem p="2.5rem">
+          <Flex direction="column" justify="center" h="100%">
             <form
               onSubmit={handleSubmit(onSubmit)}
-              style={{ width: "100%", maxWidth: "400px" }}
+              style={{ width: "100%", maxWidth: "400px", margin: "0 auto" }}
             >
               {/* Hidden input to ensure 'role' is tracked by the form */}
               <input type="hidden" {...register("role")} />
@@ -147,6 +165,13 @@ export default function Signup() {
                 </TabList>
               </Tabs>
               {/* --------------------------- */}
+
+              <Heading size="lg" mb="0.5rem" color="brand.700" fontWeight="normal">
+                Create an account
+              </Heading>
+              <Text color="gray.500" mb="1.5rem" fontSize="sm">
+                Pick your account type and finish setup in one screen.
+              </Text>
 
               <FormControl
                 id="email"
@@ -216,29 +241,27 @@ export default function Signup() {
                 </FormErrorMessage>
               </FormControl>
 
-              <Center>
-                <Button
-                  isLoading={isLoading}
-                  my="1rem"
-                  loadingText="Creating"
-                  type="submit"
-                  bg="gray.100"
-                  color="brand.700"
-                  _hover={{ bg: "#E2E8F0" }}
-                  fontWeight="600"
-                >
-                  Create account
-                </Button>
-              </Center>
+              <Button
+                isLoading={isLoading}
+                mb="1rem"
+                loadingText="Creating"
+                type="submit"
+                w="100%"
+                size="lg"
+                bg="gray.100"
+                color="brand.700"
+                _hover={{ bg: "#E2E8F0" }}
+                fontWeight="600"
+              >
+                Create Account
+              </Button>
 
-              <Center mt={2}>
-                <HStack fontSize="sm">
-                  <Text color="gray.400">Already have an account?</Text>
-                  <Text as={Link} to="/login" color="brand.700">
-                    Log in
-                  </Text>
-                </HStack>
-              </Center>
+              <HStack justify="center" fontSize="sm">
+                <Text color="gray.400">Already have an account?</Text>
+                <Text as={Link} to="/login" color="brand.700" fontWeight="bold">
+                  Log in
+                </Text>
+              </HStack>
             </form>
           </Flex>
         </GridItem>
