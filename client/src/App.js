@@ -38,6 +38,10 @@ import {
   AbPlurNoun,
   NounComponentTest,
   NounQuizPageTest,
+  VerbSentenceStructures,
+  ArticleSentenceStructures,
+  PrepositionSentenceStructures,
+  ConjunctionSentenceStructures,
   ArticleStructure,
   ArticleGrammarLegend,
   ArticleSentenceBuilder,
@@ -142,6 +146,10 @@ function AppLayout() {
                 path="/auxiliary-verbs"
                 component={AuxiliaryVerbsAndVerbals}
               />
+              <Route
+                path="/verb-sentence-structures"
+                component={VerbSentenceStructures}
+              />
               <Route path="/article-structure" component={ArticleStructure} />
               <Route
                 path="/article-grammar-legend"
@@ -156,6 +164,10 @@ function AppLayout() {
                 component={ArticleLevelSelection}
               />
               <Route path="/article-wordbank" component={ArticleWordBank} />
+              <Route
+                path="/article-sentence-structures"
+                component={ArticleSentenceStructures}
+              />
               <Route path="/prompts" component={PromptList} />
               <Route
                 path="/adjective-structure"
@@ -193,9 +205,17 @@ function AppLayout() {
                 path="/conjunction-structure"
                 component={ConjunctionStructure}
               />
+              <Route
+                path="/conjunction-sentence-structures"
+                component={ConjunctionSentenceStructures}
+              />
               <Route path="/prep1-structure" component={Prep1Structure} />
               <Route path="/prep2-structure" component={Prep2Structure} />
               <Route path="/prep3-structure" component={Prep3Structure} />
+              <Route
+                path="/preposition-sentence-structures"
+                component={PrepositionSentenceStructures}
+              />
               <Route path="/nouns" component={NounsPage} />
               <Route path="/propcom-nouns" component={PropComNouns} />
               <Route path="/abplur-nouns" component={AbPlurNoun} />
