@@ -34,6 +34,10 @@ export const PropComNouns = lazyWithPreload(() => import(/* webpackPrefetch: tru
 export const AbPlurNoun = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "sentence-checker" */ "./pages/AbPlurNoun"));
 export const NounComponentTest = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "sentence-checker" */ "./pages/nounComponentTest"));
 export const NounQuizPageTest = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "sentence-checker" */ "./pages/nounQuizpageTest"));
+export const VerbSentenceStructures = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "sentence-checker" */ "./pages/VerbSentenceStructures"));
+export const ArticleSentenceStructures = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "sentence-checker" */ "./pages/ArticleSentenceStructures"));
+export const PrepositionSentenceStructures = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "sentence-checker" */ "./pages/PrepositionSentenceStructures"));
+export const ConjunctionSentenceStructures = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "sentence-checker" */ "./pages/ConjunctionSentenceStructures"));
 
 // article chunk
 export const ArticleStructure = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "article" */ "./pages/ArticleStructure"));
@@ -95,11 +99,13 @@ export const routePreloadMap = {
   "/verb-level-selection": VerbLevelSelection,
   "/verb-wordbank": VerbWordBank,
   "/auxiliary-verbs": AuxiliaryVerbsAndVerbals,
+  "/verb-sentence-structures": VerbSentenceStructures,
   "/article-structure": ArticleStructure,
   "/article-grammar-legend": ArticleGrammarLegend,
   "/article-sentence-builder": ArticleSentenceBuilder,
   "/article-level-selection": ArticleLevelSelection,
   "/article-wordbank": ArticleWordBank,
+  "/article-sentence-structures": ArticleSentenceStructures,
   "/prompts": PromptList,
   "/adjective-structure": AdjectiveStructure,
   "/adjective-royal-order": AdjectiveRoyalOrder,
@@ -113,9 +119,11 @@ export const routePreloadMap = {
   "/adverb-identification-game": AdverbIdentificationGame,
   "/adverb-type-sorting": AdverbTypeSorting,
   "/conjunction-structure": ConjunctionStructure,
+  "/conjunction-sentence-structures": ConjunctionSentenceStructures,
   "/prep1-structure": Prep1Structure,
   "/prep2-structure": Prep2Structure,
   "/prep3-structure": Prep3Structure,
+  "/preposition-sentence-structures": PrepositionSentenceStructures,
   "/nouns": NounsPage,
   "/propcom-nouns": PropComNouns,
   "/abplur-nouns": AbPlurNoun,
