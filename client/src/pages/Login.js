@@ -170,7 +170,8 @@ export default function Login() {
                 Log In
               </Heading>
               <Text color="gray.500" mb="1.5rem" fontSize="sm">
-                Use your email and password to open your learning dashboard.
+                Use your email address and password to open your learning
+                dashboard.
               </Text>
 
               <FormControl
@@ -234,16 +235,25 @@ export default function Login() {
                 Open My Dashboard
               </Button>
 
-              <VStack align="center" spacing={2} fontSize="sm">
+              <VStack align="start" spacing={2} fontSize="sm">
+                <Text color="brand.700" fontWeight="bold" cursor="not-allowed">
+                  Forgot your password?
+                </Text>
+                <Text color="brand.700" fontWeight="bold" cursor="not-allowed">
+                  Forgot your username?
+                </Text>
                 <HStack>
-                  <Text color="gray.400">Don't have an account?</Text>
+                  <Text color="gray.500">New here?</Text>
                   <Text as={Link} to="/signup" color="brand.700" fontWeight="bold">
-                    Sign Up
+                    Create an account
                   </Text>
                 </HStack>
-                <Text as={Link} to="/" color="gray.400">
-                  Want to learn first? Return to home
-                </Text>
+                <HStack>
+                  <Text color="gray.500">Want to learn first?</Text>
+                  <Text as={Link} to="/" color="brand.700" fontWeight="bold">
+                    Return to home
+                  </Text>
+                </HStack>
               </VStack>
             </form>
           </Flex>
