@@ -11,6 +11,7 @@ import {
   Heading,
   Button,
   Input,
+  Select,
   FormControl,
   FormLabel,
   FormErrorMessage,
@@ -18,16 +19,23 @@ import {
   HStack,
   VStack,
   Box,
+  List,
+  ListItem,
   Alert,
   AlertIcon,
-  Tabs,
-  TabList,
-  Tab,
+  ButtonGroup,
 } from "@chakra-ui/react";
 
 const SIGNUP_HIGHLIGHTS = [
   "Students get a grade-based dashboard with recommended next steps.",
   "Teachers can monitor classroom growth and unlock better interventions.",
+  "Parents can follow progress without guessing what their child still needs.",
+];
+
+const ROLES = [
+  { value: "student", label: "Student" },
+  { value: "parent", label: "Parent / Guardian" },
+  { value: "teacher", label: "Teacher" },
 ];
 
 export default function Signup() {
@@ -47,12 +55,15 @@ export default function Signup() {
       email: "",
       password: "",
       confirmPassword: "",
+      grade: "",
       role: "student",
     },
   });
 
+  const [role, setRole] = useState("student");
+
   const { isLoading, isError, error, mutate } = useMutation(
-    ({ email, password, role }) => signUp(email, password, role),
+    ({ email, password, role, grade }) => signUp(email, password, role, grade),
     { onSuccess: () => queryClient.invalidateQueries("user") },
   );
 
@@ -61,13 +72,18 @@ export default function Signup() {
   }
 
   async function onSubmit(data) {
-    const { email, password, role } = data;
+    const { email, password, role, grade } = data;
     try {
-      mutate({ email, password, role });
+      mutate({ email, password, role, grade });
       history.push("/");
     } catch (err) {
       console.error(err, "Failed to create an account.");
     }
+  }
+
+  function selectRole(value) {
+    setValue("role", value);
+    setRole(value);
   }
 
   return (
@@ -115,63 +131,50 @@ export default function Signup() {
 
         <GridItem p="2.5rem">
           <Flex direction="column" justify="center" h="100%">
-            <form
-              onSubmit={handleSubmit(onSubmit)}
-              style={{ width: "100%", maxWidth: "400px", margin: "0 auto" }}
+            <Heading size="lg" mb="0.5rem" color="brand.700" fontWeight="normal">
+              Create an account
+            </Heading>
+            <Text color="gray.500" mb="1.5rem" fontSize="sm">
+              Pick the type of account you want to create and finish setup in
+              one screen.
+            </Text>
+
+            <Box
+              bg="orange.50"
+              border="1px solid"
+              borderColor="orange.200"
+              borderRadius="md"
+              p="1rem"
+              mb="1.5rem"
+              fontSize="sm"
+              color="gray.600"
             >
+              Important: keep cookies enabled for this site. Private
+              browsing, content blockers, or "block all cookies" settings can
+              stop signup, login, and email verification from working.
+            </Box>
+
+            <form onSubmit={handleSubmit(onSubmit)} style={{ width: "100%" }}>
               {/* Hidden input to ensure 'role' is tracked by the form */}
               <input type="hidden" {...register("role")} />
 
-              {/* --- TABBED ROLE SELECTOR --- */}
-              <Tabs
-                isFitted
-                variant="enclosed"
-                mb="1.5rem"
-                /* Index 0 is the first tab (Student)
-                                  Index 1 is the second tab (Teacher)
-                                  When they click, we update the hidden form value!
-                                */
-                onChange={(index) =>
-                  setValue("role", index === 0 ? "student" : "teacher")
-                }
-              >
-                <TabList mb="1em" borderColor="gray.200">
-                  <Tab
-                    _selected={{
-                      color: "brand.700",
-                      borderColor: "gray.200",
-                      borderBottomColor: "white",
-                      bg: "white",
-                      fontWeight: "bold",
-                    }}
-                    color="gray.500"
-                    bg="gray.50"
+              {/* --- ROLE SELECTOR (Student / Parent-Guardian / Teacher) --- */}
+              <ButtonGroup mb="1.5rem" isAttached w="100%">
+                {ROLES.map((r) => (
+                  <Button
+                    key={r.value}
+                    flex="1"
+                    onClick={() => selectRole(r.value)}
+                    bg={role === r.value ? "brand.700" : "gray.50"}
+                    color={role === r.value ? "white" : "gray.500"}
+                    fontWeight={role === r.value ? "bold" : "normal"}
+                    _hover={{ bg: role === r.value ? "brand.700" : "gray.100" }}
                   >
-                    Student
-                  </Tab>
-                  <Tab
-                    _selected={{
-                      color: "brand.700",
-                      borderColor: "gray.200",
-                      borderBottomColor: "white",
-                      bg: "white",
-                      fontWeight: "bold",
-                    }}
-                    color="gray.500"
-                    bg="gray.50"
-                  >
-                    Teacher
-                  </Tab>
-                </TabList>
-              </Tabs>
+                    {r.label}
+                  </Button>
+                ))}
+              </ButtonGroup>
               {/* --------------------------- */}
-
-              <Heading size="lg" mb="0.5rem" color="brand.700" fontWeight="normal">
-                Create an account
-              </Heading>
-              <Text color="gray.500" mb="1.5rem" fontSize="sm">
-                Pick your account type and finish setup in one screen.
-              </Text>
 
               <FormControl
                 id="email"
@@ -197,7 +200,7 @@ export default function Signup() {
                 id="password"
                 isRequired
                 isInvalid={errors.password}
-                mb="1rem"
+                mb="0.5rem"
               >
                 <FormLabel color="brand.700" fontWeight="600" fontSize="sm">
                   Password
@@ -216,6 +219,12 @@ export default function Signup() {
                 />
                 <FormErrorMessage>{errors.password?.message}</FormErrorMessage>
               </FormControl>
+              <List fontSize="xs" color="gray.400" mb="1rem" pl="1rem" styleType="disc">
+                <ListItem>Your password can't be too similar to your other personal information.</ListItem>
+                <ListItem>Your password must contain at least 8 characters.</ListItem>
+                <ListItem>Your password can't be a commonly used password.</ListItem>
+                <ListItem>Your password can't be entirely numeric.</ListItem>
+              </List>
 
               <FormControl
                 id="confirmPassword"
@@ -224,7 +233,7 @@ export default function Signup() {
                 mb="1.5rem"
               >
                 <FormLabel color="brand.700" fontWeight="600" fontSize="sm">
-                  Confirm Password
+                  Password confirmation
                 </FormLabel>
                 <Input
                   name="confirmPassword"
@@ -239,7 +248,31 @@ export default function Signup() {
                 <FormErrorMessage>
                   {errors.confirmPassword?.message}
                 </FormErrorMessage>
+                {!errors.confirmPassword && (
+                  <Text fontSize="xs" color="gray.400" mt="0.25rem">
+                    Enter the same password as before, for verification.
+                  </Text>
+                )}
               </FormControl>
+
+              {role === "student" && (
+                <FormControl id="grade" mb="1.5rem">
+                  <FormLabel color="brand.700" fontWeight="600" fontSize="sm">
+                    Grade
+                  </FormLabel>
+                  <Select
+                    placeholder="Select your grade"
+                    focusBorderColor="orange.300"
+                    {...register("grade")}
+                  >
+                    {[...Array(12)].map((_, i) => (
+                      <option key={i + 1} value={i + 1}>
+                        Grade {i + 1}
+                      </option>
+                    ))}
+                  </Select>
+                </FormControl>
+              )}
 
               <Button
                 isLoading={isLoading}
@@ -253,10 +286,26 @@ export default function Signup() {
                 _hover={{ bg: "#E2E8F0" }}
                 fontWeight="600"
               >
-                Create Account
+                Create {ROLES.find((r) => r.value === role)?.label} Account
               </Button>
 
-              <HStack justify="center" fontSize="sm">
+              {role !== "teacher" && (
+                <Text fontSize="sm" color="gray.500" mb="1rem">
+                  Teacher account?{" "}
+                  <Text
+                    as="span"
+                    color="brand.700"
+                    fontWeight="bold"
+                    cursor="pointer"
+                    onClick={() => selectRole("teacher")}
+                  >
+                    Create a teacher account here
+                  </Text>
+                  .
+                </Text>
+              )}
+
+              <HStack fontSize="sm">
                 <Text color="gray.400">Already have an account?</Text>
                 <Text as={Link} to="/login" color="brand.700" fontWeight="bold">
                   Log in
