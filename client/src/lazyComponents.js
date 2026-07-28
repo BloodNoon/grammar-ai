@@ -18,6 +18,7 @@ export const NounSortingGame = lazyWithPreload(() => import(/* webpackPrefetch: 
 // auth chunk
 export const Signup = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "auth" */ "./pages/Signup"));
 export const Login = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "auth" */ "./pages/Login"));
+export const ForgotAccount = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "auth" */ "./pages/ForgotAccount"));
 
 // sentence-checker chunk
 export const SentenceStructures = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "sentence-checker" */ "./pages/SentenceStructure"));
@@ -89,6 +90,7 @@ export const routePreloadMap = {
   "/": Home,
   "/signup": Signup,
   "/login": Login,
+  "/forgot-account": ForgotAccount,
   "/dashboard": Dashboard,
   "/overview/:id": PromptOverview,
   "/practice-menu": PracticeMenu,
