@@ -236,10 +236,10 @@ export default function Login() {
               </Button>
 
               <VStack align="start" spacing={2} fontSize="sm">
-                <Text color="brand.700" fontWeight="bold" cursor="not-allowed">
+                <Text as={Link} to="/forgot-account" color="brand.700" fontWeight="bold">
                   Forgot your password?
                 </Text>
-                <Text color="brand.700" fontWeight="bold" cursor="not-allowed">
+                <Text as={Link} to="/forgot-account" color="brand.700" fontWeight="bold">
                   Forgot your username?
                 </Text>
                 <HStack>
