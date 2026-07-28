@@ -24,6 +24,7 @@ import {
   NounSortingGame,
   Signup,
   Login,
+  ForgotAccount,
   SentenceStructures,
   NounsPage,
   Prep1Structure,
@@ -82,7 +83,8 @@ function AppLayout() {
   const showSidebar =
     location.pathname !== "/" &&
     location.pathname !== "/login" &&
-    location.pathname !== "/signup";
+    location.pathname !== "/signup" &&
+    location.pathname !== "/forgot-account";
   const isHome = location.pathname === "/";
   const contentRef = React.useRef(null);
 
@@ -118,6 +120,7 @@ function AppLayout() {
               <Route path="/" component={Home} exact />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
+              <Route path="/forgot-account" component={ForgotAccount} />
               <PrivateRoute path="/dashboard" component={Dashboard} />
               <Route path="/overview/:id" component={PromptOverview} />
               <Route path="/practice-menu" component={PracticeMenu} />
