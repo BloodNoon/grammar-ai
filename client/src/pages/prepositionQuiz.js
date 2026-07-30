@@ -19,6 +19,24 @@ import {
 } from "../components/ui";
 import useQuiz from "../hooks/useQuiz";
 
+const generateQuizData = (data) => {
+  const multipleChoiceQuestions = data.filter(
+    (q) =>
+      q.practice_type === "multiple_choice" &&
+      q.answer &&
+      q.answer.length > 0 &&
+      q.options &&
+      q.options.length > 0
+  );
+
+  const withShuffledOptions = multipleChoiceQuestions.map((q) => ({
+    ...q,
+    options: [...q.options].sort(() => Math.random() - 0.5),
+  }));
+
+  return [...withShuffledOptions].sort(() => Math.random() - 0.5).slice(0, 10);
+};
+
 const PrepositionQuizPage = () => {
   const {
     activeQuestions,
@@ -30,12 +48,11 @@ const PrepositionQuizPage = () => {
     generateQuiz,
     totalAnswered,
     progressPercent,
-  } = useQuiz(prepositionData);
+  } = useQuiz(prepositionData, generateQuizData);
 
   return (
     <PageContainer>
       <LessonPageHeader icon="📝" title="Final Knowledge Check" />
-
       <Grid templateColumns={{ base: "1fr", lg: "320px 1fr" }} gap={8}>
         <GridItem>
           <QuizSidebar
@@ -48,45 +65,31 @@ const PrepositionQuizPage = () => {
             onRetake={generateQuiz}
           />
         </GridItem>
-
         <GridItem>
           <VStack spacing={6} align="stretch">
             {activeQuestions.map((q, index) => {
               const userAnswer = answers[q.id];
               const correctAnswer = q.answer[0];
-
               return (
                 <GameCard key={q.id}>
                   <Flex align="flex-start" gap={4} mb={6}>
-                    <Badge
-                      colorScheme="orange"
-                      fontSize="lg"
-                      px={3}
-                      py={1}
-                      borderRadius="md"
-                    >
+                    <Badge colorScheme="orange" fontSize="lg" px={3} py={1} borderRadius="md">
                       Q{index + 1}
                     </Badge>
                     <Heading size="md" color="ink.700" pt={1}>
                       {q.question_text}
                     </Heading>
                   </Flex>
-
                   <SimpleGrid columns={[1, null, 2]} spacing={4}>
                     {q.options.map((option) => {
                       let isSelected = false;
                       let isCorrect = null;
-
                       if (isSubmitted) {
-                        if (option === correctAnswer) {
-                          isCorrect = true;
-                        } else if (option === userAnswer) {
-                          isCorrect = false;
-                        }
+                        if (option === correctAnswer) isCorrect = true;
+                        else if (option === userAnswer) isCorrect = false;
                       } else if (option === userAnswer) {
                         isSelected = true;
                       }
-
                       return (
                         <OptionButton
                           key={option}
@@ -100,16 +103,9 @@ const PrepositionQuizPage = () => {
                       );
                     })}
                   </SimpleGrid>
-
                   {isSubmitted && q.explanation && (
-                    <FeedbackBanner
-                      mt={6}
-                      type={userAnswer === correctAnswer ? "success" : "error"}
-                    >
-                      {userAnswer === correctAnswer
-                        ? "✅ Correct:"
-                        : "❌ Incorrect:"}{" "}
-                      {q.explanation}
+                    <FeedbackBanner mt={6} type={userAnswer === correctAnswer ? "success" : "error"}>
+                      {userAnswer === correctAnswer ? "✅ Correct:" : "❌ Incorrect:"} {q.explanation}
                     </FeedbackBanner>
                   )}
                 </GameCard>
@@ -121,5 +117,4 @@ const PrepositionQuizPage = () => {
     </PageContainer>
   );
 };
-
 export default PrepositionQuizPage;
