@@ -7,6 +7,11 @@ const lazyWithPreload = (importFunc) => {
   return Component;
 };
 
+
+//ai
+export const GrammarAI = lazy(() => import("./pages/GrammarAI"));
+
+
 // default chunk
 export const Home = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "default" */ "./pages/Home"));
 export const Dashboard = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "default" */ "./pages/Dashboard"));
