@@ -4,6 +4,7 @@ import {
   Switch,
   Route,
   useLocation,
+  GrammarAI,
 } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 import { QueryClient, QueryClientProvider } from "react-query";
