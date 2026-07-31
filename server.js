@@ -57,6 +57,12 @@ if (
 		res.sendFile(path.join(__dirname + '/client/build/index.html'));
 	});
 }
+const { createProxyMiddleware } = require('http-proxy-middleware');
+app.use('/api/grammar', createProxyMiddleware({
+  target: 'http://localhost:8000',
+  changeOrigin: true,
+  pathRewrite: { '^/api/grammar': '/api' }
+}));
 
 const PORT = process.env.PORT || 5000;
 
