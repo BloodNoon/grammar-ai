@@ -85,6 +85,17 @@ export const AdverbRoyalOrder = lazyWithPreload(() => import(/* webpackPrefetch:
 export const AdverbSentenceStructures = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "adverb" */ "./utils/SentenceChecker/AdverbSentenceStructures"));
 export const AdverbIdentificationGame = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "adverb" */ "./utils/SentenceChecker/AdverbIdentificationGame"));
 
+// grade-quests chunk
+export const GradeQuests = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "grade-quests" */ "./pages/GradeQuests"));
+export const Grade3Quest = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "grade-quests" */ "./pages/GradeQuestPages/Grade3Quest"));
+export const Grade4Quest = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "grade-quests" */ "./pages/GradeQuestPages/Grade4Quest"));
+export const Grade5Quest = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "grade-quests" */ "./pages/GradeQuestPages/Grade5Quest"));
+export const Grade6Quest = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "grade-quests" */ "./pages/GradeQuestPages/Grade6Quest"));
+export const Grade7Quest = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "grade-quests" */ "./pages/GradeQuestPages/Grade7Quest"));
+export const Grade8Quest = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "grade-quests" */ "./pages/GradeQuestPages/Grade8Quest"));
+export const Grade9Quest = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "grade-quests" */ "./pages/GradeQuestPages/Grade9Quest"));
+export const TestPrep = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "grade-quests" */ "./pages/GradeQuestPages/TestPrep"));
+
 // Centralized path-based route preloader mapping
 export const routePreloadMap = {
   "/": Home,
@@ -147,6 +158,15 @@ export const routePreloadMap = {
   "/article-quiz": ArticleQuizPage,
   "/preposition-quiz": PrepositionQuizPage,
   "/conjunction-quiz": ConjunctionQuiz,
+  "/grade-quests": GradeQuests,
+  "/grade-3-quest": Grade3Quest,
+  "/grade-4-quest": Grade4Quest,
+  "/grade-5-quest": Grade5Quest,
+  "/grade-6-quest": Grade6Quest,
+  "/grade-7-quest": Grade7Quest,
+  "/grade-8-quest": Grade8Quest,
+  "/grade-9-quest": Grade9Quest,
+  "/test-prep": TestPrep,
 };
 
 export const preloadRoute = (path) => {

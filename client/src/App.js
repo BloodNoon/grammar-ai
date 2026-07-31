@@ -76,6 +76,15 @@ import {
   AdverbRoyalOrder,
   AdverbSentenceStructures,
   AdverbIdentificationGame,
+  GradeQuests,
+  Grade3Quest,
+  Grade4Quest,
+  Grade5Quest,
+  Grade6Quest,
+  Grade7Quest,
+  Grade8Quest,
+  Grade9Quest,
+  TestPrep,
 } from "./lazyComponents";
 
 function AppLayout() {
@@ -246,6 +255,15 @@ function AppLayout() {
               <Route path="/article-quiz" component={ArticleQuizPage} />
               <Route path="/preposition-quiz" component={PrepositionQuizPage} />
               <Route path="/conjunction-quiz" component={ConjunctionQuiz} />
+              <Route path="/grade-quests" component={GradeQuests} />
+              <Route path="/grade-3-quest" component={Grade3Quest} />
+              <Route path="/grade-4-quest" component={Grade4Quest} />
+              <Route path="/grade-5-quest" component={Grade5Quest} />
+              <Route path="/grade-6-quest" component={Grade6Quest} />
+              <Route path="/grade-7-quest" component={Grade7Quest} />
+              <Route path="/grade-8-quest" component={Grade8Quest} />
+              <Route path="/grade-9-quest" component={Grade9Quest} />
+              <Route path="/test-prep" component={TestPrep} />
             </Switch>
           </Suspense>
         </Box>
