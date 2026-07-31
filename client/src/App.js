@@ -127,6 +127,7 @@ function AppLayout() {
         >
           <Suspense fallback={<LoadingFallback />}>
             <Switch>
+              <Route path="/grammar-ai" component={GrammarAI} />
               <Route path="/" component={Home} exact />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
