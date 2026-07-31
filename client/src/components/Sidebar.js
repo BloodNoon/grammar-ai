@@ -102,6 +102,11 @@ const NAV_SECTIONS = [
     ],
   },
   {
+    title: "Grade Quests",
+    isLink: true,
+    to: "/grade-quests",
+  },
+  {
     title: "Sentence Structure",
     items: [
       { label: "Lesson 1: Nouns", to: "/nouns" },
