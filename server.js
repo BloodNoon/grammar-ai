@@ -25,14 +25,14 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
-mongoose.connect(process.env.MONGODB_URI);
-const db = mongoose.connection;
-db.on('error', (error) => {
-	console.error(error);
-});
-db.once('open', () => {
-	console.log('Database Connected');
-});
+// mongoose.connect(process.env.MONGODB_URI);
+// const db = mongoose.connection;
+// db.on('error', (error) => {
+// 	console.error(error);
+// });
+// db.once('open', () => {
+// 	console.log('Database Connected');
+// });
 const usersRouter = require('./routes/users');
 const promptsRouter = require('./routes/prompts');
 //const answersRouter = require('./routes/answers');
