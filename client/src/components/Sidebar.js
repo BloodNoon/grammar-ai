@@ -106,14 +106,11 @@ const NAV_SECTIONS = [
     isLink: true,
     to: "/grade-quests",
   },
-
   {
-  title: "Grammar AI",
-  isLink: true,
-  to: "/grammar-ai",
-},
-
-  
+    title: "Grammar AI",
+    isLink: true,
+    to: "/grammar-ai",
+  },
   {
     title: "Sentence Structure",
     items: [
@@ -216,7 +213,6 @@ const SidebarContent = ({
       flexDirection="column"
       overflow="hidden"
     >
-      {/* Toggle */}
       {!isMobileDrawer && (
         <Flex justify="flex-end" p={2}>
           <IconButton
@@ -321,7 +317,6 @@ const SidebarContent = ({
 
       <Divider borderColor="brand.900" opacity={0.2} />
 
-      {/* Auth */}
       {currentUser ? (
         <VStack align="stretch" spacing={1} p={2}>
           <Text
