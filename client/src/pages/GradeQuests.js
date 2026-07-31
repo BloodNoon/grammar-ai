@@ -54,9 +54,9 @@ export default function GradeQuests() {
             <Button
               as={RouterLink}
               to={q.to}
-              bg="blue.400"
+              bg="orange.400"
               color="white"
-              _hover={{ bg: "blue.500" }}
+              _hover={{ bg: "orange.500" }}
               borderRadius="full"
               px={6}
             >
@@ -82,9 +82,9 @@ export default function GradeQuests() {
           <Button
             as={RouterLink}
             to={TEST_PREP.to}
-            bg="blue.400"
+            bg="orange.400"
             color="white"
-            _hover={{ bg: "blue.500" }}
+            _hover={{ bg: "orange.500" }}
             borderRadius="full"
             px={6}
           >
