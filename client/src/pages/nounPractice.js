@@ -16,6 +16,9 @@ import MultipleChoiceWrapper from "../components/multipleChoiceWrapper";
 // Import Noun Hunt Game
 import NounHuntGame from "./nounComponents/NounHuntGame";
 
+// Import AI Practice
+import GrammarAIPractice from "../components/GrammarAIPractice";
+
 // Import your 150-item JSON file
 import nounData from "../data/nouns_questions.json";
 
@@ -49,6 +52,12 @@ const NounPractice = () => {
       color: "yellow.500",
       component: <NounHuntGame />,
     },
+    {
+      id: "ai-practice",
+      title: "🤖 AI Scored Practice Test",
+      color: "orange.500",
+      component: null, // rendered separately so onComplete works
+    },
   ];
 
   const [activeGame, setActiveGame] = useState(0);
@@ -56,6 +65,7 @@ const NounPractice = () => {
 
   const current = games[activeGame];
   const isLast = activeGame === games.length - 1;
+  const isAI = current.id === "ai-practice";
 
   const handleNext = () => {
     if (isLast) {
@@ -83,7 +93,7 @@ const NounPractice = () => {
             </Heading>
             <Text fontSize="md" color="gray.600" mb={6}>
               Great work mastering nouns through Multiple Choice, Typing,
-              Sorting, and Noun Hunt.
+              Sorting, Noun Hunt, and AI Practice.
             </Text>
             <Box
               as="button"
@@ -132,26 +142,35 @@ const NounPractice = () => {
               Game {activeGame + 1} of {games.length}
             </Text>
 
-            {current.component}
-
-            <Flex justify="flex-end" mt={6}>
-              <Box
-                as="button"
-                onClick={handleNext}
-                bg={isLast ? "green.500" : current.color}
-                color="white"
-                px={6}
-                py={2.5}
-                borderRadius="xl"
-                fontWeight="600"
-                border="2px solid"
-                borderColor="ink.900"
-                boxShadow="2px 2px 0px rgba(0,0,0,0.1)"
-                _hover={{ boxShadow: "3px 3px 0px rgba(0,0,0,0.15)" }}
-              >
-                {isLast ? "Finish ✓" : "Next Game →"}
-              </Box>
-            </Flex>
+            {/* Render AI practice with onComplete, others normally */}
+            {isAI ? (
+              <GrammarAIPractice
+                topic="nouns"
+                onComplete={handleNext}
+              />
+            ) : (
+              <>
+                {current.component}
+                <Flex justify="flex-end" mt={6}>
+                  <Box
+                    as="button"
+                    onClick={handleNext}
+                    bg={isLast ? "green.500" : current.color}
+                    color="white"
+                    px={6}
+                    py={2.5}
+                    borderRadius="xl"
+                    fontWeight="600"
+                    border="2px solid"
+                    borderColor="ink.900"
+                    boxShadow="2px 2px 0px rgba(0,0,0,0.1)"
+                    _hover={{ boxShadow: "3px 3px 0px rgba(0,0,0,0.15)" }}
+                  >
+                    {isLast ? "Finish ✓" : "Next Game →"}
+                  </Box>
+                </Flex>
+              </>
+            )}
           </GameCard>
         )}
       </Box>
