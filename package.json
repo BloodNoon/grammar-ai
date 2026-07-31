@@ -7,7 +7,7 @@
 		"start": "node server.js",
 		"server": "nodemon server.js",
 		"client": "npm start --prefix client",
-		"flask": "cd grammar-ai && python app.py",
+		"flask": "python grammar-ai/app.py",
 		"dev": "concurrently \"npm run start\" \"npm run client\" \"npm run flask\"",
 		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
 	},
