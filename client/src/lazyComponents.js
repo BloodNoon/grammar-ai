@@ -7,10 +7,8 @@ const lazyWithPreload = (importFunc) => {
   return Component;
 };
 
-
 //ai
-export const GrammarAI = lazy(() => import("./pages/GrammarAI"));
-
+export const GrammarAI = lazyWithPreload(() => import("./pages/GrammarAI"));
 
 // default chunk
 export const Home = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "default" */ "./pages/Home"));
@@ -172,6 +170,7 @@ export const routePreloadMap = {
   "/grade-8-quest": Grade8Quest,
   "/grade-9-quest": Grade9Quest,
   "/test-prep": TestPrep,
+  "/grammar-ai": GrammarAI,
 };
 
 export const preloadRoute = (path) => {
