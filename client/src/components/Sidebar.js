@@ -35,6 +35,7 @@ const NAV_SECTIONS = [
       { label: "Possessive Nouns", to: "/possessive-nouns" },
       { label: "Noun Practice Games", to: "/noun-practice" },
       { label: "Noun Quiz", to: "/NounQuizPageTest" },
+      { label: "🤖 Noun AI Practice", to: "/noun-ai-practice" },
     ],
   },
   {
@@ -45,6 +46,7 @@ const NAV_SECTIONS = [
       { label: "Verb Practice Games", to: "/verb-practice" },
       { label: "Verb Quiz", to: "/verb-tense-quiz" },
       { label: "Sentence Structures", to: "/verb-sentence-structures" },
+      { label: "🤖 Verb AI Practice", to: "/verb-ai-practice" },
     ],
   },
   {
@@ -54,6 +56,7 @@ const NAV_SECTIONS = [
       { label: "Article Practice Games", to: "/article-practice" },
       { label: "Article Quiz", to: "/article-quiz" },
       { label: "Sentence Structures", to: "/article-sentence-structures" },
+      { label: "🤖 Article AI Practice", to: "/article-ai-practice" },
     ],
   },
   {
@@ -65,6 +68,7 @@ const NAV_SECTIONS = [
       { label: "Preposition Practice", to: "/preposition-practice" },
       { label: "Preposition Quiz", to: "/preposition-quiz" },
       { label: "Sentence Structures", to: "/preposition-sentence-structures" },
+      { label: "🤖 Preposition AI Practice", to: "/preposition-ai-practice" },
     ],
   },
   {
@@ -76,6 +80,7 @@ const NAV_SECTIONS = [
       { label: "Adjective Practice", to: "/adjective-practice" },
       { label: "Adjective Quiz", to: "/adj-quiz" },
       { label: "Sentence Structures", to: "/adjective-sentence-structures" },
+      { label: "🤖 Adjective AI Practice", to: "/adjective-ai-practice" },
     ],
   },
   {
@@ -90,6 +95,7 @@ const NAV_SECTIONS = [
       { label: "Adverb Practice", to: "/adverb-practice" },
       { label: "Adverb Quiz", to: "/adverb-quiz" },
       { label: "Sentence Structures", to: "/adverb-sentence-structures" },
+      { label: "🤖 Adverb AI Practice", to: "/adverb-ai-practice" },
     ],
   },
   {
@@ -99,6 +105,7 @@ const NAV_SECTIONS = [
       { label: "Conjunction Practice", to: "/conjunction-practice" },
       { label: "Conjunction Quiz", to: "/conjunction-quiz" },
       { label: "Sentence Structures", to: "/conjunction-sentence-structures" },
+      { label: "🤖 Conjunction AI Practice", to: "/conjunction-ai-practice" },
     ],
   },
   {
@@ -136,62 +143,37 @@ const renderTitle = (title, isCollapsed) => {
     return (
       <VStack spacing={0.5} align="flex-start" py={1.5} w="100%">
         {lines.map((line, idx) => (
-          <Text
-            key={idx}
-            fontSize="md"
-            fontWeight="semibold"
-            lineHeight="1.1"
-            whiteSpace="nowrap"
-          >
+          <Text key={idx} fontSize="md" fontWeight="semibold" lineHeight="1.1" whiteSpace="nowrap">
             {line}
           </Text>
         ))}
       </VStack>
     );
   }
-  return (
-    <Text fontSize="md" fontWeight="semibold">
-      {title}
-    </Text>
-  );
+  return <Text fontSize="md" fontWeight="semibold">{title}</Text>;
 };
 
-const SidebarContent = ({
-  isCollapsed,
-  setIsCollapsed,
-  isMobileDrawer = false,
-  onClose,
-}) => {
+const SidebarContent = ({ isCollapsed, setIsCollapsed, isMobileDrawer = false, onClose }) => {
   const [expandedSections, setExpandedSections] = useState(new Set());
   const { currentUser, logout } = useAuth();
   const location = useLocation();
-
   const isActive = (path) => location.pathname === path;
 
   useEffect(() => {
     if (isMobileDrawer) {
       document.documentElement.style.setProperty("--sidebar-width", "0px");
     } else {
-      document.documentElement.style.setProperty(
-        "--sidebar-width",
-        isCollapsed ? "160px" : "260px"
-      );
+      document.documentElement.style.setProperty("--sidebar-width", isCollapsed ? "160px" : "260px");
     }
-    return () => {
-      document.documentElement.style.setProperty("--sidebar-width", "0px");
-    };
+    return () => { document.documentElement.style.setProperty("--sidebar-width", "0px"); };
   }, [isCollapsed, isMobileDrawer]);
 
   useEffect(() => {
-    if (isCollapsed) {
-      setExpandedSections(new Set());
-    }
+    if (isCollapsed) setExpandedSections(new Set());
   }, [isCollapsed]);
 
   const toggleSection = (index) => {
-    if (isCollapsed) {
-      setIsCollapsed(false);
-    }
+    if (isCollapsed) setIsCollapsed(false);
     setExpandedSections((prev) => {
       const next = new Set(prev);
       if (next.has(index)) next.delete(index);
@@ -200,110 +182,31 @@ const SidebarContent = ({
     });
   };
 
-  const isSectionOpen = (index) =>
-    !isCollapsed && expandedSections.has(index);
+  const isSectionOpen = (index) => !isCollapsed && expandedSections.has(index);
 
   return (
-    <Box
-      w={isMobileDrawer ? "100%" : (isCollapsed ? "160px" : "260px")}
-      h="100%"
-      transition="width 0.3s ease"
-      bg="brand.100"
-      display="flex"
-      flexDirection="column"
-      overflow="hidden"
-    >
+    <Box w={isMobileDrawer ? "100%" : (isCollapsed ? "160px" : "260px")} h="100%" transition="width 0.3s ease" bg="brand.100" display="flex" flexDirection="column" overflow="hidden">
       {!isMobileDrawer && (
         <Flex justify="flex-end" p={2}>
-          <IconButton
-            icon={isCollapsed ? <ArrowForwardIcon /> : <ArrowBackIcon />}
-            size="sm"
-            variant="ghost"
-            onClick={() => setIsCollapsed(!isCollapsed)}
-            aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
-          />
+          <IconButton icon={isCollapsed ? <ArrowForwardIcon /> : <ArrowBackIcon />} size="sm" variant="ghost" onClick={() => setIsCollapsed(!isCollapsed)} aria-label={isCollapsed ? "Expand sidebar" : "Collapse sidebar"} />
         </Flex>
       )}
-
-      <VStack
-        align="stretch"
-        spacing={6}
-        flex="1"
-        overflowY="auto"
-        px={isCollapsed ? 1 : 2}
-        pt={isMobileDrawer ? 16 : 4}
-        pb={4}
-      >
+      <VStack align="stretch" spacing={6} flex="1" overflowY="auto" px={isCollapsed ? 1 : 2} pt={isMobileDrawer ? 16 : 4} pb={4}>
         {NAV_SECTIONS.map((section, index) => (
           <Box key={index} w="100%">
             {section.isLink ? (
-              <Button
-                as={RouterLink}
-                to={section.to}
-                w="100%"
-                h={isCollapsed ? "auto" : undefined}
-                py={3}
-                justifyContent="flex-start"
-                variant="ghost"
-                size="sm"
-                px={isCollapsed ? 3 : undefined}
-                colorScheme={isActive(section.to) ? "brand" : undefined}
-                fontWeight={isActive(section.to) ? "bold" : "normal"}
-                whiteSpace="nowrap"
-                onMouseEnter={() => preloadRoute(section.to)}
-                onFocus={() => preloadRoute(section.to)}
-                onClick={() => {
-                  if (isCollapsed) setIsCollapsed(false);
-                  if (isMobileDrawer && onClose) onClose();
-                }}
-              >
+              <Button as={RouterLink} to={section.to} w="100%" h={isCollapsed ? "auto" : undefined} py={3} justifyContent="flex-start" variant="ghost" size="sm" px={isCollapsed ? 3 : undefined} colorScheme={isActive(section.to) ? "brand" : undefined} fontWeight={isActive(section.to) ? "bold" : "normal"} whiteSpace="nowrap" onMouseEnter={() => preloadRoute(section.to)} onFocus={() => preloadRoute(section.to)} onClick={() => { if (isCollapsed) setIsCollapsed(false); if (isMobileDrawer && onClose) onClose(); }}>
                 {renderTitle(section.title, isCollapsed)}
               </Button>
             ) : (
               <>
-                <Button
-                  w="100%"
-                  h={isCollapsed ? "auto" : undefined}
-                  py={3}
-                  justifyContent={isCollapsed ? "flex-start" : "space-between"}
-                  variant="ghost"
-                  size="sm"
-                  px={isCollapsed ? 3 : undefined}
-                  onClick={() => toggleSection(index)}
-                  rightIcon={
-                    !isCollapsed &&
-                    (isSectionOpen(index) ? (
-                      <ChevronDownIcon />
-                    ) : (
-                      <ChevronRightIcon />
-                    ))
-                  }
-                  whiteSpace="nowrap"
-                >
+                <Button w="100%" h={isCollapsed ? "auto" : undefined} py={3} justifyContent={isCollapsed ? "flex-start" : "space-between"} variant="ghost" size="sm" px={isCollapsed ? 3 : undefined} onClick={() => toggleSection(index)} rightIcon={!isCollapsed && (isSectionOpen(index) ? <ChevronDownIcon /> : <ChevronRightIcon />)} whiteSpace="nowrap">
                   {renderTitle(section.title, isCollapsed)}
                 </Button>
                 <Collapse in={isSectionOpen(index)} animateOpacity>
                   <VStack align="stretch" pl={4} spacing={0}>
                     {section.items.map((item, i) => (
-                      <Button
-                        key={i}
-                        as={RouterLink}
-                        to={item.to}
-                        w="100%"
-                        justifyContent="flex-start"
-                        variant="ghost"
-                        size="sm"
-                        colorScheme={isActive(item.to) ? "brand" : undefined}
-                        fontWeight={isActive(item.to) ? "bold" : "normal"}
-                        whiteSpace="nowrap"
-                        overflow="hidden"
-                        textOverflow="ellipsis"
-                        onMouseEnter={() => preloadRoute(item.to)}
-                        onFocus={() => preloadRoute(item.to)}
-                        onClick={() => {
-                          if (isMobileDrawer && onClose) onClose();
-                        }}
-                      >
+                      <Button key={i} as={RouterLink} to={item.to} w="100%" justifyContent="flex-start" variant="ghost" size="sm" colorScheme={isActive(item.to) ? "brand" : undefined} fontWeight={isActive(item.to) ? "bold" : "normal"} whiteSpace="nowrap" overflow="hidden" textOverflow="ellipsis" onMouseEnter={() => preloadRoute(item.to)} onFocus={() => preloadRoute(item.to)} onClick={() => { if (isMobileDrawer && onClose) onClose(); }}>
                         {item.label}
                       </Button>
                     ))}
@@ -314,108 +217,18 @@ const SidebarContent = ({
           </Box>
         ))}
       </VStack>
-
       <Divider borderColor="brand.900" opacity={0.2} />
-
       {currentUser ? (
         <VStack align="stretch" spacing={1} p={2}>
-          <Text
-            fontSize="sm"
-            fontWeight="bold"
-            px={2}
-            noOfLines={1}
-            overflow="hidden"
-            textOverflow="ellipsis"
-          >
-            {currentUser.data.alias || currentUser.data.email}
-          </Text>
-          <Button
-            as={RouterLink}
-            to="/dashboard"
-            w="100%"
-            justifyContent="flex-start"
-            variant="ghost"
-            size="sm"
-            whiteSpace="nowrap"
-            overflow="hidden"
-            textOverflow="ellipsis"
-            onMouseEnter={() => preloadRoute("/dashboard")}
-            onFocus={() => preloadRoute("/dashboard")}
-            onClick={() => {
-              if (isCollapsed) setIsCollapsed(false);
-              if (isMobileDrawer && onClose) onClose();
-            }}
-          >
-            Dashboard
-          </Button>
-          <Button
-            w="100%"
-            justifyContent="flex-start"
-            variant="ghost"
-            size="sm"
-            onClick={() => {
-              logout();
-              if (isCollapsed) setIsCollapsed(false);
-              if (isMobileDrawer && onClose) onClose();
-            }}
-            whiteSpace="nowrap"
-            overflow="hidden"
-            textOverflow="ellipsis"
-          >
-            Log Out
-          </Button>
+          <Text fontSize="sm" fontWeight="bold" px={2} noOfLines={1} overflow="hidden" textOverflow="ellipsis">{currentUser.data.alias || currentUser.data.email}</Text>
+          <Button as={RouterLink} to="/dashboard" w="100%" justifyContent="flex-start" variant="ghost" size="sm" whiteSpace="nowrap" overflow="hidden" textOverflow="ellipsis" onMouseEnter={() => preloadRoute("/dashboard")} onFocus={() => preloadRoute("/dashboard")} onClick={() => { if (isCollapsed) setIsCollapsed(false); if (isMobileDrawer && onClose) onClose(); }}>Dashboard</Button>
+          <Button w="100%" justifyContent="flex-start" variant="ghost" size="sm" onClick={() => { logout(); if (isCollapsed) setIsCollapsed(false); if (isMobileDrawer && onClose) onClose(); }} whiteSpace="nowrap" overflow="hidden" textOverflow="ellipsis">Log Out</Button>
         </VStack>
       ) : (
         isMobileDrawer && (
           <VStack align="stretch" spacing={3} p={4}>
-            <Button
-              as={RouterLink}
-              to="/signup"
-              w="100%"
-              bg="brand.900"
-              color="white"
-              border="2px solid"
-              borderColor="brand.900"
-              borderRadius="md"
-              boxShadow="2px 2px 0px rgba(0,0,0,0.1)"
-              _hover={{
-                bg: "ink.700",
-                boxShadow: "3px 3px 0px rgba(0,0,0,0.15)",
-              }}
-              _active={{
-                bg: "brand.900",
-                boxShadow: "1px 1px 0px rgba(0,0,0,0.1)",
-              }}
-              onMouseEnter={() => preloadRoute("/signup")}
-              onFocus={() => preloadRoute("/signup")}
-              onClick={() => onClose && onClose()}
-            >
-              Sign Up
-            </Button>
-            <Button
-              as={RouterLink}
-              to="/login"
-              w="100%"
-              variant="outline"
-              borderColor="brand.900"
-              color="brand.900"
-              borderWidth="2px"
-              borderRadius="md"
-              boxShadow="2px 2px 0px rgba(0,0,0,0.1)"
-              _hover={{
-                bg: "brand.300",
-                boxShadow: "3px 3px 0px rgba(0,0,0,0.15)",
-              }}
-              _active={{
-                bg: "brand.100",
-                boxShadow: "1px 1px 0px rgba(0,0,0,0.1)",
-              }}
-              onMouseEnter={() => preloadRoute("/login")}
-              onFocus={() => preloadRoute("/login")}
-              onClick={() => onClose && onClose()}
-            >
-              Login
-            </Button>
+            <Button as={RouterLink} to="/signup" w="100%" bg="brand.900" color="white" border="2px solid" borderColor="brand.900" borderRadius="md" boxShadow="2px 2px 0px rgba(0,0,0,0.1)" _hover={{ bg: "ink.700", boxShadow: "3px 3px 0px rgba(0,0,0,0.15)" }} _active={{ bg: "brand.900", boxShadow: "1px 1px 0px rgba(0,0,0,0.1)" }} onMouseEnter={() => preloadRoute("/signup")} onFocus={() => preloadRoute("/signup")} onClick={() => onClose && onClose()}>Sign Up</Button>
+            <Button as={RouterLink} to="/login" w="100%" variant="outline" borderColor="brand.900" color="brand.900" borderWidth="2px" borderRadius="md" boxShadow="2px 2px 0px rgba(0,0,0,0.1)" _hover={{ bg: "brand.300", boxShadow: "3px 3px 0px rgba(0,0,0,0.15)" }} _active={{ bg: "brand.100", boxShadow: "1px 1px 0px rgba(0,0,0,0.1)" }} onMouseEnter={() => preloadRoute("/login")} onFocus={() => preloadRoute("/login")} onClick={() => onClose && onClose()}>Login</Button>
           </VStack>
         )
       )}
@@ -429,87 +242,23 @@ const Sidebar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    if (isMobile && mobileOpen) {
-      document.body.classList.add("drawer-open");
-    } else {
-      document.body.classList.remove("drawer-open");
-    }
-    return () => {
-      document.body.classList.remove("drawer-open");
-    };
+    if (isMobile && mobileOpen) { document.body.classList.add("drawer-open"); }
+    else { document.body.classList.remove("drawer-open"); }
+    return () => { document.body.classList.remove("drawer-open"); };
   }, [isMobile, mobileOpen]);
 
   if (isMobile) {
     return (
       <>
         <Box position="fixed" top="12px" left="16px" zIndex={1000}>
-          <IconButton
-            icon={<HamburgerIcon />}
-            size="md"
-            onClick={() => setMobileOpen(true)}
-            aria-label="Open menu"
-            bg="brand.500"
-            color="brand.900"
-            border="2px solid"
-            borderColor="brand.900"
-            borderRadius="md"
-            boxShadow="2px 2px 0px rgba(0,0,0,0.1)"
-            _hover={{
-              bg: "brand.500",
-              boxShadow: "3px 3px 0px rgba(0,0,0,0.15)",
-            }}
-            _active={{
-              bg: "brand.500",
-              boxShadow: "1px 1px 0px rgba(0,0,0,0.1)",
-            }}
-            _focus={{
-              boxShadow: "2px 2px 0px rgba(0,0,0,0.1)",
-            }}
-            _focusVisible={{
-              outline: "none",
-              boxShadow: "2px 2px 0px rgba(0,0,0,0.1)",
-            }}
-          />
+          <IconButton icon={<HamburgerIcon />} size="md" onClick={() => setMobileOpen(true)} aria-label="Open menu" bg="brand.500" color="brand.900" border="2px solid" borderColor="brand.900" borderRadius="md" boxShadow="2px 2px 0px rgba(0,0,0,0.1)" _hover={{ bg: "brand.500", boxShadow: "3px 3px 0px rgba(0,0,0,0.15)" }} _active={{ bg: "brand.500", boxShadow: "1px 1px 0px rgba(0,0,0,0.1)" }} _focus={{ boxShadow: "2px 2px 0px rgba(0,0,0,0.1)" }} _focusVisible={{ outline: "none", boxShadow: "2px 2px 0px rgba(0,0,0,0.1)" }} />
         </Box>
-        <Drawer
-          isOpen={mobileOpen}
-          placement="left"
-          onClose={() => setMobileOpen(false)}
-        >
+        <Drawer isOpen={mobileOpen} placement="left" onClose={() => setMobileOpen(false)}>
           <DrawerOverlay />
           <DrawerContent bg="brand.100">
-            <DrawerCloseButton
-              border="2px solid"
-              borderColor="brand.900"
-              bg="brand.500"
-              color="brand.900"
-              borderRadius="md"
-              boxShadow="2px 2px 0px rgba(0,0,0,0.1)"
-              _hover={{
-                bg: "brand.500",
-                boxShadow: "3px 3px 0px rgba(0,0,0,0.15)",
-              }}
-              _active={{
-                bg: "brand.500",
-                boxShadow: "1px 1px 0px rgba(0,0,0,0.1)",
-              }}
-              _focus={{
-                boxShadow: "2px 2px 0px rgba(0,0,0,0.1)",
-              }}
-              _focusVisible={{
-                outline: "none",
-                boxShadow: "2px 2px 0px rgba(0,0,0,0.1)",
-              }}
-              top="12px"
-              right="16px"
-            />
+            <DrawerCloseButton border="2px solid" borderColor="brand.900" bg="brand.500" color="brand.900" borderRadius="md" boxShadow="2px 2px 0px rgba(0,0,0,0.1)" _hover={{ bg: "brand.500", boxShadow: "3px 3px 0px rgba(0,0,0,0.15)" }} _active={{ bg: "brand.500", boxShadow: "1px 1px 0px rgba(0,0,0,0.1)" }} _focus={{ boxShadow: "2px 2px 0px rgba(0,0,0,0.1)" }} _focusVisible={{ outline: "none", boxShadow: "2px 2px 0px rgba(0,0,0,0.1)" }} top="12px" right="16px" />
             <DrawerBody p={0}>
-              <SidebarContent
-                isCollapsed={false}
-                setIsCollapsed={setIsCollapsed}
-                isMobileDrawer={true}
-                onClose={() => setMobileOpen(false)}
-              />
+              <SidebarContent isCollapsed={false} setIsCollapsed={setIsCollapsed} isMobileDrawer={true} onClose={() => setMobileOpen(false)} />
             </DrawerBody>
           </DrawerContent>
         </Drawer>
@@ -517,9 +266,7 @@ const Sidebar = () => {
     );
   }
 
-  return (
-    <SidebarContent isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />
-  );
+  return <SidebarContent isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed} />;
 };
 
 export default Sidebar;
