@@ -106,6 +106,14 @@ const NAV_SECTIONS = [
     isLink: true,
     to: "/grade-quests",
   },
+
+  {
+  title: "Grammar AI",
+  isLink: true,
+  to: "/grammar-ai",
+},
+
+  
   {
     title: "Sentence Structure",
     items: [
