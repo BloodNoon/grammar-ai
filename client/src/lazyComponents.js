@@ -1,14 +1,22 @@
 import { lazy } from "react";
 
-// Custom lazy-loading wrapper that exposes a preload method
 const lazyWithPreload = (importFunc) => {
   const Component = lazy(importFunc);
   Component.preload = importFunc;
   return Component;
 };
 
-//ai
+// ai
 export const GrammarAI = lazyWithPreload(() => import("./pages/GrammarAI"));
+
+// ai practice pages
+export const NounAIPractice = lazyWithPreload(() => import(/* webpackChunkName: "ai-practice" */ "./pages/NounAIPractice"));
+export const VerbAIPractice = lazyWithPreload(() => import(/* webpackChunkName: "ai-practice" */ "./pages/VerbTensesAIPractice"));
+export const ArticleAIPractice = lazyWithPreload(() => import(/* webpackChunkName: "ai-practice" */ "./pages/ArticlesAIPractice"));
+export const PrepositionAIPractice = lazyWithPreload(() => import(/* webpackChunkName: "ai-practice" */ "./pages/PrepositionsAIPractice"));
+export const AdjectiveAIPractice = lazyWithPreload(() => import(/* webpackChunkName: "ai-practice" */ "./pages/AdjectivesAIPractice"));
+export const AdverbAIPractice = lazyWithPreload(() => import(/* webpackChunkName: "ai-practice" */ "./pages/AdverbsAIPractice"));
+export const ConjunctionAIPractice = lazyWithPreload(() => import(/* webpackChunkName: "ai-practice" */ "./pages/ConjunctionsAIPractice"));
 
 // default chunk
 export const Home = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "default" */ "./pages/Home"));
@@ -99,7 +107,6 @@ export const Grade8Quest = lazyWithPreload(() => import(/* webpackPrefetch: true
 export const Grade9Quest = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "grade-quests" */ "./pages/GradeQuestPages/Grade9Quest"));
 export const TestPrep = lazyWithPreload(() => import(/* webpackPrefetch: true, webpackChunkName: "grade-quests" */ "./pages/GradeQuestPages/TestPrep"));
 
-// Centralized path-based route preloader mapping
 export const routePreloadMap = {
   "/": Home,
   "/signup": Signup,
@@ -171,15 +178,18 @@ export const routePreloadMap = {
   "/grade-9-quest": Grade9Quest,
   "/test-prep": TestPrep,
   "/grammar-ai": GrammarAI,
+  "/noun-ai-practice": NounAIPractice,
+  "/verb-ai-practice": VerbAIPractice,
+  "/article-ai-practice": ArticleAIPractice,
+  "/preposition-ai-practice": PrepositionAIPractice,
+  "/adjective-ai-practice": AdjectiveAIPractice,
+  "/adverb-ai-practice": AdverbAIPractice,
+  "/conjunction-ai-practice": ConjunctionAIPractice,
 };
 
 export const preloadRoute = (path) => {
   let matchedPath = path;
-  if (path && path.startsWith("/overview/")) {
-    matchedPath = "/overview/:id";
-  }
+  if (path && path.startsWith("/overview/")) matchedPath = "/overview/:id";
   const component = routePreloadMap[matchedPath];
-  if (component && typeof component.preload === "function") {
-    component.preload();
-  }
+  if (component && typeof component.preload === "function") component.preload();
 };
