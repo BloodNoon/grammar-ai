@@ -14,78 +14,26 @@ import LoadingFallback from "./components/LoadingFallback";
 import { Flex, Box } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 
-// Lazy-loaded components imported from centralized lazyComponents definition
 import {
-  Home,
-  Dashboard,
-  PracticeMenu,
-  PromptList,
-  PromptOverview,
-  NounSortingGame,
-  Signup,
-  Login,
-  ForgotAccount,
-  SentenceStructures,
-  NounsPage,
-  Prep1Structure,
-  Prep2Structure,
-  Prep3Structure,
-  ConjunctionStructure,
-  AdjectiveStructure,
-  AdverbStructure,
-  PluralNoun,
-  PossessiveNouns,
-  PropComNouns,
-  AbPlurNoun,
-  NounComponentTest,
-  NounQuizPageTest,
-  VerbSentenceStructures,
-  ArticleSentenceStructures,
-  PrepositionSentenceStructures,
-  ConjunctionSentenceStructures,
-  ArticleStructure,
-  ArticleGrammarLegend,
-  ArticleSentenceBuilder,
-  ArticleLevelSelection,
-  ArticleWordBank,
-  VerbTenseStructure,
-  VerbGrammarLegend,
-  VerbSentenceBuilder,
-  VerbLevelSelection,
-  VerbWordBank,
-  AuxiliaryVerbsAndVerbals,
-  AdjectiveQuizPage,
-  AdverbQuizPage,
-  VerbTenseQuizPage,
-  ArticleQuizPage,
-  PrepositionQuizPage,
-  ConjunctionQuiz,
-  NounPractice,
-  VerbPractice,
-  ArticlePractice,
-  PrepositionPractice,
-  AdjectivePractice,
-  AdverbPractice,
-  ConjunctionPractice,
-  AdjectiveRoyalOrder,
-  AdjectiveSentenceStructures,
-  AdjectiveFillBlanks,
-  AdverbTypes,
-  AdverbTypeSorting,
-  AdverbForms,
-  AdverbRoyalOrder,
-  AdverbSentenceStructures,
-  AdverbIdentificationGame,
-  GradeQuests,
-  Grade3Quest,
-  Grade4Quest,
-  Grade5Quest,
-  Grade6Quest,
-  Grade7Quest,
-  Grade8Quest,
-  Grade9Quest,
-  TestPrep,
-  GrammarAI,
+  Home, Dashboard, PracticeMenu, PromptList, PromptOverview, NounSortingGame,
+  Signup, Login, ForgotAccount, SentenceStructures, NounsPage,
+  Prep1Structure, Prep2Structure, Prep3Structure, ConjunctionStructure,
+  AdjectiveStructure, AdverbStructure, PluralNoun, PossessiveNouns,
+  PropComNouns, AbPlurNoun, NounComponentTest, NounQuizPageTest,
+  VerbSentenceStructures, ArticleSentenceStructures, PrepositionSentenceStructures,
+  ConjunctionSentenceStructures, ArticleStructure, ArticleGrammarLegend,
+  ArticleSentenceBuilder, ArticleLevelSelection, ArticleWordBank,
+  VerbTenseStructure, VerbGrammarLegend, VerbSentenceBuilder, VerbLevelSelection,
+  VerbWordBank, AuxiliaryVerbsAndVerbals, AdjectiveQuizPage, AdverbQuizPage,
+  VerbTenseQuizPage, ArticleQuizPage, PrepositionQuizPage, ConjunctionQuiz,
+  NounPractice, VerbPractice, ArticlePractice, PrepositionPractice,
+  AdjectivePractice, AdverbPractice, ConjunctionPractice, AdjectiveRoyalOrder,
+  AdjectiveSentenceStructures, AdjectiveFillBlanks, AdverbTypes, AdverbTypeSorting,
+  AdverbForms, AdverbRoyalOrder, AdverbSentenceStructures, AdverbIdentificationGame,
+  GradeQuests, Grade3Quest, Grade4Quest, Grade5Quest, Grade6Quest, Grade7Quest,
+  Grade8Quest, Grade9Quest, TestPrep, GrammarAI,
+  NounAIPractice, VerbAIPractice, ArticleAIPractice, PrepositionAIPractice,
+  AdjectiveAIPractice, AdverbAIPractice, ConjunctionAIPractice,
 } from "./lazyComponents";
 
 function AppLayout() {
@@ -99,9 +47,7 @@ function AppLayout() {
   const contentRef = React.useRef(null);
 
   React.useEffect(() => {
-    if (contentRef.current) {
-      contentRef.current.scrollTop = 0;
-    }
+    if (contentRef.current) contentRef.current.scrollTop = 0;
   }, [location.pathname]);
 
   return (
@@ -109,22 +55,11 @@ function AppLayout() {
       <Navbar showSidebar={showSidebar} />
       <Flex flex="1" overflow="hidden">
         {showSidebar && (
-          <Box
-            flexShrink="0"
-            h={{ base: "auto", md: "100%" }}
-          >
+          <Box flexShrink="0" h={{ base: "auto", md: "100%" }}>
             <Sidebar />
           </Box>
         )}
-        <Box
-          ref={contentRef}
-          flex="1"
-          minW="0"
-          h="100%"
-          overflowY="auto"
-          position="relative"
-          bg={isHome ? "paper" : "brand.300"}
-        >
+        <Box ref={contentRef} flex="1" minW="0" h="100%" overflowY="auto" position="relative" bg={isHome ? "paper" : "brand.300"}>
           <Suspense fallback={<LoadingFallback />}>
             <Switch>
               <Route path="/" component={Home} exact />
@@ -197,6 +132,13 @@ function AppLayout() {
               <Route path="/grade-9-quest" component={Grade9Quest} />
               <Route path="/test-prep" component={TestPrep} />
               <Route path="/grammar-ai" component={GrammarAI} />
+              <Route path="/noun-ai-practice" component={NounAIPractice} />
+              <Route path="/verb-ai-practice" component={VerbAIPractice} />
+              <Route path="/article-ai-practice" component={ArticleAIPractice} />
+              <Route path="/preposition-ai-practice" component={PrepositionAIPractice} />
+              <Route path="/adjective-ai-practice" component={AdjectiveAIPractice} />
+              <Route path="/adverb-ai-practice" component={AdverbAIPractice} />
+              <Route path="/conjunction-ai-practice" component={ConjunctionAIPractice} />
             </Switch>
           </Suspense>
         </Box>
