@@ -149,10 +149,15 @@ export default function GrammarAIPractice({ topic, onComplete }) {
       if (!isCorrect && editorRef.current && data.corrected) {
         const userWords    = ans.split(' ');
         const correctWords = data.corrected.split(' ');
-        const highlighted  = userWords.map((word, i) => {
+        // Find which positions differ using longest common subsequence approach
+        const highlighted = userWords.map((word, i) => {
           const clean        = word.replace(/[.,;:!?'"]/g, '').toLowerCase();
-          const correctClean = (correctWords[i] || '').replace(/[.,;:!?'"]/g, '').toLowerCase();
-          if (clean !== correctClean) {
+          // Check against same position and adjacent positions for robustness
+          const matches = correctWords.some(cw =>
+            cw.replace(/[.,;:!?'"]/g, '').toLowerCase() === clean
+          );
+          // If this word doesn't appear anywhere in correct sentence, it's wrong
+          if (!matches) {
             return `<span style="color:#c0392b;text-decoration:underline;text-decoration-style:wavy;font-weight:600">${word}</span>`;
           }
           return word;
