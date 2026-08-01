@@ -34,6 +34,7 @@ import {
   Grade8Quest, Grade9Quest, TestPrep, GrammarAI,
   NounAIPractice, VerbAIPractice, ArticleAIPractice, PrepositionAIPractice,
   AdjectiveAIPractice, AdverbAIPractice, ConjunctionAIPractice,
+  SATSHSATPractice,
 } from "./lazyComponents";
 
 function AppLayout() {
