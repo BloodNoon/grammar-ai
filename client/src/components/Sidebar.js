@@ -113,11 +113,20 @@ const NAV_SECTIONS = [
     isLink: true,
     to: "/grade-quests",
   },
+  
   {
-    title: "Grammar AI",
-    isLink: true,
-    to: "/grammar-ai",
-  },
+  title: "SAT / SHSAT",
+  items: [
+    { label: "Nouns", to: "/sat-shsat/nouns" },
+    { label: "Verb Tenses", to: "/sat-shsat/verb_tenses" },
+    { label: "Articles", to: "/sat-shsat/articles" },
+    { label: "Prepositions", to: "/sat-shsat/prepositions" },
+    { label: "Adjectives", to: "/sat-shsat/adjectives" },
+    { label: "Adverbs", to: "/sat-shsat/adverbs" },
+    { label: "Conjunctions", to: "/sat-shsat/conjunctions" },
+  ],
+},
+  
   {
     title: "Sentence Structure",
     items: [
