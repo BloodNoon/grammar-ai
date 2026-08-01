@@ -144,6 +144,23 @@ export default function GrammarAIPractice({ topic, onComplete }) {
       }
 
       setResult({ isCorrect, pts, ...data });
+
+      if (!isCorrect && editorRef.current && data.corrected) {
+        const userWords = ans.split(' ');
+        const correctWords = data.corrected.split(' ');
+        const highlighted = userWords.map((word) => {
+          const clean = word.replace(/[.,;:!?'"]/g, '').toLowerCase();
+          const inCorrect = correctWords.some(cw =>
+            cw.replace(/[.,;:!?'"]/g, '').toLowerCase() === clean
+          );
+          if (!inCorrect) {
+            return `<span style="color:#c0392b;text-decoration:underline;text-decoration-style:wavy;font-weight:600">${word}</span>`;
+          }
+          return word;
+        }).join(' ');
+        editorRef.current.innerHTML = highlighted;
+      }
+
     } catch {
       alert("Error checking answer.");
     } finally {
