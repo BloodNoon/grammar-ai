@@ -116,29 +116,18 @@ export default function SATSHSATPractice() {
     return () => window.removeEventListener("keydown", handler);
   }, [result, question, loading, streak, loadQuestion]);
 
-  // Blank-based renderer — splits on "______" and inserts a styled blank
-  const renderBlankSentence = (sentenceBlank) => {
-    if (!sentenceBlank) return null;
-    const parts = sentenceBlank.split("______");
-    return parts.map((part, i) => (
-      <React.Fragment key={i}>
-        <Text as="span">{part}</Text>
-        {i < parts.length - 1 && (
-          <Text
-            as="span"
-            display="inline-block"
-            minW="80px"
-            borderBottom="2px solid"
-            borderColor="orange.500"
-            mx={1}
-            verticalAlign="bottom"
-            lineHeight="1.2"
-          >
-            &nbsp;
-          </Text>
-        )}
-      </React.Fragment>
-    ));
+  const renderSentence = (marked) => {
+    if (!marked) return null;
+    const parts = marked.split(/(__UNDERLINE__|__END__)/);
+    let underline = false;
+    return parts.map((part, i) => {
+      if (part === "__UNDERLINE__") { underline = true; return null; }
+      if (part === "__END__") { underline = false; return null; }
+      if (underline) {
+        return <Text as="span" key={i} textDecoration="underline" fontWeight="700" color="orange.700">{part}</Text>;
+      }
+      return <Text as="span" key={i}>{part}</Text>;
+    });
   };
 
   return (
@@ -179,12 +168,14 @@ export default function SATSHSATPractice() {
           </Badge>
           <Badge bg="gray.100" color="gray.500" borderRadius="full"
             px={2} py={1} fontSize="xs">
-            Standard English Conventions
+            Multiple Choice
           </Badge>
         </HStack>
 
-        <Text fontSize="sm" color="gray.600" mb={4}>
-          Which choice completes the text so that it conforms to the conventions of Standard English?
+        <Text fontSize="sm" color="gray.500" mb={4}>
+          Choose the best replacement for the{" "}
+          <Text as="span" textDecoration="underline" fontWeight="700" color="orange.700">underlined</Text>{" "}
+          word or phrase.
         </Text>
 
         {loading ? (
@@ -194,7 +185,7 @@ export default function SATSHSATPractice() {
             <Box p={4} bg="orange.50" borderRadius="lg" mb={6}
               border="1px solid" borderColor="orange.200"
               fontSize="md" fontFamily="mono" lineHeight="1.9">
-              {renderBlankSentence(question.sentence_blank)}
+              {renderSentence(question.sentence_marked)}
             </Box>
 
             <VStack spacing={3} align="stretch">
