@@ -139,6 +139,7 @@ function AppLayout() {
               <Route path="/adjective-ai-practice" component={AdjectiveAIPractice} />
               <Route path="/adverb-ai-practice" component={AdverbAIPractice} />
               <Route path="/conjunction-ai-practice" component={ConjunctionAIPractice} />
+              <Route path="/sat-shsat/:topic" component={SATSHSATPractice} />
             </Switch>
           </Suspense>
         </Box>
