@@ -285,6 +285,7 @@ export default function GrammarAIPractice({ topic, onComplete }) {
               ref={editorRef}
               contentEditable={!result}
               suppressContentEditableWarning
+              spellCheck={false}
               p={3} borderRadius="lg" border="2px solid"
               borderColor={result
                 ? (result.isCorrect ? "green.300" : "red.300")
