@@ -8,6 +8,7 @@ const lazyWithPreload = (importFunc) => {
 
 // ai
 export const GrammarAI = lazyWithPreload(() => import("./pages/GrammarAI"));
+export const SATSHSATPractice = lazyWithPreload(() => import("./pages/SATSHSATPractice"));
 
 // ai practice pages
 export const NounAIPractice = lazyWithPreload(() => import(/* webpackChunkName: "ai-practice" */ "./pages/NounAIPractice"));
