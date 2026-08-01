@@ -10,7 +10,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-const API = 'http://localhost:8000/api';
+const API = "/api/grammar";
 
 const TOPIC_LABELS = {
   nouns: "Nouns",
@@ -144,6 +144,21 @@ export default function GrammarAIPractice({ topic, onComplete }) {
       }
 
       setResult({ isCorrect, pts, ...data });
+
+      // Highlight error words in editor after wrong answer
+      if (!isCorrect && editorRef.current && data.corrected) {
+        const userWords    = ans.split(' ');
+        const correctWords = data.corrected.split(' ');
+        const highlighted  = userWords.map((word, i) => {
+          const clean        = word.replace(/[.,;:!?'"]/g, '').toLowerCase();
+          const correctClean = (correctWords[i] || '').replace(/[.,;:!?'"]/g, '').toLowerCase();
+          if (clean !== correctClean) {
+            return `<span style="color:#c0392b;text-decoration:underline;text-decoration-style:wavy;font-weight:600">${word}</span>`;
+          }
+          return word;
+        }).join(' ');
+        editorRef.current.innerHTML = highlighted;
+      }
     } catch {
       alert("Error checking answer.");
     } finally {
@@ -285,7 +300,6 @@ export default function GrammarAIPractice({ topic, onComplete }) {
               ref={editorRef}
               contentEditable={!result}
               suppressContentEditableWarning
-              spellCheck={false}
               p={3} borderRadius="lg" border="2px solid"
               borderColor={result
                 ? (result.isCorrect ? "green.300" : "red.300")
