@@ -1,167 +1,184 @@
-import React, { Suspense } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useLocation,
-} from "react-router-dom";
-import { AuthProvider } from "./contexts/AuthContext";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
-import PrivateRoute from "./components/PrivateRoute";
-import Sidebar from "./components/Sidebar";
-import LoadingFallback from "./components/LoadingFallback";
-import { Flex, Box } from "@chakra-ui/react";
-import Navbar from "./components/Navbar";
+"""
+app.py — Grammar-AI Web Server
+================================
+Flask backend that serves the website and handles API calls
+for generating questions and checking answers.
 
-import {
-  Home, Dashboard, PracticeMenu, PromptList, PromptOverview, NounSortingGame,
-  Signup, Login, ForgotAccount, SentenceStructures, NounsPage,
-  Prep1Structure, Prep2Structure, Prep3Structure, ConjunctionStructure,
-  AdjectiveStructure, AdverbStructure, PluralNoun, PossessiveNouns,
-  PropComNouns, AbPlurNoun, NounComponentTest, NounQuizPageTest,
-  VerbSentenceStructures, ArticleSentenceStructures, PrepositionSentenceStructures,
-  ConjunctionSentenceStructures, ArticleStructure, ArticleGrammarLegend,
-  ArticleSentenceBuilder, ArticleLevelSelection, ArticleWordBank,
-  VerbTenseStructure, VerbGrammarLegend, VerbSentenceBuilder, VerbLevelSelection,
-  VerbWordBank, AuxiliaryVerbsAndVerbals, AdjectiveQuizPage, AdverbQuizPage,
-  VerbTenseQuizPage, ArticleQuizPage, PrepositionQuizPage, ConjunctionQuiz,
-  NounPractice, VerbPractice, ArticlePractice, PrepositionPractice,
-  AdjectivePractice, AdverbPractice, ConjunctionPractice, AdjectiveRoyalOrder,
-  AdjectiveSentenceStructures, AdjectiveFillBlanks, AdverbTypes, AdverbTypeSorting,
-  AdverbForms, AdverbRoyalOrder, AdverbSentenceStructures, AdverbIdentificationGame,
-  GradeQuests, Grade3Quest, Grade4Quest, Grade5Quest, Grade6Quest, Grade7Quest,
-  Grade8Quest, Grade9Quest, TestPrep, GrammarAI,
-  NounAIPractice, VerbAIPractice, ArticleAIPractice, PrepositionAIPractice,
-  AdjectiveAIPractice, AdverbAIPractice, ConjunctionAIPractice,
-  SATSHSATPractice,
-} from "./lazyComponents";
+Run: python app.py
+Then open: http://localhost:5000
+"""
 
-function AppLayout() {
-  const location = useLocation();
-  const showSidebar =
-    location.pathname !== "/" &&
-    location.pathname !== "/login" &&
-    location.pathname !== "/signup" &&
-    location.pathname !== "/forgot-account";
-  const isHome = location.pathname === "/";
-  const contentRef = React.useRef(null);
+import os
+import sys
+import random
 
-  React.useEffect(() => {
-    if (contentRef.current) contentRef.current.scrollTop = 0;
-  }, [location.pathname]);
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-  return (
-    <Flex direction="column" h="100vh" overflow="hidden">
-      <Navbar showSidebar={showSidebar} />
-      <Flex flex="1" overflow="hidden">
-        {showSidebar && (
-          <Box flexShrink="0" h={{ base: "auto", md: "100%" }}>
-            <Sidebar />
-          </Box>
-        )}
-        <Box ref={contentRef} flex="1" minW="0" h="100%" overflowY="auto" position="relative" bg={isHome ? "paper" : "brand.300"}>
-          <Suspense fallback={<LoadingFallback />}>
-            <Switch>
-              <Route path="/" component={Home} exact />
-              <Route path="/signup" component={Signup} />
-              <Route path="/login" component={Login} />
-              <Route path="/forgot-account" component={ForgotAccount} />
-              <PrivateRoute path="/dashboard" component={Dashboard} />
-              <Route path="/overview/:id" component={PromptOverview} />
-              <Route path="/practice-menu" component={PracticeMenu} />
-              <Route path="/sentence-structure" component={SentenceStructures} />
-              <Route path="/verb-tense-structure" component={VerbTenseStructure} />
-              <Route path="/verb-grammar-legend" component={VerbGrammarLegend} />
-              <Route path="/verb-sentence-builder" component={VerbSentenceBuilder} />
-              <Route path="/verb-level-selection" component={VerbLevelSelection} />
-              <Route path="/verb-wordbank" component={VerbWordBank} />
-              <Route path="/auxiliary-verbs" component={AuxiliaryVerbsAndVerbals} />
-              <Route path="/verb-sentence-structures" component={VerbSentenceStructures} />
-              <Route path="/article-structure" component={ArticleStructure} />
-              <Route path="/article-grammar-legend" component={ArticleGrammarLegend} />
-              <Route path="/article-sentence-builder" component={ArticleSentenceBuilder} />
-              <Route path="/article-level-selection" component={ArticleLevelSelection} />
-              <Route path="/article-wordbank" component={ArticleWordBank} />
-              <Route path="/article-sentence-structures" component={ArticleSentenceStructures} />
-              <Route path="/prompts" component={PromptList} />
-              <Route path="/adjective-structure" component={AdjectiveStructure} />
-              <Route path="/adjective-royal-order" component={AdjectiveRoyalOrder} />
-              <Route path="/adjective-sentence-structures" component={AdjectiveSentenceStructures} />
-              <Route path="/adjective-fill-blanks" component={AdjectiveFillBlanks} />
-              <Route path="/adverb-structure" component={AdverbStructure} />
-              <Route path="/adverb-types" component={AdverbTypes} />
-              <Route path="/adverb-forms" component={AdverbForms} />
-              <Route path="/adverb-royal-order" component={AdverbRoyalOrder} />
-              <Route path="/adverb-sentence-structures" component={AdverbSentenceStructures} />
-              <Route path="/adverb-identification-game" component={AdverbIdentificationGame} />
-              <Route path="/adverb-type-sorting" component={AdverbTypeSorting} />
-              <Route path="/conjunction-structure" component={ConjunctionStructure} />
-              <Route path="/conjunction-sentence-structures" component={ConjunctionSentenceStructures} />
-              <Route path="/prep1-structure" component={Prep1Structure} />
-              <Route path="/prep2-structure" component={Prep2Structure} />
-              <Route path="/prep3-structure" component={Prep3Structure} />
-              <Route path="/preposition-sentence-structures" component={PrepositionSentenceStructures} />
-              <Route path="/nouns" component={NounsPage} />
-              <Route path="/propcom-nouns" component={PropComNouns} />
-              <Route path="/abplur-nouns" component={AbPlurNoun} />
-              <Route path="/plural-noun" component={PluralNoun} />
-              <Route path="/possessive-nouns" component={PossessiveNouns} />
-              <Route path="/NounSortingGame" component={NounSortingGame} />
-              <Route path="/NounComponentTest" component={NounComponentTest} />
-              <Route path="/NounQuizPageTest" component={NounQuizPageTest} />
-              <Route path="/noun-practice" component={NounPractice} />
-              <Route path="/verb-practice" component={VerbPractice} />
-              <Route path="/article-practice" component={ArticlePractice} />
-              <Route path="/preposition-practice" component={PrepositionPractice} />
-              <Route path="/adjective-practice" component={AdjectivePractice} />
-              <Route path="/adverb-practice" component={AdverbPractice} />
-              <Route path="/conjunction-practice" component={ConjunctionPractice} />
-              <Route path="/adj-quiz" component={AdjectiveQuizPage} />
-              <Route path="/adverb-quiz" component={AdverbQuizPage} />
-              <Route path="/verb-tense-quiz" component={VerbTenseQuizPage} />
-              <Route path="/article-quiz" component={ArticleQuizPage} />
-              <Route path="/preposition-quiz" component={PrepositionQuizPage} />
-              <Route path="/conjunction-quiz" component={ConjunctionQuiz} />
-              <Route path="/grade-quests" component={GradeQuests} />
-              <Route path="/grade-3-quest" component={Grade3Quest} />
-              <Route path="/grade-4-quest" component={Grade4Quest} />
-              <Route path="/grade-5-quest" component={Grade5Quest} />
-              <Route path="/grade-6-quest" component={Grade6Quest} />
-              <Route path="/grade-7-quest" component={Grade7Quest} />
-              <Route path="/grade-8-quest" component={Grade8Quest} />
-              <Route path="/grade-9-quest" component={Grade9Quest} />
-              <Route path="/test-prep" component={TestPrep} />
-              <Route path="/grammar-ai" component={GrammarAI} />
-              <Route path="/noun-ai-practice" component={NounAIPractice} />
-              <Route path="/verb-ai-practice" component={VerbAIPractice} />
-              <Route path="/article-ai-practice" component={ArticleAIPractice} />
-              <Route path="/preposition-ai-practice" component={PrepositionAIPractice} />
-              <Route path="/adjective-ai-practice" component={AdjectiveAIPractice} />
-              <Route path="/adverb-ai-practice" component={AdverbAIPractice} />
-              <Route path="/conjunction-ai-practice" component={ConjunctionAIPractice} />
-              <Route path="/sat-shsat/:topic" component={SATSHSATPractice} />
-            </Switch>
-          </Suspense>
-        </Box>
-      </Flex>
-    </Flex>
-  );
-}
+from flask import Flask, jsonify, request, send_from_directory
+from flask_cors import CORS
+from generate import load_pool, generate_question, check_answer
 
-const queryClient = new QueryClient();
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+app = Flask(__name__, static_folder=os.path.join(BASE_DIR, 'static'))
+CORS(app)
 
-function App() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <Router>
-          <AppLayout />
-        </Router>
-      </AuthProvider>
-      <ReactQueryDevtools initialIsOpen={false} position="bottom-left" />
-    </QueryClientProvider>
-  );
-}
+# Load pool once at startup
+print("Loading sentence pool...")
+POOL, BY_TOPIC = load_pool()
+print(f"Pool loaded: {len(POOL)} sentences")
 
-export default App;
+TOPICS = [
+    "nouns", "verb_tenses", "articles", "prepositions",
+    "adjectives", "adverbs", "conjunctions",
+]
+
+# Store active questions in memory (session -> question)
+active_questions = {}
+
+
+@app.route('/')
+def index():
+    return send_from_directory(os.path.join(BASE_DIR, 'static'), 'index.html')
+
+
+@app.route('/api/generate', methods=['POST'])
+def api_generate():
+    data = request.json or {}
+    topic = data.get('topic', random.choice(TOPICS))
+    level = int(data.get('level', 1))
+
+    if topic not in TOPICS:
+        return jsonify({"error": f"Invalid topic: {topic}"}), 400
+    if level not in (1, 2, 3):
+        return jsonify({"error": f"Invalid level: {level}"}), 400
+
+    question = generate_question(POOL, BY_TOPIC, topic, level)
+    if not question:
+        return jsonify({"error": "Could not generate question"}), 500
+
+    qid = f"{random.randint(100000, 999999)}"
+    active_questions[qid] = question
+
+    if len(active_questions) > 1000:
+        oldest = list(active_questions.keys())[:500]
+        for k in oldest:
+            del active_questions[k]
+
+    return jsonify({
+        "qid": qid,
+        "sentence": question["sentence"],
+        "level": question["level"],
+        "topic": topic,
+        "num_errors": len(question["rules"]),
+    })
+
+
+@app.route('/api/check', methods=['POST'])
+def api_check():
+    data = request.json or {}
+    qid = data.get('qid', '')
+    user_answer = data.get('answer', '').strip()
+
+    if qid not in active_questions:
+        return jsonify({"error": "Question expired or invalid"}), 400
+    if not user_answer:
+        return jsonify({"error": "No answer provided"}), 400
+
+    question = active_questions[qid]
+    result = check_answer(question, user_answer)
+
+    return jsonify({
+        "result": result["result"],
+        "score": result.get("score", ""),
+        "feedback": result.get("feedback", []),
+        "corrected": result.get("corrected"),
+        "ai_summary": result.get("ai_summary"),
+        "sentence": question["sentence"],
+        "answer": question["answer"],
+    })
+
+
+@app.route('/api/topics', methods=['GET'])
+def api_topics():
+    return jsonify({"topics": TOPICS})
+
+
+if __name__ == '__main__':
+    os.makedirs('static', exist_ok=True)
+    print("\n  Grammar-AI running at http://localhost:5000\n")
+    app.run(host='0.0.0.0', port=8000)
+
+
+# ── SAT/SHSAT Multiple Choice endpoints ─────────────────────────────
+
+@app.route('/api/mc/generate', methods=['POST', 'OPTIONS'])
+def api_mc_generate():
+    from generate_mc import build_mc_question
+    data = request.json or {}
+    topic = data.get('topic', random.choice(TOPICS))
+    level = 1  # MC questions always L1 for SAT/SHSAT clarity
+
+    if topic not in TOPICS:
+        return jsonify({"error": f"Invalid topic: {topic}"}), 400
+
+    question = generate_question(POOL, BY_TOPIC, topic, level)
+    if not question:
+        return jsonify({"error": "Could not generate question"}), 500
+
+    mc = build_mc_question(question)
+    if not mc:
+        return jsonify({"error": "Could not build MC question"}), 500
+
+    qid = f"mc_{random.randint(100000, 999999)}"
+    active_questions[qid] = {**question, "mc": mc}
+
+    return jsonify({
+        "qid": qid,
+        "sentence": mc["sentence"],
+        "sentence_marked": mc["sentence_marked"],
+        "options": mc["options"],
+        "topic": topic,
+        "rule_name": mc["rule"]["name"],
+    })
+
+
+@app.route('/api/mc/check', methods=['POST', 'OPTIONS'])
+def api_mc_check():
+    from generate_mc import build_mc_question
+    data = request.json or {}
+    qid = data.get('qid', '')
+    selected_index = data.get('selected_index')
+
+    if qid not in active_questions:
+        return jsonify({"error": "Question expired or invalid"}), 400
+
+    q = active_questions[qid]
+    mc = q.get("mc")
+    if not mc:
+        return jsonify({"error": "Not an MC question"}), 400
+
+    is_correct = selected_index == mc["correct_index"]
+    selected_word = mc["options"][selected_index] if selected_index is not None else ""
+
+    ai_summary = None
+    if not is_correct:
+        from generate import _get_ai_summary, get_diff_regions
+        orig_regions = get_diff_regions(q["sentence"], q["answer"])
+        rules = q["rules"]
+        unfixed_rules = rules
+        unfixed_regions = orig_regions
+        ai_summary = _get_ai_summary(
+            q["sentence"], q["answer"], selected_word,
+            rules, [], list(range(len(rules))),
+            unfixed_rules, unfixed_regions
+        )
+
+    return jsonify({
+        "result": "correct" if is_correct else "incorrect",
+        "correct_index": mc["correct_index"],
+        "correct_word": mc["correct_word"],
+        "explanation": mc["explanation"],
+        "corrected": mc["answer"],
+        "ai_summary": ai_summary,
+    })
