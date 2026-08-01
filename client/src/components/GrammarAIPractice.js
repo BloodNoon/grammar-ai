@@ -10,7 +10,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-const API = "/api/grammar";
+const API = '/api/grammar/api';
 
 const TOPIC_LABELS = {
   nouns: "Nouns",
