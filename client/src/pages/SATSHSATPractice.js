@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import { useParams } from "react-router-dom";
 import {
-  Box, Text, Heading, Flex, HStack, Badge, Spinner, VStack,
+  Box, Text, Flex, HStack, Badge, Spinner, VStack,
 } from "@chakra-ui/react";
 
 const API = "http://localhost:8000/api";
@@ -19,6 +19,7 @@ const LETTERS   = ["A", "B", "C", "D"];
 
 export default function SATSHSATPractice() {
   const { topic } = useParams();
+  const abortRef = useRef(null);
 
   const [score,   setScore]   = useState(0);
   const [correct, setCorrect] = useState(0);
@@ -35,6 +36,11 @@ export default function SATSHSATPractice() {
   const barPct = Math.round(score / MAX_PTS * 100);
 
   const loadQuestion = useCallback(async () => {
+    // Cancel any in-flight request
+    if (abortRef.current) abortRef.current.abort();
+    const controller = new AbortController();
+    abortRef.current = controller;
+
     setLoading(true);
     setResult(null);
     setSelected(null);
@@ -44,21 +50,25 @@ export default function SATSHSATPractice() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ topic }),
+        signal: controller.signal,
       });
       const data = await res.json();
       if (data.error) { alert(data.error); return; }
       setQuestion(data);
-    } catch {
-      alert("Could not reach grammar server.");
+    } catch (e) {
+      if (e.name !== "AbortError") alert("Could not reach grammar server.");
     } finally {
       setLoading(false);
     }
   }, [topic]);
 
-  useEffect(() => { loadQuestion(); }, [loadQuestion]);
+  useEffect(() => {
+    loadQuestion();
+    return () => { if (abortRef.current) abortRef.current.abort(); };
+  }, [loadQuestion]);
 
   const selectOption = async (idx) => {
-    if (result || selected !== null) return;
+    if (result || selected !== null || !question) return;
     setSelected(idx);
     try {
       const res = await fetch(`${API}/mc/check`, {
@@ -131,7 +141,6 @@ export default function SATSHSATPractice() {
         </Box>
       )}
 
-      {/* Score HUD */}
       <Flex bg="white" borderRadius="xl" boxShadow="sm" px={5} py={3}
         mb={5} align="center" gap={4} flexWrap="wrap"
         border="1px solid" borderColor="orange.100">
@@ -149,7 +158,6 @@ export default function SATSHSATPractice() {
         </HStack>
       </Flex>
 
-      {/* Question card */}
       <Box bg="white" borderRadius="xl" boxShadow="sm" p={6}
         border="1px solid" borderColor="orange.100" maxW="800px" mx="auto">
 
@@ -174,29 +182,21 @@ export default function SATSHSATPractice() {
           <Flex justify="center" py={8}><Spinner color="orange.400" size="lg" /></Flex>
         ) : question ? (
           <>
-            {/* Sentence */}
             <Box p={4} bg="orange.50" borderRadius="lg" mb={6}
               border="1px solid" borderColor="orange.200"
               fontSize="md" fontFamily="mono" lineHeight="1.9">
               {renderSentence(question.sentence_marked)}
             </Box>
 
-            {/* Options */}
             <VStack spacing={3} align="stretch">
               {question.options?.map((opt, idx) => {
                 let bg = "white";
                 let borderColor = "gray.200";
                 let color = "ink.700";
-
                 if (result) {
-                  if (idx === result.correct_index) {
-                    bg = "green.50"; borderColor = "green.400"; color = "green.700";
-                  } else if (idx === selected && !result.isCorrect) {
-                    bg = "red.50"; borderColor = "red.400"; color = "red.700";
-                  }
-                } else if (idx === selected) {
-                  bg = "orange.50"; borderColor = "orange.400";
-                }
+                  if (idx === result.correct_index) { bg = "green.50"; borderColor = "green.400"; color = "green.700"; }
+                  else if (idx === selected && !result.isCorrect) { bg = "red.50"; borderColor = "red.400"; color = "red.700"; }
+                } else if (idx === selected) { bg = "orange.50"; borderColor = "orange.400"; }
 
                 return (
                   <Flex key={idx} as="button" onClick={() => selectOption(idx)}
@@ -218,18 +218,13 @@ export default function SATSHSATPractice() {
                       fontWeight={result && idx === result.correct_index ? "700" : "400"}>
                       {opt}
                     </Text>
-                    {result && idx === result.correct_index && (
-                      <Text ml="auto" color="green.500" fontWeight="700">✓</Text>
-                    )}
-                    {result && idx === selected && !result.isCorrect && idx !== result.correct_index && (
-                      <Text ml="auto" color="red.500" fontWeight="700">✗</Text>
-                    )}
+                    {result && idx === result.correct_index && <Text ml="auto" color="green.500" fontWeight="700">✓</Text>}
+                    {result && idx === selected && !result.isCorrect && idx !== result.correct_index && <Text ml="auto" color="red.500" fontWeight="700">✗</Text>}
                   </Flex>
                 );
               })}
             </VStack>
 
-            {/* Result */}
             {result && (
               <Box mt={5}>
                 <Box p={3} borderRadius="lg" mb={3}
@@ -243,13 +238,11 @@ export default function SATSHSATPractice() {
                       : `❌ Incorrect · -${WRONG_PTS} pts · Answer: "${result.correct_word}"`}
                   </Text>
                 </Box>
-
                 {result.explanation && (
                   <Box p={3} bg="gray.50" borderRadius="lg" mb={3}>
                     <Text fontSize="sm" color="gray.700" lineHeight="1.7">{result.explanation}</Text>
                   </Box>
                 )}
-
                 {!result.isCorrect && result.ai_summary && (
                   <Box p={4} bg="orange.50" borderRadius="lg"
                     border="1px solid" borderColor="orange.200" mb={3}>
@@ -257,7 +250,6 @@ export default function SATSHSATPractice() {
                     <Text fontSize="sm" color="gray.700" lineHeight="1.7">{result.ai_summary}</Text>
                   </Box>
                 )}
-
                 <Text fontSize="xs" color="gray.400" mb={2}>Press Enter for next question</Text>
                 <Box as="button" onClick={loadQuestion}
                   bg="orange.400" color="white" px={6} py={2.5}
@@ -271,9 +263,7 @@ export default function SATSHSATPractice() {
             )}
 
             {!result && (
-              <Text fontSize="xs" color="gray.400" mt={4}>
-                Press A, B, C, or D to select
-              </Text>
+              <Text fontSize="xs" color="gray.400" mt={4}>Press A, B, C, or D to select</Text>
             )}
           </>
         ) : null}
