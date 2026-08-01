@@ -28,13 +28,6 @@ const MAX_PTS   = 100;
 const QUESTIONS_PER_LEVEL = 3;
 const PASS_THRESHOLD = 2;
 
-/**
- * GrammarAIPractice
- * Drop-in component for the end of each lesson's practice page.
- * Props:
- *   topic      — one of the 7 topic keys (e.g. "nouns")
- *   onComplete — called when the student finishes all 9 questions (L1→L3)
- */
 export default function GrammarAIPractice({ topic, onComplete }) {
   const [score,   setScore]   = useState(0);
   const [correct, setCorrect] = useState(0);
@@ -84,7 +77,6 @@ export default function GrammarAIPractice({ topic, onComplete }) {
     }
   }, [topic]);
 
-  // Load first question on mount
   useEffect(() => {
     loadQuestion(1);
   }, [loadQuestion]);
@@ -123,7 +115,6 @@ export default function GrammarAIPractice({ topic, onComplete }) {
       setPopup({ pts, id: pid });
       setTimeout(() => setPopup(p => p?.id === pid ? null : p), 900);
 
-      // Advance level state
       const newQAL = questionsAtLevel + 1;
       const newCAL = isCorrect ? correctAtLevel + 1 : correctAtLevel;
       setQuestionsAtLevel(newQAL);
@@ -145,7 +136,6 @@ export default function GrammarAIPractice({ topic, onComplete }) {
 
       setResult({ isCorrect, pts, ...data });
 
-      // Highlight error words in editor after wrong answer
       if (!isCorrect && editorRef.current && data.corrected) {
         const userWords    = ans.split(' ');
         const correctWords = data.corrected.split(' ');
@@ -172,13 +162,11 @@ export default function GrammarAIPractice({ topic, onComplete }) {
     if (done) {
       if (onComplete) onComplete(score);
     } else {
-      const nextLevel = questionsAtLevel === 0 ? level : level;
-      loadQuestion(nextLevel);
+      loadQuestion(level);
       setResult(null);
     }
   };
 
-  // Enter key
   useEffect(() => {
     const handler = (e) => {
       if (e.key === "Enter" && !e.shiftKey) {
@@ -205,19 +193,11 @@ export default function GrammarAIPractice({ topic, onComplete }) {
           <Text>✅ <b style={{color:"#2e9e5b"}}>{correct}</b> correct</Text>
           <Text>❌ <b style={{color:"#c0392b"}}>{wrong}</b> wrong</Text>
         </HStack>
-        <Box
-          as="button"
-          onClick={() => onComplete && onComplete(score)}
-          bg="green.500"
-          color="white"
-          px={6} py={2.5}
-          borderRadius="xl"
-          fontWeight="600"
-          border="2px solid"
-          borderColor="ink.900"
+        <Box as="button" onClick={() => onComplete && onComplete(score)}
+          bg="green.500" color="white" px={6} py={2.5} borderRadius="xl"
+          fontWeight="600" border="2px solid" borderColor="ink.900"
           boxShadow="2px 2px 0px rgba(0,0,0,0.1)"
-          _hover={{ boxShadow: "3px 3px 0px rgba(0,0,0,0.15)" }}
-        >
+          _hover={{ boxShadow: "3px 3px 0px rgba(0,0,0,0.15)" }}>
           Finish ✓
         </Box>
       </VStack>
@@ -226,31 +206,23 @@ export default function GrammarAIPractice({ topic, onComplete }) {
 
   return (
     <Box position="relative">
-      {/* Points popup */}
       {popup && (
-        <Box
-          position="fixed" top="40%" left="50%" transform="translateX(-50%)"
+        <Box position="fixed" top="40%" left="50%" transform="translateX(-50%)"
           fontFamily="mono" fontSize="2xl" fontWeight="700"
           color={popup.pts > 0 ? "green.500" : "red.500"}
-          pointerEvents="none" zIndex={999}
-        >
+          pointerEvents="none" zIndex={999}>
           {popup.pts > 0 ? `+${popup.pts}` : popup.pts}
         </Box>
       )}
 
-      {/* Score HUD */}
-      <Flex
-        bg="white" borderRadius="xl" px={4} py={2.5} mb={4}
+      <Flex bg="white" borderRadius="xl" px={4} py={2.5} mb={4}
         align="center" gap={3} flexWrap="wrap"
-        border="1px solid" borderColor="orange.100"
-        boxShadow="sm"
-      >
+        border="1px solid" borderColor="orange.100" boxShadow="sm">
         <Text fontWeight="700" color="orange.500" fontFamily="mono">
           {score}<Text as="span" color="gray.400" fontWeight="400" fontSize="xs">/100</Text>
         </Text>
         <Box flex="1" minW="60px" h="5px" bg="gray.100" borderRadius="full" overflow="hidden">
-          <Box h="100%" w={`${barPct}%`}
-            bg="linear-gradient(90deg,#e07b20,#2e9e5b)"
+          <Box h="100%" w={`${barPct}%`} bg="linear-gradient(90deg,#e07b20,#2e9e5b)"
             borderRadius="full" transition="width 0.4s" />
         </Box>
         <HStack spacing={3} fontFamily="mono" fontSize="xs">
@@ -260,7 +232,6 @@ export default function GrammarAIPractice({ topic, onComplete }) {
         </HStack>
       </Flex>
 
-      {/* Level progress */}
       <Flex align="center" gap={2} mb={4}>
         <Text fontFamily="mono" fontSize="xs" color="gray.400" whiteSpace="nowrap">
           L{level} · {questionsAtLevel}/{QUESTIONS_PER_LEVEL}
@@ -271,19 +242,14 @@ export default function GrammarAIPractice({ topic, onComplete }) {
         </Box>
       </Flex>
 
-      {/* Question */}
-      <Box
-        bg="orange.50" borderRadius="xl" p={4}
-        border="1px solid" borderColor="orange.200"
-      >
+      <Box bg="orange.50" borderRadius="xl" p={4} border="1px solid" borderColor="orange.200">
         <HStack mb={3} spacing={2}>
           <Badge bg="orange.100" color="orange.700" borderRadius="full"
             px={3} py={1} fontSize="xs" fontWeight="700">
             {TOPIC_LABELS[topic]?.toUpperCase()} · AI PRACTICE
           </Badge>
           {question && (
-            <Badge bg="gray.100" color="gray.600" borderRadius="full"
-              px={2} py={1} fontSize="xs">
+            <Badge bg="gray.100" color="gray.600" borderRadius="full" px={2} py={1} fontSize="xs">
               Level {question.level} · {question.num_errors} error{question.num_errors > 1 ? "s" : ""}
             </Badge>
           )}
@@ -297,32 +263,22 @@ export default function GrammarAIPractice({ topic, onComplete }) {
           <Flex justify="center" py={6}><Spinner color="orange.400" /></Flex>
         ) : (
           <>
-            {/* Editable sentence */}
-            <Box
-              ref={editorRef}
-              contentEditable={!result}
-              suppressContentEditableWarning
+            <Box ref={editorRef} contentEditable={!result}
+              suppressContentEditableWarning spellCheck={false}
               p={3} borderRadius="lg" border="2px solid"
-              borderColor={result
-                ? (result.isCorrect ? "green.300" : "red.300")
-                : "orange.300"}
-              bg={result
-                ? (result.isCorrect ? "green.50" : "red.50")
-                : "white"}
+              borderColor={result ? (result.isCorrect ? "green.300" : "red.300") : "orange.300"}
+              bg={result ? (result.isCorrect ? "green.50" : "red.50") : "white"}
               fontSize="md" fontFamily="mono" lineHeight="1.8"
               minH="50px" outline="none"
               cursor={result ? "default" : "text"}
-              _focus={{ borderColor: "orange.400" }}
-            />
+              _focus={{ borderColor: "orange.400" }} />
 
-            {/* Result */}
             {result && (
               <Box mt={3}>
                 <Box p={2.5} borderRadius="lg" mb={2}
                   bg={result.isCorrect ? "green.50" : "red.50"}
                   borderLeft="3px solid"
-                  borderColor={result.isCorrect ? "green.400" : "red.400"}
-                >
+                  borderColor={result.isCorrect ? "green.400" : "red.400"}>
                   <Text fontWeight="700" fontSize="sm"
                     color={result.isCorrect ? "green.600" : "red.600"}>
                     {result.isCorrect
@@ -350,15 +306,11 @@ export default function GrammarAIPractice({ topic, onComplete }) {
                   </Box>
                 )}
 
-                <Box
-                  as="button" mt={3}
-                  onClick={handleNext}
-                  bg="orange.400" color="white"
-                  px={6} py={2} borderRadius="xl" fontWeight="600"
-                  border="2px solid" borderColor="ink.900"
-                  boxShadow="2px 2px 0px rgba(0,0,0,0.1)"
-                  _hover={{ boxShadow: "3px 3px 0px rgba(0,0,0,0.15)" }}
-                >
+                <Box as="button" mt={3} onClick={handleNext}
+                  bg="orange.400" color="white" px={6} py={2}
+                  borderRadius="xl" fontWeight="600" border="2px solid"
+                  borderColor="ink.900" boxShadow="2px 2px 0px rgba(0,0,0,0.1)"
+                  _hover={{ boxShadow: "3px 3px 0px rgba(0,0,0,0.15)" }}>
                   {done ? "Finish ✓" : "Next →"} <Text as="span" fontSize="xs" opacity={0.7} ml={1}>Enter</Text>
                 </Box>
               </Box>
@@ -369,17 +321,13 @@ export default function GrammarAIPractice({ topic, onComplete }) {
                 <Text fontSize="xs" color="gray.400">
                   Fix <b>{question?.num_errors}</b> error{question?.num_errors > 1 ? "s" : ""} · Enter to check
                 </Text>
-                <Box
-                  as="button"
-                  onClick={checkAnswer}
-                  bg={checking ? "gray.300" : "orange.400"}
-                  color="white"
+                <Box as="button" onClick={checkAnswer}
+                  bg={checking ? "gray.300" : "orange.400"} color="white"
                   px={5} py={2} borderRadius="xl" fontWeight="600"
                   border="2px solid" borderColor="ink.900"
                   boxShadow="2px 2px 0px rgba(0,0,0,0.1)"
                   _hover={{ boxShadow: "3px 3px 0px rgba(0,0,0,0.15)" }}
-                  disabled={checking}
-                >
+                  disabled={checking}>
                   {checking ? "Checking..." : "Check Answer"}
                 </Box>
               </Flex>
