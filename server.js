@@ -44,7 +44,7 @@ app.use('/api/prompt', promptsRouter);
 app.use('/api/grammar', createProxyMiddleware({
 	target: 'http://localhost:8000',
 	changeOrigin: true,
-	pathRewrite: { '^/api/grammar': '' }
+	pathRewrite: { '^/api/grammar': '/api' }
 }));
 
 if (
