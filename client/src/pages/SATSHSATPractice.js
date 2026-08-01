@@ -36,6 +36,7 @@ export default function SATSHSATPractice() {
   const barPct = Math.round(score / MAX_PTS * 100);
 
   const loadQuestion = useCallback(async () => {
+    // Cancel any in-flight request
     if (abortRef.current) abortRef.current.abort();
     const controller = new AbortController();
     abortRef.current = controller;
@@ -115,7 +116,7 @@ export default function SATSHSATPractice() {
     return () => window.removeEventListener("keydown", handler);
   }, [result, question, loading, streak, loadQuestion]);
 
-  // Render sentence_blank: split on ______ and inject a styled blank span
+  // Blank-based renderer — splits on "______" and inserts a styled blank
   const renderBlankSentence = (sentenceBlank) => {
     if (!sentenceBlank) return null;
     const parts = sentenceBlank.split("______");
@@ -151,7 +152,6 @@ export default function SATSHSATPractice() {
         </Box>
       )}
 
-      {/* Score HUD */}
       <Flex bg="white" borderRadius="xl" boxShadow="sm" px={5} py={3}
         mb={5} align="center" gap={4} flexWrap="wrap"
         border="1px solid" borderColor="orange.100">
@@ -172,7 +172,6 @@ export default function SATSHSATPractice() {
       <Box bg="white" borderRadius="xl" boxShadow="sm" p={6}
         border="1px solid" borderColor="orange.100" maxW="800px" mx="auto">
 
-        {/* Badges */}
         <HStack mb={4} spacing={2}>
           <Badge bg="orange.100" color="orange.700" borderRadius="full"
             px={3} py={1} fontSize="xs" fontWeight="700">
@@ -184,8 +183,7 @@ export default function SATSHSATPractice() {
           </Badge>
         </HStack>
 
-        {/* CB-style prompt */}
-        <Text fontSize="sm" color="gray.600" mb={5} lineHeight="1.6">
+        <Text fontSize="sm" color="gray.600" mb={4}>
           Which choice completes the text so that it conforms to the conventions of Standard English?
         </Text>
 
@@ -193,19 +191,17 @@ export default function SATSHSATPractice() {
           <Flex justify="center" py={8}><Spinner color="orange.400" size="lg" /></Flex>
         ) : question ? (
           <>
-            {/* Passage box with blank */}
-            <Box p={5} bg="gray.50" borderRadius="lg" mb={6}
-              border="1px solid" borderColor="gray.200"
-              fontSize="md" lineHeight="2">
+            <Box p={4} bg="orange.50" borderRadius="lg" mb={6}
+              border="1px solid" borderColor="orange.200"
+              fontSize="md" fontFamily="mono" lineHeight="1.9">
               {renderBlankSentence(question.sentence_blank)}
             </Box>
 
-            {/* Answer choices */}
             <VStack spacing={3} align="stretch">
               {question.options?.map((opt, idx) => {
                 let bg = "white";
                 let borderColor = "gray.200";
-                let color = "gray.800";
+                let color = "ink.700";
                 if (result) {
                   if (idx === result.correct_index) { bg = "green.50"; borderColor = "green.400"; color = "green.700"; }
                   else if (idx === selected && !result.isCorrect) { bg = "red.50"; borderColor = "red.400"; color = "red.700"; }
@@ -231,18 +227,13 @@ export default function SATSHSATPractice() {
                       fontWeight={result && idx === result.correct_index ? "700" : "400"}>
                       {opt}
                     </Text>
-                    {result && idx === result.correct_index && (
-                      <Text ml="auto" color="green.500" fontWeight="700">✓</Text>
-                    )}
-                    {result && idx === selected && !result.isCorrect && idx !== result.correct_index && (
-                      <Text ml="auto" color="red.500" fontWeight="700">✗</Text>
-                    )}
+                    {result && idx === result.correct_index && <Text ml="auto" color="green.500" fontWeight="700">✓</Text>}
+                    {result && idx === selected && !result.isCorrect && idx !== result.correct_index && <Text ml="auto" color="red.500" fontWeight="700">✗</Text>}
                   </Flex>
                 );
               })}
             </VStack>
 
-            {/* Result panel */}
             {result && (
               <Box mt={5}>
                 <Box p={3} borderRadius="lg" mb={3}
@@ -253,31 +244,14 @@ export default function SATSHSATPractice() {
                     color={result.isCorrect ? "green.600" : "red.600"}>
                     {result.isCorrect
                       ? `✅ Correct! +${result.pts} pts${streak > 1 ? ` (🔥 ${streak} streak)` : ""}`
-                      : `❌ Incorrect · -${WRONG_PTS} pts · The answer is "${result.correct_word}"`}
+                      : `❌ Incorrect · -${WRONG_PTS} pts · Answer: "${result.correct_word}"`}
                   </Text>
                 </Box>
-
-                {/* Show completed sentence */}
-                {result.correct_word && question.sentence_blank && (
-                  <Box p={4} bg="gray.50" borderRadius="lg" mb={3}
-                    border="1px solid" borderColor="gray.200">
-                    <Text fontSize="xs" color="gray.400" fontWeight="700" mb={1}>COMPLETED SENTENCE</Text>
-                    <Text fontSize="sm" lineHeight="1.8" color="gray.700">
-                      {question.sentence_blank.replace("______", (
-                        result.correct_word
-                      ))}
-                    </Text>
-                  </Box>
-                )}
-
                 {result.explanation && (
-                  <Box p={3} bg="gray.50" borderRadius="lg" mb={3}
-                    border="1px solid" borderColor="gray.200">
-                    <Text fontSize="xs" color="gray.500" fontWeight="700" mb={1}>EXPLANATION</Text>
+                  <Box p={3} bg="gray.50" borderRadius="lg" mb={3}>
                     <Text fontSize="sm" color="gray.700" lineHeight="1.7">{result.explanation}</Text>
                   </Box>
                 )}
-
                 {!result.isCorrect && result.ai_summary && (
                   <Box p={4} bg="orange.50" borderRadius="lg"
                     border="1px solid" borderColor="orange.200" mb={3}>
@@ -285,7 +259,6 @@ export default function SATSHSATPractice() {
                     <Text fontSize="sm" color="gray.700" lineHeight="1.7">{result.ai_summary}</Text>
                   </Box>
                 )}
-
                 <Text fontSize="xs" color="gray.400" mb={2}>Press Enter for next question</Text>
                 <Box as="button" onClick={loadQuestion}
                   bg="orange.400" color="white" px={6} py={2.5}
