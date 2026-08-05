@@ -113,20 +113,18 @@ const NAV_SECTIONS = [
     isLink: true,
     to: "/grade-quests",
   },
-  
   {
-  title: "SAT / SHSAT",
-  items: [
-    { label: "Nouns", to: "/sat-shsat/nouns" },
-    { label: "Verb Tenses", to: "/sat-shsat/verb_tenses" },
-    { label: "Articles", to: "/sat-shsat/articles" },
-    { label: "Prepositions", to: "/sat-shsat/prepositions" },
-    { label: "Adjectives", to: "/sat-shsat/adjectives" },
-    { label: "Adverbs", to: "/sat-shsat/adverbs" },
-    { label: "Conjunctions", to: "/sat-shsat/conjunctions" },
-  ],
-},
-  
+    title: "SAT / SHSAT",
+    items: [
+      { label: "Nouns", to: "/sat-shsat/nouns" },
+      { label: "Verb Tenses", to: "/sat-shsat/verb_tenses" },
+      { label: "Articles", to: "/sat-shsat/articles" },
+      { label: "Prepositions", to: "/sat-shsat/prepositions" },
+      { label: "Adjectives", to: "/sat-shsat/adjectives" },
+      { label: "Adverbs", to: "/sat-shsat/adverbs" },
+      { label: "Conjunctions", to: "/sat-shsat/conjunctions" },
+    ],
+  },
   {
     title: "Sentence Structure",
     items: [
@@ -137,6 +135,7 @@ const NAV_SECTIONS = [
       { label: "Lesson 5: Adjectives", to: "/adjective-structure" },
       { label: "Lesson 6: Adverbs", to: "/adverb-structure" },
       { label: "Lesson 7: Conjunctions", to: "/conjunction-structure" },
+      { label: "SS1 Practice", to: "/ss1-practice" },
     ],
   },
 ];
