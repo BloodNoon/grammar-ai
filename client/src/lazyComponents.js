@@ -9,6 +9,7 @@ const lazyWithPreload = (importFunc) => {
 // ai
 export const GrammarAI = lazyWithPreload(() => import("./pages/GrammarAI"));
 export const SATSHSATPractice = lazyWithPreload(() => import("./pages/SATSHSATPractice"));
+export const SS1Practice = lazyWithPreload(() => import(/* webpackChunkName: "ss-practice" */ "./pages/SS1Practice"));
 
 // ai practice pages
 export const NounAIPractice = lazyWithPreload(() => import(/* webpackChunkName: "ai-practice" */ "./pages/NounAIPractice"));
@@ -186,6 +187,7 @@ export const routePreloadMap = {
   "/adjective-ai-practice": AdjectiveAIPractice,
   "/adverb-ai-practice": AdverbAIPractice,
   "/conjunction-ai-practice": ConjunctionAIPractice,
+  "/ss1-practice": SS1Practice,
 };
 
 export const preloadRoute = (path) => {
