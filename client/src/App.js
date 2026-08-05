@@ -35,6 +35,7 @@ import {
   NounAIPractice, VerbAIPractice, ArticleAIPractice, PrepositionAIPractice,
   AdjectiveAIPractice, AdverbAIPractice, ConjunctionAIPractice,
   SATSHSATPractice,
+  SS1Practice,
 } from "./lazyComponents";
 
 function AppLayout() {
@@ -141,6 +142,7 @@ function AppLayout() {
               <Route path="/adverb-ai-practice" component={AdverbAIPractice} />
               <Route path="/conjunction-ai-practice" component={ConjunctionAIPractice} />
               <Route path="/sat-shsat/:topic" component={SATSHSATPractice} />
+              <Route path="/ss1-practice" component={SS1Practice} />
             </Switch>
           </Suspense>
         </Box>
